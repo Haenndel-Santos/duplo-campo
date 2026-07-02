@@ -1,0 +1,40 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Office temporary files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.tmp
+*.temp
+
+# Python/cache/tools
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Build/cache/output
+dist/
+build/
+out/
+.cache/
+
+# Logs
+*.log
+
+# Backups and archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# Local secrets
+.env
+.env.*
+!.env.example

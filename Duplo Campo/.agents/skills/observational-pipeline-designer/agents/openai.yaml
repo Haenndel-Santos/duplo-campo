@@ -1,0 +1,4 @@
+interface:
+  display_name: "Observational Pipeline Designer"
+  short_description: "Designs TDCP observational tests"
+  default_prompt: "Use observational-pipeline-designer to turn TDCP theory into observables, likelihoods, CLASS/CAMB notes, and benchmark tests."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bimetric Hr Formalism Guardian"
+  short_description: "Guards Hassan-Rosen bimetric formalism"
+  default_prompt: "Use bimetric-hr-formalism-guardian to review TDCP bimetric formalism, HR potential structure, and FLRW bimetric equations."

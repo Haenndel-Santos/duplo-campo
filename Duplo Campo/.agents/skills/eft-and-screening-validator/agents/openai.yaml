@@ -1,0 +1,4 @@
+interface:
+  display_name: "Eft and Screening Validator"
+  short_description: "Validates EFT and screening consistency"
+  default_prompt: "Use eft-and-screening-validator to review EFT validity, strong coupling, BD ghost avoidance, Vainshtein screening, and local tests."

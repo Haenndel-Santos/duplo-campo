@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tdcp F1 Parameter Guardian"
+  short_description: "Guards the TDCP-F1 parameter family"
+  default_prompt: "Use tdcp-f1-parameter-guardian to review claims and equations involving the F1 parameter family."

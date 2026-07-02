@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chapter Continuity Editor"
+  short_description: "Checks continuity across TDCP chapters"
+  default_prompt: "Use chapter-continuity-editor to review chapter-to-chapter continuity, definitions, symbols, and narrative logic."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scientific Writing and Claim Control"
+  short_description: "Controls scientific claims and style"
+  default_prompt: "Use scientific-writing-and-claim-control to revise TDCP text for academic rigor, claim calibration, and clear status labels."

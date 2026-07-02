@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathematical Consistency Auditor"
+  short_description: "Audits TDCP mathematical consistency"
+  default_prompt: "Use mathematical-consistency-auditor to check equations, symbols, dimensions, assumptions, and derivation logic."

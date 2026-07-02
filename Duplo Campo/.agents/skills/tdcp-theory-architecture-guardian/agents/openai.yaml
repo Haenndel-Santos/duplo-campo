@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tdcp Theory Architecture Guardian"
+  short_description: "Guards the TDCP theory architecture"
+  default_prompt: "Use tdcp-theory-architecture-guardian to review whether TDCP text, equations, or chapters preserve the project architecture."

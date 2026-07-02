@@ -1,0 +1,4 @@
+interface:
+  display_name: "Stability Constraints Auditor"
+  short_description: "Audits TDCP physical stability"
+  default_prompt: "Use stability-constraints-auditor to check no-ghost, no-gradient, no-tachyon, Higuchi, tensor, scalar, and GR recovery constraints."
