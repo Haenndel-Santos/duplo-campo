@@ -1,6 +1,4 @@
-Perfeito. Vamos para o Anexo E, que é essencial como "manual operacional" da TDCP: ele transforma o formalismo em um sistema dinâmico fechado pronto para integração numérica (mesmo que você não vá rodar agora).
-
-Vou construir este anexo com:
+Vamos para o Anexo E, que é essencial como "manual operacional" da TDCP: ele transforma o formalismo em um sistema dinâmico fechado pronto para integração numérica (mesmo que você não vá rodar agora).
 
 - conjunto de equações ODE completo,
 
@@ -372,11 +370,11 @@ $m_T^2(N) \ge 2H^2(N).$
 
 **E.11 Procedimento de integração (roteiro prático)**
 
-1.  Fixe parâmetros:
+1. Fixe parâmetros:
 
 $> (m,\beta_n,M_g,M_f, U(\chi), F(\chi), \Gamma).$
 
-2.  Escolha condições iniciais em N=N_i (alta redshift):
+2. Escolha condições iniciais em N=N_i (alta redshift):
 
 - \chi(N_i) pequeno,
 
@@ -386,9 +384,9 @@ $> (m,\beta_n,M_g,M_f, U(\chi), F(\chi), \Gamma).$
 
 - $\Omega_m(N_i)\approx 1.$
 
-3.  Integre as ODEs para \chi, x, \eta, \Omega_m.
+3. Integre as ODEs para \chi, x, \eta, \Omega_m.
 
-4.  A cada passo, calcule:
+4. A cada passo, calcule:
 
 - H(N) pela Friedmann,
 
@@ -398,7 +396,7 @@ $> (m,\beta_n,M_g,M_f, U(\chi), F(\chi), \Gamma).$
 
 - positividade de F(\chi).
 
-5.  Pare se:
+5. Pare se:
 
 - Higuchi viola,
 
@@ -422,8 +420,4 @@ Mesmo sem execução, ele serve como:
 
 "documentação operacional" da TDCP, mostrando como a teoria seria confrontada com dados via simulação.
 
-Se você aprovar o Anexo E, seguimos para o último do bloco técnico:
-
 **ANEXO F --- Espaço de Parâmetros, Regiões Permitidas/Excluídas e Mapa de Consistência**
-
-Posso continuar?

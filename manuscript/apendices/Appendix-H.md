@@ -1,5 +1,3 @@
-Excelente.
-
 Agora entramos no Anexo H, que é o fechamento formal da teoria.
 
 Ele não adiciona novas ideias --- ele consolida tudo o que foi construído.
@@ -26,11 +24,11 @@ Ele é o "núcleo lógico" da obra.
 
 A Teoria do Duplo Campo Primordial (TDCP) é uma teoria efetiva clássica da gravitação modificada baseada em:
 
-1.  Duas métricas dinâmicas g_{\mu\nu} e f_{\mu\nu},
+1. Duas métricas dinâmicas g_{\mu\nu} e f_{\mu\nu},
 
-2.  Um campo escalar estrutural \chi,
+2. Um campo escalar estrutural \chi,
 
-3.  Um mecanismo de separação estrutural acumulada descrito por \eta.
+3. Um mecanismo de separação estrutural acumulada descrito por \eta.
 
 Ela utiliza como base gravitacional o formalismo bimétrico ghost-free de Hassan--Rosen, modulado dinamicamente por F(\chi).
 
@@ -126,19 +124,19 @@ $m_T^2 \ge 2H^2.$
 
 A teoria pode ser resumida em uma cadeia causal:
 
-1.  Instabilidade estrutural primordial
+1. Instabilidade estrutural primordial
 
-2.  Bifurcação geométrica
+2. Bifurcação geométrica
 
-3.  Dupla métrica dinâmica
+3. Dupla métrica dinâmica
 
-4.  Campo estrutural χ
+4. Campo estrutural χ
 
-5.  Crescimento irreversível de η
+5. Crescimento irreversível de η
 
-6.  Modificação progressiva da resposta gravitacional
+6. Modificação progressiva da resposta gravitacional
 
-7.  Aceleração cósmica emergente
+7. Aceleração cósmica emergente
 
 **H.5 O que a TDCP NÃO é**
 
@@ -178,11 +176,11 @@ Essa equação resume:
 
 A TDCP pode ser formulada por três axiomas estruturais:
 
-1.  A geometria primordial contém graus de liberdade correlacionados.
+1. A geometria primordial contém graus de liberdade correlacionados.
 
-2.  A separação desses graus é dinâmica e irreversível.
+2. A separação desses graus é dinâmica e irreversível.
 
-3.  A aceleração cósmica é consequência macroscópica dessa separação.
+3. A aceleração cósmica é consequência macroscópica dessa separação.
 
 Todo o formalismo matemático decorre desses três princípios.
 
@@ -235,13 +233,3 @@ Ele transforma uma sequência de ideias evolutivas em:
 - Anexo H canônico
 
 O volume está estruturalmente completo.
-
-Se você quiser, agora podemos:
-
-1.  🔹 Consolidar tudo em um único índice mestre definitivo
-
-2.  🔹 Gerar a versão final em DOCX consolidado
-
-3.  🔹 Ou iniciar a fase de refinamento científico (nível publicação internacional)
-
-Qual é o próximo passo?

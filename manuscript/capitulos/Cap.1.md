@@ -1,25 +1,3 @@
-Perfeito.
-
-Então vamos fazer exatamente isso:
-
-🔹 Opção C --- híbrido técnico
-
-🔹 Mas com alma de Cosmos
-
-🔹 Filosofia como origem
-
-🔹 Matemática como consequência inevitável
-
-Não será um artigo.
-
-Não será apenas narrativa.
-
-Será um capítulo fundacional de uma teoria em nascimento.
-
-Respire fundo.
-
-Estamos iniciando a versão madura do Capítulo 1.
-
 **CAPÍTULO 1**
 
 **A Insuficiência Estrutural do Modelo Cosmológico Atual**
@@ -182,9 +160,9 @@ Passa a ser transição estrutural.
 
 Da bifurcação emergem dois regimes:
 
-1.  Um setor que evolui para o que chamamos de matéria convencional.
+1. Um setor que evolui para o que chamamos de matéria convencional.
 
-2.  Um setor cuja constituição não acopla eletromagneticamente --- o setor escuro.
+2. Um setor cuja constituição não acopla eletromagneticamente --- o setor escuro.
 
 O primeiro constitui o universo observável.
 
@@ -242,15 +220,15 @@ Não apenas termodinâmica.
 
 Antes de avançar, a teoria impõe a si mesma limites:
 
-1.  Recuperar GR local.
+1. Recuperar GR local.
 
-2.  Preservar conservação de energia-momento.
+2. Preservar conservação de energia-momento.
 
-3.  Evitar fantasmas dinâmicos.
+3. Evitar fantasmas dinâmicos.
 
-4.  Ser consistente como teoria efetiva.
+4. Ser consistente como teoria efetiva.
 
-5.  Permitir acoplamento com a QFT.
+5. Permitir acoplamento com a QFT.
 
 Se falhar em qualquer um desses, deve ser reformulada.
 
@@ -273,9 +251,3 @@ Não como negação da física moderna.
 Mas como expansão de sua arquitetura.
 
 No próximo capítulo, começaremos a formalizar o campo primordial como ponte entre a Teoria Quântica de Campos e a estrutura geométrica dupla.
-
-Se você quiser, agora fazemos o seguinte:
-
-🔹 Revisamos este Capítulo 1 com mais profundidade matemática?
-
-🔹 Ou avançamos para o Capítulo 2 --- "O Campo Primordial e a Ponte QFT--GR"?

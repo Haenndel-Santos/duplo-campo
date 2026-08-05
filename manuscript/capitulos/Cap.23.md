@@ -14,15 +14,15 @@ $\{\Omega_b,\Omega_c,H_0,A_s,n_s,\tau,\alpha_0,m_{S0},p,q\}$
 
 A TDCP-F1 agora:
 
-✔ Está formalmente implementável em CLASS
+- Está formalmente implementável em CLASS
 
-✔ Preserva gauge consistency
+- Preserva gauge consistency
 
-✔ Pode gerar espectros CMB
+- Pode gerar espectros CMB
 
-✔ Permite comparação com BAO/RSD/WL
+- Permite comparação com BAO/RSD/WL
 
-✔ Está pronta para likelihood real
+- Está pronta para likelihood real
 
 **Próximo Passo**
 
@@ -37,5 +37,3 @@ onde iremos:
 - Identificar degenerescências com A_s, \tau, m_\nu
 
 - Definir estratégia de ajuste global
-
-Se quiser seguir: diga "Cap.24".

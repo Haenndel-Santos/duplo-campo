@@ -196,15 +196,15 @@ Meta matemática: escolher uma família, resolver background (Cap.5), então imp
 
 Este capítulo está "fechado" quando você consegue produzir um conjunto explícito de restrições em \beta_n do tipo:
 
-1.  Existência de ramo cosmológico desejado (A ou B).
+1. Existência de ramo cosmológico desejado (A ou B).
 
-2.  Aceleração tardia com w_{\rm eff}\approx -1 (ou o comportamento alvo).
+2. Aceleração tardia com w_{\rm eff}\approx -1 (ou o comportamento alvo).
 
-3.  Higuchi satisfeita no regime relevante.
+3. Higuchi satisfeita no regime relevante.
 
-4.  \mu(k,a)\to 1 em escalas locais (condição de retorno a GR).
+4. \mu(k,a)\to 1 em escalas locais (condição de retorno a GR).
 
-5.  r(t) não diverge (faixa finita).
+5. r(t) não diverge (faixa finita).
 
 **Próximo passo (Cap.14 --- Isocurvatura)**
 
@@ -220,7 +220,7 @@ Ou seja: Cap.14 usa o que definimos aqui.
 
 Eu vou seguir o caminho mais objetivo possível:
 
-✅ Escolha técnica imediata (sem debate longo):
+- Escolha técnica imediata (sem debate longo):
 
 Vamos começar com uma família mínima e derivar as restrições formais.
 
@@ -230,17 +230,11 @@ $(\beta_0,\beta_1,\beta_2,0,\beta_4)$
 
 e trabalhar no ramo dinâmico, mantendo o ramo proporcional como limite de checagem.
 
-Se você concorda, eu escrevo o Cap.13.9 com:
-
 - forma explícita do polinômio do ramo algébrico (para comparação),
 
 - equação diferencial efetiva para r(t) no ramo dinâmico,
 
 - e como isso fixa a combinação de \beta_0,\beta_1,\beta_2,\beta_4 para reproduzir H(z).
-
-Quer que eu siga com F1 + ramo dinâmico, ou prefere que a varredura inicial seja pelo ramo proporcional (mais simples para "calibrar" antes)?
-
-Perfeito --- seguimos com F1:
 
 $$ (\beta_0,\beta_1,\beta_2,\beta_3,\beta_4)=(\beta_0,\beta_1,\beta_2,0,\beta_4). $$
 
@@ -476,15 +470,15 @@ Ou seja: a "escala" de energia escura efetiva fixa um produto m^2M_{\rm eff}^2U(
 
 **Fechamento do Cap.13 (F1) --- o que está matematicamente estabelecido**
 
-1.  Para F1, o ramo algébrico é explícito e fornece r_\star.
+1. Para F1, o ramo algébrico é explícito e fornece r_\star.
 
-2.  A aceleração tardia pode ser obtida exigindo U(r_\star)>0.
+2. A aceleração tardia pode ser obtida exigindo U(r_\star)>0.
 
-3.  Isso produz uma restrição analítica simples:
+3. Isso produz uma restrição analítica simples:
 
 $$ \boxed{\beta_0-\frac{3\beta_1^2}{4\beta_2}>0,\qquad \beta_1\beta_2<0.} $$
 
-4.  O parâmetro \beta_4 é usado para manter consistência do setor f (e afetará o setor tensorial via massa efetiva).
+4. O parâmetro \beta_4 é usado para manter consistência do setor f (e afetará o setor tensorial via massa efetiva).
 
 **Próximo passo: Cap.14 (Isocurvatura) --- ligação direta com F1**
 
@@ -498,8 +492,6 @@ Agora, com F1 definido, o próximo passo matemático é:
 
 $\boxed{m_S^2 \gg H^2 \quad \text{(após a fase primordial)}.}$
 
-Se você confirmar, eu inicio o Cap.14 já no mesmo nível técnico, começando por:
-
 - decomposição adiabática/isocurvatura,
 
 - matriz cinética K_{ij},
@@ -507,5 +499,3 @@ Se você confirmar, eu inicio o Cap.14 já no mesmo nível técnico, começando 
 - matriz de massa \Omega_{ij},
 
 - e condições de ausência de fantasma/gradiente no setor escalar (em função de F1).
-
-Confirmo que avançamos para Cap.14 --- Isocurvatura agora?

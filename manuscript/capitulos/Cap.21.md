@@ -6,13 +6,13 @@
 
 Após o Cap.19--20, a TDCP-F1 sobreviveu ao teste solar via screening tipo Vainshtein do helicity-0 do modo massivo. Agora o critério de sobrevivência sobe de nível:
 
-1.  Ausência de BD ghost no setor bimetric (não-linear completo).
+1. Ausência de BD ghost no setor bimetric (não-linear completo).
 
-2.  Ausência de ghost e de instabilidade de gradiente para flutuações no background screened (regime solar).
+2. Ausência de ghost e de instabilidade de gradiente para flutuações no background screened (regime solar).
 
-3.  Controle EFT: o regime Vainshtein não pode exigir excitação além do cutoff efetivo (ou deve permanecer classicamente controlado).
+3. Controle EFT: o regime Vainshtein não pode exigir excitação além do cutoff efetivo (ou deve permanecer classicamente controlado).
 
-4.  (Opcional, mas importante) características causais: velocidades de propagação e possíveis superluminalidades.
+4. (Opcional, mas importante) características causais: velocidades de propagação e possíveis superluminalidades.
 
 O foco técnico deste capítulo é o ponto 2--3 no setor helicity-0 (o mais crítico para screening), mantendo coerência com HR ghost-free e com a modulação m^2\to m^2F(\phi).
 
@@ -162,9 +162,9 @@ e para r\ll r_V, y cresce.
 
 A consistência EFT exige que:
 
-1.  As correções de operadores mais altos (quartic/quintic Galileon e termos além do truncamento) não dominem indevidamente.
+1. As correções de operadores mais altos (quartic/quintic Galileon e termos além do truncamento) não dominem indevidamente.
 
-2.  As correções quânticas sejam controláveis (regime "classicalization" típico do Vainshtein).
+2. As correções quânticas sejam controláveis (regime "classicalization" típico do Vainshtein).
 
 Um critério operacional clássico (suficiente) é exigir que o regime screened seja dominado pelo mesmo operador que usamos para definir r_V, isto é:
 
@@ -236,8 +236,6 @@ Com esses critérios, a TDCP-F1 permanece não-linearmente plausível no setor s
 
 **Próximo passo (Cap.22)**
 
-Se você confirmar, eu avanço para:
-
 **CAPÍTULO 22 --- Pipeline quantitativo BAO + RSD + WL**
 
 onde vamos:
@@ -249,5 +247,3 @@ onde vamos:
 - propor um pipeline mínimo para ajuste (MCMC / likelihood modular)
 
 - identificar degenerescências com \LambdaCDM, w_0-w_a, \Omega_k, \sum m_\nu
-
-Se quiser seguir: diga "Cap.22".

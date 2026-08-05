@@ -80,15 +80,15 @@ $\boxed{ \text{RSD escala-dependente é o teste mais limpo.} }$
 
 A TDCP-F1 agora:
 
-✔ Tem previsão quantitativa para crescimento
+- Tem previsão quantitativa para crescimento
 
-✔ Pode ser confrontada com BAO
+- Pode ser confrontada com BAO
 
-✔ Pode ser testada com WL
+- Pode ser testada com WL
 
-✔ Tem assinatura distintiva em RSD
+- Tem assinatura distintiva em RSD
 
-✔ Está pronta para implementação em CLASS/CAMB
+- Está pronta para implementação em CLASS/CAMB
 
 **Próximo Passo**
 
@@ -105,5 +105,3 @@ onde vamos:
 - Garantir gauge consistency
 
 - Produzir espectro CMB preliminar
-
-Se quiser seguir: diga "Cap.23".

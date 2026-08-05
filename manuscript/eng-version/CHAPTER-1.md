@@ -105,11 +105,11 @@ The theory predicts:
 
 - Possible deviations in:
 
-  - Structure formation
+ - Structure formation
 
-  - Weak lensing
+ - Weak lensing
 
-  - Redshift-space distortions (RSD)
+ - Redshift-space distortions (RSD)
 
 It also predicts:
 
@@ -129,11 +129,11 @@ The Primordial Dual Field Theory proposes that:
 
 - Its dynamics are governed by:
 
-  - Bimetric gravity
+ - Bimetric gravity
 
-  - A primordial scalar field
+ - A primordial scalar field
 
-  - A structured interaction potential
+ - A structured interaction potential
 
 This framework provides a unified way to address:
 
@@ -679,7 +679,7 @@ It is exchange between regimes.
 
 In a homogeneous universe:
 
-$$T_{\text{ 								}\nu}^{\mu} = \text{diag}( - \rho,p,p,p)
+$$T_{\text{ }\nu}^{\mu} = \text{diag}( - \rho,p,p,p)
 $$
 
 the modified conservation equation becomes:
@@ -797,7 +797,7 @@ $$
 
 For diagonal FLRW metrics:
 
-$$\mathcal{K}_{\text{ 								}\nu}^{\mu} = \text{diag}(\xi,r,r,r)
+$$\mathcal{K}_{\text{ }\nu}^{\mu} = \text{diag}(\xi,r,r,r)
 $$
 
 where:
@@ -1006,9 +1006,9 @@ Perturbations split into three sectors:
 
 The most critical for stability are:
 
-1.  Scalar modes → avoid gradient instabilities
+1. Scalar modes → avoid gradient instabilities
 
-2.  Tensor modes → avoid tachyonic or ghost behavior
+2. Tensor modes → avoid tachyonic or ghost behavior
 
 ------------------------------------------------------------------------
 
@@ -1233,17 +1233,17 @@ Global conservation is preserved.
 
 For full consistency, PDCT requires:
 
-1.  $m_{T}^{2} \geq 2H^{2}$(Higuchi)
+1. $m_{T}^{2} \geq 2H^{2}$(Higuchi)
 
-2.  $\mathbf{K} > 0$(no ghost)
+2. $\mathbf{K} > 0$(no ghost)
 
-3.  $c_{s}^{2} > 0$(no gradient instability)
+3. $c_{s}^{2} > 0$(no gradient instability)
 
-4.  $m_{\text{eff}}^{2} > 0$(late-time stability)
+4. $m_{\text{eff}}^{2} > 0$(late-time stability)
 
-5.  $\det K > 0$
+5. $\det K > 0$
 
-6.  $\mid {\dot{\beta}}_{n}/\beta_{n} \mid \ll H$(adiabatic modulation)
+6. $\mid {\dot{\beta}}_{n}/\beta_{n} \mid \ll H$(adiabatic modulation)
 
 **CHAPTER 7**
 
@@ -1332,7 +1332,7 @@ This deviation is observable.
 
 From Chapter 6, the scalar sector reduces to:
 
-$$\mathbf{Q} = (\zeta,\text{ 						}\sigma,\text{ 						}\delta\phi)
+$$\mathbf{Q} = (\zeta,\text{ }\sigma,\text{ }\delta\phi)
 $$
 
 where:
@@ -1654,16 +1654,16 @@ may be an effective manifestation of structural coupling.
 
 For PDCT to be viable:
 
-1.  On small scales:
+1. On small scales:
 
 $$\mu(k,a) \rightarrow 1
 $$
 
-2.  Growth rate must match observed $f\sigma_{8}$
+2. Growth rate must match observed $f\sigma_{8}$
 
-3.  No excessive scale dependence conflicting with data
+3. No excessive scale dependence conflicting with data
 
-4.  Compatibility with lensing (via $\Phi + \Psi$)
+4. Compatibility with lensing (via $\Phi + \Psi$)
 
 ------------------------------------------------------------------------
 
@@ -2024,9 +2024,9 @@ $$
 
 PDCT naturally produces two modes:
 
-1.  Adiabatic (total curvature)
+1. Adiabatic (total curvature)
 
-2.  Isocurvature (difference between sectors)
+2. Isocurvature (difference between sectors)
 
 Define:
 
@@ -2139,13 +2139,13 @@ The arc from Chapter 1 to Chapter 10 is complete.
 
 ------------------------------------------------------------------------
 
-**📌 Status of the Theory**
+**Status of the Theory**
 
-✔ Structural origin\
-✔ Mathematical consistency\
-✔ Stable perturbations\
-✔ Modified gravity\
-✔ Observationally viable spectrum
+- Structural origin\
+- Mathematical consistency\
+- Stable perturbations\
+- Modified gravity\
+- Observationally viable spectrum
 
 The theory is now a full cosmological model.
 
@@ -2324,11 +2324,11 @@ the echo of the primordial bifurcation.
 
 PDCT satisfies:
 
-✔ $c_{T} = 1$\
-✔ Higuchi bound\
-✔ small graviton mass\
-✔ viable tensor spectrum\
-✔ compatibility with LIGO
+- $c_{T} = 1$\
+- Higuchi bound\
+- small graviton mass\
+- viable tensor spectrum\
+- compatibility with LIGO
 
 **CHAPTER 12**
 
@@ -2993,7 +2993,7 @@ This implies that exactly on the pure algebraic branch the relative mode can bec
 
 Therefore:
 
-🔴 Important technical conclusion
+Important technical conclusion
 
 To study propagating physical isocurvature, we must work slightly away from the pure algebraic branch or include TDCP modulation.
 
@@ -3132,3 +3132,4 @@ cosmological background,
 scalar sector,
 
 stability.
+

@@ -251,3 +251,4 @@ Within this theoretical framework:
 - CMB anisotropies may carry signatures of the primordial bifurcation.
 
 These connections provide **concrete pathways to test the theory through future cosmological observations**.
+

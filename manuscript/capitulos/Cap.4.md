@@ -1,10 +1,6 @@
-Excelente.
-
 Agora entramos na parte que realmente testa a maturidade da teoria.
 
 Se a TDCP sobreviver a este capítulo, ela deixa de ser apenas uma construção elegante e passa a ser estruturalmente consistente.
-
-Respire fundo.
 
 **CAPÍTULO 4**
 
@@ -180,29 +176,29 @@ Ele é a ponte ativa entre os regimes.
 
 Concluímos que:
 
-1.  A identidade de Bianchi é respeitada.
+1. A identidade de Bianchi é respeitada.
 
-2.  A conservação total é preservada.
+2. A conservação total é preservada.
 
-3.  A não conservação individual é consequência da interação.
+3. A não conservação individual é consequência da interação.
 
-4.  A transferência de energia-momento é controlada pelo potencial.
+4. A transferência de energia-momento é controlada pelo potencial.
 
-5.  O campo primordial pode modular essa transferência.
+5. O campo primordial pode modular essa transferência.
 
 A teoria permanece consistente até aqui.
 
-**📌 Estado Atual da TDCP**
+**Estado Atual da TDCP**
 
 Temos agora:
 
-✔ Estrutura ontológica
+- Estrutura ontológica
 
-✔ Formalismo bimétrico ghost-free
+- Formalismo bimétrico ghost-free
 
-✔ Conservação covariante garantida
+- Conservação covariante garantida
 
-✔ Estrutura de troca dinâmica
+- Estrutura de troca dinâmica
 
 O próximo passo natural é:
 
@@ -220,6 +216,5 @@ onde veremos:
 
 - aceleração emergente
 
-Confirmamos que seguimos agora para:
+CAPÍTULO 5 --- Cosmologia FLRW do Duplo Campo Primordial?
 
-👉 CAPÍTULO 5 --- Cosmologia FLRW do Duplo Campo Primordial?

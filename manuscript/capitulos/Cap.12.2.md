@@ -60,15 +60,15 @@ Uma heurística útil é trabalhar em "famílias":
 
 Sugestão TDCP (operacional):
 
-1.  Fixar um ramo (proporcional ou dinâmico).
+1. Fixar um ramo (proporcional ou dinâmico).
 
-2.  Escolher uma família de \beta_n.
+2. Escolher uma família de \beta_n.
 
-3.  Impor: H(z) desejado (expansão tardia).
+3. Impor: H(z) desejado (expansão tardia).
 
-4.  Verificar: Higuchi + G_{\rm eff} (crescimento).
+4. Verificar: Higuchi + G_{\rm eff} (crescimento).
 
-5.  Ajustar só depois.
+5. Ajustar só depois.
 
 **2) Controle de isocurvatura**
 
@@ -164,8 +164,6 @@ Isso é bem TDCP: "memória estrutural".
 
 **4) Consistência UV (teoria efetiva?)**
 
-Aqui você está tocando na pergunta mais profunda:
-
 A TDCP é uma teoria fundamental ou uma teoria efetiva (EFT) válida até certa escala?
 
 A resposta mais defensável (e cientificamente honesta) é tratá-la como teoria efetiva.
@@ -248,8 +246,4 @@ Para transformar esses quatro "riscos" em capítulos robustos, eu sugiro escreve
 
 **Pergunta prática para começarmos AGORA**
 
-Você quer começar por qual dos quatro?
-
 Minha recomendação estrutural é começar por \beta_n porque ele alimenta os outros três (isocurvatura, massa do gravitón, EFT).
-
-Se aprovar, eu já escrevo a seção inicial do "Cap.13" no estilo Cosmos + tese, com equações e critérios claros.

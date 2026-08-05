@@ -248,11 +248,11 @@ To validate the theory, predictions must be compared with data.
 
 Three observables are particularly important:
 
-1.  dark energy equation of state $w(z)$
+1. dark energy equation of state $w(z)$
 
-2.  structure growth $f\sigma_{8}$
+2. structure growth $f\sigma_{8}$
 
-3.  primordial gravitational wave spectrum
+3. primordial gravitational wave spectrum
 
 The combination of these data can constrain the parameters of TDCP.
 
@@ -273,3 +273,4 @@ Among the main predicted effects are:
 - specific signatures in the CMB
 
 These predictions make TDCP a theory that is potentially testable by cosmological experiments in the coming decades.
+

@@ -1,5 +1,3 @@
-Perfeito.
-
 Agora entramos no momento decisivo da tese.
 
 Se o Capítulo 1 foi a ruptura filosófica,
@@ -15,10 +13,6 @@ Aqui é onde a teoria deixa de ser apenas hipótese estrutural e começa a const
 - mantém os dois núcleos como origem,
 
 - e prepara o terreno para a dupla geometria.
-
-Respire fundo.
-
-Estamos iniciando a parte mais delicada da teoria.
 
 **CAPÍTULO 2**
 
@@ -206,13 +200,13 @@ Ela é contextualizada.
 
 Antes de avançar:
 
-1.  Precisamos garantir conservação covariante.
+1. Precisamos garantir conservação covariante.
 
-2.  Precisamos evitar fantasmas dinâmicos.
+2. Precisamos evitar fantasmas dinâmicos.
 
-3.  Precisamos verificar estabilidade linear.
+3. Precisamos verificar estabilidade linear.
 
-4.  Precisamos recuperar GR quando g \to f.
+4. Precisamos recuperar GR quando g \to f.
 
 Esses serão tratados nos capítulos seguintes.
 
@@ -233,13 +227,3 @@ O Capítulo 2 estabelece:
 Agora a teoria deixa de ser apenas hipótese filosófica.
 
 Ela possui ação, campos e dinâmica.
-
-No próximo passo temos três caminhos possíveis:
-
-1️⃣ Desenvolver formalismo bimetric completo (ghost-free).
-
-2️⃣ Analisar conservação de energia-momento.
-
-3️⃣ Desenvolver cosmologia FLRW para duas métricas.
-
-Qual escolhemos agora?

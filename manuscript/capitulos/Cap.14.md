@@ -1,5 +1,3 @@
-Perfeito. Vamos avançar para o Capítulo 14 --- Setor Escalar e Controle de Isocurvatura, mantendo nível técnico rigoroso.
-
 **CAPÍTULO 14**
 
 **Setor Escalar, Modos Adiabáticos/Isocurvatura e Condições de Estabilidade (F1)**
@@ -12,19 +10,19 @@ no fundo FLRW já definido no Cap.13.
 
 Nosso objetivo aqui é:
 
-1.  Extrair a ação quadrática no setor escalar.
+1. Extrair a ação quadrática no setor escalar.
 
-2.  Identificar os graus físicos (adiabático + isocurvatura).
+2. Identificar os graus físicos (adiabático + isocurvatura).
 
-3.  Determinar a massa efetiva do modo isocurvatura m_S^2.
+3. Determinar a massa efetiva do modo isocurvatura m_S^2.
 
-4.  Impor condições:
+4. Impor condições:
 
-    - ausência de fantasma,
+ - ausência de fantasma,
 
-    - ausência de instabilidade de gradiente,
+ - ausência de instabilidade de gradiente,
 
-    - supressão observacional de isocurvatura.
+ - supressão observacional de isocurvatura.
 
 **14.1 Perturbações escalares das métricas**
 
@@ -100,7 +98,7 @@ Observe que:
 
 Portanto:
 
-🔴 Conclusão técnica importante
+Conclusão técnica importante
 
 Para estudar isocurvatura física propagante, precisamos trabalhar ligeiramente fora do ramo algébrico puro ou incluir modulação TDCP.
 
@@ -234,18 +232,12 @@ não é possível escolher \beta_n arbitrariamente sem afetar simultaneamente:
 
 Agora temos duas direções técnicas:
 
-**A) Calcular explicitamente o espectro P_S e P_\zeta**
-
 (inflação TDCP e geração primordial)
 
 ou
-
-**B) Avançar para Cap.15: Massa do gravitón e Higuchi**
 
 (necessário para fechar consistência tensorial)
 
 Dado que o controle escalar depende fortemente da massa efetiva m_T^2 também, o caminho matematicamente mais consistente é:
 
-👉 Ir para Cap.15 --- Setor Tensorial e Limites na Massa do Gravitón.
-
-Se você confirmar, começo imediatamente.
+Ir para Cap.15 --- Setor Tensorial e Limites na Massa do Gravitón.

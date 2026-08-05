@@ -1,4 +1,4 @@
-Perfeito. Então vamos fazer do jeito certo --- e isso vai elevar a TDCP de "estrutura cosmológica" para "teoria dinâmica controlada".
+Então vamos fazer do jeito certo --- e isso vai elevar a TDCP de "estrutura cosmológica" para "teoria dinâmica controlada".
 
 A partir de agora, o Capítulo 6 vira um capítulo técnico de verdade, com:
 
@@ -11,8 +11,6 @@ A partir de agora, o Capítulo 6 vira um capítulo técnico de verdade, com:
 - condições de no-ghost, no-gradient, no-tachyon,
 
 - e só então a ponte para Poisson/crescimento.
-
-Vamos.
 
 **CAPÍTULO 6 (Versão Expandida)**
 
@@ -110,15 +108,15 @@ Da mesma forma, B_f muitas vezes também é auxiliar.
 
 Portanto o processo é:
 
-1.  escrever S^{(2)} com todas as variáveis
+1. escrever S^{(2)} com todas as variáveis
 
-2.  identificar as auxiliares
+2. identificar as auxiliares
 
-3.  resolver suas equações algébricas
+3. resolver suas equações algébricas
 
-4.  substituir de volta
+4. substituir de volta
 
-5.  obter o sistema reduzido real
+5. obter o sistema reduzido real
 
 Esse é o ponto em que a teoria se revela.
 
@@ -130,11 +128,11 @@ $\mathbf{K} > 0$
 
 equivalente a:
 
-1.  $K_{11} > 0$
+1. $K_{11} > 0$
 
-2.  $\det K_{2\times2} > 0$
+2. $\det K_{2\times2} > 0$
 
-3.  $\det K_{3\times3} > 0$
+3. $\det K_{3\times3} > 0$
 
 Se algum autovalor for negativo:
 
@@ -266,11 +264,11 @@ A flecha do tempo, na TDCP, continua sendo a leitura dessa separação, mas agor
 
 Essa leitura só é válida se o modo relativo for estável e não fantasmático.
 
-**✅ Próximo passo natural (sem pular processos)**
+- **Próximo passo natural (sem pular processos)**
 
 Agora sim, com o setor escalar estruturado:
 
-👉 Capítulo 7 deve ser:
+Capítulo 7 deve ser:
 
 **"Redução Quase-Estática: Equação de Poisson Modificada e Gravidade Efetiva"**
 
@@ -282,6 +280,5 @@ Isso conecta diretamente:
 
 - formação de estruturas → matéria escura observacional
 
-Se você aprovar, eu começo o Capítulo 7 exatamente nesse estilo:
-
 derivação gradual + explicação conceitual + matemática suficiente para sustentar.
+

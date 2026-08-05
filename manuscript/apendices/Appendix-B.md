@@ -1,5 +1,3 @@
-Ótimo.
-
 Agora entramos no Anexo B, que é o "motor" matemático do fundo cosmológico: a variação explícita no ansatz FLRW, as duas equações de Friedmann e a dedução formal da constraint de Bianchi (incluindo a separação em ramos).
 
 Vou escrever de forma auto-contida, como apêndice de tese: definindo variáveis, mostrando onde cada termo entra, e deixando claro o que é resultado geral do formalismo HR e o que é específico da TDCP (modulação por F(\chi) e energia do campo \chi).
@@ -130,21 +128,21 @@ $\frac{\partial\mathcal{L}}{\partial N_g}=0.$
 
 Termos dependentes de N_g:
 
-1.  -3M_g^2 a\dot a^2/N_g → derivada:
+1. -3M_g^2 a\dot a^2/N_g → derivada:
 
 $$ \frac{\partial}{\partial N_g}\left(-3M_g^2\frac{a\dot a^2}{N_g}\right) = -3M_g^2 a\dot a^2\left(-\frac{1}{N_g^2}\right) = \frac{3M_g^2 a\dot a^2}{N_g^2}. $$
 
-2.  interação:
+2. interação:
 
 $$ \frac{\partial}{\partial N_g}\left(-m^2M_{eff}^2 N_g a^3F V\right) = - m^2 M_{eff}^2 a^3 F V. $$
 
-3.  escalar:
+3. escalar:
 
 $$ \frac{\partial}{\partial N_g}\left(a^3\frac{1}{2N_g}\dot\chi^2\right) = -\frac{a^3}{2N_g^2}\dot\chi^2, $$
 
 $$ \frac{\partial}{\partial N_g}\left(-a^3 N_g U\right) = - a^3 U. $$
 
-4.  matéria:
+4. matéria:
 
 $\frac{\partial}{\partial N_g}(-N_g a^3\rho_m)= -a^3\rho_m.$
 
@@ -358,15 +356,15 @@ Na TDCP, se F(\chi) evolui lentamente, isso se torna uma "Λ efetiva" quase cons
 
 Neste anexo derivamos, a partir da ação reduzida no minisuperspace:
 
-1.  Equação de Friedmann do setor g:
+1. Equação de Friedmann do setor g:
 
 $> 3M_g^2 H_g^2=\rho_m+\rho_\chi+\rho_{int}^{(g)}.$
 
-2.  Equação de Friedmann do setor f:
+2. Equação de Friedmann do setor f:
 
 $> 3M_f^2 H_f^2=\rho_{int}^{(f)}.$
 
-3.  Constraint de Bianchi, que impõe a estrutura de ramos:
+3. Constraint de Bianchi, que impõe a estrutura de ramos:
 
 $> (\beta_1+2\beta_2 r+\beta_3 r^2)(H_g-\xi H_f)=0.$
 
@@ -378,8 +376,4 @@ Esses resultados são a base matemática do corpo principal da TDCP, e são a fu
 
 - estabilidade completa (Cap. 5 e anexo C/D).
 
-Se você aprovar o Anexo B, seguimos para:
-
 **ANEXO C --- Análise Quadrática do Setor Escalar (matriz cinética, ghost e estabilidade de gradiente)**
-
-Posso continuar?

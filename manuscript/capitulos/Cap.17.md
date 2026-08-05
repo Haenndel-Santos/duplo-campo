@@ -1,5 +1,3 @@
-Perfeito --- vamos para (2) comparação quantitativa com \LambdaCDM via equação de crescimento.
-
 Aqui o objetivo é derivar, no regime linear, o que a TDCP prevê para crescimento de estruturas e como isso se traduz em um objeto observável:
 
 - \mu(k,a) (modificação do Poisson / "força gravitacional efetiva")
@@ -9,8 +7,6 @@ Aqui o objetivo é derivar, no regime linear, o que a TDCP prevê para crescimen
 - $f\sigma_8(z)$
 
 - e eventualmente slip \eta_{\rm slip}(k,a)=\Phi/\Psi
-
-Vou escrever de forma direta e utilizável.
 
 **CAPÍTULO 17**
 
@@ -210,19 +206,17 @@ $k_\star(a)\sim a\,m_S(a).$
 
 Você fecha essa etapa quando consegue declarar:
 
-1.  Uma forma paramétrica para \mu(k,a) derivada de m_S(a) e \alpha(a).
+1. Uma forma paramétrica para \mu(k,a) derivada de m_S(a) e \alpha(a).
 
-2.  Um intervalo de m_{S0} e \alpha_0 compatível com:
+2. Um intervalo de m_{S0} e \alpha_0 compatível com:
 
-    - retorno a GR local,
+ - retorno a GR local,
 
-    - RSD e lensing,
+ - RSD e lensing,
 
-    - e aceleração tardia já fixada no background.
+ - e aceleração tardia já fixada no background.
 
 **Agora: escolha técnica mínima para prosseguir**
-
-Para avançarmos de forma objetiva, preciso que você escolha qual assinatura você quer priorizar:
 
 A) TDCP "quase indistinguível" no crescimento (apenas background muda).
 
@@ -231,10 +225,6 @@ A) TDCP "quase indistinguível" no crescimento (apenas background muda).
 B) TDCP "distinguível" por dependência de escala (Yukawa).
 
 $→ m_{S0}\sim H_0 e \alpha_0\sim 0.05--0.1.$
-
-Como você quer algo radical mas validável, eu recomendo B, porque dá previsões observacionais reais.
-
-Confirma que seguimos com B (Yukawa detectável), e eu já escrevo a seção 17.10 com:
 
 - parametrização explícita (m_{S0},p,\alpha_0,q),
 
@@ -296,9 +286,9 @@ Predição central: existe uma transição em k que se move com o tempo, de esca
 
 Queremos:
 
-1.  efeito perceptível em crescimento tardio
+1. efeito perceptível em crescimento tardio
 
-2.  sem violar retorno a GR local nem explodir estruturas
+2. sem violar retorno a GR local nem explodir estruturas
 
 Escolha segura (ordem de grandeza):
 
@@ -384,11 +374,11 @@ Assinatura conjunta (RSD + WL):
 
 Você pediu robustez: então deixamos claro como isso "vem" de F1.
 
-1.  massa efetiva do modo relativo:
+1. massa efetiva do modo relativo:
 
 $m_S^2(a)\propto m^2F(\phi(a))(\beta_1+2\beta_2 r(a)).$
 
-2.  acoplamento efetivo:
+2. acoplamento efetivo:
 
 $$ \alpha(a)\sim \frac{\epsilon^2(a)}{1+\epsilon^2(a)}, \qquad \epsilon(a)=\frac{M_f r(a)}{M_g}. $$
 
@@ -404,13 +394,13 @@ Isso é compatível com a lógica TDCP: "separação estrutural" tardia altera a
 
 Se TDCP-F1 (com Yukawa detectável) for correto, esperamos:
 
-1.  \mu(k,a) apresenta transição em torno de k_\star(a)\sim a m_S(a).
+1. \mu(k,a) apresenta transição em torno de k_\star(a)\sim a m_S(a).
 
-2.  crescimento aumentado em escalas k\gg k_\star: f\sigma_8 ligeiramente acima do GR em redshifts baixos.
+2. crescimento aumentado em escalas k\gg k_\star: f\sigma_8 ligeiramente acima do GR em redshifts baixos.
 
-3.  slip gravitacional \eta_{\rm slip}\neq 1 em mesmas escalas.
+3. slip gravitacional \eta_{\rm slip}\neq 1 em mesmas escalas.
 
-4.  tensão controlada entre RSD e lensing se \Sigma\neq \mu.
+4. tensão controlada entre RSD e lensing se \Sigma\neq \mu.
 
 **Como fechamos esta etapa antes de simulação?**
 
@@ -433,5 +423,3 @@ Cap.18 --- Confronto com observáveis (ainda sem simulação):
 - mostramos quais faixas de k RSD/WL testam,
 
 - e quais redshifts maximizam o sinal.
-
-Se você confirmar, eu inicio o Cap.18 e já faço a conversão teórica de escalas (em termos de H_0) para a notação padrão usada em cosmologia observacional, e monto a matriz "o que medir / onde medir / qual sinal esperado".

@@ -1,14 +1,12 @@
-Perfeito.
-
 Vamos começar então pelo Anexo A, e aqui o nível será realmente técnico --- no padrão de apêndice de tese de doutorado em gravitação modificada.
 
 Este anexo terá três objetivos:
 
-1.  Derivar rigorosamente a estrutura do potencial Hassan--Rosen.
+1. Derivar rigorosamente a estrutura do potencial Hassan--Rosen.
 
-2.  Mostrar explicitamente como o ghost de Boulware--Deser é eliminado.
+2. Mostrar explicitamente como o ghost de Boulware--Deser é eliminado.
 
-3.  Especializar o formalismo para o caso FLRW usado na TDCP.
+3. Especializar o formalismo para o caso FLRW usado na TDCP.
 
 Nada será apenas citado --- tudo será construído.
 
@@ -100,11 +98,11 @@ Hassan e Rosen demonstraram que:
 
 A prova completa envolve análise Hamiltoniana:
 
-1.  Introdução de variáveis ADM.
+1. Introdução de variáveis ADM.
 
-2.  Identificação de constraints primários.
+2. Identificação de constraints primários.
 
-3.  Verificação de fechamento algébrico.
+3. Verificação de fechamento algébrico.
 
 Resultado:
 
@@ -194,10 +192,6 @@ A TDCP não inventa uma nova gravidade arbitrária.
 
 Ela utiliza a única extensão bimétrica consistente conhecida e a estende dinamicamente via χ.
 
-Se você aprovar o Anexo A, seguimos para:
-
 **ANEXO B --- Derivação Completa das Equações de Friedmann Bimétricas (com variação explícita e constraint detalhado)**
 
 Esse será ainda mais técnico.
-
-Posso continuar?

@@ -1,12 +1,8 @@
-Perfeito. Então seguimos sem pular etapas.
-
 Agora que o Capítulo 6 está robusto e o setor escalar foi reduzido a graus físicos com condições de estabilidade, o próximo passo lógico é pegar esse setor escalar reduzido e perguntar:
 
 Como a gravidade "aparece" para a matéria no regime sub-horizonte?
 
 Isso é o coração da ponte entre a TDCP e observações de estrutura em larga escala.
-
-Vamos ao Capítulo 7.
 
 **CAPÍTULO 7**
 
@@ -168,8 +164,6 @@ Essa expressão tem uma interpretação física clara:
 
 - Em escalas grandes, os termos extras emergem → gravidade efetiva muda.
 
-Isso é exatamente o que você quer:
-
 alteração cosmológica sem quebrar física local.
 
 **7.7 O papel do "vácuo dinâmico" na gravidade efetiva**
@@ -244,19 +238,19 @@ Assim, um capítulo reforça o anterior e abre o próximo --- exatamente como vo
 
 Concluímos:
 
-1.  A TDCP prevê uma gravidade efetiva:
+1. A TDCP prevê uma gravidade efetiva:
 
 $> G \to G_{\text{eff}}(k,a)=G\mu(k,a)$
 
-2.  A teoria prevê possível slip:
+2. A teoria prevê possível slip:
 
 $> \Phi\neq\Psi$
 
-3.  O retorno a GR ocorre naturalmente em escalas pequenas.
+3. O retorno a GR ocorre naturalmente em escalas pequenas.
 
-4.  A assinatura cosmológica aparece em escalas grandes.
+4. A assinatura cosmológica aparece em escalas grandes.
 
-5.  O "vácuo dinâmico" é o mecanismo estrutural interpretativo desse setor extra.
+5. O "vácuo dinâmico" é o mecanismo estrutural interpretativo desse setor extra.
 
 O próximo capítulo natural é:
 
@@ -268,6 +262,5 @@ $$ \ddot\delta + 2H\dot\delta = 4\pi G_{\text{eff}}(k,a)\rho\delta $$
 
 e conectar com observações.
 
-Se você aprovar, eu inicio o Capítulo 8 mantendo o mesmo estilo:
-
 narrativa + derivação + consistência progressiva.
+

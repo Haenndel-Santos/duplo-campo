@@ -214,3 +214,4 @@ $$E = mc^{2}
 $$
 
 In this way, the origin of mass, cosmic inflation, and the structure of space-time can be understood as different aspects of the same fundamental process that occurred during the first fractions of a second in the history of the cosmos.
+

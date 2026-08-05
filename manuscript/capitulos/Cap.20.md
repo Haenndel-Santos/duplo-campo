@@ -4,17 +4,17 @@
 
 O Cap.19 mostrou que o helicity-0 do modo massivo (representado por \pi) entra em regime Vainshtein e suprime a quinta força em escalas solares. Agora precisamos fechar o bloco solar de maneira formal:
 
-1.  Construir a solução estática fraca no gauge isotrópico para g_{\mu\nu} (métrica física acoplada à matéria).
+1. Construir a solução estática fraca no gauge isotrópico para g_{\mu\nu} (métrica física acoplada à matéria).
 
-2.  Expressar as correções induzidas por \pi nos potenciais \Phi(r), \Psi(r).
+2. Expressar as correções induzidas por \pi nos potenciais \Phi(r), \Psi(r).
 
-3.  Traduzir isso nos parâmetros PPN, principalmente
+3. Traduzir isso nos parâmetros PPN, principalmente
 
 $$ > \gamma_{\rm PPN}(r)=\frac{\Psi(r)}{\Phi(r)}\,,\qquad \beta_{\rm PPN}. $$
 
-4.  Obter desigualdades paramétricas (em termos de \alpha_V, Z, c_3, m^2F(\phi)) que garantem compatibilidade com limites solares (Cassini etc.).
+4. Obter desigualdades paramétricas (em termos de \alpha_V, Z, c_3, m^2F(\phi)) que garantem compatibilidade com limites solares (Cassini etc.).
 
-5.  Incorporar corretamente o efeito de F(\phi) e controlar a possibilidade de "quinta força" adicional via \phi.
+5. Incorporar corretamente o efeito de F(\phi) e controlar a possibilidade de "quinta força" adicional via \phi.
 
 **20.2 Ansätze: métrica estática isotrópica e regime fraco**
 
@@ -136,9 +136,9 @@ $m_{\rm eff}^2 = m^2F(\phi).$
 
 Existem duas vias potenciais de violação solar:
 
-1.  \phi acoplar diretamente à matéria (termo do tipo \phi T/M).
+1. \phi acoplar diretamente à matéria (termo do tipo \phi T/M).
 
-2.  \phi gerar gradientes locais que alteram F(\phi) e, portanto, r_V ou a força extra.
+2. \phi gerar gradientes locais que alteram F(\phi) e, portanto, r_V ou a força extra.
 
 Pela construção fornecida, a matéria acopla apenas a g:
 
@@ -180,29 +180,27 @@ e o bound dominante é o de \gamma.
 
 **Conclusão do Capítulo 20 (Bloco Solar)**
 
-1.  O helicity-0 screened induz correções nos potenciais:
+1. O helicity-0 screened induz correções nos potenciais:
 
 $$ > \epsilon_{\Phi,\Psi}(r)\sim \alpha_V^2\left(\frac{r}{r_V}\right)^{3/2}. $$
 
-2.  O parâmetro PPN principal:
+2. O parâmetro PPN principal:
 
 $$ > \boxed{ \gamma(r)-1 \simeq \mathcal{C}_\gamma\,\alpha_V^2\left(\frac{r}{r_V}\right)^{3/2}, \qquad \mathcal{C}_\gamma\sim \mathcal{O}(1). } $$
 
-3.  O raio de Vainshtein na TDCP-F1 inclui corretamente F(\phi):
+3. O raio de Vainshtein na TDCP-F1 inclui corretamente F(\phi):
 
 $$ > \boxed{ r_V \sim \left(\frac{GM}{m^2F_0}\right)^{1/3}\times \mathcal{O}(1). } $$
 
-4.  Para o Sol, com m\sim 30\text{--}300\,H_0 (e mesmo m\sim 100H_0):
+4. Para o Sol, com m\sim 30\text{--}300\,H_0 (e mesmo m\sim 100H_0):
 
 $$ > r_V^\odot \gg 1\,{\rm AU} \Rightarrow |\gamma-1|\ \text{é automaticamente pequeno}. $$
 
-5.  Condição adicional TDCP-específica:
+5. Condição adicional TDCP-específica:
 
 $$ > \boxed{ \left|\delta F/F_0\right|_{AU}\ll 1 \quad\Rightarrow\quad \phi \text{ não reintroduz quinta força local relevante}. } $$
 
 **Próximo passo (Cap.21)**
-
-Se você quiser, eu sigo agora com:
 
 **CAPÍTULO 21 --- Estabilidade Não-Linear: ausência de ghosts/gradientes e consistência do setor helicity-0**
 
@@ -215,5 +213,3 @@ onde vamos formalizar:
 - ausência de instabilidade superluminal patológica (quando aplicável)
 
 - consistência do EFT no regime Vainshtein (\partial^2\pi \ll \Lambda_3^3 ou regime controlado)
-
-Só diga: "seguir para o Cap.21".

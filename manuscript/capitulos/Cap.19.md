@@ -1,5 +1,3 @@
-Perfeito.
-
 Abaixo está o Capítulo 19 completo, consolidado, incorporando:
 
 - Estrutura HR ghost-free
@@ -218,20 +216,19 @@ A verificação formal será feita no Cap.20.
 
 A TDCP-F1:
 
-✔ Possui mecanismo Vainshtein consistente
+- Possui mecanismo Vainshtein consistente
 
-✔ Suprime quinta força solar
+- Suprime quinta força solar
 
-✔ Mantém modificações cosmológicas
+- Mantém modificações cosmológicas
 
-✔ Permanece EFT-consistente
+- Permanece EFT-consistente
 
-✔ Satisfaz critério preliminar PPN
+- Satisfaz critério preliminar PPN
 
 $$ \boxed{ \text{A teoria sobrevive ao teste solar fundamental.} } $$
-
-Se desejar, posso agora iniciar imediatamente:
 
 **CAPÍTULO 20 --- Solução Estática Completa e Parâmetros PPN**
 
 onde derivaremos explicitamente \gamma_{\rm PPN} e limites observacionais.
+

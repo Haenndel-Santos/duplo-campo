@@ -1,10 +1,6 @@
-Perfeito.
-
 Agora entramos no ponto onde a teoria deixa o plano puramente estrutural e começa a conversar diretamente com o universo observável.
 
 Se a TDCP não produzir uma cosmologia coerente, ela não sobrevive.
-
-Respire fundo.
 
 **CAPÍTULO 5**
 
@@ -188,38 +184,28 @@ A TDCP contém o modelo padrão como caso limite.
 
 Temos agora:
 
-✔ Duas métricas FLRW
+- Duas métricas FLRW
 
-✔ Equações de Friedmann duplas
+- Equações de Friedmann duplas
 
-✔ Termo de interação explícito
+- Termo de interação explícito
 
-✔ Dois ramos dinâmicos
+- Dois ramos dinâmicos
 
-✔ Aceleração emergente
+- Aceleração emergente
 
-✔ Recuperação do modelo padrão
+- Recuperação do modelo padrão
 
 A teoria agora conversa diretamente com observações cosmológicas.
 
-**📌 Estado Atual da TDCP**
+**Estado Atual da TDCP**
 
-Estrutura ontológica ✔
+- Estrutura ontológica
 
-Formalismo bimétrico ✔
+- Formalismo bimétrico
 
-Conservação covariante ✔
+- Conservação covariante
 
-Cosmologia FLRW ✔
+- Cosmologia FLRW
 
 A teoria agora está matematicamente funcional.
-
-Agora temos três caminhos naturais:
-
-1️⃣ Analisar estabilidade de perturbações cosmológicas
-
-2️⃣ Derivar crescimento de estruturas
-
-3️⃣ Estudar espectro de ondas gravitacionais e massa efetiva
-
-Qual você escolhe para o próximo capítulo?

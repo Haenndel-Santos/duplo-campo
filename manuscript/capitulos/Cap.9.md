@@ -1,5 +1,3 @@
-Perfeito.
-
 Agora entramos em um ponto delicado e decisivo:
 
 a TDCP precisa mostrar que não apenas altera a gravidade --- mas que gera um espectro de potência compatível com o universo observado.
@@ -17,8 +15,6 @@ Esse capítulo conecta:
 - dados da CMB
 
 Sem ele, a teoria é elegante --- mas ainda abstrata.
-
-Vamos.
 
 **CAPÍTULO 9**
 
@@ -118,13 +114,13 @@ crescimento dependente de escala.
 
 A TDCP pode gerar:
 
-**1️⃣ Supressão em grandes escalas**
+**1. Supressão em grandes escalas**
 
 Se m_\sigma pequeno:
 
 → modificação em k \lesssim H_0
 
-**2️⃣ Amplificação intermediária**
+**2. Amplificação intermediária**
 
 $Se \Delta_\sigma > 0$
 
@@ -132,7 +128,7 @@ $Se \Delta_\sigma > 0$
 
 → possível ajuste de tensão \sigma_8
 
-**3️⃣ Deslizamento gravitacional**
+**3. Deslizamento gravitacional**
 
 $\Phi \neq \Psi$
 
@@ -188,34 +184,24 @@ Ele é a memória estrutural da bifurcação.
 
 Até aqui, a TDCP:
 
-✔ preserva GR local
+- preserva GR local
 
-✔ possui fundo cosmológico viável
+- possui fundo cosmológico viável
 
-✔ é estável linearmente
+- é estável linearmente
 
-✔ modifica gravidade em regime grande escala
+- modifica gravidade em regime grande escala
 
-✔ produz espectro modificável
+- produz espectro modificável
 
-✔ pode ser testada via CMB e LSS
+- pode ser testada via CMB e LSS
 
 Ela agora é confrontável com dados reais.
 
 **Próximo Passo Natural**
 
-Agora existem dois caminhos naturais:
-
-1️⃣ Ondas gravitacionais e massa do gravitón massivo
-
-2️⃣ Conexão completa com inflação e origem do espectro primordial
-
 Se seguimos a ordem estrutural lógica:
 
-👉 Precisamos estudar ondas gravitacionais, porque elas testam diretamente o setor tensorial que já analisamos no Capítulo 6.
-
-Confirma que seguimos para:
+Precisamos estudar ondas gravitacionais, porque elas testam diretamente o setor tensorial que já analisamos no Capítulo 6.
 
 **CAPÍTULO 10 --- Ondas Gravitacionais e Massa Efetiva do Modo Massivo**
-
-ou quer aprofundar mais o espectro antes de avançar?

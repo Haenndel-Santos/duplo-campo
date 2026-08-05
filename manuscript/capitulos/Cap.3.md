@@ -1,7 +1,3 @@
-Excelente.
-
-Então seguimos a sequência lógica que sustenta a teoria:
-
 Capítulo 3 → Formalismo Bimétrico Completo (estrutura matemática sólida).
 
 Depois virão conservação e cosmologia FLRW.
@@ -11,8 +7,6 @@ Agora entramos na parte mais técnica da tese até aqui.
 Mas manteremos o estilo híbrido:
 
 matemática rigorosa, porém narrada com clareza estrutural.
-
-Respire fundo.
 
 **CAPÍTULO 3**
 
@@ -195,15 +189,3 @@ O formalismo bimétrico fornece:
 O próximo passo natural é:
 
 Desenvolver a cosmologia FLRW completa para duas métricas e estudar a dinâmica da expansão.
-
-Antes de seguir:
-
-Você quer que o Capítulo 4 seja:
-
-A) Cosmologia FLRW detalhada com todas as equações derivadas
-
-B) Conservação covariante rigorosa antes da cosmologia
-
-C) Inserção completa do campo primordial dentro do formalismo bimétrico
-
-Qual seguimos?

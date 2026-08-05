@@ -1,5 +1,3 @@
-Perfeito.
-
 Vamos agora ao Capítulo 15 --- Setor Tensorial, Massa do Gravitón e Condições de Higuchi, mantendo rigor técnico completo.
 
 **CAPÍTULO 15**
@@ -14,19 +12,19 @@ no fundo FLRW.
 
 Nosso objetivo:
 
-1.  Extrair a ação quadrática tensorial.
+1. Extrair a ação quadrática tensorial.
 
-2.  Identificar modos massless e massive.
+2. Identificar modos massless e massive.
 
-3.  Derivar a massa efetiva do gravitón.
+3. Derivar a massa efetiva do gravitón.
 
-4.  Impor:
+4. Impor:
 
-    - Higuchi bound,
+ - Higuchi bound,
 
-    - estabilidade,
+ - estabilidade,
 
-    - consistência com observações cosmológicas.
+ - consistência com observações cosmológicas.
 
 **15.1 Perturbações tensorais**
 
@@ -134,9 +132,9 @@ Isso é bom do ponto de vista Higuchi.
 
 Observações de ondas gravitacionais exigem que:
 
-1.  O modo massless se propague com c_T=1.
+1. O modo massless se propague com c_T=1.
 
-2.  O modo massivo não altere propagação observável.
+2. O modo massivo não altere propagação observável.
 
 Isso exige:
 
@@ -166,9 +164,9 @@ Se F(\phi) evolui:
 
 Isso permite:
 
-✔ Higuchi no passado
+- Higuchi no passado
 
-✔ Massa efetiva pequena hoje
+- Massa efetiva pequena hoje
 
 sem tuning extremo de \beta_n.
 
@@ -220,14 +218,12 @@ Agora só resta fechar o ciclo de validação com:
 
 Precisamos analisar:
 
-1.  Escala de forte acoplamento.
+1. Escala de forte acoplamento.
 
-2.  Estrutura de EFT.
+2. Estrutura de EFT.
 
-3.  Estabilidade radiativa.
+3. Estabilidade radiativa.
 
-4.  Domínio de validade.
+4. Domínio de validade.
 
 Isso fecha o bloco matemático.
-
-Confirmo que avançamos para Cap.16?

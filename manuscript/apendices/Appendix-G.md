@@ -1,5 +1,3 @@
-Excelente.
-
 Agora entramos no Anexo G, que não é técnico no sentido algébrico, mas é estruturalmente fundamental.
 
 Ele não é "ornamento filosófico" --- ele esclarece:
@@ -327,5 +325,3 @@ Este anexo organizará:
 - forma compacta das equações centrais,
 
 - versão "axiomática" consolidada da TDCP.
-
-Quer que avancemos para o Anexo H?

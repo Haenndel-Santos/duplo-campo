@@ -1,10 +1,8 @@
-Perfeito --- vamos para o Anexo D, que trata do setor tensorial e da condição de Higuchi com o máximo de clareza e rigor.
-
 Este anexo é importante por dois motivos:
 
-1.  O setor tensorial é o lugar onde a massa efetiva do modo spin-2 aparece de forma mais "limpa";
+1. O setor tensorial é o lugar onde a massa efetiva do modo spin-2 aparece de forma mais "limpa";
 
-2.  A condição de Higuchi é uma restrição universal (quase inevitável) para qualquer graviton massivo em fundo acelerado.
+2. A condição de Higuchi é uma restrição universal (quase inevitável) para qualquer graviton massivo em fundo acelerado.
 
 A TDCP, por modular o potencial por F(\chi), torna a massa efetiva dinâmica, então precisamos deixar isso cristalino.
 
@@ -16,15 +14,15 @@ A TDCP, por modular o potencial por F(\chi), torna a massa efetiva dinâmica, en
 
 Queremos:
 
-1.  Derivar a equação de movimento para perturbações tensorias na bimetric HR.
+1. Derivar a equação de movimento para perturbações tensorias na bimetric HR.
 
-2.  Mostrar como surge o modo massless e o modo massivo.
+2. Mostrar como surge o modo massless e o modo massivo.
 
-3.  Definir a massa efetiva m_{\text{eff}}^2 no fundo cosmológico.
+3. Definir a massa efetiva m_{\text{eff}}^2 no fundo cosmológico.
 
-4.  Derivar a condição de Higuchi e explicar seu sentido físico.
+4. Derivar a condição de Higuchi e explicar seu sentido físico.
 
-5.  Explicar como a TDCP altera m_{\text{eff}}^2 via F(\chi).
+5. Explicar como a TDCP altera m_{\text{eff}}^2 via F(\chi).
 
 **D.2 Perturbações tensoriais nas duas métricas**
 
@@ -194,11 +192,11 @@ aceleração surge via separação estrutural acumulada (η), não por tornar o 
 
 A presença de m_T^2(t) implica:
 
-1.  Supressão de ondas gravitacionais em escalas muito longas (k/a \lesssim m_T).
+1. Supressão de ondas gravitacionais em escalas muito longas (k/a \lesssim m_T).
 
-2.  Dispersão: fase/frequência pode ser modificada para modos cosmológicos.
+2. Dispersão: fase/frequência pode ser modificada para modos cosmológicos.
 
-3.  Pequenas alterações no fundo estocástico de baixíssima frequência.
+3. Pequenas alterações no fundo estocástico de baixíssima frequência.
 
 Mas, se m_T \sim H_0, então:
 
@@ -206,9 +204,9 @@ Mas, se m_T \sim H_0, então:
 
 - e ficam mais relevantes para:
 
-  - PTA (pulsar timing arrays) em regime ultra-lento,
+ - PTA (pulsar timing arrays) em regime ultra-lento,
 
-  - e observações cosmológicas indiretas.
+ - e observações cosmológicas indiretas.
 
 **D.11 Conclusão do Anexo D**
 
@@ -236,10 +234,6 @@ Isso conecta diretamente:
 
 - falsificabilidade tensorial (Cap. 8).
 
-Se você aprovar o Anexo D, o próximo é:
-
 **ANEXO E --- Sistema Dinâmico Completo para Simulação Numérica (conjunto fechado de ODEs, variáveis adimensionais e estratégia de integração)**
 
 Mesmo você não rodando Python agora, este anexo serve como "manual de simulação" do modelo.
-
-Posso continuar?

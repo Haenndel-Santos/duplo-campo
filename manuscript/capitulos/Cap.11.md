@@ -1,5 +1,3 @@
-Perfeito.
-
 Agora entramos em um ponto crítico da teoria.
 
 Até aqui, tudo foi consistente no setor escalar.
@@ -13,8 +11,6 @@ Mas o setor tensorial é onde a TDCP pode:
 - entrar em conflito direto com observações de LIGO/Virgo e CMB.
 
 Não há espaço para ambiguidade aqui.
-
-Vamos fazer isso com rigor.
 
 **CAPÍTULO 11**
 
@@ -52,9 +48,9 @@ $h_{ij}^{(g)} , \quad h_{ij}^{(f)}$
 
 Diagonalizando, obtemos:
 
-1️⃣ Um modo massless h_0
+1. Um modo massless h_0
 
-2️⃣ Um modo massivo h_m
+2. Um modo massivo h_m
 
 A ação quadrática no fundo FLRW é:
 
@@ -84,9 +80,9 @@ $c_T^2 = 1$
 
 Se a TDCP preserva estrutura Hassan--Rosen pura, então:
 
-✔ velocidade da luz preservada
+- velocidade da luz preservada
 
-✔ compatível com GW170817
+- compatível com GW170817
 
 Qualquer desvio aqui destruiria a teoria.
 
@@ -204,48 +200,40 @@ as ondas gravitacionais são o eco dessa separação.
 
 A TDCP no setor tensorial:
 
-✔ preserva c_T = 1
+- preserva c_T = 1
 
-✔ admite gravitón massivo
+- admite gravitón massivo
 
-✔ impõe condição de Higuchi
+- impõe condição de Higuchi
 
-✔ permite supressão tensorial primordial
+- permite supressão tensorial primordial
 
-✔ é compatível com LIGO se m_T pequeno
+- é compatível com LIGO se m_T pequeno
 
 A teoria sobrevive ao teste tensorial.
 
-**📌 Estado Atual da Teoria**
+**Estado Atual da Teoria**
 
 Agora temos:
 
-- Origem estrutural ✔
+- Origem estrutural
 
-- Formalismo consistente ✔
+- Formalismo consistente
 
-- Estabilidade escalar ✔
+- Estabilidade escalar
 
-- Gravidade modificada ✔
+- Gravidade modificada
 
-- Crescimento de estruturas ✔
+- Crescimento de estruturas
 
-- Espectro primordial ✔
+- Espectro primordial
 
-- Ondas gravitacionais ✔
+- Ondas gravitacionais
 
 A arquitetura está completa.
 
 **Próximo Passo Final**
 
-Agora restam dois movimentos possíveis:
-
-1️⃣ Síntese completa e mapa observacional
-
-2️⃣ Formalização canônica e quantização completa
-
 Se estamos fechando o livro teórico, a próxima etapa natural é:
 
-👉 Síntese Final e Mapa de Testabilidade Observacional.
-
-Você confirma que seguimos para a síntese final da teoria?
+Síntese Final e Mapa de Testabilidade Observacional.

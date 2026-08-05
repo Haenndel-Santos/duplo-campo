@@ -14,15 +14,15 @@ $\{\Omega_b,\Omega_c,H_0,A_s,n_s,\tau,\alpha_0,m_{S0},p,q\}$
 
 A TDCP-F1 agora:
 
-✔ Está formalmente implementável em CLASS
+- Está formalmente implementável em CLASS
 
-✔ Preserva gauge consistency
+- Preserva gauge consistency
 
-✔ Pode gerar espectros CMB
+- Pode gerar espectros CMB
 
-✔ Permite comparação com BAO/RSD/WL
+- Permite comparação com BAO/RSD/WL
 
-✔ Está pronta para likelihood real
+- Está pronta para likelihood real
 
 **Próximo Passo**
 
@@ -38,11 +38,9 @@ onde iremos:
 
 - Definir estratégia de ajuste global
 
-Se quiser seguir: diga "Cap.24".
-
 **25.5 Matriz de Degenerescências Principais**
 
-**1️⃣ \alpha_0 ↔ A_s**
+**1. \alpha_0 ↔ A_s**
 
 Aumento em \alpha_0 aumenta crescimento.
 
@@ -54,7 +52,7 @@ Quebra:
 
 - WL
 
-**2️⃣ m_{S0} ↔ \sum m_\nu**
+**2. m_{S0} ↔ \sum m_\nu**
 
 Neutrinos suprimem crescimento em altas-k.
 
@@ -68,7 +66,7 @@ Assinatura distintiva:
 
 $\text{joelho escala-dependente em } f\sigma_8(k)$
 
-**3️⃣ p,q ↔ w_0-w_a**
+**3. p,q ↔ w_0-w_a**
 
 Evolução temporal pode imitar DE dinâmica.
 
@@ -78,7 +76,7 @@ Quebra:
 
 - combinação BAO + WL
 
-**4️⃣ \beta_0 ↔ Slip degeneracy**
+**4. \beta_0 ↔ Slip degeneracy**
 
 Afeta WL mais que RSD.
 
@@ -96,25 +94,25 @@ Com base nos capítulos anteriores:
 
 Região onde:
 
-✔ Solar screening seguro
+- Solar screening seguro
 
-✔ LSS modificável
+- LSS modificável
 
-✔ CMB primário quase intacto
+- CMB primário quase intacto
 
-✔ Lensing alterável
+- Lensing alterável
 
 **25.7 Falsificabilidade Clara**
 
 A TDCP-F1 pode ser falsificada se:
 
-1.  Não for possível reproduzir simultaneamente:
+1. Não for possível reproduzir simultaneamente:
 
 $> C_\ell^{\phi\phi} \text{ e } f\sigma_8(z)$
 
-2.  O joelho escala-dependente não aparecer.
+2. O joelho escala-dependente não aparecer.
 
-3.  O ajuste exigir:
+3. O ajuste exigir:
 
 $> \alpha_0 \to 0$
 >
@@ -124,15 +122,15 @@ $> \alpha_0 \to 0$
 
 A TDCP-F1 agora:
 
-✔ Passou no teste solar
+- Passou no teste solar
 
-✔ É não-linearmente estável
+- É não-linearmente estável
 
-✔ É implementável numericamente
+- É implementável numericamente
 
-✔ Tem assinatura observacional distintiva
+- Tem assinatura observacional distintiva
 
-✔ Pode ser ajustada globalmente
+- Pode ser ajustada globalmente
 
 Isso significa:
 
@@ -171,15 +169,3 @@ Ideia conceitual
 para
 
 Modelo gravitacional consistente, implementável e falsificável.
-
-Se você quiser, agora podemos:
-
-- 🔬 Simular previsões específicas
-
-- 📊 Construir paper draft formal
-
-- 🧠 Avaliar riscos conceituais profundos
-
-- 🚀 Pensar em extensões (ondas gravitacionais, early-universe, inflação)
-
-Qual direção você quer seguir?

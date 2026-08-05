@@ -40,7 +40,7 @@ $$ k \gg k_\star \quad \Rightarrow \quad \mu(k,a)\simeq 1+\alpha(a) $$
 
 Resultado observacional: o efeito fica quase sem dependência de escala no regime que os surveys medem (a escala-dependência estaria apenas em escalas ultra-grandes, próximas ao horizonte).
 
-✅ Isso ainda é "detectável" (como offset em \mu), mas não como "joelho Yukawa dentro do LSS".
+- Isso ainda é "detectável" (como offset em \mu), mas não como "joelho Yukawa dentro do LSS".
 
 **18.3 Para ter Yukawa dentro de k\sim 0.01\text{--}0.1, precisamos m_{S0}\gg H_0**
 
@@ -194,11 +194,11 @@ O ponto chave: escolher m_{S0}\sim 30\text{--}300\,H_0 não viola EFT automatica
 
 **Fechamento do Cap.18: o que está decidido e o que falta**
 
-✅ Definimos como traduzir m_{S0} para escalas k observáveis.
+- Definimos como traduzir m_{S0} para escalas k observáveis.
 
-✅ Estabelecemos benchmarks realistas para ter joelho Yukawa dentro de LSS.
+- Estabelecemos benchmarks realistas para ter joelho Yukawa dentro de LSS.
 
-✅ Especificamos quais observáveis distinguem TDCP de \LambdaCDM (RSD vs WL + slip).
+- Especificamos quais observáveis distinguem TDCP de \LambdaCDM (RSD vs WL + slip).
 
 Falta (próximo capítulo): transformar isso em um "modelo de previsão" fechado para comparação, isto é:
 
@@ -221,3 +221,4 @@ Cap.19 --- Previsões quantitativas de primeira ordem (sem simulação):
 Antes de eu iniciar o Cap.19, escolha um benchmark para fixarmos números:
 
 $$ B1 (k_\star\simeq 0.01\,h\,{\rm Mpc}^{-1}) ou B2 (k_\star\simeq 0.1\,h\,{\rm Mpc}^{-1})? $$
+

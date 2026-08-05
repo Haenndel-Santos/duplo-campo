@@ -1,5 +1,3 @@
-Perfeito.
-
 Agora fechamos o arco que começou no Capítulo 1.
 
 Voltamos à origem --- mas agora com toda a estrutura matemática construída.
@@ -100,9 +98,9 @@ Gerando espectro aproximadamente invariante de escala.
 
 Na TDCP temos dois tipos de flutuação:
 
-1️⃣ Modo adiabático (curvatura total)
+1. Modo adiabático (curvatura total)
 
-2️⃣ Modo isocurvatura (diferença entre setores)
+2. Modo isocurvatura (diferença entre setores)
 
 Definimos:
 
@@ -182,13 +180,13 @@ Essa é uma conexão profunda entre:
 
 Para ser viável, a TDCP deve satisfazer:
 
-1️⃣ P_\zeta(k) quase invariante
+1. P_\zeta(k) quase invariante
 
-2️⃣ Isocurvatura pequena
+2. Isocurvatura pequena
 
-3️⃣ Não gerar não-gaussianidade excessiva
+3. Não gerar não-gaussianidade excessiva
 
-4️⃣ Amplitude correta A_s \sim 2.1 \times 10^{-9}
+4. Amplitude correta A_s \sim 2.1 \times 10^{-9}
 
 Isso impõe:
 
@@ -214,21 +212,21 @@ Agora o ciclo primordial está completo:
 
 O arco Cap.1 → Cap.10 está fechado.
 
-**📌 Estado Atual da TDCP**
+**Estado Atual da TDCP**
 
 A teoria agora possui:
 
-✔ Origem estrutural
+- Origem estrutural
 
-✔ Formalismo consistente
+- Formalismo consistente
 
-✔ Estabilidade controlada
+- Estabilidade controlada
 
-✔ Gravidade modificada
+- Gravidade modificada
 
-✔ Crescimento de estruturas
+- Crescimento de estruturas
 
-✔ Espectro primordial coerente
+- Espectro primordial coerente
 
 Ela não é mais apenas uma hipótese conceitual.
 
@@ -238,7 +236,7 @@ Ela é um modelo cosmológico estruturado.
 
 Agora sim, com o ciclo primordial fechado, podemos abordar:
 
-👉 CAPÍTULO 11 --- Ondas Gravitacionais, Massa do Gravitón Massivo e Assinaturas Tensorais
+CAPÍTULO 11 --- Ondas Gravitacionais, Massa do Gravitón Massivo e Assinaturas Tensorais
 
 Porque agora:
 
@@ -247,5 +245,3 @@ Porque agora:
 - precisamos ver como surgem flutuações tensoriais
 
 - e como o modo massivo se comporta primordialmente
-
-Confirmamos que avançamos para o setor tensorial primordial?

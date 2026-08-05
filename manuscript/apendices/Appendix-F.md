@@ -1,5 +1,3 @@
-Perfeito.
-
 Agora entramos no Anexo F, que fecha o bloco técnico com algo fundamental para qualquer teoria que queira ser levada a sério:
 
 Um mapa claro do espaço de parâmetros,
@@ -312,13 +310,13 @@ O espaço de parâmetros da TDCP:
 
 - possui uma região estreita natural onde:
 
-  - aceleração emerge,
+ - aceleração emerge,
 
-  - estabilidade é mantida,
+ - estabilidade é mantida,
 
-  - GR local é recuperada,
+ - GR local é recuperada,
 
-  - observações são respeitadas.
+ - observações são respeitadas.
 
 Este anexo encerra o bloco técnico.
 
@@ -327,8 +325,6 @@ Agora restam:
 - Anexo G --- Expansão Filosófica Profunda
 
 - Anexo H --- Formalização Canônica e Consolidação Final da Estrutura
-
-Minha sugestão:
 
 Agora entramos no Anexo G, que será mais conceitual, mas ainda rigoroso --- conectando:
 
@@ -339,5 +335,3 @@ Agora entramos no Anexo G, que será mais conceitual, mas ainda rigoroso --- con
 - ontologia geométrica,
 
 - comparação com Penrose, entropia gravitacional e irreversibilidade.
-
-Quer seguir para o Anexo G?

@@ -1,5 +1,3 @@
-Perfeito.
-
 Agora não estamos mais desenvolvendo um setor isolado.
 
 Estamos fazendo algo mais importante:
@@ -45,8 +43,6 @@ Ela é:
 - uma separação progressiva entre dois campos fundamentais.
 
 **12.2 Estrutura completa da teoria**
-
-Vamos organizar em camadas.
 
 **Camada 1 --- Ontologia**
 
@@ -100,23 +96,23 @@ A arquitetura está fechada.
 
 **12.3 O que a TDCP explica de forma integrada?**
 
-**1️⃣ Origem da expansão**
+**1. Origem da expansão**
 
 Não como explosão térmica simples,
 
 mas como instabilidade estrutural.
 
-**2️⃣ Energia escura**
+**2. Energia escura**
 
 Não como constante cosmológica imposta,
 
 mas como efeito emergente da separação estrutural.
 
-**3️⃣ Parte da matéria escura**
+**3. Parte da matéria escura**
 
 Possivelmente como efeito geométrico do segundo setor.
 
-**4️⃣ Flecha do tempo**
+**4. Flecha do tempo**
 
 Como leitura da separação logarítmica:
 
@@ -124,7 +120,7 @@ $t \sim \frac{1}{\Delta H} \ln r$
 
 Tempo como medida da diferença estrutural crescente.
 
-**5️⃣ Gravidade**
+**5. Gravidade**
 
 Como interação relacional entre dois campos geométricos.
 
@@ -136,7 +132,7 @@ Uma teoria só é fisicamente relevante se for testável.
 
 A TDCP pode ser testada via:
 
-**🔹 CMB**
+**CMB**
 
 - Tilt espectral
 
@@ -144,7 +140,7 @@ A TDCP pode ser testada via:
 
 - ISW tardio
 
-**🔹 Estrutura em larga escala**
+**Estrutura em larga escala**
 
 - Índice de crescimento f(a)
 
@@ -152,11 +148,11 @@ A TDCP pode ser testada via:
 
 - Dependência de escala
 
-**🔹 Lensing gravitacional**
+**Lensing gravitacional**
 
 - Slip gravitacional \Phi \neq \Psi
 
-**🔹 Ondas gravitacionais**
+**Ondas gravitacionais**
 
 - Massa do gravitón massivo
 
@@ -164,7 +160,7 @@ A TDCP pode ser testada via:
 
 - Eventual desvio em espectro estocástico
 
-**🔹 Constante de Hubble**
+**Constante de Hubble**
 
 - Possível modificação do crescimento tardio
 
@@ -188,25 +184,25 @@ Ela é singular porque:
 
 **12.6 Pontos Fortes**
 
-✔ Estrutura matemática consistente
+- Estrutura matemática consistente
 
-✔ Sem fantasmas (sob condições)
+- Sem fantasmas (sob condições)
 
-✔ Recupera GR local
+- Recupera GR local
 
-✔ Compatível com ΛCDM como limite
+- Compatível com ΛCDM como limite
 
-✔ Gera previsões testáveis
+- Gera previsões testáveis
 
 **12.7 Pontos Sensíveis**
 
-⚠ Ajuste de parâmetros βₙ
+Ajuste de parâmetros βₙ
 
-⚠ Controle de isocurvatura
+Controle de isocurvatura
 
-⚠ Limites de massa do gravitón
+Limites de massa do gravitón
 
-⚠ Consistência UV (teoria efetiva?)
+Consistência UV (teoria efetiva?)
 
 Esses são pontos que exigem investigação futura.
 
@@ -230,7 +226,7 @@ A gravidade não é apenas curvatura.
 
 É a resposta relacional entre dois campos correlacionados.
 
-**📌 Estado Final da Construção**
+**Estado Final da Construção**
 
 A teoria agora possui:
 
@@ -251,13 +247,3 @@ A teoria agora possui:
 - Mapa observacional
 
 Ela é coerente.
-
-Agora há três caminhos possíveis:
-
-1️⃣ Transformar tudo isso em versão formal de artigo científico
-
-2️⃣ Escrever versão literária consolidada estilo "Cosmos"
-
-3️⃣ Desenvolver formalização canônica e quantização completa
-
-Qual direção você quer seguir agora?

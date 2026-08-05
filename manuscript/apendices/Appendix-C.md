@@ -1,6 +1,4 @@
-Perfeito. Agora entramos no Anexo C, o mais delicado tecnicamente: o setor escalar é onde gravidade modificada costuma "morrer" (ghost/gradiente).
-
-Vou estruturar este anexo como um apêndice de tese de verdade:
+Agora entramos no Anexo C, o mais delicado tecnicamente: o setor escalar é onde gravidade modificada costuma "morrer" (ghost/gradiente).
 
 - definir as perturbações (duas métricas + χ),
 
@@ -184,9 +182,9 @@ K_{ij}(t) = \begin{pmatrix} K_{11}(t) & K_{12}(t) \\ K_{12}(t) & K_{22}(t) \end{
 
 A energia cinética deve ser positiva definida:
 
-1.  $K_{11} > 0$
+1. $K_{11} > 0$
 
-2.  $\det K = K_{11}K_{22}-K_{12}^2 > 0.$
+2. $\det K = K_{11}K_{22}-K_{12}^2 > 0.$
 
 Essas duas condições equivalem a dizer que os autovalores \kappa_{\pm} de K são positivos.
 
@@ -302,30 +300,26 @@ O que muda é o acoplamento temporal efetivo do potencial, que afeta o backgroun
 
 Neste anexo estabelecemos:
 
-1.  O setor escalar propagante na TDCP contém 2 modos físicos:
+1. O setor escalar propagante na TDCP contém 2 modos físicos:
 
-    - helicidade-0 do spin-2 massivo,
+ - helicidade-0 do spin-2 massivo,
 
-    - flutuação do campo estrutural \chi.
+ - flutuação do campo estrutural \chi.
 
-2.  A ação quadrática reduzida pode ser escrita na forma canônica:
+2. A ação quadrática reduzida pode ser escrita na forma canônica:
 
 $$ S^{(2)}_{\text{esc}} = \frac12\int dt\,d^3k\,a^3 \left[ \dot Q^T K \dot Q - Q^T\left(\frac{k^2}{a^2}G+M\right)Q \right]. $$
 
-3.  As condições fundamentais de saúde dinâmica são:
+3. As condições fundamentais de saúde dinâmica são:
 
-    - K positiva definida (sem ghost),
+ - K positiva definida (sem ghost),
 
-    - autovalores de K^{-1}G positivos (sem instabilidade de gradiente),
+ - autovalores de K^{-1}G positivos (sem instabilidade de gradiente),
 
-    - Higuchi no regime acelerado,
+ - Higuchi no regime acelerado,
 
-    - modulação F(\chi) adiabática.
+ - modulação F(\chi) adiabática.
 
 Este anexo fornece o "check-list" matemático que deve ser imposto em qualquer ajuste numérico futuro do background (a,r,\chi).
 
-Se você aprovar o Anexo C, seguimos para:
-
 **ANEXO D --- Setor Tensorial e Condição de Higuchi (derivação detalhada do modo massivo em fundo FLRW e limite de Sitter)**
-
-Posso continuar?

@@ -1,5 +1,3 @@
-Perfeito. Vamos fechar o bloco de validação com o Capítulo 16 --- Consistência UV e Estrutura de Teoria Efetiva (EFT), mantendo foco técnico e critérios verificáveis.
-
 **CAPÍTULO 16**
 
 **Consistência UV, Escala de Forte Acoplamento e Estrutura EFT (F1)**
@@ -12,13 +10,13 @@ e fundo FLRW já estabelecido.
 
 Objetivos:
 
-1.  Determinar a escala de forte acoplamento.
+1. Determinar a escala de forte acoplamento.
 
-2.  Verificar ausência de novos fantasmas abaixo do cutoff.
+2. Verificar ausência de novos fantasmas abaixo do cutoff.
 
-3.  Definir domínio de validade da teoria.
+3. Definir domínio de validade da teoria.
 
-4.  Avaliar estabilidade radiativa (naturalidade).
+4. Avaliar estabilidade radiativa (naturalidade).
 
 **16.1 Estrutura EFT do setor massivo**
 
@@ -84,9 +82,9 @@ Como M_{\rm eff}\sim M_{\rm Pl} é enorme comparado a H, essa condição é faci
 
 Conclusão:
 
-✔ Higuchi não força a teoria fora do regime EFT
+- Higuchi não força a teoria fora do regime EFT
 
-✔ Existe janela paramétrica consistente
+- Existe janela paramétrica consistente
 
 **16.4 Estrutura helicity-0 e ausência de Boulware-Deser ghost**
 
@@ -136,7 +134,7 @@ para m\ll M_{\rm Pl}, que é exatamente o regime cosmológico.
 
 Conclusão:
 
-✔ F1 é tecnicamente natural como EFT cosmológica.
+- F1 é tecnicamente natural como EFT cosmológica.
 
 **16.6 Domínio de validade cosmológica**
 
@@ -182,28 +180,26 @@ Não há inconsistência estrutural evidente dentro de F1 sob essas condições.
 
 Com F1:
 
-✔ Fundo cosmológico consistente
+- Fundo cosmológico consistente
 
-✔ Setor escalar estável e controlável
+- Setor escalar estável e controlável
 
-✔ Higuchi satisfeita
+- Higuchi satisfeita
 
-✔ Estrutura EFT consistente
+- Estrutura EFT consistente
 
-✔ Ausência de ghost
+- Ausência de ghost
 
 **Próxima etapa lógica**
 
 Agora existem duas direções naturais:
 
-1.  Construir modelo explícito para F(\phi)
+1. Construir modelo explícito para F(\phi)
 
 > (dinâmica concreta que realiza as condições acima)
 
 ou
 
-2.  Comparação quantitativa com ΛCDM via equação de crescimento \mu(k,a)
+2. Comparação quantitativa com ΛCDM via equação de crescimento \mu(k,a)
 
 > (testabilidade observacional)
-
-Qual você prefere abordar agora?
