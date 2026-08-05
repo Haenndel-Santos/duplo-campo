@@ -1,206 +1,214 @@
-**CHAPTER --- Cosmological Entanglement, Dark Energy, and Observational Signatures in TDCP**
+> **NUMERAÇÃO PROVISÓRIA --- sujeita à Tarefa 4/5**
+>
+> Este capítulo é a tradução do texto original em inglês encontrado em
+> `Eng Version/CHAPTER 1.docx` (seção "Cosmological Entanglement, Dark
+> Energy, and Observational Signatures in TDCP"), sem numeração formal no
+> arquivo de origem (era referido informalmente como "Cap.26.2" por dar
+> sequência direta ao capítulo anterior, não por ser uma revisão dele ---
+> por isso, seguindo a convenção da Tarefa 2d, não herda o sufixo ".2").
+> Recebe aqui o número 28 apenas para manter uma sequência de arquivo
+> válida; seu lugar definitivo depende do veredito da Tarefa 4
+> (`integration_assessment.md`), implementado na Tarefa 5. Notação e
+> equações (g^{(1)}/g^{(2)}, L_int, Λ_eff) são as do texto original,
+> **preservadas sem alteração** --- a compatibilidade delas com o
+> formalismo bimétrico g/f dos Capítulos 2--5 é exatamente o que a
+> Tarefa 4 avalia, não decidido aqui na tradução.
 
-**1. Introduction**
+**CAPÍTULO 28**
 
-The **Primordial Dual Field Theory (TDCP)** proposes that the observable universe did not emerge as a single isolated geometry, but as part of a **dual cosmological system**, originating from a primordial bifurcation of space-time.
+**Emaranhamento Cosmológico, Energia Escura e Assinaturas Observacionais na TDCP**
 
-After the initial quantum collapse, two independent metrics emerge:
+**28.1 Introdução**
 
-$${g_{\mu\nu}^{(1)}
-}{g_{\mu\nu}^{(2)}
-}$$
+A **Teoria do Duplo Campo Primordial (TDCP)** propõe que o universo
+observável não emergiu como uma única geometria isolada, mas como parte
+de um **sistema cosmológico duplo**, originado de uma bifurcação
+primordial do espaço-tempo.
 
-These two geometries evolve as distinct universes, yet remain connected through:
+Após o colapso quântico inicial, duas métricas independentes emergem:
 
-- a mediating scalar field
+$$g_{\mu\nu}^{(1)} \quad \text{e} \quad g_{\mu\nu}^{(2)}$$
 
-- a residual gravitational coupling
+Essas duas geometrias evoluem como universos distintos, mas permanecem
+conectadas através de:
 
-- primordial quantum entanglement
+- um campo escalar mediador,
 
-This entanglement may leave **observable signatures** in the structure of the universe, particularly in:
+- um acoplamento gravitacional residual,
 
-- dark energy
+- emaranhamento quântico primordial.
 
-- structure growth
+Esse emaranhamento pode deixar **assinaturas observáveis** na estrutura
+do universo, particularmente em:
 
-- gravitational waves
+- energia escura,
 
-- CMB anisotropies
+- crescimento de estruturas,
 
-------------------------------------------------------------------------
+- ondas gravitacionais,
 
-**2. Primordial Cosmological Entanglement**
+- anisotropias da CMB.
 
-At the moment of the space-time bifurcation, the two emerging domains are not completely independent.
+**28.2 Emaranhamento Cosmológico Primordial**
 
-The global quantum state can be described as an entangled state:
+No momento da bifurcação do espaço-tempo, os dois domínios emergentes
+não são completamente independentes.
 
-$$\mid \Psi\rangle = \sum_{i}^{}c_{i} \mid g_{1}^{(i)}\rangle \otimes \mid g_{2}^{(i)}\rangle
-$$
+O estado quântico global pode ser descrito como um estado emaranhado:
 
-where:
+$$\mid \Psi\rangle = \sum_{i} c_{i} \mid g_{1}^{(i)}\rangle \otimes \mid g_{2}^{(i)}\rangle$$
 
-- $g_{1}^{(i)}$ represents geometric states of universe 1
+onde:
 
-- $g_{2}^{(i)}$ represents geometric states of universe 2
+- $g_{1}^{(i)}$ representa estados geométricos do universo 1,
 
-This type of structure implies that fluctuations in one domain may influence the other through deep quantum correlations.
+- $g_{2}^{(i)}$ representa estados geométricos do universo 2.
 
-This phenomenon can be described by a **cosmological entanglement entropy**:
+Esse tipo de estrutura implica que flutuações em um domínio podem
+influenciar o outro através de correlações quânticas profundas.
 
-$$S_{ent} = - Tr(\rho\ln\rho)
-$$
+Esse fenômeno pode ser descrito por uma **entropia de emaranhamento
+cosmológico**:
 
-where $\rho$ is the reduced density matrix of one of the universes.
+$$S_{ent} = - Tr(\rho\ln\rho)$$
 
-------------------------------------------------------------------------
+onde $\rho$ é a matriz densidade reduzida de um dos universos.
 
-**3. Vacuum Energy and Coupling Between Universes**
+**28.3 Energia de Vácuo e Acoplamento Entre Universos**
 
-Even after inflation, the two universes remain connected through an interaction term.
+Mesmo após a inflação, os dois universos permanecem conectados através
+de um termo de interação.
 
-The total energy of the system can be written as:
+A energia total do sistema pode ser escrita como:
 
-$$E_{tot} = E_{1} + E_{2} + E_{int}
-$$
+$$E_{tot} = E_{1} + E_{2} + E_{int}$$
 
-where:
+onde:
 
-- $E_{1}$ is the energy of universe 1
+- $E_{1}$ é a energia do universo 1,
 
-- $E_{2}$ is the energy of universe 2
+- $E_{2}$ é a energia do universo 2,
 
-- $E_{int}$ is the coupling energy
+- $E_{int}$ é a energia de acoplamento.
 
-This interaction term may take an effective form such as:
+Esse termo de interação pode assumir uma forma efetiva como:
 
-$$L_{int} = \lambda\chi\left( g_{\mu\nu}^{(1)}-g_{\mu\nu}^{(2)} \right)^{2}
-$$
+$$L_{int} = \lambda\chi\left( g_{\mu\nu}^{(1)}-g_{\mu\nu}^{(2)} \right)^{2}$$
 
-where:
+onde:
 
-- $\chi$ is the primordial mediating field
+- $\chi$ é o campo mediador primordial,
 
-- $\lambda$ is a coupling constant.
+- $\lambda$ é uma constante de acoplamento.
 
-------------------------------------------------------------------------
+**28.4 Origem da Energia Escura na TDCP**
 
-**4. Origin of Dark Energy in TDCP**
+Na cosmologia padrão, a energia escura é introduzida como uma constante
+cosmológica:
 
-In standard cosmology, dark energy is introduced as a cosmological constant:
+$$\Lambda$$
 
-$$\Lambda
-$$
+Na TDCP, propõe-se uma origem diferente.
 
-In TDCP, a different origin is proposed.
+A energia escura pode ser interpretada como **energia remanescente do
+acoplamento entre os dois domínios cosmológicos**.
 
-Dark energy may be interpreted as **residual energy from the coupling between the two cosmological domains**.
+O termo de constante cosmológica efetiva seria então:
 
-The effective cosmological constant term would then be:
+$$\Lambda_{eff} = \Lambda_{0} + \Lambda_{ent}$$
 
-$$\Lambda_{eff} = \Lambda_{0} + \Lambda_{ent}
-$$
+onde:
 
-where:
+- $\Lambda_{0}$ é a energia de vácuo local,
 
-- $\Lambda_{0}$ is the local vacuum energy
+- $\Lambda_{ent}$ é a contribuição do emaranhamento cosmológico.
 
-- $\Lambda_{ent}$ is the contribution from cosmological entanglement.
+Essa contribuição pode variar lentamente no tempo, levando a um
+comportamento dinâmico suave da energia escura.
 
-This contribution may vary slowly over time, leading to a mild dynamical behavior of dark energy.
+**28.5 Ondas Gravitacionais Entre Domínios**
 
-------------------------------------------------------------------------
+Se os dois universos permanecem acoplados, perturbações gravitacionais
+em um domínio podem gerar efeitos no outro.
 
-**5. Gravitational Waves Between Domains**
+A equação de propagação para ondas gravitacionais pode ser escrita como:
 
-If the two universes remain coupled, gravitational perturbations in one domain may generate effects in the other.
+$$\square h_{\mu\nu}^{(1)} + m_{g}^{2}h_{\mu\nu}^{(1)} = \kappa h_{\mu\nu}^{(2)}$$
 
-The propagation equation for gravitational waves may be written as:
+onde:
 
-$$\square h_{\mu\nu}^{(1)} + m_{g}^{2}h_{\mu\nu}^{(1)} = \kappa h_{\mu\nu}^{(2)}
-$$
+- $m_{g}$ é uma massa efetiva do modo gravitacional,
 
-where:
+- $\kappa$ representa o acoplamento entre os domínios.
 
-- $m_{g}$ is an effective mass of the gravitational mode
+Isso implica que as ondas gravitacionais podem exibir:
 
-- $\kappa$ represents the coupling between domains.
+- modos adicionais,
 
-This implies that gravitational waves may exhibit:
+- mistura de polarização,
 
-- additional modes
+- amortecimento anômalo.
 
-- polarization mixing
+**28.6 Assinaturas na Radiação Cósmica de Fundo (CMB)**
 
-- anomalous damping.
+Flutuações primordiais amplificadas durante a inflação podem carregar
+marcas do emaranhamento entre os universos.
 
-------------------------------------------------------------------------
+Isso pode produzir:
 
-**6. Signatures in the Cosmic Microwave Background (CMB)**
+- correlações não-gaussianas específicas,
 
-Primordial fluctuations amplified during inflation may carry imprints of entanglement between the universes.
+- anisotropias em grande escala,
 
-This may produce:
+- padrões anômalos de fase.
 
-- specific non-Gaussian correlations
+Esses efeitos poderiam aparecer como:
 
-- large-scale anisotropies
+- assimetria hemisférica,
 
-- anomalous phase patterns.
+- alinhamento anômalo de multipolos,
 
-These effects could appear as:
+- modulações de potência em grande escala,
 
-- hemispherical asymmetry
+algumas das quais já foram observadas nos **dados do Planck**.
 
-- anomalous alignment of multipoles
+**28.7 Crescimento de Estruturas em Larga Escala**
 
-- large-scale power modulations
+O acoplamento residual entre universos pode alterar como as estruturas
+gravitacionais se formam.
 
-some of which have already been observed in **Planck data**.
+A equação de crescimento da densidade pode adquirir uma correção:
 
-------------------------------------------------------------------------
+$$\ddot{\delta} + 2H\dot{\delta} = 4\pi G_{eff}\rho\delta$$
 
-**7. Growth of Large-Scale Structures**
+onde:
 
-Residual coupling between universes may alter how gravitational structures form.
+$$G_{eff} = G(1 + \epsilon)$$
 
-The density growth equation may acquire a correction:
+e $\epsilon$ depende da intensidade do acoplamento entre os dois
+universos.
 
-$$\ddot{\delta} + 2H\dot{\delta} = 4\pi G_{eff}\rho\delta
-$$
+Isso pode alterar:
 
-where:
+- o crescimento de galáxias,
 
-$$G_{eff} = G(1 + \epsilon)
-$$
+- a formação de halos,
 
-and $\epsilon$ depends on the strength of the coupling between the two universes.
+- a distribuição de matéria escura.
 
-This may alter:
+**28.8 Previsões Observacionais**
 
-- galaxy growth
+A TDCP produz diversas previsões potencialmente observáveis:
 
-- halo formation
+**1. Variação temporal suave da energia escura**
 
-- dark matter distribution.
+Equação de estado:
 
-------------------------------------------------------------------------
+$$w(z) \neq - 1$$
 
-**8. Observational Predictions**
+**2. Modos adicionais de ondas gravitacionais**
 
-TDCP produces several potentially observable predictions:
-
-**1. Mild temporal variation of dark energy**
-
-Equation of state:
-
-$$w(z) \neq - 1
-$$
-
-**2. Additional gravitational wave modes**
-
-detectable by:
+detectáveis por:
 
 - **LISA**
 
@@ -208,13 +216,13 @@ detectable by:
 
 - **Cosmic Explorer**
 
-**3. Anomalous correlations in the CMB**
+**3. Correlações anômalas na CMB**
 
-particularly at large angular scales.
+particularmente em grandes escalas angulares.
 
-**4. Small modifications in the structure growth rate**
+**4. Pequenas modificações na taxa de crescimento de estruturas**
 
-detectable in surveys such as:
+detectáveis em levantamentos como:
 
 - **Euclid**
 
@@ -222,33 +230,37 @@ detectable in surveys such as:
 
 - **LSST**
 
-------------------------------------------------------------------------
+**28.9 Relação com a Gravidade Bimétrica**
 
-**9. Relation to Bimetric Gravity**
+A estrutura matemática da TDCP tem fortes semelhanças com as **teorias
+de gravidade bimétrica de Hassan--Rosen**.
 
-The mathematical structure of TDCP has strong similarities with **Hassan--Rosen bimetric gravity theories**.
+Nessas teorias, duas métricas coexistem e interagem através de um
+potencial não linear.
 
-In these theories, two metrics coexist and interact through a non-linear potential.
+A TDCP fornece uma **interpretação cosmológica física** para essa
+estrutura matemática:
 
-TDCP provides a **physical cosmological interpretation** for this mathematical structure:
+as duas métricas correspondem a dois domínios cosmológicos originados
+de uma bifurcação primordial.
 
-the two metrics correspond to two cosmological domains originating from a primordial bifurcation.
+**28.10 Conclusão**
 
-------------------------------------------------------------------------
+A TDCP propõe que o universo observável é parte de um **sistema
+cosmológico duplo**, onde dois domínios do espaço-tempo emergem de um
+estado quântico primordial.
 
-**10. Conclusion**
+O emaranhamento entre esses domínios pode gerar efeitos observáveis na
+dinâmica cosmológica.
 
-TDCP proposes that the observable universe is part of a **dual cosmological system**, where two domains of space-time emerge from a primordial quantum state.
+Dentro desse arcabouço teórico:
 
-The entanglement between these domains may generate observable effects in cosmological dynamics.
+- a energia escura pode emergir do acoplamento entre universos,
 
-Within this theoretical framework:
+- as ondas gravitacionais podem carregar informação entre domínios,
 
-- dark energy may emerge from coupling between universes
+- as anisotropias da CMB podem carregar assinaturas da bifurcação
+  primordial.
 
-- gravitational waves may carry information between domains
-
-- CMB anisotropies may carry signatures of the primordial bifurcation.
-
-These connections provide **concrete pathways to test the theory through future cosmological observations**.
-
+Essas conexões fornecem **caminhos concretos para testar a teoria
+através de observações cosmológicas futuras**.

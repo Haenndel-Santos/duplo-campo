@@ -1,56 +1,69 @@
-**CHAPTER --- Observational Predictions of TDCP for Cosmological Experiments**
+> **NUMERAÇÃO PROVISÓRIA --- sujeita à Tarefa 4/5**
+>
+> Este capítulo é a tradução do texto original em inglês encontrado em
+> `Eng Version/CHAPTER 1.docx` (seção "Observational Predictions of TDCP
+> for Cosmological Experiments"), sem numeração formal no arquivo de
+> origem. Recebe aqui o número 29 apenas para manter uma sequência de
+> arquivo válida; seu lugar definitivo depende do veredito da Tarefa 4
+> (`integration_assessment.md`), implementado na Tarefa 5.
 
-**1. Introduction**
+**CAPÍTULO 29**
 
-A cosmological theory can only be considered physically relevant if it produces **testable predictions**.
+**Previsões Observacionais da TDCP para Experimentos Cosmológicos**
 
-The **Primordial Dual Field Theory (TDCP)** predicts that the observable universe is coupled to a second cosmological domain through a primordial scalar field and a bimetric gravitational potential.
+**29.1 Introdução**
 
-This coupling may generate **observable deviations** from the standard **ΛCDM model** in several cosmological regimes.
+Uma teoria cosmológica só pode ser considerada fisicamente relevante se
+produzir **previsões testáveis**.
 
-The main areas where these effects may be detected are:
+A **Teoria do Duplo Campo Primordial (TDCP)** prevê que o universo
+observável está acoplado a um segundo domínio cosmológico através de um
+campo escalar primordial e de um potencial gravitacional bimétrico.
 
-- anisotropies in the **cosmic microwave background (CMB)**
+Esse acoplamento pode gerar **desvios observáveis** do **modelo ΛCDM**
+padrão em diversos regimes cosmológicos.
 
-- growth of large-scale structures
+As principais áreas onde esses efeitos podem ser detectados são:
 
-- primordial gravitational waves
+- anisotropias na **radiação cósmica de fundo (CMB)**,
 
-- evolution of dark energy
+- crescimento de estruturas em larga escala,
 
-These predictions can be tested with data from current and future cosmological experiments.
+- ondas gravitacionais primordiais,
 
-------------------------------------------------------------------------
+- evolução da energia escura.
 
-**2. Dark Energy Dynamics**
+Essas previsões podem ser testadas com dados de experimentos
+cosmológicos atuais e futuros.
 
-In the **ΛCDM model**, dark energy is described by a cosmological constant with equation of state:
+**29.2 Dinâmica da Energia Escura**
 
-$$w = - 1
-$$
+No **modelo ΛCDM**, a energia escura é descrita por uma constante
+cosmológica com equação de estado:
 
-In TDCP, dark energy has a dynamical contribution associated with the field $\chi$.
+$$w = - 1$$
 
-The effective density can be written as:
+Na TDCP, a energia escura tem uma contribuição dinâmica associada ao
+campo $\chi$.
 
-$$\rho_{DE} = \rho_{\Lambda} + \rho_{\chi}
-$$
+A densidade efetiva pode ser escrita como:
 
-The equation of state may then vary with redshift:
+$$\rho_{DE} = \rho_{\Lambda} + \rho_{\chi}$$
 
-$$w(z) = - 1 + \epsilon(z)
-$$
+A equação de estado pode então variar com o redshift:
 
-where $\epsilon(z)$ depends on the evolution of the field $\chi$.
+$$w(z) = - 1 + \epsilon(z)$$
 
-TDCP prediction:
+onde $\epsilon(z)$ depende da evolução do campo $\chi$.
 
-$$\mid w + 1 \mid \sim 10^{- 2} - 10^{- 3}
-$$
+Previsão da TDCP:
 
-This variation may be detected by high-precision cosmological surveys.
+$$\mid w + 1 \mid \sim 10^{- 2} - 10^{- 3}$$
 
-Relevant experiments:
+Essa variação pode ser detectada por levantamentos cosmológicos de alta
+precisão.
+
+Experimentos relevantes:
 
 - Euclid
 
@@ -58,74 +71,67 @@ Relevant experiments:
 
 - LSST
 
-------------------------------------------------------------------------
+**29.3 Crescimento de Estruturas**
 
-**3. Growth of Structures**
+O crescimento da densidade de matéria é descrito pela equação:
 
-The growth of matter density is described by the equation:
+$$\ddot{\delta} + 2H\dot{\delta} = 4\pi G_{eff}\rho_{m}\delta$$
 
-$$\ddot{\delta} + 2H\dot{\delta} = 4\pi G_{eff}\rho_{m}\delta
-$$
+Na TDCP, o acoplamento entre universos modifica a constante
+gravitacional efetiva:
 
-In TDCP, the coupling between universes modifies the effective gravitational constant:
+$$G_{eff} = G(1 + \alpha)$$
 
-$$G_{eff} = G(1 + \alpha)
-$$
+onde $\alpha$ depende da intensidade da interação entre os dois
+domínios.
 
-where $\alpha$ depends on the strength of the interaction between the two domains.
+Consequência observável:
 
-Observable consequence:
+uma pequena modificação na taxa de crescimento de estruturas.
 
-a small modification in the structure growth rate.
+Essa taxa é frequentemente parametrizada como:
 
-This rate is often parameterized as:
+$$f(z) = \Omega_{m}(z)^{\gamma}$$
 
-$$f(z) = \Omega_{m}(z)^{\gamma}
-$$
+No modelo padrão:
 
-In the standard model:
+$$\gamma \approx 0.55$$
 
-$$\gamma \approx 0.55
-$$
+Na TDCP:
 
-In TDCP:
+$$\gamma \approx 0.55 + \Delta\gamma$$
 
-$$\gamma \approx 0.55 + \Delta\gamma
-$$
+com
 
-with
+$$\Delta\gamma \sim 0.01$$
 
-$$\Delta\gamma \sim 0.01
-$$
+Esse efeito pode ser detectado através de medições de **distorção no
+espaço de redshift (RSD)**.
 
-This effect may be detected through **redshift-space distortion (RSD)** measurements.
+**29.4 Assinaturas na CMB**
 
-------------------------------------------------------------------------
+A TDCP prevê que o emaranhamento primordial entre os dois universos
+pode deixar correlações residuais nas flutuações primordiais.
 
-**4. Signatures in the CMB**
+Isso pode produzir:
 
-TDCP predicts that primordial entanglement between the two universes may leave residual correlations in primordial fluctuations.
+- não-gaussianidade primordial,
 
-This may produce:
+- modulações de potência em grande escala,
 
-- primordial non-Gaussianity
+- assimetria hemisférica.
 
-- large-scale power modulations
+O espectro de potência primordial pode assumir a forma:
 
-- hemispherical asymmetry
+$$P(k) = P_{0}(k)\left( 1 + \eta\sin(k/k_{*}) \right)$$
 
-The primordial power spectrum may take the form:
+onde:
 
-$$P(k) = P_{0}(k)\left( 1 + \eta\sin(k/k_{*}) \right)
-$$
+- $k_{*}$ define a escala característica da interação entre universos,
 
-where:
+- $\eta$ controla a amplitude da modulação.
 
-- $k_{*}$ defines the characteristic scale of the interaction between universes
-
-- $\eta$ controls the amplitude of the modulation.
-
-Relevant missions:
+Missões relevantes:
 
 - Planck
 
@@ -133,38 +139,34 @@ Relevant missions:
 
 - CMB-S4
 
-------------------------------------------------------------------------
+**29.5 Ondas Gravitacionais Primordiais**
 
-**5. Primordial Gravitational Waves**
+O acoplamento entre os dois universos pode gerar modos gravitacionais
+adicionais.
 
-The coupling between the two universes may generate additional gravitational modes.
+A equação para as perturbações gravitacionais pode assumir a forma:
 
-The equation for gravitational perturbations may take the form:
+$$(\square - m_{g}^{2})h_{\mu\nu} = \kappa h_{\mu\nu}^{(2)}$$
 
-$$(\square - m_{g}^{2})h_{\mu\nu} = \kappa h_{\mu\nu}^{(2)}
-$$
+Isso implica que as ondas gravitacionais podem exibir:
 
-This implies that gravitational waves may exhibit:
+- mistura de modos,
 
-- mode mixing
+- amortecimento adicional,
 
-- additional damping
+- dispersão dependente da frequência.
 
-- frequency-dependent dispersion
+A relação de dispersão torna-se:
 
-The dispersion relation becomes:
+$$\omega^{2} = k^{2} + m_{g}^{2}$$
 
-$$\omega^{2} = k^{2} + m_{g}^{2}
-$$
+com
 
-with
+$$m_{g} \sim 10^{- 33} - 10^{- 30}\text{ eV}$$
 
-$$m_{g} \sim 10^{- 33} - 10^{- 30}\text{ eV}
-$$
+Esses efeitos podem ser detectados por detectores futuros.
 
-These effects may be detected by future detectors.
-
-Relevant experiments:
+Experimentos relevantes:
 
 - LISA
 
@@ -172,53 +174,50 @@ Relevant experiments:
 
 - Cosmic Explorer
 
-------------------------------------------------------------------------
+**29.6 Correlações Entre Universos**
 
-**6. Correlations Between Universes**
+Uma previsão exclusiva da TDCP é a possibilidade de correlações
+residuais entre flutuações de energia em larga escala.
 
-A unique prediction of TDCP is the possibility of residual correlations between large-scale energy fluctuations.
+Essas correlações podem gerar padrões específicos na distribuição de
+galáxias.
 
-These correlations may generate specific patterns in the distribution of galaxies.
+O espectro de potência da matéria pode adquirir uma correção:
 
-The matter power spectrum may acquire a correction:
+$$P(k) = P_{\Lambda CDM}(k)\left( 1+\xi e^{- k/k_{c}} \right)$$
 
-$$P(k) = P_{\Lambda CDM}(k)\left( 1+\xi e^{- k/k_{c}} \right)
-$$
+onde:
 
-where:
+- $k_{c}$ define a escala de correlação,
 
-- $k_{c}$ defines the correlation scale
+- $\xi$ mede a intensidade do acoplamento.
 
-- $\xi$ measures the strength of the coupling.
+**29.7 Tensão de Hubble**
 
-------------------------------------------------------------------------
+A TDCP oferece um possível mecanismo para explicar a **tensão de
+Hubble**, isto é, a diferença entre:
 
-**7. Hubble Tension**
+- medições locais de $H_{0}$,
 
-TDCP offers a possible mechanism to explain the **Hubble tension**, that is, the difference between:
+- medições derivadas da CMB.
 
-- local measurements of $H_{0}$
+A presença de energia escura dinâmica pode alterar o histórico de
+expansão.
 
-- CMB-derived measurements
+Previsão qualitativa:
 
-The presence of dynamical dark energy may alter the history of expansion.
+$$H_{0}^{TDCP} > H_{0}^{\Lambda CDM}$$
 
-Qualitative prediction:
+Essa diferença pode ajudar a reconciliar as medições.
 
-$$H_{0}^{TDCP} > H_{0}^{\Lambda CDM}
-$$
+**29.8 Testes Futuros da Teoria**
 
-This difference may help reconcile the measurements.
+Experimentos cosmológicos futuros podem testar diretamente as previsões
+da TDCP.
 
-------------------------------------------------------------------------
+Principais instrumentos:
 
-**8. Future Tests of the Theory**
-
-Upcoming cosmological experiments may directly test the predictions of TDCP.
-
-Main instruments:
-
-**Observational cosmology**
+**Cosmologia observacional**
 
 - Euclid
 
@@ -232,7 +231,7 @@ Main instruments:
 
 - CMB-S4
 
-**Gravitational waves**
+**Ondas gravitacionais**
 
 - LISA
 
@@ -240,37 +239,34 @@ Main instruments:
 
 - Cosmic Explorer
 
-------------------------------------------------------------------------
+**29.9 Estratégia de Teste**
 
-**9. Testing Strategy**
+Para validar a teoria, as previsões devem ser comparadas com dados.
 
-To validate the theory, predictions must be compared with data.
+Três observáveis são particularmente importantes:
 
-Three observables are particularly important:
+1. equação de estado da energia escura $w(z)$,
 
-1. dark energy equation of state $w(z)$
+2. crescimento de estruturas $f\sigma_{8}$,
 
-2. structure growth $f\sigma_{8}$
+3. espectro primordial de ondas gravitacionais.
 
-3. primordial gravitational wave spectrum
+A combinação desses dados pode restringir os parâmetros da TDCP.
 
-The combination of these data can constrain the parameters of TDCP.
+**29.10 Conclusão**
 
-------------------------------------------------------------------------
+A **Teoria do Duplo Campo Primordial** produz diversas previsões
+testáveis em cosmologia observacional.
 
-**10. Conclusion**
+Entre os principais efeitos previstos estão:
 
-The **Primordial Dual Field Theory** produces several testable predictions in observational cosmology.
+- dinâmica suave da energia escura,
 
-Among the main predicted effects are:
+- modificações no crescimento de estruturas,
 
-- mild dark energy dynamics
+- modos adicionais de ondas gravitacionais,
 
-- modifications in the growth of structures
+- assinaturas específicas na CMB.
 
-- additional gravitational wave modes
-
-- specific signatures in the CMB
-
-These predictions make TDCP a theory that is potentially testable by cosmological experiments in the coming decades.
-
+Essas previsões tornam a TDCP uma teoria potencialmente testável por
+experimentos cosmológicos nas próximas décadas.
