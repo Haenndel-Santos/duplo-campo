@@ -262,5 +262,3 @@ $$ \ddot\delta + 2H\dot\delta = 4\pi G_{\text{eff}}(k,a)\rho\delta $$
 
 e conectar com observações.
 
-narrativa + derivação + consistência progressiva.
-

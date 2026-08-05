@@ -80,6 +80,7 @@ Cada um dos 39 arquivos (30 capitulos incluindo Cap.6.2/12.2/26.2, 8 apendices A
 
 - Vamos.
 - Se você aprovar, eu começo o Capítulo 7 exatamente nesse estilo:
+- derivação gradual + explicação conceitual + matemática suficiente para sustentar. *(fragmento órfão da frase acima, removido em passe de revisão adicional)*
 
 ## Cap.7.docx
 
@@ -87,6 +88,7 @@ Cada um dos 39 arquivos (30 capitulos incluindo Cap.6.2/12.2/26.2, 8 apendices A
 - Vamos ao Capítulo 7.
 - Isso é exatamente o que você quer:
 - Se você aprovar, eu inicio o Capítulo 8 mantendo o mesmo estilo:
+- narrativa + derivação + consistência progressiva. *(fragmento órfão da frase acima, removido em passe de revisão adicional)*
 
 ## Cap.8.docx
 
@@ -94,6 +96,7 @@ Cada um dos 39 arquivos (30 capitulos incluindo Cap.6.2/12.2/26.2, 8 apendices A
 - Vamos ao Capítulo 7.
 - Isso é exatamente o que você quer:
 - Se você aprovar, eu inicio o Capítulo 8 mantendo o mesmo estilo:
+- narrativa + derivação + consistência progressiva. *(fragmento órfão; irrelevante pois este arquivo foi integralmente substituído pela reconstrução do Capítulo 8 real na Tarefa 2a)*
 
 ## Cap.9.docx
 

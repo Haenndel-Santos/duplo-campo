@@ -280,5 +280,3 @@ Isso conecta diretamente:
 
 - formação de estruturas → matéria escura observacional
 
-derivação gradual + explicação conceitual + matemática suficiente para sustentar.
-
