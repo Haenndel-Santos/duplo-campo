@@ -75,13 +75,29 @@ arquivo após a atualização corresponde exatamente ao valor original +1,
 na mesma posição sequencial — nenhuma referência ficou para trás, e
 nenhuma foi incrementada duas vezes.
 
-## O que ainda depende de outras tarefas
+## Atualização (Tarefa 5) — destino final dos capítulos 27–29 provisórios
 
-- A numeração provisória `Cap.27`/`Cap.28`/`Cap.29` (conteúdo ainda em
-  inglês) será usada como base para a tradução da Tarefa 3.
-- Caso a Tarefa 4 (avaliação de integração) conclua que os capítulos
-  26/26.2/27 (conteúdo, não os números de arquivo atuais) devem ser
-  incorporados ao corpo principal da teoria F1, a Tarefa 5 fará uma nova
-  renumeração final refletindo essa integração. Caso contrário, esses
-  três arquivos serão movidos para um apêndice "Linha de pesquisa
-  exploratória", saindo da sequência numerada de capítulos.
+A Tarefa 3 traduziu o conteúdo para português nos arquivos provisórios
+`Cap.27.md`/`Cap.28.md`/`Cap.29.md`. A Tarefa 4 (`integration_assessment.md`)
+concluiu **integração parcial** (não integração total) desse conteúdo ao
+corpo F1. Consequentemente, na Tarefa 5, esses três arquivos **não**
+permaneceram na sequência numerada de capítulos: foram movidos para
+
+| Arquivo provisório (Tarefa 3) | Destino final (Tarefa 5) |
+|---|---|
+| `manuscript/capitulos/Cap.27.md` | `manuscript/apendices/Appendix-I.md` |
+| `manuscript/capitulos/Cap.28.md` | `manuscript/apendices/Appendix-J.md` |
+| `manuscript/capitulos/Cap.29.md` | `manuscript/apendices/Appendix-K.md` |
+
+Cada um foi renumerado internamente (títulos "CAPÍTULO N" → "APÊNDICE
+X"; subseções "N.M" → "X.M") e recebeu um preâmbulo explicando seu status
+de linha de pesquisa exploratória, com referência ao veredito da Tarefa 4.
+Um quarto arquivo novo, `manuscript/apendices/Appendix-L.md`, foi
+adicionado como ponte curta documentando **apenas** a reinterpretação
+considerada absorvível ao corpo F1 (ver `integration_assessment.md`,
+seção "O que pode ser incorporado").
+
+O corpo principal de capítulos numerados da TDCP-F1 é, portanto,
+**Capítulo 1 ao Capítulo 26** (mais o Cap.6.2 como revisão do Cap.6),
+com os Apêndices A–L cobrindo o material técnico de suporte (A–H),
+a linha de pesquisa exploratória (I–K) e a ponte conceitual entre elas (L).

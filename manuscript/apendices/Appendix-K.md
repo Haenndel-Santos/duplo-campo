@@ -1,17 +1,22 @@
-> **NUMERAÇÃO PROVISÓRIA --- sujeita à Tarefa 4/5**
+> **APÊNDICE K --- LINHA DE PESQUISA EXPLORATÓRIA (não integrada ao corpo
+> F1)**
 >
-> Este capítulo é a tradução do texto original em inglês encontrado em
+> Este apêndice é a tradução do texto original em inglês encontrado em
 > `Eng Version/CHAPTER 1.docx` (seção "Observational Predictions of TDCP
-> for Cosmological Experiments"), sem numeração formal no arquivo de
-> origem. Recebe aqui o número 29 apenas para manter uma sequência de
-> arquivo válida; seu lugar definitivo depende do veredito da Tarefa 4
-> (`integration_assessment.md`), implementado na Tarefa 5.
+> for Cosmological Experiments"). Acompanha os Apêndices I e J como parte
+> da mesma linha de pesquisa exploratória avaliada na Tarefa 4
+> (`integration_assessment.md`, veredito: integrável apenas parcialmente).
+> As previsões aqui usam parâmetros próprios (ξ, κ, S_ent) que não estão
+> conectados aos parâmetros F1 já calibrados (m_S0, α_0, p, q dos
+> Capítulos 17--26) --- são dois conjuntos de observáveis paralelos, não
+> uma previsão unificada. Ver Apêndice L para a reinterpretação que pode
+> ser absorvida ao corpo F1.
 
-**CAPÍTULO 29**
+**APÊNDICE K**
 
 **Previsões Observacionais da TDCP para Experimentos Cosmológicos**
 
-**29.1 Introdução**
+**K.1 Introdução**
 
 Uma teoria cosmológica só pode ser considerada fisicamente relevante se
 produzir **previsões testáveis**.
@@ -36,7 +41,7 @@ As principais áreas onde esses efeitos podem ser detectados são:
 Essas previsões podem ser testadas com dados de experimentos
 cosmológicos atuais e futuros.
 
-**29.2 Dinâmica da Energia Escura**
+**K.2 Dinâmica da Energia Escura**
 
 No **modelo ΛCDM**, a energia escura é descrita por uma constante
 cosmológica com equação de estado:
@@ -71,7 +76,7 @@ Experimentos relevantes:
 
 - LSST
 
-**29.3 Crescimento de Estruturas**
+**K.3 Crescimento de Estruturas**
 
 O crescimento da densidade de matéria é descrito pela equação:
 
@@ -108,7 +113,7 @@ $$\Delta\gamma \sim 0.01$$
 Esse efeito pode ser detectado através de medições de **distorção no
 espaço de redshift (RSD)**.
 
-**29.4 Assinaturas na CMB**
+**K.4 Assinaturas na CMB**
 
 A TDCP prevê que o emaranhamento primordial entre os dois universos
 pode deixar correlações residuais nas flutuações primordiais.
@@ -139,7 +144,7 @@ Missões relevantes:
 
 - CMB-S4
 
-**29.5 Ondas Gravitacionais Primordiais**
+**K.5 Ondas Gravitacionais Primordiais**
 
 O acoplamento entre os dois universos pode gerar modos gravitacionais
 adicionais.
@@ -174,7 +179,7 @@ Experimentos relevantes:
 
 - Cosmic Explorer
 
-**29.6 Correlações Entre Universos**
+**K.6 Correlações Entre Universos**
 
 Uma previsão exclusiva da TDCP é a possibilidade de correlações
 residuais entre flutuações de energia em larga escala.
@@ -192,7 +197,7 @@ onde:
 
 - $\xi$ mede a intensidade do acoplamento.
 
-**29.7 Tensão de Hubble**
+**K.7 Tensão de Hubble**
 
 A TDCP oferece um possível mecanismo para explicar a **tensão de
 Hubble**, isto é, a diferença entre:
@@ -210,7 +215,7 @@ $$H_{0}^{TDCP} > H_{0}^{\Lambda CDM}$$
 
 Essa diferença pode ajudar a reconciliar as medições.
 
-**29.8 Testes Futuros da Teoria**
+**K.8 Testes Futuros da Teoria**
 
 Experimentos cosmológicos futuros podem testar diretamente as previsões
 da TDCP.
@@ -239,7 +244,7 @@ Principais instrumentos:
 
 - Cosmic Explorer
 
-**29.9 Estratégia de Teste**
+**K.9 Estratégia de Teste**
 
 Para validar a teoria, as previsões devem ser comparadas com dados.
 
@@ -253,7 +258,7 @@ Três observáveis são particularmente importantes:
 
 A combinação desses dados pode restringir os parâmetros da TDCP.
 
-**29.10 Conclusão**
+**K.10 Conclusão**
 
 A **Teoria do Duplo Campo Primordial** produz diversas previsões
 testáveis em cosmologia observacional.

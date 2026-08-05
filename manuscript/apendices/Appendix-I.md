@@ -1,24 +1,26 @@
-> **NUMERAÇÃO PROVISÓRIA --- sujeita à Tarefa 4/5**
+> **APÊNDICE I --- LINHA DE PESQUISA EXPLORATÓRIA (não integrada ao corpo
+> F1)**
 >
-> Este capítulo é a tradução do texto original em inglês encontrado em
+> Este apêndice é a tradução do texto original em inglês encontrado em
 > `Eng Version/CHAPTER 1.docx` (seção "Primordial Wave Function Collapse
-> and the Origin of Mass in TDCP"), sem numeração formal no arquivo de
-> origem. Recebe aqui o número 27 apenas para manter uma sequência de
-> arquivo válida logo após o Capítulo 26; seu lugar definitivo no corpo
-> --- integrado à numeração principal ou mantido como apêndice de linha
-> de pesquisa exploratória --- depende do veredito da Tarefa 4
-> (`integration_assessment.md`) e será implementado na Tarefa 5. A
-> notação g^{(1)}/g^{(2)} usada aqui é a do texto original e é
-> deliberadamente **preservada sem alteração**: a tradução não decide se
-> ela corresponde às métricas g/f do formalismo bimétrico dos
-> Capítulos 2--5 --- essa é exatamente a pergunta que a Tarefa 4
-> responde.
+> and the Origin of Mass in TDCP"). A Tarefa 4 (`integration_assessment.md`)
+> concluiu que este material é **integrável apenas parcialmente** ao corpo
+> principal F1 (Capítulos 1--26): o acoplamento de matéria simétrico aos
+> dois domínios conflita com a contagem de graus de liberdade livre de
+> fantasma já estabelecida (Cap.3/Cap.6), e o mecanismo de colapso quântico
+> |Ψ⟩=α|g₁⟩+β|g₂⟩ não tem ponte demonstrada com a ação clássica bimétrica.
+> Por isso permanece aqui como registro de uma linha de pesquisa
+> exploratória, fora da numeração de capítulos, e não como Capítulo 27. A
+> reinterpretação que **pode** ser absorvida ao corpo F1 (sem alterar
+> nenhuma equação já derivada) está resumida no Apêndice L. A notação
+> g^{(1)}/g^{(2)} usada aqui é a do texto original e permanece
+> **preservada sem alteração**, exatamente como avaliada na Tarefa 4.
 
-**CAPÍTULO 27**
+**APÊNDICE I**
 
 **Colapso da Função de Onda Primordial e a Origem da Massa na TDCP**
 
-**27.1 Introdução**
+**I.1 Introdução**
 
 Um dos problemas mais profundos da cosmologia moderna é entender como o
 universo fez a transição de um estado quântico primordial para o estado
@@ -45,7 +47,7 @@ Esse processo gera dois domínios cosmológicos interconectados, cada um
 evoluindo com sua própria métrica, permanecendo conectados através de um
 vácuo dinâmico mediador.
 
-**27.2 O Estado Quântico Primordial**
+**I.2 O Estado Quântico Primordial**
 
 Antes da formação da estrutura clássica do universo, o sistema
 cosmológico pode ser descrito como um estado quântico global do
@@ -80,7 +82,7 @@ Nesse estágio primordial:
 - o universo é dominado por energia de campo quântico e flutuações
   gravitacionais.
 
-**27.3 Instabilidade do Vácuo Primordial**
+**I.3 Instabilidade do Vácuo Primordial**
 
 Estados de vácuo quântico podem exibir instabilidades dinâmicas quando
 submetidos a flutuações gravitacionais extremas.
@@ -98,7 +100,7 @@ uma separação geométrica do estado quântico primordial.
 Esse processo pode ser interpretado como um tipo de **colapso
 gravitacional da função de onda cosmológica**.
 
-**27.4 Colapso da Função de Onda Cosmológica**
+**I.4 Colapso da Função de Onda Cosmológica**
 
 O colapso da função de onda transforma um estado superposto em um estado
 definido.
@@ -125,7 +127,7 @@ campo mediador primordial.
 
 Essa bifurcação constitui o **evento fundamental da TDCP**.
 
-**27.5 A Bifurcação do Espaço-Tempo**
+**I.5 A Bifurcação do Espaço-Tempo**
 
 Após o colapso quântico, o espaço-tempo se organiza em dois domínios
 cosmológicos.
@@ -151,7 +153,7 @@ Esse campo descreve:
 
 - a memória da bifurcação primordial.
 
-**27.6 Inflação em Cada Domínio**
+**I.6 Inflação em Cada Domínio**
 
 Após a bifurcação, cada domínio passa por um processo inflacionário
 independente.
@@ -167,7 +169,7 @@ Durante a inflação:
 A inflação suaviza irregularidades iniciais e estabelece as condições
 necessárias para a formação posterior de estruturas cósmicas.
 
-**27.7 Conversão de Energia em Massa**
+**I.7 Conversão de Energia em Massa**
 
 Durante e após o fim da inflação, ocorre um processo conhecido como
 **reaquecimento** (*reheating*).
@@ -199,7 +201,7 @@ A massa formada em cada domínio é, portanto, dada por:
 
 $$M_{i} = \frac{E_{vac}^{(i)}}{c^{2}}$$
 
-**27.8 Implicações Cosmológicas**
+**I.8 Implicações Cosmológicas**
 
 A conversão de energia em massa após a bifurcação implica que pequenas
 diferenças nos parâmetros do vácuo primordial podem gerar universos com
@@ -218,7 +220,7 @@ Isso pode influenciar:
 Na TDCP, tais diferenças podem surgir de assimetrias iniciais no
 processo de bifurcação.
 
-**27.9 Relação com a Energia Escura**
+**I.9 Relação com a Energia Escura**
 
 Se parte da energia do vácuo primordial permanecer não convertida em
 matéria, ela pode se manifestar como uma componente efetiva de energia
@@ -231,7 +233,7 @@ cosmológicos.
 Esse mecanismo fornece uma possível explicação para a aceleração da
 expansão do universo.
 
-**27.10 Conclusão**
+**I.10 Conclusão**
 
 A **Teoria do Duplo Campo Primordial** propõe que o universo observável
 emergiu de um estado quântico primordial do espaço-tempo que sofreu um

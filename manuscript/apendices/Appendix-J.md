@@ -1,24 +1,27 @@
-> **NUMERAÇÃO PROVISÓRIA --- sujeita à Tarefa 4/5**
+> **APÊNDICE J --- LINHA DE PESQUISA EXPLORATÓRIA (não integrada ao corpo
+> F1)**
 >
-> Este capítulo é a tradução do texto original em inglês encontrado em
+> Este apêndice é a tradução do texto original em inglês encontrado em
 > `Eng Version/CHAPTER 1.docx` (seção "Cosmological Entanglement, Dark
-> Energy, and Observational Signatures in TDCP"), sem numeração formal no
-> arquivo de origem (era referido informalmente como "Cap.26.2" por dar
-> sequência direta ao capítulo anterior, não por ser uma revisão dele ---
-> por isso, seguindo a convenção da Tarefa 2d, não herda o sufixo ".2").
-> Recebe aqui o número 28 apenas para manter uma sequência de arquivo
-> válida; seu lugar definitivo depende do veredito da Tarefa 4
-> (`integration_assessment.md`), implementado na Tarefa 5. Notação e
-> equações (g^{(1)}/g^{(2)}, L_int, Λ_eff) são as do texto original,
-> **preservadas sem alteração** --- a compatibilidade delas com o
-> formalismo bimétrico g/f dos Capítulos 2--5 é exatamente o que a
-> Tarefa 4 avalia, não decidido aqui na tradução.
+> Energy, and Observational Signatures in TDCP"; era referido
+> informalmente como "Cap.26.2" no material de origem). A Tarefa 4
+> (`integration_assessment.md`) concluiu que este material é **integrável
+> apenas parcialmente**: o termo L_int=λχ(g^{(1)}-g^{(2)})² não especifica
+> a contração de Fierz--Pauli exigida para evitar o fantasma de
+> Boulware--Deser (risco técnico direto com a estrutura V(K)=Σβₙeₙ(K) já
+> estabelecida), e Λ_eff=Λ_0+Λ_ent não tem equação de movimento --- ao
+> contrário do vácuo dinâmico η (Cap.1/Anexo E/H), que tem. Por isso
+> permanece aqui como registro de uma linha de pesquisa exploratória, fora
+> da numeração de capítulos. A reinterpretação que **pode** ser absorvida
+> ao corpo F1 está resumida no Apêndice L. Notação e equações
+> (g^{(1)}/g^{(2)}, L_int, Λ_eff) são as do texto original, **preservadas
+> sem alteração**, exatamente como avaliadas na Tarefa 4.
 
-**CAPÍTULO 28**
+**APÊNDICE J**
 
 **Emaranhamento Cosmológico, Energia Escura e Assinaturas Observacionais na TDCP**
 
-**28.1 Introdução**
+**J.1 Introdução**
 
 A **Teoria do Duplo Campo Primordial (TDCP)** propõe que o universo
 observável não emergiu como uma única geometria isolada, mas como parte
@@ -49,7 +52,7 @@ do universo, particularmente em:
 
 - anisotropias da CMB.
 
-**28.2 Emaranhamento Cosmológico Primordial**
+**J.2 Emaranhamento Cosmológico Primordial**
 
 No momento da bifurcação do espaço-tempo, os dois domínios emergentes
 não são completamente independentes.
@@ -74,7 +77,7 @@ $$S_{ent} = - Tr(\rho\ln\rho)$$
 
 onde $\rho$ é a matriz densidade reduzida de um dos universos.
 
-**28.3 Energia de Vácuo e Acoplamento Entre Universos**
+**J.3 Energia de Vácuo e Acoplamento Entre Universos**
 
 Mesmo após a inflação, os dois universos permanecem conectados através
 de um termo de interação.
@@ -101,7 +104,7 @@ onde:
 
 - $\lambda$ é uma constante de acoplamento.
 
-**28.4 Origem da Energia Escura na TDCP**
+**J.4 Origem da Energia Escura na TDCP**
 
 Na cosmologia padrão, a energia escura é introduzida como uma constante
 cosmológica:
@@ -126,7 +129,7 @@ onde:
 Essa contribuição pode variar lentamente no tempo, levando a um
 comportamento dinâmico suave da energia escura.
 
-**28.5 Ondas Gravitacionais Entre Domínios**
+**J.5 Ondas Gravitacionais Entre Domínios**
 
 Se os dois universos permanecem acoplados, perturbações gravitacionais
 em um domínio podem gerar efeitos no outro.
@@ -149,7 +152,7 @@ Isso implica que as ondas gravitacionais podem exibir:
 
 - amortecimento anômalo.
 
-**28.6 Assinaturas na Radiação Cósmica de Fundo (CMB)**
+**J.6 Assinaturas na Radiação Cósmica de Fundo (CMB)**
 
 Flutuações primordiais amplificadas durante a inflação podem carregar
 marcas do emaranhamento entre os universos.
@@ -172,7 +175,7 @@ Esses efeitos poderiam aparecer como:
 
 algumas das quais já foram observadas nos **dados do Planck**.
 
-**28.7 Crescimento de Estruturas em Larga Escala**
+**J.7 Crescimento de Estruturas em Larga Escala**
 
 O acoplamento residual entre universos pode alterar como as estruturas
 gravitacionais se formam.
@@ -196,7 +199,7 @@ Isso pode alterar:
 
 - a distribuição de matéria escura.
 
-**28.8 Previsões Observacionais**
+**J.8 Previsões Observacionais**
 
 A TDCP produz diversas previsões potencialmente observáveis:
 
@@ -230,7 +233,7 @@ detectáveis em levantamentos como:
 
 - **LSST**
 
-**28.9 Relação com a Gravidade Bimétrica**
+**J.9 Relação com a Gravidade Bimétrica**
 
 A estrutura matemática da TDCP tem fortes semelhanças com as **teorias
 de gravidade bimétrica de Hassan--Rosen**.
@@ -244,7 +247,7 @@ estrutura matemática:
 as duas métricas correspondem a dois domínios cosmológicos originados
 de uma bifurcação primordial.
 
-**28.10 Conclusão**
+**J.10 Conclusão**
 
 A TDCP propõe que o universo observável é parte de um **sistema
 cosmológico duplo**, onde dois domínios do espaço-tempo emergem de um
