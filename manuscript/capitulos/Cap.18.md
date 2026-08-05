@@ -218,7 +218,3 @@ Cap.19 --- Previsões quantitativas de primeira ordem (sem simulação):
 
 - estimar \Delta \Sigma e \Delta E_G.
 
-Antes de eu iniciar o Cap.19, escolha um benchmark para fixarmos números:
-
-$$ B1 (k_\star\simeq 0.01\,h\,{\rm Mpc}^{-1}) ou B2 (k_\star\simeq 0.1\,h\,{\rm Mpc}^{-1})? $$
-

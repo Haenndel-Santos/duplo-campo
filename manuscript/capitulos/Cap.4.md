@@ -216,5 +216,5 @@ onde veremos:
 
 - aceleração emergente
 
-CAPÍTULO 5 --- Cosmologia FLRW do Duplo Campo Primordial?
+CAPÍTULO 5 --- Cosmologia FLRW do Duplo Campo Primordial.
 

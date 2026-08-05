@@ -49,6 +49,7 @@ Cada um dos 39 arquivos (30 capitulos incluindo Cap.6.2/12.2/26.2, 8 apendices A
 - Excelente.
 - Respire fundo.
 - Confirmamos que seguimos agora para:
+- Ponto de interrogação residual em "CAPÍTULO 5 --- Cosmologia FLRW do Duplo Campo Primordial?" trocado por ponto final (o "?" transformava um título de capítulo real em pergunta de confirmação; conteúdo inalterado).
 
 ## Cap.5.docx
 
@@ -174,7 +175,7 @@ Cada um dos 39 arquivos (30 capitulos incluindo Cap.6.2/12.2/26.2, 8 apendices A
 
 ## Cap.18.docx
 
-Nenhum resíduo de dialogo encontrado neste arquivo.
+- Antes de eu iniciar o Cap.19, escolha um benchmark para fixarmos números: B1 (...) ou B2 (...)? *(encontrado em passe de revisão adicional, após o primeiro passe ter marcado este arquivo como limpo por engano)*
 
 ## Cap.19.docx
 
