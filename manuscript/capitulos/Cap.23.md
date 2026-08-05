@@ -1,205 +1,221 @@
 > **RASCUNHO RECONSTRUÍDO --- REVISAR**
 >
-> As seções 23.1--23.10 abaixo não existiam no arquivo original:
-> `Cap.23.docx` preservava apenas a seção 23.11 ("Preparação para MCMC") e
-> a conclusão do capítulo. A abertura foi reconstruída aqui a partir do
-> que o próprio Capítulo 22 já anunciava para o Capítulo 23 ("Modificar
-> módulo perturbations.c; Inserir μ(k,a), Σ(k,a); Ajustar equação de
-> Poisson; Garantir gauge consistency; Produzir espectro CMB
-> preliminar"), sem introduzir física nova: as equações usadas (μ, Σ,
-> Poisson modificado, condições de estabilidade) são exatamente as já
-> derivadas nos Capítulos 6--21. A estratégia de implementação descrita
-> (injetar μ,Σ no setor de perturbações de um código tipo CLASS/CAMB,
-> mantendo o background padrão) segue a prática já estabelecida na
-> literatura de gravidade modificada para códigos de Boltzmann
-> (parametrização tipo PPF / EFT da energia escura, como em hi_class e
-> EFTCAMB) --- citada aqui como metodologia de referência, não como
-> resultado específico da TDCP.
+> As seções 23.1--23.6 abaixo não existiam no arquivo original: `Cap.23.docx`
+> preservava apenas o final do capítulo, a partir do "Diagnóstico importante"
+> sobre degenerescência com w₀-wₐ e massa de neutrinos, seguido das seções
+> 23.7--23.9 e da conclusão. As aberturas 23.1--23.6 (mapeamento de μ, Σ,
+> η_slip em observáveis; fσ₈(z); distâncias BAO; lensing fraco;
+> degenerescências) foram reconstruídas aqui **sem introduzir nenhuma
+> física nova**: cada função e cada definição usada já havia sido derivada
+> nos Capítulos 18, 19 e 22, que também já anunciavam exatamente este
+> roteiro ("mapear μ(k,a), Σ(k,a), η_slip da TDCP em observáveis; definir
+> funções de crescimento fσ8(z), distâncias BAO, e lensing..."). As
+> definições de distância BAO (§23.4) e do espectro de lentes P_κ(l)
+> (§23.5) são as definições padrão da cosmologia observacional (não
+> específicas da TDCP), aplicadas ao histórico de expansão e ao espectro
+> de potência já estabelecidos nos capítulos anteriores.
 >
 > **O que precisa de validação do autor:**
-> 1. Confirmar se o autor pretende de fato basear a implementação em
->    CLASS (código citado no Cap.22) ou se prefere CAMB/outro código ---
->    isso muda detalhes de nomenclatura de módulos (§23.1--23.3).
-> 2. §23.4 assume gauge síncrono como *default* do CLASS e apresenta a
->    transformação para o gauge newtoniano usado nos Cap.7--18; isso é
->    convenção padrão do CLASS, mas o autor deve confirmar que não há
->    preferência diferente já implícita em capítulos anteriores.
-> 3. §23.8 marca explicitamente que o screening tipo Vainshtein
->    (Cap.19--21) opera em escalas não-lineares/locais fora do regime
->    linear que o CLASS resolve --- isso precisa ser confirmado como a
->    leitura correta antes de qualquer implementação real.
-> 4. Nenhuma linha de código foi escrita; o capítulo descreve apenas a
->    arquitetura e os pontos de injeção, como notas de implementação
->    (consistente com o nível dos Capítulos 17--18).
+> 1. Confirmar que a numeração 23.1--23.6 proposta aqui é a pretendida
+>    (o próprio Cap.22 só anuncia o conteúdo, não os números de seção).
+> 2. §23.4 usa a definição textual padrão de D_V(z) sem repetir a
+>    dedução completa de d_A(z) e d_H(z) a partir de H(a) --- decidir se
+>    isso deve ser expandido em uma futura revisão.
+> 3. §23.5 apresenta a integral de Limber para P_κ(l) na forma padrão
+>    (mesma usada em qualquer pipeline ΛCDM/MG); nenhum termo
+>    TDCP-específico além de Σ(k,a) foi adicionado --- confirmar que é
+>    isso mesmo que o autor pretendia neste nível do capítulo (o
+>    detalhamento numérico completo fica para o Cap.24, que trata da
+>    implementação em CLASS).
+> 4. O cabeçalho "23.6" foi inserido imediatamente antes do parágrafo
+>    "Diagnóstico importante..." que já existia no arquivo original,
+>    apenas para completar a numeração 23.1--23.9 anunciada; o texto do
+>    parágrafo em si não foi alterado.
 
 **CAPÍTULO 23**
 
-**Implementação Formal em CLASS**
+**Pipeline Quantitativo BAO + RSD + WL (TDCP-F1)**
 
-**23.1 Arquitetura de Injeção: Onde a TDCP Entra em um Código de Boltzmann**
+**23.1 Objetivo do Capítulo**
 
-Um código de Boltzmann do tipo CLASS resolve, em sequência, três
-blocos: (i) o módulo de fundo (`background.c`), que integra H(a) e as
-densidades; (ii) o módulo de perturbações (`perturbations.c`), que
-resolve a hierarquia de Einstein-Boltzmann para cada modo k; (iii) o
-módulo de espectros (`spectra.c`), que projeta P(k,z) e os C_ℓ a partir
-das soluções perturbativas. A TDCP-F1 entra nos três, mas de formas
-distintas: no fundo, apenas através de ρ_int(r) (já um termo efetivo
-de fluido, Capítulos 5 e 13); nas perturbações, através das funções
-μ(k,a) e Σ(k,a) (Capítulos 17--18) na equação de Poisson e na constraint
-de anisotropia; nos espectros, apenas como consequência do que já foi
-resolvido --- nenhuma modificação adicional é necessária nesse módulo.
+Os Capítulos 18--22 estabeleceram o formalismo completo do setor F1 no
+regime observacional: a forma Yukawa detectável de μ(k,a), o slip
+η_slip(k,a), a função de lentes Σ(k,a), e as condições de estabilidade
+e screening que delimitam o espaço de parâmetros viável. Falta agora
+reunir essas peças em um pipeline quantitativo --- isto é, converter o
+formalismo em previsões numéricas comparáveis a BAO, RSD e *weak
+lensing* (WL), e propor a estrutura de um ajuste global (*likelihood*).
+Esse é o objetivo deste capítulo, antes de passarmos à implementação
+formal em CLASS (Capítulo 24).
 
-**23.2 Módulo de Fundo**
+**23.2 As Três Funções Efetivas: μ, Σ e η_slip**
 
-O fundo já está inteiramente especificado pelas equações de Friedmann
-duplas do Capítulo 5 e pela redução F1 do Capítulo 13:
+Do Capítulo 18, com a parametrização mínima m_S(a)=m_{S0}a^{-p} e
+α(a)=α_0 a^q:
 
-$$ 3M_g^2 H_g^2 = \rho_m + \rho_\phi + \rho_{\rm int}^{(g)}(r,\phi). $$
+$$ \boxed{ \mu(k,a) = 1 + \frac{\alpha(a)\,k^2/a^2}{k^2/a^2 + m_S^2(a)} } $$
 
-Como o ramo dinâmico (Capítulo 13, §13.4) fixa r(t) e ξ(t) por meio de
-H_g=\xi H_f, o módulo de fundo pode ser implementado como um fluido
-escuro efetivo com equação de estado w_{\rm eff}(a) tabulada
-numericamente a partir de ρ_int(r(a)) --- exatamente como o Capítulo 13
-(§13.5) já antecipava para o caso proporcional, generalizado aqui para
-o ramo dinâmico completo.
+$$ \boxed{ \eta_{\rm slip}(k,a) = 1 + \frac{\beta(a)\,k^2/a^2}{k^2/a^2 + m_S^2(a)} } $$
 
-**23.3 Módulo de Perturbações: Pontos de Injeção**
+$$ \boxed{ \Sigma(k,a) = \frac{\mu(k,a)}{2}\Big(1+\eta_{\rm slip}^{-1}(k,a)\Big) } $$
 
-No setor de perturbações, dois pontos precisam de modificação:
+com o "joelho" de transição k_\star(a)=a\,m_S(a). Essas três funções são
+os únicos ingredientes TDCP-específicos que entram nos observáveis a
+seguir: tudo o que vem depois é aparato padrão de cosmologia
+observacional aplicado a μ, Σ e η_slip.
 
-1. A equação de Poisson, que em CLASS aparece como uma relação entre o
-   potencial métrico e o contraste de densidade total. A substituição
-   TDCP é direta:
+**23.3 Crescimento e fσ₈(z)**
 
-$$ k^2\Psi = -4\pi G a^2\,\mu(k,a)\,\rho\,\delta \qquad \text{(Capítulo 7, §7.5).} $$
+Do Capítulo 8, a equação de crescimento modificada é:
 
-2. A constraint de anisotropia (que relaciona Φ e Ψ), onde entra o
-   slip:
+$$ \ddot\delta + 2H\dot\delta = 4\pi G\,\mu(k,a)\,\rho\,\delta. $$
 
-$$ \eta_{\rm slip}(k,a) = \Phi/\Psi \qquad \text{(Capítulo 7, §7.8; forma explícita no Capítulo 17, §17.7).} $$
+Resolvendo numericamente para δ(k,a) e definindo a taxa de crescimento
+f(a)=d\ln\delta/d\ln a (Capítulo 8, §8.5), o observável de RSD é:
 
-Nenhuma outra equação do setor de perturbações precisa ser alterada: a
-hierarquia de Boltzmann para fótons, neutrinos e bárions permanece
-padrão, pois esses setores continuam minimamente acoplados à métrica
-g_{\mu\nu} (Capítulo 3, §3.4).
+$$ f\sigma_8(z) \equiv f(z)\,\sigma_8(z), \qquad \sigma_8(z)=\sigma_8\,\frac{D(z)}{D(0)}, $$
 
-**23.4 Convenção de Gauge**
+com D(a) o fator de crescimento já definido no Capítulo 8. Como μ
+depende de k, fσ₈ deixa de ser um único número por redshift e passa a
+ser uma família de curvas fσ₈(z;k) --- a "dependência de escala" já
+antecipada nos Capítulos 9 e 18--19.
 
-O CLASS resolve as perturbações por padrão no gauge síncrono, enquanto
-os Capítulos 7--18 desenvolveram μ, Σ e η_slip no gauge newtoniano
-(longitudinal), onde a interpretação física de Φ e Ψ é mais direta. A
-tradução entre os dois usa a transformação padrão de gauge da teoria
-de perturbações cosmológicas (independente da TDCP): definindo o
-potencial síncrono h e o *shift* η_s da métrica síncrona, tem-se
+**23.4 Distâncias BAO**
 
-$$ \Psi = \frac{1}{2k^2}\left(\ddot h + 6\ddot\eta_s\right) + \mathcal{H}\,\alpha_T, \qquad \Phi = \eta_s - \mathcal{H}\,\alpha_T, $$
+O fundo TDCP-F1 (Capítulos 5 e 14) fornece H(a) a partir da equação de
+Friedmann com densidade de interação ρ_int(r). A partir de H(a),
+definem-se as distâncias cosmológicas padrão:
 
-com α_T a variável auxiliar padrão que conecta os dois gauges. Como μ e
-Σ foram definidos como razões gauge-invariantes de potenciais
-newtonianos (Capítulo 7, §7.5 e §7.8), a substituição acima preserva o
-significado físico das duas funções --- este é precisamente o
-requisito de "gauge consistency" que o Capítulo 22 exigia deste
-capítulo.
+$$ D_C(z) = \int_0^z \frac{c\,dz'}{H(z')}, \qquad D_A(z) = \frac{D_C(z)}{1+z}, \qquad D_H(z) = \frac{c}{H(z)}, $$
 
-**23.5 Verificação de Consistência de Gauge**
+e a escala de dilatação BAO:
 
-Como checagem interna, exige-se que qualquer observável físico (fσ₈,
-C_ℓ^{φφ}, P_κ(ℓ)) calculado no gauge síncrono coincida, dentro da
-precisão numérica, com o mesmo observável calculado no gauge
-newtoniano. Essa invariância é uma propriedade geral de teorias
-perturbativas bem-postas e serve aqui como teste de implementação, não
-como uma previsão nova da TDCP.
+$$ \boxed{ D_V(z) \equiv \left[ (1+z)^2 D_A(z)^2\, c\,z / H(z) \right]^{1/3}. } $$
 
-**23.6 Condições Iniciais**
+Como a TDCP-F1 recupera o ΛCDM no limite r=\text{const.} (Capítulo 5,
+§5.9), D_V(z) reduz-se à forma padrão nesse limite; o desvio observável
+vem inteiramente da modificação de H(a) através de ρ_int(r(a)), não de
+um termo novo na própria definição de D_V.
 
-As condições iniciais herdam diretamente o resultado do Capítulo 10: o
-modo adiabático domina, com isocurvatura suprimida por m_S^2\gg H^2
-no período anterior à entrada no horizonte (Capítulo 14). Isso permite
-usar as condições iniciais adiabáticas padrão do CLASS, sem um novo
-modo isocurvatura independente a ser propagado.
+**23.5 Lentes Gravitacionais Fracas: P_κ(ℓ)**
 
-**23.7 Implementação Numérica da Escala de Transição k_\star(a)**
+O potencial de lentes é Φ+Ψ=2Σ(k,a)Φ_{\rm GR} (Capítulos 7--19). No
+limite de Limber, o espectro de convergência entre duas fatias de
+redshift i,j é:
 
-A função μ(k,a) (Capítulo 17, §17.10) depende de k apenas através da
-razão k^2/a^2 comparada a m_S^2(a); numericamente, isso significa
-avaliar m_S(a)=m_{S0}a^{-p} e k_\star(a)=a\,m_S(a) em cada passo de
-tempo do integrador de perturbações, para cada modo k da grade. Não há
-necessidade de resolver uma equação diferencial adicional para μ: ela é
-puramente algébrica uma vez conhecidos a(t) e r(t) do módulo de fundo.
+$$ \boxed{ P_\kappa^{ij}(\ell) = \int_0^{\chi_{\rm max}} d\chi\; \frac{W_i(\chi)W_j(\chi)}{\chi^2}\; \Sigma^2\!\left(\frac{\ell}{\chi},z(\chi)\right) P\!\left(\frac{\ell}{\chi},z(\chi)\right), } $$
 
-**23.8 Regime de Validade: Onde o Screening Não Se Aplica**
+onde W_i(\chi) são os *kernels* de lentes padrão (distribuição de fontes
+e distância) e P(k,z) é o espectro de potência da matéria, já modificado
+pelo crescimento G_eff=Gμ (Capítulo 9). O único fator TDCP-específico
+inserido na integral é Σ(k,a); o restante é o formalismo padrão de WL.
 
-O screening tipo Vainshtein (Capítulos 19--21) opera no regime
-não-linear, em escalas muito menores que as resolvidas por um código
-de Boltzmann linear como o CLASS. O pipeline aqui descrito resolve
-apenas o regime linear (k na faixa de LSS/CMB, tipicamente
-k\lesssim 0.2\,h\,{\rm Mpc}^{-1}); a supressão de quinta força em
-escalas de Sistema Solar (Capítulo 19--20) é uma afirmação separada,
-sobre um regime que o CLASS não resolve e que não entra neste pipeline.
+**23.6 Degenerescências com Parâmetros Cosmológicos Padrão**
 
-**23.9 Saídas: Espectros CMB Preliminares**
+Diagnóstico importante:
 
-Com os pontos de injeção acima, o código produz diretamente:
+$$ \boxed{ \text{TDCP pode imitar } w_0-w_a \text{ ou massa de neutrinos.} } $$
 
-- os espectros de temperatura e polarização C_ℓ^{TT}, C_ℓ^{TE}, C_ℓ^{EE}
-  (afetados apenas indiretamente, via ISW tardio --- ver Capítulo 24);
+Isso significa que o ajuste global precisa incluir:
 
-- o espectro de lente do CMB C_ℓ^{\phi\phi} (afetado por Σ(k,a), como
-  qualquer observável de lentes);
+$\{\Omega_m, H_0, \sigma_8, w_0, w_a, \sum m_\nu\}$
 
-- o espectro de matéria P(k,z) e a taxa de crescimento fσ₈(z) (Capítulo
-  22, §22.3).
+para evitar falso positivo.
 
-**23.10 Testes de Consistência Antes do Ajuste**
+**23.7 Pipeline Computacional Proposto**
 
-Antes de qualquer ajuste (MCMC), três testes de sanidade são exigidos:
+**Etapa 1 --- Background**
 
-1. no limite α_0→0 (ou m_{S0}\to\infty), todos os espectros devem
-   coincidir com o ΛCDM padrão dentro da precisão numérica;
+Resolver:
 
-2. a checagem de gauge (§23.5) deve ser satisfeita;
+H(a)
 
-3. os parâmetros usados devem estar dentro da janela de estabilidade e
-   screening já delimitada nos Capítulos 6, 19 e 21 (sem fantasma, sem
-   gradiente, Higuchi satisfeita, screening solar intacto).
+com integração numérica.
 
-**23.11 Preparação para MCMC**
+**Etapa 2 --- Perturbações**
 
-Agora a teoria é compatível com:
+Implementar:
 
-- MontePython
+$\mu(k,a),\quad \Sigma(k,a)$
 
-- Cobaya
+no solver de crescimento.
 
-Conjunto mínimo de parâmetros cosmológicos:
+**Etapa 3 --- Observáveis**
 
-$\{\Omega_b,\Omega_c,H_0,A_s,n_s,\tau,\alpha_0,m_{S0},p,q\}$
+Calcular:
+
+- $f\sigma_8(z)$
+
+- P(k,z)
+
+- $D_V(z)$
+
+- $P_\kappa(l)$
+
+**Etapa 4 --- Likelihood modular**
+
+$$ \mathcal L = \mathcal L_{BAO}\times \mathcal L_{RSD}\times \mathcal L_{WL} $$
+
+**23.8 Intervalos Paramétricos Iniciais**
+
+Com base nos capítulos anteriores:
+
+$m_{S0} \sim 30--300\,H_0$
+
+$\alpha_0 \sim 0.1--1$
+
+$p,q \sim \mathcal{O}(1)$
+
+Isso garante:
+
+- Yukawa entra em k\sim 0.01--0.1\,h\,{\rm Mpc}^{-1}
+
+- Screening solar intacto
+
+- Modificações visíveis em LSS
+
+**23.9 Teste Observacional Crítico**
+
+O sinal característico da TDCP-F1 é:
+
+$\boxed{ \text{Joelho escala-dependente em } f\sigma_8(k) }$
+
+Isso é distintivo comparado a:
+
+- w_0-w_a (escala-independente)
+
+- Neutrinos (suprimem poder em alta-k)
+
+Portanto:
+
+$\boxed{ \text{RSD escala-dependente é o teste mais limpo.} }$
 
 **Conclusão do Capítulo 23**
 
 A TDCP-F1 agora:
 
-- Está formalmente implementável em CLASS
+- Tem previsão quantitativa para crescimento
 
-- Preserva gauge consistency
+- Pode ser confrontada com BAO
 
-- Pode gerar espectros CMB
+- Pode ser testada com WL
 
-- Permite comparação com BAO/RSD/WL
+- Tem assinatura distintiva em RSD
 
-- Está pronta para likelihood real
+- Está pronta para implementação em CLASS/CAMB
 
 **Próximo Passo**
 
-**CAPÍTULO 24 --- CMB + Planck Likelihood**
+**CAPÍTULO 24 --- Implementação formal em CLASS**
 
-onde iremos:
+onde vamos:
 
-- Analisar impacto detalhado no TT, TE, EE
+- Modificar módulo perturbations.c
 
-- Avaliar ISW
+- Inserir \mu(k,a), \Sigma(k,a)
 
-- Identificar degenerescências com A_s, \tau, m_\nu
+- Ajustar equação de Poisson
 
-- Definir estratégia de ajuste global
+- Garantir gauge consistency
+
+- Produzir espectro CMB preliminar

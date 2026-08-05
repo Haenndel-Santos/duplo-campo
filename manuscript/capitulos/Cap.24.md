@@ -1,150 +1,205 @@
 > **RASCUNHO RECONSTRUÍDO --- REVISAR**
 >
-> `Cap.24.docx` era idêntico a `Cap.25.docx`: nenhum dos dois continha o
-> conteúdo real do Capítulo 24. O arquivo original trazia apenas a
-> repetição do fim do Capítulo 23 seguida diretamente das seções
-> 25.5--25.8 (que pertencem ao Capítulo 25). O conteúdo abaixo foi
-> reconstruído a partir do que o próprio Capítulo 23 já anunciava para o
-> Capítulo 24 ("Analisar impacto detalhado no TT, TE, EE; Avaliar ISW;
-> Identificar degenerescências com A_s, τ, m_ν; Definir estratégia de
-> ajuste global"), combinando exclusivamente resultados já estabelecidos:
-> a fórmula padrão do efeito ISW (física de RG-padrão, não específica da
-> TDCP) aplicada à substituição Φ+Ψ=2Σ(k,a)Φ_GR já derivada nos
-> Capítulos 7, 17 e 18; e a restrição, já imposta desde os Capítulos 9 e
-> 10, de que a TDCP não pode alterar apreciavelmente o espectro primordial
-> quase invariante de escala.
+> As seções 24.1--24.10 abaixo não existiam no arquivo original:
+> `Cap.24.docx` preservava apenas a seção 24.11 ("Preparação para MCMC") e
+> a conclusão do capítulo. A abertura foi reconstruída aqui a partir do
+> que o próprio Capítulo 23 já anunciava para o Capítulo 24 ("Modificar
+> módulo perturbations.c; Inserir μ(k,a), Σ(k,a); Ajustar equação de
+> Poisson; Garantir gauge consistency; Produzir espectro CMB
+> preliminar"), sem introduzir física nova: as equações usadas (μ, Σ,
+> Poisson modificado, condições de estabilidade) são exatamente as já
+> derivadas nos Capítulos 6--22. A estratégia de implementação descrita
+> (injetar μ,Σ no setor de perturbações de um código tipo CLASS/CAMB,
+> mantendo o background padrão) segue a prática já estabelecida na
+> literatura de gravidade modificada para códigos de Boltzmann
+> (parametrização tipo PPF / EFT da energia escura, como em hi_class e
+> EFTCAMB) --- citada aqui como metodologia de referência, não como
+> resultado específico da TDCP.
 >
 > **O que precisa de validação do autor:**
-> 1. §24.4 identifica uma contribuição de ISW "extra" (além da
->    supressão/amplificação usual) vindo da variação temporal da própria
->    função Σ(k,a), não apenas do potencial Φ_GR. Essa é uma consequência
->    matemática direta de Φ+Ψ=2ΣΦ_GR já estabelecido, mas o autor deve
->    confirmar se concorda com essa leitura antes de tratá-la como
->    previsão da teoria.
-> 2. A estratégia de ajuste global (§24.6) é esboçada apenas em nível de
->    princípio aqui; o detalhamento operacional completo (ordem de
->    parâmetros, priors) fica para o Capítulo 25, seções 25.1--25.4
->    (também reconstruídas nesta tarefa).
-> 3. Confirmar a numeração 24.1--24.7 proposta.
+> 1. Confirmar se o autor pretende de fato basear a implementação em
+>    CLASS (código citado no Cap.23) ou se prefere CAMB/outro código ---
+>    isso muda detalhes de nomenclatura de módulos (§24.1--24.3).
+> 2. §24.4 assume gauge síncrono como *default* do CLASS e apresenta a
+>    transformação para o gauge newtoniano usado nos Cap.7--19; isso é
+>    convenção padrão do CLASS, mas o autor deve confirmar que não há
+>    preferência diferente já implícita em capítulos anteriores.
+> 3. §24.8 marca explicitamente que o screening tipo Vainshtein
+>    (Cap.20--22) opera em escalas não-lineares/locais fora do regime
+>    linear que o CLASS resolve --- isso precisa ser confirmado como a
+>    leitura correta antes de qualquer implementação real.
+> 4. Nenhuma linha de código foi escrita; o capítulo descreve apenas a
+>    arquitetura e os pontos de injeção, como notas de implementação
+>    (consistente com o nível dos Capítulos 18--19).
 
 **CAPÍTULO 24**
 
-**CMB + Planck Likelihood**
+**Implementação Formal em CLASS**
 
-**24.1 Objetivo do Capítulo**
+**24.1 Arquitetura de Injeção: Onde a TDCP Entra em um Código de Boltzmann**
 
-O Capítulo 23 deixou a TDCP-F1 formalmente implementável em um código
-de Boltzmann. Falta agora perguntar, especificamente: o que a TDCP-F1
-faz com os observáveis do CMB medidos pelo Planck --- os espectros
-TT, TE, EE e o espectro de lentes C_ℓ^{φφ} --- e como isso se degenera
-com os parâmetros padrão do ΛCDM (A_s, τ, \sum m_\nu)? Esse diagnóstico
-é o que permite, no Capítulo 25, montar a estratégia de ajuste global.
+Um código de Boltzmann do tipo CLASS resolve, em sequência, três
+blocos: (i) o módulo de fundo (`background.c`), que integra H(a) e as
+densidades; (ii) o módulo de perturbações (`perturbations.c`), que
+resolve a hierarquia de Einstein-Boltzmann para cada modo k; (iii) o
+módulo de espectros (`spectra.c`), que projeta P(k,z) e os C_ℓ a partir
+das soluções perturbativas. A TDCP-F1 entra nos três, mas de formas
+distintas: no fundo, apenas através de ρ_int(r) (já um termo efetivo
+de fluido, Capítulos 5 e 14); nas perturbações, através das funções
+μ(k,a) e Σ(k,a) (Capítulos 18--19) na equação de Poisson e na constraint
+de anisotropia; nos espectros, apenas como consequência do que já foi
+resolvido --- nenhuma modificação adicional é necessária nesse módulo.
 
-**24.2 Por Que o Espectro Primário Permanece Quase Intacto**
+**24.2 Módulo de Fundo**
 
-Os Capítulos 9 e 10 já impuseram, como condição de viabilidade, que o
-campo primordial não pode destruir o espectro quase invariante de
-escala: |P_{\rm TDCP}(k)-P_{\rm obs}(k)|\ll P_{\rm obs}(k) no regime
-primordial. Como a modificação de gravidade da TDCP-F1 (as funções
-μ, Σ, η_slip) só se torna relevante em k\gtrsim k_\star(a) e em
-a\sim\mathcal{O}(1) (tempos tardios --- Capítulos 17--18), a física de
-recombinação e o padrão de picos acústicos, que se originam em
-z\sim1100, não são afetados diretamente. Isso significa que TT, TE e EE
-em multipolos intermediários e altos (l\gtrsim 30, dominados pela
-física acústica pré-recombinação) permanecem essencialmente os do
-ΛCDM.
+O fundo já está inteiramente especificado pelas equações de Friedmann
+duplas do Capítulo 5 e pela redução F1 do Capítulo 14:
 
-**24.3 Onde a TDCP-F1 Realmente Aparece: Baixo l e Lentes**
+$$ 3M_g^2 H_g^2 = \rho_m + \rho_\phi + \rho_{\rm int}^{(g)}(r,\phi). $$
 
-A modificação tardia da gravidade afeta o CMB por exatamente dois
-canais:
+Como o ramo dinâmico (Capítulo 14, §14.4) fixa r(t) e ξ(t) por meio de
+H_g=\xi H_f, o módulo de fundo pode ser implementado como um fluido
+escuro efetivo com equação de estado w_{\rm eff}(a) tabulada
+numericamente a partir de ρ_int(r(a)) --- exatamente como o Capítulo 14
+(§14.5) já antecipava para o caso proporcional, generalizado aqui para
+o ramo dinâmico completo.
 
-1. o efeito Sachs--Wolfe integrado tardio (ISW tardio), que domina o
-   espectro TT em baixo l (l\lesssim 30);
+**24.3 Módulo de Perturbações: Pontos de Injeção**
 
-2. o espectro de lentes do CMB C_ℓ^{φφ}, que suaviza os picos acústicos
-   em TT/TE/EE e é sensível a Σ(k,a) exatamente como o espectro de
-   lentes de galáxias (Capítulo 22, §22.5).
+No setor de perturbações, dois pontos precisam de modificação:
 
-**24.4 O Efeito ISW Tardio na TDCP-F1**
+1. A equação de Poisson, que em CLASS aparece como uma relação entre o
+   potencial métrico e o contraste de densidade total. A substituição
+   TDCP é direta:
 
-A fórmula padrão do ISW tardio é:
+$$ k^2\Psi = -4\pi G a^2\,\mu(k,a)\,\rho\,\delta \qquad \text{(Capítulo 7, §7.5).} $$
 
-$$ \left(\frac{\Delta T}{T}\right)_{\rm ISW} = \int d\eta\; \partial_\eta(\Phi+\Psi)\big(\eta,\,\vec{x}(\eta)\big), $$
+2. A constraint de anisotropia (que relaciona Φ e Ψ), onde entra o
+   slip:
 
-integrada ao longo da linha de visada, do último espalhamento até
-hoje. Usando Φ+Ψ=2Σ(k,a)Φ_{\rm GR}(k,a) (Capítulos 7, 17, 18):
+$$ \eta_{\rm slip}(k,a) = \Phi/\Psi \qquad \text{(Capítulo 7, §7.8; forma explícita no Capítulo 18, §18.7).} $$
 
-$$ \partial_\eta(\Phi+\Psi) = 2\Big[\Sigma(k,a)\,\partial_\eta\Phi_{\rm GR}(k,a) \;+\; \Phi_{\rm GR}(k,a)\,\partial_\eta\Sigma(k,a)\Big]. $$
+Nenhuma outra equação do setor de perturbações precisa ser alterada: a
+hierarquia de Boltzmann para fótons, neutrinos e bárions permanece
+padrão, pois esses setores continuam minimamente acoplados à métrica
+g_{\mu\nu} (Capítulo 3, §3.4).
 
-O primeiro termo é o ISW usual (o decaimento de Φ_GR quando a energia
-escura passa a dominar), apenas reescalado por Σ. O segundo termo é
-**específico da TDCP-F1**: mesmo que Φ_GR fosse exatamente constante, a
-própria evolução temporal de Σ(k,a) --- através de m_S(a)=m_{S0}a^{-p}
-e do joelho k_\star(a) (Capítulo 17, §17.10) --- gera uma contribuição
-adicional ao ISW tardio, concentrada nas escalas onde k\sim k_\star(a)
-no intervalo de redshift relevante (tipicamente z\lesssim 2).
+**24.4 Convenção de Gauge**
 
-**24.5 Impacto no Espectro de Lentes C_ℓ^{φφ}**
+O CLASS resolve as perturbações por padrão no gauge síncrono, enquanto
+os Capítulos 7--19 desenvolveram μ, Σ e η_slip no gauge newtoniano
+(longitudinal), onde a interpretação física de Φ e Ψ é mais direta. A
+tradução entre os dois usa a transformação padrão de gauge da teoria
+de perturbações cosmológicas (independente da TDCP): definindo o
+potencial síncrono h e o *shift* η_s da métrica síncrona, tem-se
 
-O espectro de lentes do CMB segue a mesma integral de Limber do
-Capítulo 22 (§22.5), com as fatias de redshift W_i,W_j substituídas
-pelo *kernel* de lentes do CMB (fonte em z\simeq1100):
+$$ \Psi = \frac{1}{2k^2}\left(\ddot h + 6\ddot\eta_s\right) + \mathcal{H}\,\alpha_T, \qquad \Phi = \eta_s - \mathcal{H}\,\alpha_T, $$
 
-$$ C_\ell^{\phi\phi} = \int_0^{\chi_*} d\chi\; \frac{W_{\rm CMB}^2(\chi)}{\chi^2}\; \Sigma^2\!\left(\frac{\ell}{\chi},z(\chi)\right) P\!\left(\frac{\ell}{\chi},z(\chi)\right). $$
+com α_T a variável auxiliar padrão que conecta os dois gauges. Como μ e
+Σ foram definidos como razões gauge-invariantes de potenciais
+newtonianos (Capítulo 7, §7.5 e §7.8), a substituição acima preserva o
+significado físico das duas funções --- este é precisamente o
+requisito de "gauge consistency" que o Capítulo 23 exigia deste
+capítulo.
 
-Como Σ(k,a)>1 tipicamente em escalas pequenas e tempos tardios
-(Capítulos 17--18), a TDCP-F1 prevê um espectro de lentes do CMB
-ligeiramente amplificado em relação ao ΛCDM na mesma região de
-parâmetros onde o crescimento de estruturas é amplificado --- a mesma
-assinatura de fσ₈(k) do Capítulo 22, vista agora através de um canal
-independente.
+**24.5 Verificação de Consistência de Gauge**
 
-**24.6 Degenerescências com A_s, τ e \sum m_\nu**
+Como checagem interna, exige-se que qualquer observável físico (fσ₈,
+C_ℓ^{φφ}, P_κ(ℓ)) calculado no gauge síncrono coincida, dentro da
+precisão numérica, com o mesmo observável calculado no gauge
+newtoniano. Essa invariância é uma propriedade geral de teorias
+perturbativas bem-postas e serve aqui como teste de implementação, não
+como uma previsão nova da TDCP.
 
-Três degenerescências imediatas precisam ser controladas em qualquer
-ajuste:
+**24.6 Condições Iniciais**
 
-- **α_0 ↔ A_s**: como o ISW extra (§24.4) e o lensing (§24.5) escalam
-  com a amplitude das flutuações, um α_0 maior pode ser parcialmente
-  compensado por um A_s menor --- quebrado pela forma *não*
-  escala-independente do sinal TDCP (o ΛCDM-A_s reescala P(k)
-  uniformemente; a TDCP não).
+As condições iniciais herdam diretamente o resultado do Capítulo 10: o
+modo adiabático domina, com isocurvatura suprimida por m_S^2\gg H^2
+no período anterior à entrada no horizonte (Capítulo 15). Isso permite
+usar as condições iniciais adiabáticas padrão do CLASS, sem um novo
+modo isocurvatura independente a ser propagado.
 
-- **m_{S0} ↔ \sum m_\nu**: neutrinos massivos suprimem o crescimento
-  em altas-k de forma monotônica; a TDCP-F1 pode aumentar o
-  crescimento em torno de k_\star(a), produzindo um padrão não
-  monotônico que os neutrinos sozinhos não reproduzem (mesma
-  assinatura antecipada no Capítulo 22, §22.6, detalhada na matriz do
-  Capítulo 25, §25.5).
+**24.7 Implementação Numérica da Escala de Transição k_\star(a)**
 
-- **τ**: como τ controla a amplitude da reionização e do bump de
-  polarização em baixo l, e o ISW tardio também vive em baixo l, os
-  dois se misturam estatisticamente em TT --- mas não em EE, onde o
-  bump de reionização tem uma assinatura própria em l\sim10 que o ISW
-  não produz. EE de baixo l é, portanto, o canal que quebra essa
-  degenerescência específica.
+A função μ(k,a) (Capítulo 18, §18.10) depende de k apenas através da
+razão k^2/a^2 comparada a m_S^2(a); numericamente, isso significa
+avaliar m_S(a)=m_{S0}a^{-p} e k_\star(a)=a\,m_S(a) em cada passo de
+tempo do integrador de perturbações, para cada modo k da grade. Não há
+necessidade de resolver uma equação diferencial adicional para μ: ela é
+puramente algébrica uma vez conhecidos a(t) e r(t) do módulo de fundo.
 
-**24.7 Conclusão do Capítulo 24**
+**24.8 Regime de Validade: Onde o Screening Não Se Aplica**
 
-A TDCP-F1:
+O screening tipo Vainshtein (Capítulos 20--22) opera no regime
+não-linear, em escalas muito menores que as resolvidas por um código
+de Boltzmann linear como o CLASS. O pipeline aqui descrito resolve
+apenas o regime linear (k na faixa de LSS/CMB, tipicamente
+k\lesssim 0.2\,h\,{\rm Mpc}^{-1}); a supressão de quinta força em
+escalas de Sistema Solar (Capítulo 20--21) é uma afirmação separada,
+sobre um regime que o CLASS não resolve e que não entra neste pipeline.
 
-- deixa intacto o espectro primário de picos acústicos (TT/TE/EE em
-  l intermediário/alto);
+**24.9 Saídas: Espectros CMB Preliminares**
 
-- modifica o CMB apenas via ISW tardio (baixo l) e lentes (C_ℓ^{φφ});
+Com os pontos de injeção acima, o código produz diretamente:
 
-- introduz uma contribuição de ISW genuinamente nova, ligada à
-  evolução temporal de Σ(k,a), além do ISW usual reescalado;
+- os espectros de temperatura e polarização C_ℓ^{TT}, C_ℓ^{TE}, C_ℓ^{EE}
+  (afetados apenas indiretamente, via ISW tardio --- ver Capítulo 25);
 
-- tem degenerescências identificáveis e quebráveis com A_s, \sum m_\nu
-  e τ, usando canais independentes (forma não escala-independente do
-  sinal, padrão não monotônico em k, e EE de baixo l).
+- o espectro de lente do CMB C_ℓ^{\phi\phi} (afetado por Σ(k,a), como
+  qualquer observável de lentes);
+
+- o espectro de matéria P(k,z) e a taxa de crescimento fσ₈(z) (Capítulo
+  23, §23.3).
+
+**24.10 Testes de Consistência Antes do Ajuste**
+
+Antes de qualquer ajuste (MCMC), três testes de sanidade são exigidos:
+
+1. no limite α_0→0 (ou m_{S0}\to\infty), todos os espectros devem
+   coincidir com o ΛCDM padrão dentro da precisão numérica;
+
+2. a checagem de gauge (§24.5) deve ser satisfeita;
+
+3. os parâmetros usados devem estar dentro da janela de estabilidade e
+   screening já delimitada nos Capítulos 6, 20 e 22 (sem fantasma, sem
+   gradiente, Higuchi satisfeita, screening solar intacto).
+
+**24.11 Preparação para MCMC**
+
+Agora a teoria é compatível com:
+
+- MontePython
+
+- Cobaya
+
+Conjunto mínimo de parâmetros cosmológicos:
+
+$\{\Omega_b,\Omega_c,H_0,A_s,n_s,\tau,\alpha_0,m_{S0},p,q\}$
+
+**Conclusão do Capítulo 24**
+
+A TDCP-F1 agora:
+
+- Está formalmente implementável em CLASS
+
+- Preserva gauge consistency
+
+- Pode gerar espectros CMB
+
+- Permite comparação com BAO/RSD/WL
+
+- Está pronta para likelihood real
 
 **Próximo Passo**
 
-**CAPÍTULO 25 --- Estratégia de Ajuste Global e Matriz de Degenerescências**
+**CAPÍTULO 25 --- CMB + Planck Likelihood**
 
-onde vamos montar a *likelihood* conjunta (CMB + BAO + RSD + WL) e
-consolidar a matriz completa de degenerescências e a região paramétrica
-plausível da TDCP-F1.
+onde iremos:
+
+- Analisar impacto detalhado no TT, TE, EE
+
+- Avaliar ISW
+
+- Identificar degenerescências com A_s, \tau, m_\nu
+
+- Definir estratégia de ajuste global

@@ -1,223 +1,150 @@
-> **RASCUNHO RECONSTRUÍDO --- REVISAR (seções 25.1--25.4 apenas)**
+> **RASCUNHO RECONSTRUÍDO --- REVISAR**
 >
-> `Cap.25.docx` era idêntico a `Cap.24.docx`: trazia apenas a repetição
-> do fim do Capítulo 23 seguida diretamente das seções 25.5--25.8. As
-> seções 25.5--25.8 abaixo **são o texto original, preservado sem
-> nenhuma alteração de conteúdo** (apenas o preâmbulo duplicado do
-> Capítulo 23 foi removido, já que pertence a este arquivo por engano).
-> As seções 25.1--25.4, que faltavam, foram reconstruídas a partir do
-> que o Capítulo 24 (também reconstruído nesta tarefa) já anuncia como
-> próximo passo --- montar a *likelihood* conjunta e a estratégia de
-> ajuste --- usando apenas elementos já estabelecidos: a decomposição
-> modular L=L_BAO×L_RSD×L_WL do Capítulo 22, os canais de CMB do
-> Capítulo 24, e o conjunto de parâmetros e intervalos já delimitados
-> nos Capítulos 13--22.
+> `Cap.25.docx` era idêntico a `Cap.26.docx`: nenhum dos dois continha o
+> conteúdo real do Capítulo 25. O arquivo original trazia apenas a
+> repetição do fim do Capítulo 24 seguida diretamente das seções
+> 26.5--26.8 (que pertencem ao Capítulo 26). O conteúdo abaixo foi
+> reconstruído a partir do que o próprio Capítulo 24 já anunciava para o
+> Capítulo 25 ("Analisar impacto detalhado no TT, TE, EE; Avaliar ISW;
+> Identificar degenerescências com A_s, τ, m_ν; Definir estratégia de
+> ajuste global"), combinando exclusivamente resultados já estabelecidos:
+> a fórmula padrão do efeito ISW (física de RG-padrão, não específica da
+> TDCP) aplicada à substituição Φ+Ψ=2Σ(k,a)Φ_GR já derivada nos
+> Capítulos 7, 18 e 19; e a restrição, já imposta desde os Capítulos 9 e
+> 10, de que a TDCP não pode alterar apreciavelmente o espectro primordial
+> quase invariante de escala.
 >
 > **O que precisa de validação do autor:**
-> 1. §25.4 propõe uma ordem específica de ajuste (primeiro fixar a
->    linha de base ΛCDM, depois variar os parâmetros TDCP-específicos
->    com prior informado pela janela de estabilidade/screening); isso é
->    uma escolha metodológica razoável mas não a única possível --- o
->    autor pode preferir um ajuste conjunto sem hierarquia desde o
->    início.
-> 2. Confirmar que a matriz de degenerescências original (§25.5, texto
->    preservado) é consistente com a análise de degenerescências do
->    Capítulo 24 (§24.6) --- ambas foram cruzadas nesta reconstrução e
->    não apresentam contradição aparente, mas vale checagem do autor.
+> 1. §25.4 identifica uma contribuição de ISW "extra" (além da
+>    supressão/amplificação usual) vindo da variação temporal da própria
+>    função Σ(k,a), não apenas do potencial Φ_GR. Essa é uma consequência
+>    matemática direta de Φ+Ψ=2ΣΦ_GR já estabelecido, mas o autor deve
+>    confirmar se concorda com essa leitura antes de tratá-la como
+>    previsão da teoria.
+> 2. A estratégia de ajuste global (§25.6) é esboçada apenas em nível de
+>    princípio aqui; o detalhamento operacional completo (ordem de
+>    parâmetros, priors) fica para o Capítulo 26, seções 26.1--26.4
+>    (também reconstruídas nesta tarefa).
+> 3. Confirmar a numeração 25.1--25.7 proposta.
 
 **CAPÍTULO 25**
 
-**Estratégia de Ajuste Global e Matriz de Degenerescências**
+**CMB + Planck Likelihood**
 
-**25.1 Objetivo: da Análise de Canais à Likelihood Conjunta**
+**25.1 Objetivo do Capítulo**
 
-Os Capítulos 22 e 24 identificaram, separadamente, como a TDCP-F1 afeta
-BAO, RSD, WL (Capítulo 22) e CMB via ISW tardio e lentes (Capítulo 24).
-Isoladamente, nenhum desses canais fixa os quatro parâmetros
-TDCP-específicos (m_{S0},\alpha_0,p,q); juntos, e explorando exatamente
-as degenerescências que cada canal quebra de forma diferente
-(Capítulo 24, §24.6), eles permitem um ajuste global bem posto. Este
-capítulo monta essa *likelihood* conjunta e consolida a matriz de
-degenerescências e a região paramétrica plausível.
+O Capítulo 24 deixou a TDCP-F1 formalmente implementável em um código
+de Boltzmann. Falta agora perguntar, especificamente: o que a TDCP-F1
+faz com os observáveis do CMB medidos pelo Planck --- os espectros
+TT, TE, EE e o espectro de lentes C_ℓ^{φφ} --- e como isso se degenera
+com os parâmetros padrão do ΛCDM (A_s, τ, \sum m_\nu)? Esse diagnóstico
+é o que permite, no Capítulo 26, montar a estratégia de ajuste global.
 
-**25.2 Estrutura da Likelihood Conjunta**
+**25.2 Por Que o Espectro Primário Permanece Quase Intacto**
 
-Estendendo a decomposição modular do Capítulo 22 (§22.7, Etapa 4) para
-incluir o CMB do Capítulo 24:
+Os Capítulos 9 e 10 já impuseram, como condição de viabilidade, que o
+campo primordial não pode destruir o espectro quase invariante de
+escala: |P_{\rm TDCP}(k)-P_{\rm obs}(k)|\ll P_{\rm obs}(k) no regime
+primordial. Como a modificação de gravidade da TDCP-F1 (as funções
+μ, Σ, η_slip) só se torna relevante em k\gtrsim k_\star(a) e em
+a\sim\mathcal{O}(1) (tempos tardios --- Capítulos 18--19), a física de
+recombinação e o padrão de picos acústicos, que se originam em
+z\sim1100, não são afetados diretamente. Isso significa que TT, TE e EE
+em multipolos intermediários e altos (l\gtrsim 30, dominados pela
+física acústica pré-recombinação) permanecem essencialmente os do
+ΛCDM.
 
-$$ \boxed{ \mathcal{L}_{\rm total} = \mathcal{L}_{\rm CMB}\times\mathcal{L}_{BAO}\times\mathcal{L}_{RSD}\times\mathcal{L}_{WL}, } $$
+**25.3 Onde a TDCP-F1 Realmente Aparece: Baixo l e Lentes**
 
-com \mathcal{L}_{\rm CMB} a *likelihood* padrão do Planck (TT, TE, EE e
-lentes, tipicamente aproximada por um conjunto de espectros gaussianos
-com covariância própria) avaliada nos espectros que o pipeline do
-Capítulo 23 produz. Cada fator usa o mesmo conjunto de parâmetros
-cosmológicos de fundo (\Omega_b,\Omega_c,H_0,A_s,n_s,\tau) e os quatro
-parâmetros TDCP-específicos (m_{S0},\alpha_0,p,q) do Capítulo 23,
-§23.11.
+A modificação tardia da gravidade afeta o CMB por exatamente dois
+canais:
 
-**25.3 Priors e Hierarquia de Parâmetros**
+1. o efeito Sachs--Wolfe integrado tardio (ISW tardio), que domina o
+   espectro TT em baixo l (l\lesssim 30);
 
-Dois grupos de parâmetros entram na *likelihood* com papéis distintos:
+2. o espectro de lentes do CMB C_ℓ^{φφ}, que suaviza os picos acústicos
+   em TT/TE/EE e é sensível a Σ(k,a) exatamente como o espectro de
+   lentes de galáxias (Capítulo 23, §23.5).
 
-- os parâmetros de fundo (\Omega_b,\Omega_c,H_0,A_s,n_s,\tau) recebem
-  priors largos, padrão de análises ΛCDM (consistentes com Planck);
+**25.4 O Efeito ISW Tardio na TDCP-F1**
 
-- os parâmetros TDCP-específicos (m_{S0},\alpha_0,p,q) recebem priors
-  restritos à janela já delimitada nos capítulos anteriores: screening
-  solar seguro e estabilidade linear/não-linear (Capítulos 6, 19--21)
-  e o intervalo observacionalmente interessante do Capítulo 22, §22.8
-  (m_{S0}\sim30\text{--}300\,H_0,\ \alpha_0\sim0.1\text{--}1,\
-  p,q\sim\mathcal{O}(1)). Priors fora dessa janela correspondem a
-  pontos já excluídos por consistência interna, não por dados.
+A fórmula padrão do ISW tardio é:
 
-**25.4 Protocolo de Ajuste Proposto**
+$$ \left(\frac{\Delta T}{T}\right)_{\rm ISW} = \int d\eta\; \partial_\eta(\Phi+\Psi)\big(\eta,\,\vec{x}(\eta)\big), $$
 
-Um protocolo em duas etapas evita que a alta dimensionalidade do
-espaço conjunto esconda as degenerescências identificadas no
-Capítulo 24:
+integrada ao longo da linha de visada, do último espalhamento até
+hoje. Usando Φ+Ψ=2Σ(k,a)Φ_{\rm GR}(k,a) (Capítulos 7, 18, 19):
 
-1. **Linha de base:** ajustar (\Omega_b,\Omega_c,H_0,A_s,n_s,\tau) ao
-   Planck com a TDCP desligada (\alpha_0\to0), fixando a referência
-   ΛCDM;
+$$ \partial_\eta(\Phi+\Psi) = 2\Big[\Sigma(k,a)\,\partial_\eta\Phi_{\rm GR}(k,a) \;+\; \Phi_{\rm GR}(k,a)\,\partial_\eta\Sigma(k,a)\Big]. $$
 
-2. **Ajuste conjunto:** variar todos os parâmetros simultaneamente em
-   \mathcal{L}_{\rm total}, usando a linha de base como ponto de
-   partida, e monitorando explicitamente as três degenerescências do
-   Capítulo 24 (§24.6) através dos canais que as quebram (forma do
-   sinal em P(k), padrão não monotônico em k, EE de baixo l).
+O primeiro termo é o ISW usual (o decaimento de Φ_GR quando a energia
+escura passa a dominar), apenas reescalado por Σ. O segundo termo é
+**específico da TDCP-F1**: mesmo que Φ_GR fosse exatamente constante, a
+própria evolução temporal de Σ(k,a) --- através de m_S(a)=m_{S0}a^{-p}
+e do joelho k_\star(a) (Capítulo 18, §18.10) --- gera uma contribuição
+adicional ao ISW tardio, concentrada nas escalas onde k\sim k_\star(a)
+no intervalo de redshift relevante (tipicamente z\lesssim 2).
 
-O restante deste capítulo (§25.5--25.8) consolida essa análise em uma
-matriz de degenerescências e em um diagnóstico final de
-falsificabilidade.
+**25.5 Impacto no Espectro de Lentes C_ℓ^{φφ}**
 
-**25.5 Matriz de Degenerescências Principais**
+O espectro de lentes do CMB segue a mesma integral de Limber do
+Capítulo 23 (§23.5), com as fatias de redshift W_i,W_j substituídas
+pelo *kernel* de lentes do CMB (fonte em z\simeq1100):
 
-**1. \alpha_0 ↔ A_s**
+$$ C_\ell^{\phi\phi} = \int_0^{\chi_*} d\chi\; \frac{W_{\rm CMB}^2(\chi)}{\chi^2}\; \Sigma^2\!\left(\frac{\ell}{\chi},z(\chi)\right) P\!\left(\frac{\ell}{\chi},z(\chi)\right). $$
 
-Aumento em \alpha_0 aumenta crescimento.
+Como Σ(k,a)>1 tipicamente em escalas pequenas e tempos tardios
+(Capítulos 18--19), a TDCP-F1 prevê um espectro de lentes do CMB
+ligeiramente amplificado em relação ao ΛCDM na mesma região de
+parâmetros onde o crescimento de estruturas é amplificado --- a mesma
+assinatura de fσ₈(k) do Capítulo 23, vista agora através de um canal
+independente.
 
-Pode ser compensado reduzindo A_s.
+**25.6 Degenerescências com A_s, τ e \sum m_\nu**
 
-Quebra:
+Três degenerescências imediatas precisam ser controladas em qualquer
+ajuste:
 
-- Lensing CMB
+- **α_0 ↔ A_s**: como o ISW extra (§25.4) e o lensing (§25.5) escalam
+  com a amplitude das flutuações, um α_0 maior pode ser parcialmente
+  compensado por um A_s menor --- quebrado pela forma *não*
+  escala-independente do sinal TDCP (o ΛCDM-A_s reescala P(k)
+  uniformemente; a TDCP não).
 
-- WL
+- **m_{S0} ↔ \sum m_\nu**: neutrinos massivos suprimem o crescimento
+  em altas-k de forma monotônica; a TDCP-F1 pode aumentar o
+  crescimento em torno de k_\star(a), produzindo um padrão não
+  monotônico que os neutrinos sozinhos não reproduzem (mesma
+  assinatura antecipada no Capítulo 23, §23.6, detalhada na matriz do
+  Capítulo 26, §26.5).
 
-**2. m_{S0} ↔ \sum m_\nu**
+- **τ**: como τ controla a amplitude da reionização e do bump de
+  polarização em baixo l, e o ISW tardio também vive em baixo l, os
+  dois se misturam estatisticamente em TT --- mas não em EE, onde o
+  bump de reionização tem uma assinatura própria em l\sim10 que o ISW
+  não produz. EE de baixo l é, portanto, o canal que quebra essa
+  degenerescência específica.
 
-Neutrinos suprimem crescimento em altas-k.
+**25.7 Conclusão do Capítulo 25**
 
-TDCP pode:
+A TDCP-F1:
 
-- aumentar crescimento em certas escalas
+- deixa intacto o espectro primário de picos acústicos (TT/TE/EE em
+  l intermediário/alto);
 
-- criar padrão não monotônico
+- modifica o CMB apenas via ISW tardio (baixo l) e lentes (C_ℓ^{φφ});
 
-Assinatura distintiva:
+- introduz uma contribuição de ISW genuinamente nova, ligada à
+  evolução temporal de Σ(k,a), além do ISW usual reescalado;
 
-$\text{joelho escala-dependente em } f\sigma_8(k)$
+- tem degenerescências identificáveis e quebráveis com A_s, \sum m_\nu
+  e τ, usando canais independentes (forma não escala-independente do
+  sinal, padrão não monotônico em k, e EE de baixo l).
 
-**3. p,q ↔ w_0-w_a**
+**Próximo Passo**
 
-Evolução temporal pode imitar DE dinâmica.
+**CAPÍTULO 26 --- Estratégia de Ajuste Global e Matriz de Degenerescências**
 
-Quebra:
-
-- RSD escala-dependente
-
-- combinação BAO + WL
-
-**4. \beta_0 ↔ Slip degeneracy**
-
-Afeta WL mais que RSD.
-
-**25.6 Região Paramétrica Plausível (Diagnóstico Atual)**
-
-Com base nos capítulos anteriores:
-
-- $m_{S0} \sim 30--300 H_0$
-
-- $\alpha_0 \sim 0.1--0.5$
-
-- $p \sim 0--1$
-
-- $q \sim 0--1$
-
-Região onde:
-
-- Solar screening seguro
-
-- LSS modificável
-
-- CMB primário quase intacto
-
-- Lensing alterável
-
-**25.7 Falsificabilidade Clara**
-
-A TDCP-F1 pode ser falsificada se:
-
-1. Não for possível reproduzir simultaneamente:
-
-$> C_\ell^{\phi\phi} \text{ e } f\sigma_8(z)$
-
-2. O joelho escala-dependente não aparecer.
-
-3. O ajuste exigir:
-
-$> \alpha_0 \to 0$
->
-> consistentemente com todos os dados.
-
-**25.8 Diagnóstico Estratégico Final**
-
-A TDCP-F1 agora:
-
-- Passou no teste solar
-
-- É não-linearmente estável
-
-- É implementável numericamente
-
-- Tem assinatura observacional distintiva
-
-- Pode ser ajustada globalmente
-
-Isso significa:
-
-$$ \boxed{ \text{A teoria está em nível de confronto observacional real.} } $$
-
-**Próximo Movimento Científico Real**
-
-Agora existem três caminhos possíveis:
-
-**Caminho A --- Rodar MCMC real**
-
-Produzir constraints quantitativos.
-
-**Caminho B --- Procurar assinatura analítica fechada**
-
-Encontrar relação fechada entre:
-
-$S_8 \text{ e } \alpha_0,m_{S0}$
-
-**Caminho C --- Publicação técnica estruturada**
-
-Organizar como:
-
-- Paper 1: Fundamentos + screening
-
-- Paper 2: Cosmologia linear + dados
-
-- Paper 3: Extensões (não-linear LSS)
-
-**Estado Final Atual da TDCP-F1**
-
-A teoria saiu de:
-
-Ideia conceitual
-
-para
-
-Modelo gravitacional consistente, implementável e falsificável.
+onde vamos montar a *likelihood* conjunta (CMB + BAO + RSD + WL) e
+consolidar a matriz completa de degenerescências e a região paramétrica
+plausível da TDCP-F1.

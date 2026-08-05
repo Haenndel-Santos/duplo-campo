@@ -1,221 +1,249 @@
-> **RASCUNHO RECONSTRUÍDO --- REVISAR**
->
-> As seções 22.1--22.6 abaixo não existiam no arquivo original: `Cap.22.docx`
-> preservava apenas o final do capítulo, a partir do "Diagnóstico importante"
-> sobre degenerescência com w₀-wₐ e massa de neutrinos, seguido das seções
-> 22.7--22.9 e da conclusão. As aberturas 22.1--22.6 (mapeamento de μ, Σ,
-> η_slip em observáveis; fσ₈(z); distâncias BAO; lensing fraco;
-> degenerescências) foram reconstruídas aqui **sem introduzir nenhuma
-> física nova**: cada função e cada definição usada já havia sido derivada
-> nos Capítulos 17, 18 e 21, que também já anunciavam exatamente este
-> roteiro ("mapear μ(k,a), Σ(k,a), η_slip da TDCP em observáveis; definir
-> funções de crescimento fσ8(z), distâncias BAO, e lensing..."). As
-> definições de distância BAO (§22.4) e do espectro de lentes P_κ(l)
-> (§22.5) são as definições padrão da cosmologia observacional (não
-> específicas da TDCP), aplicadas ao histórico de expansão e ao espectro
-> de potência já estabelecidos nos capítulos anteriores.
->
-> **O que precisa de validação do autor:**
-> 1. Confirmar que a numeração 22.1--22.6 proposta aqui é a pretendida
->    (o próprio Cap.21 só anuncia o conteúdo, não os números de seção).
-> 2. §22.4 usa a definição textual padrão de D_V(z) sem repetir a
->    dedução completa de d_A(z) e d_H(z) a partir de H(a) --- decidir se
->    isso deve ser expandido em uma futura revisão.
-> 3. §22.5 apresenta a integral de Limber para P_κ(l) na forma padrão
->    (mesma usada em qualquer pipeline ΛCDM/MG); nenhum termo
->    TDCP-específico além de Σ(k,a) foi adicionado --- confirmar que é
->    isso mesmo que o autor pretendia neste nível do capítulo (o
->    detalhamento numérico completo fica para o Cap.23, que trata da
->    implementação em CLASS).
-> 4. O cabeçalho "22.6" foi inserido imediatamente antes do parágrafo
->    "Diagnóstico importante..." que já existia no arquivo original,
->    apenas para completar a numeração 22.1--22.9 anunciada; o texto do
->    parágrafo em si não foi alterado.
+**CAPÍTULO 22 --- Estabilidade Não-Linear na TDCP-F1**
 
-**CAPÍTULO 22**
+(ausência de ghost/gradiente no regime screened + consistência EFT no Vainshtein)
 
-**Pipeline Quantitativo BAO + RSD + WL (TDCP-F1)**
+**22.1 Objetivo e o que significa "estável" aqui**
 
-**22.1 Objetivo do Capítulo**
+Após o Cap.20--21, a TDCP-F1 sobreviveu ao teste solar via screening tipo Vainshtein do helicity-0 do modo massivo. Agora o critério de sobrevivência sobe de nível:
 
-Os Capítulos 17--21 estabeleceram o formalismo completo do setor F1 no
-regime observacional: a forma Yukawa detectável de μ(k,a), o slip
-η_slip(k,a), a função de lentes Σ(k,a), e as condições de estabilidade
-e screening que delimitam o espaço de parâmetros viável. Falta agora
-reunir essas peças em um pipeline quantitativo --- isto é, converter o
-formalismo em previsões numéricas comparáveis a BAO, RSD e *weak
-lensing* (WL), e propor a estrutura de um ajuste global (*likelihood*).
-Esse é o objetivo deste capítulo, antes de passarmos à implementação
-formal em CLASS (Capítulo 23).
+1. Ausência de BD ghost no setor bimetric (não-linear completo).
 
-**22.2 As Três Funções Efetivas: μ, Σ e η_slip**
+2. Ausência de ghost e de instabilidade de gradiente para flutuações no background screened (regime solar).
 
-Do Capítulo 17, com a parametrização mínima m_S(a)=m_{S0}a^{-p} e
-α(a)=α_0 a^q:
+3. Controle EFT: o regime Vainshtein não pode exigir excitação além do cutoff efetivo (ou deve permanecer classicamente controlado).
 
-$$ \boxed{ \mu(k,a) = 1 + \frac{\alpha(a)\,k^2/a^2}{k^2/a^2 + m_S^2(a)} } $$
+4. (Opcional, mas importante) características causais: velocidades de propagação e possíveis superluminalidades.
 
-$$ \boxed{ \eta_{\rm slip}(k,a) = 1 + \frac{\beta(a)\,k^2/a^2}{k^2/a^2 + m_S^2(a)} } $$
+O foco técnico deste capítulo é o ponto 2--3 no setor helicity-0 (o mais crítico para screening), mantendo coerência com HR ghost-free e com a modulação m^2\to m^2F(\phi).
 
-$$ \boxed{ \Sigma(k,a) = \frac{\mu(k,a)}{2}\Big(1+\eta_{\rm slip}^{-1}(k,a)\Big) } $$
+**22.2 Estabilidade estrutural do setor HR: ausência do BD ghost (não-linear)**
 
-com o "joelho" de transição k_\star(a)=a\,m_S(a). Essas três funções são
-os únicos ingredientes TDCP-específicos que entram nos observáveis a
-seguir: tudo o que vem depois é aparato padrão de cosmologia
-observacional aplicado a μ, Σ e η_slip.
+A estrutura Hassan--Rosen (HR) ghost-free garante, por construção, que o potencial bimetric
 
-**22.3 Crescimento e fσ₈(z)**
+\mathcal V_{HR}(g,f) mantém o conjunto de restrições (constraint structure) que elimina o Boulware--Deser ghost no nível não-linear.
 
-Do Capítulo 8, a equação de crescimento modificada é:
+Na TDCP-F1 a interação entra como:
 
-$$ \ddot\delta + 2H\dot\delta = 4\pi G\,\mu(k,a)\,\rho\,\delta. $$
+$m^2F(\phi)\,\mathcal V_{HR}(g,f).$
 
-Resolvendo numericamente para δ(k,a) e definindo a taxa de crescimento
-f(a)=d\ln\delta/d\ln a (Capítulo 8, §8.5), o observável de RSD é:
+Se F(\phi) é um escalar sem derivadas multiplicando o potencial (isto é, F não depende de curvaturas e não contém termos com derivadas misturadas com g,f), então:
 
-$$ f\sigma_8(z) \equiv f(z)\,\sigma_8(z), \qquad \sigma_8(z)=\sigma_8\,\frac{D(z)}{D(0)}, $$
+- a estrutura algebraica do potencial HR é preservada;
 
-com D(a) o fator de crescimento já definido no Capítulo 8. Como μ
-depende de k, fσ₈ deixa de ser um único número por redshift e passa a
-ser uma família de curvas fσ₈(z;k) --- a "dependência de escala" já
-antecipada nos Capítulos 9 e 17--18.
+- a contagem de graus de liberdade do setor bimetric permanece a mesma;
 
-**22.4 Distâncias BAO**
+- o BD ghost não é reintroduzido por esse tipo de modulação multiplicativa.
 
-O fundo TDCP-F1 (Capítulos 5 e 13) fornece H(a) a partir da equação de
-Friedmann com densidade de interação ρ_int(r). A partir de H(a),
-definem-se as distâncias cosmológicas padrão:
+Conclusão estrutural: a potencial ameaça BD ghost continua ausente no bloco HR, e o problema real desloca-se para a estabilidade dinâmica dos modos efetivos (helicity-0) no background screened.
 
-$$ D_C(z) = \int_0^z \frac{c\,dz'}{H(z')}, \qquad D_A(z) = \frac{D_C(z)}{1+z}, \qquad D_H(z) = \frac{c}{H(z)}, $$
+**22.3 Limite de desacoplamento: ação efetiva para \pi com modulação F(\phi)**
 
-e a escala de dilatação BAO:
+No limite de desacoplamento (Cap.20), relembramos o bloco mínimo que captura Vainshtein:
 
-$$ \boxed{ D_V(z) \equiv \left[ (1+z)^2 D_A(z)^2\, c\,z / H(z) \right]^{1/3}. } $$
+$$ \boxed{ \mathcal{L}_{\pi} = -\frac{1}{2}Z(\phi)(\partial\pi)^2 + \frac{c_3(\phi)}{\Lambda_3^3}(\partial\pi)^2\square\pi + \frac{\alpha_V}{M_{\rm Pl}}\pi\,T } $$
 
-Como a TDCP-F1 recupera o ΛCDM no limite r=\text{const.} (Capítulo 5,
-§5.9), D_V(z) reduz-se à forma padrão nesse limite; o desvio observável
-vem inteiramente da modificação de H(a) através de ρ_int(r(a)), não de
-um termo novo na própria definição de D_V.
+com o ponto TDCP-específico:
 
-**22.5 Lentes Gravitacionais Fracas: P_κ(ℓ)**
+$$ \boxed{ \Lambda_3^3 \sim m^2 F(\phi)\,M_{\rm eff} \;\;\approx\;\; m^2F_0\,M_{\rm Pl} \quad\text{(Solar: }F(\phi)\approx F_0\text{ quase constante).} } $$
 
-O potencial de lentes é Φ+Ψ=2Σ(k,a)Φ_{\rm GR} (Capítulos 7--18). No
-limite de Limber, o espectro de convergência entre duas fatias de
-redshift i,j é:
+O background screened é tomado como:
 
-$$ \boxed{ P_\kappa^{ij}(\ell) = \int_0^{\chi_{\rm max}} d\chi\; \frac{W_i(\chi)W_j(\chi)}{\chi^2}\; \Sigma^2\!\left(\frac{\ell}{\chi},z(\chi)\right) P\!\left(\frac{\ell}{\chi},z(\chi)\right), } $$
+$\pi(x)=\bar\pi(r)+\varphi(x), \qquad r\ll r_V.$
 
-onde W_i(\chi) são os *kernels* de lentes padrão (distribuição de fontes
-e distância) e P(k,z) é o espectro de potência da matéria, já modificado
-pelo crescimento G_eff=Gμ (Capítulo 9). O único fator TDCP-específico
-inserido na integral é Σ(k,a); o restante é o formalismo padrão de WL.
+Nos interessa a ação quadrática para a flutuação \varphi, pois é aí que surgem:
 
-**22.6 Degenerescências com Parâmetros Cosmológicos Padrão**
+- ghost (sinal errado do termo temporal)
 
-Diagnóstico importante:
+- instabilidades de gradiente (sinais errados nas derivadas espaciais)
 
-$$ \boxed{ \text{TDCP pode imitar } w_0-w_a \text{ ou massa de neutrinos.} } $$
+- velocidades c_s^2 patológicas
 
-Isso significa que o ajuste global precisa incluir:
+**22.4 Quadrático efetivo: "métrica cinética" para as flutuações \varphi**
 
-$\{\Omega_m, H_0, \sigma_8, w_0, w_a, \sum m_\nu\}$
+Expande-se a ação em torno de \bar\pi. Para o Galileon cúbico (o termo essencial do Vainshtein), o resultado padrão pode ser escrito como:
 
-para evitar falso positivo.
+$$ \boxed{ S^{(2)}_\varphi = \frac12\int d^4x\; K^{\mu\nu}(\bar\pi)\;\partial_\mu\varphi\,\partial_\nu\varphi } $$
 
-**22.7 Pipeline Computacional Proposto**
+onde a matriz cinética efetiva é:
 
-**Etapa 1 --- Background**
+$$ \boxed{ K^{\mu\nu} = Z\,\eta^{\mu\nu} + \frac{2c_3}{\Lambda_3^3} \left[ 2\,\partial^\mu\partial^\nu\bar\pi - \eta^{\mu\nu}\,\Box\bar\pi \right] } $$
 
-Resolver:
+(aqui Z,c_3,\Lambda_3 são avaliados no valor solar local, F\simeq F_0).
 
-H(a)
+Isso define um "cone causal efetivo" para \varphi. A estabilidade exige que:
 
-com integração numérica.
+- o coeficiente do termo temporal seja positivo (sem ghost)
 
-**Etapa 2 --- Perturbações**
+- os coeficientes espaciais relevantes sejam positivos (sem gradiente instável)
 
-Implementar:
+**22.5 Especialização para background estático esfericamente simétrico**
 
-$\mu(k,a),\quad \Sigma(k,a)$
+Para \bar\pi=\bar\pi(r), temos:
 
-no solver de crescimento.
+$\Box\bar\pi = \bar\pi''+\frac{2}{r}\bar\pi'.$
 
-**Etapa 3 --- Observáveis**
+E a Hessiana espacial pode ser decomposta em radial e angular:
 
-Calcular:
+$$ \partial_i\partial_j \bar\pi = \left(\bar\pi''-\frac{\bar\pi'}{r}\right)n_i n_j + \frac{\bar\pi'}{r}\delta_{ij}, \qquad n_i=\frac{x_i}{r}. $$
 
-- $f\sigma_8(z)$
+Assim, os coeficientes cinéticos efetivos podem ser organizados como:
 
-- P(k,z)
+- temporal: K^{00}\equiv -Z_t (com Z_t>0 exigido para ausência de ghost)
 
-- $D_V(z)$
+- radial: K^{rr}\equiv Z_r
 
-- $P_\kappa(l)$
+- angular: K^{\Omega\Omega}\equiv Z_\Omega/r^2
 
-**Etapa 4 --- Likelihood modular**
+Resulta (até fatores convencionais de sinal; a forma abaixo é a versão operacional padrão usada em análises de Galileon esférico):
 
-$$ \mathcal L = \mathcal L_{BAO}\times \mathcal L_{RSD}\times \mathcal L_{WL} $$
+$$ \boxed{ Z_t = Z + \frac{4c_3}{\Lambda_3^3} \left( \bar\pi''+\frac{2}{r}\bar\pi' \right) } $$
 
-**22.8 Intervalos Paramétricos Iniciais**
+$$ \boxed{ Z_r = Z + \frac{8c_3}{\Lambda_3^3} \left( \frac{\bar\pi'}{r} \right) } $$
 
-Com base nos capítulos anteriores:
+$$ \boxed{ Z_\Omega = Z + \frac{4c_3}{\Lambda_3^3} \left( \bar\pi''+\frac{\bar\pi'}{r} \right) } $$
 
-$m_{S0} \sim 30--300\,H_0$
+Os critérios locais de estabilidade são então:
 
-$\alpha_0 \sim 0.1--1$
+$\boxed{ Z_t>0,\qquad Z_r>0,\qquad Z_\Omega>0. }$
 
-$p,q \sim \mathcal{O}(1)$
+E as velocidades de propagação (características) seguem de:
 
-Isso garante:
+$$ \boxed{ c_r^2 = \frac{Z_r}{Z_t}, \qquad c_\Omega^2=\frac{Z_\Omega}{Z_t}. } $$
 
-- Yukawa entra em k\sim 0.01--0.1\,h\,{\rm Mpc}^{-1}
+**22.6 Regime Vainshtein (r ≪ r_V): sinais e hierarquia**
 
-- Screening solar intacto
+Do Cap.20, no regime r\ll r_V (cúbico dominante), a solução implica:
 
-- Modificações visíveis em LSS
+$$ y(r)\equiv \frac{\bar\pi'}{r} \propto r^{-3/2}, \quad\Rightarrow\quad \frac{\bar\pi'}{r}\gg \frac{\bar\pi''}{\;}\sim \mathcal{O}\!\left(\frac{\bar\pi'}{r}\right) \quad\text{(mesma ordem paramétrica)}. $$
 
-**22.9 Teste Observacional Crítico**
+O ponto decisivo é que, dentro de r_V, os termos proporcionais a c_3\bar\pi''/\Lambda_3^3 e c_3(\bar\pi'/r)/\Lambda_3^3 dominam sobre Z, tornando:
 
-O sinal característico da TDCP-F1 é:
+$$ Z_t \sim \frac{4c_3}{\Lambda_3^3}\left(\bar\pi''+\frac{2\bar\pi'}{r}\right), \qquad Z_r \sim \frac{8c_3}{\Lambda_3^3}\left(\frac{\bar\pi'}{r}\right), \qquad Z_\Omega \sim \frac{4c_3}{\Lambda_3^3}\left(\bar\pi''+\frac{\bar\pi'}{r}\right). $$
 
-$\boxed{ \text{Joelho escala-dependente em } f\sigma_8(k) }$
+Portanto, os sinais de estabilidade são controlados pelo sinal efetivo de c_3 multiplicado pelo sinal do perfil \bar\pi (que é fixado pela condição de atratividade e pela fonte T\simeq-\rho). Em termos práticos, a condição robusta é:
 
-Isso é distintivo comparado a:
+$$ \boxed{ \frac{c_3}{Z} > 0 \quad\text{(escolha de ramo/parametrização que garante }Z_t,Z_r,Z_\Omega>0\text{ no Vainshtein).} } $$
 
-- w_0-w_a (escala-independente)
+Essa condição é exatamente o análogo do requisito "ramo saudável" em análises de Galileon/dRGT: um dos ramos resolve a EOM mas produz Z_t<0 (ghost), o outro produz cinética positiva e screening físico.
 
-- Neutrinos (suprimem poder em alta-k)
+**22.7 Velocidades de propagação e superluminalidade (diagnóstico)**
 
-Portanto:
+No regime Vainshtein, é típico obter:
 
-$\boxed{ \text{RSD escala-dependente é o teste mais limpo.} }$
+- c_r^2 = Z_r/Z_t de ordem unidade, frequentemente maior que 1
+
+- c_\Omega^2 = Z_\Omega/Z_t subluminal ou ordem unidade
+
+Em muitos modelos Galileon cúbicos, encontra-se genericamente:
+
+$c_r^2 \gtrsim 1,$
+
+isto é, superluminalidade radial efetiva nas flutuações \varphi sobre o background screened.
+
+Interpretação no contexto TDCP-F1:
+
+- Não é automaticamente uma inconsistência interna de EFT; é uma propriedade comum de cones efetivos em backgrounds não-triviais.
+
+- Contudo, é um ponto sensível em relação à possibilidade de UV completion Lorentz-invariante estrita.
+
+- O que a TDCP-F1 precisa é: ausência de instabilidade (ghost/gradiente) e controle EFT. A discussão "superluminal ⇒ inconsistente" não é conclusiva sem hipóteses extras sobre UV completion.
+
+Neste capítulo, registramos o diagnóstico:
+
+$$ \boxed{ \text{TDCP-F1 (como HR/dRGT-like) pode herdar cones efetivos modificados no Vainshtein; isso exige monitoramento, não invalidação imediata.} } $$
+
+**22.8 Controle EFT no regime Vainshtein: condição operacional**
+
+No Vainshtein, a solução satisfaz o equilíbrio:
+
+$$ Z\,y \sim \frac{4c_3}{\Lambda_3^3}y^2 \quad\Rightarrow\quad y \sim \frac{Z\Lambda_3^3}{4c_3} \quad\text{em }r\sim r_V, $$
+
+e para r\ll r_V, y cresce.
+
+A consistência EFT exige que:
+
+1. As correções de operadores mais altos (quartic/quintic Galileon e termos além do truncamento) não dominem indevidamente.
+
+2. As correções quânticas sejam controláveis (regime "classicalization" típico do Vainshtein).
+
+Um critério operacional clássico (suficiente) é exigir que o regime screened seja dominado pelo mesmo operador que usamos para definir r_V, isto é:
+
+$$ \boxed{ \left|\frac{\partial^2\bar\pi}{\Lambda_3^3}\right| \lesssim \mathcal{O}(1) \quad\text{no raio de interesse (ex.: em AU).} } $$
+
+Como o screening solar é extremamente profundo (r_{AU}\ll r_V), isso pode ser satisfeito com folga dependendo da normalização dos coeficientes. Em termos práticos, a condição se expressa como:
+
+$$ \boxed{ \text{Escolher a hierarquia de coeficientes }(c_3,c_4,c_5,\dots) \text{ para que o operador dominante permaneça controlado e a série EFT não colapse.} } $$
+
+Na TDCP-F1, isso é tecnicamente implementável porque:
+
+- a estrutura HR fixa a classe de operadores no limite de desacoplamento (Galileon)
+
+- a modulação F(\phi) apenas desloca \Lambda_3 localmente via m^2F_0, não muda a classe de operadores
+
+Ou seja, o controle EFT depende do ponto paramétrico e do ramo, não de um defeito estrutural.
+
+**22.9 Papel de \phi na estabilidade não-linear**
+
+Há duas verificações essenciais:
+
+**(i) F(\phi) não pode variar localmente de modo a inverter sinais**
+
+Como:
+
+$\Lambda_3^3 \propto m^2F(\phi),$
+
+variações locais grandes poderiam deslocar o balanço dos termos e mudar sinais efetivos. A condição de segurança já antecipada é:
+
+$$ \boxed{ \left|\frac{\delta F}{F_0}\right| \ll 1 \quad\text{em escalas solares.} } $$
+
+**(ii) \phi não deve introduzir uma quinta força não-screened**
+
+Isso é garantido se:
+
+- \phi não acopla diretamente a \mathcal L_m[g] (sem termo \phi T/M), e
+
+- o perfil \delta\phi(r) é pequeno localmente (por massa efetiva, rigidez cinética ou outro mecanismo).
+
+Operacionalmente:
+
+$$ \boxed{ |\nabla \phi| \;\text{pequeno no Sistema Solar} \;\Rightarrow\; \text{nenhuma força adicional relevante além do helicity-0 já screened.} } $$
 
 **Conclusão do Capítulo 22**
 
-A TDCP-F1 agora:
+A TDCP-F1 passa no teste não-linear local se satisfizer simultaneamente:
 
-- Tem previsão quantitativa para crescimento
+**(A) Segurança estrutural HR**
 
-- Pode ser confrontada com BAO
+$$ \boxed{ \text{BD ghost ausente (potencial HR ghost-free preservado por }F(\phi)\text{ multiplicativo).} } $$
 
-- Pode ser testada com WL
+**(B) Estabilidade dinâmica do helicity-0 no Vainshtein**
 
-- Tem assinatura distintiva em RSD
+$$ \boxed{ Z_t>0,\; Z_r>0,\; Z_\Omega>0 \;\;\Rightarrow\;\; \text{sem ghost e sem instabilidade de gradiente.} } $$
 
-- Está pronta para implementação em CLASS/CAMB
+O que, no regime screened, equivale na prática a escolher o ramo saudável:
 
-**Próximo Passo**
+$$ \boxed{ c_3/Z > 0 \quad (\text{com o sinal do perfil escolhido fisicamente}).} $$
 
-**CAPÍTULO 23 --- Implementação formal em CLASS**
+**(C) Controle EFT**
+
+$$ \boxed{ \left|\partial^2\bar\pi/\Lambda_3^3\right|\lesssim \mathcal O(1) \;\;\text{(ou hierarquia de coeficientes que mantém truncamento válido).} } $$
+
+**(D) \phi inócuo localmente**
+
+$$ \boxed{ |\delta F/F_0|\ll 1 \text{ em escalas solares e sem acoplamento direto }\phi T.} $$
+
+Com esses critérios, a TDCP-F1 permanece não-linearmente plausível no setor solar screened e está pronta para entrar no bloco observacional quantitativo.
+
+**Próximo passo (Cap.23)**
+
+**CAPÍTULO 23 --- Pipeline quantitativo BAO + RSD + WL**
 
 onde vamos:
 
-- Modificar módulo perturbations.c
+- mapear \mu(k,a), \Sigma(k,a), \eta_{\rm slip} da TDCP em observáveis
 
-- Inserir \mu(k,a), \Sigma(k,a)
+- definir funções de crescimento f\sigma_8(z), distâncias BAO, e lensing
 
-- Ajustar equação de Poisson
+- propor um pipeline mínimo para ajuste (MCMC / likelihood modular)
 
-- Garantir gauge consistency
-
-- Produzir espectro CMB preliminar
+- identificar degenerescências com \LambdaCDM, w_0-w_a, \Omega_k, \sum m_\nu

@@ -1,243 +1,501 @@
+Perfeito --- a partir daqui a escrita vira técnica, objetiva e verificável. Vou estruturar esses quatro tópicos como um bloco de validação matemática (Cap.14--17) e já inicio o Cap.14 com o formalismo necessário para você conseguir checar consistência e delimitar espaço de parâmetros.
+
+**BLOCO DE VALIDAÇÃO MATEMÁTICA (TDCP)**
+
+**Cap.14 --- Espaço de parâmetros \beta_n, ramos cosmológicos e condições de consistência**
+
+**Cap.15 --- Controle de isocurvatura (modos adiabático/isocurvatura) e condições observacionais**
+
+**Cap.16 --- Massa efetiva do gravitón: Higuchi + limites GW + evolução temporal**
+
+**Cap.17 --- Consistência UV (EFT): escala de corte, forte acoplamento, radiative stability**
+
+Abaixo: Capítulo 14 completo (versão técnica).
+
 **CAPÍTULO 14**
 
-**Setor Escalar, Modos Adiabáticos/Isocurvatura e Condições de Estabilidade (F1)**
+**Espaço de Parâmetros \beta_n, Ramos Cosmológicos e Consistência**
 
-Trabalharemos com:
+**14.1 Ação bimetric HR (base) e acoplamento TDCP**
 
-$(\beta_0,\beta_1,\beta_2,0,\beta_4)$
+Partimos do bimetric Hassan--Rosen (HR) com duas métricas dinâmicas g_{\mu\nu} e f_{\mu\nu}:
 
-no fundo FLRW já definido no Cap.13.
+$$ S = \int d^4x\Bigg[ \frac{M_g^2}{2}\sqrt{-g}\,R[g] \;+\; \frac{M_f^2}{2}\sqrt{-f}\,R[f] \;-\; m^2 M_{\rm eff}^2 \sqrt{-g}\,V\!\left(\sqrt{g^{-1}f}\right) \Bigg] + S_m[g,\psi] + S_\phi $$
 
-Nosso objetivo aqui é:
+onde o potencial HR é
 
-1. Extrair a ação quadrática no setor escalar.
+$$ V(\mathcal{K})=\sum_{n=0}^{4}\beta_n\,e_n(\mathcal{K}), \qquad \mathcal{K}=\sqrt{g^{-1}f}, $$
 
-2. Identificar os graus físicos (adiabático + isocurvatura).
+e a TDCP introduz modulação via campo estrutural \phi (ou \chi):
 
-3. Determinar a massa efetiva do modo isocurvatura m_S^2.
+$$ \beta_n \rightarrow \beta_n(\phi) \quad\text{ou}\quad V \rightarrow F(\phi)\,V. $$
 
-4. Impor condições:
+Nota técnica: a modulação \beta_n(\phi) é mais geral (e mais perigosa). A modulação global F(\phi) é mais controlável.
 
- - ausência de fantasma,
+**14.2 Fundo FLRW bimetric e parametrização essencial**
 
- - ausência de instabilidade de gradiente,
+Assumimos fundo homogêneo/isotrópico:
 
- - supressão observacional de isocurvatura.
+$$ ds_g^2=-N_g^2(t)dt^2+a^2(t)\delta_{ij}dx^i dx^j, \qquad ds_f^2=-N_f^2(t)dt^2+b^2(t)\delta_{ij}dx^i dx^j. $$
 
-**14.1 Perturbações escalares das métricas**
+Definimos:
 
-Escrevemos as perturbações escalares padrão:
+$$ H_g=\frac{1}{N_g}\frac{\dot a}{a}, \qquad H_f=\frac{1}{N_f}\frac{\dot b}{b}, \qquad r(t)=\frac{b}{a}, \qquad \xi(t)=\frac{N_f}{N_g}. $$
 
-Para g_{\mu\nu}:
+A matriz \mathcal{K}=\sqrt{g^{-1}f} no fundo é diagonal:
 
-$$ ds_g^2 = -(1+2\Phi_g)dt^2 +2a\partial_i B_g dx^i dt +a^2\left[(1-2\Psi_g)\delta_{ij} +2\partial_i\partial_j E_g\right]dx^i dx^j $$
-
-Para f_{\mu\nu}:
-
-$$ ds_f^2 = -\xi^2(1+2\Phi_f)dt^2 +2\xi b\partial_i B_f dx^i dt +b^2\left[(1-2\Psi_f)\delta_{ij} +2\partial_i\partial_j E_f\right]dx^i dx^j $$
-
-Incluímos também o campo estrutural:
-
-$\phi(t) \rightarrow \phi(t) + \delta\phi.$
-
-**14.2 Contagem de graus de liberdade**
-
-Em bimetric HR:
-
-- Existem 2 modos escalares físicos após remover constraints.
-
-- Um deles corresponde ao modo adiabático (curvatura total).
-
-- O outro é o modo relativo (isocurvatura).
-
-Definimos combinações úteis:
-
-Modo adiabático:
-
-$$ \zeta = \frac{\rho_g \Psi_g + \rho_f \Psi_f}{\rho_g + \rho_f} $$
-
-Modo relativo (isocurvatura estrutural TDCP):
-
-$S \propto \Psi_f - \Psi_g.$
-
-Mais precisamente, o modo físico é combinação canonicamente normalizada dessas variáveis.
-
-**14.3 Ação quadrática (estrutura geral)**
-
-A ação escalar quadrática assume forma matricial padrão:
-
-$$ S^{(2)} = \frac12 \int dt\, d^3k\, a^3 \left[ \dot{\vec Q}^T K \dot{\vec Q} - \vec Q^T \Omega^2 \vec Q \right] $$
-
-onde:
-
-\vec Q = \begin{pmatrix} Q_\zeta \\ Q_S \end{pmatrix}
-
-K é matriz cinética, \Omega^2 matriz de massa.
-
-**14.4 Condição de ausência de fantasma**
-
-Para ausência de fantasma:
-
-$\boxed{ K \ \text{deve ser positiva definida} }$
-
-Ou seja:
-
-$\det(K) > 0, \quad {\rm Tr}(K) > 0.$
-
-Em bimetric F1, a condição reduz-se a:
-
-$M_{\rm eff}^2 \left(\beta_1 + 2\beta_2 r\right) > 0$
-
-avaliado no fundo.
-
-Observe que:
-
-- No ramo algébrico temos \beta_1+2\beta_2 r_\star=0.
-
-- Isso implica que exatamente no ramo algébrico puro o modo relativo pode se tornar fortemente acoplado.
-
-Portanto:
-
-Conclusão técnica importante
-
-Para estudar isocurvatura física propagante, precisamos trabalhar ligeiramente fora do ramo algébrico puro ou incluir modulação TDCP.
-
-**14.5 Massa efetiva do modo isocurvatura m_S^2**
-
-A massa escalar efetiva do modo relativo é proporcional à derivada do potencial em relação a r.
-
-Para F1:
-
-$U(r)=\beta_0+3\beta_1 r+3\beta_2 r^2$
-
-Logo:
-
-$\frac{dU}{dr}=3\beta_1+6\beta_2 r.$
-
-A massa efetiva do modo relativo assume forma típica:
-
-$$ \boxed{ m_S^2 \sim m^2 F(\phi)\, \left(\beta_1+2\beta_2 r\right) } $$
-
-(omito fatores de normalização dependentes de M_g,M_f,r, que são positivos.)
-
-**14.6 Interpretação crítica**
-
-Observe:
-
-- O mesmo fator que define o ramo algébrico
-
-- é o fator que controla a massa do modo isocurvatura.
-
-$\boxed{ m_S^2 \propto \beta_1+2\beta_2 r. }$
-
-Portanto:
-
-- No ramo algébrico puro → m_S^2 = 0.
-
-- No ramo dinâmico → m_S^2 \neq 0.
-
-Isso é estrutural no HR.
-
-**14.7 Condição de supressão observacional**
-
-Dados CMB exigem:
-
-$\frac{P_S}{P_\zeta} \ll 1.$
-
-Para campo pesado:
-
-$\boxed{ m_S^2 \gg H^2 }$
-
-então
-
-$S \propto a^{-3/2} e^{-m_S t}$
-
-decai exponencialmente.
-
-Logo condição matemática fundamental:
-
-$$ \boxed{ m^2 F(\phi) \left(\beta_1+2\beta_2 r\right) \gg H^2. } $$
-
-**14.8 Relação com F1 e restrições já obtidas**
-
-Recordando:
-
-$r_\star=-\frac{\beta_1}{2\beta_2}.$
+\mathcal{K}^\mu{}_\nu= {\rm diag}(\xi,r,r,r).
 
 Então:
 
-$\beta_1+2\beta_2 r = 2\beta_2 (r-r_\star).$
+$$ e_0=1,\quad e_1=\xi+3r,\quad e_2=3\xi r+3r^2,\quad e_3=3\xi r^2+r^3,\quad e_4=\xi r^3. $$
+
+Logo o potencial no fundo:
+
+$$ V(\xi,r)= \beta_0 +\beta_1(\xi+3r) +\beta_2(3\xi r+3r^2) +\beta_3(3\xi r^2+r^3) +\beta_4(\xi r^3). $$
+
+Se houver modulação global TDCP:
+
+$V(\xi,r,\phi)=F(\phi)\,V(\xi,r).$
+
+**14.3 Equações de Friedmann e densidades de interação**
+
+As equações de Friedmann tomam forma:
+
+$$ 3M_g^2 H_g^2 = \rho_m + \rho_\phi + \rho_{\rm int}^{(g)}(r,\phi), $$
+
+$3M_f^2 H_f^2 = \rho_f + \rho_{\rm int}^{(f)}(r,\phi).$
+
+No caso HR padrão (e mantendo a notação usual), as densidades efetivas são:
+
+$$ \rho_{\rm int}^{(g)}= m^2 M_{\rm eff}^2\,F(\phi)\, \Big(\beta_0 + 3\beta_1 r + 3\beta_2 r^2 + \beta_3 r^3\Big), $$
+
+$$ \rho_{\rm int}^{(f)}= m^2 M_{\rm eff}^2\,F(\phi)\, \Big(\beta_4 + 3\beta_3 r^{-1} + 3\beta_2 r^{-2} + \beta_1 r^{-3}\Big). $$
+
+Essas expressões são a ponte direta entre \beta_n e a cosmologia de fundo.
+
+**14.4 Constraint de Bianchi e ramos (condição estrutural)**
+
+A identidade de Bianchi gera a condição (forma típica no fundo FLRW):
+
+$(\beta_1+2\beta_2 r+\beta_3 r^2)\,\big(H_g-\xi H_f\big)=0.$
+
+Portanto, existem dois ramos:
+
+**(A) Ramo Algébrico (solução com r constante)**
+
+$$ \beta_1+2\beta_2 r+\beta_3 r^2 = 0 \quad\Rightarrow\quad r=r_\star=\text{const.} $$
+
+**(B) Ramo Dinâmico (evolução de r(t))**
+
+$H_g=\xi H_f \quad\Rightarrow\quad r(t)\ \text{evolui}.$
+
+Decisão de modelagem: para "aceleração tardia emergente" com memória estrutural, o ramo dinâmico costuma ser mais fértil; o ramo algébrico é excelente como limite controlado e para conectar com \LambdaCDM.
+
+**14.5 Caso proporcional como subcaso controlado (calibração)**
+
+Se
+
+$$ f_{\mu\nu} = c^2 g_{\mu\nu}\quad\Rightarrow\quad r=c,\ \xi=c, $$
+
+então
+
+$$ \rho_{\rm int}^{(g)}= m^2 M_{\rm eff}^2F(\phi) \Big(\beta_0+3\beta_1 c+3\beta_2 c^2+\beta_3 c^3\Big), $$
+
+que funciona como uma energia escura efetiva.
+
+Se F(\phi) varia lentamente:
+
+$$ w_{\rm eff}\approx -1 \quad \text{com desvio controlado por}\ \dot\phi. $$
+
+Isso serve como calibração: você garante que a TDCP recupera um comportamento tipo-\Lambda em um limite bem definido.
+
+**14.6 Como "ajustar" \beta_n de forma matemática (não narrativa)**
+
+Aqui está o procedimento objetivo de ajuste:
+
+**Passo 1 --- Fixar normalizações e reduzir degenerescência**
+
+Defina uma escala:
+
+- reescale m^2 M_{\rm eff}^2 como escala cosmológica,
+
+- fixe uma combinação como unidade (ex.: \beta_1=1 ou \beta_0=1) para remover degenerescência de escala.
+
+**Passo 2 --- Escolher ramo e impor condição de aceleração tardia**
+
+A aceleração requer:
+
+$\frac{\ddot a}{a} = \dot H_g + H_g^2 > 0$
+
+que, usando Friedmann + equação de Raychaudhuri, vira uma condição sobre pressão efetiva. Defina:
+
+$$ \rho_{\rm DE}^{\rm eff} \equiv \rho_\phi + \rho_{\rm int}^{(g)}, \quad p_{\rm DE}^{\rm eff}\equiv p_\phi + p_{\rm int}^{(g)}. $$
+
+Então aceleração tardia exige:
+
+$$ \rho_m + \rho_{\rm DE}^{\rm eff} + 3p_{\rm DE}^{\rm eff} < 0. $$
+
+Isso impõe sinal e escala em combinações (\beta_0,\beta_1,\beta_2,\beta_3) via \rho_{\rm int}^{(g)}(r) e seu "equivalente de pressão" no fundo (derivável do tensor de interação).
+
+**Passo 3 --- Impor recuperação de GR em regime local**
+
+Em termos efetivos, isso significa suprimir o modo extra em escalas locais (massa/grande ou acoplamento pequeno). Isso entra via:
+
+- massa do modo tensorial massivo m_T^2(\beta_n,r),
+
+- e depois via \mu(k,a) (Cap.7--8).
+
+Na prática você impõe (para grandes k):
+
+\mu(k,a)\to 1 \quad \text{quando}\quad k/a\gg m_{\rm screen}
+
+o que requer m_\sigma e/ou m_T suficientemente grandes ou acoplamentos \Delta pequenos.
+
+**Passo 4 --- Checar Higuchi e estabilidade (link com Cap.16)**
+
+Ainda neste capítulo, você já deixa a condição escrita como restrição em \beta_n:
+
+$$ m_T^2(\beta_n,r,\phi)\ \ge\ 2H^2 \quad\text{no regime quasi-de Sitter relevante}. $$
+
+**Passo 5 --- Checar consistência do ramo dinâmico (evitar singularidades em r)**
+
+Se o ramo dinâmico é usado, é comum que certas escolhas de \beta_n levem r a regiões problemáticas (ex.: r\to 0 ou r\to\infty). Impõe-se:
+
+$0<r_{\min}\le r(t)\le r_{\max}<\infty$
+
+e isso vira restrição nas combinações polinomiais:
+
+$$ \beta_0 + 3\beta_1 r + 3\beta_2 r^2 + \beta_3 r^3 \quad \text{não deve cruzar regiões que gerem instabilidade/ghost.} $$
+
+**14.7 Famílias mínimas recomendadas (para varrer espaço de parâmetros)**
+
+Para uma varredura inicial objetiva, recomendo duas famílias, porque reduzem dimensionalidade e ainda capturam fenomenologia:
+
+**Família F1 (minimal cosmological)**
+
+$$ (\beta_0,\beta_1,\beta_2,\beta_3,\beta_4) = (\beta_0,\beta_1,\beta_2,0,\beta_4) $$
+
+Vantagem: reduz termos cúbicos em r, simplifica análise do ramo algébrico/dinâmico.
+
+**Família F2 (late-time acceleration tuned)**
+
+$$ (\beta_0,\beta_1,\beta_2,\beta_3,\beta_4) = (\beta_0,\beta_1,0,\beta_3,\beta_4) $$
+
+Vantagem: mantém termo r^3 que é eficiente para gerar energia efetiva em grandes escalas.
+
+Meta matemática: escolher uma família, resolver background (Cap.5), então impor:
+
+- aceleração tardia,
+
+- Higuchi,
+
+- e GR local.
+
+**14.8 Entregável deste capítulo (critério de conclusão)**
+
+Este capítulo está "fechado" quando você consegue produzir um conjunto explícito de restrições em \beta_n do tipo:
+
+1. Existência de ramo cosmológico desejado (A ou B).
+
+2. Aceleração tardia com w_{\rm eff}\approx -1 (ou o comportamento alvo).
+
+3. Higuchi satisfeita no regime relevante.
+
+4. \mu(k,a)\to 1 em escalas locais (condição de retorno a GR).
+
+5. r(t) não diverge (faixa finita).
+
+**Próximo passo (Cap.15 --- Isocurvatura)**
+
+A isocurvatura vai depender diretamente de:
+
+- se você usa \beta_n(\phi) (mistura multifield),
+
+- e da massa efetiva do modo relativo escalar m_S^2(\beta_n,r,\phi).
+
+Ou seja: Cap.15 usa o que definimos aqui.
+
+**Para avançar agora sem travar**
+
+Eu vou seguir o caminho mais objetivo possível:
+
+- Escolha técnica imediata (sem debate longo):
+
+Vamos começar com uma família mínima e derivar as restrições formais.
+
+Minha recomendação para a TDCP, pela coerência com "memória estrutural" e aceleração tardia, é começar com F1:
+
+$(\beta_0,\beta_1,\beta_2,0,\beta_4)$
+
+e trabalhar no ramo dinâmico, mantendo o ramo proporcional como limite de checagem.
+
+- forma explícita do polinômio do ramo algébrico (para comparação),
+
+- equação diferencial efetiva para r(t) no ramo dinâmico,
+
+- e como isso fixa a combinação de \beta_0,\beta_1,\beta_2,\beta_4 para reproduzir H(z).
+
+$$ (\beta_0,\beta_1,\beta_2,\beta_3,\beta_4)=(\beta_0,\beta_1,\beta_2,0,\beta_4). $$
+
+A partir daqui vou ser 100% técnico: escrever as equações no fundo, extrair o que dá para extrair analiticamente, e deixar claro quais combinações de \beta_n são fixadas por: (i) existência do ramo, (ii) aceleração tardia, (iii) recuperação de GR, (iv) estabilidade.
+
+**CAP.14 (continuação) --- F1: Equações fechadas e restrições**
+
+**14.9 Potenciais efetivos no fundo para F1**
+
+Com \beta_3=0, as densidades de interação reduzem a:
+
+$$ \rho_{\rm int}^{(g)}(r,\phi)=m^2M_{\rm eff}^2F(\phi)\Big(\beta_0+3\beta_1r+3\beta_2r^2\Big), $$
+
+$$ \rho_{\rm int}^{(f)}(r,\phi)=m^2M_{\rm eff}^2F(\phi)\Big(\beta_4+3\beta_2r^{-2}+\beta_1r^{-3}\Big). $$
+
+Defina abreviações úteis (técnica padrão para análise de bimetric FLRW):
+
+$$ U(r)\equiv \beta_0+3\beta_1r+3\beta_2r^2, \qquad \tilde U(r)\equiv \beta_4+3\beta_2r^{-2}+\beta_1r^{-3}. $$
+
+Então:
+
+$$ \rho_{\rm int}^{(g)}=m^2M_{\rm eff}^2F(\phi)\,U(r), \qquad \rho_{\rm int}^{(f)}=m^2M_{\rm eff}^2F(\phi)\,\tilde U(r). $$
+
+**14.10 Constraint de Bianchi e ramos para F1**
+
+A constraint no fundo é:
+
+$(\beta_1+2\beta_2r+\beta_3r^2)(H_g-\xi H_f)=0$
+
+$e com \beta_3=0:$
+
+**(A) Ramo Algébrico**
+
+$$ \beta_1+2\beta_2r=0 \quad\Rightarrow\quad \boxed{r_\star=-\frac{\beta_1}{2\beta_2}}. $$
+
+Condição de existência física (evitar r<0 para b=a r real e positivo):
+
+$\boxed{r_\star>0\ \Rightarrow\ \beta_1\beta_2<0.}$
+
+Esse ramo é extremamente útil como limite: ele fixa r e transforma U(r) em constante (se F(\phi) for lento ou congelado).
+
+**(B) Ramo Dinâmico**
+
+$\boxed{H_g=\xi H_f.}$
+
+Esse é o ramo que permite r(t) evoluir, isto é, onde a TDCP ganha "memória estrutural" cosmológica.
+
+**14.11 Escolha de gauge e relação cinemática para r(t)**
+
+Fixe gauge N_g=1. Então H_g=\dot a/a.
+
+Como H_f=\frac{1}{N_f}\frac{\dot b}{b}=\frac{1}{\xi}\frac{\dot b}{b}, a condição do ramo dinâmico:
+
+$$ H_g=\xi H_f=\xi\left(\frac{1}{\xi}\frac{\dot b}{b}\right)=\frac{\dot b}{b}. $$
 
 Logo:
 
-$\boxed{ m_S^2 \propto 2\beta_2 (r-r_\star). }$
+$$ \frac{\dot b}{b}=\frac{\dot a}{a} \quad\Rightarrow\quad \frac{d}{dt}\ln\left(\frac{b}{a}\right)=0 \quad\Rightarrow\quad \boxed{\dot r=0.} $$
 
-Interpretação:
+Resultado técnico importante:
 
-- Se r evolui ligeiramente ao redor de r_\star,
+No ansatz FLRW estritamente diagonal e com acoplamento HR puro, o "ramo dinâmico" como escrito acima força r=constante (porque a condição equivale a H_b=H_a).
 
-- o modo isocurvatura adquire massa proporcional ao desvio estrutural.
+Isso é um ponto sutil que explica por que, em bimetric FLRW, o "ramo dinâmico" não é simplesmente "r(t) livre" --- ele depende de como a constraint aparece (há formas equivalentes envolvendo \dot r e \xi). Em tratamentos completos, a constraint é frequentemente escrita como:
 
-Isso é coerente com TDCP:
+$(\beta_1+2\beta_2r+\beta_3r^2)\,(\dot r - (\xi-1)Hr)=0,$
 
-- no momento de bifurcação → r pode deslocar-se,
+ou equivalente, onde o ramo dinâmico não fixa \dot r=0 trivialmente, mas fixa relação entre \xi e r. O ponto operacional para nós:
 
-- posteriormente → relaxa para r_\star,
+- se quisermos r(t) evoluindo, precisamos explicitar a forma completa da constraint com lapses e derivadas (ou introduzir a modulação TDCP F(\phi) e acoplamentos que geram \dot r\neq 0 de forma consistente).
 
-- tornando m_S^2 grande e suprimindo isocurvatura.
+Como você quer validar matematicamente, vou fazer do jeito correto: introduzir a variável de gauge-invariante e fechar o sistema.
 
-**14.9 Condição final fechada para F1**
+**14.12 Forma fechada "padrão" do sistema FLRW bimetric (para evolução de r)**
 
-Para controle completo precisamos impor:
+Defina o "Hubble do setor f em tempo g":
 
-**(1) Ausência de fantasma:**
+$H_b \equiv \frac{\dot b}{b}, \quad (N_g=1).$
 
-$\beta_1+2\beta_2 r > 0.$
+Então
 
-**(2) Supressão de isocurvatura:**
+$H_f = \frac{1}{N_f}\frac{\dot b}{b}=\frac{H_b}{\xi}.$
 
-$m^2 F(\phi)(\beta_1+2\beta_2 r) \gg H^2.$
+A constraint do ramo dinâmico, escrita como conservação do tensor de interação, pode ser posta na forma:
 
-**(3) Consistência com Cap.13:**
+$\boxed{ (\beta_1+2\beta_2r+\beta_3r^2)\,(H_b-\xi H_g)=0 }$
 
-$$ \beta_1\beta_2<0, \quad \beta_0-\frac{3\beta_1^2}{4\beta_2}>0. $$
+e para \beta_3=0:
 
-Essas três já delimitam fortemente o espaço F1.
+$(\beta_1+2\beta_2r)\,(H_b-\xi H_g)=0.$
 
-**14.10 Resultado estrutural importante**
+No ramo dinâmico tomamos:
 
-No modelo F1:
+$\boxed{H_b=\xi H_g}$
 
-- O controle de isocurvatura,
+e então r=b/a evolui como:
 
-- a estabilidade escalar,
+$$ \dot r = \frac{d}{dt}\left(\frac{b}{a}\right)=r(H_b-H_g)=r(\xi-1)H_g. $$
 
-- e a existência do ramo,
+Portanto:
 
-estão todos ligados ao mesmo fator:
+$\boxed{ \dot r = r(\xi-1)H_g. }$
 
-$\beta_1+2\beta_2 r.$
+Ou seja: r(t) evolui se e somente se \xi(t)\neq 1.
 
-Isso significa que o ajuste de F1 é altamente não trivial:
+Isso é a forma operacional correta.
 
-não é possível escolher \beta_n arbitrariamente sem afetar simultaneamente:
+**14.14 Como eliminar \xi(t): usar a equação de Friedmann do setor f**
 
-- fundo cosmológico,
+A equação do setor f (sem matéria, ou com \rho_f explícito) é:
 
-- setor escalar,
+$3M_f^2H_f^2=\rho_f+\rho_{\rm int}^{(f)}(r,\phi).$
 
-- estabilidade.
+Substituindo H_f=H_b/\xi e H_b=H_g+\dot r/r:
 
-**Próximo passo lógico**
+$H_f=\frac{H_g+\dot r/r}{\xi}.$
 
-Agora temos duas direções técnicas:
+Mas do ramo dinâmico H_b=\xi H_g\Rightarrow H_f=H_g. Então:
 
-(inflação TDCP e geração primordial)
+$\boxed{H_f=H_g.}$
 
-ou
+E a equação f vira restrição algébrica (em vez de dinâmica) para r:
 
-(necessário para fechar consistência tensorial)
+$$ \boxed{ 3M_f^2H_g^2=\rho_f+m^2M_{\rm eff}^2F(\phi)\,\tilde U(r). } $$
 
-Dado que o controle escalar depende fortemente da massa efetiva m_T^2 também, o caminho matematicamente mais consistente é:
+Enquanto a equação g é:
 
-Ir para Cap.15 --- Setor Tensorial e Limites na Massa do Gravitón.
+$$ \boxed{ 3M_g^2H_g^2=\rho_m+\rho_\phi+m^2M_{\rm eff}^2F(\phi)\,U(r). } $$
+
+Subtraindo as duas:
+
+$$ 3(M_g^2-M_f^2)H_g^2 = \rho_m+\rho_\phi-\rho_f + m^2M_{\rm eff}^2F(\phi)\big(U(r)-\tilde U(r)\big). $$
+
+Interpretação técnica:
+
+No fundo FLRW, para HR puro, a consistência frequentemente força r a seguir de perto um valor quase algébrico determinado por H_g e pelas duas equações de Friedmann. A "dinâmica" de r é, na prática, controlada pela possibilidade de \xi\neq 1 e/ou pela presença de modulação F(\phi) que move o balanço entre U(r) e \tilde U(r).
+
+**14.15 Estratégia TDCP específica para obter "evolução lenta" sem violar consistência**
+
+Como você quer "memória estrutural" e aceleração tardia sem "forçar" \Lambda, o caminho mais controlável com F1 é:
+
+**Escolha TDCP-1: modulação global lenta F(\phi) (recomendado)**
+
+- mantenha \beta_n constantes,
+
+- deixe F(\phi) variar lentamente em época tardia,
+
+- e use o ramo proporcional/algébrico como baseline.
+
+Então:
+
+$$ \rho_{\rm DE}^{\rm eff}(a)=m^2M_{\rm eff}^2F(\phi(a))\,U(r_\star)+\rho_\phi(a). $$
+
+Aqui o "ajuste" é matematicamente limpo:
+
+- \beta_n determinam a forma e o sinal de U(r_\star),
+
+- F(\phi) determina a evolução temporal de \rho_{\rm DE}^{\rm eff}.
+
+Isso separa bem os problemas:
+
+- Cap.14 fixa \beta_n,
+
+- Cap.15 controla isocurvatura via massa efetiva do modo relativo,
+
+- Cap.16 fixa m_T,
+
+- Cap.17 estabelece EFT/corte.
+
+**14.16 Restrições explícitas em F1 (primeiro conjunto "fechado")**
+
+**(i) Existência do ramo algébrico com r_\star>0**
+
+$\boxed{\beta_1\beta_2<0.}$
+
+**(ii) Energia efetiva positiva para aceleração (no setor g)**
+
+A contribuição tipo-\Lambda efetiva (no ramo algébrico) é:
+
+$$ \rho_{\rm int}^{(g)}(r_\star)=m^2M_{\rm eff}^2F(\phi)\,U(r_\star). $$
+
+Aceleração tardia exige, aproximadamente, \rho_{\rm int}^{(g)}(r_\star)>0 e pressão efetiva \approx -\rho. Então:
+
+$$ \boxed{U(r_\star)>0 \quad \text{(assumindo }F(\phi)>0\text{)}.} $$
+
+$Com r_\star=-\beta_1/(2\beta_2):$
+
+$$ U(r_\star)=\beta_0+3\beta_1r_\star+3\beta_2r_\star^2 = \beta_0 -\frac{3\beta_1^2}{2\beta_2} +\frac{3\beta_1^2}{4\beta_2} = \boxed{\beta_0-\frac{3\beta_1^2}{4\beta_2}.} $$
+
+Logo condição:
+
+$\boxed{ \beta_0-\frac{3\beta_1^2}{4\beta_2}>0. }$
+
+Como \beta_1\beta_2<0, o termo -\frac{3\beta_1^2}{4\beta_2} tem sinal oposto ao de \beta_2. Isso já restringe fortemente o espaço.
+
+**(iii) Consistência do setor f: positividade/realidade de H_f^2**
+
+No ramo proporcional H_f=H_g, então precisamos que:
+
+$$ 3M_f^2H_g^2-\rho_f = m^2M_{\rm eff}^2F(\phi)\tilde U(r_\star) $$
+
+seja compatível com H_g^2>0. Isso impõe:
+
+$\boxed{\tilde U(r_\star)\ \text{não deve forçar }H_g^2<0.}$
+
+Com:
+
+$\tilde U(r)=\beta_4+3\beta_2r^{-2}+\beta_1r^{-3}$
+
+e r=r_\star, isso vira restrição algébrica em \beta_4 dada (\beta_1,\beta_2). (Aqui costuma-se usar \beta_4 como "parametro de compensação".)
+
+Resumo do que temos já, de forma fechada:
+
+- $\beta_1\beta_2<0$
+
+- $\beta_0-\frac{3\beta_1^2}{4\beta_2}>0$
+
+- \beta_4 escolhido para manter o setor f consistente
+
+Isso já é um primeiro conjunto de restrições matemáticas.
+
+**14.17 Como "fit" de H(z) fixa combinações de \beta_n (sem rodar código)**
+
+No ramo algébrico/proporcional e assumindo \rho_\phi subdominante (ou lenta), a equação do setor g se parece com:
+
+$$ 3M_g^2H^2(z)\approx \rho_m(z)+m^2M_{\rm eff}^2F(\phi(z))\,U(r_\star). $$
+
+Se F\approx 1 hoje, então o valor observado de H_0 fixa:
+
+$$ \boxed{ m^2M_{\rm eff}^2\,U(r_\star)\approx 3M_g^2H_0^2-\rho_{m0}. } $$
+
+Ou seja: a "escala" de energia escura efetiva fixa um produto m^2M_{\rm eff}^2U(r_\star). Em termos de ajuste, isso significa que um grau de liberdade é absorvido nessa normalização --- e sobra o ajuste fino real para crescimento, massa do gravitón e isocurvatura.
+
+**Fechamento do Cap.14 (F1) --- o que está matematicamente estabelecido**
+
+1. Para F1, o ramo algébrico é explícito e fornece r_\star.
+
+2. A aceleração tardia pode ser obtida exigindo U(r_\star)>0.
+
+3. Isso produz uma restrição analítica simples:
+
+$$ \boxed{\beta_0-\frac{3\beta_1^2}{4\beta_2}>0,\qquad \beta_1\beta_2<0.} $$
+
+4. O parâmetro \beta_4 é usado para manter consistência do setor f (e afetará o setor tensorial via massa efetiva).
+
+**Próximo passo: Cap.15 (Isocurvatura) --- ligação direta com F1**
+
+Agora, com F1 definido, o próximo passo matemático é:
+
+- escrever a ação quadrática dos modos escalares (\zeta,S),
+
+- extrair a massa efetiva m_S^2(\beta_n,r,\phi),
+
+- impor condição de supressão:
+
+$\boxed{m_S^2 \gg H^2 \quad \text{(após a fase primordial)}.}$
+
+- decomposição adiabática/isocurvatura,
+
+- matriz cinética K_{ij},
+
+- matriz de massa \Omega_{ij},
+
+- e condições de ausência de fantasma/gradiente no setor escalar (em função de F1).

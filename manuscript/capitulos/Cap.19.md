@@ -1,234 +1,220 @@
-Abaixo está o Capítulo 19 completo, consolidado, incorporando:
+Perfeito --- vamos ao Cap.19 e já vou fazer a ponte "teoria → observáveis" com unidades cosmológicas padrão, além de deixar explícito onde o sinal aparece e como escolher benchmarks realistas.
 
-- Estrutura HR ghost-free
+**CAPÍTULO 19**
 
-- Dependência correta de F(\phi)
+**Confronto Observacional: Escalas, k_\star(a), RSD, Weak Lensing e "assinatura Yukawa" (F1)**
 
-- Limite de desacoplamento consistente com TDCP-F1
+**19.1 Conversão crítica: H_0 em unidades de k (h\,{\rm Mpc}^{-1})**
 
-- Extração do helicity-0
+Em cosmologia observacional, trabalhamos com k em h\,{\rm Mpc}^{-1}.
 
-- Derivação rigorosa do raio de Vainshtein
+A escala de Hubble hoje, como número de onda comóvel, é:
 
-- Estimativa numérica refinada
-
-- Critério PPN paramétrico
-
-- Observações sobre o papel do campo \phi
-
-Organizado como artigo técnico.
-
-**CAPÍTULO 19 --- Screening e Regime Não-Linear na TDCP-F1**
-
-**19.1 Objetivo Físico**
-
-A TDCP-F1 introduz um modo massivo relativo entre as métricas g_{\mu\nu} e f_{\mu\nu}, cuja presença gera:
-
-- Correções Yukawa no regime linear cosmológico
-
-- Modificação de \mu(k,a), \Sigma(k,a) em LSS
-
-Entretanto, qualquer força adicional deve ser suprimida em escalas solares.
-
-O objetivo deste capítulo é demonstrar que:
-
-$$ \boxed{\text{A TDCP-F1 possui mecanismo de screening tipo Vainshtein consistente.}} $$
-
-**19.2 Estrutura Gravitacional Relevante**
-
-A lagrangiana estrutural da TDCP-F1 é:
-
-$$ \mathcal{L} = \frac{M_g^2}{2}R[g] + \frac{M_f^2}{2}R[f] + m^2 F(\phi)\,\mathcal{V}_{HR}(g,f) + \mathcal{L}_\phi + \mathcal{L}_{m}[g], $$
-
-com:
-
-$F(\phi)=1+\xi\frac{\phi}{M_{Pl}}.$
-
-A massa efetiva do modo massivo é:
-
-$m_{\rm eff}^2 = m^2 F(\phi).$
-
-**19.3 Limite de Desacoplamento**
-
-Expandimos em torno de Minkowski:
-
-$$ g_{\mu\nu}=\eta_{\mu\nu}+\frac{1}{M_g}h_{\mu\nu}, \qquad f_{\mu\nu}=\eta_{\mu\nu}+\frac{1}{M_f}\ell_{\mu\nu}. $$
-
-Introduzimos campos de Stückelberg para restaurar difeomorfismo relativo e extraímos o helicity-0:
-
-$\Phi^a=x^a-\frac{1}{\Lambda_3^3}\partial^a\pi.$
-
-Na TDCP-F1:
-
-$\boxed{ \Lambda_3^3 \sim m^2 F(\phi) M_{\rm eff} }$
-
-Este ponto é crucial.
-
-No regime solar:
-
-- \phi varia lentamente
-
-- F(\phi)\approx F_0 constante localmente
+$$ \frac{H_0}{c}=\frac{100\,h\ {\rm km/s/Mpc}}{299792\ {\rm km/s}} \simeq 3.335\times 10^{-4}\,h\ {\rm Mpc}^{-1}. $$
 
 Logo:
 
-$\Lambda_3^3 \approx m^2 F_0 M_{Pl}.$
+$$ \boxed{ k_{H0}\equiv \frac{H_0}{c}\approx 3.3\times 10^{-4}\,h\,{\rm Mpc}^{-1}. } $$
 
-**19.4 Lagrangiana Efetiva do Helicity-0**
+Essa conta é importante porque ela fixa "onde" um m_{S0}\sim H_0 colocaria o joelho Yukawa.
 
-No limite de desacoplamento:
+**19.2 Implicação imediata: se m_{S0}=H_0, o joelho fica fora da faixa de LSS**
 
-$$ \mathcal{L}_\pi = -\frac{1}{2}Z(\phi)(\partial\pi)^2 + \frac{c_3(\phi)}{\Lambda_3^3}(\partial\pi)^2\square\pi + \frac{\alpha_V}{M_{Pl}}\pi T. $$
+No Cap.18 definimos:
 
-A equação de movimento é:
+$k_\star(a)=a\,m_S(a)=m_{S0}a^{1-p}.$
 
-$$ Z\square\pi + \frac{2c_3}{\Lambda_3^3} \Big[(\square\pi)^2-(\partial_\mu\partial_\nu\pi)^2\Big] = -\frac{\alpha_V}{M_{Pl}}T. $$
+Se você escolhe m_{S0}=H_0, então:
 
-**19.5 Solução Esférica**
+$$ k_\star(a_0)=k_{H0}\approx 3.3\times 10^{-4}\,h\,{\rm Mpc}^{-1}. $$
 
-Para uma fonte pontual M:
+Porém medições típicas de crescimento/lensing usam:
 
-$\rho = M\delta^{(3)}(\vec x).$
+- RSD e clustering: k \sim 0.01 \text{ a } 0.2\,h\,{\rm Mpc}^{-1}
 
-Defina:
+- Weak lensing (efetivo): k\sim 0.1\,h\,{\rm Mpc}^{-1} (dependendo do binning)
 
-$y(r)=\frac{\pi'(r)}{r}.$
+Ou seja, para quase todo o que é medido:
 
-Fora da fonte:
+$$ k \gg k_\star \quad \Rightarrow \quad \mu(k,a)\simeq 1+\alpha(a) $$
 
-$$ \boxed{ Z y + \frac{4c_3}{\Lambda_3^3}y^2 = \frac{\alpha_V}{4\pi} \frac{M}{M_{Pl}} \frac{1}{r^3} } $$
+Resultado observacional: o efeito fica quase sem dependência de escala no regime que os surveys medem (a escala-dependência estaria apenas em escalas ultra-grandes, próximas ao horizonte).
 
-**19.6 Regimes Assintóticos**
+- Isso ainda é "detectável" (como offset em \mu), mas não como "joelho Yukawa dentro do LSS".
 
-**Regime linear (r ≫ r_V)**
+**19.3 Para ter Yukawa dentro de k\sim 0.01\text{--}0.1, precisamos m_{S0}\gg H_0**
 
-Termo linear domina:
+Queremos:
 
-$$ y \sim \frac{\alpha_V}{4\pi Z} \frac{M}{M_{Pl}} \frac{1}{r^3} $$
+$k_\star(a_0)\sim 0.01\text{--}0.1\,h\,{\rm Mpc}^{-1}.$
 
-Recupera força Yukawa no regime apropriado.
+Como k_{H0}\approx 3.3\times10^{-4}\,h\,{\rm Mpc}^{-1}, isso implica:
 
-**Regime não-linear (r ≪ r_V)**
+- Para k_\star=0.01: \;0.01/(3.3\times10^{-4})\approx 30
 
-Termo quadrático domina:
+- Para k_\star=0.1: \;0.1/(3.3\times10^{-4})\approx 300
 
-$$ y^2 \sim \frac{\alpha_V}{4\pi} \frac{\Lambda_3^3}{4c_3} \frac{M}{M_{Pl}} \frac{1}{r^3}. $$
+Logo um benchmark realista para "joelho dentro de LSS" é:
 
-**19.7 Raio de Vainshtein**
+$\boxed{ m_{S0}\sim (30\text{--}300)\,H_0. }$
 
-Definido pela igualdade dos termos:
+Essa é a correção mais importante para transformar a ideia em teste observacional prático.
 
-$Z y \sim \frac{4c_3}{\Lambda_3^3}y^2.$
+**19.4 Benchmark TDCP (Yukawa dentro de LSS)**
 
-Substituindo:
+Vou propor dois benchmarks (ambos com \alpha_0 moderado, como você escolheu "B"):
 
-$$ \boxed{ r_V \sim \left( \frac{\alpha_V c_3}{Z^2} \frac{M}{M_{Pl}} \frac{1}{\Lambda_3^3} \right)^{1/3} } $$
+**Benchmark B1 (joelho em k_\star\simeq 0.01\,h\,{\rm Mpc}^{-1})**
 
-Usando:
+$$ \boxed{ m_{S0}=30H_0,\quad p=1,\quad \alpha_0=0.07,\quad q=0,\quad \nu=1. } $$
 
-$\Lambda_3^3 \sim m^2 F_0 M_{Pl},$
+Então:
 
-obtemos:
+$k_\star(a_0)\approx 0.01\,h\,{\rm Mpc}^{-1}.$
 
-$$ \boxed{ r_V \sim \left( \frac{GM}{m^2 F_0} \right)^{1/3} \times \left(\frac{\alpha_V c_3}{Z^2}\right)^{1/3} } $$
+**Benchmark B2 (joelho em k_\star\simeq 0.1\,h\,{\rm Mpc}^{-1})**
 
-Estrutura fundamental preservada:
+$$ \boxed{ m_{S0}=300H_0,\quad p=1,\quad \alpha_0=0.05,\quad q=0,\quad \nu=1. } $$
 
-$\boxed{ r_V \propto (GM/m_{\rm eff}^2)^{1/3} }$
+Então:
 
-**19.8 Estimativa Numérica --- Sol**
+$k_\star(a_0)\approx 0.1\,h\,{\rm Mpc}^{-1}.$
 
-Para o Sol:
+Nota: manter p=1 torna k_\star aproximadamente constante com o tempo; se quisermos que o joelho "ande" com z, escolhemos p\neq 1 (ver 19.6).
 
-$r_S = 2GM_\odot/c^2 \approx 3\times10^3\,m.$
+**19.5 Previsão direta para RSD: f\sigma_8(z)**
 
-Considere:
+No regime QS, a equação de crescimento é:
 
-$m = (1--100)H_0/c.$
+$$ \delta'' + \left(2+\frac{H'}{H}\right)\delta' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0. $$
 
-Caso conservador m=100H_0:
+Com:
 
-$r_V^\odot \approx 5\,{\rm pc}.$
+$\mu(k,a)=1+\frac{\alpha(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}.$
 
-Caso leve m=H_0:
+**Duas regiões observacionais (para um dado z)**
 
-$r_V^\odot \approx 120\,{\rm pc}.$
+- $Se k \ll k_\star(a): \mu\approx 1$
 
-Como:
+> \Rightarrow crescimento praticamente GR.
 
-$1\,AU \approx 5\times10^{-6}\,pc,$
+- $Se k \gg k_\star(a): \mu\approx 1+\alpha(a)$
 
-temos:
+> \Rightarrow crescimento reforçado.
 
-$\boxed{ r_V^\odot \gg 1\,AU. }$
+Assinatura RSD prevista (qualitativa, porém objetiva):
 
-**19.9 Supressão da Quinta Força**
+- Em bins de k acima de k_\star, f\sigma_8(z) tende a ser maior do que GR.
 
-No regime screened:
+- Em bins abaixo de k_\star, f\sigma_8(z) tende a coincidir com GR.
 
-$$ \boxed{ \frac{F_\pi}{F_N} \sim \alpha_V^2 \left(\frac{r}{r_V}\right)^{3/2} } $$
+Na prática, surveys medem um "f\sigma_8 efetivo" integrado sobre uma janela em k. A TDCP prevê que esse efetivo pode mudar se a janela mudar.
 
-Para r=1\,AU:
+**19.6 Dependência com redshift: como fazer o sinal "ligar tarde"**
 
-$\left(\frac{r}{r_V}\right)^{3/2} \sim 10^{-10}--10^{-14}.$
+Lembrando:
 
-Extremamente suprimido.
+$k_\star(a)=m_{S0}a^{1-p}.$
 
-**19.10 Critério Paramétrico PPN**
+- Se p=1: k_\star ~ constante (assinatura estável em z).
 
-Exigimos:
+- Se p>1: k_\star(a)=m_{S0}a^{-(p-1)} cresce no passado (a menor)
 
-$\frac{F_\pi}{F_N}(1AU) < 10^{-5}.$
+> \Rightarrow mais modos ficam em k\ll k_\star no passado \Rightarrow GR no passado (bom para CMB/BAO).
 
-Implica:
+Então uma escolha "ligar tarde" é:
 
-$r_V \gtrsim 0.01\,pc.$
+$\boxed{p>1 \quad \text{e}\quad q\ge 0.}$
 
-Mas obtemos:
+Porque:
 
-$r_V^\odot \sim 5--120\,pc.$
+- no passado m_S maior e/ou k_\star maior → suprime modificação,
 
-Margem gigantesca.
+- hoje m_S menor → joelho entra no LSS.
 
-**19.11 Papel do Campo \phi**
+**19.7 Weak lensing: \Sigma(k,a) e discrepância RSD vs WL**
 
-Como:
+O lensing mede \Phi+\Psi. Definimos:
 
-$m_{\rm eff}^2 = m^2 F(\phi),$
+$-k^2(\Phi+\Psi)=8\pi G a^2\Sigma(k,a)\rho_m\delta.$
 
-variações locais de \phi poderiam alterar r_V.
+Com slip:
 
-Entretanto:
+\eta_{\rm slip}=\frac{\Phi}{\Psi}, \qquad -k^2\Psi=4\pi G a^2\mu\rho_m\delta.
 
-- No regime solar, \phi evolui cosmologicamente.
+Então:
 
-- Gradientes locais são suprimidos por massa efetiva grande.
+\boxed{ \Sigma(k,a)=\frac{\mu(k,a)}{2}\left(1+\eta_{\rm slip}^{-1}(k,a)\right). }
 
-- Correções entram apenas via redefinição lenta de m.
+No benchmark minimalista:
 
-Logo:
+\eta_{\rm slip}(k,a)=1+\frac{\beta(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}, \qquad \beta(a)=\nu\alpha(a).
 
-$$ \boxed{ \text{Não surge quinta força adicional relevante via }\phi\text{ no regime solar.} } $$
+Assinatura combinada:
 
-A verificação formal será feita no Cap.20.
+- $RSD vê \mu,$
 
-**Conclusão do Capítulo 19**
+- $WL vê \Sigma,$
 
-A TDCP-F1:
+- se \nu\neq 0, então \Sigma\neq \mu → padrão típico de bimetric.
 
-- Possui mecanismo Vainshtein consistente
+**19.8 Matriz "o que medir / onde medir / qual sinal" (objetiva)**
 
-- Suprime quinta força solar
+**(1) RSD (f\sigma_8)**
 
-- Mantém modificações cosmológicas
+- Sensível a: \mu(k,a)
 
-- Permanece EFT-consistente
+- Sinal TDCP: aumento relativo em bins com k\gg k_\star
 
-- Satisfaz critério preliminar PPN
+**(2) Weak Lensing (shear, CMB lensing)**
 
-$$ \boxed{ \text{A teoria sobrevive ao teste solar fundamental.} } $$
+- Sensível a: \Sigma(k,a)
 
-**CAPÍTULO 20 --- Solução Estática Completa e Parâmetros PPN**
+- Sinal TDCP: discrepância entre \Sigma e \mu se \eta_{\rm slip}\neq 1
 
-onde derivaremos explicitamente \gamma_{\rm PPN} e limites observacionais.
+**(3) E_G (estatística combinada)**
+
+- Combina lensing + clustering + RSD
+
+- Sinal TDCP: detecta \mu vs \Sigma e o slip com menos degenerescência.
+
+**19.9 Condições de consistência (link direto com Cap.15--17)**
+
+O que escolhemos aqui deve respeitar:
+
+- Supressão de isocurvatura: m_S^2 \gg H^2 na era primordial
+
+> (com p>1, isso fica mais fácil)
+
+- Higuchi: m_T^2\ge 2H^2 no regime de Sitter efetivo
+
+- $EFT: H\ll \Lambda_3\sim(m^2M_{\rm eff})^{1/3}$
+
+O ponto chave: escolher m_{S0}\sim 30\text{--}300\,H_0 não viola EFT automaticamente; é apenas uma escolha de escala cosmológica "intermediária" para o modo relativo.
+
+**Fechamento do Cap.19: o que está decidido e o que falta**
+
+- Definimos como traduzir m_{S0} para escalas k observáveis.
+
+- Estabelecemos benchmarks realistas para ter joelho Yukawa dentro de LSS.
+
+- Especificamos quais observáveis distinguem TDCP de \LambdaCDM (RSD vs WL + slip).
+
+Falta (próximo capítulo): transformar isso em um "modelo de previsão" fechado para comparação, isto é:
+
+- escolher p,q,\alpha_0,\nu final,
+
+- escolher m_{S0} final (B1 ou B2),
+
+- e derivar o comportamento esperado de \Delta f\sigma_8(z) em termos de ordem de grandeza, por faixa de k.
+
+**Próximo passo proposto (Cap.20)**
+
+Cap.20 --- Previsões quantitativas de primeira ordem (sem simulação):
+
+- aproximar solução do crescimento com \mu=1+\alpha em regime k\gg k_\star,
+
+- estimar \Delta f\sigma_8(z) e dependência com k,
+
+- estimar \Delta \Sigma e \Delta E_G.
 

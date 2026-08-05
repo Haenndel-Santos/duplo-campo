@@ -1,249 +1,215 @@
-**CAPÍTULO 21 --- Estabilidade Não-Linear na TDCP-F1**
+**CAPÍTULO 21 --- Solução Estática Completa + Limites PPN na TDCP-F1**
 
-(ausência de ghost/gradiente no regime screened + consistência EFT no Vainshtein)
+**21.1 Objetivo e estratégia**
 
-**21.1 Objetivo e o que significa "estável" aqui**
+O Cap.20 mostrou que o helicity-0 do modo massivo (representado por \pi) entra em regime Vainshtein e suprime a quinta força em escalas solares. Agora precisamos fechar o bloco solar de maneira formal:
 
-Após o Cap.19--20, a TDCP-F1 sobreviveu ao teste solar via screening tipo Vainshtein do helicity-0 do modo massivo. Agora o critério de sobrevivência sobe de nível:
+1. Construir a solução estática fraca no gauge isotrópico para g_{\mu\nu} (métrica física acoplada à matéria).
 
-1. Ausência de BD ghost no setor bimetric (não-linear completo).
+2. Expressar as correções induzidas por \pi nos potenciais \Phi(r), \Psi(r).
 
-2. Ausência de ghost e de instabilidade de gradiente para flutuações no background screened (regime solar).
+3. Traduzir isso nos parâmetros PPN, principalmente
 
-3. Controle EFT: o regime Vainshtein não pode exigir excitação além do cutoff efetivo (ou deve permanecer classicamente controlado).
+$$ > \gamma_{\rm PPN}(r)=\frac{\Psi(r)}{\Phi(r)}\,,\qquad \beta_{\rm PPN}. $$
 
-4. (Opcional, mas importante) características causais: velocidades de propagação e possíveis superluminalidades.
+4. Obter desigualdades paramétricas (em termos de \alpha_V, Z, c_3, m^2F(\phi)) que garantem compatibilidade com limites solares (Cassini etc.).
 
-O foco técnico deste capítulo é o ponto 2--3 no setor helicity-0 (o mais crítico para screening), mantendo coerência com HR ghost-free e com a modulação m^2\to m^2F(\phi).
+5. Incorporar corretamente o efeito de F(\phi) e controlar a possibilidade de "quinta força" adicional via \phi.
 
-**21.2 Estabilidade estrutural do setor HR: ausência do BD ghost (não-linear)**
+**21.2 Ansätze: métrica estática isotrópica e regime fraco**
 
-A estrutura Hassan--Rosen (HR) ghost-free garante, por construção, que o potencial bimetric
+Assumimos, para o setor g_{\mu\nu} (métrica física), um ansatz estático e fraco (PN de primeira ordem):
 
-\mathcal V_{HR}(g,f) mantém o conjunto de restrições (constraint structure) que elimina o Boulware--Deser ghost no nível não-linear.
+$$ ds_g^2 = -(1+2\Phi(r))\,dt^2 + (1-2\Psi(r))\,(dr^2 + r^2 d\Omega^2), $$
 
-Na TDCP-F1 a interação entra como:
+$com |\Phi|,|\Psi|\ll 1.$
 
-$m^2F(\phi)\,\mathcal V_{HR}(g,f).$
+A matéria é não-relativística, T_{00}\simeq \rho, T\simeq -\rho.
 
-Se F(\phi) é um escalar sem derivadas multiplicando o potencial (isto é, F não depende de curvaturas e não contém termos com derivadas misturadas com g,f), então:
+A teoria contém, além do modo sem massa (gráviton usual), um setor massivo cujo helicity-0 efetivo \pi mistura com h_{\mu\nu}. Na linguagem do limite de desacoplamento (Cap.20), o acoplamento efetivo é:
 
-- a estrutura algebraica do potencial HR é preservada;
+$$ \mathcal{L}_{\pi T} \simeq \frac{\alpha_V}{M_{\rm Pl}}\pi\,T. $$
 
-- a contagem de graus de liberdade do setor bimetric permanece a mesma;
+A modulação TDCP-F1 entra por:
 
-- o BD ghost não é reintroduzido por esse tipo de modulação multiplicativa.
+$$ m_{\rm eff}^2 = m^2 F(\phi),\qquad \Lambda_3^3 \sim m^2F(\phi)\,M_{\rm eff}. $$
 
-Conclusão estrutural: a potencial ameaça BD ghost continua ausente no bloco HR, e o problema real desloca-se para a estabilidade dinâmica dos modos efetivos (helicity-0) no background screened.
+No Sistema Solar, tomamos \phi\simeq \phi_0 + \delta\phi(r) e trataremos \delta\phi como subdominante (a consistência disso será explicitada em 21.7).
 
-**21.3 Limite de desacoplamento: ação efetiva para \pi com modulação F(\phi)**
+**21.3 Potenciais em presença de um escalar acoplado: decomposição física**
 
-No limite de desacoplamento (Cap.19), relembramos o bloco mínimo que captura Vainshtein:
+Em teorias com um grau escalar que acopla ao traço T, a correção à gravitação newtoniana pode ser parametrizada por um fator "quinta força" Q(r), definido por:
 
-$$ \boxed{ \mathcal{L}_{\pi} = -\frac{1}{2}Z(\phi)(\partial\pi)^2 + \frac{c_3(\phi)}{\Lambda_3^3}(\partial\pi)^2\square\pi + \frac{\alpha_V}{M_{\rm Pl}}\pi\,T } $$
+$$ \frac{d\Phi}{dr} = \frac{GM}{r^2}\big[1+Q(r)\big], \qquad \frac{d\Psi}{dr} = \frac{GM}{r^2}\big[1+\tilde Q(r)\big]. $$
 
-com o ponto TDCP-específico:
+No GR puro, Q=\tilde Q=0 e \Phi=\Psi=-GM/r.
 
-$$ \boxed{ \Lambda_3^3 \sim m^2 F(\phi)\,M_{\rm eff} \;\;\approx\;\; m^2F_0\,M_{\rm Pl} \quad\text{(Solar: }F(\phi)\approx F_0\text{ quase constante).} } $$
+Na TDCP-F1, a origem de Q,\tilde Q é o setor massivo (helicity-0) e sua mistura com o modo tensorial. Para fontes solares e r\ll m_S^{-1}, o Yukawa não corta nada; a supressão vem do Vainshtein, então:
 
-O background screened é tomado como:
+$$ Q(r)\propto \left(\frac{r}{r_V}\right)^{3/2} \quad (r\ll r_V). $$
 
-$\pi(x)=\bar\pi(r)+\varphi(x), \qquad r\ll r_V.$
+O ponto PPN é que o parâmetro \gamma é sensível à diferença entre \Psi e \Phi.
 
-Nos interessa a ação quadrática para a flutuação \varphi, pois é aí que surgem:
+**21.4 Relação entre \Phi,\Psi e o helicity-0 no limite de desacoplamento**
 
-- ghost (sinal errado do termo temporal)
+No limite de desacoplamento de teorias HR/dRGT-like, após diagonalizar o modo massless (GR) e o setor massivo, a métrica física pode ser escrita esquematicamente como:
 
-- instabilidades de gradiente (sinais errados nas derivadas espaciais)
+$$ g_{\mu\nu} = \eta_{\mu\nu} +\frac{1}{M_{\rm Pl}}\Big(h^{(0)}_{\mu\nu} + \kappa\,h^{(m)}_{\mu\nu}\Big) +\frac{\kappa_\pi}{M_{\rm Pl}}\pi\,\eta_{\mu\nu} +\cdots $$
 
-- velocidades c_s^2 patológicas
+- h^{(0)}_{\mu\nu}: modo massless (gera o potencial GR).
 
-**21.4 Quadrático efetivo: "métrica cinética" para as flutuações \varphi**
+- h^{(m)}_{\mu\nu}: modo massivo tensorial (Yukawa no regime linear).
 
-Expande-se a ação em torno de \bar\pi. Para o Galileon cúbico (o termo essencial do Vainshtein), o resultado padrão pode ser escrito como:
+- \pi: helicity-0 associado ao modo massivo, com acoplamento efetivo \sim \alpha_V.
 
-$$ \boxed{ S^{(2)}_\varphi = \frac12\int d^4x\; K^{\mu\nu}(\bar\pi)\;\partial_\mu\varphi\,\partial_\nu\varphi } $$
+No regime solar relevante para screening:
 
-onde a matriz cinética efetiva é:
+- o tensor massivo é suprimido por mistura (e/ou Yukawa se m não for ultraleve)
 
-$$ \boxed{ K^{\mu\nu} = Z\,\eta^{\mu\nu} + \frac{2c_3}{\Lambda_3^3} \left[ 2\,\partial^\mu\partial^\nu\bar\pi - \eta^{\mu\nu}\,\Box\bar\pi \right] } $$
+- o helicity-0 domina a correção potencial, mas é screened por auto-interações.
 
-(aqui Z,c_3,\Lambda_3 são avaliados no valor solar local, F\simeq F_0).
+Para uma fonte esférica, a solução screened do Cap.20 fornece:
 
-Isso define um "cone causal efetivo" para \varphi. A estabilidade exige que:
+$$ \frac{F_\pi}{F_N} \equiv \frac{\pi'/M_{\rm Pl}}{GM/r^2} \sim \alpha_V^2\left(\frac{r}{r_V}\right)^{3/2}, \qquad (r\ll r_V). $$
 
-- o coeficiente do termo temporal seja positivo (sem ghost)
+Logo, o efeito do helicity-0 sobre os potenciais pode ser capturado por:
 
-- os coeficientes espaciais relevantes sejam positivos (sem gradiente instável)
+$$ \Phi(r)= -\frac{GM}{r}\left[1+\epsilon_\Phi(r)\right],\qquad \Psi(r)= -\frac{GM}{r}\left[1+\epsilon_\Psi(r)\right], $$
 
-**21.5 Especialização para background estático esfericamente simétrico**
+$com \epsilon_{\Phi,\Psi}(r)\sim \mathcal{O}(F_\pi/F_N).$
 
-Para \bar\pi=\bar\pi(r), temos:
+Em modelos dRGT/HR-like, a estrutura típica é:
 
-$\Box\bar\pi = \bar\pi''+\frac{2}{r}\bar\pi'.$
+$$ \epsilon_\Phi(r) = +c_\Phi\,\frac{F_\pi}{F_N},\qquad \epsilon_\Psi(r) = +c_\Psi\,\frac{F_\pi}{F_N}, $$
 
-E a Hessiana espacial pode ser decomposta em radial e angular:
+onde c_\Phi,c_\Psi são números \mathcal{O}(1) determinados pela mistura e pelo gauge escolhido.
 
-$$ \partial_i\partial_j \bar\pi = \left(\bar\pi''-\frac{\bar\pi'}{r}\right)n_i n_j + \frac{\bar\pi'}{r}\delta_{ij}, \qquad n_i=\frac{x_i}{r}. $$
+Portanto, o parâmetro PPN \gamma é:
 
-Assim, os coeficientes cinéticos efetivos podem ser organizados como:
+$$ \gamma(r)\equiv\frac{\Psi}{\Phi} = \frac{1+\epsilon_\Psi(r)}{1+\epsilon_\Phi(r)} \simeq 1+\left[\epsilon_\Psi(r)-\epsilon_\Phi(r)\right] \quad (\text{em ordem linear}). $$
 
-- temporal: K^{00}\equiv -Z_t (com Z_t>0 exigido para ausência de ghost)
+Logo:
 
-- radial: K^{rr}\equiv Z_r
+$$ \boxed{ \gamma(r)-1 \simeq (c_\Psi-c_\Phi)\,\alpha_V^2\left(\frac{r}{r_V}\right)^{3/2}. } $$
 
-- angular: K^{\Omega\Omega}\equiv Z_\Omega/r^2
+Este é o resultado operacional principal: \gamma-1 é proporcional ao mesmo fator screened, com coeficiente \mathcal{O}(1).
 
-Resulta (até fatores convencionais de sinal; a forma abaixo é a versão operacional padrão usada em análises de Galileon esférico):
+**21.5 Inclusão correta de F(\phi) no raio de Vainshtein e nos limites**
 
-$$ \boxed{ Z_t = Z + \frac{4c_3}{\Lambda_3^3} \left( \bar\pi''+\frac{2}{r}\bar\pi' \right) } $$
+Do Cap.20 consolidado:
 
-$$ \boxed{ Z_r = Z + \frac{8c_3}{\Lambda_3^3} \left( \frac{\bar\pi'}{r} \right) } $$
+$$ r_V \sim \left(\frac{GM}{m^2F_0}\right)^{1/3}\left(\frac{\alpha_V c_3}{Z^2}\right)^{1/3}, \qquad F_0\equiv F(\phi_0). $$
 
-$$ \boxed{ Z_\Omega = Z + \frac{4c_3}{\Lambda_3^3} \left( \bar\pi''+\frac{\bar\pi'}{r} \right) } $$
+Assim, para r\ll r_V:
 
-Os critérios locais de estabilidade são então:
+$$ \gamma(r)-1 \sim (c_\Psi-c_\Phi)\,\alpha_V^2 \left[ \frac{r^3\,m^2F_0}{GM} \left(\frac{Z^2}{\alpha_V c_3}\right) \right]^{1/2}. $$
 
-$\boxed{ Z_t>0,\qquad Z_r>0,\qquad Z_\Omega>0. }$
+Ou seja:
 
-E as velocidades de propagação (características) seguem de:
+$$ \boxed{ |\gamma(r)-1| \;\propto\; \alpha_V^{3/2}\, \left(\frac{Z}{\sqrt{c_3}}\right)\, \left(\frac{m\sqrt{F_0}\,r^{3/2}}{\sqrt{GM}}\right). } $$
 
-$$ \boxed{ c_r^2 = \frac{Z_r}{Z_t}, \qquad c_\Omega^2=\frac{Z_\Omega}{Z_t}. } $$
+A dependência em F_0 é suave: r_V\propto F_0^{-1/3} e, portanto, o screening melhora se F_0 cresce.
 
-**21.6 Regime Vainshtein (r ≪ r_V): sinais e hierarquia**
+**21.6 Bound de Cassini: desigualdade paramétrica explícita**
 
-Do Cap.19, no regime r\ll r_V (cúbico dominante), a solução implica:
+O limite clássico de Cassini (tomado como referência) é, em ordem de grandeza:
 
-$$ y(r)\equiv \frac{\bar\pi'}{r} \propto r^{-3/2}, \quad\Rightarrow\quad \frac{\bar\pi'}{r}\gg \frac{\bar\pi''}{\;}\sim \mathcal{O}\!\left(\frac{\bar\pi'}{r}\right) \quad\text{(mesma ordem paramétrica)}. $$
+$|\gamma-1| \lesssim 2.3\times 10^{-5}.$
 
-O ponto decisivo é que, dentro de r_V, os termos proporcionais a c_3\bar\pi''/\Lambda_3^3 e c_3(\bar\pi'/r)/\Lambda_3^3 dominam sobre Z, tornando:
+Aplique em r\simeq r_{\rm AU} (ou em raio de impacto solar típico; aqui usamos AU como estimativa conservadora).
 
-$$ Z_t \sim \frac{4c_3}{\Lambda_3^3}\left(\bar\pi''+\frac{2\bar\pi'}{r}\right), \qquad Z_r \sim \frac{8c_3}{\Lambda_3^3}\left(\frac{\bar\pi'}{r}\right), \qquad Z_\Omega \sim \frac{4c_3}{\Lambda_3^3}\left(\bar\pi''+\frac{\bar\pi'}{r}\right). $$
+Usando:
 
-Portanto, os sinais de estabilidade são controlados pelo sinal efetivo de c_3 multiplicado pelo sinal do perfil \bar\pi (que é fixado pela condição de atratividade e pela fonte T\simeq-\rho). Em termos práticos, a condição robusta é:
+$$ |\gamma(r)-1| \simeq \mathcal{C}_\gamma\, \alpha_V^2\left(\frac{r}{r_V}\right)^{3/2}, \qquad \mathcal{C}_\gamma \equiv |c_\Psi-c_\Phi|\sim \mathcal{O}(1), $$
 
-$$ \boxed{ \frac{c_3}{Z} > 0 \quad\text{(escolha de ramo/parametrização que garante }Z_t,Z_r,Z_\Omega>0\text{ no Vainshtein).} } $$
+obtemos o critério:
 
-Essa condição é exatamente o análogo do requisito "ramo saudável" em análises de Galileon/dRGT: um dos ramos resolve a EOM mas produz Z_t<0 (ghost), o outro produz cinética positiva e screening físico.
+$$ \boxed{ r_V \gtrsim r_{\rm AU} \left(\frac{\mathcal{C}_\gamma\,\alpha_V^2}{2.3\times10^{-5}}\right)^{2/3}. } $$
 
-**21.7 Velocidades de propagação e superluminalidade (diagnóstico)**
+Como r_V^\odot\sim 5\text{--}120 pc (para m\sim 100\text{--}1\,H_0/c e F_0\sim\mathcal{O}(1)), isso satisfaz a desigualdade com margem enorme mesmo para \alpha_V\sim 1.
 
-No regime Vainshtein, é típico obter:
+**21.7 Quinta força adicional via \phi: condição de inocuidade local**
 
-- c_r^2 = Z_r/Z_t de ordem unidade, frequentemente maior que 1
+A TDCP-F1 contém um escalar \phi que modula a massa efetiva:
 
-- c_\Omega^2 = Z_\Omega/Z_t subluminal ou ordem unidade
+$m_{\rm eff}^2 = m^2F(\phi).$
 
-Em muitos modelos Galileon cúbicos, encontra-se genericamente:
+Existem duas vias potenciais de violação solar:
 
-$c_r^2 \gtrsim 1,$
+1. \phi acoplar diretamente à matéria (termo do tipo \phi T/M).
 
-isto é, superluminalidade radial efetiva nas flutuações \varphi sobre o background screened.
+2. \phi gerar gradientes locais que alteram F(\phi) e, portanto, r_V ou a força extra.
 
-Interpretação no contexto TDCP-F1:
+Pela construção fornecida, a matéria acopla apenas a g:
 
-- Não é automaticamente uma inconsistência interna de EFT; é uma propriedade comum de cones efetivos em backgrounds não-triviais.
+$\mathcal{L}_m[g],$
 
-- Contudo, é um ponto sensível em relação à possibilidade de UV completion Lorentz-invariante estrita.
+logo não há acoplamento conforme direto de \phi à matéria no nível fundamental, a menos que \mathcal{L}_\phi introduza explicitamente tal termo (o que não foi assumido).
 
-- O que a TDCP-F1 precisa é: ausência de instabilidade (ghost/gradiente) e controle EFT. A discussão "superluminal ⇒ inconsistente" não é conclusiva sem hipóteses extras sobre UV completion.
+O efeito residual vem apenas de F(\phi) na interação bimetric. Para ser inócuo no Sistema Solar, basta garantir que:
 
-Neste capítulo, registramos o diagnóstico:
+- \delta\phi(r) seja pequena no entorno solar, ou
 
-$$ \boxed{ \text{TDCP-F1 (como HR/dRGT-like) pode herdar cones efetivos modificados no Vainshtein; isso exige monitoramento, não invalidação imediata.} } $$
+- que F(\phi) varie lentamente: |\nabla F|/F \ll 1/r_{\rm AU}.
 
-**21.8 Controle EFT no regime Vainshtein: condição operacional**
+Um critério operacional é:
 
-No Vainshtein, a solução satisfaz o equilíbrio:
+$$ \boxed{ \left|\frac{\delta F}{F_0}\right|_{r\sim {\rm AU}} \ll 1 \quad\Rightarrow\quad \delta r_V/r_V \simeq -\frac{1}{3}\,\delta F/F_0 \ \text{desprezível}. } $$
 
-$$ Z\,y \sim \frac{4c_3}{\Lambda_3^3}y^2 \quad\Rightarrow\quad y \sim \frac{Z\Lambda_3^3}{4c_3} \quad\text{em }r\sim r_V, $$
+Em termos da dinâmica de \phi, uma condição suficiente típica é:
 
-e para r\ll r_V, y cresce.
+$m_\phi^2 \gg \frac{1}{{\rm AU}^2}$
 
-A consistência EFT exige que:
+(ou, equivalentemente, \lambda_\phi\ll {\rm AU}), pois isso impede perfis longos de \phi em torno do Sol. Mesmo se m_\phi for leve cosmologicamente, outra possibilidade é que \phi seja "stiff" localmente (grande Z_\phi).
 
-1. As correções de operadores mais altos (quartic/quintic Galileon e termos além do truncamento) não dominem indevidamente.
+Resumo: o Cap.21 fecha o bloco solar exigindo que \phi não introduza uma nova quinta força não-screened. Na TDCP-F1, isso é obtido se \phi não acopla diretamente à matéria e suas variações locais forem pequenas.
 
-2. As correções quânticas sejam controláveis (regime "classicalization" típico do Vainshtein).
+**21.8 Parâmetro \beta_{\rm PPN}: estrutura e hierarquia esperada**
 
-Um critério operacional clássico (suficiente) é exigir que o regime screened seja dominado pelo mesmo operador que usamos para definir r_V, isto é:
+O parâmetro \beta_{\rm PPN} mede não-linearidades de segunda ordem no potencial (ordem \Phi^2). Em teorias com screening forte, a expectativa é:
 
-$$ \boxed{ \left|\frac{\partial^2\bar\pi}{\Lambda_3^3}\right| \lesssim \mathcal{O}(1) \quad\text{no raio de interesse (ex.: em AU).} } $$
+$$ \beta_{\rm PPN}-1 \sim \mathcal{O}\!\left(\left(\frac{F_\pi}{F_N}\right)^2\right) \sim \alpha_V^4\left(\frac{r}{r_V}\right)^3, $$
 
-Como o screening solar é extremamente profundo (r_{AU}\ll r_V), isso pode ser satisfeito com folga dependendo da normalização dos coeficientes. Em termos práticos, a condição se expressa como:
+portanto ainda mais suprimido que \gamma-1.
 
-$$ \boxed{ \text{Escolher a hierarquia de coeficientes }(c_3,c_4,c_5,\dots) \text{ para que o operador dominante permaneça controlado e a série EFT não colapse.} } $$
+Assim, para r\sim {\rm AU} e r_V^\odot\gg{\rm AU}, espera-se:
 
-Na TDCP-F1, isso é tecnicamente implementável porque:
+$\boxed{ |\beta_{\rm PPN}-1|\ll |\gamma_{\rm PPN}-1| }$
 
-- a estrutura HR fixa a classe de operadores no limite de desacoplamento (Galileon)
+e o bound dominante é o de \gamma.
 
-- a modulação F(\phi) apenas desloca \Lambda_3 localmente via m^2F_0, não muda a classe de operadores
+**Conclusão do Capítulo 21 (Bloco Solar)**
 
-Ou seja, o controle EFT depende do ponto paramétrico e do ramo, não de um defeito estrutural.
+1. O helicity-0 screened induz correções nos potenciais:
 
-**21.9 Papel de \phi na estabilidade não-linear**
+$$ > \epsilon_{\Phi,\Psi}(r)\sim \alpha_V^2\left(\frac{r}{r_V}\right)^{3/2}. $$
 
-Há duas verificações essenciais:
+2. O parâmetro PPN principal:
 
-**(i) F(\phi) não pode variar localmente de modo a inverter sinais**
+$$ > \boxed{ \gamma(r)-1 \simeq \mathcal{C}_\gamma\,\alpha_V^2\left(\frac{r}{r_V}\right)^{3/2}, \qquad \mathcal{C}_\gamma\sim \mathcal{O}(1). } $$
 
-Como:
+3. O raio de Vainshtein na TDCP-F1 inclui corretamente F(\phi):
 
-$\Lambda_3^3 \propto m^2F(\phi),$
+$$ > \boxed{ r_V \sim \left(\frac{GM}{m^2F_0}\right)^{1/3}\times \mathcal{O}(1). } $$
 
-variações locais grandes poderiam deslocar o balanço dos termos e mudar sinais efetivos. A condição de segurança já antecipada é:
+4. Para o Sol, com m\sim 30\text{--}300\,H_0 (e mesmo m\sim 100H_0):
 
-$$ \boxed{ \left|\frac{\delta F}{F_0}\right| \ll 1 \quad\text{em escalas solares.} } $$
+$$ > r_V^\odot \gg 1\,{\rm AU} \Rightarrow |\gamma-1|\ \text{é automaticamente pequeno}. $$
 
-**(ii) \phi não deve introduzir uma quinta força não-screened**
+5. Condição adicional TDCP-específica:
 
-Isso é garantido se:
-
-- \phi não acopla diretamente a \mathcal L_m[g] (sem termo \phi T/M), e
-
-- o perfil \delta\phi(r) é pequeno localmente (por massa efetiva, rigidez cinética ou outro mecanismo).
-
-Operacionalmente:
-
-$$ \boxed{ |\nabla \phi| \;\text{pequeno no Sistema Solar} \;\Rightarrow\; \text{nenhuma força adicional relevante além do helicity-0 já screened.} } $$
-
-**Conclusão do Capítulo 21**
-
-A TDCP-F1 passa no teste não-linear local se satisfizer simultaneamente:
-
-**(A) Segurança estrutural HR**
-
-$$ \boxed{ \text{BD ghost ausente (potencial HR ghost-free preservado por }F(\phi)\text{ multiplicativo).} } $$
-
-**(B) Estabilidade dinâmica do helicity-0 no Vainshtein**
-
-$$ \boxed{ Z_t>0,\; Z_r>0,\; Z_\Omega>0 \;\;\Rightarrow\;\; \text{sem ghost e sem instabilidade de gradiente.} } $$
-
-O que, no regime screened, equivale na prática a escolher o ramo saudável:
-
-$$ \boxed{ c_3/Z > 0 \quad (\text{com o sinal do perfil escolhido fisicamente}).} $$
-
-**(C) Controle EFT**
-
-$$ \boxed{ \left|\partial^2\bar\pi/\Lambda_3^3\right|\lesssim \mathcal O(1) \;\;\text{(ou hierarquia de coeficientes que mantém truncamento válido).} } $$
-
-**(D) \phi inócuo localmente**
-
-$$ \boxed{ |\delta F/F_0|\ll 1 \text{ em escalas solares e sem acoplamento direto }\phi T.} $$
-
-Com esses critérios, a TDCP-F1 permanece não-linearmente plausível no setor solar screened e está pronta para entrar no bloco observacional quantitativo.
+$$ > \boxed{ \left|\delta F/F_0\right|_{AU}\ll 1 \quad\Rightarrow\quad \phi \text{ não reintroduz quinta força local relevante}. } $$
 
 **Próximo passo (Cap.22)**
 
-**CAPÍTULO 22 --- Pipeline quantitativo BAO + RSD + WL**
+**CAPÍTULO 22 --- Estabilidade Não-Linear: ausência de ghosts/gradientes e consistência do setor helicity-0**
 
-onde vamos:
+onde vamos formalizar:
 
-- mapear \mu(k,a), \Sigma(k,a), \eta_{\rm slip} da TDCP em observáveis
+- estabilidade do background screened
 
-- definir funções de crescimento f\sigma_8(z), distâncias BAO, e lensing
+- condições de positividade do Hamiltoniano efetivo
 
-- propor um pipeline mínimo para ajuste (MCMC / likelihood modular)
+- ausência de instabilidade superluminal patológica (quando aplicável)
 
-- identificar degenerescências com \LambdaCDM, w_0-w_a, \Omega_k, \sum m_\nu
+- consistência do EFT no regime Vainshtein (\partial^2\pi \ll \Lambda_3^3 ou regime controlado)

@@ -1,220 +1,425 @@
-Perfeito --- vamos ao Cap.18 e já vou fazer a ponte "teoria → observáveis" com unidades cosmológicas padrão, além de deixar explícito onde o sinal aparece e como escolher benchmarks realistas.
+Aqui o objetivo é derivar, no regime linear, o que a TDCP prevê para crescimento de estruturas e como isso se traduz em um objeto observável:
+
+- \mu(k,a) (modificação do Poisson / "força gravitacional efetiva")
+
+- \gamma (índice de crescimento)
+
+- $f\sigma_8(z)$
+
+- e eventualmente slip \eta_{\rm slip}(k,a)=\Phi/\Psi
 
 **CAPÍTULO 18**
 
-**Confronto Observacional: Escalas, k_\star(a), RSD, Weak Lensing e "assinatura Yukawa" (F1)**
+**Crescimento Linear, \mu(k,a), \Sigma(k,a) e Testes Observacionais (F1)**
 
-**18.1 Conversão crítica: H_0 em unidades de k (h\,{\rm Mpc}^{-1})**
+**18.1 Estrutura do problema**
 
-Em cosmologia observacional, trabalhamos com k em h\,{\rm Mpc}^{-1}.
+Em cosmologia linear, em gauge de Newton:
 
-A escala de Hubble hoje, como número de onda comóvel, é:
+$ds^2=-(1+2\Psi)dt^2+a^2(1-2\Phi)\delta_{ij}dx^i dx^j.$
 
-$$ \frac{H_0}{c}=\frac{100\,h\ {\rm km/s/Mpc}}{299792\ {\rm km/s}} \simeq 3.335\times 10^{-4}\,h\ {\rm Mpc}^{-1}. $$
+No \LambdaCDM/GR (sem anisotropic stress de radiação no tardio):
 
-Logo:
+$\Phi=\Psi, \quad -k^2\Phi = 4\pi G a^2\rho_m\,\delta.$
 
-$$ \boxed{ k_{H0}\equiv \frac{H_0}{c}\approx 3.3\times 10^{-4}\,h\,{\rm Mpc}^{-1}. } $$
+Em teorias modificadas, parametrizamos:
 
-Essa conta é importante porque ela fixa "onde" um m_{S0}\sim H_0 colocaria o joelho Yukawa.
+$-k^2\Psi = 4\pi G a^2\,\mu(k,a)\,\rho_m\,\delta,$
 
-**18.2 Implicação imediata: se m_{S0}=H_0, o joelho fica fora da faixa de LSS**
+$-k^2(\Phi+\Psi)=8\pi G a^2\,\Sigma(k,a)\,\rho_m\,\delta,$
 
-No Cap.17 definimos:
+e o slip:
 
-$k_\star(a)=a\,m_S(a)=m_{S0}a^{1-p}.$
+\eta_{\rm slip}(k,a)\equiv \frac{\Phi}{\Psi}.
 
-Se você escolhe m_{S0}=H_0, então:
+No GR:
 
-$$ k_\star(a_0)=k_{H0}\approx 3.3\times 10^{-4}\,h\,{\rm Mpc}^{-1}. $$
+\mu=\Sigma=1,\quad \eta_{\rm slip}=1.
 
-Porém medições típicas de crescimento/lensing usam:
+Nosso objetivo é derivar \mu e \eta_{\rm slip} no F1.
 
-- RSD e clustering: k \sim 0.01 \text{ a } 0.2\,h\,{\rm Mpc}^{-1}
+**18.2 Equação de crescimento (observável direto)**
 
-- Weak lensing (efetivo): k\sim 0.1\,h\,{\rm Mpc}^{-1} (dependendo do binning)
+A evolução do contraste de densidade (matéria fria) no regime sub-horizonte é:
 
-Ou seja, para quase todo o que é medido:
+$$ \ddot\delta + 2H\dot\delta -4\pi G\,\mu(k,a)\rho_m\,\delta =0. $$
 
-$$ k \gg k_\star \quad \Rightarrow \quad \mu(k,a)\simeq 1+\alpha(a) $$
+Ou em variável \ln a:
 
-Resultado observacional: o efeito fica quase sem dependência de escala no regime que os surveys medem (a escala-dependência estaria apenas em escalas ultra-grandes, próximas ao horizonte).
+$$ \delta'' + \left(2+\frac{H'}{H}\right)\delta' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0 $$
 
-- Isso ainda é "detectável" (como offset em \mu), mas não como "joelho Yukawa dentro do LSS".
+onde primos são derivadas em \ln a.
 
-**18.3 Para ter Yukawa dentro de k\sim 0.01\text{--}0.1, precisamos m_{S0}\gg H_0**
+Observáveis: f(a)=d\ln\delta/d\ln a e f\sigma_8(z).
 
-Queremos:
+**18.3 Forma universal de \mu(k,a) em teorias com modo escalar extra**
 
-$k_\star(a_0)\sim 0.01\text{--}0.1\,h\,{\rm Mpc}^{-1}.$
+No F1, existe um modo escalar relativo (Cap.15) com massa efetiva m_S^2(a).
 
-Como k_{H0}\approx 3.3\times10^{-4}\,h\,{\rm Mpc}^{-1}, isso implica:
+Em teorias desse tipo, no regime quasi-estático (QS), a correção típica tem forma Yukawa:
 
-- Para k_\star=0.01: \;0.01/(3.3\times10^{-4})\approx 30
+$$ \boxed{ \mu(k,a)=1+\frac{\alpha(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)} } $$
 
-- Para k_\star=0.1: \;0.1/(3.3\times10^{-4})\approx 300
+onde \alpha(a) parametriza o acoplamento efetivo do modo extra à matéria.
 
-Logo um benchmark realista para "joelho dentro de LSS" é:
+Interpretação imediata:
 
-$\boxed{ m_{S0}\sim (30\text{--}300)\,H_0. }$
+- Para escalas grandes (k/a\ll m_S): \mu\to 1
 
-Essa é a correção mais importante para transformar a ideia em teste observacional prático.
+- Para escalas pequenas (k/a\gg m_S): \mu\to 1+\alpha(a)
 
-**18.4 Benchmark TDCP (Yukawa dentro de LSS)**
+Ou seja: uma modificação dependente de escala (assinatura-chave).
 
-Vou propor dois benchmarks (ambos com \alpha_0 moderado, como você escolheu "B"):
+**18.4 Como m_S^2(a) e \alpha(a) dependem de F1**
 
-**Benchmark B1 (joelho em k_\star\simeq 0.01\,h\,{\rm Mpc}^{-1})**
+Dos Caps. 15 e 16:
 
-$$ \boxed{ m_{S0}=30H_0,\quad p=1,\quad \alpha_0=0.07,\quad q=0,\quad \nu=1. } $$
+$m_S^2(a)\propto m^2F(\phi)\left(\beta_1+2\beta_2 r(a)\right)$
 
-Então:
+e
 
-$k_\star(a_0)\approx 0.01\,h\,{\rm Mpc}^{-1}.$
+$$ m_T^2(a)\propto r(a)\,m^2F(\phi)\left(\beta_1+2\beta_2 r(a)\right). $$
 
-**Benchmark B2 (joelho em k_\star\simeq 0.1\,h\,{\rm Mpc}^{-1})**
+No F1 com acoplamento mínimo da matéria ao setor g, a força extra vem da mistura entre g e f, então \alpha(a) é controlada por uma combinação do tipo:
 
-$$ \boxed{ m_{S0}=300H_0,\quad p=1,\quad \alpha_0=0.05,\quad q=0,\quad \nu=1. } $$
+$$ \alpha(a)\sim \frac{\epsilon^2(a)}{1+\epsilon^2(a)}, \quad \epsilon(a)\equiv \frac{M_f r(a)}{M_g}. $$
 
-Então:
+Uma parametrização prática (para confrontar com dados sem entrar em diagonalização completa) é:
 
-$k_\star(a_0)\approx 0.1\,h\,{\rm Mpc}^{-1}.$
+$\boxed{ \alpha(a)=\alpha_0\,\frac{r^2(a)}{1+r^2(a)} }$
 
-Nota: manter p=1 torna k_\star aproximadamente constante com o tempo; se quisermos que o joelho "ande" com z, escolhemos p\neq 1 (ver 18.6).
+com \alpha_0 absorvendo razão M_f/M_g e fatores de normalização.
 
-**18.5 Previsão direta para RSD: f\sigma_8(z)**
+**18.5 Condição "GR local" e consequência para \mu(k,a)**
 
-No regime QS, a equação de crescimento é:
+Você quer retorno a GR em escalas solares/galácticas:
 
-$$ \delta'' + \left(2+\frac{H'}{H}\right)\delta' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0. $$
+$\mu(k,a)\to 1\quad\text{para}\quad k/a \gg H_0$
 
-Com:
+Isso pode ser obtido de duas formas:
+
+**(i) m_S grande hoje**
+
+Se m_S(a_0)\gg k/a até escalas muito pequenas, então:
+
+$\mu\simeq 1$
+
+em toda faixa observável → difícil distinguir da GR.
+
+**(ii) \alpha pequeno (desacoplamento)**
+
+Mesmo se m_S não for enorme, se \alpha\ll 1:
+
+$\mu\simeq 1$
+
+Resultado: há degenerescência entre "muito pesado" e "muito fraco acoplamento".
+
+**18.6 Predição típica diferenciadora: desvio em f\sigma_8**
+
+Se a TDCP for responsável pela aceleração tardia via termos estruturais, é comum que ela altere crescimento tardio.
+
+No limite k/a\gg m_S:
+
+$\mu \to 1+\alpha(a).$
+
+Então o termo de fonte aumenta:
+
+$$ \frac{3}{2}\Omega_m(a)\mu \to \frac{3}{2}\Omega_m(a)(1+\alpha). $$
+
+Isso aumenta f(z) e f\sigma_8(z).
+
+Mas a observação atual tende a tolerar apenas desvios moderados.
+
+Logo você terá uma janela típica:
+
+$$ \boxed{ |\alpha(a_0)| \lesssim 0.1 \;\text{(ordem de grandeza segura)} } $$
+
+e o efeito mais detectável vira a dependência de escala (transição Yukawa).
+
+**18.7 Slip gravitacional \eta_{\rm slip} como assinatura adicional**
+
+Em bimetric, geralmente \Phi\neq\Psi em nível linear, então:
+
+\eta_{\rm slip}(k,a)\neq 1.
+
+A forma típica, no mesmo regime QS, é:
+
+\boxed{ \eta_{\rm slip}(k,a)=\frac{1+\beta(a)\,k^2/(a^2(m_S^2+k^2/a^2))}{1+\alpha(a)\,k^2/(a^2(m_S^2+k^2/a^2))} }
+
+com \alpha,\beta duas funções do background.
+
+O "combo observável" de lensing usa:
+
+\Sigma(k,a)\approx \frac{\mu}{2}(1+\eta_{\rm slip}^{-1})
+
+ou formulação equivalente.
+
+Isso permite testar TDCP com:
+
+- RSD (crescimento): sensível a \mu
+
+- Weak lensing: sensível a \Sigma
+
+**18.8 Estratégia de comparação com \LambdaCDM (sem simular ainda)**
+
+Você pediu validação matemática. Aqui vai um pipeline analítico mínimo:
+
+**Passo A --- Fixar background H(a)**
+
+- Pode ser escolhido para reproduzir \LambdaCDM no nível de expansão.
+
+- Isso já foi encaixado no Cap.14 via U(r_\star) e F(\phi) lento.
+
+**Passo B --- Fixar duas funções efetivas**
+
+Escolhemos:
+
+$m_S(a)=m_{S0}\,a^{-p},\qquad \alpha(a)=\alpha_0\,a^{q}$
+
+onde p,q codificam se a modificação liga tarde ou cedo.
+
+**Passo C --- Gerar previsão para \mu(k,a)**
 
 $\mu(k,a)=1+\frac{\alpha(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}.$
 
-**Duas regiões observacionais (para um dado z)**
+**Passo D --- Inserir na equação de crescimento**
 
-- $Se k \ll k_\star(a): \mu\approx 1$
+$$ \delta'' + \left(2+\frac{H'}{H}\right)\delta' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0 $$
 
-> \Rightarrow crescimento praticamente GR.
+e analisar:
 
-- $Se k \gg k_\star(a): \mu\approx 1+\alpha(a)$
+- diferença percentual em f(z)
 
-> \Rightarrow crescimento reforçado.
+- diferença percentual em f\sigma_8(z)
 
-Assinatura RSD prevista (qualitativa, porém objetiva):
+sem rodar código, já conseguimos obter regimes analíticos:
 
-- Em bins de k acima de k_\star, f\sigma_8(z) tende a ser maior do que GR.
+- $k/a\ll m_S(a): GR$
 
-- Em bins abaixo de k_\star, f\sigma_8(z) tende a coincidir com GR.
+- k/a\gg m_S(a): amplificação constante 1+\alpha(a)
 
-Na prática, surveys medem um "f\sigma_8 efetivo" integrado sobre uma janela em k. A TDCP prevê que esse efetivo pode mudar se a janela mudar.
+Isso gera um "joelho" no espectro de crescimento em torno de:
 
-**18.6 Dependência com redshift: como fazer o sinal "ligar tarde"**
+$k_\star(a)\sim a\,m_S(a).$
 
-Lembrando:
+**18.9 Produto final deste capítulo (condições testáveis)**
 
-$k_\star(a)=m_{S0}a^{1-p}.$
+Você fecha essa etapa quando consegue declarar:
 
-- Se p=1: k_\star ~ constante (assinatura estável em z).
+1. Uma forma paramétrica para \mu(k,a) derivada de m_S(a) e \alpha(a).
 
-- Se p>1: k_\star(a)=m_{S0}a^{-(p-1)} cresce no passado (a menor)
+2. Um intervalo de m_{S0} e \alpha_0 compatível com:
 
-> \Rightarrow mais modos ficam em k\ll k_\star no passado \Rightarrow GR no passado (bom para CMB/BAO).
+ - retorno a GR local,
 
-Então uma escolha "ligar tarde" é:
+ - RSD e lensing,
 
-$\boxed{p>1 \quad \text{e}\quad q\ge 0.}$
+ - e aceleração tardia já fixada no background.
 
-Porque:
+**Agora: escolha técnica mínima para prosseguir**
 
-- no passado m_S maior e/ou k_\star maior → suprime modificação,
+A) TDCP "quase indistinguível" no crescimento (apenas background muda).
 
-- hoje m_S menor → joelho entra no LSS.
+→ m_S grande e/ou \alpha pequeno.
 
-**18.7 Weak lensing: \Sigma(k,a) e discrepância RSD vs WL**
+B) TDCP "distinguível" por dependência de escala (Yukawa).
 
-O lensing mede \Phi+\Psi. Definimos:
+$→ m_{S0}\sim H_0 e \alpha_0\sim 0.05--0.1.$
 
-$-k^2(\Phi+\Psi)=8\pi G a^2\Sigma(k,a)\rho_m\delta.$
+- parametrização explícita (m_{S0},p,\alpha_0,q),
 
-Com slip:
+- regimes k\ll k_\star e k\gg k_\star,
 
-\eta_{\rm slip}=\frac{\Phi}{\Psi}, \qquad -k^2\Psi=4\pi G a^2\mu\rho_m\delta.
+- e como isso se conecta diretamente a f\sigma_8(z) e lensing?
 
-Então:
+Ótimo --- seguimos com B: assinatura Yukawa detectável. Vou fechar o Cap.18 com uma parametrização explícita, regimes analíticos e como isso vira previsão para RSD ( f\sigma_8 ) e lensing ( \Sigma ).
+
+**CAPÍTULO 18 (continuação)**
+
+**\mu(k,a) Yukawa detectável, regimes analíticos e previsões para f\sigma_8 e lensing**
+
+**18.10 Parametrização mínima (EFT fenomenológica da TDCP)**
+
+Escolhemos duas funções efetivas (consistentes com o que deduzimos no Cap.15: modo relativo com massa m_S e acoplamento efetivo \alpha):
+
+$$ \boxed{ m_S(a)=m_{S0}\,a^{-p}, \qquad \alpha(a)=\alpha_0\,a^{q}. } $$
+
+Interpretação:
+
+- p>0: o modo era mais pesado no passado (boa supressão primordial).
+
+- q>0: o acoplamento "liga" tardiamente (efeito maior agora).
+
+A forma Yukawa detectável fica:
+
+$$ \boxed{ \mu(k,a)=1+\frac{\alpha(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}. } $$
+
+Definimos o "joelho" de transição:
+
+$\boxed{ k_\star(a)=a\,m_S(a)=m_{S0}\,a^{1-p}. }$
+
+**18.11 Regimes analíticos e predição qualitativa**
+
+**Regime 1 --- Grande escala (GR)**
+
+Se k\ll k_\star(a) então k^2/a^2\ll m_S^2 e:
+
+$\mu(k,a)\simeq 1+\alpha(a)\frac{k^2/a^2}{m_S^2(a)} \approx 1$
+
+ou seja:
+
+$\boxed{\mu \to 1 \quad (GR).}$
+
+**Regime 2 --- Pequena escala (força efetiva aumentada)**
+
+Se k\gg k_\star(a) então k^2/a^2\gg m_S^2 e:
+
+$\mu(k,a)\simeq 1+\alpha(a).$
+
+Logo:
+
+$\boxed{\mu \to 1+\alpha(a).}$
+
+Predição central: existe uma transição em k que se move com o tempo, de escala k_\star(a).
+
+**18.12 Requisitos "detectável mas seguro" (janela paramétrica)**
+
+Queremos:
+
+1. efeito perceptível em crescimento tardio
+
+2. sem violar retorno a GR local nem explodir estruturas
+
+Escolha segura (ordem de grandeza):
+
+$$ \boxed{ \alpha_0 \sim 0.05\text{--}0.10, \qquad m_{S0}\sim H_0, \qquad p\gtrsim 1, \qquad q\gtrsim 0. } $$
+
+Por quê:
+
+- m_{S0}\sim H_0 coloca o joelho perto de escalas cosmológicas (onde observações são sensíveis).
+
+- p\gtrsim 1 torna m_S maior no passado, suprimindo isocurvatura e instabilidades (Cap.15).
+
+- \alpha_0\sim 0.05 dá aumento pequeno mas detectável.
+
+- q\ge 0 evita acoplamento maior no passado.
+
+**18.14 Como isso entra diretamente em f\sigma_8(z)**
+
+Defina:
+
+$f(a)\equiv \frac{d\ln \delta}{d\ln a}.$
+
+A equação de crescimento:
+
+$$ \delta'' + \left(2+\frac{H'}{H}\right)\delta' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0 $$
+
+mostra que \mu>1 aumenta o termo fonte. Para estimativa rápida, no regime k\gg k_\star:
+
+$\mu\simeq 1+\alpha(a).$
+
+Então o crescimento fica aproximadamente "mais GR" com gravidade reforçada.
+
+No limite de pequenas correções, o desvio fracionário em f é aproximadamente:
+
+$\boxed{ \frac{\Delta f}{f}\sim \mathcal{O}(\alpha(a)) }$
+
+e como f\sigma_8\propto f\delta, o desvio acumulado pode ser maior que \alpha por integrar no tempo.
+
+Assinatura observacional concreta:
+
+- Para k\gg k_\star: crescimento mais forte
+
+- Para k\ll k_\star: crescimento GR
+
+> Logo f\sigma_8 torna-se levemente dependente da escala e do redshift (em prática isso aparece como tensão entre RSD em diferentes escalas efetivas).
+
+**18.15 Slip e lensing: \Sigma(k,a) e \eta_{\rm slip}**
+
+Em bimetric, tipicamente:
+
+$\Phi \neq \Psi.$
+
+Parametrizamos:
+
+\eta_{\rm slip}(k,a)=\frac{\Phi}{\Psi}.
+
+Uma forma consistente com um mediador escalar (QS) é:
+
+\boxed{ \eta_{\rm slip}(k,a)= 1+\frac{\beta(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)} }
+
+onde \beta(a) é outra função efetiva (em F1 ela não é independente --- está ligada ao mesmo mecanismo de mistura que define \alpha).
+
+Uma escolha minimalista coerente:
+
+$$ \boxed{ \beta(a)=\nu\,\alpha(a), \qquad \nu=\mathcal{O}(1). } $$
+
+Então lensing responde a:
+
+$-k^2(\Phi+\Psi)=8\pi G a^2\Sigma(k,a)\rho_m\delta$
+
+com:
 
 \boxed{ \Sigma(k,a)=\frac{\mu(k,a)}{2}\left(1+\eta_{\rm slip}^{-1}(k,a)\right). }
 
-No benchmark minimalista:
+Assinatura conjunta (RSD + WL):
 
-\eta_{\rm slip}(k,a)=1+\frac{\beta(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}, \qquad \beta(a)=\nu\alpha(a).
+- RSD mede \mu,
 
-Assinatura combinada:
+- WL mede \Sigma,
 
-- $RSD vê \mu,$
+- e a diferença revela \eta_{\rm slip}\neq 1, típico de bimetric.
 
-- $WL vê \Sigma,$
+**18.16 Ligação com os parâmetros fundamentais F1 (mapa conceitual)**
 
-- se \nu\neq 0, então \Sigma\neq \mu → padrão típico de bimetric.
+Você pediu robustez: então deixamos claro como isso "vem" de F1.
 
-**18.8 Matriz "o que medir / onde medir / qual sinal" (objetiva)**
+1. massa efetiva do modo relativo:
 
-**(1) RSD (f\sigma_8)**
+$m_S^2(a)\propto m^2F(\phi(a))(\beta_1+2\beta_2 r(a)).$
 
-- Sensível a: \mu(k,a)
+2. acoplamento efetivo:
 
-- Sinal TDCP: aumento relativo em bins com k\gg k_\star
+$$ \alpha(a)\sim \frac{\epsilon^2(a)}{1+\epsilon^2(a)}, \qquad \epsilon(a)=\frac{M_f r(a)}{M_g}. $$
 
-**(2) Weak Lensing (shear, CMB lensing)**
+Então a fenomenologia Yukawa detectável exige:
 
-- Sensível a: \Sigma(k,a)
+- F(\phi) e/ou r(a) evoluindo lentamente para posicionar m_S(a)\sim H_0 hoje,
 
-- Sinal TDCP: discrepância entre \Sigma e \mu se \eta_{\rm slip}\neq 1
+- M_f/M_g não extremamente pequeno, para permitir \alpha_0\sim 0.05.
 
-**(3) E_G (estatística combinada)**
+Isso é compatível com a lógica TDCP: "separação estrutural" tardia altera acoplamentos cosmológicos, mas não localmente (porque k/a alto entra no denominador Yukawa).
 
-- Combina lensing + clustering + RSD
+**18.17 Predições testáveis (lista objetiva)**
 
-- Sinal TDCP: detecta \mu vs \Sigma e o slip com menos degenerescência.
+Se TDCP-F1 (com Yukawa detectável) for correto, esperamos:
 
-**18.9 Condições de consistência (link direto com Cap.14--16)**
+1. \mu(k,a) apresenta transição em torno de k_\star(a)\sim a m_S(a).
 
-O que escolhemos aqui deve respeitar:
+2. crescimento aumentado em escalas k\gg k_\star: f\sigma_8 ligeiramente acima do GR em redshifts baixos.
 
-- Supressão de isocurvatura: m_S^2 \gg H^2 na era primordial
+3. slip gravitacional \eta_{\rm slip}\neq 1 em mesmas escalas.
 
-> (com p>1, isso fica mais fácil)
+4. tensão controlada entre RSD e lensing se \Sigma\neq \mu.
 
-- Higuchi: m_T^2\ge 2H^2 no regime de Sitter efetivo
+**Como fechamos esta etapa antes de simulação?**
 
-- $EFT: H\ll \Lambda_3\sim(m^2M_{\rm eff})^{1/3}$
+O próximo passo "sem rodar código" é definir um benchmark TDCP (um conjunto numérico de parâmetros) para usar como referência nos capítulos seguintes:
 
-O ponto chave: escolher m_{S0}\sim 30\text{--}300\,H_0 não viola EFT automaticamente; é apenas uma escolha de escala cosmológica "intermediária" para o modo relativo.
+$$ \boxed{ m_{S0} = H_0,\quad p=1,\quad \alpha_0=0.07,\quad q=0,\quad \nu=1. } $$
 
-**Fechamento do Cap.18: o que está decidido e o que falta**
+Isso já permite prever qualitativamente:
 
-- Definimos como traduzir m_{S0} para escalas k observáveis.
+- joelho k_\star(a)=H_0 (em unidades com c=1),
 
-- Estabelecemos benchmarks realistas para ter joelho Yukawa dentro de LSS.
+- \mu\to 1.07 em pequenas escalas cosmológicas.
 
-- Especificamos quais observáveis distinguem TDCP de \LambdaCDM (RSD vs WL + slip).
+**Próximo capítulo natural (para manter o rigor)**
 
-Falta (próximo capítulo): transformar isso em um "modelo de previsão" fechado para comparação, isto é:
+Cap.19 --- Confronto com observáveis (ainda sem simulação):
 
-- escolher p,q,\alpha_0,\nu final,
+- traduzimos k_\star(a) para k em h\,{\rm Mpc}^{-1} (exige fixar unidades cosmológicas),
 
-- escolher m_{S0} final (B1 ou B2),
+- mostramos quais faixas de k RSD/WL testam,
 
-- e derivar o comportamento esperado de \Delta f\sigma_8(z) em termos de ordem de grandeza, por faixa de k.
-
-**Próximo passo proposto (Cap.19)**
-
-Cap.19 --- Previsões quantitativas de primeira ordem (sem simulação):
-
-- aproximar solução do crescimento com \mu=1+\alpha em regime k\gg k_\star,
-
-- estimar \Delta f\sigma_8(z) e dependência com k,
-
-- estimar \Delta \Sigma e \Delta E_G.
-
+- e quais redshifts maximizam o sinal.
