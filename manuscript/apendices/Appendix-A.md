@@ -20,7 +20,7 @@ Nada será apenas citado --- tudo será construído.
 
 Consideramos duas métricas dinâmicas:
 
-$$ g_{\mu\nu}, \quad f_{\mu\nu}. $$
+$g_{\mu\nu}, \quad f_{\mu\nu}.$
 
 A ação ghost-free mais geral construída por Hassan e Rosen é:
 
@@ -28,11 +28,11 @@ $$ S = \frac{M_g^2}{2}\int d^4x\,\sqrt{-g}\,R[g] + \frac{M_f^2}{2}\int d^4x\,\sq
 
 onde:
 
-$$ M_{\mathrm{eff}}^{-2} = M_g^{-2} + M_f^{-2}. $$
+$M_{\mathrm{eff}}^{-2} = M_g^{-2} + M_f^{-2}.$
 
 O termo crucial é o potencial:
 
-$$ V(\mathcal{K}) = \sum_{n=0}^4 \beta_n e_n(\mathcal{K}), $$
+$V(\mathcal{K}) = \sum_{n=0}^4 \beta_n e_n(\mathcal{K}),$
 
 com:
 
@@ -42,7 +42,7 @@ $$ \mathcal{K}^\mu_{\ \nu} = \left(\sqrt{g^{-1}f}\right)^\mu_{\ \nu}. $$
 
 Definimos:
 
-$$ (g^{-1}f)^\mu_{\ \nu} = g^{\mu\alpha} f_{\alpha\nu}. $$
+$(g^{-1}f)^\mu_{\ \nu} = g^{\mu\alpha} f_{\alpha\nu}.$
 
 Queremos uma matriz \mathcal{K} tal que:
 
@@ -54,15 +54,15 @@ Isto é, \mathcal{K} é a raiz matricial da matriz mista g^{-1}f.
 
 Se \lambda_i são autovalores de \mathcal{K}, definimos:
 
-$$ e_0 = 1, $$
+$e_0 = 1,$
 
-$$ e_1 = \sum_i \lambda_i = [\mathcal{K}], $$
+$e_1 = \sum_i \lambda_i = [\mathcal{K}],$
 
-$$ e_2 = \sum_{i\<j} \lambda_i \lambda_j, $$
+$e_2 = \sum_{i<j} \lambda_i \lambda_j,$
 
-$$ e_3 = \sum_{i\<j\<k} \lambda_i \lambda_j \lambda_k, $$
+$e_3 = \sum_{i<j<k} \lambda_i \lambda_j \lambda_k,$
 
-$$ e_4 = \prod_i \lambda_i = \det \mathcal{K}. $$
+$e_4 = \prod_i \lambda_i = \det \mathcal{K}.$
 
 Esses polinômios são as únicas combinações que mantêm:
 
@@ -74,17 +74,17 @@ Esses polinômios são as únicas combinações que mantêm:
 
 Os polinômios podem ser escritos como:
 
-$$ e_1 = [\mathcal{K}], $$
+$e_1 = [\mathcal{K}],$
 
-$$ e_2 = \frac12\left([\mathcal{K}]^2 - [\mathcal{K}^2]\right), $$
+$e_2 = \frac12\left([\mathcal{K}]^2 - [\mathcal{K}^2]\right),$
 
 $$ e_3 = \frac16\left([\mathcal{K}]^3 - 3[\mathcal{K}][\mathcal{K}^2] + 2[\mathcal{K}^3]\right), $$
 
-$$ e_4 = \det \mathcal{K}. $$
+$e_4 = \det \mathcal{K}.$
 
 onde:
 
-$$ [\mathcal{K}] = \mathcal{K}^\mu_{\ \mu}. $$
+$[\mathcal{K}] = \mathcal{K}^\mu_{\ \mu}.$
 
 **A.5 Eliminação do Ghost de Boulware--Deser**
 
@@ -114,35 +114,35 @@ A teoria possui 7 graus de liberdade físicos e é não-linearmente ghost-free.
 
 Assumimos:
 
-$$ ds_g^2 = -N_g^2 dt^2 + a^2 \delta_{ij} dx^i dx^j, $$
+$ds_g^2 = -N_g^2 dt^2 + a^2 \delta_{ij} dx^i dx^j,$
 
-$$ ds_f^2 = -N_f^2 dt^2 + b^2 \delta_{ij} dx^i dx^j. $$
+$ds_f^2 = -N_f^2 dt^2 + b^2 \delta_{ij} dx^i dx^j.$
 
 Então:
 
-$$ (g^{-1}f)^0_{\ 0} = \frac{N_f^2}{N_g^2}, $$
+$(g^{-1}f)^0_{\ 0} = \frac{N_f^2}{N_g^2},$
 
-$$ (g^{-1}f)^i_{\ j} = \frac{b^2}{a^2}\delta^i_j. $$
+$(g^{-1}f)^i_{\ j} = \frac{b^2}{a^2}\delta^i_j.$
 
 Logo:
 
-\mathcal{K}^\mu_{\ \nu} = \mathrm{diag}(\xi, r, r, r),
+$\mathcal{K}^\mu_{\ \nu} = \mathrm{diag}(\xi, r, r, r),$
 
 com:
 
-$$ \xi = \frac{N_f}{N_g}, \quad r = \frac{b}{a}. $$
+$\xi = \frac{N_f}{N_g}, \quad r = \frac{b}{a}.$
 
 **A.7 Polinômios no Fundo FLRW**
 
 Autovalores: \{\xi, r, r, r\}.
 
-$$ e_1 = \xi + 3r, $$
+$e_1 = \xi + 3r,$
 
-$$ e_2 = 3\xi r + 3r^2, $$
+$e_2 = 3\xi r + 3r^2,$
 
-$$ e_3 = 3\xi r^2 + r^3, $$
+$e_3 = 3\xi r^2 + r^3,$
 
-$$ e_4 = \xi r^3. $$
+$e_4 = \xi r^3.$
 
 O potencial explícito torna-se:
 

@@ -42,7 +42,7 @@ A TDCP pode ser formulada através dos seguintes postulados:
 
 Existe um estado primordial estruturalmente simétrico caracterizado por:
 
-$$ g_{\mu\nu} = f_{\mu\nu}, \quad \chi = 0, \quad \eta = 0. $$
+$g_{\mu\nu} = f_{\mu\nu}, \quad \chi = 0, \quad \eta = 0.$
 
 Esse estado é instável sob perturbações estruturais.
 
@@ -50,7 +50,7 @@ Esse estado é instável sob perturbações estruturais.
 
 A instabilidade do modo antissimétrico gera separação estrutural entre dois setores geométricos:
 
-$$ r = \frac{b}{a} \neq 1. $$
+$r = \frac{b}{a} \neq 1.$
 
 A bifurcação é interpretada como transição crítica.
 
@@ -66,27 +66,27 @@ A estrutura em e_n garante ausência do ghost de Boulware--Deser.
 
 O potencial é modulado por uma função escalar suave:
 
-$$ V \rightarrow F(\chi)V. $$
+$V \rightarrow F(\chi)V.$
 
 O campo \chi evolui segundo:
 
-$$ \ddot\chi + 3H\dot\chi + U\'(\chi) = m^2M_{eff}^2 F\'(\chi)V. $$
+$\ddot\chi + 3H\dot\chi + U'(\chi) = m^2M_{eff}^2 F'(\chi)V.$
 
 **Postulado 5 --- Irreversibilidade Estrutural**
 
 Existe uma variável acumulativa:
 
-$$ \dot\eta = \Gamma \dot\chi^2, \quad \Gamma\>0. $$
+$\dot\eta = \Gamma \dot\chi^2, \quad \Gamma>0.$
 
 Logo:
 
-\eta(t) \text{ é monotônica crescente.}
+$\eta(t) \text{ é monotônica crescente.}$
 
 **Postulado 6 --- Recuperação de GR**
 
 No limite:
 
-$$ \chi \to 0, \quad \eta \to 0, \quad r \to 1, $$
+$\chi \to 0, \quad \eta \to 0, \quad r \to 1,$
 
 a teoria recupera GR padrão.
 
@@ -100,27 +100,27 @@ $$ 3M_g^2 H^2 = \rho_m + \frac12\dot\chi^2 + U(\chi) + m^2M_{eff}^2F(\chi)\mathc
 
 **(2) Friedmann estrutural**
 
-$$ 3M_f^2 H_f^2 = m^2M_{eff}^2F(\chi)\mathcal{U}(r). $$
+$3M_f^2 H_f^2 = m^2M_{eff}^2F(\chi)\mathcal{U}(r).$
 
 **(3) Constraint de Bianchi**
 
-$$ (\beta_1 + 2\beta_2 r + \beta_3 r^2)(H - \xi H_f)=0. $$
+$(\beta_1 + 2\beta_2 r + \beta_3 r^2)(H - \xi H_f)=0.$
 
 **(4) Equação de χ**
 
-$$ \ddot\chi + 3H\dot\chi + U\'(\chi) = m^2M_{eff}^2F\'(\chi)V(\xi,r). $$
+$$ \ddot\chi + 3H\dot\chi + U'(\chi) = m^2M_{eff}^2F'(\chi)V(\xi,r). $$
 
 **(5) Irreversibilidade**
 
-$$ \dot\eta = \Gamma \dot\chi^2. $$
+$\dot\eta = \Gamma \dot\chi^2.$
 
 **(6) Massa tensorial efetiva**
 
-$$ m_T^2(t) = m^2F(\chi)\mu_T^2(r,\beta_n,M_g,M_f). $$
+$m_T^2(t) = m^2F(\chi)\mu_T^2(r,\beta_n,M_g,M_f).$
 
 **(7) Higuchi**
 
-$$ m_T^2 \ge 2H^2. $$
+$m_T^2 \ge 2H^2.$
 
 **H.4 Estrutura Conceitual Compacta**
 

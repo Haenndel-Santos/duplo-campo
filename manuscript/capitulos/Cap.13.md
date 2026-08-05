@@ -56,7 +56,7 @@ $$ V(\xi,r)= \beta_0 +\beta_1(\xi+3r) +\beta_2(3\xi r+3r^2) +\beta_3(3\xi r^2+r^
 
 Se houver modulação global TDCP:
 
-$$ V(\xi,r,\phi)=F(\phi)\,V(\xi,r). $$
+$V(\xi,r,\phi)=F(\phi)\,V(\xi,r).$
 
 **13.3 Equações de Friedmann e densidades de interação**
 
@@ -64,7 +64,7 @@ As equações de Friedmann tomam forma:
 
 $$ 3M_g^2 H_g^2 = \rho_m + \rho_\phi + \rho_{\rm int}^{(g)}(r,\phi), $$
 
-$$ 3M_f^2 H_f^2 = \rho_f + \rho_{\rm int}^{(f)}(r,\phi). $$
+$3M_f^2 H_f^2 = \rho_f + \rho_{\rm int}^{(f)}(r,\phi).$
 
 No caso HR padrão (e mantendo a notação usual), as densidades efetivas são:
 
@@ -78,17 +78,17 @@ Essas expressões são a ponte direta entre \beta_n e a cosmologia de fundo.
 
 A identidade de Bianchi gera a condição (forma típica no fundo FLRW):
 
-$$ (\beta_1+2\beta_2 r+\beta_3 r^2)\,\big(H_g-\xi H_f\big)=0. $$
+$(\beta_1+2\beta_2 r+\beta_3 r^2)\,\big(H_g-\xi H_f\big)=0.$
 
 Portanto, existem dois ramos:
 
 **(A) Ramo Algébrico (solução com r constante)**
 
-\beta_1+2\beta_2 r+\beta_3 r^2 = 0 \quad\Rightarrow\quad r=r_\star=\text{const.}
+$$ \beta_1+2\beta_2 r+\beta_3 r^2 = 0 \quad\Rightarrow\quad r=r_\star=\text{const.} $$
 
 **(B) Ramo Dinâmico (evolução de r(t))**
 
-H_g=\xi H_f \quad\Rightarrow\quad r(t)\ \text{evolui}.
+$H_g=\xi H_f \quad\Rightarrow\quad r(t)\ \text{evolui}.$
 
 Decisão de modelagem: para "aceleração tardia emergente" com memória estrutural, o ramo dinâmico costuma ser mais fértil; o ramo algébrico é excelente como limite controlado e para conectar com \LambdaCDM.
 
@@ -106,7 +106,7 @@ que funciona como uma energia escura efetiva.
 
 Se F(\phi) varia lentamente:
 
-w_{\rm eff}\approx -1 \quad \text{com desvio controlado por}\ \dot\phi.
+$$ w_{\rm eff}\approx -1 \quad \text{com desvio controlado por}\ \dot\phi. $$
 
 Isso serve como calibração: você garante que a TDCP recupera um comportamento tipo-\Lambda em um limite bem definido.
 
@@ -126,7 +126,7 @@ Defina uma escala:
 
 A aceleração requer:
 
-$$ \frac{\ddot a}{a} = \dot H_g + H_g^2 \> 0 $$
+$\frac{\ddot a}{a} = \dot H_g + H_g^2 > 0$
 
 que, usando Friedmann + equação de Raychaudhuri, vira uma condição sobre pressão efetiva. Defina:
 
@@ -134,7 +134,7 @@ $$ \rho_{\rm DE}^{\rm eff} \equiv \rho_\phi + \rho_{\rm int}^{(g)}, \quad p_{\rm
 
 Então aceleração tardia exige:
 
-$$ \rho_m + \rho_{\rm DE}^{\rm eff} + 3p_{\rm DE}^{\rm eff} \< 0. $$
+$$ \rho_m + \rho_{\rm DE}^{\rm eff} + 3p_{\rm DE}^{\rm eff} < 0. $$
 
 Isso impõe sinal e escala em combinações (\beta_0,\beta_1,\beta_2,\beta_3) via \rho_{\rm int}^{(g)}(r) e seu "equivalente de pressão" no fundo (derivável do tensor de interação).
 
@@ -156,17 +156,17 @@ o que requer m_\sigma e/ou m_T suficientemente grandes ou acoplamentos \Delta pe
 
 Ainda neste capítulo, você já deixa a condição escrita como restrição em \beta_n:
 
-m_T^2(\beta_n,r,\phi)\ \ge\ 2H^2 \quad\text{no regime quasi-de Sitter relevante}.
+$$ m_T^2(\beta_n,r,\phi)\ \ge\ 2H^2 \quad\text{no regime quasi-de Sitter relevante}. $$
 
 **Passo 5 --- Checar consistência do ramo dinâmico (evitar singularidades em r)**
 
 Se o ramo dinâmico é usado, é comum que certas escolhas de \beta_n levem r a regiões problemáticas (ex.: r\to 0 ou r\to\infty). Impõe-se:
 
-$$ 0\<r_{\min}\le r(t)\le r_{\max}\<\infty $$
+$0<r_{\min}\le r(t)\le r_{\max}<\infty$
 
 e isso vira restrição nas combinações polinomiais:
 
-\beta_0 + 3\beta_1 r + 3\beta_2 r^2 + \beta_3 r^3 \quad \text{não deve cruzar regiões que gerem instabilidade/ghost.}
+$$ \beta_0 + 3\beta_1 r + 3\beta_2 r^2 + \beta_3 r^3 \quad \text{não deve cruzar regiões que gerem instabilidade/ghost.} $$
 
 **13.7 Famílias mínimas recomendadas (para varrer espaço de parâmetros)**
 
@@ -226,7 +226,7 @@ Vamos começar com uma família mínima e derivar as restrições formais.
 
 Minha recomendação para a TDCP, pela coerência com "memória estrutural" e aceleração tardia, é começar com F1:
 
-$$ (\beta_0,\beta_1,\beta_2,0,\beta_4) $$
+$(\beta_0,\beta_1,\beta_2,0,\beta_4)$
 
 e trabalhar no ramo dinâmico, mantendo o ramo proporcional como limite de checagem.
 
@@ -268,23 +268,23 @@ $$ \rho_{\rm int}^{(g)}=m^2M_{\rm eff}^2F(\phi)\,U(r), \qquad \rho_{\rm int}^{(f
 
 A constraint no fundo é:
 
-$$ (\beta_1+2\beta_2r+\beta_3r^2)(H_g-\xi H_f)=0 $$
+$(\beta_1+2\beta_2r+\beta_3r^2)(H_g-\xi H_f)=0$
 
-$$ e com \beta_3=0: $$
+$e com \beta_3=0:$
 
 **(A) Ramo Algébrico**
 
 $$ \beta_1+2\beta_2r=0 \quad\Rightarrow\quad \boxed{r_\star=-\frac{\beta_1}{2\beta_2}}. $$
 
-Condição de existência física (evitar r\<0 para b=a r real e positivo):
+Condição de existência física (evitar r<0 para b=a r real e positivo):
 
-$$ \boxed{r_\star\>0\ \Rightarrow\ \beta_1\beta_2\<0.} $$
+$\boxed{r_\star>0\ \Rightarrow\ \beta_1\beta_2<0.}$
 
 Esse ramo é extremamente útil como limite: ele fixa r e transforma U(r) em constante (se F(\phi) for lento ou congelado).
 
 **(B) Ramo Dinâmico**
 
-$$ \boxed{H_g=\xi H_f.} $$
+$\boxed{H_g=\xi H_f.}$
 
 Esse é o ramo que permite r(t) evoluir, isto é, onde a TDCP ganha "memória estrutural" cosmológica.
 
@@ -306,7 +306,7 @@ No ansatz FLRW estritamente diagonal e com acoplamento HR puro, o "ramo dinâmic
 
 Isso é um ponto sutil que explica por que, em bimetric FLRW, o "ramo dinâmico" não é simplesmente "r(t) livre" --- ele depende de como a constraint aparece (há formas equivalentes envolvendo \dot r e \xi). Em tratamentos completos, a constraint é frequentemente escrita como:
 
-$$ (\beta_1+2\beta_2r+\beta_3r^2)\,(\dot r - (\xi-1)Hr)=0, $$
+$(\beta_1+2\beta_2r+\beta_3r^2)\,(\dot r - (\xi-1)Hr)=0,$
 
 ou equivalente, onde o ramo dinâmico não fixa \dot r=0 trivialmente, mas fixa relação entre \xi e r. O ponto operacional para nós:
 
@@ -318,23 +318,23 @@ Como você quer validar matematicamente, vou fazer do jeito correto: introduzir 
 
 Defina o "Hubble do setor f em tempo g":
 
-$$ H_b \equiv \frac{\dot b}{b}, \quad (N_g=1). $$
+$H_b \equiv \frac{\dot b}{b}, \quad (N_g=1).$
 
 Então
 
-$$ H_f = \frac{1}{N_f}\frac{\dot b}{b}=\frac{H_b}{\xi}. $$
+$H_f = \frac{1}{N_f}\frac{\dot b}{b}=\frac{H_b}{\xi}.$
 
 A constraint do ramo dinâmico, escrita como conservação do tensor de interação, pode ser posta na forma:
 
-$$ \boxed{ (\beta_1+2\beta_2r+\beta_3r^2)\,(H_b-\xi H_g)=0 } $$
+$\boxed{ (\beta_1+2\beta_2r+\beta_3r^2)\,(H_b-\xi H_g)=0 }$
 
 e para \beta_3=0:
 
-$$ (\beta_1+2\beta_2r)\,(H_b-\xi H_g)=0. $$
+$(\beta_1+2\beta_2r)\,(H_b-\xi H_g)=0.$
 
 No ramo dinâmico tomamos:
 
-$$ \boxed{H_b=\xi H_g} $$
+$\boxed{H_b=\xi H_g}$
 
 e então r=b/a evolui como:
 
@@ -342,7 +342,7 @@ $$ \dot r = \frac{d}{dt}\left(\frac{b}{a}\right)=r(H_b-H_g)=r(\xi-1)H_g. $$
 
 Portanto:
 
-$$ \boxed{ \dot r = r(\xi-1)H_g. } $$
+$\boxed{ \dot r = r(\xi-1)H_g. }$
 
 Ou seja: r(t) evolui se e somente se \xi(t)\neq 1.
 
@@ -352,15 +352,15 @@ Isso é a forma operacional correta.
 
 A equação do setor f (sem matéria, ou com \rho_f explícito) é:
 
-$$ 3M_f^2H_f^2=\rho_f+\rho_{\rm int}^{(f)}(r,\phi). $$
+$3M_f^2H_f^2=\rho_f+\rho_{\rm int}^{(f)}(r,\phi).$
 
 Substituindo H_f=H_b/\xi e H_b=H_g+\dot r/r:
 
-$$ H_f=\frac{H_g+\dot r/r}{\xi}. $$
+$H_f=\frac{H_g+\dot r/r}{\xi}.$
 
 Mas do ramo dinâmico H_b=\xi H_g\Rightarrow H_f=H_g. Então:
 
-$$ \boxed{H_f=H_g.} $$
+$\boxed{H_f=H_g.}$
 
 E a equação f vira restrição algébrica (em vez de dinâmica) para r:
 
@@ -412,9 +412,9 @@ Isso separa bem os problemas:
 
 **13.15 Restrições explícitas em F1 (primeiro conjunto "fechado")**
 
-**(i) Existência do ramo algébrico com r_\star\>0**
+**(i) Existência do ramo algébrico com r_\star>0**
 
-$$ \boxed{\beta_1\beta_2\<0.} $$
+$\boxed{\beta_1\beta_2<0.}$
 
 **(ii) Energia efetiva positiva para aceleração (no setor g)**
 
@@ -422,19 +422,19 @@ A contribuição tipo-\Lambda efetiva (no ramo algébrico) é:
 
 $$ \rho_{\rm int}^{(g)}(r_\star)=m^2M_{\rm eff}^2F(\phi)\,U(r_\star). $$
 
-Aceleração tardia exige, aproximadamente, \rho_{\rm int}^{(g)}(r_\star)\>0 e pressão efetiva \approx -\rho. Então:
+Aceleração tardia exige, aproximadamente, \rho_{\rm int}^{(g)}(r_\star)>0 e pressão efetiva \approx -\rho. Então:
 
-\boxed{U(r_\star)\>0 \quad \text{(assumindo }F(\phi)\>0\text{)}.}
+$$ \boxed{U(r_\star)>0 \quad \text{(assumindo }F(\phi)>0\text{)}.} $$
 
-$$ Com r_\star=-\beta_1/(2\beta_2): $$
+$Com r_\star=-\beta_1/(2\beta_2):$
 
 $$ U(r_\star)=\beta_0+3\beta_1r_\star+3\beta_2r_\star^2 = \beta_0 -\frac{3\beta_1^2}{2\beta_2} +\frac{3\beta_1^2}{4\beta_2} = \boxed{\beta_0-\frac{3\beta_1^2}{4\beta_2}.} $$
 
 Logo condição:
 
-$$ \boxed{ \beta_0-\frac{3\beta_1^2}{4\beta_2}\>0. } $$
+$\boxed{ \beta_0-\frac{3\beta_1^2}{4\beta_2}>0. }$
 
-Como \beta_1\beta_2\<0, o termo -\frac{3\beta_1^2}{4\beta_2} tem sinal oposto ao de \beta_2. Isso já restringe fortemente o espaço.
+Como \beta_1\beta_2<0, o termo -\frac{3\beta_1^2}{4\beta_2} tem sinal oposto ao de \beta_2. Isso já restringe fortemente o espaço.
 
 **(iii) Consistência do setor f: positividade/realidade de H_f^2**
 
@@ -442,21 +442,21 @@ No ramo proporcional H_f=H_g, então precisamos que:
 
 $$ 3M_f^2H_g^2-\rho_f = m^2M_{\rm eff}^2F(\phi)\tilde U(r_\star) $$
 
-seja compatível com H_g^2\>0. Isso impõe:
+seja compatível com H_g^2>0. Isso impõe:
 
-\boxed{\tilde U(r_\star)\ \text{não deve forçar }H_g^2\<0.}
+$\boxed{\tilde U(r_\star)\ \text{não deve forçar }H_g^2<0.}$
 
 Com:
 
-$$ \tilde U(r)=\beta_4+3\beta_2r^{-2}+\beta_1r^{-3} $$
+$\tilde U(r)=\beta_4+3\beta_2r^{-2}+\beta_1r^{-3}$
 
 e r=r_\star, isso vira restrição algébrica em \beta_4 dada (\beta_1,\beta_2). (Aqui costuma-se usar \beta_4 como "parametro de compensação".)
 
 Resumo do que temos já, de forma fechada:
 
-$$ - \beta_1\beta_2\<0 $$
+- $\beta_1\beta_2<0$
 
-$$ - \beta_0-\frac{3\beta_1^2}{4\beta_2}\>0 $$
+- $\beta_0-\frac{3\beta_1^2}{4\beta_2}>0$
 
 - \beta_4 escolhido para manter o setor f consistente
 
@@ -478,11 +478,11 @@ Ou seja: a "escala" de energia escura efetiva fixa um produto m^2M_{\rm eff}^2U(
 
 1.  Para F1, o ramo algébrico é explícito e fornece r_\star.
 
-2.  A aceleração tardia pode ser obtida exigindo U(r_\star)\>0.
+2.  A aceleração tardia pode ser obtida exigindo U(r_\star)>0.
 
 3.  Isso produz uma restrição analítica simples:
 
-$$ \boxed{\beta_0-\frac{3\beta_1^2}{4\beta_2}\>0,\qquad \beta_1\beta_2\<0.} $$
+$$ \boxed{\beta_0-\frac{3\beta_1^2}{4\beta_2}>0,\qquad \beta_1\beta_2<0.} $$
 
 4.  O parâmetro \beta_4 é usado para manter consistência do setor f (e afetará o setor tensorial via massa efetiva).
 
@@ -496,7 +496,7 @@ Agora, com F1 definido, o próximo passo matemático é:
 
 - impor condição de supressão:
 
-\boxed{m_S^2 \gg H^2 \quad \text{(após a fase primordial)}.}
+$\boxed{m_S^2 \gg H^2 \quad \text{(após a fase primordial)}.}$
 
 Se você confirmar, eu inicio o Cap.14 já no mesmo nível técnico, começando por:
 

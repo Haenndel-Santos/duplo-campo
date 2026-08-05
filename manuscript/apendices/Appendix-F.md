@@ -52,7 +52,7 @@ Separaremos os parâmetros em três blocos:
 
 **F.2.1 Bloco Gravitacional Bimétrico**
 
-$$ \{ m,\beta_0,\beta_1,\beta_2,\beta_3,\beta_4,M_g,M_f \} $$
+$\{ m,\beta_0,\beta_1,\beta_2,\beta_3,\beta_4,M_g,M_f \}$
 
 Estes controlam:
 
@@ -66,7 +66,7 @@ Estes controlam:
 
 **F.2.2 Bloco Estrutural (χ)**
 
-$$ \{ U(\chi),F(\chi),\Gamma \} $$
+$\{ U(\chi),F(\chi),\Gamma \}$
 
 Estes controlam:
 
@@ -78,7 +78,7 @@ Estes controlam:
 
 **F.2.3 Bloco Inicial**
 
-$$ \chi_i,\dot\chi_i,r_i,\eta_i. $$
+$\chi_i,\dot\chi_i,r_i,\eta_i.$
 
 Controla trajetória cosmológica específica.
 
@@ -90,9 +90,9 @@ Agora listamos restrições que são estruturais, não observacionais.
 
 Para evitar inversão de sinal do termo de massa:
 
-$$ \boxed{F(\chi) \> 0} $$
+$\boxed{F(\chi) > 0}$
 
-Se F\<0:
+Se F<0:
 
 - massa tensorial muda sinal,
 
@@ -106,19 +106,19 @@ Região proibida absoluta.
 
 Em regime acelerado:
 
-$$ \boxed{m_T^2(t) \ge 2H^2} $$
+$\boxed{m_T^2(t) \ge 2H^2}$
 
 Como:
 
-$$ m_T^2 = m^2F(\chi)\mu_T^2(r,\beta_n), $$
+$m_T^2 = m^2F(\chi)\mu_T^2(r,\beta_n),$
 
 então:
 
-$$ m^2F(\chi)\mu_T^2 \ge 2H^2. $$
+$m^2F(\chi)\mu_T^2 \ge 2H^2.$
 
 Isso define uma superfície no espaço:
 
-\mathcal{S}_{\text{Higuchi}}.
+$\mathcal{S}_{\text{Higuchi}}.$
 
 Abaixo dessa superfície → região excluída.
 
@@ -126,25 +126,25 @@ Abaixo dessa superfície → região excluída.
 
 Do Anexo C:
 
-$$ K_{11}\>0, \quad K_{22}\>0, \quad \det K\>0. $$
+$K_{11}>0, \quad K_{22}>0, \quad \det K>0.$
 
 Isso impõe desigualdades envolvendo:
 
-$$ - \beta_n, $$
+- $\beta_n,$
 
 - r,
 
-$$ - m^2F(\chi). $$
+- $m^2F(\chi).$
 
 Essa condição é particularmente sensível a:
 
-$$ \mathcal{B}(r)=\beta_1+2\beta_2 r+\beta_3 r^2. $$
+$\mathcal{B}(r)=\beta_1+2\beta_2 r+\beta_3 r^2.$
 
 Se \mathcal{B}(r)=0, sistema degenera (ponto crítico).
 
 **F.3.4 Estabilidade de Gradiente**
 
-$$ c_{s,\pm}^2\>0. $$
+$c_{s,\pm}^2>0.$
 
 Tipicamente impõe:
 
@@ -154,23 +154,23 @@ Tipicamente impõe:
 
 Região de instabilidade aparece quando:
 
-$$ m^2F(\chi) \to 0 \quad\text{ou}\quad r \to 0,\infty. $$
+$m^2F(\chi) \to 0 \quad\text{ou}\quad r \to 0,\infty.$
 
 **F.4 Regiões Estruturalmente Seguras**
 
 A região mais simples e robusta é:
 
-$$ - M_f \sim M_g, $$
+- $M_f \sim M_g,$
 
-$$ - r\sim \mathcal{O}(1), $$
+- $r\sim \mathcal{O}(1),$
 
-$$ - \beta_1,\beta_2,\beta_3\>0, $$
+- $\beta_1,\beta_2,\beta_3>0,$
 
-$$ - m \sim H_0, $$
+- $m \sim H_0,$
 
 - F(\chi)\sim 1 no regime primordial,
 
-- F\'(\chi) pequeno.
+- F'(\chi) pequeno.
 
 Esta região:
 
@@ -184,7 +184,7 @@ Esta região:
 
 **F.5 Regiões Perigosas**
 
-$$ **(1) m \ll H_0** $$
+**(1) m \ll H_0**
 
 → massa muito pequena
 
@@ -192,7 +192,7 @@ $$ **(1) m \ll H_0** $$
 
 → helicidade-0 fantasma
 
-$$ **(2) m \gg H_0** $$
+**(2) m \gg H_0**
 
 → ativa cedo demais
 
@@ -200,7 +200,7 @@ $$ **(2) m \gg H_0** $$
 
 → crescimento estrutural alterado
 
-$$ **(3) \mathcal{B}(r)=0** $$
+**(3) \mathcal{B}(r)=0**
 
 → ponto crítico do potencial
 
@@ -208,7 +208,7 @@ $$ **(3) \mathcal{B}(r)=0** $$
 
 → possível perda de grau físico
 
-$$ **(4) F(\chi)\to 0** $$
+**(4) F(\chi)\to 0**
 
 → massa tensorial desaparece
 
@@ -222,11 +222,11 @@ Agora adicionamos restrições observacionais:
 
 **F.6.1 Crescimento de Estrutura**
 
-$$ f\sigma_8(z) $$
+$f\sigma_8(z)$
 
 depende de:
 
-$$ G_{\text{eff}}(k,z) $$
+$G_{\text{eff}}(k,z)$
 
 Se m^2F(\chi) for grande demais:
 
@@ -244,13 +244,13 @@ Se pequeno demais:
 
 Impõe:
 
-$$ \chi_i \approx 0, \quad \dot\chi_i \approx 0. $$
+$\chi_i \approx 0, \quad \dot\chi_i \approx 0.$
 
 **F.6.3 Ondas gravitacionais**
 
 LIGO/Virgo impõe:
 
-$$ |c_T - 1| \ll 10^{-15}. $$
+$|c_T - 1| \ll 10^{-15}.$
 
 Na TDCP, como o termo de massa é ultraleve (\sim H_0),
 
@@ -274,7 +274,7 @@ As superfícies críticas são:
 
 O espaço permitido é a interseção:
 
-\mathcal{R}_{\text{permitida}} = \mathcal{R}_{\text{Higuchi}} \cap \mathcal{R}_{\text{no-ghost}} \cap \mathcal{R}_{\text{grad}} \cap \mathcal{R}_{\text{CMB}} \cap \mathcal{R}_{\text{late-accel}}.
+$$ \mathcal{R}_{\text{permitida}} = \mathcal{R}_{\text{Higuchi}} \cap \mathcal{R}_{\text{no-ghost}} \cap \mathcal{R}_{\text{grad}} \cap \mathcal{R}_{\text{CMB}} \cap \mathcal{R}_{\text{late-accel}}. $$
 
 **F.8 Insight Conceitual Importante**
 

@@ -30,7 +30,7 @@ Queremos:
 
 No fundo FLRW (com curvatura espacial nula), definimos perturbações tensoriais transversas e sem traço (TT):
 
-$$ \partial_i h^{ij} = 0, \qquad h^i_{\ i}=0. $$
+$\partial_i h^{ij} = 0, \qquad h^i_{\ i}=0.$
 
 Para a métrica g:
 
@@ -86,7 +86,7 @@ O modo h_+ propaga essencialmente como GR (com pequenas correções se r\neq 1 e
 
 O modo h_- tem uma massa efetiva:
 
-$$ m_T^2(t) = m^2 F(\chi)\,\mu_T^2(r,\xi,\beta_n,M_g,M_f). $$
+$m_T^2(t) = m^2 F(\chi)\,\mu_T^2(r,\xi,\beta_n,M_g,M_f).$
 
 O fator \mu_T^2 depende de combinações específicas do background.
 
@@ -94,7 +94,7 @@ O fator \mu_T^2 depende de combinações específicas do background.
 
 Na literatura de bimetric cosmology, surge uma combinação recorrente:
 
-$$ \mathcal{B}(r)\equiv \beta_1 + 2\beta_2 r + \beta_3 r^2. $$
+$\mathcal{B}(r)\equiv \beta_1 + 2\beta_2 r + \beta_3 r^2.$
 
 Essa é a mesma combinação que aparece na constraint de Bianchi.
 
@@ -102,7 +102,7 @@ No setor tensorial, a massa efetiva do modo relativo h-\ell é proporcional a \m
 
 Uma forma representativa (em gauge padrão, e reabsorvendo fatores) é:
 
-m_T^2(t)\propto m^2 F(\chi)\,\mathcal{B}(r)\,\left(\frac{1+r}{r}\right) \times \left(\text{fator de normalização em }M_g,M_f\right).
+$$ m_T^2(t)\propto m^2 F(\chi)\,\mathcal{B}(r)\,\left(\frac{1+r}{r}\right) \times \left(\text{fator de normalização em }M_g,M_f\right). $$
 
 O ponto-chave para a TDCP não é o detalhe exato do coeficiente --- é que:
 
@@ -130,7 +130,7 @@ No limite m_T^2 \sim H_0^2, há efeitos apenas em escalas cosmológicas.
 
 Agora consideramos o regime acelerado tardio ou de Sitter efetivo:
 
-a(t)\propto e^{Ht}, \qquad H=\text{constante}.
+$a(t)\propto e^{Ht}, \qquad H=\text{constante}.$
 
 Para um campo spin-2 massivo em de Sitter, a análise de representações do grupo de isometrias SO(1,4) mostra que:
 
@@ -138,15 +138,15 @@ Para um campo spin-2 massivo em de Sitter, a análise de representações do gru
 
 O resultado é a condição de Higuchi:
 
-m_{\text{spin-2}}^2 \ge 2H^2.
+$m_{\text{spin-2}}^2 \ge 2H^2.$
 
 No contexto da TDCP:
 
-m_{\text{spin-2}}^2 \equiv m_T^2(t) = m^2F(\chi)\,\mu_T^2(\cdots).
+$$ m_{\text{spin-2}}^2 \equiv m_T^2(t) = m^2F(\chi)\,\mu_T^2(\cdots). $$
 
 Portanto, o bound se torna:
 
-$$ m^2F(\chi)\,\mu_T^2(r,\xi,\beta_n,M_g,M_f) \ge 2H^2. $$
+$m^2F(\chi)\,\mu_T^2(r,\xi,\beta_n,M_g,M_f) \ge 2H^2.$
 
 Esse é um constrangimento duro: ele seleciona uma região do espaço de parâmetros e do background.
 
@@ -158,7 +158,7 @@ Porque em de Sitter:
 
 - o operador cinético efetivo da helicidade-0 sofre correção proporcional ao fundo.
 
-- quando m^2\<2H^2, o termo cinético efetivo troca de sinal.
+- quando m^2<2H^2, o termo cinético efetivo troca de sinal.
 
 Ou seja:
 
@@ -222,11 +222,11 @@ $$ \ddot h_- + 3H\dot h_- + \left(\frac{k^2}{a^2} + m_T^2(t)\right)h_- = 0. $$
 
 - A massa efetiva é dinâmica:
 
-$$ m_T^2(t) = m^2F(\chi)\,\mu_T^2(\cdots). $$
+$m_T^2(t) = m^2F(\chi)\,\mu_T^2(\cdots).$
 
 - A estabilidade em fundo acelerado impõe Higuchi:
 
-$$ m_T^2(t)\ge 2H^2. $$
+$m_T^2(t)\ge 2H^2.$
 
 Isso conecta diretamente:
 

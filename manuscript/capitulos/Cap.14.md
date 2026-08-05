@@ -6,7 +6,7 @@ Perfeito. Vamos avançar para o Capítulo 14 --- Setor Escalar e Controle de Iso
 
 Trabalharemos com:
 
-$$ (\beta_0,\beta_1,\beta_2,0,\beta_4) $$
+$(\beta_0,\beta_1,\beta_2,0,\beta_4)$
 
 no fundo FLRW já definido no Cap.13.
 
@@ -40,7 +40,7 @@ $$ ds_f^2 = -\xi^2(1+2\Phi_f)dt^2 +2\xi b\partial_i B_f dx^i dt +b^2\left[(1-2\P
 
 Incluímos também o campo estrutural:
 
-$$ \phi(t) \rightarrow \phi(t) + \delta\phi. $$
+$\phi(t) \rightarrow \phi(t) + \delta\phi.$
 
 **14.2 Contagem de graus de liberdade**
 
@@ -60,7 +60,7 @@ $$ \zeta = \frac{\rho_g \Psi_g + \rho_f \Psi_f}{\rho_g + \rho_f} $$
 
 Modo relativo (isocurvatura estrutural TDCP):
 
-$$ S \propto \Psi_f - \Psi_g. $$
+$S \propto \Psi_f - \Psi_g.$
 
 Mais precisamente, o modo físico é combinação canonicamente normalizada dessas variáveis.
 
@@ -80,15 +80,15 @@ K é matriz cinética, \Omega^2 matriz de massa.
 
 Para ausência de fantasma:
 
-\boxed{ K \ \text{deve ser positiva definida} }
+$\boxed{ K \ \text{deve ser positiva definida} }$
 
 Ou seja:
 
-$$ \det(K) \> 0, \quad {\rm Tr}(K) \> 0. $$
+$\det(K) > 0, \quad {\rm Tr}(K) > 0.$
 
 Em bimetric F1, a condição reduz-se a:
 
-$$ M_{\rm eff}^2 \left(\beta_1 + 2\beta_2 r\right) \> 0 $$
+$M_{\rm eff}^2 \left(\beta_1 + 2\beta_2 r\right) > 0$
 
 avaliado no fundo.
 
@@ -110,11 +110,11 @@ A massa escalar efetiva do modo relativo é proporcional à derivada do potencia
 
 Para F1:
 
-$$ U(r)=\beta_0+3\beta_1 r+3\beta_2 r^2 $$
+$U(r)=\beta_0+3\beta_1 r+3\beta_2 r^2$
 
 Logo:
 
-$$ \frac{dU}{dr}=3\beta_1+6\beta_2 r. $$
+$\frac{dU}{dr}=3\beta_1+6\beta_2 r.$
 
 A massa efetiva do modo relativo assume forma típica:
 
@@ -130,7 +130,7 @@ Observe:
 
 - é o fator que controla a massa do modo isocurvatura.
 
-$$ \boxed{ m_S^2 \propto \beta_1+2\beta_2 r. } $$
+$\boxed{ m_S^2 \propto \beta_1+2\beta_2 r. }$
 
 Portanto:
 
@@ -144,15 +144,15 @@ Isso é estrutural no HR.
 
 Dados CMB exigem:
 
-$$ \frac{P_S}{P_\zeta} \ll 1. $$
+$\frac{P_S}{P_\zeta} \ll 1.$
 
 Para campo pesado:
 
-$$ \boxed{ m_S^2 \gg H^2 } $$
+$\boxed{ m_S^2 \gg H^2 }$
 
 então
 
-$$ S \propto a^{-3/2} e^{-m_S t} $$
+$S \propto a^{-3/2} e^{-m_S t}$
 
 decai exponencialmente.
 
@@ -164,15 +164,15 @@ $$ \boxed{ m^2 F(\phi) \left(\beta_1+2\beta_2 r\right) \gg H^2. } $$
 
 Recordando:
 
-$$ r_\star=-\frac{\beta_1}{2\beta_2}. $$
+$r_\star=-\frac{\beta_1}{2\beta_2}.$
 
 Então:
 
-$$ \beta_1+2\beta_2 r = 2\beta_2 (r-r_\star). $$
+$\beta_1+2\beta_2 r = 2\beta_2 (r-r_\star).$
 
 Logo:
 
-$$ \boxed{ m_S^2 \propto 2\beta_2 (r-r_\star). } $$
+$\boxed{ m_S^2 \propto 2\beta_2 (r-r_\star). }$
 
 Interpretação:
 
@@ -194,15 +194,15 @@ Para controle completo precisamos impor:
 
 **(1) Ausência de fantasma:**
 
-$$ \beta_1+2\beta_2 r \> 0. $$
+$\beta_1+2\beta_2 r > 0.$
 
 **(2) Supressão de isocurvatura:**
 
-$$ m^2 F(\phi)(\beta_1+2\beta_2 r) \gg H^2. $$
+$m^2 F(\phi)(\beta_1+2\beta_2 r) \gg H^2.$
 
 **(3) Consistência com Cap.13:**
 
-$$ \beta_1\beta_2\<0, \quad \beta_0-\frac{3\beta_1^2}{4\beta_2}\>0. $$
+$$ \beta_1\beta_2<0, \quad \beta_0-\frac{3\beta_1^2}{4\beta_2}>0. $$
 
 Essas três já delimitam fortemente o espaço F1.
 
@@ -218,7 +218,7 @@ No modelo F1:
 
 estão todos ligados ao mesmo fator:
 
-$$ \beta_1+2\beta_2 r. $$
+$\beta_1+2\beta_2 r.$
 
 Isso significa que o ajuste de F1 é altamente não trivial:
 

@@ -120,7 +120,7 @@ Possivelmente como efeito geométrico do segundo setor.
 
 Como leitura da separação logarítmica:
 
-$$ t \sim \frac{1}{\Delta H} \ln r $$
+$t \sim \frac{1}{\Delta H} \ln r$
 
 Tempo como medida da diferença estrutural crescente.
 

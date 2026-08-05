@@ -32,17 +32,17 @@ $$ \delta(\vec{x}) = \int \frac{d^3k}{(2\pi)^3} \delta_{\vec{k}} e^{i\vec{k}\cdo
 
 O espectro de potência é definido como:
 
-$$ \langle \delta_{\vec{k}} \delta_{\vec{k}\'} \rangle = (2\pi)^3 \delta_D(\vec{k}+\vec{k}\') P(k) $$
+$$ \langle \delta_{\vec{k}} \delta_{\vec{k}'} \rangle = (2\pi)^3 \delta_D(\vec{k}+\vec{k}') P(k) $$
 
 onde P(k) mede a amplitude das flutuações em cada escala.
 
 Na cosmologia padrão:
 
-P(k) = P_{\text{primordial}}(k) \, T^2(k) \, D^2(a)
+$P(k) = P_{\text{primordial}}(k) \, T^2(k) \, D^2(a)$
 
 com:
 
-- P_{\text{primordial}}(k) \sim k^{n_s}
+- $P_{\text{primordial}}(k) \sim k^{n_s}$
 
 - T(k) função de transferência
 
@@ -66,7 +66,7 @@ Isso significa que as flutuações iniciais podem ter origem multifield.
 
 O espectro primordial pode ser escrito como:
 
-P_{\text{prim}}(k) = P_\zeta(k) + P_\sigma(k) + 2P_{\zeta\sigma}(k)
+$$ P_{\text{prim}}(k) = P_\zeta(k) + P_\sigma(k) + 2P_{\zeta\sigma}(k) $$
 
 Isso introduz:
 
@@ -84,11 +84,11 @@ $$ \ddot{\delta} + 2H\dot{\delta} = 4\pi G_{\text{eff}}(k,a)\rho\delta $$
 
 Como vimos no Capítulo 8:
 
-$$ G_{\text{eff}} = G \mu(k,a) $$
+$G_{\text{eff}} = G \mu(k,a)$
 
 Isso altera a função de transferência:
 
-T(k) \rightarrow T_{\text{TDCP}}(k)
+$T(k) \rightarrow T_{\text{TDCP}}(k)$
 
 Se:
 
@@ -104,11 +104,11 @@ Isso gera modificação suave no espectro.
 
 **9.4 Forma Geral do Espectro na TDCP**
 
-P_{\text{TDCP}}(k,a) = P_{\text{prim}}(k) \, T_{\text{TDCP}}^2(k) \, D_{\text{TDCP}}^2(a,k)
+$$ P_{\text{TDCP}}(k,a) = P_{\text{prim}}(k) \, T_{\text{TDCP}}^2(k) \, D_{\text{TDCP}}^2(a,k) $$
 
 O ponto essencial:
 
-D_{\text{TDCP}}(a,k) \neq D_{\Lambda\text{CDM}}(a)
+$D_{\text{TDCP}}(a,k) \neq D_{\Lambda\text{CDM}}(a)$
 
 ou seja:
 
@@ -126,7 +126,7 @@ Se m_\sigma pequeno:
 
 **2️⃣ Amplificação intermediária**
 
-$$ Se \Delta_\sigma \> 0 $$
+$Se \Delta_\sigma > 0$
 
 → crescimento mais rápido
 
@@ -134,7 +134,7 @@ $$ Se \Delta_\sigma \> 0 $$
 
 **3️⃣ Deslizamento gravitacional**
 
-$$ \Phi \neq \Psi $$
+$\Phi \neq \Psi$
 
 → efeito observável em lensing vs RSD
 
@@ -142,7 +142,7 @@ $$ \Phi \neq \Psi $$
 
 O espectro angular da CMB depende de:
 
-$$ C_\ell \sim \int dk\, P(k)\,\Delta_\ell^2(k) $$
+$C_\ell \sim \int dk\, P(k)\,\Delta_\ell^2(k)$
 
 Se TDCP modificar apenas regime tardio:
 
@@ -154,7 +154,7 @@ Se modificar regime primordial:
 
 Portanto, a teoria deve satisfazer:
 
-|P_{\text{TDCP}}(k) - P_{\text{obs}}(k)| \ll P_{\text{obs}}(k)
+$$ |P_{\text{TDCP}}(k) - P_{\text{obs}}(k)| \ll P_{\text{obs}}(k) $$
 
 no regime primordial.
 

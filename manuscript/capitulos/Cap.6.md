@@ -28,7 +28,7 @@ Respire fundo.
 
 Até agora analisamos apenas o fundo homogêneo:
 
-$$ g_{\mu\nu}^{(0)}, \quad f_{\mu\nu}^{(0)}. $$
+$g_{\mu\nu}^{(0)}, \quad f_{\mu\nu}^{(0)}.$
 
 Mas o universo real contém flutuações:
 
@@ -48,13 +48,13 @@ Se explodirem, a teoria é inviável.
 
 Escrevemos:
 
-$$ g_{\mu\nu} = g_{\mu\nu}^{(0)} + \delta g_{\mu\nu}, $$
+$g_{\mu\nu} = g_{\mu\nu}^{(0)} + \delta g_{\mu\nu},$
 
-$$ f_{\mu\nu} = f_{\mu\nu}^{(0)} + \delta f_{\mu\nu}. $$
+$f_{\mu\nu} = f_{\mu\nu}^{(0)} + \delta f_{\mu\nu}.$
 
 E também:
 
-$$ \phi = \phi_0(t) + \delta \phi. $$
+$\phi = \phi_0(t) + \delta \phi.$
 
 Trabalhamos até primeira ordem em perturbações.
 
@@ -78,7 +78,7 @@ A estabilidade mais crítica é:
 
 Para ondas gravitacionais, escrevemos:
 
-$$ h_{ij}^{(g)}, \quad h_{ij}^{(f)}. $$
+$h_{ij}^{(g)}, \quad h_{ij}^{(f)}.$
 
 A diagonalização produz:
 
@@ -92,11 +92,11 @@ $$ \ddot h_m + 3H \dot h_m + \left(\frac{k^2}{a^2} + m_g^2\right) h_m = 0. $$
 
 Para estabilidade:
 
-$$ m_g^2 \> 0. $$
+$m_g^2 > 0.$
 
 Em fundo de Sitter, exige-se condição de Higuchi:
 
-$$ m_g^2 \ge 2H^2. $$
+$m_g^2 \ge 2H^2.$
 
 Se violada → instabilidade fantasma helicidade-0.
 
@@ -112,9 +112,9 @@ Os autovalores determinam estabilidade.
 
 Condições:
 
-1️⃣ Determinante \> 0
+1️⃣ Determinante > 0
 
-2️⃣ Traço \> 0
+2️⃣ Traço > 0
 
 Se um autovalor for negativo → instabilidade exponencial.
 
@@ -122,11 +122,11 @@ Se um autovalor for negativo → instabilidade exponencial.
 
 Um grau de liberdade é fantasma se o termo cinético tiver sinal errado:
 
-$$ \mathcal{L}_{kin} = -\frac{1}{2} Z (\partial \psi)^2. $$
+$\mathcal{L}_{kin} = -\frac{1}{2} Z (\partial \psi)^2.$
 
 Exige-se:
 
-Z \> 0.
+Z > 0.
 
 No formalismo Hassan--Rosen, a construção garante ausência do fantasma de Boulware--Deser.
 
@@ -138,11 +138,11 @@ Isso impõe restrições funcionais.
 
 A equação perturbada do campo é:
 
-$$ \delta \ddot{\phi} + 3H \delta \dot{\phi} + \left(\frac{k^2}{a^2} + V\'\'(\phi_0)\right)\delta \phi = \delta S_{\text{int}}. $$
+$$ \delta \ddot{\phi} + 3H \delta \dot{\phi} + \left(\frac{k^2}{a^2} + V''(\phi_0)\right)\delta \phi = \delta S_{\text{int}}. $$
 
 Se:
 
-$$ V\'\'(\phi_0) \< 0 $$
+$V''(\phi_0) < 0$
 
 temos instabilidade taquiônica.
 
@@ -162,11 +162,11 @@ Para que a TDCP seja viável:
 
 - A velocidade do som das perturbações deve satisfazer:
 
-$$ c_s^2 \> 0. $$
+$c_s^2 > 0.$
 
 Se:
 
-$$ c_s^2 \< 0 $$
+$c_s^2 < 0$
 
 temos instabilidade de gradiente.
 
@@ -264,7 +264,7 @@ Quando introduzimos o campo primordial φ:
 
 Total:
 
-7 + 1 = 8 \text{ graus físicos.}
+$7 + 1 = 8 \text{ graus físicos.}$
 
 Isso é consistente.
 
@@ -274,13 +274,13 @@ Mas agora precisamos garantir que nenhum deles seja fantasma.
 
 Escrevemos:
 
-$$ g_{ij} = a^2(t)(\delta_{ij} + h_{ij}), $$
+$g_{ij} = a^2(t)(\delta_{ij} + h_{ij}),$
 
-$$ f_{ij} = b^2(t)(\delta_{ij} + \ell_{ij}), $$
+$f_{ij} = b^2(t)(\delta_{ij} + \ell_{ij}),$
 
 com:
 
-$$ \partial_i h_{ij} = 0, \quad h^i_i = 0. $$
+$\partial_i h_{ij} = 0, \quad h^i_i = 0.$
 
 A ação quadrática para os modos tensorais assume forma:
 
@@ -288,15 +288,15 @@ $$ S^{(2)} = \int dt d^3k \left[ \frac{1}{2} M_g^2 a^3 \dot{h}^2 + \frac{1}{2} M
 
 Diagonalizando:
 
-$$ h_0 = \cos\theta \, h + \sin\theta \, \ell $$
+$h_0 = \cos\theta \, h + \sin\theta \, \ell$
 
-$$ h_m = -\sin\theta \, h + \cos\theta \, \ell $$
+$h_m = -\sin\theta \, h + \cos\theta \, \ell$
 
 Obtemos:
 
 Modo massless:
 
-$$ \ddot{h}_0 + 3H \dot{h}_0 + \frac{k^2}{a^2} h_0 = 0 $$
+$\ddot{h}_0 + 3H \dot{h}_0 + \frac{k^2}{a^2} h_0 = 0$
 
 Modo massivo:
 
@@ -306,7 +306,7 @@ $$ \ddot{h}_m + 3H \dot{h}_m + \left(\frac{k^2}{a^2} + m_T^2\right) h_m = 0 $$
 
 Em fundo de Sitter:
 
-$$ m_T^2 \ge 2H^2. $$
+$m_T^2 \ge 2H^2.$
 
 Se violada:
 
@@ -332,19 +332,19 @@ $$ S^{(2)} = \int dt d^3k \left[ \dot{Q}^T K \dot{Q} - Q^T \Omega Q \right], $$
 
 onde:
 
-$$ Q = (\psi_g, \psi_f, \delta\phi). $$
+$Q = (\psi_g, \psi_f, \delta\phi).$
 
 **6.3.1 Matriz Cinética K**
 
 A matriz cinética deve satisfazer:
 
-$$ \det K \> 0 $$
+$\det K > 0$
 
 e todos os autovalores positivos.
 
 Se:
 
-$$ \det K \< 0 $$
+$\det K < 0$
 
 → fantasma.
 
@@ -360,15 +360,15 @@ Isso impõe restrições funcionais sobre:
 
 O termo espacial gera velocidade do som efetiva:
 
-c_s^2 = \frac{\text{coeficiente espacial}}{\text{coeficiente temporal}}.
+$$ c_s^2 = \frac{\text{coeficiente espacial}}{\text{coeficiente temporal}}. $$
 
 Para estabilidade:
 
-$$ c_s^2 \> 0. $$
+$c_s^2 > 0.$
 
 Se:
 
-$$ c_s^2 \< 0 $$
+$c_s^2 < 0$
 
 → crescimento exponencial de pequenas flutuações.
 
@@ -382,15 +382,15 @@ $$ \ddot{\chi} + 3H_{\text{eff}} \dot{\chi} + \left( c_s^2 \frac{k^2}{a^2} + m_{
 
 Com:
 
-m_{\text{eff}}^2 = V\'\'(\phi_0) + \text{correções de acoplamento}.
+$$ m_{\text{eff}}^2 = V''(\phi_0) + \text{correções de acoplamento}. $$
 
 Para estabilidade tardia:
 
-$$ m_{\text{eff}}^2 \> 0. $$
+$m_{\text{eff}}^2 > 0.$
 
 Mas no início do universo pode ser:
 
-$$ m_{\text{eff}}^2 \< 0 $$
+$m_{\text{eff}}^2 < 0$
 
 → bifurcação estrutural primordial.
 
@@ -400,13 +400,13 @@ Isso encaixa elegantemente com sua filosofia inicial.
 
 Com interação:
 
-$$ \nabla_\mu T^{\mu\nu}_{(g)} = J^\nu $$
+$\nabla_\mu T^{\mu\nu}_{(g)} = J^\nu$
 
-$$ \nabla_\mu T^{\mu\nu}_{(f)} = - J^\nu $$
+$\nabla_\mu T^{\mu\nu}_{(f)} = - J^\nu$
 
 Mas:
 
-$$ \nabla_\mu (T^{\mu\nu}_{(g)} + T^{\mu\nu}_{(f)}) = 0. $$
+$\nabla_\mu (T^{\mu\nu}_{(g)} + T^{\mu\nu}_{(f)}) = 0.$
 
 Conservação global preservada.
 
@@ -416,15 +416,15 @@ Isso é crucial.
 
 Para robustez completa, a TDCP exige:
 
-$$ 1️⃣ m_T^2 \> 2H^2 $$
+$1️⃣ m_T^2 > 2H^2$
 
-$$ 2️⃣ Z_{\text{esc}} \> 0 $$
+$2️⃣ Z_{\text{esc}} > 0$
 
-$$ 3️⃣ c_s^2 \> 0 $$
+$3️⃣ c_s^2 > 0$
 
-4️⃣ m_{\text{eff}}^2 \> 0 no regime tardio
+4️⃣ m_{\text{eff}}^2 > 0 no regime tardio
 
-$$ 5️⃣ \det K \> 0 $$
+$5️⃣ \det K > 0$
 
 Agora a teoria não é mais especulação livre.
 
@@ -470,10 +470,10 @@ Pergunta estrutural para você:
 
 Quer que o próximo capítulo seja:
 
-A\) Derivação formal da equação de Poisson modificada
+A) Derivação formal da equação de Poisson modificada
 
 ou
 
-B\) Construção completa do setor escalar efetivo antes de aplicá-lo?
+B) Construção completa do setor escalar efetivo antes de aplicá-lo?
 
 Se queremos robustez máxima, minha recomendação é B.

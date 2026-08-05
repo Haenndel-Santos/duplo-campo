@@ -62,11 +62,11 @@ A TDCP, no nível do fundo, envolve as funções:
 
 Definimos:
 
-$$ r(t)=\frac{b(t)}{a(t)}, \qquad \xi(t)=\frac{N_f(t)}{N_g(t)}. $$
+$r(t)=\frac{b(t)}{a(t)}, \qquad \xi(t)=\frac{N_f(t)}{N_g(t)}.$
 
 Escolhemos gauge cosmológico:
 
-$$ N_g=1. $$
+$N_g=1.$
 
 Logo:
 
@@ -76,17 +76,17 @@ $$ H \equiv \frac{\dot a}{a}, \qquad H_f = \frac{1}{N_f}\frac{\dot b}{b} = \frac
 
 **(1) Friedmann do setor visível g**
 
-$$ 3M_g^2 H^2 = \rho_m + \rho_\chi + \rho_{int}^{(g)}. $$
+$3M_g^2 H^2 = \rho_m + \rho_\chi + \rho_{int}^{(g)}.$
 
 com
 
-$$ \rho_\chi = \frac12\dot\chi^2 + U(\chi), $$
+$\rho_\chi = \frac12\dot\chi^2 + U(\chi),$
 
 $$ \rho_{int}^{(g)} = m^2M_{eff}^2 F(\chi) \left(\beta_0 + 3\beta_1 r + 3\beta_2 r^2 + \beta_3 r^3\right). $$
 
 **(2) Friedmann do setor estrutural f**
 
-$$ 3M_f^2 H_f^2 = \rho_{int}^{(f)}, $$
+$3M_f^2 H_f^2 = \rho_{int}^{(f)},$
 
 com
 
@@ -96,23 +96,23 @@ $$ \rho_{int}^{(f)} = m^2M_{eff}^2 F(\chi) \left(\beta_4 + 3\beta_3 r^{-1} + 3\b
 
 Forma geral:
 
-$$ \ddot\chi + 3H\dot\chi + U\'(\chi) = m^2 M_{eff}^2 F\'(\chi)\,W(r,\xi), $$
+$$ \ddot\chi + 3H\dot\chi + U'(\chi) = m^2 M_{eff}^2 F'(\chi)\,W(r,\xi), $$
 
 onde W(r,\xi) representa a combinação efetiva que surge ao variar o termo F(\chi)V(\xi,r) em relação a χ.
 
 Uma escolha natural, coerente com o fundo FLRW, é:
 
-$$ W(r,\xi) = V(\xi,r) $$
+$W(r,\xi) = V(\xi,r)$
 
 isto é,
 
-$$ \ddot\chi + 3H\dot\chi + U\'(\chi) = m^2 M_{eff}^2 F\'(\chi)\,V(\xi,r). $$
+$$ \ddot\chi + 3H\dot\chi + U'(\chi) = m^2 M_{eff}^2 F'(\chi)\,V(\xi,r). $$
 
 (Em aplicações, usa-se a forma completa de V.)
 
 **(4) Evolução de η**
 
-$$ \dot\eta = \Gamma \dot\chi^2. $$
+$\dot\eta = \Gamma \dot\chi^2.$
 
 **(5) Conservação de matéria**
 
@@ -124,11 +124,11 @@ $$ \dot\rho_m + 3H\rho_m = 0 \quad\Rightarrow\quad \rho_m = \rho_{m0} a^{-3}. $$
 
 **(6) Constraint de Bianchi (ramos)**
 
-$$ (\beta_1 + 2\beta_2 r + \beta_3 r^2)(H - \xi H_f)=0. $$
+$(\beta_1 + 2\beta_2 r + \beta_3 r^2)(H - \xi H_f)=0.$
 
 Escolha TDCP principal: ramo dinâmico, isto é:
 
-$$ H = \xi H_f. $$
+$H = \xi H_f.$
 
 Esta equação é essencial para fechar o sistema, pois liga H, H_f e \xi.
 
@@ -138,11 +138,11 @@ Queremos resolver para:
 
 - H(t),
 
-$$ - \chi(t), $$
+- $\chi(t),$
 
-$$ - \dot\chi(t), $$
+- $\dot\chi(t),$
 
-$$ - \eta(t), $$
+- $\eta(t),$
 
 - r(t) e/ou \xi(t) (dependendo do ramo),
 
@@ -150,7 +150,7 @@ $$ - \eta(t), $$
 
 No ramo dinâmico:
 
-$$ H = \xi H_f \quad\Rightarrow\quad H_f = \frac{H}{\xi}. $$
+$H = \xi H_f \quad\Rightarrow\quad H_f = \frac{H}{\xi}.$
 
 Mas a equação de Friedmann f envolve H_f explicitamente, logo fornece uma relação algébrica para \xi dado H,r,\chi.
 
@@ -158,7 +158,7 @@ Mas a equação de Friedmann f envolve H_f explicitamente, logo fornece uma rela
 
 Definimos:
 
-$$ N\equiv \ln a, \qquad \frac{d}{dt} = H\frac{d}{dN}. $$
+$N\equiv \ln a, \qquad \frac{d}{dt} = H\frac{d}{dN}.$
 
 Definimos as variáveis adimensionais:
 
@@ -166,29 +166,29 @@ $$ x \equiv \frac{\dot\chi}{\sqrt{6}M_g H}, \qquad y \equiv \frac{\sqrt{U(\chi)}
 
 E também:
 
-$$ \Omega_{int} \equiv \frac{\rho_{int}^{(g)}}{3M_g^2 H^2}. $$
+$\Omega_{int} \equiv \frac{\rho_{int}^{(g)}}{3M_g^2 H^2}.$
 
 Então a Friedmann g vira um constraint:
 
-$$ 1 = \Omega_m + x^2 + y^2 + \Omega_{int}. $$
+$1 = \Omega_m + x^2 + y^2 + \Omega_{int}.$
 
 **E.6 Equações diferenciais em N**
 
 **E.6.1 Evolução de χ**
 
-$$ \frac{d\chi}{dN} = \frac{\dot\chi}{H} = \sqrt{6}M_g x. $$
+$\frac{d\chi}{dN} = \frac{\dot\chi}{H} = \sqrt{6}M_g x.$
 
 **E.6.2 Evolução de x**
 
 Começamos de:
 
-$$ \ddot\chi + 3H\dot\chi + U\'(\chi) = m^2 M_{eff}^2 F\'(\chi)V(\xi,r). $$
+$$ \ddot\chi + 3H\dot\chi + U'(\chi) = m^2 M_{eff}^2 F'(\chi)V(\xi,r). $$
 
 Escrevemos \ddot\chi = H\frac{d\dot\chi}{dN}.
 
 Como:
 
-$$ \dot\chi = \sqrt{6}M_g H x, $$
+$\dot\chi = \sqrt{6}M_g H x,$
 
 então:
 
@@ -196,19 +196,19 @@ $$ \ddot\chi = \sqrt{6}M_g\left(\dot H x + H\dot x\right) = \sqrt{6}M_g H^2\left
 
 Substituindo:
 
-$$ \sqrt{6}M_g H^2\left(\frac{dx}{dN}+x\frac{d\ln H}{dN}\right) + 3H(\sqrt{6}M_g H x) + U\'(\chi) = m^2 M_{eff}^2 F\'(\chi)V. $$
+$$ \sqrt{6}M_g H^2\left(\frac{dx}{dN}+x\frac{d\ln H}{dN}\right) + 3H(\sqrt{6}M_g H x) + U'(\chi) = m^2 M_{eff}^2 F'(\chi)V. $$
 
 Dividindo por \sqrt{6}M_g H^2:
 
-$$ \frac{dx}{dN}+x\frac{d\ln H}{dN}+3x + \frac{U\'(\chi)}{\sqrt{6}M_g H^2} = \frac{m^2 M_{eff}^2}{\sqrt{6}M_g H^2}F\'(\chi)V. $$
+$$ \frac{dx}{dN}+x\frac{d\ln H}{dN}+3x + \frac{U'(\chi)}{\sqrt{6}M_g H^2} = \frac{m^2 M_{eff}^2}{\sqrt{6}M_g H^2}F'(\chi)V. $$
 
 Definimos os parâmetros de "inclinação":
 
-$$ \lambda(\chi) \equiv M_g\frac{U\'(\chi)}{U(\chi)}, \qquad \Rightarrow \frac{U\'}{H^2} = 3M_g^2 \lambda y^2. $$
+$$ \lambda(\chi) \equiv M_g\frac{U'(\chi)}{U(\chi)}, \qquad \Rightarrow \frac{U'}{H^2} = 3M_g^2 \lambda y^2. $$
 
 Logo:
 
-$$ \frac{U\'}{\sqrt{6}M_g H^2} = \sqrt{\frac{3}{2}}\lambda y^2. $$
+$\frac{U'}{\sqrt{6}M_g H^2} = \sqrt{\frac{3}{2}}\lambda y^2.$
 
 Portanto:
 
@@ -216,7 +216,7 @@ $$ \boxed{ \frac{dx}{dN} = -3x - x\frac{d\ln H}{dN} - \sqrt{\frac{3}{2}}\lambda 
 
 onde
 
-$$ \mathcal{S}(r,\xi,\chi)= \frac{ M_{eff}^2}{\sqrt{6}M_g}F\'(\chi)V(\xi,r). $$
+$$ \mathcal{S}(r,\xi,\chi)= \frac{ M_{eff}^2}{\sqrt{6}M_g}F'(\chi)V(\xi,r). $$
 
 **E.6.3 Evolução de η**
 
@@ -224,27 +224,27 @@ $$ \dot\eta = \Gamma \dot\chi^2 \Rightarrow \frac{d\eta}{dN} = \frac{\dot\eta}{H
 
 Como:
 
-$$ \dot\chi^2 = 6M_g^2 H^2 x^2, $$
+$\dot\chi^2 = 6M_g^2 H^2 x^2,$
 
 então:
 
-$$ \boxed{ \frac{d\eta}{dN} = 6\Gamma M_g^2 H x^2 } $$
+$\boxed{ \frac{d\eta}{dN} = 6\Gamma M_g^2 H x^2 }$
 
 Em forma totalmente adimensional, absorve-se o fator dimensional definindo \tilde\Gamma = \Gamma M_g^2 H_0, mas deixamos aqui a forma geral.
 
 **E.6.4 Evolução de \Omega_m**
 
-$$ De \rho_m\propto a^{-3}: $$
+$De \rho_m\propto a^{-3}:$
 
-$$ \frac{d\ln\rho_m}{dN}=-3. $$
+$\frac{d\ln\rho_m}{dN}=-3.$
 
 Como:
 
-$$ \Omega_m = \frac{\rho_m}{3M_g^2H^2}, $$
+$\Omega_m = \frac{\rho_m}{3M_g^2H^2},$
 
 temos:
 
-$$ \frac{d\ln\Omega_m}{dN} = -3 - 2\frac{d\ln H}{dN}. $$
+$\frac{d\ln\Omega_m}{dN} = -3 - 2\frac{d\ln H}{dN}.$
 
 Logo:
 
@@ -256,7 +256,7 @@ Aqui está o "pulo do gato" do sistema.
 
 No formalismo TDCP efetivo:
 
-$$ H^2 = \frac{8\pi G}{3}\frac{\rho_{tot}}{1-\eta}. $$
+$H^2 = \frac{8\pi G}{3}\frac{\rho_{tot}}{1-\eta}.$
 
 Tomando log:
 
@@ -294,7 +294,7 @@ Para rodar simulação, você escolhe ou (i) equação de aceleração explícit
 
 No ramo dinâmico:
 
-$$ H=\xi H_f \Rightarrow H_f = \frac{H}{\xi}. $$
+$H=\xi H_f \Rightarrow H_f = \frac{H}{\xi}.$
 
 A Friedmann f:
 
@@ -324,7 +324,7 @@ $$ r=\frac{b}{a} \Rightarrow \dot r = r(N_fH_f - H)= r(\xi H_f - H). $$
 
 Mas no ramo dinâmico, H=\xi H_f, então formalmente:
 
-$$ \dot r = 0. $$
+$\dot r = 0.$
 
 Isso significa que:
 
@@ -352,7 +352,7 @@ Uma simulação entrega, como funções de N ou z:
 
 **(1) Hubble**
 
-$$ H(z) \quad\text{com}\quad 1+z=a^{-1}. $$
+$H(z) \quad\text{com}\quad 1+z=a^{-1}.$
 
 **(2) Função efetiva w_{\text{eff}}**
 
@@ -360,21 +360,21 @@ $$ \boxed{ w_{\text{eff}}(N) = -1 + \frac{1}{3(1-\eta)}\frac{d\eta}{dN}. } $$
 
 **(3) Frações de densidade**
 
-$$ \Omega_m(N),\quad \Omega_\chi(N),\quad \Omega_{int}(N). $$
+$\Omega_m(N),\quad \Omega_\chi(N),\quad \Omega_{int}(N).$
 
 **(4) Massa efetiva do modo tensorial**
 
-$$ m_T^2(N)=m^2F(\chi)\mu_T^2(\cdots). $$
+$m_T^2(N)=m^2F(\chi)\mu_T^2(\cdots).$
 
 **(5) Checagem de Higuchi**
 
-$$ m_T^2(N) \ge 2H^2(N). $$
+$m_T^2(N) \ge 2H^2(N).$
 
 **E.11 Procedimento de integração (roteiro prático)**
 
 1.  Fixe parâmetros:
 
-$$ > (m,\beta_n,M_g,M_f, U(\chi), F(\chi), \Gamma). $$
+$> (m,\beta_n,M_g,M_f, U(\chi), F(\chi), \Gamma).$
 
 2.  Escolha condições iniciais em N=N_i (alta redshift):
 
@@ -382,9 +382,9 @@ $$ > (m,\beta_n,M_g,M_f, U(\chi), F(\chi), \Gamma). $$
 
 - x(N_i)\approx 0 (campo congelado),
 
-$$ - \eta(N_i)\approx 0, $$
+- $\eta(N_i)\approx 0,$
 
-$$ - \Omega_m(N_i)\approx 1. $$
+- $\Omega_m(N_i)\approx 1.$
 
 3.  Integre as ODEs para \chi, x, \eta, \Omega_m.
 
@@ -392,7 +392,7 @@ $$ - \Omega_m(N_i)\approx 1. $$
 
 - H(N) pela Friedmann,
 
-$$ - w_{\text{eff}}(N), $$
+- $w_{\text{eff}}(N),$
 
 - Higuchi,
 
@@ -402,7 +402,7 @@ $$ - w_{\text{eff}}(N), $$
 
 - Higuchi viola,
 
-$$ - F(\chi)\le 0, $$
+- $F(\chi)\le 0,$
 
 - 1-\eta\to 0 (singularidade efetiva).
 

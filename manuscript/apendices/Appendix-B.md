@@ -28,9 +28,9 @@ Assumimos matéria S_m acoplada ao setor visível g.
 
 Tomamos o fundo cosmológico mais geral homogêneo e isotrópico:
 
-$$ ds_g^2 = -N_g^2(t)dt^2 + a^2(t)\delta_{ij}dx^i dx^j, $$
+$ds_g^2 = -N_g^2(t)dt^2 + a^2(t)\delta_{ij}dx^i dx^j,$
 
-$$ ds_f^2 = -N_f^2(t)dt^2 + b^2(t)\delta_{ij}dx^i dx^j. $$
+$ds_f^2 = -N_f^2(t)dt^2 + b^2(t)\delta_{ij}dx^i dx^j.$
 
 Definimos as taxas de expansão:
 
@@ -46,19 +46,19 @@ A invariância por reparametrização temporal permite fixar N_g=1 ao final, mas
 
 No Anexo A obtivemos:
 
-\mathcal{K}=\mathrm{diag}(\xi,r,r,r).
+$\mathcal{K}=\mathrm{diag}(\xi,r,r,r).$
 
 Logo os polinômios:
 
-$$ e_0=1, $$
+$e_0=1,$
 
-$$ e_1=\xi+3r, $$
+$e_1=\xi+3r,$
 
-$$ e_2=3\xi r+3r^2, $$
+$e_2=3\xi r+3r^2,$
 
-$$ e_3=3\xi r^2+r^3, $$
+$e_3=3\xi r^2+r^3,$
 
-$$ e_4=\xi r^3. $$
+$e_4=\xi r^3.$
 
 O potencial explícito:
 
@@ -66,7 +66,7 @@ $$ V(\xi,r)= \beta_0 +\beta_1(\xi+3r) +\beta_2(3\xi r+3r^2) +\beta_3(3\xi r^2+r^
 
 Na TDCP:
 
-$$ V\to F(\chi)V(\xi,r). $$
+$V\to F(\chi)V(\xi,r).$
 
 **B.4 Redução da Ação ao "minisuperspace"**
 
@@ -78,11 +78,11 @@ $$ S = \int dt\,\mathcal{L}(a,\dot a,N_g;\,b,\dot b,N_f;\,\chi,\dot\chi). $$
 
 Para a métrica g, o termo de Einstein--Hilbert reduz (ignorando termos de borda) a:
 
-$$ \mathcal{L}_g = -3M_g^2\,\frac{a\dot a^2}{N_g}. $$
+$\mathcal{L}_g = -3M_g^2\,\frac{a\dot a^2}{N_g}.$
 
 Para o setor f:
 
-$$ \mathcal{L}_f = -3M_f^2\,\frac{b\dot b^2}{N_f}. $$
+$\mathcal{L}_f = -3M_f^2\,\frac{b\dot b^2}{N_f}.$
 
 Essas expressões são as formas padrão no minisuperspace FLRW.
 
@@ -90,7 +90,7 @@ Essas expressões são as formas padrão no minisuperspace FLRW.
 
 O determinante do setor g no fundo:
 
-$$ \sqrt{-g} = N_g a^3. $$
+$\sqrt{-g} = N_g a^3.$
 
 Logo o termo de interação na Lagrangiana é:
 
@@ -112,7 +112,7 @@ $$ \delta S_m = -\frac12\int d^4x \sqrt{-g}\,T_{\mu\nu}\delta g^{\mu\nu}. $$
 
 No fundo, isso implica contribuição de energia:
 
-$$ \mathcal{L}_m = -N_g a^3 \rho_m. $$
+$\mathcal{L}_m = -N_g a^3 \rho_m.$
 
 **B.4.5 Lagrangiana total no minisuperspace**
 
@@ -126,7 +126,7 @@ A partir dessa Lagrangiana obtemos as equações de Friedmann pela variação em
 
 Calculamos:
 
-$$ \frac{\partial\mathcal{L}}{\partial N_g}=0. $$
+$\frac{\partial\mathcal{L}}{\partial N_g}=0.$
 
 Termos dependentes de N_g:
 
@@ -146,7 +146,7 @@ $$ \frac{\partial}{\partial N_g}\left(-a^3 N_g U\right) = - a^3 U. $$
 
 4.  matéria:
 
-$$ \frac{\partial}{\partial N_g}(-N_g a^3\rho_m)= -a^3\rho_m. $$
+$\frac{\partial}{\partial N_g}(-N_g a^3\rho_m)= -a^3\rho_m.$
 
 Somando:
 
@@ -162,7 +162,7 @@ $$ 3M_g^2 H_g^2 = \rho_m + \left(\frac12\frac{\dot\chi^2}{N_g^2}+U\right) + m^2M
 
 Fixando gauge N_g=1 (opcional):
 
-$$ 3M_g^2 H_g^2 = \rho_m + \rho_\chi + \rho_{int}^{(g)}, $$
+$3M_g^2 H_g^2 = \rho_m + \rho_\chi + \rho_{int}^{(g)},$
 
 onde:
 
@@ -172,7 +172,7 @@ $$ \rho_\chi = \frac12\dot\chi^2+U(\chi), \qquad \rho_{int}^{(g)} = m^2M_{eff}^2
 
 Agora variamos:
 
-$$ \frac{\partial\mathcal{L}}{\partial N_f}=0. $$
+$\frac{\partial\mathcal{L}}{\partial N_f}=0.$
 
 O termo EH de f:
 
@@ -180,7 +180,7 @@ $$ -3M_f^2\frac{b\dot b^2}{N_f} \quad\Rightarrow\quad \frac{\partial}{\partial N
 
 O termo de interação depende de N_f via:
 
-$$ \xi = \frac{N_f}{N_g}. $$
+$\xi = \frac{N_f}{N_g}.$
 
 Como V(\xi,r) depende de \xi, então:
 
@@ -188,7 +188,7 @@ $$ \frac{\partial}{\partial N_f}\left(-m^2M_{eff}^2N_ga^3F V(\xi,r)\right) = -m^
 
 Mas:
 
-$$ \frac{\partial\xi}{\partial N_f}=\frac{1}{N_g}. $$
+$\frac{\partial\xi}{\partial N_f}=\frac{1}{N_g}.$
 
 Logo:
 
@@ -204,7 +204,7 @@ $$ \frac{3M_f^2 r^3 a^3}{a^3}\left(\frac{\dot b^2}{N_f^2 b^2}\right) = m^2M_{eff
 
 Identificando:
 
-$$ H_f = \frac{1}{N_f}\frac{\dot b}{b}, $$
+$H_f = \frac{1}{N_f}\frac{\dot b}{b},$
 
 obtemos:
 
@@ -240,7 +240,7 @@ $$ M_g^2(2\dot H_g + 3H_g^2) = - (p_m + p_\chi + p_{int}^{(g)}), $$
 
 onde:
 
-$$ p_\chi=\frac12\dot\chi^2-U(\chi), $$
+$p_\chi=\frac12\dot\chi^2-U(\chi),$
 
 e p_{int}^{(g)} é obtido pela projeção espacial do tensor de interação.
 
@@ -254,7 +254,7 @@ O termo de interação produz tensores efetivos X_{\mu\nu} e \tilde{X}_{\mu\nu}.
 
 No formalismo HR, a consistência exige:
 
-$$ \nabla_g^\mu X_{\mu\nu}=0 $$
+$\nabla_g^\mu X_{\mu\nu}=0$
 
 (e de forma equivalente no setor f).
 
@@ -270,7 +270,7 @@ Vamos mostrar por que essa estrutura aparece.
 
 No setor g, assumimos matéria conservada:
 
-$$ \nabla_g^\mu T^{(m)}_{\mu\nu}=0, \quad \nabla_g^\mu T^{(\chi)}_{\mu\nu} = (\Box\chi-U\')\partial_\nu\chi, $$
+$$ \nabla_g^\mu T^{(m)}_{\mu\nu}=0, \quad \nabla_g^\mu T^{(\chi)}_{\mu\nu} = (\Box\chi-U')\partial_\nu\chi, $$
 
 logo a conservação total exige que a divergência do termo de interação seja cancelada pela fonte de \chi quando F(\chi) está presente. No regime de fundo homogêneo, isso se traduz em uma condição algébrica/dinâmica entre r,\xi.
 
@@ -288,7 +288,7 @@ implica:
 
 **(A) Ramo Algébrico**
 
-\beta_1 + 2\beta_2 r + \beta_3 r^2 = 0 \quad\Rightarrow\quad r = \text{constante}.
+$$ \beta_1 + 2\beta_2 r + \beta_3 r^2 = 0 \quad\Rightarrow\quad r = \text{constante}. $$
 
 Nesse ramo, a razão de escalas é fixada por uma equação quadrática.
 
@@ -296,7 +296,7 @@ Isso geralmente gera um termo efetivo semelhante a Λ (combinando \beta_n).
 
 **(B) Ramo Dinâmico**
 
-$$ H_g = \xi H_f. $$
+$H_g = \xi H_f.$
 
 Aqui, r(t) pode evoluir.
 
@@ -306,7 +306,7 @@ Este ramo é o foco da TDCP porque permite separação estrutural histórica.
 
 Definimos:
 
-$$ r=\frac{b}{a}. $$
+$r=\frac{b}{a}.$
 
 Derivando:
 
@@ -314,19 +314,19 @@ $$ \dot r = \frac{\dot b}{a} - \frac{b\dot a}{a^2} = r\left(\frac{\dot b}{b} - \
 
 Substituindo:
 
-$$ \frac{\dot b}{b}=N_f H_f, \quad \frac{\dot a}{a}=N_g H_g. $$
+$\frac{\dot b}{b}=N_f H_f, \quad \frac{\dot a}{a}=N_g H_g.$
 
 Logo:
 
-$$ \dot r = r(N_f H_f - N_g H_g) = rN_g(\xi H_f - H_g). $$
+$\dot r = r(N_f H_f - N_g H_g) = rN_g(\xi H_f - H_g).$
 
-$$ Se N_g=1: $$
+$Se N_g=1:$
 
-$$ \dot r = r(\xi H_f - H_g). $$
+$\dot r = r(\xi H_f - H_g).$
 
 Portanto, no ramo dinâmico H_g=\xi H_f:
 
-$$ \dot r=0 $$
+$\dot r=0$
 
 se a igualdade for estrita em todo tempo.
 
@@ -342,11 +342,11 @@ o "dinâmico" da TDCP não depende exclusivamente de \dot r\neq 0; depende da ev
 
 Um subcaso útil é:
 
-$$ f_{\mu\nu} = c^2 g_{\mu\nu}. $$
+$f_{\mu\nu} = c^2 g_{\mu\nu}.$
 
 No fundo FLRW:
 
-b = c a \Rightarrow r=c=\text{constante}.
+$b = c a \Rightarrow r=c=\text{constante}.$
 
 Nesse caso, o potencial gera densidade efetiva constante (se F constante):
 
@@ -360,15 +360,15 @@ Neste anexo derivamos, a partir da ação reduzida no minisuperspace:
 
 1.  Equação de Friedmann do setor g:
 
-$$ > 3M_g^2 H_g^2=\rho_m+\rho_\chi+\rho_{int}^{(g)}. $$
+$> 3M_g^2 H_g^2=\rho_m+\rho_\chi+\rho_{int}^{(g)}.$
 
 2.  Equação de Friedmann do setor f:
 
-$$ > 3M_f^2 H_f^2=\rho_{int}^{(f)}. $$
+$> 3M_f^2 H_f^2=\rho_{int}^{(f)}.$
 
 3.  Constraint de Bianchi, que impõe a estrutura de ramos:
 
-$$ > (\beta_1+2\beta_2 r+\beta_3 r^2)(H_g-\xi H_f)=0. $$
+$> (\beta_1+2\beta_2 r+\beta_3 r^2)(H_g-\xi H_f)=0.$
 
 Esses resultados são a base matemática do corpo principal da TDCP, e são a fundação para:
 

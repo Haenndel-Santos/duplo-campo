@@ -14,7 +14,7 @@ Respire fundo.
 
 Toda teoria gravitacional covariante deve satisfazer:
 
-$$ \nabla^\mu G_{\mu\nu} = 0. $$
+$\nabla^\mu G_{\mu\nu} = 0.$
 
 Isso não é uma equação dinâmica.
 
@@ -22,11 +22,11 @@ Isso não é uma equação dinâmica.
 
 Na Relatividade Geral padrão:
 
-$$ G_{\mu\nu} = 8\pi G T_{\mu\nu} $$
+$G_{\mu\nu} = 8\pi G T_{\mu\nu}$
 
 implica automaticamente:
 
-$$ \nabla^\mu T_{\mu\nu} = 0. $$
+$\nabla^\mu T_{\mu\nu} = 0.$
 
 Ou seja:
 
@@ -42,7 +42,7 @@ Do Capítulo 3 temos:
 
 $$ G_{\mu\nu}[g] + m^2 V_{\mu\nu}^{(g)} = \frac{1}{M_g^2} T_{\mu\nu}, $$
 
-$$ G_{\mu\nu}[f] + m^2 V_{\mu\nu}^{(f)} = 0. $$
+$G_{\mu\nu}[f] + m^2 V_{\mu\nu}^{(f)} = 0.$
 
 Aplicamos divergência covariante na primeira:
 
@@ -50,7 +50,7 @@ $$ \nabla_g^\mu G_{\mu\nu}[g] + m^2 \nabla_g^\mu V_{\mu\nu}^{(g)} = \frac{1}{M_g
 
 Como:
 
-$$ \nabla_g^\mu G_{\mu\nu}[g] = 0, $$
+$\nabla_g^\mu G_{\mu\nu}[g] = 0,$
 
 temos:
 
@@ -62,11 +62,11 @@ Aqui aparece algo profundo.
 
 Se:
 
-$$ \nabla_g^\mu V_{\mu\nu}^{(g)} \neq 0, $$
+$\nabla_g^\mu V_{\mu\nu}^{(g)} \neq 0,$
 
 então:
 
-$$ \nabla_g^\mu T_{\mu\nu} \neq 0. $$
+$\nabla_g^\mu T_{\mu\nu} \neq 0.$
 
 Ou seja:
 
@@ -82,7 +82,7 @@ Mas isso não é inconsistência.
 
 Definimos:
 
-$$ \nabla_g^\mu T_{\mu\nu} = Q_\nu. $$
+$\nabla_g^\mu T_{\mu\nu} = Q_\nu.$
 
 E do setor f:
 
@@ -90,11 +90,11 @@ $$ \nabla_f^\mu G_{\mu\nu}[f] + m^2 \nabla_f^\mu V_{\mu\nu}^{(f)} = 0. $$
 
 Como:
 
-$$ \nabla_f^\mu G_{\mu\nu}[f] = 0, $$
+$\nabla_f^\mu G_{\mu\nu}[f] = 0,$
 
 temos:
 
-$$ \nabla_f^\mu V_{\mu\nu}^{(f)} = 0. $$
+$\nabla_f^\mu V_{\mu\nu}^{(f)} = 0.$
 
 Mas existe uma relação de consistência entre os dois potenciais:
 
@@ -102,7 +102,7 @@ $$ \sqrt{-g}\, \nabla_g^\mu V_{\mu\nu}^{(g)} = - \sqrt{-f}\, \nabla_f^\mu V_{\mu
 
 Portanto:
 
-$$ Q_\nu = -Q_\nu^{(f)}. $$
+$Q_\nu = -Q_\nu^{(f)}.$
 
 A energia não é criada nem destruída.
 
@@ -116,7 +116,7 @@ O que chamamos de "vácuo dinâmico" é formalmente o setor de interação.
 
 A transferência entre setores é controlada por:
 
-$$ m^2 V_{\mu\nu}. $$
+$m^2 V_{\mu\nu}.$
 
 A aceleração cósmica pode emergir como resultado da redistribuição estrutural.
 
@@ -128,17 +128,17 @@ Não é quebra de conservação.
 
 Em um universo homogêneo:
 
-T^\mu_{\ \nu} = \text{diag}(-\rho, p, p, p),
+$T^\mu_{\ \nu} = \text{diag}(-\rho, p, p, p),$
 
 a equação de conservação modificada torna-se:
 
-$$ \dot{\rho} + 3H(\rho + p) = Q_0. $$
+$\dot{\rho} + 3H(\rho + p) = Q_0.$
 
-$$ Se Q_0 \> 0: $$
+$Se Q_0 > 0:$
 
 - o setor visível ganha energia.
 
-$$ Se Q_0 \< 0: $$
+$Se Q_0 < 0:$
 
 - o setor visível perde energia.
 
@@ -152,7 +152,7 @@ Isso abre a possibilidade de:
 
 A soma dos dois setores satisfaz:
 
-$$ \nabla^\mu (T_{\mu\nu}^{(g)} + T_{\mu\nu}^{(f)}) = 0. $$
+$\nabla^\mu (T_{\mu\nu}^{(g)} + T_{\mu\nu}^{(f)}) = 0.$
 
 Portanto:
 
@@ -166,11 +166,11 @@ Sem isso, a teoria seria descartada.
 
 Se os coeficientes do potencial dependem de \phi:
 
-$$ \beta_n \rightarrow \beta_n(\phi), $$
+$\beta_n \rightarrow \beta_n(\phi),$
 
 então a equação do campo primordial também participa da troca:
 
-$$ \Box \phi - V\'(\phi) = \mathcal{S}(g,f). $$
+$\Box \phi - V'(\phi) = \mathcal{S}(g,f).$
 
 O campo primordial torna-se mediador dinâmico da redistribuição estrutural.
 

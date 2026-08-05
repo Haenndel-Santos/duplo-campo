@@ -24,7 +24,7 @@ Isso normalmente significa impor:
 
 Um subcaso controlado é o ramo proporcional:
 
-f_{\mu\nu} = c^2\, g_{\mu\nu} \quad \Rightarrow \quad r=c=\text{const.}
+$$ f_{\mu\nu} = c^2\, g_{\mu\nu} \quad \Rightarrow \quad r=c=\text{const.} $$
 
 Nesse caso, a energia efetiva tipo-\Lambda no setor g fica:
 
@@ -82,7 +82,7 @@ Na TDCP, isocurvatura surge naturalmente porque existem dois setores e um modo r
 
 Um modelo multifield típico tem:
 
-S \neq 0 \quad \text{no início}.
+$S \neq 0 \quad \text{no início}.$
 
 Você quer um mecanismo que:
 
@@ -92,11 +92,11 @@ Você quer um mecanismo que:
 
 O mecanismo matemático mais limpo é o "isocurvatura pesada":
 
-$$ \ddot S + 3H\dot S + m_S^2 S = 0, \qquad m_S^2 \gg H^2 $$
+$\ddot S + 3H\dot S + m_S^2 S = 0, \qquad m_S^2 \gg H^2$
 
 \Rightarrow solução decai:
 
-$$ S \propto a^{-3/2}\, e^{-m_S t}. $$
+$S \propto a^{-3/2}\, e^{-m_S t}.$
 
 O que controla m_S na TDCP?
 
@@ -120,7 +120,7 @@ Como obter isso sem "mágica"?
 
 Condição de "controle" que vamos impor como regra de projeto:
 
-\frac{P_S}{P_\zeta}\bigg|_{\text{recomb}} \ll 1.
+$\frac{P_S}{P_\zeta}\bigg|_{\text{recomb}} \ll 1.$
 
 (Depois, quando formos formalizar, colocamos um alvo numérico e comparamos com limites atuais.)
 
@@ -130,7 +130,7 @@ Aqui entram duas coisas:
 
 **(i) Higuchi (consistência em de Sitter)**
 
-$$ m_T^2 \ge 2H^2. $$
+$m_T^2 \ge 2H^2.$
 
 Isso é interno: não é dado experimental --- é sanidade da teoria no fundo.
 
@@ -156,7 +156,7 @@ O caminho mais "limpo" é manter:
 
 Isso parece contraditório, mas pode ser resolvido se m_T for dinâmico:
 
-$$ m_T^2(a) = m^2\,\mathcal{F}\big(\beta_n(\phi(a)), r(a)\big). $$
+$m_T^2(a) = m^2\,\mathcal{F}\big(\beta_n(\phi(a)), r(a)\big).$
 
 Ou seja: massa efetiva muda com a história cosmológica.
 
@@ -198,7 +198,7 @@ A regra pragmática:
 
 - trabalhar com modulação adiabática:
 
-$$ \left|\frac{\dot{\beta}_n}{\beta_n}\right| \ll H. $$
+$\left|\frac{\dot{\beta}_n}{\beta_n}\right| \ll H.$
 
 **(iii) Domínio de validade cosmológica**
 

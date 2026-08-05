@@ -34,7 +34,7 @@ Entretanto, qualquer força adicional deve ser suprimida em escalas solares.
 
 O objetivo deste capítulo é demonstrar que:
 
-\boxed{\text{A TDCP-F1 possui mecanismo de screening tipo Vainshtein consistente.}}
+$$ \boxed{\text{A TDCP-F1 possui mecanismo de screening tipo Vainshtein consistente.}} $$
 
 **19.2 Estrutura Gravitacional Relevante**
 
@@ -44,11 +44,11 @@ $$ \mathcal{L} = \frac{M_g^2}{2}R[g] + \frac{M_f^2}{2}R[f] + m^2 F(\phi)\,\mathc
 
 com:
 
-$$ F(\phi)=1+\xi\frac{\phi}{M_{Pl}}. $$
+$F(\phi)=1+\xi\frac{\phi}{M_{Pl}}.$
 
 A massa efetiva do modo massivo é:
 
-$$ m_{\rm eff}^2 = m^2 F(\phi). $$
+$m_{\rm eff}^2 = m^2 F(\phi).$
 
 **19.3 Limite de Desacoplamento**
 
@@ -58,11 +58,11 @@ $$ g_{\mu\nu}=\eta_{\mu\nu}+\frac{1}{M_g}h_{\mu\nu}, \qquad f_{\mu\nu}=\eta_{\mu
 
 Introduzimos campos de Stückelberg para restaurar difeomorfismo relativo e extraímos o helicity-0:
 
-$$ \Phi^a=x^a-\frac{1}{\Lambda_3^3}\partial^a\pi. $$
+$\Phi^a=x^a-\frac{1}{\Lambda_3^3}\partial^a\pi.$
 
 Na TDCP-F1:
 
-$$ \boxed{ \Lambda_3^3 \sim m^2 F(\phi) M_{\rm eff} } $$
+$\boxed{ \Lambda_3^3 \sim m^2 F(\phi) M_{\rm eff} }$
 
 Este ponto é crucial.
 
@@ -74,7 +74,7 @@ No regime solar:
 
 Logo:
 
-$$ \Lambda_3^3 \approx m^2 F_0 M_{Pl}. $$
+$\Lambda_3^3 \approx m^2 F_0 M_{Pl}.$
 
 **19.4 Lagrangiana Efetiva do Helicity-0**
 
@@ -90,11 +90,11 @@ $$ Z\square\pi + \frac{2c_3}{\Lambda_3^3} \Big[(\square\pi)^2-(\partial_\mu\part
 
 Para uma fonte pontual M:
 
-$$ \rho = M\delta^{(3)}(\vec x). $$
+$\rho = M\delta^{(3)}(\vec x).$
 
 Defina:
 
-$$ y(r)=\frac{\pi\'(r)}{r}. $$
+$y(r)=\frac{\pi'(r)}{r}.$
 
 Fora da fonte:
 
@@ -120,7 +120,7 @@ $$ y^2 \sim \frac{\alpha_V}{4\pi} \frac{\Lambda_3^3}{4c_3} \frac{M}{M_{Pl}} \fra
 
 Definido pela igualdade dos termos:
 
-$$ Z y \sim \frac{4c_3}{\Lambda_3^3}y^2. $$
+$Z y \sim \frac{4c_3}{\Lambda_3^3}y^2.$
 
 Substituindo:
 
@@ -128,7 +128,7 @@ $$ \boxed{ r_V \sim \left( \frac{\alpha_V c_3}{Z^2} \frac{M}{M_{Pl}} \frac{1}{\L
 
 Usando:
 
-$$ \Lambda_3^3 \sim m^2 F_0 M_{Pl}, $$
+$\Lambda_3^3 \sim m^2 F_0 M_{Pl},$
 
 obtemos:
 
@@ -136,33 +136,33 @@ $$ \boxed{ r_V \sim \left( \frac{GM}{m^2 F_0} \right)^{1/3} \times \left(\frac{\
 
 Estrutura fundamental preservada:
 
-$$ \boxed{ r_V \propto (GM/m_{\rm eff}^2)^{1/3} } $$
+$\boxed{ r_V \propto (GM/m_{\rm eff}^2)^{1/3} }$
 
 **19.8 Estimativa Numérica --- Sol**
 
 Para o Sol:
 
-$$ r_S = 2GM_\odot/c^2 \approx 3\times10^3\,m. $$
+$r_S = 2GM_\odot/c^2 \approx 3\times10^3\,m.$
 
 Considere:
 
-$$ m = (1--100)H_0/c. $$
+$m = (1--100)H_0/c.$
 
 Caso conservador m=100H_0:
 
-$$ r_V^\odot \approx 5\,{\rm pc}. $$
+$r_V^\odot \approx 5\,{\rm pc}.$
 
 Caso leve m=H_0:
 
-$$ r_V^\odot \approx 120\,{\rm pc}. $$
+$r_V^\odot \approx 120\,{\rm pc}.$
 
 Como:
 
-$$ 1\,AU \approx 5\times10^{-6}\,pc, $$
+$1\,AU \approx 5\times10^{-6}\,pc,$
 
 temos:
 
-$$ \boxed{ r_V^\odot \gg 1\,AU. } $$
+$\boxed{ r_V^\odot \gg 1\,AU. }$
 
 **19.9 Supressão da Quinta Força**
 
@@ -172,7 +172,7 @@ $$ \boxed{ \frac{F_\pi}{F_N} \sim \alpha_V^2 \left(\frac{r}{r_V}\right)^{3/2} } 
 
 Para r=1\,AU:
 
-$$ \left(\frac{r}{r_V}\right)^{3/2} \sim 10^{-10}--10^{-14}. $$
+$\left(\frac{r}{r_V}\right)^{3/2} \sim 10^{-10}--10^{-14}.$
 
 Extremamente suprimido.
 
@@ -180,15 +180,15 @@ Extremamente suprimido.
 
 Exigimos:
 
-$$ \frac{F_\pi}{F_N}(1AU) \< 10^{-5}. $$
+$\frac{F_\pi}{F_N}(1AU) < 10^{-5}.$
 
 Implica:
 
-$$ r_V \gtrsim 0.01\,pc. $$
+$r_V \gtrsim 0.01\,pc.$
 
 Mas obtemos:
 
-$$ r_V^\odot \sim 5--120\,pc. $$
+$r_V^\odot \sim 5--120\,pc.$
 
 Margem gigantesca.
 
@@ -196,7 +196,7 @@ Margem gigantesca.
 
 Como:
 
-$$ m_{\rm eff}^2 = m^2 F(\phi), $$
+$m_{\rm eff}^2 = m^2 F(\phi),$
 
 variações locais de \phi poderiam alterar r_V.
 
@@ -210,7 +210,7 @@ Entretanto:
 
 Logo:
 
-\boxed{ \text{Não surge quinta força adicional relevante via }\phi\text{ no regime solar.} }
+$$ \boxed{ \text{Não surge quinta força adicional relevante via }\phi\text{ no regime solar.} } $$
 
 A verificação formal será feita no Cap.20.
 
@@ -228,7 +228,7 @@ A TDCP-F1:
 
 ✔ Satisfaz critério preliminar PPN
 
-\boxed{ \text{A teoria sobrevive ao teste solar fundamental.} }
+$$ \boxed{ \text{A teoria sobrevive ao teste solar fundamental.} } $$
 
 Se desejar, posso agora iniciar imediatamente:
 

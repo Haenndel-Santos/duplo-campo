@@ -34,7 +34,7 @@ O setor escalar é o lugar onde aparecem:
 
 - ghost cinético (energia negativa),
 
-- instabilidade de gradiente (c_s^2\<0),
+- instabilidade de gradiente (c_s^2<0),
 
 - crescimento explosivo em escalas pequenas,
 
@@ -72,7 +72,7 @@ $$ ds_f^2 = -N_f^2(1+2\Phi_f)dt^2 + 2bN_f\,\partial_i B_f\,dt\,dx^i + b^2\left[(
 
 **C.2.3 Campo χ**
 
-$$ \chi(t,\mathbf{x}) = \bar\chi(t) + \delta\chi(t,\mathbf{x}). $$
+$\chi(t,\mathbf{x}) = \bar\chi(t) + \delta\chi(t,\mathbf{x}).$
 
 **C.3 Escolha de gauge e contagem de variáveis**
 
@@ -124,7 +124,7 @@ Então o setor g fica com \Phi_g, \Psi_g, e o setor f mantém B_f, E_f e seus po
 
 Ao expandir a ação até segunda ordem:
 
-$$ S = S^{(0)} + S^{(1)} + S^{(2)} + \cdots, $$
+$S = S^{(0)} + S^{(1)} + S^{(2)} + \cdots,$
 
 o termo S^{(1)}=0 quando o fundo satisfaz as equações de Friedmann (Anexo B).
 
@@ -144,7 +144,7 @@ onde:
 
 É comum decompor:
 
-$$ \Omega_{ij} = \frac{k^2}{a^2}G_{ij}(t) + M_{ij}(t). $$
+$\Omega_{ij} = \frac{k^2}{a^2}G_{ij}(t) + M_{ij}(t).$
 
 **C.6 Integração das variáveis não-dinâmicas**
 
@@ -158,7 +158,7 @@ entram sem derivadas temporais. Elas são multiplicadores de Lagrange.
 
 Variação em relação a elas gera equações algébricas (constraints) do tipo:
 
-$$ \mathcal{C}_A(Q,\dot Q;k,t)=0. $$
+$\mathcal{C}_A(Q,\dot Q;k,t)=0.$
 
 Resolvendo essas constraints e substituindo de volta na ação, obtemos a ação reduzida.
 
@@ -184,9 +184,9 @@ K_{ij}(t) = \begin{pmatrix} K_{11}(t) & K_{12}(t) \\ K_{12}(t) & K_{22}(t) \end{
 
 A energia cinética deve ser positiva definida:
 
-$$ 1.  K_{11} \> 0 $$
+1.  $K_{11} > 0$
 
-$$ 2.  \det K = K_{11}K_{22}-K_{12}^2 \> 0. $$
+2.  $\det K = K_{11}K_{22}-K_{12}^2 > 0.$
 
 Essas duas condições equivalem a dizer que os autovalores \kappa_{\pm} de K são positivos.
 
@@ -196,7 +196,7 @@ Essas duas condições equivalem a dizer que os autovalores \kappa_{\pm} de K s�
 
 - K_{11} vem da helicidade-0 do modo massivo: depende dos parâmetros \beta_n, de r,\xi, e da massa efetiva m^2F(\chi).
 
-- K_{12} é mistura: controlada por F\'(\chi) e pela sensibilidade do potencial a perturbações relativas.
+- K_{12} é mistura: controlada por F'(\chi) e pela sensibilidade do potencial a perturbações relativas.
 
 Isso já sugere um requisito físico simples:
 
@@ -204,7 +204,7 @@ F(\chi) deve ser positiva e variar lentamente para evitar mistura forte e invers
 
 Condições práticas (regime adiabático):
 
-$$ F(\chi)\>0, \qquad \left|\frac{\dot F}{F}\right| \ll H, \qquad \left|\frac{F\'}{F}\right|\Delta\chi \ll 1. $$
+$$ F(\chi)>0, \qquad \left|\frac{\dot F}{F}\right| \ll H, \qquad \left|\frac{F'}{F}\right|\Delta\chi \ll 1. $$
 
 **C.8 Velocidade do som e estabilidade de gradiente**
 
@@ -212,29 +212,29 @@ O termo de gradiente define G_{ij}.
 
 Os modos propagantes têm velocidades do som obtidas de:
 
-$$ \det\left(c_s^2 K - G\right)=0. $$
+$\det\left(c_s^2 K - G\right)=0.$
 
 Ou seja, os c_s^2 são autovalores da matriz:
 
-$$ K^{-1}G. $$
+$K^{-1}G.$
 
 **Condição de estabilidade de gradiente**
 
 Para evitar instabilidade exponencial em escalas sub-horizonte:
 
-$$ c_{s,\pm}^2 \> 0. $$
+$c_{s,\pm}^2 > 0.$
 
 Além disso, em teoria relativística estável, usualmente esperamos:
 
-$$ c_s^2 \le 1 $$
+$c_s^2 \le 1$
 
 (não estritamente necessário em teorias efetivas, mas desejável para evitar superluminalidade sistemática e problemas de causalidade efetiva).
 
 **Interpretação física**
 
-- Se c_s^2\<0, então para k/a grande, o modo cresce como:
+- Se c_s^2<0, então para k/a grande, o modo cresce como:
 
-$$ \exp\left(|c_s| \frac{k}{a} t\right), $$
+$\exp\left(|c_s| \frac{k}{a} t\right),$
 
 o que destrói a teoria imediatamente.
 
@@ -250,7 +250,7 @@ Por isso o bound de Higuchi e a positividade de F aparecem como "guard rails" n�
 
 Em fundos próximos a de Sitter, para um campo spin-2 massivo, a helicidade-0 é saudável apenas se:
 
-$$ m_{eff}^2 \ge 2H^2. $$
+$m_{eff}^2 \ge 2H^2.$
 
 Quando essa condição é violada:
 
@@ -260,9 +260,9 @@ Quando essa condição é violada:
 
 Logo, em linguagem da matriz cinética:
 
-$$ K_{11} \to 0 \quad \text{em } m_{eff}^2\to 2H^2, $$
+$K_{11} \to 0 \quad \text{em } m_{eff}^2\to 2H^2,$
 
-e se m_{eff}^2\<2H^2, então K_{11}\<0.
+e se m_{eff}^2<2H^2, então K_{11}<0.
 
 Portanto, Higuchi é equivalente (em regimes dS-like) à positividade do bloco cinético do modo massivo.
 
@@ -272,19 +272,19 @@ A TDCP é escalarmente estável se, ao longo da evolução cosmológica relevant
 
 **(1) Ghost-free (cinética positiva)**
 
-$$ K_{11} \> 0, \qquad K_{22} \> 0, \qquad K_{11}K_{22}-K_{12}^2 \> 0. $$
+$$ K_{11} > 0, \qquad K_{22} > 0, \qquad K_{11}K_{22}-K_{12}^2 > 0. $$
 
 **(2) Gradiente estável**
 
-$$ c_{s,\pm}^2 \> 0. $$
+$c_{s,\pm}^2 > 0.$
 
 **(3) Higuchi (regime acelerado)**
 
-$$ m^2F(\chi) \ge 2H^2. $$
+$m^2F(\chi) \ge 2H^2.$
 
 **(4) Adiabaticidade da modulação**
 
-$$ \left|\frac{\dot F}{F}\right| \ll H. $$
+$\left|\frac{\dot F}{F}\right| \ll H.$
 
 **C.11 Comentário técnico: por que F(\chi) não reintroduz o ghost BD**
 

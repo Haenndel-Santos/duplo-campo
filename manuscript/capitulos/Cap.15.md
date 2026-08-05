@@ -8,7 +8,7 @@ Vamos agora ao Capítulo 15 --- Setor Tensorial, Massa do Gravitón e Condiçõe
 
 Continuamos com:
 
-$$ (\beta_0,\beta_1,\beta_2,0,\beta_4) $$
+$(\beta_0,\beta_1,\beta_2,0,\beta_4)$
 
 no fundo FLRW.
 
@@ -34,7 +34,7 @@ Perturbamos apenas o setor TT (transverso-traceless):
 
 Para g_{\mu\nu}:
 
-$$ ds_g^2 = -dt^2 + a^2(t)(\delta_{ij} + h_{ij})dx^i dx^j, $$
+$ds_g^2 = -dt^2 + a^2(t)(\delta_{ij} + h_{ij})dx^i dx^j,$
 
 Para f_{\mu\nu}:
 
@@ -42,9 +42,9 @@ $$ ds_f^2 = -\xi^2 dt^2 + b^2(t)(\delta_{ij} + \ell_{ij})dx^i dx^j, $$
 
 com:
 
-$$ \partial_i h_{ij}=0,\quad h_{ii}=0, $$
+$\partial_i h_{ij}=0,\quad h_{ii}=0,$
 
-$$ \partial_i \ell_{ij}=0,\quad \ell_{ii}=0. $$
+$\partial_i \ell_{ij}=0,\quad \ell_{ii}=0.$
 
 **15.2 Ação quadrática tensorial**
 
@@ -60,7 +60,7 @@ $$ \boxed{ m_{\rm mix}^2 = m^2 M_{\rm eff}^2 F(\phi) \left(\beta_1 r + 2\beta_2 
 
 Observe novamente o mesmo fator estrutural:
 
-$$ \beta_1 + 2\beta_2 r. $$
+$\beta_1 + 2\beta_2 r.$
 
 **15.3 Diagonalização: modos físicos**
 
@@ -68,11 +68,11 @@ Definimos combinações:
 
 Modo massless (GR-like):
 
-$$ h_0 \propto M_g h + M_f r \ell, $$
+$h_0 \propto M_g h + M_f r \ell,$
 
 Modo massivo:
 
-$$ h_m \propto h - \ell. $$
+$h_m \propto h - \ell.$
 
 Após diagonalização:
 
@@ -86,7 +86,7 @@ $$ \boxed{ m_T^2 = m^2 F(\phi) \frac{M_{\rm eff}^2}{M_g^2} \left(\beta_1 r + 2\b
 
 Fatorando:
 
-$$ m_T^2 \propto r(\beta_1 + 2\beta_2 r). $$
+$m_T^2 \propto r(\beta_1 + 2\beta_2 r).$
 
 Novamente o mesmo fator estrutural.
 
@@ -94,31 +94,31 @@ Novamente o mesmo fator estrutural.
 
 Em fundo quase-de Sitter:
 
-$$ \boxed{ m_T^2 \ge 2 H^2. } $$
+$\boxed{ m_T^2 \ge 2 H^2. }$
 
 Se:
 
-$$ m_T^2 \< 2H^2, $$
+$m_T^2 < 2H^2,$
 
 o helicity-0 do gravitón massivo torna-se fantasma (instabilidade grave).
 
 Portanto:
 
-$$ \boxed{ m^2 F(\phi) r(\beta_1 + 2\beta_2 r) \ge 2H^2. } $$
+$\boxed{ m^2 F(\phi) r(\beta_1 + 2\beta_2 r) \ge 2H^2. }$
 
 **15.6 Conexão com Cap.14 (isocurvatura)**
 
 Lembrando:
 
-$$ m_S^2 \propto m^2 F(\phi)(\beta_1 + 2\beta_2 r). $$
+$m_S^2 \propto m^2 F(\phi)(\beta_1 + 2\beta_2 r).$
 
 e agora:
 
-$$ m_T^2 \propto r\, m^2 F(\phi)(\beta_1 + 2\beta_2 r). $$
+$m_T^2 \propto r\, m^2 F(\phi)(\beta_1 + 2\beta_2 r).$
 
 Portanto:
 
-$$ \boxed{ m_T^2 \sim r\, m_S^2. } $$
+$\boxed{ m_T^2 \sim r\, m_S^2. }$
 
 Isso é estruturalmente forte:
 
@@ -140,19 +140,19 @@ Observações de ondas gravitacionais exigem que:
 
 Isso exige:
 
-$$ m_T \ll k/a $$
+$m_T \ll k/a$
 
 para modos observados.
 
 Em escala cosmológica atual:
 
-$$ m_T \lesssim H_0 $$
+$m_T \lesssim H_0$
 
 é condição segura.
 
 Mas Higuchi no passado exigia:
 
-$$ m_T^2 \ge 2H_{\rm inf}^2. $$
+$m_T^2 \ge 2H_{\rm inf}^2.$
 
 A solução natural TDCP:
 
@@ -178,19 +178,19 @@ Reunindo tudo:
 
 **(1) Estabilidade escalar:**
 
-$$ \beta_1 + 2\beta_2 r \> 0. $$
+$\beta_1 + 2\beta_2 r > 0.$
 
 **(2) Supressão isocurvatura:**
 
-$$ m^2 F(\phi)(\beta_1 + 2\beta_2 r) \gg H^2. $$
+$m^2 F(\phi)(\beta_1 + 2\beta_2 r) \gg H^2.$
 
 **(3) Higuchi:**
 
-$$ m^2 F(\phi) r(\beta_1 + 2\beta_2 r) \ge 2H^2. $$
+$m^2 F(\phi) r(\beta_1 + 2\beta_2 r) \ge 2H^2.$
 
 **(4) Recuperação GR hoje:**
 
-$$ m_T^2 \lesssim H_0^2. $$
+$m_T^2 \lesssim H_0^2.$
 
 **15.9 Conclusão técnica do setor tensorial**
 
@@ -200,7 +200,7 @@ No modelo F1:
 
 - O fator estrutural único:
 
-$$ > \beta_1 + 2\beta_2 r $$
+$> \beta_1 + 2\beta_2 r$
 >
 > controla:
 

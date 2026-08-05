@@ -32,7 +32,7 @@ A aceleração cósmica não é um termo geométrico adicionado.
 
 No modelo padrão:
 
-$$ G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu} $$
+$G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$
 
 Λ é um número.
 
@@ -100,11 +100,11 @@ Separação geométrica.
 
 Se o estado primordial contém dois graus de liberdade correlacionados:
 
-$$ \phi_1, \phi_2, $$
+$\phi_1, \phi_2,$
 
 então os modos:
 
-$$ \Phi_+,\Phi_- $$
+$\Phi_+,\Phi_-$
 
 representam:
 
@@ -124,7 +124,7 @@ Isso sugere que a dualidade não é acidente ---
 
 No formalismo TDCP:
 
-$$ \dot\eta = \Gamma \dot\chi^2 \ge 0. $$
+$\dot\eta = \Gamma \dot\chi^2 \ge 0.$
 
 Essa equação é profunda.
 
@@ -210,7 +210,7 @@ Isso conecta a TDCP com ideias de:
 
 No formalismo efetivo:
 
-$$ H^2 = \frac{8\pi G}{3}\frac{\rho}{1-\eta}. $$
+$H^2 = \frac{8\pi G}{3}\frac{\rho}{1-\eta}.$
 
 À medida que η cresce, a resposta gravitacional muda.
 

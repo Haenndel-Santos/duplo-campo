@@ -22,7 +22,7 @@ Assumimos, para o setor g_{\mu\nu} (métrica física), um ansatz estático e fra
 
 $$ ds_g^2 = -(1+2\Phi(r))\,dt^2 + (1-2\Psi(r))\,(dr^2 + r^2 d\Omega^2), $$
 
-$$ com |\Phi|,|\Psi|\ll 1. $$
+$com |\Phi|,|\Psi|\ll 1.$
 
 A matéria é não-relativística, T_{00}\simeq \rho, T\simeq -\rho.
 
@@ -70,13 +70,13 @@ No regime solar relevante para screening:
 
 Para uma fonte esférica, a solução screened do Cap.19 fornece:
 
-$$ \frac{F_\pi}{F_N} \equiv \frac{\pi\'/M_{\rm Pl}}{GM/r^2} \sim \alpha_V^2\left(\frac{r}{r_V}\right)^{3/2}, \qquad (r\ll r_V). $$
+$$ \frac{F_\pi}{F_N} \equiv \frac{\pi'/M_{\rm Pl}}{GM/r^2} \sim \alpha_V^2\left(\frac{r}{r_V}\right)^{3/2}, \qquad (r\ll r_V). $$
 
 Logo, o efeito do helicity-0 sobre os potenciais pode ser capturado por:
 
 $$ \Phi(r)= -\frac{GM}{r}\left[1+\epsilon_\Phi(r)\right],\qquad \Psi(r)= -\frac{GM}{r}\left[1+\epsilon_\Psi(r)\right], $$
 
-$$ com \epsilon_{\Phi,\Psi}(r)\sim \mathcal{O}(F_\pi/F_N). $$
+$com \epsilon_{\Phi,\Psi}(r)\sim \mathcal{O}(F_\pi/F_N).$
 
 Em modelos dRGT/HR-like, a estrutura típica é:
 
@@ -86,7 +86,7 @@ onde c_\Phi,c_\Psi são números \mathcal{O}(1) determinados pela mistura e pelo
 
 Portanto, o parâmetro PPN \gamma é:
 
-\gamma(r)\equiv\frac{\Psi}{\Phi} = \frac{1+\epsilon_\Psi(r)}{1+\epsilon_\Phi(r)} \simeq 1+\left[\epsilon_\Psi(r)-\epsilon_\Phi(r)\right] \quad (\text{em ordem linear}).
+$$ \gamma(r)\equiv\frac{\Psi}{\Phi} = \frac{1+\epsilon_\Psi(r)}{1+\epsilon_\Phi(r)} \simeq 1+\left[\epsilon_\Psi(r)-\epsilon_\Phi(r)\right] \quad (\text{em ordem linear}). $$
 
 Logo:
 
@@ -114,7 +114,7 @@ A dependência em F_0 é suave: r_V\propto F_0^{-1/3} e, portanto, o screening m
 
 O limite clássico de Cassini (tomado como referência) é, em ordem de grandeza:
 
-$$ |\gamma-1| \lesssim 2.3\times 10^{-5}. $$
+$|\gamma-1| \lesssim 2.3\times 10^{-5}.$
 
 Aplique em r\simeq r_{\rm AU} (ou em raio de impacto solar típico; aqui usamos AU como estimativa conservadora).
 
@@ -132,7 +132,7 @@ Como r_V^\odot\sim 5\text{--}120 pc (para m\sim 100\text{--}1\,H_0/c e F_0\sim\m
 
 A TDCP-F1 contém um escalar \phi que modula a massa efetiva:
 
-$$ m_{\rm eff}^2 = m^2F(\phi). $$
+$m_{\rm eff}^2 = m^2F(\phi).$
 
 Existem duas vias potenciais de violação solar:
 
@@ -142,7 +142,7 @@ Existem duas vias potenciais de violação solar:
 
 Pela construção fornecida, a matéria acopla apenas a g:
 
-$$ \mathcal{L}_m[g], $$
+$\mathcal{L}_m[g],$
 
 logo não há acoplamento conforme direto de \phi à matéria no nível fundamental, a menos que \mathcal{L}_\phi introduza explicitamente tal termo (o que não foi assumido).
 
@@ -154,11 +154,11 @@ O efeito residual vem apenas de F(\phi) na interação bimetric. Para ser inócu
 
 Um critério operacional é:
 
-\boxed{ \left|\frac{\delta F}{F_0}\right|_{r\sim {\rm AU}} \ll 1 \quad\Rightarrow\quad \delta r_V/r_V \simeq -\frac{1}{3}\,\delta F/F_0 \ \text{desprezível}. }
+$$ \boxed{ \left|\frac{\delta F}{F_0}\right|_{r\sim {\rm AU}} \ll 1 \quad\Rightarrow\quad \delta r_V/r_V \simeq -\frac{1}{3}\,\delta F/F_0 \ \text{desprezível}. } $$
 
 Em termos da dinâmica de \phi, uma condição suficiente típica é:
 
-$$ m_\phi^2 \gg \frac{1}{{\rm AU}^2} $$
+$m_\phi^2 \gg \frac{1}{{\rm AU}^2}$
 
 (ou, equivalentemente, \lambda_\phi\ll {\rm AU}), pois isso impede perfis longos de \phi em torno do Sol. Mesmo se m_\phi for leve cosmologicamente, outra possibilidade é que \phi seja "stiff" localmente (grande Z_\phi).
 
@@ -174,7 +174,7 @@ portanto ainda mais suprimido que \gamma-1.
 
 Assim, para r\sim {\rm AU} e r_V^\odot\gg{\rm AU}, espera-se:
 
-$$ \boxed{ |\beta_{\rm PPN}-1|\ll |\gamma_{\rm PPN}-1| } $$
+$\boxed{ |\beta_{\rm PPN}-1|\ll |\gamma_{\rm PPN}-1| }$
 
 e o bound dominante é o de \gamma.
 
@@ -194,11 +194,11 @@ $$ > \boxed{ r_V \sim \left(\frac{GM}{m^2F_0}\right)^{1/3}\times \mathcal{O}(1).
 
 4.  Para o Sol, com m\sim 30\text{--}300\,H_0 (e mesmo m\sim 100H_0):
 
-> r_V^\odot \gg 1\,{\rm AU} \Rightarrow |\gamma-1|\ \text{é automaticamente pequeno}.
+$$ > r_V^\odot \gg 1\,{\rm AU} \Rightarrow |\gamma-1|\ \text{é automaticamente pequeno}. $$
 
 5.  Condição adicional TDCP-específica:
 
-> \boxed{ \left|\delta F/F_0\right|_{AU}\ll 1 \quad\Rightarrow\quad \phi \text{ não reintroduz quinta força local relevante}. }
+$$ > \boxed{ \left|\delta F/F_0\right|_{AU}\ll 1 \quad\Rightarrow\quad \phi \text{ não reintroduz quinta força local relevante}. } $$
 
 **Próximo passo (Cap.21)**
 

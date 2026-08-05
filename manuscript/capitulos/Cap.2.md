@@ -46,7 +46,7 @@ A forma mais natural na física moderna é: campos.
 
 Postulamos a existência de um campo escalar fundamental:
 
-$$ \phi(x) $$
+$\phi(x)$
 
 Esse campo não é o campo de Higgs.
 
@@ -68,7 +68,7 @@ Mas no Capítulo 1 propusemos dois núcleos.
 
 Logo, introduzimos dois modos correlacionados:
 
-$$ \phi_1(x), \quad \phi_2(x) $$
+$\phi_1(x), \quad \phi_2(x)$
 
 Definimos novamente:
 
@@ -76,7 +76,7 @@ $$ \Phi_+ = \frac{\phi_1 + \phi_2}{\sqrt{2}}, \quad \Phi_- = \frac{\phi_1 - \phi
 
 Se o potencial satisfizer:
 
-$$ m_-^2 \< 0, $$
+$m_-^2 < 0,$
 
 o estado simétrico é instável.
 
@@ -90,7 +90,7 @@ Agora incorporamos o Modelo Padrão.
 
 A ação total deve conter:
 
-S = S_{\text{grav}} + S_{\text{primordial}} + S_{\text{SM}} + S_{\text{int}}
+$$ S = S_{\text{grav}} + S_{\text{primordial}} + S_{\text{SM}} + S_{\text{int}} $$
 
 onde:
 
@@ -104,7 +104,7 @@ onde:
 
 O termo gravitacional padrão é:
 
-S_{\text{grav}} = \frac{1}{16\pi G}\int d^4x \sqrt{-g} R.
+$S_{\text{grav}} = \frac{1}{16\pi G}\int d^4x \sqrt{-g} R.$
 
 Isso não é removido.
 
@@ -116,7 +116,7 @@ Ela amplia a estrutura.
 
 O acoplamento mais seguro, preservando simetria gauge, é via operador escalar:
 
-\mathcal{L}_{\text{portal}} = \lambda \Phi_-^2 H^\dagger H,
+$\mathcal{L}_{\text{portal}} = \lambda \Phi_-^2 H^\dagger H,$
 
 onde H é o campo de Higgs.
 
@@ -154,7 +154,7 @@ a geometria efetiva percebida por cada setor pode diferir.
 
 Introduzimos então duas métricas:
 
-$$ g_{\mu\nu}, \quad f_{\mu\nu}. $$
+$g_{\mu\nu}, \quad f_{\mu\nu}.$
 
 Cada uma associada a um regime estrutural.
 
@@ -172,13 +172,13 @@ Mas como consequência natural da bifurcação.
 
 A diferença estrutural entre os regimes pode ser codificada em:
 
-$$ \eta(t) = \int^t \Gamma (H_g - H_f)^2 dt. $$
+$\eta(t) = \int^t \Gamma (H_g - H_f)^2 dt.$
 
 Essa variável mede a separação acumulada.
 
 Ela pode modificar a expansão efetiva:
 
-$$ H_g^2 = \frac{8\pi G}{3} \frac{\rho}{1-\eta}. $$
+$H_g^2 = \frac{8\pi G}{3} \frac{\rho}{1-\eta}.$
 
 Aqui a aceleração não é constante imposta.
 

@@ -22,7 +22,7 @@ Essa conta é importante porque ela fixa "onde" um m_{S0}\sim H_0 colocaria o jo
 
 No Cap.17 definimos:
 
-$$ k_\star(a)=a\,m_S(a)=m_{S0}a^{1-p}. $$
+$k_\star(a)=a\,m_S(a)=m_{S0}a^{1-p}.$
 
 Se você escolhe m_{S0}=H_0, então:
 
@@ -46,7 +46,7 @@ Resultado observacional: o efeito fica quase sem dependência de escala no regim
 
 Queremos:
 
-$$ k_\star(a_0)\sim 0.01\text{--}0.1\,h\,{\rm Mpc}^{-1}. $$
+$k_\star(a_0)\sim 0.01\text{--}0.1\,h\,{\rm Mpc}^{-1}.$
 
 Como k_{H0}\approx 3.3\times10^{-4}\,h\,{\rm Mpc}^{-1}, isso implica:
 
@@ -56,7 +56,7 @@ Como k_{H0}\approx 3.3\times10^{-4}\,h\,{\rm Mpc}^{-1}, isso implica:
 
 Logo um benchmark realista para "joelho dentro de LSS" é:
 
-$$ \boxed{ m_{S0}\sim (30\text{--}300)\,H_0. } $$
+$\boxed{ m_{S0}\sim (30\text{--}300)\,H_0. }$
 
 Essa é a correção mais importante para transformar a ideia em teste observacional prático.
 
@@ -70,7 +70,7 @@ $$ \boxed{ m_{S0}=30H_0,\quad p=1,\quad \alpha_0=0.07,\quad q=0,\quad \nu=1. } $
 
 Então:
 
-$$ k_\star(a_0)\approx 0.01\,h\,{\rm Mpc}^{-1}. $$
+$k_\star(a_0)\approx 0.01\,h\,{\rm Mpc}^{-1}.$
 
 **Benchmark B2 (joelho em k_\star\simeq 0.1\,h\,{\rm Mpc}^{-1})**
 
@@ -78,7 +78,7 @@ $$ \boxed{ m_{S0}=300H_0,\quad p=1,\quad \alpha_0=0.05,\quad q=0,\quad \nu=1. } 
 
 Então:
 
-$$ k_\star(a_0)\approx 0.1\,h\,{\rm Mpc}^{-1}. $$
+$k_\star(a_0)\approx 0.1\,h\,{\rm Mpc}^{-1}.$
 
 Nota: manter p=1 torna k_\star aproximadamente constante com o tempo; se quisermos que o joelho "ande" com z, escolhemos p\neq 1 (ver 18.6).
 
@@ -86,19 +86,19 @@ Nota: manter p=1 torna k_\star aproximadamente constante com o tempo; se quiserm
 
 No regime QS, a equação de crescimento é:
 
-$$ \delta\'\' + \left(2+\frac{H\'}{H}\right)\delta\' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0. $$
+$$ \delta'' + \left(2+\frac{H'}{H}\right)\delta' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0. $$
 
 Com:
 
-$$ \mu(k,a)=1+\frac{\alpha(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}. $$
+$\mu(k,a)=1+\frac{\alpha(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}.$
 
 **Duas regiões observacionais (para um dado z)**
 
-$$ - Se k \ll k_\star(a): \mu\approx 1 $$
+- $Se k \ll k_\star(a): \mu\approx 1$
 
 > \Rightarrow crescimento praticamente GR.
 
-$$ - Se k \gg k_\star(a): \mu\approx 1+\alpha(a) $$
+- $Se k \gg k_\star(a): \mu\approx 1+\alpha(a)$
 
 > \Rightarrow crescimento reforçado.
 
@@ -114,17 +114,17 @@ Na prática, surveys medem um "f\sigma_8 efetivo" integrado sobre uma janela em 
 
 Lembrando:
 
-$$ k_\star(a)=m_{S0}a^{1-p}. $$
+$k_\star(a)=m_{S0}a^{1-p}.$
 
-- Se p=1: k_\star \~ constante (assinatura estável em z).
+- Se p=1: k_\star ~ constante (assinatura estável em z).
 
-- Se p\>1: k_\star(a)=m_{S0}a^{-(p-1)} cresce no passado (a menor)
+- Se p>1: k_\star(a)=m_{S0}a^{-(p-1)} cresce no passado (a menor)
 
 > \Rightarrow mais modos ficam em k\ll k_\star no passado \Rightarrow GR no passado (bom para CMB/BAO).
 
 Então uma escolha "ligar tarde" é:
 
-$$ \boxed{p\>1 \quad \text{e}\quad q\ge 0.} $$
+$\boxed{p>1 \quad \text{e}\quad q\ge 0.}$
 
 Porque:
 
@@ -136,7 +136,7 @@ Porque:
 
 O lensing mede \Phi+\Psi. Definimos:
 
-$$ -k^2(\Phi+\Psi)=8\pi G a^2\Sigma(k,a)\rho_m\delta. $$
+$-k^2(\Phi+\Psi)=8\pi G a^2\Sigma(k,a)\rho_m\delta.$
 
 Com slip:
 
@@ -152,15 +152,15 @@ No benchmark minimalista:
 
 Assinatura combinada:
 
-$$ - RSD vê \mu, $$
+- $RSD vê \mu,$
 
-$$ - WL vê \Sigma, $$
+- $WL vê \Sigma,$
 
 - se \nu\neq 0, então \Sigma\neq \mu → padrão típico de bimetric.
 
 **18.8 Matriz "o que medir / onde medir / qual sinal" (objetiva)**
 
-$$ **(1) RSD (f\sigma_8)** $$
+**(1) RSD (f\sigma_8)**
 
 - Sensível a: \mu(k,a)
 
@@ -184,11 +184,11 @@ O que escolhemos aqui deve respeitar:
 
 - Supressão de isocurvatura: m_S^2 \gg H^2 na era primordial
 
-> (com p\>1, isso fica mais fácil)
+> (com p>1, isso fica mais fácil)
 
 - Higuchi: m_T^2\ge 2H^2 no regime de Sitter efetivo
 
-$$ - EFT: H\ll \Lambda_3\sim(m^2M_{\rm eff})^{1/3} $$
+- $EFT: H\ll \Lambda_3\sim(m^2M_{\rm eff})^{1/3}$
 
 O ponto chave: escolher m_{S0}\sim 30\text{--}300\,H_0 não viola EFT automaticamente; é apenas uma escolha de escala cosmológica "intermediária" para o modo relativo.
 

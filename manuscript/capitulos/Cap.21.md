@@ -24,7 +24,7 @@ A estrutura Hassan--Rosen (HR) ghost-free garante, por construção, que o poten
 
 Na TDCP-F1 a interação entra como:
 
-$$ m^2F(\phi)\,\mathcal V_{HR}(g,f). $$
+$m^2F(\phi)\,\mathcal V_{HR}(g,f).$
 
 Se F(\phi) é um escalar sem derivadas multiplicando o potencial (isto é, F não depende de curvaturas e não contém termos com derivadas misturadas com g,f), então:
 
@@ -44,11 +44,11 @@ $$ \boxed{ \mathcal{L}_{\pi} = -\frac{1}{2}Z(\phi)(\partial\pi)^2 + \frac{c_3(\p
 
 com o ponto TDCP-específico:
 
-\boxed{ \Lambda_3^3 \sim m^2 F(\phi)\,M_{\rm eff} \;\;\approx\;\; m^2F_0\,M_{\rm Pl} \quad\text{(Solar: }F(\phi)\approx F_0\text{ quase constante).} }
+$$ \boxed{ \Lambda_3^3 \sim m^2 F(\phi)\,M_{\rm eff} \;\;\approx\;\; m^2F_0\,M_{\rm Pl} \quad\text{(Solar: }F(\phi)\approx F_0\text{ quase constante).} } $$
 
 O background screened é tomado como:
 
-$$ \pi(x)=\bar\pi(r)+\varphi(x), \qquad r\ll r_V. $$
+$\pi(x)=\bar\pi(r)+\varphi(x), \qquad r\ll r_V.$
 
 Nos interessa a ação quadrática para a flutuação \varphi, pois é aí que surgem:
 
@@ -80,15 +80,15 @@ Isso define um "cone causal efetivo" para \varphi. A estabilidade exige que:
 
 Para \bar\pi=\bar\pi(r), temos:
 
-$$ \Box\bar\pi = \bar\pi\'\'+\frac{2}{r}\bar\pi\'. $$
+$\Box\bar\pi = \bar\pi''+\frac{2}{r}\bar\pi'.$
 
 E a Hessiana espacial pode ser decomposta em radial e angular:
 
-$$ \partial_i\partial_j \bar\pi = \left(\bar\pi\'\'-\frac{\bar\pi\'}{r}\right)n_i n_j + \frac{\bar\pi\'}{r}\delta_{ij}, \qquad n_i=\frac{x_i}{r}. $$
+$$ \partial_i\partial_j \bar\pi = \left(\bar\pi''-\frac{\bar\pi'}{r}\right)n_i n_j + \frac{\bar\pi'}{r}\delta_{ij}, \qquad n_i=\frac{x_i}{r}. $$
 
 Assim, os coeficientes cinéticos efetivos podem ser organizados como:
 
-- temporal: K^{00}\equiv -Z_t (com Z_t\>0 exigido para ausência de ghost)
+- temporal: K^{00}\equiv -Z_t (com Z_t>0 exigido para ausência de ghost)
 
 - radial: K^{rr}\equiv Z_r
 
@@ -96,15 +96,15 @@ Assim, os coeficientes cinéticos efetivos podem ser organizados como:
 
 Resulta (até fatores convencionais de sinal; a forma abaixo é a versão operacional padrão usada em análises de Galileon esférico):
 
-$$ \boxed{ Z_t = Z + \frac{4c_3}{\Lambda_3^3} \left( \bar\pi\'\'+\frac{2}{r}\bar\pi\' \right) } $$
+$$ \boxed{ Z_t = Z + \frac{4c_3}{\Lambda_3^3} \left( \bar\pi''+\frac{2}{r}\bar\pi' \right) } $$
 
-$$ \boxed{ Z_r = Z + \frac{8c_3}{\Lambda_3^3} \left( \frac{\bar\pi\'}{r} \right) } $$
+$$ \boxed{ Z_r = Z + \frac{8c_3}{\Lambda_3^3} \left( \frac{\bar\pi'}{r} \right) } $$
 
-$$ \boxed{ Z_\Omega = Z + \frac{4c_3}{\Lambda_3^3} \left( \bar\pi\'\'+\frac{\bar\pi\'}{r} \right) } $$
+$$ \boxed{ Z_\Omega = Z + \frac{4c_3}{\Lambda_3^3} \left( \bar\pi''+\frac{\bar\pi'}{r} \right) } $$
 
 Os critérios locais de estabilidade são então:
 
-$$ \boxed{ Z_t\>0,\qquad Z_r\>0,\qquad Z_\Omega\>0. } $$
+$\boxed{ Z_t>0,\qquad Z_r>0,\qquad Z_\Omega>0. }$
 
 E as velocidades de propagação (características) seguem de:
 
@@ -114,17 +114,17 @@ $$ \boxed{ c_r^2 = \frac{Z_r}{Z_t}, \qquad c_\Omega^2=\frac{Z_\Omega}{Z_t}. } $$
 
 Do Cap.19, no regime r\ll r_V (cúbico dominante), a solução implica:
 
-y(r)\equiv \frac{\bar\pi\'}{r} \propto r^{-3/2}, \quad\Rightarrow\quad \frac{\bar\pi\'}{r}\gg \frac{\bar\pi\'\'}{\;}\sim \mathcal{O}\!\left(\frac{\bar\pi\'}{r}\right) \quad\text{(mesma ordem paramétrica)}.
+$$ y(r)\equiv \frac{\bar\pi'}{r} \propto r^{-3/2}, \quad\Rightarrow\quad \frac{\bar\pi'}{r}\gg \frac{\bar\pi''}{\;}\sim \mathcal{O}\!\left(\frac{\bar\pi'}{r}\right) \quad\text{(mesma ordem paramétrica)}. $$
 
-O ponto decisivo é que, dentro de r_V, os termos proporcionais a c_3\bar\pi\'\'/\Lambda_3^3 e c_3(\bar\pi\'/r)/\Lambda_3^3 dominam sobre Z, tornando:
+O ponto decisivo é que, dentro de r_V, os termos proporcionais a c_3\bar\pi''/\Lambda_3^3 e c_3(\bar\pi'/r)/\Lambda_3^3 dominam sobre Z, tornando:
 
-$$ Z_t \sim \frac{4c_3}{\Lambda_3^3}\left(\bar\pi\'\'+\frac{2\bar\pi\'}{r}\right), \qquad Z_r \sim \frac{8c_3}{\Lambda_3^3}\left(\frac{\bar\pi\'}{r}\right), \qquad Z_\Omega \sim \frac{4c_3}{\Lambda_3^3}\left(\bar\pi\'\'+\frac{\bar\pi\'}{r}\right). $$
+$$ Z_t \sim \frac{4c_3}{\Lambda_3^3}\left(\bar\pi''+\frac{2\bar\pi'}{r}\right), \qquad Z_r \sim \frac{8c_3}{\Lambda_3^3}\left(\frac{\bar\pi'}{r}\right), \qquad Z_\Omega \sim \frac{4c_3}{\Lambda_3^3}\left(\bar\pi''+\frac{\bar\pi'}{r}\right). $$
 
 Portanto, os sinais de estabilidade são controlados pelo sinal efetivo de c_3 multiplicado pelo sinal do perfil \bar\pi (que é fixado pela condição de atratividade e pela fonte T\simeq-\rho). Em termos práticos, a condição robusta é:
 
-\boxed{ \frac{c_3}{Z} \> 0 \quad\text{(escolha de ramo/parametrização que garante }Z_t,Z_r,Z_\Omega\>0\text{ no Vainshtein).} }
+$$ \boxed{ \frac{c_3}{Z} > 0 \quad\text{(escolha de ramo/parametrização que garante }Z_t,Z_r,Z_\Omega>0\text{ no Vainshtein).} } $$
 
-Essa condição é exatamente o análogo do requisito "ramo saudável" em análises de Galileon/dRGT: um dos ramos resolve a EOM mas produz Z_t\<0 (ghost), o outro produz cinética positiva e screening físico.
+Essa condição é exatamente o análogo do requisito "ramo saudável" em análises de Galileon/dRGT: um dos ramos resolve a EOM mas produz Z_t<0 (ghost), o outro produz cinética positiva e screening físico.
 
 **21.7 Velocidades de propagação e superluminalidade (diagnóstico)**
 
@@ -136,7 +136,7 @@ No regime Vainshtein, é típico obter:
 
 Em muitos modelos Galileon cúbicos, encontra-se genericamente:
 
-$$ c_r^2 \gtrsim 1, $$
+$c_r^2 \gtrsim 1,$
 
 isto é, superluminalidade radial efetiva nas flutuações \varphi sobre o background screened.
 
@@ -150,7 +150,7 @@ Interpretação no contexto TDCP-F1:
 
 Neste capítulo, registramos o diagnóstico:
 
-\boxed{ \text{TDCP-F1 (como HR/dRGT-like) pode herdar cones efetivos modificados no Vainshtein; isso exige monitoramento, não invalidação imediata.} }
+$$ \boxed{ \text{TDCP-F1 (como HR/dRGT-like) pode herdar cones efetivos modificados no Vainshtein; isso exige monitoramento, não invalidação imediata.} } $$
 
 **21.8 Controle EFT no regime Vainshtein: condição operacional**
 
@@ -168,11 +168,11 @@ A consistência EFT exige que:
 
 Um critério operacional clássico (suficiente) é exigir que o regime screened seja dominado pelo mesmo operador que usamos para definir r_V, isto é:
 
-\boxed{ \left|\frac{\partial^2\bar\pi}{\Lambda_3^3}\right| \lesssim \mathcal{O}(1) \quad\text{no raio de interesse (ex.: em AU).} }
+$$ \boxed{ \left|\frac{\partial^2\bar\pi}{\Lambda_3^3}\right| \lesssim \mathcal{O}(1) \quad\text{no raio de interesse (ex.: em AU).} } $$
 
 Como o screening solar é extremamente profundo (r_{AU}\ll r_V), isso pode ser satisfeito com folga dependendo da normalização dos coeficientes. Em termos práticos, a condição se expressa como:
 
-\boxed{ \text{Escolher a hierarquia de coeficientes }(c_3,c_4,c_5,\dots) \text{ para que o operador dominante permaneça controlado e a série EFT não colapse.} }
+$$ \boxed{ \text{Escolher a hierarquia de coeficientes }(c_3,c_4,c_5,\dots) \text{ para que o operador dominante permaneça controlado e a série EFT não colapse.} } $$
 
 Na TDCP-F1, isso é tecnicamente implementável porque:
 
@@ -190,11 +190,11 @@ Há duas verificações essenciais:
 
 Como:
 
-$$ \Lambda_3^3 \propto m^2F(\phi), $$
+$\Lambda_3^3 \propto m^2F(\phi),$
 
 variações locais grandes poderiam deslocar o balanço dos termos e mudar sinais efetivos. A condição de segurança já antecipada é:
 
-\boxed{ \left|\frac{\delta F}{F_0}\right| \ll 1 \quad\text{em escalas solares.} }
+$$ \boxed{ \left|\frac{\delta F}{F_0}\right| \ll 1 \quad\text{em escalas solares.} } $$
 
 **(ii) \phi não deve introduzir uma quinta força não-screened**
 
@@ -206,7 +206,7 @@ Isso é garantido se:
 
 Operacionalmente:
 
-\boxed{ |\nabla \phi| \;\text{pequeno no Sistema Solar} \;\Rightarrow\; \text{nenhuma força adicional relevante além do helicity-0 já screened.} }
+$$ \boxed{ |\nabla \phi| \;\text{pequeno no Sistema Solar} \;\Rightarrow\; \text{nenhuma força adicional relevante além do helicity-0 já screened.} } $$
 
 **Conclusão do Capítulo 21**
 
@@ -214,23 +214,23 @@ A TDCP-F1 passa no teste não-linear local se satisfizer simultaneamente:
 
 **(A) Segurança estrutural HR**
 
-\boxed{ \text{BD ghost ausente (potencial HR ghost-free preservado por }F(\phi)\text{ multiplicativo).} }
+$$ \boxed{ \text{BD ghost ausente (potencial HR ghost-free preservado por }F(\phi)\text{ multiplicativo).} } $$
 
 **(B) Estabilidade dinâmica do helicity-0 no Vainshtein**
 
-\boxed{ Z_t\>0,\; Z_r\>0,\; Z_\Omega\>0 \;\;\Rightarrow\;\; \text{sem ghost e sem instabilidade de gradiente.} }
+$$ \boxed{ Z_t>0,\; Z_r>0,\; Z_\Omega>0 \;\;\Rightarrow\;\; \text{sem ghost e sem instabilidade de gradiente.} } $$
 
 O que, no regime screened, equivale na prática a escolher o ramo saudável:
 
-\boxed{ c_3/Z \> 0 \quad (\text{com o sinal do perfil escolhido fisicamente}).}
+$$ \boxed{ c_3/Z > 0 \quad (\text{com o sinal do perfil escolhido fisicamente}).} $$
 
 **(C) Controle EFT**
 
-\boxed{ \left|\partial^2\bar\pi/\Lambda_3^3\right|\lesssim \mathcal O(1) \;\;\text{(ou hierarquia de coeficientes que mantém truncamento válido).} }
+$$ \boxed{ \left|\partial^2\bar\pi/\Lambda_3^3\right|\lesssim \mathcal O(1) \;\;\text{(ou hierarquia de coeficientes que mantém truncamento válido).} } $$
 
 **(D) \phi inócuo localmente**
 
-\boxed{ |\delta F/F_0|\ll 1 \text{ em escalas solares e sem acoplamento direto }\phi T.}
+$$ \boxed{ |\delta F/F_0|\ll 1 \text{ em escalas solares e sem acoplamento direto }\phi T.} $$
 
 Com esses critérios, a TDCP-F1 permanece não-linearmente plausível no setor solar screened e está pronta para entrar no bloco observacional quantitativo.
 

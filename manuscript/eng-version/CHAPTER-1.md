@@ -374,7 +374,7 @@ A structural regime associated with the primordial (dark) sector.
 If these regimes have their own dynamics,\
 the natural generalization is to consider two geometric structures:
 
-$$ $ g_{\mu\nu}$and $ f_{\mu\nu}$ $$
+$g_{\mu\nu}$ and $f_{\mu\nu}$
 
 These do not represent "two separate universes".\
 They represent two geometric modes of a single structural system.
@@ -687,11 +687,11 @@ the modified conservation equation becomes:
 $$\dot{\rho} + 3H(\rho + p) = Q_{0}
 $$
 
-$$ If $ Q_{0} > 0$: $$
+If $Q_{0} > 0$:
 
 the visible sector gains energy.
 
-$$ If $ Q_{0} < 0$: $$
+If $Q_{0} < 0$:
 
 the visible sector loses energy.
 
@@ -1133,9 +1133,9 @@ $$
 
 Equivalently:
 
-- All eigenvalues \> 0
+- All eigenvalues > 0
 
-$$ - $\det K > 0$ $$
+- $\det K > 0$
 
 If violated → ghost instability.
 
@@ -1241,7 +1241,7 @@ For full consistency, PDCT requires:
 
 4.  $m_{\text{eff}}^{2} > 0$(late-time stability)
 
-$$ 5.  $\det K > 0$ $$
+5.  $\det K > 0$
 
 6.  $\mid {\dot{\beta}}_{n}/\beta_{n} \mid \ll H$(adiabatic modulation)
 
@@ -1376,7 +1376,7 @@ $$
 
 In PDCT:
 
-$$ - $\mu \neq 1$ $$
+- $\mu \neq 1$
 
 - $\eta_{\text{slip}} \neq 1$
 
@@ -1839,7 +1839,7 @@ $$
 
 **2. Intermediate-scale amplification**
 
-$$ If $\Delta_{\sigma} > 0$: $$
+If $\Delta_{\sigma} > 0$:
 
 - Faster growth
 
@@ -2324,7 +2324,7 @@ the echo of the primordial bifurcation.
 
 PDCT satisfies:
 
-$$ ✔ $ c_{T} = 1$\ $$
+✔ $c_{T} = 1$\
 ✔ Higuchi bound\
 ✔ small graviton mass\
 ✔ viable tensor spectrum\
@@ -2621,7 +2621,7 @@ PDCT is testable through:
 
 - growth rate $f(a)$
 
-$$ - $\sigma_{8}$ $$
+- $\sigma_{8}$
 
 - scale dependence
 
@@ -2732,7 +2732,7 @@ $$
 
 With $\beta_{3} = 0$:
 
-\(A\) Algebraic branch
+(A) Algebraic branch
 
 $$\beta_{1} + 2\beta_{2}r = 0 \Rightarrow r_{\star} = - \frac{\beta_{1}}{2\beta_{2}}.
 $$
@@ -2742,7 +2742,7 @@ Existence condition:
 $$r_{\star} > 0\text{\:\,} \Rightarrow \text{\:\,}\beta_{1}\beta_{2} < 0.
 $$
 
-\(B\) Dynamical branch
+(B) Dynamical branch
 
 $$H_{g} = \xi H_{f}.
 $$
@@ -2841,27 +2841,27 @@ $F(\phi)$→ time evolution of dark energy
 
 13.11 Closed constraints (F1)
 
-\(i\) Existence of algebraic branch:
+(i) Existence of algebraic branch:
 
 $$\beta_{1}\beta_{2} < 0.
 $$
 
-\(ii\) Positive effective energy:
+(ii) Positive effective energy:
 
 $$U(r_{\star}) > 0.
 $$
 
-\(iii\) GR recovery:
+(iii) GR recovery:
 
 $$\mu(k,a) \rightarrow 1\text{for}k/a \gg m_{screen}.
 $$
 
-\(iv\) Higuchi condition:
+(iv) Higuchi condition:
 
 $$m_{T}^{2}(\beta_{n},r,\phi) \geq 2H^{2}.
 $$
 
-\(v\) Controlled evolution of $r$:
+(v) Controlled evolution of $r$:
 
 $$0 < r_{\min} \leq r(t) \leq r_{\max} < \infty.
 $$
@@ -2888,7 +2888,7 @@ Scalar Sector, Adiabatic/Isocurvature Modes and Stability Conditions (F1)
 
 We will work with:
 
-$$ (\beta_0,\beta_1,\beta_2,0,\beta_4) $$
+$(\beta_0,\beta_1,\beta_2,0,\beta_4)$
 
 on the FLRW background already defined in Chapter 13.
 
@@ -2914,17 +2914,17 @@ observational suppression of isocurvature.
 
 We write the standard scalar perturbations:
 
-$$ For $ g_{\mu\nu}$: $$
+For $g_{\mu\nu}$:
 
 $$ds_{g}^{2} = - (1 + 2\Phi_{g})dt^{2} + 2a\partial_{i}B_{g}dx^{i}dt + a^{2}\left\lbrack (1 - 2\Psi_{g})\delta_{ij} + 2\partial_{i}\partial_{j}E_{g} \right\rbrack dx^{i}dx^{j}$$
 
-$$ For $ f_{\mu\nu}$: $$
+For $f_{\mu\nu}$:
 
 $$ds_{f}^{2} = - \xi^{2}(1 + 2\Phi_{f})dt^{2} + 2\xi b\partial_{i}B_{f}dx^{i}dt + b^{2}\left\lbrack (1 - 2\Psi_{f})\delta_{ij} + 2\partial_{i}\partial_{j}E_{f} \right\rbrack dx^{i}dx^{j}$$
 
 We also include the structural field:
 
-$$ $\phi(t) \rightarrow \phi(t) + \delta\phi$. $$
+$\phi(t) \rightarrow \phi(t) + \delta\phi$.
 
 ------------------------------------------------------------------------
 
@@ -2946,7 +2946,7 @@ $$\zeta = \frac{\rho_{g}\Psi_{g} + \rho_{f}\Psi_{f}}{\rho_{g} + \rho_{f}}$$
 
 Relative mode (TDCP structural isocurvature):
 
-$$ $ S \propto \Psi_{f} - \Psi_{g}$. $$
+$S \propto \Psi_{f} - \Psi_{g}$.
 
 More precisely, the physical mode is a canonically normalized combination of these variables.
 
@@ -3095,15 +3095,15 @@ making $m_{S}^{2}$ large and suppressing isocurvature.
 
 For full control we must impose:
 
-\(1\) Absence of ghost:
+(1) Absence of ghost:
 
 $$\beta_{1} + 2\beta_{2}r > 0.$$
 
-\(2\) Isocurvature suppression:
+(2) Isocurvature suppression:
 
 $$m^{2}F(\phi)(\beta_{1} + 2\beta_{2}r) \gg H^{2}.$$
 
-\(3\) Consistency with Chapter 13:
+(3) Consistency with Chapter 13:
 
 $$\beta_{1}\beta_{2} < 0,\beta_{0} - \frac{3\beta_{1}^{2}}{4\beta_{2}} > 0.$$
 

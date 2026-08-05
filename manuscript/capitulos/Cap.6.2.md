@@ -40,9 +40,9 @@ Quando introduzimos (g_{\mu\nu}, f_{\mu\nu}) e um campo primordial \phi, consegu
 
 Tomamos como fundo:
 
-$$ ds_g^2 = -dt^2 + a^2(t)\delta_{ij}dx^i dx^j $$
+$ds_g^2 = -dt^2 + a^2(t)\delta_{ij}dx^i dx^j$
 
-$$ ds_f^2 = -X^2(t)\,dt^2 + b^2(t)\delta_{ij}dx^i dx^j $$
+$ds_f^2 = -X^2(t)\,dt^2 + b^2(t)\delta_{ij}dx^i dx^j$
 
 onde X(t) é o lapse relativo do setor f.
 
@@ -58,7 +58,7 @@ $$ ds_f^2 = -X^2(t)(1+2\Phi_f)\,dt^2 + 2X(t)b(t)\partial_i B_f\,dt\,dx^i + b^2(t
 
 **Campo primordial**
 
-$$ \phi(t,\vec{x}) = \phi_0(t) + \delta\phi(t,\vec{x}) $$
+$\phi(t,\vec{x}) = \phi_0(t) + \delta\phi(t,\vec{x})$
 
 **6.3 Escolha de gauge e eliminação de redundâncias**
 
@@ -68,7 +68,7 @@ Uma escolha comum e eficiente:
 
 - Gauge Newtoniano no setor visível:
 
-$$ B = 0,\qquad E = 0 $$
+$B = 0,\qquad E = 0$
 
 Então o setor g fica descrito por \Phi e \Psi.
 
@@ -78,7 +78,7 @@ O setor f ainda tem \Phi_f, \Psi_f, B_f, E_f --- mas parte disso também será n
 
 Expandimos a ação total até segunda ordem em perturbações:
 
-$$ S = S^{(0)} + S^{(1)} + S^{(2)} + \cdots $$
+$S = S^{(0)} + S^{(1)} + S^{(2)} + \cdots$
 
 O termo relevante para estabilidade é:
 
@@ -86,7 +86,7 @@ $$ S^{(2)} = \int dt\,d^3k \left[ \dot{\mathbf{Q}}^T \mathbf{K}\, \dot{\mathbf{Q
 
 onde o vetor de variáveis dinâmicas reduzidas pode ser escrito, após eliminação de campos auxiliares, como:
 
-$$ \mathbf{Q} = (\zeta,\ \sigma,\ \delta\phi) $$
+$\mathbf{Q} = (\zeta,\ \sigma,\ \delta\phi)$
 
 Interpretando:
 
@@ -126,15 +126,15 @@ Esse é o ponto em que a teoria se revela.
 
 A matriz cinética \mathbf{K} deve ser definida positiva:
 
-$$ \mathbf{K} \> 0 $$
+$\mathbf{K} > 0$
 
 equivalente a:
 
-$$ 1.  K_{11} \> 0 $$
+1.  $K_{11} > 0$
 
-$$ 2.  \det K_{2\times2} \> 0 $$
+2.  $\det K_{2\times2} > 0$
 
-$$ 3.  \det K_{3\times3} \> 0 $$
+3.  $\det K_{3\times3} > 0$
 
 Se algum autovalor for negativo:
 
@@ -160,11 +160,11 @@ $$ \ddot{Q}_i + 3H\dot{Q}_i + \left(c_{s,i}^2\frac{k^2}{a^2} + m_i^2\right) Q_i 
 
 A condição essencial:
 
-$$ c_{s,i}^2 \> 0 $$
+$c_{s,i}^2 > 0$
 
-Se c_s^2 \< 0, então para grandes k (pequenas escalas):
+Se c_s^2 < 0, então para grandes k (pequenas escalas):
 
-$$ Q \sim e^{|c_s|k t/a} $$
+$Q \sim e^{|c_s|k t/a}$
 
 Explode rapidamente.
 
@@ -174,13 +174,13 @@ Isso destruiria a formação de estrutura e violaria observações.
 
 Para estabilidade tardia:
 
-$$ m_i^2 \> 0 $$
+$m_i^2 > 0$
 
 Mas aqui há uma nuance importante para a TDCP:
 
-- No regime primordial, m^2 \< 0 pode ser a instabilidade necessária para bifurcação.
+- No regime primordial, m^2 < 0 pode ser a instabilidade necessária para bifurcação.
 
-- No regime tardio, precisa relaxar para m^2 \> 0.
+- No regime tardio, precisa relaxar para m^2 > 0.
 
 Isso encaixa perfeitamente com o espírito da TDCP:
 
@@ -204,7 +204,7 @@ E no nível efetivo, ele entra com massa e acoplamento controlados por \beta_n e
 
 Se a TDCP permite:
 
-$$ \beta_n \rightarrow \beta_n(\phi), $$
+$\beta_n \rightarrow \beta_n(\phi),$
 
 isso é poderoso, mas perigoso.
 
@@ -212,7 +212,7 @@ Porque derivadas temporais de \beta_n(\phi) introduzem termos adicionais na matr
 
 Logo precisamos impor uma condição de "adiabaticidade":
 
-$$ \left|\frac{\dot{\beta}_n}{\beta_n}\right| \ll H $$
+$\left|\frac{\dot{\beta}_n}{\beta_n}\right| \ll H$
 
 no regime tardio.
 
@@ -228,23 +228,23 @@ A TDCP possui setor escalar viável se:
 
 **(i) No ghost**
 
-$$ \mathbf{K} \> 0 $$
+$\mathbf{K} > 0$
 
 **(ii) No gradient**
 
-$$ c_{s,i}^2 \> 0 $$
+$c_{s,i}^2 > 0$
 
 **(iii) Regime tardio estável**
 
-$$ m_i^2 \> 0 $$
+$m_i^2 > 0$
 
 **(iv) Higuchi no setor tensorial (conecta Cap.6 ao Cap.5)**
 
-$$ m_T^2 \ge 2H^2 $$
+$m_T^2 \ge 2H^2$
 
 **(v) Modulação adiabática**
 
-$$ |\dot{\beta}_n/\beta_n| \ll H $$
+$|\dot{\beta}_n/\beta_n| \ll H$
 
 **6.12 Fechamento narrativo: o que isso significa na linguagem da TDCP?**
 

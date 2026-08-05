@@ -48,7 +48,7 @@ Como uma bifurcação estrutural gera correlações?
 
 No Capítulo 6 vimos que o campo primordial pode ter:
 
-$$ m_{\text{eff}}^2 \< 0 $$
+$m_{\text{eff}}^2 < 0$
 
 no regime inicial.
 
@@ -62,9 +62,9 @@ Considere o modo relativo \sigma.
 
 Sua equação linear primordial pode assumir forma:
 
-$$ \ddot{\sigma} + 3H \dot{\sigma} - |m_\sigma^2|\sigma = 0 $$
+$\ddot{\sigma} + 3H \dot{\sigma} - |m_\sigma^2|\sigma = 0$
 
-Para m_\sigma^2 \< 0, pequenas flutuações crescem.
+Para m_\sigma^2 < 0, pequenas flutuações crescem.
 
 Esse crescimento gera:
 
@@ -84,15 +84,15 @@ $$ \sigma(\vec{x},t) = \int \frac{d^3k}{(2\pi)^3} \left[ \sigma_k(t) e^{i\vec{k}
 
 No regime quase-de Sitter:
 
-$$ a(t) \sim e^{Ht} $$
+$a(t) \sim e^{Ht}$
 
 A equação de cada modo é:
 
-$$ \sigma_k\'\' + 2\frac{a\'}{a}\sigma_k\' + \left(k^2 - a^2|m_\sigma^2|\right)\sigma_k = 0 $$
+$$ \sigma_k'' + 2\frac{a'}{a}\sigma_k' + \left(k^2 - a^2|m_\sigma^2|\right)\sigma_k = 0 $$
 
 Para k \ll aH:
 
-$$ \sigma_k \sim k^{-3/2} $$
+$\sigma_k \sim k^{-3/2}$
 
 Gerando espectro aproximadamente invariante de escala.
 
@@ -106,11 +106,11 @@ Na TDCP temos dois tipos de flutuação:
 
 Definimos:
 
-$$ \zeta = \frac{\delta\rho}{\rho + p} $$
+$\zeta = \frac{\delta\rho}{\rho + p}$
 
 e
 
-$$ S = \zeta_g - \zeta_f $$
+$S = \zeta_g - \zeta_f$
 
 onde S é o modo isocurvatura estrutural.
 
@@ -126,11 +126,11 @@ Caso contrário, Planck já teria detectado.
 
 O espectro completo pode ser escrito como:
 
-P_\zeta(k) = A_s \left(\frac{k}{k_*}\right)^{n_s-1} \left[1 + \Delta_{\text{struct}}(k)\right]
+$$ P_\zeta(k) = A_s \left(\frac{k}{k_*}\right)^{n_s-1} \left[1 + \Delta_{\text{struct}}(k)\right] $$
 
 onde:
 
-\Delta_{\text{struct}}(k) \sim \frac{\lambda}{1 + k^2/k_c^2}
+$\Delta_{\text{struct}}(k) \sim \frac{\lambda}{1 + k^2/k_c^2}$
 
 Aqui:
 
@@ -148,7 +148,7 @@ Isso gera:
 
 Compatível com:
 
-$$ n_s \approx 0.965 $$
+$n_s \approx 0.965$
 
 **10.6 Relação com o Tempo Relacional**
 
@@ -160,11 +160,11 @@ Agora isso ganha forma matemática.
 
 Se a bifurcação cresce como:
 
-$$ \sigma(t) \sim e^{\gamma t} $$
+$\sigma(t) \sim e^{\gamma t}$
 
 Então a separação estrutural define um parâmetro efetivo:
 
-$$ \tau \sim \ln \sigma $$
+$\tau \sim \ln \sigma$
 
 Ou seja:
 

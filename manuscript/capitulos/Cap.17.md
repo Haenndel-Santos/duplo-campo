@@ -6,7 +6,7 @@ Aqui o objetivo é derivar, no regime linear, o que a TDCP prevê para crescimen
 
 - \gamma (índice de crescimento)
 
-$$ - f\sigma_8(z) $$
+- $f\sigma_8(z)$
 
 - e eventualmente slip \eta_{\rm slip}(k,a)=\Phi/\Psi
 
@@ -20,17 +20,17 @@ Vou escrever de forma direta e utilizável.
 
 Em cosmologia linear, em gauge de Newton:
 
-$$ ds^2=-(1+2\Psi)dt^2+a^2(1-2\Phi)\delta_{ij}dx^i dx^j. $$
+$ds^2=-(1+2\Psi)dt^2+a^2(1-2\Phi)\delta_{ij}dx^i dx^j.$
 
 No \LambdaCDM/GR (sem anisotropic stress de radiação no tardio):
 
-$$ \Phi=\Psi, \quad -k^2\Phi = 4\pi G a^2\rho_m\,\delta. $$
+$\Phi=\Psi, \quad -k^2\Phi = 4\pi G a^2\rho_m\,\delta.$
 
 Em teorias modificadas, parametrizamos:
 
-$$ -k^2\Psi = 4\pi G a^2\,\mu(k,a)\,\rho_m\,\delta, $$
+$-k^2\Psi = 4\pi G a^2\,\mu(k,a)\,\rho_m\,\delta,$
 
-$$ -k^2(\Phi+\Psi)=8\pi G a^2\,\Sigma(k,a)\,\rho_m\,\delta, $$
+$-k^2(\Phi+\Psi)=8\pi G a^2\,\Sigma(k,a)\,\rho_m\,\delta,$
 
 e o slip:
 
@@ -50,7 +50,7 @@ $$ \ddot\delta + 2H\dot\delta -4\pi G\,\mu(k,a)\rho_m\,\delta =0. $$
 
 Ou em variável \ln a:
 
-$$ \delta\'\' + \left(2+\frac{H\'}{H}\right)\delta\' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0 $$
+$$ \delta'' + \left(2+\frac{H'}{H}\right)\delta' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0 $$
 
 onde primos são derivadas em \ln a.
 
@@ -78,7 +78,7 @@ Ou seja: uma modificação dependente de escala (assinatura-chave).
 
 Dos Caps. 14 e 15:
 
-$$ m_S^2(a)\propto m^2F(\phi)\left(\beta_1+2\beta_2 r(a)\right) $$
+$m_S^2(a)\propto m^2F(\phi)\left(\beta_1+2\beta_2 r(a)\right)$
 
 e
 
@@ -90,7 +90,7 @@ $$ \alpha(a)\sim \frac{\epsilon^2(a)}{1+\epsilon^2(a)}, \quad \epsilon(a)\equiv 
 
 Uma parametrização prática (para confrontar com dados sem entrar em diagonalização completa) é:
 
-$$ \boxed{ \alpha(a)=\alpha_0\,\frac{r^2(a)}{1+r^2(a)} } $$
+$\boxed{ \alpha(a)=\alpha_0\,\frac{r^2(a)}{1+r^2(a)} }$
 
 com \alpha_0 absorvendo razão M_f/M_g e fatores de normalização.
 
@@ -98,7 +98,7 @@ com \alpha_0 absorvendo razão M_f/M_g e fatores de normalização.
 
 Você quer retorno a GR em escalas solares/galácticas:
 
-\mu(k,a)\to 1\quad\text{para}\quad k/a \gg H_0
+$\mu(k,a)\to 1\quad\text{para}\quad k/a \gg H_0$
 
 Isso pode ser obtido de duas formas:
 
@@ -106,7 +106,7 @@ Isso pode ser obtido de duas formas:
 
 Se m_S(a_0)\gg k/a até escalas muito pequenas, então:
 
-$$ \mu\simeq 1 $$
+$\mu\simeq 1$
 
 em toda faixa observável → difícil distinguir da GR.
 
@@ -114,7 +114,7 @@ em toda faixa observável → difícil distinguir da GR.
 
 Mesmo se m_S não for enorme, se \alpha\ll 1:
 
-$$ \mu\simeq 1 $$
+$\mu\simeq 1$
 
 Resultado: há degenerescência entre "muito pesado" e "muito fraco acoplamento".
 
@@ -124,7 +124,7 @@ Se a TDCP for responsável pela aceleração tardia via termos estruturais, é c
 
 No limite k/a\gg m_S:
 
-$$ \mu \to 1+\alpha(a). $$
+$\mu \to 1+\alpha(a).$
 
 Então o termo de fonte aumenta:
 
@@ -136,7 +136,7 @@ Mas a observação atual tende a tolerar apenas desvios moderados.
 
 Logo você terá uma janela típica:
 
-\boxed{ |\alpha(a_0)| \lesssim 0.1 \;\text{(ordem de grandeza segura)} }
+$$ \boxed{ |\alpha(a_0)| \lesssim 0.1 \;\text{(ordem de grandeza segura)} } $$
 
 e o efeito mais detectável vira a dependência de escala (transição Yukawa).
 
@@ -178,17 +178,17 @@ Você pediu validação matemática. Aqui vai um pipeline analítico mínimo:
 
 Escolhemos:
 
-$$ m_S(a)=m_{S0}\,a^{-p},\qquad \alpha(a)=\alpha_0\,a^{q} $$
+$m_S(a)=m_{S0}\,a^{-p},\qquad \alpha(a)=\alpha_0\,a^{q}$
 
 onde p,q codificam se a modificação liga tarde ou cedo.
 
 **Passo C --- Gerar previsão para \mu(k,a)**
 
-$$ \mu(k,a)=1+\frac{\alpha(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}. $$
+$\mu(k,a)=1+\frac{\alpha(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}.$
 
 **Passo D --- Inserir na equação de crescimento**
 
-$$ \delta\'\' + \left(2+\frac{H\'}{H}\right)\delta\' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0 $$
+$$ \delta'' + \left(2+\frac{H'}{H}\right)\delta' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0 $$
 
 e analisar:
 
@@ -198,13 +198,13 @@ e analisar:
 
 sem rodar código, já conseguimos obter regimes analíticos:
 
-$$ - k/a\ll m_S(a): GR $$
+- $k/a\ll m_S(a): GR$
 
 - k/a\gg m_S(a): amplificação constante 1+\alpha(a)
 
 Isso gera um "joelho" no espectro de crescimento em torno de:
 
-$$ k_\star(a)\sim a\,m_S(a). $$
+$k_\star(a)\sim a\,m_S(a).$
 
 **17.9 Produto final deste capítulo (condições testáveis)**
 
@@ -224,13 +224,13 @@ Você fecha essa etapa quando consegue declarar:
 
 Para avançarmos de forma objetiva, preciso que você escolha qual assinatura você quer priorizar:
 
-A\) TDCP "quase indistinguível" no crescimento (apenas background muda).
+A) TDCP "quase indistinguível" no crescimento (apenas background muda).
 
 → m_S grande e/ou \alpha pequeno.
 
-B\) TDCP "distinguível" por dependência de escala (Yukawa).
+B) TDCP "distinguível" por dependência de escala (Yukawa).
 
-$$ → m_{S0}\sim H_0 e \alpha_0\sim 0.05--0.1. $$
+$→ m_{S0}\sim H_0 e \alpha_0\sim 0.05--0.1.$
 
 Como você quer algo radical mas validável, eu recomendo B, porque dá previsões observacionais reais.
 
@@ -256,9 +256,9 @@ $$ \boxed{ m_S(a)=m_{S0}\,a^{-p}, \qquad \alpha(a)=\alpha_0\,a^{q}. } $$
 
 Interpretação:
 
-- p\>0: o modo era mais pesado no passado (boa supressão primordial).
+- p>0: o modo era mais pesado no passado (boa supressão primordial).
 
-- q\>0: o acoplamento "liga" tardiamente (efeito maior agora).
+- q>0: o acoplamento "liga" tardiamente (efeito maior agora).
 
 A forma Yukawa detectável fica:
 
@@ -266,7 +266,7 @@ $$ \boxed{ \mu(k,a)=1+\frac{\alpha(a)\,k^2/a^2}{k^2/a^2+m_S^2(a)}. } $$
 
 Definimos o "joelho" de transição:
 
-$$ \boxed{ k_\star(a)=a\,m_S(a)=m_{S0}\,a^{1-p}. } $$
+$\boxed{ k_\star(a)=a\,m_S(a)=m_{S0}\,a^{1-p}. }$
 
 **17.11 Regimes analíticos e predição qualitativa**
 
@@ -274,21 +274,21 @@ $$ \boxed{ k_\star(a)=a\,m_S(a)=m_{S0}\,a^{1-p}. } $$
 
 Se k\ll k_\star(a) então k^2/a^2\ll m_S^2 e:
 
-$$ \mu(k,a)\simeq 1+\alpha(a)\frac{k^2/a^2}{m_S^2(a)} \approx 1 $$
+$\mu(k,a)\simeq 1+\alpha(a)\frac{k^2/a^2}{m_S^2(a)} \approx 1$
 
 ou seja:
 
-$$ \boxed{\mu \to 1 \quad (GR).} $$
+$\boxed{\mu \to 1 \quad (GR).}$
 
 **Regime 2 --- Pequena escala (força efetiva aumentada)**
 
 Se k\gg k_\star(a) então k^2/a^2\gg m_S^2 e:
 
-$$ \mu(k,a)\simeq 1+\alpha(a). $$
+$\mu(k,a)\simeq 1+\alpha(a).$
 
 Logo:
 
-$$ \boxed{\mu \to 1+\alpha(a).} $$
+$\boxed{\mu \to 1+\alpha(a).}$
 
 Predição central: existe uma transição em k que se move com o tempo, de escala k_\star(a).
 
@@ -318,21 +318,21 @@ Por quê:
 
 Defina:
 
-$$ f(a)\equiv \frac{d\ln \delta}{d\ln a}. $$
+$f(a)\equiv \frac{d\ln \delta}{d\ln a}.$
 
 A equação de crescimento:
 
-$$ \delta\'\' + \left(2+\frac{H\'}{H}\right)\delta\' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0 $$
+$$ \delta'' + \left(2+\frac{H'}{H}\right)\delta' -\frac{3}{2}\Omega_m(a)\mu(k,a)\delta=0 $$
 
-mostra que \mu\>1 aumenta o termo fonte. Para estimativa rápida, no regime k\gg k_\star:
+mostra que \mu>1 aumenta o termo fonte. Para estimativa rápida, no regime k\gg k_\star:
 
-$$ \mu\simeq 1+\alpha(a). $$
+$\mu\simeq 1+\alpha(a).$
 
 Então o crescimento fica aproximadamente "mais GR" com gravidade reforçada.
 
 No limite de pequenas correções, o desvio fracionário em f é aproximadamente:
 
-$$ \boxed{ \frac{\Delta f}{f}\sim \mathcal{O}(\alpha(a)) } $$
+$\boxed{ \frac{\Delta f}{f}\sim \mathcal{O}(\alpha(a)) }$
 
 e como f\sigma_8\propto f\delta, o desvio acumulado pode ser maior que \alpha por integrar no tempo.
 
@@ -348,7 +348,7 @@ Assinatura observacional concreta:
 
 Em bimetric, tipicamente:
 
-$$ \Phi \neq \Psi. $$
+$\Phi \neq \Psi.$
 
 Parametrizamos:
 
@@ -366,7 +366,7 @@ $$ \boxed{ \beta(a)=\nu\,\alpha(a), \qquad \nu=\mathcal{O}(1). } $$
 
 Então lensing responde a:
 
-$$ -k^2(\Phi+\Psi)=8\pi G a^2\Sigma(k,a)\rho_m\delta $$
+$-k^2(\Phi+\Psi)=8\pi G a^2\Sigma(k,a)\rho_m\delta$
 
 com:
 
@@ -386,7 +386,7 @@ Você pediu robustez: então deixamos claro como isso "vem" de F1.
 
 1.  massa efetiva do modo relativo:
 
-$$ m_S^2(a)\propto m^2F(\phi(a))(\beta_1+2\beta_2 r(a)). $$
+$m_S^2(a)\propto m^2F(\phi(a))(\beta_1+2\beta_2 r(a)).$
 
 2.  acoplamento efetivo:
 

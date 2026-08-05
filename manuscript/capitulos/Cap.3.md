@@ -42,7 +42,7 @@ Se esses regimes têm dinâmicas próprias,
 
 a generalização natural é considerar duas estruturas geométricas:
 
-$$ g_{\mu\nu} \quad \text{e} \quad f_{\mu\nu}. $$
+$g_{\mu\nu} \quad \text{e} \quad f_{\mu\nu}.$
 
 Essas não representam "dois universos separados".
 
@@ -54,11 +54,11 @@ A forma mais segura conhecida para teorias bimétricas livres de fantasmas é a 
 
 A ação geral é:
 
-S = \frac{M_g^2}{2}\int d^4x \sqrt{-g}\, R[g] + \frac{M_f^2}{2}\int d^4x \sqrt{-f}\, R[f] - m^2 M_{\text{eff}}^2 \int d^4x \sqrt{-g}\, V(\mathcal{K}) + S_{\text{matter}}.
+$$ S = \frac{M_g^2}{2}\int d^4x \sqrt{-g}\, R[g] + \frac{M_f^2}{2}\int d^4x \sqrt{-f}\, R[f] - m^2 M_{\text{eff}}^2 \int d^4x \sqrt{-g}\, V(\mathcal{K}) + S_{\text{matter}}. $$
 
 onde:
 
-$$ \mathcal{K} = \sqrt{g^{-1}f}. $$
+$\mathcal{K} = \sqrt{g^{-1}f}.$
 
 Aqui:
 
@@ -72,7 +72,7 @@ Aqui:
 
 O potencial é construído a partir dos polinômios elementares e_n(\mathcal{K}):
 
-$$ V(\mathcal{K}) = \sum_{n=0}^4 \beta_n e_n(\mathcal{K}), $$
+$V(\mathcal{K}) = \sum_{n=0}^4 \beta_n e_n(\mathcal{K}),$
 
 onde os e_n são invariantes da matriz \mathcal{K}.
 
@@ -94,7 +94,7 @@ Variando a ação em relação a cada métrica, obtemos:
 
 $$ G_{\mu\nu}[g] + m^2 V_{\mu\nu}^{(g)} = \frac{1}{M_g^2} T_{\mu\nu}, $$
 
-$$ G_{\mu\nu}[f] + m^2 V_{\mu\nu}^{(f)} = 0. $$
+$G_{\mu\nu}[f] + m^2 V_{\mu\nu}^{(f)} = 0.$
 
 onde:
 
@@ -120,11 +120,11 @@ A aceleração cósmica pode emergir quando a solução cosmológica favorece um
 
 Se:
 
-$$ f_{\mu\nu} \rightarrow g_{\mu\nu}, $$
+$f_{\mu\nu} \rightarrow g_{\mu\nu},$
 
 então:
 
-$$ \mathcal{K} \rightarrow I, $$
+$\mathcal{K} \rightarrow I,$
 
 e o potencial reduz-se a termo efetivamente constante.
 
@@ -148,7 +148,7 @@ A massa efetiva depende dos parâmetros \beta_n.
 
 Para estabilidade (condição de Higuchi):
 
-$$ m_g^2 \ge 2H^2. $$
+$m_g^2 \ge 2H^2.$
 
 Esse critério será essencial na análise cosmológica.
 
@@ -160,7 +160,7 @@ Mas a TDCP mantém o campo primordial \phi.
 
 Ele pode modular o potencial:
 
-$$ \beta_n \rightarrow \beta_n(\phi). $$
+$\beta_n \rightarrow \beta_n(\phi).$
 
 Isso torna a interação dinâmica.
 
@@ -200,10 +200,10 @@ Antes de seguir:
 
 Você quer que o Capítulo 4 seja:
 
-A\) Cosmologia FLRW detalhada com todas as equações derivadas
+A) Cosmologia FLRW detalhada com todas as equações derivadas
 
-B\) Conservação covariante rigorosa antes da cosmologia
+B) Conservação covariante rigorosa antes da cosmologia
 
-C\) Inserção completa do campo primordial dentro do formalismo bimétrico
+C) Inserção completa do campo primordial dentro do formalismo bimétrico
 
 Qual seguimos?

@@ -48,7 +48,7 @@ Portanto, se a TDCP falhar aqui, falha estruturalmente.
 
 No formalismo bimétrico, temos:
 
-$$ h_{ij}^{(g)} , \quad h_{ij}^{(f)} $$
+$h_{ij}^{(g)} , \quad h_{ij}^{(f)}$
 
 Diagonalizando, obtemos:
 
@@ -64,7 +64,7 @@ $$ S^{(2)} = \int dt d^3k \left[ \frac{1}{2} a^3 \dot{h}_0^2 - \frac{1}{2} a^3 \
 
 Modo massless:
 
-$$ \ddot{h}_0 + 3H \dot{h}_0 + \frac{k^2}{a^2} h_0 = 0 $$
+$\ddot{h}_0 + 3H \dot{h}_0 + \frac{k^2}{a^2} h_0 = 0$
 
 Modo massivo:
 
@@ -72,7 +72,7 @@ $$ \ddot{h}_m + 3H \dot{h}_m + \left(\frac{k^2}{a^2} + m_T^2\right) h_m = 0 $$
 
 onde:
 
-$$ m_T^2 \sim m^2 \times F(\beta_n, r) $$
+$m_T^2 \sim m^2 \times F(\beta_n, r)$
 
 Esse termo é crucial.
 
@@ -80,7 +80,7 @@ Esse termo é crucial.
 
 Para o modo massless:
 
-$$ c_T^2 = 1 $$
+$c_T^2 = 1$
 
 Se a TDCP preserva estrutura Hassan--Rosen pura, então:
 
@@ -100,11 +100,11 @@ Isso é não-negociável.
 
 Em fundo quase-de Sitter:
 
-$$ m_T^2 \ge 2H^2 $$
+$m_T^2 \ge 2H^2$
 
 Se:
 
-$$ m_T^2 \< 2H^2 $$
+$m_T^2 < 2H^2$
 
 → helicidade-0 torna-se fantasma.
 
@@ -116,13 +116,13 @@ Portanto, a massa do modo massivo não pode ser arbitrária.
 
 Durante o regime primordial, os modos satisfazem:
 
-$$ h_k\'\' + 2\frac{a\'}{a} h_k\' + \left(k^2 + a^2 m_T^2\right) h_k = 0 $$
+$$ h_k'' + 2\frac{a'}{a} h_k' + \left(k^2 + a^2 m_T^2\right) h_k = 0 $$
 
-$$ Se m_T \ll H: $$
+$Se m_T \ll H:$
 
 → espectro quase invariante
 
-$$ Se m_T \gg H: $$
+$Se m_T \gg H:$
 
 → modo massivo suprimido
 
@@ -138,19 +138,19 @@ A TDCP pode prever:
 
 No modelo padrão:
 
-$$ r = \frac{P_T}{P_\zeta} $$
+$r = \frac{P_T}{P_\zeta}$
 
 Na TDCP:
 
-$$ P_T = P_{T,0} + P_{T,m} $$
+$P_T = P_{T,0} + P_{T,m}$
 
 Se o modo massivo é pesado no regime primordial:
 
-$$ P_{T,m} \approx 0 $$
+$P_{T,m} \approx 0$
 
 Logo:
 
-r \approx r_{\text{inflaton-like}}
+$r \approx r_{\text{inflaton-like}}$
 
 Mas se m_T for pequeno:
 
@@ -162,7 +162,7 @@ Mas se m_T for pequeno:
 
 No regime tardio, a presença de m_T altera propagação:
 
-$$ h_m \sim e^{-m_T t} $$
+$h_m \sim e^{-m_T t}$
 
 Portanto:
 
@@ -178,7 +178,7 @@ Isso pode afetar:
 
 Mas LIGO impõe limite:
 
-$$ m_T \lesssim 10^{-23}\,\text{eV} $$
+$m_T \lesssim 10^{-23}\,\text{eV}$
 
 Logo, a TDCP deve operar abaixo desse limite.
 

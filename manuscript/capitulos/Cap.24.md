@@ -8,7 +8,7 @@ Agora a teoria é compatível com:
 
 Conjunto mínimo de parâmetros cosmológicos:
 
-$$ \{\Omega_b,\Omega_c,H_0,A_s,n_s,\tau,\alpha_0,m_{S0},p,q\} $$
+$\{\Omega_b,\Omega_c,H_0,A_s,n_s,\tau,\alpha_0,m_{S0},p,q\}$
 
 **Conclusão do Capítulo 23**
 
@@ -42,7 +42,7 @@ Se quiser seguir: diga "Cap.24".
 
 **25.5 Matriz de Degenerescências Principais**
 
-$$ **1️⃣ \alpha_0 ↔ A_s** $$
+**1️⃣ \alpha_0 ↔ A_s**
 
 Aumento em \alpha_0 aumenta crescimento.
 
@@ -54,7 +54,7 @@ Quebra:
 
 - WL
 
-$$ **2️⃣ m_{S0} ↔ \sum m_\nu** $$
+**2️⃣ m_{S0} ↔ \sum m_\nu**
 
 Neutrinos suprimem crescimento em altas-k.
 
@@ -66,9 +66,9 @@ TDCP pode:
 
 Assinatura distintiva:
 
-\text{joelho escala-dependente em } f\sigma_8(k)
+$\text{joelho escala-dependente em } f\sigma_8(k)$
 
-$$ **3️⃣ p,q ↔ w_0-w_a** $$
+**3️⃣ p,q ↔ w_0-w_a**
 
 Evolução temporal pode imitar DE dinâmica.
 
@@ -86,13 +86,13 @@ Afeta WL mais que RSD.
 
 Com base nos capítulos anteriores:
 
-$$ - m_{S0} \sim 30--300 H_0 $$
+- $m_{S0} \sim 30--300 H_0$
 
-$$ - \alpha_0 \sim 0.1--0.5 $$
+- $\alpha_0 \sim 0.1--0.5$
 
-$$ - p \sim 0--1 $$
+- $p \sim 0--1$
 
-$$ - q \sim 0--1 $$
+- $q \sim 0--1$
 
 Região onde:
 
@@ -110,13 +110,13 @@ A TDCP-F1 pode ser falsificada se:
 
 1.  Não for possível reproduzir simultaneamente:
 
-$$ > C_\ell^{\phi\phi} \text{ e } f\sigma_8(z) $$
+$> C_\ell^{\phi\phi} \text{ e } f\sigma_8(z)$
 
 2.  O joelho escala-dependente não aparecer.
 
 3.  O ajuste exigir:
 
-$$ > \alpha_0 \to 0 $$
+$> \alpha_0 \to 0$
 >
 > consistentemente com todos os dados.
 
@@ -136,7 +136,7 @@ A TDCP-F1 agora:
 
 Isso significa:
 
-\boxed{ \text{A teoria está em nível de confronto observacional real.} }
+$$ \boxed{ \text{A teoria está em nível de confronto observacional real.} } $$
 
 **Próximo Movimento Científico Real**
 
@@ -150,7 +150,7 @@ Produzir constraints quantitativos.
 
 Encontrar relação fechada entre:
 
-$$ S_8 \text{ e } \alpha_0,m_{S0} $$
+$S_8 \text{ e } \alpha_0,m_{S0}$
 
 **Caminho C --- Publicação técnica estruturada**
 

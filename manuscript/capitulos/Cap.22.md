@@ -1,10 +1,10 @@
 Diagnóstico importante:
 
-\boxed{ \text{TDCP pode imitar } w_0-w_a \text{ ou massa de neutrinos.} }
+$$ \boxed{ \text{TDCP pode imitar } w_0-w_a \text{ ou massa de neutrinos.} } $$
 
 Isso significa que o ajuste global precisa incluir:
 
-$$ \{\Omega_m, H_0, \sigma_8, w_0, w_a, \sum m_\nu\} $$
+$\{\Omega_m, H_0, \sigma_8, w_0, w_a, \sum m_\nu\}$
 
 para evitar falso positivo.
 
@@ -22,7 +22,7 @@ com integração numérica.
 
 Implementar:
 
-$$ \mu(k,a),\quad \Sigma(k,a) $$
+$\mu(k,a),\quad \Sigma(k,a)$
 
 no solver de crescimento.
 
@@ -30,13 +30,13 @@ no solver de crescimento.
 
 Calcular:
 
-$$ - f\sigma_8(z) $$
+- $f\sigma_8(z)$
 
 - P(k,z)
 
-$$ - D_V(z) $$
+- $D_V(z)$
 
-$$ - P_\kappa(l) $$
+- $P_\kappa(l)$
 
 **Etapa 4 --- Likelihood modular**
 
@@ -46,11 +46,11 @@ $$ \mathcal L = \mathcal L_{BAO}\times \mathcal L_{RSD}\times \mathcal L_{WL} $$
 
 Com base nos capítulos anteriores:
 
-$$ m_{S0} \sim 30--300\,H_0 $$
+$m_{S0} \sim 30--300\,H_0$
 
-$$ \alpha_0 \sim 0.1--1 $$
+$\alpha_0 \sim 0.1--1$
 
-$$ p,q \sim \mathcal{O}(1) $$
+$p,q \sim \mathcal{O}(1)$
 
 Isso garante:
 
@@ -64,7 +64,7 @@ Isso garante:
 
 O sinal característico da TDCP-F1 é:
 
-\boxed{ \text{Joelho escala-dependente em } f\sigma_8(k) }
+$\boxed{ \text{Joelho escala-dependente em } f\sigma_8(k) }$
 
 Isso é distintivo comparado a:
 
@@ -74,7 +74,7 @@ Isso é distintivo comparado a:
 
 Portanto:
 
-\boxed{ \text{RSD escala-dependente é o teste mais limpo.} }
+$\boxed{ \text{RSD escala-dependente é o teste mais limpo.} }$
 
 **Conclusão do Capítulo 22**
 

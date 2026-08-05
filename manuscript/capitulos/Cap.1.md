@@ -44,7 +44,7 @@ E não sabemos o que são.
 
 A equação central da gravidade moderna é:
 
-$$ G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu} $$
+$G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$
 
 onde:
 
@@ -56,7 +56,7 @@ onde:
 
 No modelo ΛCDM, a aceleração cósmica é explicada por:
 
-$$ \rho_\Lambda = \frac{\Lambda}{8\pi G} $$
+$\rho_\Lambda = \frac{\Lambda}{8\pi G}$
 
 com equação de estado:
 
@@ -160,7 +160,7 @@ eram dois modos complementares de um mesmo estado primordial.
 
 Chamaremos esses modos de:
 
-$$ \Phi_1 \quad \text{e} \quad \Phi_2. $$
+$\Phi_1 \quad \text{e} \quad \Phi_2.$
 
 Podemos construir combinações simétrica e antissimétrica:
 
@@ -168,7 +168,7 @@ $$ \Phi_+ = \frac{\Phi_1 + \Phi_2}{\sqrt{2}}, \quad \Phi_- = \frac{\Phi_1 - \Phi
 
 Se o potencial efetivo satisfizer:
 
-$$ m_-^2 = \left.\frac{d^2 V}{d\Phi_-^2}\right|_0 \< 0, $$
+$m_-^2 = \left.\frac{d^2 V}{d\Phi_-^2}\right|_0 < 0,$
 
 o estado simétrico é instável.
 
@@ -208,17 +208,17 @@ Se as expansões não foram simultâneas, então há uma diferença dinâmica ac
 
 Podemos representá-la por uma variável estrutural \eta:
 
-$$ \dot{\eta} = \Gamma (H_1 - H_2)^2, $$
+$\dot{\eta} = \Gamma (H_1 - H_2)^2,$
 
 onde H_1 e H_2 são as taxas de expansão associadas aos dois setores.
 
 Essa diferença acumulada pode modificar a dinâmica cosmológica efetiva:
 
-$$ H^2 = \frac{8\pi G}{3} \frac{\rho}{1 - \eta}. $$
+$H^2 = \frac{8\pi G}{3} \frac{\rho}{1 - \eta}.$
 
 Para \eta \ll 1:
 
-$$ \frac{1}{1 - \eta} \approx 1 + \eta + \eta^2 + \dots $$
+$\frac{1}{1 - \eta} \approx 1 + \eta + \eta^2 + \dots$
 
 A aceleração não é um termo imposto.
 
@@ -228,7 +228,7 @@ Ela emerge como amplificação estrutural.
 
 Se dois regimes evoluem com defasagem, o tempo medido internamente pode ser entendido como:
 
-$$ T(x^\mu) = f(H_1 - H_2). $$
+$T(x^\mu) = f(H_1 - H_2).$
 
 O tempo deixa de ser apenas coordenada.
 

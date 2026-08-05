@@ -20,7 +20,7 @@ Mas quando estudamos formação de estrutura --- galáxias, aglomerados, filamen
 
 Nesse regime (sub-horizonte, velocidades pequenas, potenciais fracos), a dinâmica gravítica se resume a algo familiar:
 
-$$ \nabla^2 \Phi = 4\pi G a^2 \rho\,\delta $$
+$\nabla^2 \Phi = 4\pi G a^2 \rho\,\delta$
 
 onde:
 
@@ -42,7 +42,7 @@ E essa mudança é exatamente onde a TDCP pode se manifestar observacionalmente 
 
 No regime de crescimento de estruturas em escalas menores que o horizonte:
 
-$$ k \gg aH $$
+$k \gg aH$
 
 e para muitos modelos cosmológicos, as perturbações relevantes satisfazem:
 
@@ -54,7 +54,7 @@ Essa aproximação é chamada limite quase-estático.
 
 Formalmente, adotamos:
 
-$$ \left|\dot{X}\right| \ll \left|\frac{k}{a}X\right| $$
+$\left|\dot{X}\right| \ll \left|\frac{k}{a}X\right|$
 
 para variáveis escalares perturbadas X.
 
@@ -76,7 +76,7 @@ As duas funções \Phi e \Psi são fundamentais:
 
 Na GR padrão, para matéria sem anisotropia:
 
-$$ \Phi = \Psi. $$
+$\Phi = \Psi.$
 
 Na TDCP, isso pode deixar de ser verdade.
 
@@ -86,7 +86,7 @@ E isso é observável.
 
 Do Capítulo 6, sabemos que o setor escalar reduzido pode ser representado por graus físicos:
 
-$$ \mathbf{Q} = (\zeta,\ \sigma,\ \delta\phi) $$
+$\mathbf{Q} = (\zeta,\ \sigma,\ \delta\phi)$
 
 onde:
 
@@ -110,15 +110,15 @@ Isso leva a uma equação de Poisson modificada.
 
 A forma mais útil (e observacionalmente padrão) é definir uma constante gravitacional efetiva dependente de escala:
 
-$$ k^2\Psi = -4\pi G a^2 \mu(k,a)\,\rho\,\delta $$
+$k^2\Psi = -4\pi G a^2 \mu(k,a)\,\rho\,\delta$
 
 e um parâmetro de deslizamento (gravitational slip):
 
-\eta_{\text{slip}}(k,a) \equiv \frac{\Phi}{\Psi}.
+$\eta_{\text{slip}}(k,a) \equiv \frac{\Phi}{\Psi}.$
 
 Na GR:
 
-\mu = 1,\qquad \eta_{\text{slip}} = 1.
+$\mu = 1,\qquad \eta_{\text{slip}} = 1.$
 
 Na TDCP:
 
@@ -200,11 +200,11 @@ Nesse ponto, filosofia e matemática se encontram:
 
 Na presença de um modo escalar extra, geralmente surge:
 
-$$ \Phi \neq \Psi. $$
+$\Phi \neq \Psi.$
 
 A relação pode ser parametrizada por:
 
-\eta_{\text{slip}}(k,a) = \frac{1+\Pi_1(k,a)}{1+\Pi_2(k,a)}
+$\eta_{\text{slip}}(k,a) = \frac{1+\Pi_1(k,a)}{1+\Pi_2(k,a)}$
 
 com \Pi_i funções de acoplamento e massas efetivas.
 
@@ -226,11 +226,11 @@ Agora fechamos o ciclo:
 
 O Capítulo 7 só é válido se as condições do Capítulo 6 forem satisfeitas:
 
-- \mathbf{K}\>0  (sem fantasma)
+- \mathbf{K}>0  (sem fantasma)
 
-- c_s^2\>0 (sem gradiente)
+- c_s^2>0 (sem gradiente)
 
-- m^2\>0 no regime tardio (sem taquion)
+- m^2>0 no regime tardio (sem taquion)
 
 - Higuchi m_T^2\ge 2H^2
 
@@ -246,11 +246,11 @@ Concluímos:
 
 1.  A TDCP prevê uma gravidade efetiva:
 
-$$ > G \to G_{\text{eff}}(k,a)=G\mu(k,a) $$
+$> G \to G_{\text{eff}}(k,a)=G\mu(k,a)$
 
 2.  A teoria prevê possível slip:
 
-$$ > \Phi\neq\Psi $$
+$> \Phi\neq\Psi$
 
 3.  O retorno a GR ocorre naturalmente em escalas pequenas.
 

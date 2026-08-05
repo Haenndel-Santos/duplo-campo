@@ -8,7 +8,7 @@ Agora a teoria é compatível com:
 
 Conjunto mínimo de parâmetros cosmológicos:
 
-$$ \{\Omega_b,\Omega_c,H_0,A_s,n_s,\tau,\alpha_0,m_{S0},p,q\} $$
+$\{\Omega_b,\Omega_c,H_0,A_s,n_s,\tau,\alpha_0,m_{S0},p,q\}$
 
 **Conclusão do Capítulo 23**
 
