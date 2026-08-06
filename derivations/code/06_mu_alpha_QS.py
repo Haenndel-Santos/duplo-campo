@@ -179,11 +179,14 @@ def analyze_benchmark(eqs_qs, fields, delta, label, fh_forms):
     # gauge Newtoniano imposto NAS EQUACOES (nao na acao): B_g=E_g=0
     Bg, Eg = fields[1], fields[3]
     eqs_n = [sp.expand(e.subs(vnum).subs({Bg: 0, Eg: 0})) for e in eqs_qs]
-    # equacoes de vinculo: Phi_g(00-g), B_g(0i-g), E_g(ij-sem-traco-g),
-    # Phi_f(00-f), B_f(0i-f), E_f(ij-sem-traco-f), dchi(campo);
-    # reservas: Psi_g, Psi_f (dinamicas, redundantes no QS exato)
-    prim = [eqs_n[i] for i in (0, 1, 3, 4, 6, 7, 8)]
-    resv = [eqs_n[i] for i in (2, 5)]
+    # potenciais resolvidos com {00-g, ij-sem-traco-g} + setor f completo
+    # {00-f, trace-f, 0i-f, ij-sem-traco-f} + campo (dchi). A equacao de
+    # momento do setor g (B_g) NAO entra: ela e fonteada pela velocidade
+    # da materia (descartada no limite estatico) e serve para determinar
+    # v, nao os potenciais — inclui-la impunha Phi=3Psi espurio no GR.
+    # Reservas: Psi_g (trace-g), B_g (momento-g).
+    prim = [eqs_n[i] for i in (0, 3, 4, 5, 6, 7, 8)]
+    resv = [eqs_n[i] for i in (2, 1)]
     unknowns = [fields[i] for i in (0, 2, 4, 5, 6, 7, 8)]
     S = solve_qs(prim, resv, unknowns, label)
     S[Bg] = sp.Integer(0)
