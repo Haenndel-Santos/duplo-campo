@@ -1,23 +1,30 @@
 # -*- coding: utf-8 -*-
 """
-06_mu_alpha_QS.py — Derivacao 6 (plano P6.1–P6.6).
+06_mu_alpha_QS.py — Derivacao 6 (plano P6.1–P6.6), v2.
 
 Deriva mu(k,a), eta_slip(k,a) e Sigma(k,a) EXATOS no limite
 quase-estatico (QS), a partir do mesmo setor escalar do script 01,
 acrescentando a fonte de materia fria delta-rho no vinculo de Phi_g
-(acoplamento minimo ao setor g: L_src = -a^3 drho Phi_g, do termo
+(acoplamento minimo ao setor g: L_src = -a^3 drho Phi_g /2, do termo
 (1/2) sqrt(-g) dT^{00} dg_{00} com dT^{00} = drho, dg_00 = -2 Phi_g).
 
-Limite QS implementado por contagem de ordens: todas as velocidades das
-perturbacoes -> 0 e grandezas de fundo tipo-H (H, H_f, chidot, xidot)
-marcadas como pequenas frente a k/a e as massas de interacao m^2 F
-(que sao mantidas — e exatamente isso que gera a estrutura Yukawa).
+Limite QS: velocidades das perturbacoes -> 0; grandezas de fundo
+tipo-H (H, H_f, chidot, xidot) marcadas pequenas frente a k/a e as
+massas de interacao m^2 F (mantidas — sao elas que geram a estrutura
+tipo-Yukawa).
 
-Confrontos (P6.6): forma exata vs ansatz de 1 polo do Cap.18 §18.3;
+MODO SEMI-NUMERICO (padrao): o fundo do benchmark e substituido nas
+equacoes QS ANTES do solve, mantendo k E m^2 simbolicos — m^2 fica
+simbolico para que a calibracao GR (mu == 1 quando m^2 -> 0, com fundo
+congelado) seja exata. Roda nos dois benchmarks (r < r_star e
+r > r_star) para sondar a dependencia em r de alpha(a).
+
+Confrontos (P6.6): forma exata vs ansatz de 1 polo (Cap.18 §18.3);
 numero de polos (Cap.7 §7.6 antecipa 2); alpha(a) derivado vs
 alpha_0 r^2/(1+r^2) (Cap.18 §18.4); eta_slip vs Cap.18 §18.7.
 
-Uso:  python 06_mu_alpha_QS.py    (saida em out/06_output.txt)
+Uso:  python 06_mu_alpha_QS.py    (saida em out/06_output.txt;
+      formas exatas em out/06_matrices.txt)
 """
 import os
 import time
@@ -33,10 +40,12 @@ from tdcp_pert_lib import (eps, t, k, a_s, b_s, xi_s, H_s, Hf_s,
                            make_bg_functions, substitute_bg_functions,
                            background_onshell_rules, onshell, benchmark)
 
+SEMI_NUMERIC = True
+
 OUT = []
 T0 = time.time()
-drho = sp.Symbol('drho')          # perturbacao de densidade de materia
-small = sp.Symbol('s_QS')         # contador de ordem QS
+drho = sp.Symbol('drho')
+small = sp.Symbol('s_QS')
 
 
 def say(*args):
@@ -45,14 +54,8 @@ def say(*args):
     OUT.append(line)
 
 
-def main():
-    say("=" * 70)
-    say("DERIVACAO 6 — mu(k,a), eta_slip, Sigma exatos no limite QS")
-    say("=" * 70)
-
-    # ------------------------------------------------------------------
-    # [1] mesma L2 do script 01 + fonte de materia
-    # ------------------------------------------------------------------
+def build_qs_equations():
+    """L2 + fonte de materia -> equacoes QS simbolicas (uma vez)."""
     Phi_g = sp.Function('Phi_g')(t)
     Psi_g = sp.Function('Psi_g')(t)
     Phi_f = sp.Function('Phi_f')(t)
@@ -76,189 +79,193 @@ def main():
     L2 = z_average(eps_part(Ltot, 2))
     L2s, fields, vels = symbolize(L2, funcs, bg_rules)
 
-    PhiG, PsiG, PhiF, PsiF, Bf_, Ef_, Dchi = fields
-
-    # fonte de materia (mesmo fator 1/2 da media em z dos quadraticos)
+    PhiG = fields[0]
     L2s = L2s - a_s**3 * drho * PhiG / 2
     say("[1] L2 com fonte:", len(L2s.args), "termos")
 
-    # ------------------------------------------------------------------
-    # [2] equacoes QS: dL/dX com todas as velocidades -> 0
-    # ------------------------------------------------------------------
     say("[2] montando equacoes quase-estaticas ...")
     zero_vel = {v: 0 for v in vels}
-    eqs = []
-    for X in fields:
-        E_X = sp.expand(sp.diff(L2s, X).subs(zero_vel))
-        eqs.append(E_X)
+    eqs = [sp.expand(sp.diff(L2s, X).subs(zero_vel)) for X in fields]
 
-    # ------------------------------------------------------------------
-    # [3] on-shell + contagem de ordens QS
-    # ------------------------------------------------------------------
     say("[3] impondo fundo on-shell e contagem QS ...")
     R = background_onshell_rules()
-
-    def qs_reduce(e):
+    eqs_qs = []
+    for X, e in zip(fields, eqs):
         e = onshell(e, R)
         e = e.subs(rho_s, 0)
         e = sp.expand(e.subs({H_s: small * H_s, Hf_s: small * Hf_s,
-                              chid_s: small * chid_s, xid_s: small * xid_s}))
-        # ordem dominante: s_QS^0
-        return sp.expand(e.coeff(small, 0))
+                              chid_s: small * chid_s,
+                              xid_s: small * xid_s}))
+        e = sp.expand(e.coeff(small, 0))
+        eqs_qs.append(e)
+        say(f"   eq {X}: {len(e.args) if e != 0 else 0} termos QS")
+    return eqs_qs, fields
 
-    eqs_qs = []
-    for i, e in enumerate(eqs):
-        eq = qs_reduce(e)
-        eqs_qs.append(eq)
-        say(f"   eq {fields[i]}: {len(sp.expand(eq).args) if eq != 0 else 0} termos QS")
 
-    # ------------------------------------------------------------------
-    # [4] resolver o sistema linear algebraico (LUsolve explicito)
-    # ------------------------------------------------------------------
-    say("[4] resolvendo sistema QS (algebra linear explicita) ...")
-    unknowns = [PhiG, PsiG, PhiF, PsiF, Bf_, Ef_, Dchi]
-    nontrivial = [e for e in eqs_qs if e != 0]
-    say("   equacoes nao triviais:", len(nontrivial))
+def solve_qs(eqs, unknowns, label):
+    """linear_eq_to_matrix + LUsolve, com deteccao de colunas nulas."""
+    nontrivial = [e for e in eqs if e != 0]
+    say(f"[{label}] equacoes nao triviais: {len(nontrivial)}")
     A, rhs = sp.linear_eq_to_matrix(nontrivial, unknowns)
     A = A.applyfunc(lambda e: sp.cancel(sp.together(e)))
     rhs = rhs.applyfunc(lambda e: sp.cancel(sp.together(e)))
 
-    # colunas identicamente nulas = variaveis que decaem do sistema QS
-    # (tipicamente B_f, que so entra com derivadas temporais)
-    keep_cols = []
-    dropped = []
+    keep_cols, dropped = [], []
     for j, X in enumerate(unknowns):
         if all(sp.cancel(A[i, j]) == 0 for i in range(A.shape[0])):
             dropped.append(X)
         else:
             keep_cols.append(j)
     if dropped:
-        say("   variaveis que decaem do sistema QS (postas a 0):", dropped)
+        say(f"[{label}] variaveis que decaem do QS (postas a 0): {dropped}")
     Ak = A[:, keep_cols]
     kept = [unknowns[j] for j in keep_cols]
-
-    # remove equacoes identicamente nulas apos o corte
     keep_rows = [i for i in range(Ak.shape[0])
                  if any(sp.cancel(Ak[i, j]) != 0 for j in range(Ak.shape[1]))
                  or sp.cancel(rhs[i]) != 0]
     Ak = Ak[keep_rows, :]
     rk = rhs[keep_rows, :]
-    say(f"   sistema final: {Ak.shape[0]} eqs x {Ak.shape[1]} incognitas")
-    assert Ak.shape[0] == Ak.shape[1], "sistema QS nao quadrado apos corte"
-
+    say(f"[{label}] sistema final: {Ak.shape[0]} eqs x {Ak.shape[1]} inc.")
+    assert Ak.shape[0] == Ak.shape[1], "sistema QS nao quadrado"
     xsol = Ak.LUsolve(rk)
     xsol = xsol.applyfunc(lambda e: sp.cancel(sp.together(e)))
     S = dict(zip(kept, xsol))
     for X in dropped:
         S[X] = sp.Integer(0)
-    say("   resolvido para:", [str(x) for x in kept])
+    return S
 
-    PhiG_sol = sp.cancel(sp.together(S[PhiG]))
-    PsiG_sol = sp.cancel(sp.together(S[PsiG]))
 
-    # ------------------------------------------------------------------
-    # [5] mu, eta_slip, Sigma — calibrados pelo limite GR (m2 -> 0)
-    # ------------------------------------------------------------------
-    say("[5] montando mu(k,a), eta_slip(k,a), Sigma(k,a) ...")
-    respPhi = sp.cancel(PhiG_sol / drho)
-    respPsi = sp.cancel(PsiG_sol / drho)
-
-    respPhi_GR = sp.limit(respPhi, m2, 0)
-    respPsi_GR = sp.limit(respPsi, m2, 0)
-    say("   resposta GR (m2->0):  k^2 Phi_g/drho =",
-        sp.simplify(respPhi_GR * k**2))
-    say("                          k^2 Psi_g/drho =",
-        sp.simplify(respPsi_GR * k**2))
-    gr_ok = sp.simplify(respPhi_GR - respPsi_GR) == 0
-    say("   Phi = Psi no limite GR?", gr_ok)
-    say("   Poisson GR: k^2 Psi = -a^2 drho/(2 Mg^2)?",
-        sp.simplify(respPsi_GR * k**2 + a_s**2 / (2 * Mg2)) == 0)
-
-    mu_exact = sp.cancel(sp.together(respPhi / respPhi_GR))
-    eta_slip = sp.cancel(sp.together(PsiG_sol / PhiG_sol))
-    Sigma = sp.cancel(sp.together((respPhi + respPsi) / (respPhi_GR + respPsi_GR)))
-
+def analyze_benchmark(eqs_qs, fields, delta, label, fh_forms):
+    """Substitui o fundo (exceto m2), resolve e extrai mu/slip/Sigma."""
+    vb = benchmark(sp.Rational(delta[0], delta[1]))
+    vb[Ub] = vb[Ub] + vb[rho_s]
+    vb[rho_s] = sp.Integer(0)
+    vnum = {s: val for s, val in vb.items() if s is not m2}
+    rv = sp.nsimplify(vb[b_s] / vb[a_s])
     say("")
-    say("mu(k,a) exato [pot. temporal Phi_g, que governa o crescimento]:")
-    say("  ", sp.simplify(mu_exact))
-    say("")
-    say("eta_slip(k,a) = Psi_g/Phi_g exato:")
-    say("  ", sp.simplify(eta_slip))
-    say("")
-    say("Sigma(k,a) exato [lensing, (Phi+Psi)/2 normalizado]:")
-    say("  ", sp.simplify(Sigma))
+    say(f"===== {label}: r = {rv} = {float(rv):.4f}, "
+        f"xi = {float(vb[xi_s]):.4f} =====")
 
-    # ------------------------------------------------------------------
-    # [6] estrutura de polos em k^2 e confronto com o ansatz Yukawa
-    # ------------------------------------------------------------------
-    say("")
-    say("[6] estrutura de polos em k^2 ...")
-    K2sym = sp.Symbol('K2', positive=True)
-    mu_k = sp.cancel(mu_exact.subs(k**2, K2sym))
-    num, den = sp.fraction(sp.cancel(sp.together(mu_k)))
-    deg_num = sp.degree(sp.Poly(num, K2sym))
-    deg_den = sp.degree(sp.Poly(den, K2sym))
-    say(f"   mu como funcao racional de k^2: grau num = {deg_num}, "
-        f"grau den = {deg_den}")
-    polos = sp.solve(sp.Eq(den, 0), K2sym)
-    say("   numero de polos em k^2:", len(polos))
-    say("   (1 polo => forma Yukawa do Cap.18 §18.3;")
-    say("    2 polos => forma de dois mediadores do Cap.7 §7.6)")
-    apart_mu = sp.apart(mu_k, K2sym, full=False)
-    say("   fracoes parciais:")
-    say("   ", apart_mu)
+    eqs_n = [sp.expand(e.subs(vnum)) for e in eqs_qs]
+    S = solve_qs(eqs_n, list(fields), label)
 
-    # limite k -> infinito: mu_inf = 1 + alpha(a)
-    mu_inf = sp.limit(mu_k, K2sym, sp.oo)
-    alpha_derived = sp.simplify(mu_inf - 1)
-    say("")
-    say("   mu(k->oo) = 1 + alpha(a) com alpha(a) derivado =")
-    say("   ", alpha_derived)
-    rr = b_s / a_s
-    alpha_cap18 = (Mf2 * rr**2 / Mg2) / (1 + Mf2 * rr**2 / Mg2)
-    say("   comparacao Cap.18 §18.4 (alpha ~ eps^2/(1+eps^2), eps=Mf r/Mg):")
-    say("   alpha_derivado - alpha_Cap18 =",
-        sp.simplify(alpha_derived - alpha_cap18))
+    PhiG, PsiG = fields[0], fields[1]
+    respPhi = sp.cancel(sp.together(S[PhiG] / drho))
+    respPsi = sp.cancel(sp.together(S[PsiG] / drho))
 
-    # massas dos polos: m_i^2 = -a^2 * polo (Yukawa: k^2/a^2 + m^2)
-    say("")
-    for i, p in enumerate(polos):
-        mp2 = sp.simplify(-p / a_s**2 * a_s**2)  # polo em k^2; massa^2 = -polo/a^2*a^2
-        say(f"   polo {i+1}: k^2 = {sp.simplify(p)}")
-        say(f"            => m^2(a) a^2 = {sp.simplify(-p)}")
+    # calibracao GR: m2 -> 0 com fundo congelado
+    respPhi_GR = sp.cancel(sp.limit(respPhi, m2, 0))
+    respPsi_GR = sp.cancel(sp.limit(respPsi, m2, 0))
+    say(f"[{label}] resposta GR (m2->0): k^2 Phi/drho =",
+        sp.nsimplify(sp.cancel(respPhi_GR * k**2), rational=True))
+    say(f"[{label}]                      k^2 Psi/drho =",
+        sp.nsimplify(sp.cancel(respPsi_GR * k**2), rational=True))
+    Mg2n = vb[Mg2]
+    a2n = vb[a_s]**2
+    poisson_ok = sp.cancel(respPsi_GR * k**2 + a2n / (2 * Mg2n)) == 0
+    slip_gr_ok = sp.cancel(respPhi_GR - respPsi_GR) == 0
+    say(f"[{label}] Poisson GR (k^2 Psi = -a^2 drho/(2Mg^2))? {poisson_ok}")
+    say(f"[{label}] Phi = Psi no limite GR? {slip_gr_ok}")
 
-    with open("out/06_matrices.txt", "w", encoding="utf-8") as fh:
-        fh.write("mu(k,a) exato:\n" + sp.srepr(mu_exact) + "\n\nlatex:\n"
-                 + sp.latex(sp.simplify(mu_exact)) + "\n\n")
-        fh.write("eta_slip:\n" + sp.srepr(eta_slip) + "\n\nlatex:\n"
-                 + sp.latex(sp.simplify(eta_slip)) + "\n\n")
-        fh.write("Sigma:\n" + sp.srepr(Sigma) + "\n\nlatex:\n"
-                 + sp.latex(sp.simplify(Sigma)) + "\n")
+    mu_m = sp.cancel(sp.together(respPhi / respPhi_GR))
+    slip_m = sp.cancel(sp.together(S[PsiG] / S[PhiG]))
+    Sig_m = sp.cancel(sp.together((respPhi + respPsi)
+                                  / (respPhi_GR + respPsi_GR)))
 
-    # ------------------------------------------------------------------
-    # [7] avaliacao numerica no benchmark
-    # ------------------------------------------------------------------
-    say("")
-    say("[7] benchmark numerico (F1, r fora da raiz por -4%):")
-    v = benchmark()
-    v[Ub] = v[Ub] + v[rho_s]
-    v[rho_s] = sp.Integer(0)
-    say("   r =", sp.nsimplify(v[b_s] / v[a_s]), " xi =", float(v[xi_s]))
-    say("   k/aH        mu          eta_slip     Sigma")
+    fh_forms.write(f"\n\n===== {label} =====\n")
+    fh_forms.write("mu(k, m2) [fundo benchmark]:\n"
+                   + sp.latex(mu_m) + "\n")
+    fh_forms.write("eta_slip(k, m2):\n" + sp.latex(slip_m) + "\n")
+    fh_forms.write("Sigma(k, m2):\n" + sp.latex(Sig_m) + "\n")
+
+    # com m2 do benchmark: estrutura de polos em k^2
+    mu_k = sp.cancel(mu_m.subs(m2, vb[m2]))
+    slip_k = sp.cancel(slip_m.subs(m2, vb[m2]))
+    Sig_k = sp.cancel(Sig_m.subs(m2, vb[m2]))
+
+    K2 = sp.Symbol('K2')
+    mu_K = sp.cancel(mu_k.subs(k**2, K2))
+    num, den = sp.fraction(sp.together(mu_K))
+    try:
+        dn = sp.degree(sp.Poly(num, K2))
+        dd = sp.degree(sp.Poly(den, K2))
+        say(f"[{label}] mu racional em k^2: grau num = {dn}, den = {dd}")
+        polos = sp.nroots(sp.Poly(den, K2)) if dd > 0 else []
+        say(f"[{label}] polos em k^2: "
+            + str([complex(p) for p in polos]))
+        say(f"[{label}] (1 polo = ansatz Yukawa Cap.18 §18.3; "
+            "2 polos = dois mediadores Cap.7 §7.6)")
+        say(f"[{label}] massas: m_i^2 a^2 = -polo => "
+            + str([complex(-p) for p in polos]))
+        apart_mu = sp.apart(mu_K, K2)
+        say(f"[{label}] fracoes parciais: {apart_mu}")
+    except Exception as ex:
+        say(f"[{label}] [!] analise de polos: {repr(ex)[:80]}")
+
+    mu_inf = sp.limit(mu_k, k, sp.oo)
+    alpha_der = float(sp.N(mu_inf - 1))
+    e2 = float(vb[Mf2] * rv**2 / vb[Mg2])
+    alpha_c18 = e2 / (1 + e2)
+    say(f"[{label}] alpha derivado = mu(oo)-1 = {alpha_der:+.6f}")
+    say(f"[{label}] alpha Cap.18 §18.4 (eps^2/(1+eps^2), eps=Mf r/Mg) "
+        f"= {alpha_c18:+.6f}")
+
+    say(f"[{label}]   k       mu          eta_slip     Sigma")
     for kv in (0.01, 0.1, 1, 10, 100, 1000):
         try:
-            muv = complex(sp.N(mu_exact.subs(v).subs(k, kv))).real
-            slv = complex(sp.N(eta_slip.subs(v).subs(k, kv))).real
-            sgv = complex(sp.N(Sigma.subs(v).subs(k, kv))).real
-            say(f"   {kv:8.2f}  {muv:+10.6f}  {slv:+10.6f}  {sgv:+10.6f}")
+            muv = float(sp.N(mu_k.subs(k, kv)))
+            slv = float(sp.N(slip_k.subs(k, kv)))
+            sgv = float(sp.N(Sig_k.subs(k, kv)))
+            say(f"[{label}]  {kv:7.2f}  {muv:+10.6f}  {slv:+10.6f}"
+                f"  {sgv:+10.6f}")
         except Exception as ex:
-            say(f"   {kv:8.2f}  [!] {repr(ex)}")
+            say(f"[{label}]  {kv:7.2f}  [!] {repr(ex)[:60]}")
+    return dict(mu=mu_m, slip=slip_m, Sigma=Sig_m, alpha=alpha_der,
+                alpha_c18=alpha_c18, r=float(rv))
+
+
+def main():
+    say("=" * 70)
+    say("DERIVACAO 6 — mu(k,a), eta_slip, Sigma exatos no limite QS (v2)")
+    say("    modo:", "SEMI-NUMERICO (fundo benchmark; k e m2 simbolicos)"
+        if SEMI_NUMERIC else "SIMBOLICO COMPLETO")
+    say("=" * 70)
+
+    eqs_qs, fields = build_qs_equations()
 
     os.makedirs("out", exist_ok=True)
+    fh_forms = open("out/06_matrices.txt", "w", encoding="utf-8")
+
+    if SEMI_NUMERIC:
+        resA = analyze_benchmark(eqs_qs, fields, (1, 25),
+                                 "bench A (r<r_star)", fh_forms)
+        resB = analyze_benchmark(eqs_qs, fields, (-1, 25),
+                                 "bench B (r>r_star)", fh_forms)
+        say("")
+        say("Sondagem da dependencia em r de alpha(a) (P6.6):")
+        say(f"  r = {resA['r']:.4f}: alpha_der = {resA['alpha']:+.6f}  "
+            f"vs Cap.18: {resA['alpha_c18']:+.6f}")
+        say(f"  r = {resB['r']:.4f}: alpha_der = {resB['alpha']:+.6f}  "
+            f"vs Cap.18: {resB['alpha_c18']:+.6f}")
+        say("")
+        say("Leitura: numero de polos decide Yukawa-1-polo vs 2 polos;")
+        say("alpha derivado vs alpha_0 r^2/(1+r^2) decide §18.4; a coluna")
+        say("eta_slip decide §18.7. Formas exatas (m2 simbolico) em")
+        say("out/06_matrices.txt.")
+    else:
+        vb = None
+        S = solve_qs(eqs_qs, list(fields), "simbolico")
+        PhiG, PsiG = fields[0], fields[1]
+        respPhi = sp.cancel(sp.together(S[PhiG] / drho))
+        respPhi_GR = sp.cancel(sp.limit(respPhi, m2, 0))
+        mu_m = sp.cancel(sp.together(respPhi / respPhi_GR))
+        fh_forms.write("mu(k,a) simbolico:\n" + sp.latex(mu_m) + "\n")
+        say("mu simbolico salvo em out/06_matrices.txt")
+
+    fh_forms.close()
     with open("out/06_output.txt", "w", encoding="utf-8") as fh:
         fh.write("\n".join(OUT))
-    say("\nconcluido. saida em out/06_output.txt; formas exatas em "
-        "out/06_matrices.txt")
+    say("\nconcluido. saida em out/06_output.txt")
 
 
 if __name__ == '__main__':
