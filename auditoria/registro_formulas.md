@@ -134,4 +134,31 @@ entram com flag `sem-delimitador`; equações dentro de citação, com flag
 | Lote 8 — Anexos C+D / AC+AD (43 eqs) | **feito** — `lotes/lote_08_AC-AD.md` (35 CONFERE, 4 SOB HIPÓTESE, 3 ERRO, 1 NÃO-DERIVÁVEL) |
 | Lote 9 — Anexo E / AE (57 eqs) | **feito** — `lotes/lote_09_AE.md` (43 CONFERE, 2 SOB HIPÓTESE, 1 CONFLITA, 7 ERRO DE CÁLCULO, 1 INCOMPLETA, 1 NÃO-DERIVÁVEL, 2 ARTEFATO) |
 | Lote 10 — Anexos F+G+H (39 eqs) | **feito** — `lotes/lote_10_AF-AG-AH.md` (29 CONFERE, 3 SOB HIPÓTESE, 2 ERRO DE CÁLCULO, 3 INCOMPLETA, 2 NÃO-DERIVÁVEL) |
-| Lotes seguintes — Anexos AI–AL (na ordem I→L; linha exploratória, sem âncora D1–D8) | pendente |
+| Lote 11 — Anexos I+J+K (38 eqs; AL tem 0) | **feito** — `lotes/lote_11_AI-AJ-AK-AL.md` (19 CONFERE, 4 SOB HIPÓTESE, 10 NÃO-DERIVÁVEL, 4 CONFLITA) |
+
+**AUDITORIA SEQUENCIAL CONCLUÍDA em 2026-08-06 — 856/856 equações com
+veredito, zero pendências.** Distribuição global:
+
+| Veredito | Qtde | % |
+|---|---|---|
+| CONFERE | 599 | 70,0% |
+| CONFERE SOB HIPÓTESE | 75 | 8,8% |
+| ERRO (76) + DE CÁLCULO (27) + DE FORMULAÇÃO (12) | 115 | 13,4% |
+| INCOMPLETA | 21 | 2,5% |
+| NÃO-DERIVÁVEL | 20 | 2,3% |
+| ARTEFATO DE CONVERSÃO | 18 | 2,1% |
+| POSTULADO registrado | 4 | 0,5% |
+| CONFLITA COM (isolado) | 4 | 0,5% |
+
+Os 13,4% de erro concentram-se de forma desigual: Cap.16 (15/28),
+Cap.18 (32/48) e o cluster do "ramo dinâmico" do Cap.14 (11 equações
+encadeadas) respondem por mais da metade de todos os erros do corpus —
+quase todos derivando de três raízes únicas já com correção fechada
+pelas âncoras (m_T² sem ξ / D2; ansatz Yukawa de 1 polo / D6;
+constraint trocada no ramo dinâmico / D5).
+
+**Próximo passo natural** (quando o usuário pedir): passe de correção
+do manuscrito, aplicando as correções propostas nos vereditos. Uma
+pendência de verificação permanece em aberto: rodar
+`auditoria/code/lote05_C22_galileon_stability.py` (sympy) para decidir
+as fórmulas Z_t/Z_r/Z_Ω do Cap.22 §22.5.
