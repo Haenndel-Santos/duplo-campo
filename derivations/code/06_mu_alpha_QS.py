@@ -179,14 +179,17 @@ def analyze_benchmark(eqs_qs, fields, delta, label, fh_forms):
     # gauge Newtoniano imposto NAS EQUACOES (nao na acao): B_g=E_g=0
     Bg, Eg = fields[1], fields[3]
     eqs_n = [sp.expand(e.subs(vnum).subs({Bg: 0, Eg: 0})) for e in eqs_qs]
-    # potenciais resolvidos com {00-g, ij-sem-traco-g} + setor f completo
-    # {00-f, trace-f, 0i-f, ij-sem-traco-f} + campo (dchi). A equacao de
-    # momento do setor g (B_g) NAO entra: ela e fonteada pela velocidade
-    # da materia (descartada no limite estatico) e serve para determinar
-    # v, nao os potenciais — inclui-la impunha Phi=3Psi espurio no GR.
-    # Reservas: Psi_g (trace-g), B_g (momento-g).
-    prim = [eqs_n[i] for i in (0, 3, 4, 5, 6, 7, 8)]
-    resv = [eqs_n[i] for i in (2, 1)]
+    # SELECAO VALIDADA POR SONDAGEM (2026-08-06, todas as candidatas
+    # testadas com calibracao GR): bloco g COMPLETO {00, traco,
+    # sem-traco} + {00-f, 0i-f, sem-traco-f} + campo (dchi).
+    # A equacao de momento do setor g (B_g) NAO entra: e fonteada pela
+    # velocidade da materia (descartada no estatico) — inclui-la impoe
+    # Phi=3Psi espurio. A redundancia estatica fica no bloco f
+    # (trace-f descartada; variantes D/F tambem passam na calibracao).
+    # Conjuntos sobredeterminados (8 eqs) sao inconsistentes na
+    # truncagem estatica, como esperado.
+    prim = [eqs_n[i] for i in (0, 2, 3, 4, 6, 7, 8)]
+    resv = [eqs_n[i] for i in (5, 1)]
     unknowns = [fields[i] for i in (0, 2, 4, 5, 6, 7, 8)]
     S = solve_qs(prim, resv, unknowns, label)
     S[Bg] = sp.Integer(0)
