@@ -1,0 +1,148 @@
+======================================================================
+DERIVACAO 2 — setor tensorial TT: acao quadratica e m_T^2
+======================================================================
+
+[1/5] expandindo EH do setor g ...
+[2/5] expandindo EH do setor f ...
+[3/5] expandindo potencial HR (sqrt matricial + e_n) ...
+[4/5] extraindo matrizes K, C, W ...
+
+--- RESULTADO (por polarizacao; media em z inclui fator 1/2) ---
+K (cinetica; L2 = 1/2 qdot K qdot + ... , q=(h,l)):
+[       3          ]
+[M_g^2*a           ]
+[--------     0    ]
+[   4              ]
+[                  ]
+[                 3]
+[          M_f^2*b ]
+[   0      --------]
+[            4*xi  ]
+
+C antissimetrica (giroscopica; deve ser 0):
+[0  0]
+[    ]
+[0  0]
+
+[4b/5] derivando eqs. de aceleracao do fundo e impondo on-shell ...
+   Hdot  (eq. aceleracao g) = (4*Fbar*M_eff^2*a*b*m^2*(beta_1 + beta_2*xi) + 2*Fbar*M_eff^2*b**2*m^2*(beta_2 + beta_3*xi) - 6*H**2*M_g^2*a**2 + a**2*(2*Fbar*M_eff^2*beta_0*m^2 + 2*Fbar*M_eff^2*beta_1*m^2*xi + 2*Ubar - chidot**2))/(4*M_g^2*a**2)
+   Hfdot (eq. aceleracao f) = (Fbar*M_eff^2*a**2*m^2*(beta_1 + beta_2*xi) + 2*Fbar*M_eff^2*a*b*m^2*(beta_2 + beta_3*xi) + Fbar*M_eff^2*b**2*m^2*(beta_3 + beta_4*xi) - 3*H_f**2*M_f^2*b**2*xi)/(2*M_f^2*b**2)
+
+W_eff on-shell (massa+gradiente; L2 contem -1/2 q W_eff q):
+[  /                                                                           >
+[a*\Fbar*M_eff^2*a*b*beta_1*m^2 + Fbar*M_eff^2*a*b*beta_2*m^2*xi + Fbar*M_eff^ >
+[----------------------------------------------------------------------------- >
+[                                                                   4          >
+[                                                                              >
+[                                                                              >
+[                                Fbar*M_eff^2*a*b*m^2*(-a*beta_1 - a*beta_2*xi >
+[                                --------------------------------------------- >
+[                                                                   4          >
+
+>    2                            2                        2\                  >
+> 2*b *beta_2*m^2 + Fbar*M_eff^2*b *beta_3*m^2*xi + M_g^2*k /                  >
+> -----------------------------------------------------------                  >
+>                                                                              >
+>                                                                              >
+>                                                                /             >
+>  - b*beta_2 - b*beta_3*xi)                                   b*\Fbar*M_eff^2 >
+> --------------------------                                   --------------- >
+>                                                                              >
+
+>                                                                              >
+>                    Fbar*M_eff^2*a*b*m^2*(-a*beta_1 - a*beta_2*xi - b*beta_2  >
+>                    --------------------------------------------------------- >
+>                                                       4                      >
+>                                                                              >
+>   2                            2                                             >
+> *a *beta_1*m^2 + Fbar*M_eff^2*a *beta_2*m^2*xi + Fbar*M_eff^2*a*b*beta_2*m^2 >
+> ---------------------------------------------------------------------------- >
+>                                                       4                      >
+
+>                                                 ]
+> - b*beta_3*xi)                                  ]
+> --------------                                  ]
+>                                                 ]
+>                                                 ]
+>                                            2   \]
+>  + Fbar*M_eff^2*a*b*beta_3*m^2*xi + M_f^2*k *xi/]
+> ------------------------------------------------]
+>                                                 ]
+
+W_eff e polinomial em k^2 (residuo 0)? True
+
+G (coef. de k^2):
+[M_g^2*a            ]
+[-------      0     ]
+[   4               ]
+[                   ]
+[         M_f^2*b*xi]
+[   0     ----------]
+[             4     ]
+
+M (parte de massa, on-shell):
+[Fbar*M_eff^2*a*b*m^2*(a*beta_1 + a*beta_2*xi + b*beta_2 + b*beta_3*xi)   Fbar >
+[----------------------------------------------------------------------   ---- >
+[                                  4                                           >
+[                                                                              >
+[Fbar*M_eff^2*a*b*m^2*(-a*beta_1 - a*beta_2*xi - b*beta_2 - b*beta_3*xi)  Fbar >
+[-----------------------------------------------------------------------  ---- >
+[                                   4                                          >
+
+> *M_eff^2*a*b*m^2*(-a*beta_1 - a*beta_2*xi - b*beta_2 - b*beta_3*xi)]
+> -------------------------------------------------------------------]
+>                                4                                   ]
+>                                                                    ]
+> *M_eff^2*a*b*m^2*(a*beta_1 + a*beta_2*xi + b*beta_2 + b*beta_3*xi) ]
+> ------------------------------------------------------------------ ]
+>                               4                                    ]
+
+--- (i) CINETICO DO SETOR f ---
+K_ll / K_hh = M_f^2*b**3/(M_g^2*a**3*xi)   [com r=b/a]
+igual a (Mf2/Mg2) r^2      (Cap.16 §16.2)? False
+igual a (Mf2/Mg2) r^3/xi   (Anexo D §D.3)? True
+
+c_g^2 = 1    c_f^2 = a**2*xi**2/b**2   [normalizados a k^2/a^2]
+(Anexo D preve c_f^2 = xi^2 a^2/b^2 = xi^2/r^2: True )
+
+--- (ii) ESTRUTURA DO TERMO DE MASSA ---
+M_hh = Fbar*M_eff^2*a*b*m^2*(a*beta_1 + a*beta_2*xi + b*beta_2 + b*beta_3*xi)/4
+M_hl = Fbar*M_eff^2*a*b*m^2*(-a*beta_1 - a*beta_2*xi - b*beta_2 - b*beta_3*xi)/4
+M_ll = Fbar*M_eff^2*a*b*m^2*(a*beta_1 + a*beta_2*xi + b*beta_2 + b*beta_3*xi)/4
+proporcional exatamente a (h-l)^2 ? True
+
+--- (iii) COEFICIENTE DE MISTURA ---
+m_mix^2 (derivado) = Fbar*M_eff^2*b*m^2*(a*beta_1 + a*beta_2*xi + b*beta_2 + b*beta_3*xi)/(2*a**2)
+claim Cap.16 §16.2:  m2 Meff2 F (beta1 r + 2 beta2 r^2)
+m_mix^2derivado - claim = Fbar*M_eff^2*b*m^2*(-a*beta_1 + a*beta_2*xi - 3*b*beta_2 + b*beta_3*xi)/(2*a**2)
+depende de xi? True
+depende de beta3/beta4? True
+no limite xi -> r:  m_mix^2 - claim = Fbar*M_eff^2*b*m^2*(-a*(a*beta_1 + 2*b*beta_2) + b**2*beta_3)/(2*a**3)
+no limite xi -> 1:  m_mix^2 - claim = Fbar*M_eff^2*b*m^2*(-a*beta_1 + a*beta_2 - 3*b*beta_2 + b*beta_3)/(2*a**2)
+
+--- MASSAS FISICAS (autovalores de K^-1 M) ---
+autovalores (multiplicidade):
+   Fbar*M_eff^2*m^2*(M_f^2*b**3 + M_g^2*a**3*xi)*(a*beta_1 + a*beta_2*xi + b*beta_2 + b*beta_3*xi)/(M_f^2*M_g^2*a**2*b**2)  x 1
+   0  x 1
+
+m_T^2 (exato) = Fbar*M_eff^2*m^2*(M_f^2*b**3 + M_g^2*a**3*xi)*(a*beta_1 + a*beta_2*xi + b*beta_2 + b*beta_3*xi)/(M_f^2*M_g^2*a**2*b**2)
+
+m_T^2 em LaTeX:
+\frac{\bar{F} M^{2}_{eff} m^{2} \left(M^{2}_{f} b^{3} + M^{2}_{g} a^{3} \xi\right) \left(a \beta_{1} + a \beta_{2} \xi + b \beta_{2} + b \beta_{3} \xi\right)}{M^{2}_{f} M^{2}_{g} a^{2} b^{2}}
+
+claim Cap.16 §16.4: m2 F (Meff2/Mg2)(beta1 r + 2 beta2 r^2)
+m_T^2 - claim = Fbar*M_eff^2*m^2*(-M_f^2*b**3*(a*beta_1 + 2*b*beta_2) + (M_f^2*b**3 + M_g^2*a**3*xi)*(a*beta_1 + a*beta_2*xi + b*beta_2 + b*beta_3*xi))/(M_f^2*M_g^2*a**2*b**2)
+
+fator de escala: m_T^2 / [m2 Meff2 F * (coef. beta)] =
+2/M_g^2 + 2*a**3*xi/(M_f^2*b**3)
+
+det(M) = 0  (0 => existe modo massless)
+
+--- BENCHMARK NUMERICO (fundo consistente, r ligeiramente fora da raiz) ---
+r = 6/5  xi = 3.496629104486151  H = 1.0  H_f = 0.2859897261385278
+K numerica = [0.25, 0.123547561691844]  (off-diag: 0.0 )
+autovalores de K^-1 M no benchmark: [(-3.187936764183249+0j), 0j]
+m_T^2 benchmark = -3.187936764183249
+2H^2 = 2.0   -> Higuchi satisfeito? False
+
+[5/5] concluido.

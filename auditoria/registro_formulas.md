@@ -34,12 +34,25 @@ heurística textual e são **sugestões a confirmar**.
 · `NÃO-DERIVÁVEL (o que falta)` · `CONFLITA COM [ID]` ·
 `ARTEFATO DE CONVERSÃO`
 
-## Âncoras já auditadas (Derivações 1–8)
+## Âncoras já auditadas (Derivações 1–8, TODAS concluídas em 2026-08-06)
 
 As fórmulas cobertas pelas derivações do diretório `derivations/`
-apontam para lá em vez de refazer: D3 (ρ_int/regra da cadeia),
-D4 (Friedmann com 1/(1−η)), D5 (ṙ no ramo dinâmico), D2 (setor
-tensorial), D7 (modo σ_k), D1/D6/D8 (em andamento).
+apontam para lá em vez de refazer. Vereditos-âncora (detalhes e
+propostas de correção em `derivations/00_indice.md`):
+
+| Âncora | Fórmulas do registro afetadas | Veredito |
+|---|---|---|
+| D1 (`01_setor_escalar_K_Omega.md`) | Cap.15 §15.4/§15.5 (no-ghost e m_S²), Cap.6.2 §6.4/§6.6–6.8, Anexo C §C.3/§C.7/§C.10/§C.11 | claims §15.4/§15.5 **ERRO**; contagem 3 confirmada; §C.11 sem suporte |
+| D2 (`02_setor_tensorial_mT2.md`) | Cap.16 §16.2/§16.4/§16.6, Anexo D §D.3/§D.5, Cap.17 (cadeias EFT) | Cap.16 **ERRO** (cinético e massa sem ξ); Anexo D §D.3 **CONFERE** |
+| D3 (`03_dV_dNg_regra_cadeia.md`) | Anexo A §A.8, Anexo B §B.5 | A.8 **CONFERE**; B.5 **ERRO DE CÁLCULO** (regra da cadeia) |
+| D4 (`04_friedmann_eta_acao.md`) | Cap.1 §1.6, Cap.2, Anexo E §E.7, Anexo H §H.6 | **NÃO-DERIVÁVEL** da ação atual (postulado/extensão) |
+| D5 (`05_rdot_ramo_dinamico.md`) | Cap.14 §14.11–14.14, Cap.5, Cap.13 §13.6 | ṙ≡0 **DERIVADO**; §14.12 **ERRO** (condição trocada) |
+| D6 (`06_mu_alpha_quase_estatico.md`) | Cap.18 §18.3/§18.4/§18.7, Cap.7 §7.6 | ansatz Yukawa/α/η_slip **ERRO** (multi-polo, α_∞=0) |
+| D7 (`07_modo_sigma_bessel.md`) | Cap.10 §10.3 | **CONFERE SOB HIPÓTESE** (\|m²\|≪H²; expoente geral k^(−ν)) |
+| D8 (`08_mS0_dinamica_F.md`) | Cap.19 §19.3, benchmarks B1/B2 | **NÃO-DERIVÁVEL** (design observacional; pressuposto refutado) |
+
+Erratum transversal: sinal da fonte na eq. de χ (Anexo E §E.3(3)) — a
+ação dá −m²M_eff²F′V.
 
 ## Estatísticas
 

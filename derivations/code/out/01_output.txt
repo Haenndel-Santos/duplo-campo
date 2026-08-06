@@ -1,0 +1,53 @@
+======================================================================
+DERIVACAO 1 — setor escalar (v5, QEP numerico por k)
+    gauge: flat-g (Psi_g=E_g=0; multiplicadores mantidos)
+======================================================================
+
+[GR] auto-teste: GR + chi, gauge plano — meta: 1 modo, c_s^2 = 1
+[GR] modos por k: {0.1: 1, 1.0: 1, 10.0: 1, 100.0: 1}
+[GR] omega^2(k) = [0.7219, 1.7119, 100.7119, 10000.7119]
+[GR] c_s^2 (fit) = +1.000000  [meta +1.0]
+[GR] APROVADO
+[1a] EH setor g (Gamma-Gamma) ...
+[1b] EH setor f (Gamma-Gamma) ...
+[1c] potencial HR (sqrt de Sylvester + e_n) ...
+[1d] setor chi ...
+[1e] extraindo ordem eps^2 e mediando em z ...
+     L2 simbolizada: 248 termos, 7 campos
+[2] blocos simbolicos 7x7 (K, C, W) ...
+    matrizes simbolicas salvas em out/01_matrices.txt
+
+--- benchmark A (ramo dinamico, r < r_star): r = 1.2000, xi = 3.4966, beta1+2*beta2*r = +0.0400 ---
+  k=   0.10: 3 modo(s) | w2=+7.0647e-01 kN=+5.36e-05, w2=-8.7864e+00 (imag!) kN=-7.50e-06, w2=-8.7864e+00 (imag!) kN=-7.50e-06
+  k=   1.00: 3 modo(s) | w2=+1.8579e+00 kN=+1.35e-01, w2=+4.0932e+00 (imag!) kN=-2.83e-02, w2=+4.0932e+00 (imag!) kN=-2.83e-02
+  k=  10.00: 3 modo(s) | w2=+1.0088e+02 kN=+4.58e-01, w2=+8.4503e+02 (imag!) kN=-6.39e-04, w2=+8.4503e+02 (imag!) kN=-6.39e-04
+  k= 100.00: 3 modo(s) | w2=+1.0001e+04 kN=+4.59e-01, w2=+8.4902e+04 (imag!) kN=-6.48e-06, w2=+8.4902e+04 (imag!) kN=-6.48e-06
+    modo 1: c_s^2 = +1.000000, m^2 = +0.88062, kinetic-sign = +   [claim m_S^2 = +0.04000]
+    modo 2: c_s^2 = +8.490566, m^2 = -4.02838, kinetic-sign = -   [claim m_S^2 = +0.04000]
+    modo 3: c_s^2 = +8.490566, m^2 = -4.02838, kinetic-sign = -   [claim m_S^2 = +0.04000]
+
+--- benchmark B (ramo dinamico, r > r_star): r = 1.3000, xi = 3.4985, beta1+2*beta2*r = -0.0400 ---
+  k=   0.10: 3 modo(s) | w2=+6.8435e-01 kN=+7.66e-05, w2=-8.7035e+00 (imag!) kN=-5.82e-06, w2=-8.7035e+00 (imag!) kN=-5.82e-06
+  k=   1.00: 3 modo(s) | w2=+1.9351e+00 kN=+1.11e-01, w2=+3.6710e+00 (imag!) kN=-1.52e-03, w2=+3.6710e+00 (imag!) kN=-1.52e-03
+  k=  10.00: 3 modo(s) | w2=+1.0090e+02 kN=+4.58e-01, w2=+7.2028e+02 (imag!) kN=-9.77e-04, w2=+7.2028e+02 (imag!) kN=-9.77e-04
+  k= 100.00: 3 modo(s) | w2=+1.0001e+04 kN=+4.59e-01, w2=+7.2419e+04 (imag!) kN=-9.91e-06, w2=+7.2419e+04 (imag!) kN=-9.91e-06
+    modo 1: c_s^2 = +1.000000, m^2 = +0.90355, kinetic-sign = +   [claim m_S^2 = -0.04000]
+    modo 2: c_s^2 = +7.242339, m^2 = -3.95343, kinetic-sign = -   [claim m_S^2 = -0.04000]
+    modo 3: c_s^2 = +7.242339, m^2 = -3.95343, kinetic-sign = -   [claim m_S^2 = -0.04000]
+
+--- benchmark C (ramo algebrico: r = r_star exato, xi = 1): r = 1.2500, xi = 1.0000, beta1+2*beta2*r = +0.0000 ---
+  k=   0.10: 3 modo(s) | w2=+8.4198e-01 kN=+1.75e-05, w2=-5.4560e-01 (imag!) kN=-1.20e-18, w2=-5.4560e-01 (imag!) kN=-1.20e-18
+  k=   1.00: 3 modo(s) | w2=+8.8000e-02 (imag!) kN=+2.79e-17, w2=+8.8000e-02 (imag!) kN=+2.79e-17, w2=+1.8320e+00 kN=+1.24e-01
+  k=  10.00: 3 modo(s) | w2=+6.3448e+01 (imag!) kN=+3.11e-16, w2=+6.3448e+01 (imag!) kN=+3.11e-16, w2=+1.0083e+02 kN=+4.58e-01
+  k= 100.00: 3 modo(s) | w2=+6.3994e+03 (imag!) kN=+2.51e-16, w2=+6.3994e+03 (imag!) kN=+2.51e-16, w2=+1.0001e+04 kN=+4.59e-01
+    modo 1: c_s^2 = +0.640000, m^2 = -0.55200, kinetic-sign = +   [claim m_S^2 = +0.00000]
+    modo 2: c_s^2 = +0.640000, m^2 = -0.55200, kinetic-sign = +   [claim m_S^2 = +0.00000]
+    modo 3: c_s^2 = +1.000000, m^2 = +0.83198, kinetic-sign = +   [claim m_S^2 = +0.00000]
+
+Leitura (P1.9–P1.12):
+- CONTAGEM de modos finitos decide Cap.6.2 §6.4 (3) vs Anexo C (2);
+- kinetic-sign negativo em algum modo = ghost; comparar A (fator>0)
+  vs B (fator<0) testa a claim do Cap.15 §15.4;
+- m^2 do modo relativo vs claim m2*F*(beta1+2b2r) testa §15.5;
+- caveat: fundo quase-de Sitter congelado (Hdot=Hfdot=xidot=0);
+- w2 com parte imaginaria = instabilidade (reportada).
