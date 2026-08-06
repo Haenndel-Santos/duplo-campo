@@ -166,7 +166,8 @@ def espectro_por_k(K, C, W, vb, label, claim=None):
         pares.sort(key=lambda m: abs(m['omega2']))
         resultados[kv] = pares
         desc = ", ".join(
-            f"w2={m['omega2'].real:+.4e}{'' if abs(m['omega2'].imag) < 1e-8 else ' (imag!)'}"
+            f"w2={m['omega2'].real:+.4e}"
+            f"{'' if abs(m['omega2'].imag) < 1e-6 * max(1.0, abs(m['omega2'].real)) else ' (imag!)'}"
             f" kN={m['knorm']:+.2e}" for m in pares)
         say(f"  k={kv:7.2f}: {len(pares)} modo(s) | {desc}")
     # fit c^2 e m^2 por modo com os dois maiores k
@@ -255,16 +256,27 @@ def main():
                      + sp.latex(M) + "\n\n")
     say("    matrizes simbolicas salvas em out/01_matrices.txt")
 
-    for delta, label in ((sp.Rational(1, 25), "benchmark A (r < r_star)"),
-                         (sp.Rational(-1, 25), "benchmark B (r > r_star)")):
+    for delta, xi_override, label in (
+            (sp.Rational(1, 25), None,
+             "benchmark A (ramo dinamico, r < r_star)"),
+            (sp.Rational(-1, 25), None,
+             "benchmark B (ramo dinamico, r > r_star)"),
+            (sp.Integer(0), sp.Integer(1),
+             "benchmark C (ramo algebrico: r = r_star exato, xi = 1)")):
         vb = benchmark(delta)
         vb[Ub] = vb[Ub] + vb[rho_s]
         vb[rho_s] = sp.Integer(0)
+        if xi_override is not None:
+            # ramo algebrico: Bianchi e satisfeita pelo fator polinomial
+            # (beta1+2*beta2*r_star=0), entao xi fica livre — teste de
+            # controle p/ saber se o par fantasma e especifico do ramo
+            # dinamico (xi = H/H_f)
+            vb[xi_s] = xi_override
         rv = float(vb[b_s] / vb[a_s])
         fac = float((b1 + 2 * b2 * (b_s / a_s)).subs(vb))
         claim = float((m2 * Fb).subs(vb)) * fac
         espectro_por_k(K7, C7, W7, vb,
-                       f"{label}: r = {rv:.4f}, "
+                       f"{label}: r = {rv:.4f}, xi = {float(vb[xi_s]):.4f}, "
                        f"beta1+2*beta2*r = {fac:+.4f}", claim)
 
     say("")
