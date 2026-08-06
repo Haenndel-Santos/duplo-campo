@@ -11,17 +11,14 @@ Setor escalar completo da TDCP bimetrica em k finito, do zero:
 Escopo: vacuo + chi (sem perturbacoes de materia — plano A2; materia
 entra na Derivacao 6). Materia de fundo posta a zero (rho_m = 0).
 
-Pipeline:
-  [1] L2 total, media em z, simbolizacao;
-  [2] remocao por partes de velocidades lineares dos auxiliares;
-  [3] eliminacao algebrica de Phi_g, Phi_f, B_f (3 constraints);
-  [4] on-shell (aceleracoes g/f, Friedmann g/f, eq. de chi);
-  [5] K4/C4/W4 -> posto de K4 (esperado 2, achado A1: so em k finito);
-  [6] reducao a 2 modos via espaco nulo de K4;
-  [7] K2, W2_eff finais + condicoes no-ghost/no-gradient/massa
-      + confronto com as claims do Cap.15 §15.4/§15.5 e Cap.6.2.
+REDUCAO POR COMPLEMENTO DE SCHUR (matricial): a Lagrangiana quadratica
+e representada pelos blocos (K, C, W) 7x7,
+    L2 = 1/2 qdot^T K qdot + qdot^T C q - 1/2 q^T W q,
+e cada eliminacao (auxiliares Phi_g, Phi_f, B_f; depois as direcoes
+nulas de K) e feita por algebra de blocos com cancel() — nunca por
+substituicao em expressao expandida (que explode em memoria).
 
-Uso:  python 01_setor_escalar_K_Omega.py    (saida em out/01_output.txt;
+Uso:  python 01_setor_escalar_K_Omega.py   (saida em out/01_output.txt;
       matrizes completas em out/01_matrices.txt)
 """
 import os
@@ -35,10 +32,10 @@ from tdcp_pert_lib import (eps, t, k, a_s, b_s, xi_s, H_s, Hf_s,
                            interaction_lagrangian, chi_lagrangian,
                            scalar_metric_g, scalar_metric_f,
                            z_average, symbolize, quadratic_matrices,
-                           effective_mass_matrix, dt_background,
                            make_bg_functions, substitute_bg_functions,
                            background_onshell_rules, onshell,
-                           eliminate_auxiliaries, benchmark)
+                           schur_eliminate, transform_basis,
+                           matrix_ipp_row, dt_background, benchmark)
 
 OUT = []
 T0 = time.time()
@@ -50,49 +47,8 @@ def say(*args):
     OUT.append(line)
 
 
-def dt_total(expr, fields, vels):
-    """d/dt de uma expressao simbolizada: fundo + campos + velocidades."""
-    out = dt_background(expr)
-    for f, v in zip(fields, vels):
-        d = sp.diff(expr, f)
-        if d != 0:
-            out += d * v
-    # velocidades -> aceleracoes nao devem aparecer (checado pelo caller)
-    return sp.expand(out)
-
-
-def ipp_remove_velocity(L, X, fields, vels):
-    """
-    Remove Xdot de L por integracao por partes (L quadratica):
-      A*Xdot com A = alpha_j q_j + beta*X  ->  -alphadot_j q_j X
-                                               - alpha_j qdot_j X
-                                               - (betadot/2) X^2
-    Exige que A nao contenha nenhuma velocidade (senao X e dinamico).
-    """
-    Xdot = sp.Symbol(str(X) + 'dot')
-    A = sp.expand(sp.diff(L, Xdot))
-    if A == 0:
-        return L
-    for v in vels:
-        if sp.expand(sp.diff(A, v)) != 0:
-            raise RuntimeError(f"{X}: coeficiente de {Xdot} contem {v} — "
-                               "variavel nao e auxiliar")
-    beta = sp.expand(sp.diff(A, X))
-    if sp.expand(sp.diff(beta, X)) != 0:
-        raise RuntimeError("estrutura nao-quadratica inesperada")
-    Aother = sp.expand(A - beta * X)
-    repl = -(dt_background(beta) / 2) * X**2
-    for f, v in zip(fields, vels):
-        cf = sp.expand(sp.diff(Aother, f))
-        if cf != 0:
-            repl += -(dt_background(cf) * f + cf * v) * X
-    # termo independente de campos em A (nao deve existir em L quadratica)
-    A0 = Aother
-    for f in fields:
-        A0 = A0.subs(f, 0)
-    if sp.expand(A0) != 0:
-        raise RuntimeError(f"{X}: termo A0 de fundo em coeficiente de {Xdot}")
-    return sp.expand(L - A * Xdot + repl)
+def cancelM(M):
+    return M.applyfunc(lambda e: sp.cancel(sp.together(e)))
 
 
 def main():
@@ -113,7 +69,6 @@ def main():
     funcs = [Phi_g, Psi_g, Phi_f, Psi_f, B_f, E_f, dchi]
 
     aF, bF, xiF, bg_rules = make_bg_functions()
-
     g = substitute_bg_functions(scalar_metric_g(Phi_g, Psi_g), aF, bF, xiF)
     f = substitute_bg_functions(scalar_metric_f(Phi_f, Psi_f, B_f, E_f),
                                 aF, bF, xiF)
@@ -133,153 +88,154 @@ def main():
     say(f"[1e] L2 simbolizada: {len(L2s.args)} termos")
 
     PhiG, PsiG, PhiF, PsiF, Bf_, Ef_, Dchi = fields
+    names = [str(x) for x in fields]
 
     # ------------------------------------------------------------------
-    # [2] velocidades dos auxiliares (se lineares, remover por partes)
+    # [2] blocos K7, C7, W7
     # ------------------------------------------------------------------
-    aux = [PhiG, PhiF, Bf_]
-    for X in aux:
-        Xdot = sp.Symbol(str(X) + 'dot')
-        if L2s.has(Xdot):
-            say(f"[2] removendo {Xdot} por integracao por partes ...")
-            L2s = ipp_remove_velocity(L2s, X, fields, vels)
-    say("[2] velocidades de Phi_g, Phi_f, B_f ausentes:",
-        all(not L2s.has(sp.Symbol(str(X) + 'dot')) for X in aux))
+    say("[2] extraindo blocos K7, C7, W7 ...")
+    K7, C7, W7 = quadratic_matrices(L2s, fields, vels)
+    K7, C7, W7 = cancelM(K7), cancelM(C7), cancelM(W7)
+
+    idx_aux = [names.index('Phi_g'), names.index('Phi_f'),
+               names.index('B_f')]
+    # linhas K e C dos auxiliares devem ser nulas (sem velocidades);
+    # se C tiver linha nao nula, remover por partes matricialmente
+    for i in idx_aux:
+        row_nonzero = any(sp.cancel(C7[i, j]) != 0 for j in range(7))
+        if row_nonzero:
+            say(f"   removendo linha C de {names[i]} por partes ...")
+            K7, C7, W7 = matrix_ipp_row(K7, C7, W7, i)
+    say("   linhas K dos auxiliares nulas:",
+        all(sp.cancel(K7[i, j]) == 0 for i in idx_aux for j in range(7)))
 
     # ------------------------------------------------------------------
-    # [3] eliminacao das 3 constraints
+    # [3] Schur: elimina Phi_g, Phi_f, B_f
     # ------------------------------------------------------------------
-    say("[3] resolvendo constraints de Phi_g, Phi_f, B_f ...")
-    L2r, fields4, vels4, sol = eliminate_auxiliaries(L2s, fields, vels, aux)
-    say("    campos dinamicos restantes:", fields4)
+    say("[3] complemento de Schur (3 constraints) ...")
+    K4, C4, W4, idx_dyn = schur_eliminate(K7, C7, W7, idx_aux)
+    dyn_names = [names[i] for i in idx_dyn]
+    say("   campos dinamicos:", dyn_names)
 
     # ------------------------------------------------------------------
-    # [4] matrizes K4, C4, W4 e imposicao on-shell
+    # [4] on-shell
     # ------------------------------------------------------------------
-    say("[4] extraindo K4, C4, W4 ...")
-    K4, C4, W4 = quadratic_matrices(L2r, fields4, vels4)
-    W4eff, C4asym = effective_mass_matrix(W4, C4)
-
-    say("[4b] impondo equacoes de fundo (on-shell, rho_m=0) ...")
+    say("[4] impondo fundo on-shell (rho_m = 0) ...")
     R = background_onshell_rules()
 
     def osz(e):
-        return onshell(e, R).subs(rho_s, 0)
+        e = sp.expand(e)
+        e = e.subs({Hd_s: R['Hd'], Hfd_s: R['Hfd'], chidd_s: R['chidd']})
+        e = sp.expand(e).subs(Ub, R['Ub'])
+        e = sp.expand(e).subs(Hf_s**2, R['Hf2'])
+        return sp.cancel(sp.together(e.subs(rho_s, 0)))
 
     K4 = K4.applyfunc(osz)
-    W4eff = W4eff.applyfunc(osz)
-    C4asym = C4asym.applyfunc(osz)
+    C4 = C4.applyfunc(osz)
+    W4 = W4.applyfunc(osz)
 
     # ------------------------------------------------------------------
-    # [5] posto de K4 (numerico no benchmark, k generico)
+    # [5] posto de K4 e espaco nulo
     # ------------------------------------------------------------------
     v = benchmark()
-    v[Ub] = v[Ub] + v[rho_s]     # remove materia do benchmark
+    v[Ub] = v[Ub] + v[rho_s]
     v[rho_s] = sp.Integer(0)
-    # recomputa chiddot com a regra derivada da acao (sem materia nao muda)
     say("[5] benchmark: r =", sp.nsimplify(v[b_s] / v[a_s]),
         " xi =", float(v[xi_s]))
-
-    ranks = {}
-    for kval in (sp.Rational(1, 10), 1, 10):
+    for kval in (sp.Rational(1, 1000000), sp.Rational(1, 10), 1, 10):
         K4n = K4.subs(v).subs(k, kval)
-        ranks[kval] = K4n.rank()
-    say("    posto de K4 em k=0.1,1,10 (benchmark):", list(ranks.values()))
-    K4n0 = K4.subs(v).subs(k, sp.Rational(1, 1000000))
-    say("    posto de K4 em k=1e-6 (limite homogeneo, achado A1):",
-        K4n0.rank())
+        say(f"   posto de K4 em k={float(kval):g}: {K4n.rank()}")
 
     os.makedirs("out", exist_ok=True)
     with open("out/01_matrices.txt", "w", encoding="utf-8") as fh:
-        fh.write("K4 (apos constraints, on-shell):\n")
+        fh.write("Campos dinamicos (ordem): " + str(dyn_names) + "\n\n")
+        fh.write("K4 (apos Schur das constraints, on-shell):\n")
         fh.write(sp.srepr(K4) + "\n\nlatex:\n" + sp.latex(K4) + "\n\n")
-        fh.write("W4eff:\n" + sp.srepr(W4eff) + "\n\nlatex:\n"
-                 + sp.latex(W4eff) + "\n\n")
-        fh.write("C4 antissimetrica:\n" + sp.srepr(C4asym) + "\n")
-    say("    matrizes 4x4 completas salvas em out/01_matrices.txt")
+        fh.write("C4:\n" + sp.srepr(C4) + "\n\nlatex:\n" + sp.latex(C4) + "\n\n")
+        fh.write("W4:\n" + sp.srepr(W4) + "\n\nlatex:\n" + sp.latex(W4) + "\n")
+    say("   matrizes 4x4 salvas em out/01_matrices.txt")
 
-    # ------------------------------------------------------------------
-    # [6] reducao ao subespaco dinamico (espaco nulo de K4)
-    # ------------------------------------------------------------------
     say("[6] espaco nulo simbolico de K4 ...")
-    try:
-        K4s = K4.applyfunc(lambda e: sp.cancel(sp.together(e)))
-        ns = K4s.nullspace()
-        say("    dim(null K4) =", len(ns))
-    except Exception as ex:
-        ns = []
-        say("    [!] nullspace simbolico falhou:", repr(ex))
+    ns = K4.nullspace()
+    say("   dim(null K4) =", len(ns))
 
-    K2 = W2 = None
+    K2 = W2eff = C2 = None
     if len(ns) == 2:
-        # base: dois vetores unitarios com K-diagonal nao nula + nulos
-        diag_ok = [i for i in range(4)
-                   if sp.simplify(K4[i, i].subs(v).subs(k, 1)) != 0]
-        cols = []
-        for i in diag_ok:
+        ns = [n.applyfunc(lambda e: sp.cancel(sp.together(e))) for n in ns]
+        # normaliza cada vetor nulo pelo primeiro elemento nao nulo
+        for n_ in ns:
+            piv = next(x for x in n_ if sp.cancel(x) != 0)
+            for i in range(4):
+                n_[i] = sp.cancel(n_[i] / piv)
+        # escolhe 2 direcoes complementares (colunas unitarias)
+        chosen = []
+        for i in range(4):
             e_i = sp.zeros(4, 1)
             e_i[i] = 1
-            cols.append(e_i)
-            if len(cols) == 2:
+            Strial = sp.Matrix.hstack(*(chosen + [e_i] + ns))
+            if Strial.shape[1] == 4:
+                if sp.cancel(Strial.det().subs(v).subs(k, 1)) != 0:
+                    chosen.append(e_i)
+            elif len(chosen) < 2:
+                chosen.append(e_i)
+                continue
+            if len(chosen) == 2:
                 break
-        S = sp.Matrix.hstack(cols[0], cols[1],
-                             ns[0].applyfunc(sp.cancel),
-                             ns[1].applyfunc(sp.cancel))
-        detS = sp.simplify(S.det())
-        say("    det(S) =", detS, " (deve ser != 0)")
-        u = sp.symbols('u1 u2 u3 u4')
-        udot = sp.symbols('u1dot u2dot u3dot u4dot')
-        subs_q = {}
-        for i, q in enumerate(fields4):
-            expr_q = sum(S[i, j] * u[j] for j in range(4))
-            expr_qd = sum(S[i, j] * udot[j]
-                          + dt_background(S[i, j]) * u[j] for j in range(4))
-            subs_q[q] = expr_q
-            subs_q[sp.Symbol(str(q) + 'dot')] = expr_qd
-        L2u = sp.expand(L2r.subs(subs_q))
-        L2u = sp.expand(L2u.subs({Hd_s: R['Hd'], Hfd_s: R['Hfd'],
-                                  chidd_s: R['chidd']}).subs(Ub, R['Ub'])
-                        .subs(Hf_s**2, R['Hf2']).subs(rho_s, 0))
+        S = sp.Matrix.hstack(chosen[0], chosen[1], ns[0], ns[1])
+        say("   base escolhida: u1 =", dyn_names[list(chosen[0]).index(1)],
+            ", u2 =", dyn_names[list(chosen[1]).index(1)],
+            ", u3/u4 = direcoes nulas de K4")
+        detSn = sp.cancel(S.det().subs(v).subs(k, 1))
+        say("   det(S) no benchmark:", detSn, " (!= 0 ok)")
 
-        ulist, udlist = list(u), list(udot)
-        for X in (u[2], u[3]):
-            Xd = sp.Symbol(str(X) + 'dot')
-            if L2u.has(Xd):
-                say(f"    removendo {Xd} por partes ...")
-                L2u = ipp_remove_velocity(L2u, X, ulist, udlist)
-        say("[6b] eliminando u3, u4 (agora algebricos) ...")
-        L2f, fields2, vels2, _ = eliminate_auxiliaries(
-            L2u, ulist, udlist, [u[2], u[3]])
+        say("[6b] mudanca de base (matricial) ...")
+        Ku, Cu, Wu = transform_basis(K4, C4, W4, S)
+        Ku = Ku.applyfunc(osz)
+        Cu = Cu.applyfunc(osz)
+        Wu = Wu.applyfunc(osz)
 
-        say("[7] matrizes finais 2x2 ...")
-        K2, C2, W2 = quadratic_matrices(L2f, fields2, vels2)
-        W2eff, C2a = effective_mass_matrix(W2, C2)
+        # linhas 3,4 de Ku devem ser nulas por construcao
+        zero_ok = all(sp.cancel(Ku[i, j]) == 0
+                      for i in (2, 3) for j in range(4))
+        say("   linhas 3,4 de K_u nulas:", zero_ok)
+
+        for i in (2, 3):
+            if any(sp.cancel(Cu[i, j]) != 0 for j in range(4)):
+                say(f"   removendo linha C de u{i+1} por partes ...")
+                Ku, Cu, Wu = matrix_ipp_row(Ku, Cu, Wu, i)
+                Cu = Cu.applyfunc(osz)
+                Wu = Wu.applyfunc(osz)
+
+        say("[6c] Schur final (elimina u3, u4) ...")
+        K2, C2, W2, _ = schur_eliminate(Ku, Cu, Wu, [2, 3])
         K2 = K2.applyfunc(osz)
-        W2eff = W2eff.applyfunc(osz)
-        C2a = C2a.applyfunc(osz)
-        W2 = W2eff
+        C2 = C2.applyfunc(osz)
+        W2 = W2.applyfunc(osz)
+
+        # absorve a parte simetrica de C2 na massa: W_eff = W + d/dt C_sym
+        Csym = (C2 + C2.T) / 2
+        W2eff = cancelM(W2 + Csym.applyfunc(
+            lambda e: dt_background(e)).applyfunc(osz))
+        C2a = cancelM((C2 - C2.T) / 2)
 
         with open("out/01_matrices.txt", "a", encoding="utf-8") as fh:
-            fh.write("\n\nBase da reducao: q = S u, colunas de S:\n")
-            fh.write(sp.srepr(S) + "\n\nlatex:\n" + sp.latex(S) + "\n")
+            fh.write("\n\nBase: q = S u; S:\n" + sp.srepr(S) + "\n\nlatex:\n"
+                     + sp.latex(S) + "\n")
             fh.write("\nK2:\n" + sp.srepr(K2) + "\n\nlatex:\n"
                      + sp.latex(K2) + "\n")
-            fh.write("\nW2eff:\n" + sp.srepr(W2) + "\n\nlatex:\n"
-                     + sp.latex(W2) + "\n")
+            fh.write("\nW2eff:\n" + sp.srepr(W2eff) + "\n\nlatex:\n"
+                     + sp.latex(W2eff) + "\n")
             fh.write("\nC2 antissim:\n" + sp.srepr(C2a) + "\n")
-        say("    K2/W2eff salvas em out/01_matrices.txt")
-        say("    base fisica: u1 =", fields4[diag_ok[0]],
-            ", u2 =", fields4[diag_ok[1]],
-            " (com u3,u4 = direcoes nulas eliminadas)")
+        say("   K2/W2eff salvas em out/01_matrices.txt")
     else:
-        say("    [!] reducao simbolica nao concluida; segue analise 4x4")
+        say("   [!] dim(null) != 2 — analise segue com as matrizes 4x4")
 
     # ------------------------------------------------------------------
-    # [8] analise numerica: no-ghost, c_s^2, massas, claims
+    # [7] analise numerica: no-ghost, c_s^2, massas, claims
     # ------------------------------------------------------------------
     say("")
     say("=" * 70)
-    say("ANALISE NUMERICA NO BENCHMARK (vacuo+chi, F1: beta3=0)")
+    say("ANALISE NUMERICA (vacuo+chi, F1: beta3=0)")
     say("=" * 70)
 
     def numeric_report(delta, label):
@@ -290,34 +246,35 @@ def main():
         fac = float((b1 + 2 * b2 * (b_s / a_s)).subs(vb))
         say(f"\n--- {label}: r = {rv:.4f}, beta1+2*beta2*r = {fac:+.4f} ---")
         Ksrc = K2 if K2 is not None else K4
-        Wsrc = W2 if K2 is not None else W4eff
+        Wsrc = W2eff if K2 is not None else W4
+        say("  k        autovals K            omega^2 (K^-1 W)")
         for kv in (sp.Rational(1, 10), 1, 10, 100):
-            Kn = sp.N(Ksrc.subs(vb).subs(k, kv), 12)
-            Wn = sp.N(Wsrc.subs(vb).subs(k, kv), 12)
-            Kn = Kn.applyfunc(lambda x: complex(x).real)
-            Wn = Wn.applyfunc(lambda x: complex(x).real)
             try:
+                Kn = Ksrc.subs(vb).subs(k, kv)
+                Wn = Wsrc.subs(vb).subs(k, kv)
+                Kn = sp.Matrix(Kn.shape[0], Kn.shape[1],
+                               lambda i, j: sp.nsimplify(sp.N(Kn[i, j], 30)))
+                Wn = sp.Matrix(Wn.shape[0], Wn.shape[1],
+                               lambda i, j: sp.nsimplify(sp.N(Wn[i, j], 30)))
                 evK = sorted(complex(sp.N(e)).real for e in Kn.eigenvals())
-                disp = (Kn.inv() * Wn)
                 evD = sorted(complex(sp.N(e)).real
-                             for e in disp.eigenvals())
-                say(f"  k={float(kv):8.2f}: autovals K = "
-                    f"[{evK[0]:+.3e}, {evK[-1]:+.3e}]  "
-                    f"omega^2 = [{evD[0]:+.3e}, {evD[-1]:+.3e}]")
+                             for e in (Kn.inv() * Wn).eigenvals())
+                say(f"  {float(kv):7.2f}  [{evK[0]:+.4e}, {evK[-1]:+.4e}]"
+                    f"  [{evD[0]:+.4e}, {evD[-1]:+.4e}]")
             except Exception as ex:
-                say(f"  k={float(kv):8.2f}: [!] {repr(ex)}")
+                say(f"  {float(kv):7.2f}  [!] {repr(ex)[:80]}")
 
-    # dois lados da raiz r_star = 5/4 (claim: sinal de beta1+2 beta2 r
-    # decide ghost — P1.9/P1.12)
     numeric_report((1, 25), "benchmark A (r < r_star)")
     numeric_report((-1, 25), "benchmark B (r > r_star)")
 
     say("")
-    say("Interpretacao (P1.9–P1.12): comparar o sinal dos autovalores de K")
-    say("nos benchmarks A/B com o sinal de beta1+2*beta2*r; omega^2 em")
-    say("k grande da c_s^2*k^2/a^2 (gradiente) e em k pequeno as massas.")
-    say("Claims sob teste: Cap.15 §15.4 (no-ghost <-> beta1+2beta2 r>0),")
-    say("Cap.15 §15.5 (m_S^2 ~ m^2 F (beta1+2beta2 r)), Cap.6.2 §6.4.")
+    say("Leitura (P1.9–P1.12):")
+    say("- no-ghost: sinais dos autovalores de K nos benchmarks A/B vs")
+    say("  o sinal de beta1+2*beta2*r (claim Cap.15 §15.4);")
+    say("- gradiente: omega^2 ~ c_s^2 k^2/a^2 em k grande;")
+    say("- massas: omega^2 em k pequeno; comparar o modo relativo com")
+    say("  m^2 F (beta1+2*beta2*r) (claim Cap.15 §15.5);")
+    say("- contagem: posto de K4 (Cap.6.2 §6.4 diz 3 modos; Anexo C, 2).")
 
     with open("out/01_output.txt", "w", encoding="utf-8") as fh:
         fh.write("\n".join(OUT))

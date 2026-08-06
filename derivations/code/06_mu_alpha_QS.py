@@ -113,21 +113,45 @@ def main():
         say(f"   eq {fields[i]}: {len(sp.expand(eq).args) if eq != 0 else 0} termos QS")
 
     # ------------------------------------------------------------------
-    # [4] resolver o sistema linear algebraico
+    # [4] resolver o sistema linear algebraico (LUsolve explicito)
     # ------------------------------------------------------------------
-    say("[4] resolvendo sistema QS ...")
+    say("[4] resolvendo sistema QS (algebra linear explicita) ...")
     unknowns = [PhiG, PsiG, PhiF, PsiF, Bf_, Ef_, Dchi]
     nontrivial = [e for e in eqs_qs if e != 0]
     say("   equacoes nao triviais:", len(nontrivial))
-    sol = sp.solve(nontrivial, unknowns, dict=True)
-    if not sol:
-        # B_f pode decair do sistema QS (so entra com derivadas): tentar sem ele
-        say("   [!] sistema completo sem solucao unica; tentando sem B_f ...")
-        sol = sp.solve([e.subs(Bf_, 0) for e in nontrivial],
-                       [PhiG, PsiG, PhiF, PsiF, Ef_, Dchi], dict=True)
-    assert sol, "sistema QS nao resolvido"
-    S = sol[0]
-    say("   resolvido para:", list(S.keys()))
+    A, rhs = sp.linear_eq_to_matrix(nontrivial, unknowns)
+    A = A.applyfunc(lambda e: sp.cancel(sp.together(e)))
+    rhs = rhs.applyfunc(lambda e: sp.cancel(sp.together(e)))
+
+    # colunas identicamente nulas = variaveis que decaem do sistema QS
+    # (tipicamente B_f, que so entra com derivadas temporais)
+    keep_cols = []
+    dropped = []
+    for j, X in enumerate(unknowns):
+        if all(sp.cancel(A[i, j]) == 0 for i in range(A.shape[0])):
+            dropped.append(X)
+        else:
+            keep_cols.append(j)
+    if dropped:
+        say("   variaveis que decaem do sistema QS (postas a 0):", dropped)
+    Ak = A[:, keep_cols]
+    kept = [unknowns[j] for j in keep_cols]
+
+    # remove equacoes identicamente nulas apos o corte
+    keep_rows = [i for i in range(Ak.shape[0])
+                 if any(sp.cancel(Ak[i, j]) != 0 for j in range(Ak.shape[1]))
+                 or sp.cancel(rhs[i]) != 0]
+    Ak = Ak[keep_rows, :]
+    rk = rhs[keep_rows, :]
+    say(f"   sistema final: {Ak.shape[0]} eqs x {Ak.shape[1]} incognitas")
+    assert Ak.shape[0] == Ak.shape[1], "sistema QS nao quadrado apos corte"
+
+    xsol = Ak.LUsolve(rk)
+    xsol = xsol.applyfunc(lambda e: sp.cancel(sp.together(e)))
+    S = dict(zip(kept, xsol))
+    for X in dropped:
+        S[X] = sp.Integer(0)
+    say("   resolvido para:", [str(x) for x in kept])
 
     PhiG_sol = sp.cancel(sp.together(S[PhiG]))
     PsiG_sol = sp.cancel(sp.together(S[PsiG]))

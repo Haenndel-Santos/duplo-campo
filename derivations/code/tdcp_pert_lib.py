@@ -268,6 +268,93 @@ def effective_mass_matrix(W, C, extra_rates=None):
 
 
 # ----------------------------------------------------------------------
+# reducao matricial (complemento de Schur) — evita substituicao em
+# expressoes gigantes; todas as operacoes em blocos com cancel()
+# ----------------------------------------------------------------------
+def _cancelM(M):
+    return M.applyfunc(lambda e: sp.cancel(sp.together(e)))
+
+
+def schur_eliminate(K, C, W, idx_aux, verbose=True):
+    """
+    Elimina variaveis auxiliares por complemento de Schur.
+    L = 1/2 qdot^T K qdot + qdot^T C q - 1/2 q^T W q, q = (Q, X):
+    exige K[X,:] = 0 e C[X,:] = 0 (sem Xdot em L).
+    X* = W_XX^{-1} (C_QX^T Qdot - W_XQ Q); substituindo:
+      K_eff = K_QQ + C_QX W_XX^{-1} C_QX^T
+      C_eff = C_QQ - C_QX W_XX^{-1} W_XQ
+      W_eff = W_QQ - W_QX W_XX^{-1} W_XQ
+    Retorna (K_eff, C_eff, W_eff, idx_dyn).
+    """
+    n = K.shape[0]
+    idx_dyn = [i for i in range(n) if i not in idx_aux]
+    for i in idx_aux:
+        for j in range(n):
+            if sp.cancel(K[i, j]) != 0 or sp.cancel(C[i, j]) != 0:
+                raise ValueError(f"variavel {i} tem velocidade em L "
+                                 f"(K/C linha nao nula) — nao e auxiliar")
+    KQQ = K[idx_dyn, idx_dyn]
+    CQQ = C[idx_dyn, idx_dyn]
+    CQX = C[idx_dyn, idx_aux]
+    WQQ = W[idx_dyn, idx_dyn]
+    WQX = W[idx_dyn, idx_aux]
+    WXQ = W[idx_aux, idx_dyn]
+    WXX = W[idx_aux, idx_aux]
+    if verbose:
+        print(f"   [schur] invertendo bloco {len(idx_aux)}x{len(idx_aux)} ...")
+    WXXi = _cancelM(WXX.inv())
+    K_eff = _cancelM(KQQ + CQX * WXXi * CQX.T)
+    C_eff = _cancelM(CQQ - CQX * WXXi * WXQ)
+    W_eff = _cancelM(WQQ - WQX * WXXi * WXQ)
+    return K_eff, C_eff, W_eff, idx_dyn
+
+
+def transform_basis(K, C, W, S, extra_rates=None):
+    """
+    Mudanca de base q = S u (S pode depender do fundo):
+      K_u = S^T K S
+      C_u = S^T K Sdot + S^T C S
+      W_u = S^T W S - Sdot^T K Sdot - (Sdot^T C S + (Sdot^T C S)^T)
+    """
+    Sd = S.applyfunc(lambda e: dt_background(e, extra_rates))
+    K_u = _cancelM(S.T * K * S)
+    C_u = _cancelM(S.T * K * Sd + S.T * C * S)
+    X = Sd.T * C * S
+    W_u = _cancelM(S.T * W * S - Sd.T * K * Sd - X - X.T)
+    return K_u, C_u, W_u
+
+
+def matrix_ipp_row(K, C, W, i, extra_rates=None):
+    """
+    Remove a linha i de C por integracao por partes (exige K[i,:] = 0):
+      C[i,j] udot_i u_j -> -Cdot[i,j] u_i u_j - C[i,j] u_i udot_j
+    Atualiza W (parte -Cdot, simetrizada na convencao -1/2 u W u) e
+    move -C[i,j] para C[j,i]; zera a linha i de C.
+    """
+    n = K.shape[0]
+    for j in range(n):
+        if sp.cancel(K[i, j]) != 0:
+            raise ValueError(f"K[{i},:] nao nula — {i} e dinamica")
+    C2 = C.copy()
+    W2 = W.copy()
+    for j in range(n):
+        cij = C[i, j]
+        if sp.cancel(cij) == 0:
+            continue
+        cdot = dt_background(cij, extra_rates)
+        if i == j:
+            # C[i,i] udot_i u_i = (C/2) d(u_i^2)/dt -> -(Cdot/2) u_i^2
+            # na convencao -1/2 W[i,i] u_i^2  =>  Delta W[i,i] = Cdot
+            W2[i, i] = sp.cancel(W2[i, i] + cdot)
+        else:
+            W2[i, j] = sp.cancel(W2[i, j] + cdot)
+            W2[j, i] = sp.cancel(W2[j, i] + cdot)
+            C2[j, i] = sp.cancel(C2[j, i] - cij)
+        C2[i, j] = 0
+    return K, C2, W2
+
+
+# ----------------------------------------------------------------------
 # eliminacao de variaveis auxiliares
 # ----------------------------------------------------------------------
 def eliminate_auxiliaries(L2, fields, vels, aux_fields, verbose=True):
