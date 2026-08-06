@@ -452,11 +452,23 @@ def interaction_lagrangian(g, f, dchi=None):
     ginv = series_inverse(g)
     M = cutM(ginv * f)
     A = matrix_sqrt_series(M)
-    # verificacao interna: A*A = M ate O(eps^2)
+    # verificacao interna: A*A = M ate O(eps^2), por avaliacao numerica
+    # aleatoria (simplify simbolico explode em memoria no setor escalar)
     resid = cutM(A * A - M)
+    import random
+    from sympy.core.function import AppliedUndef
+    rng = random.Random(20260806)
+    atoms = set()
     for i in range(4):
         for j in range(4):
-            if sp.simplify(resid[i, j]) != 0:
+            atoms |= resid[i, j].atoms(sp.Symbol)
+            atoms |= resid[i, j].atoms(AppliedUndef)
+    sub_rand = {s: sp.Rational(rng.randint(2, 60), rng.randint(2, 60))
+                for s in atoms}
+    for i in range(4):
+        for j in range(4):
+            val = sp.N(resid[i, j].subs(sub_rand), 30)
+            if abs(float(val)) > 1e-20:
                 raise RuntimeError(f"sqrt matricial falhou em ({i},{j})")
     e0, e1, e2, e3, e4 = elementary_symmetric(A)
     V = b0 * e0 + b1 * e1 + b2 * e2 + b3 * e3 + b4 * e4
