@@ -128,5 +128,5 @@ entram com flag `sem-delimitador`; equações dentro de citação, com flag
 | Lote 2 — C06–C10 (+C06E, 122 eqs) | **feito** — `lotes/lote_02_C06-C10.md` (90 CONFERE, 13 SOB HIPÓTESE, 8 ERRO, 5 ARTEFATO, 4 INCOMPLETA, 2 POSTULADO-com-conflito) |
 | Lote 3 — C11–C15 (124 eqs) | **feito** — `lotes/lote_03_C11-C15.md` (88 CONFERE, 8 SOB HIPÓTESE, 21 ERRO, 5 ARTEFATO, 2 INCOMPLETA) |
 | Lote 4 — C16–C21 (184 eqs) | **feito** — `lotes/lote_04_C16-C21.md` (94 CONFERE, 20 SOB HIPÓTESE, 62 ERRO, 5 INCOMPLETA, 3 NÃO-DERIVÁVEL) |
-| Lote 5 — C22–C26 | pendente |
-| Lotes seguintes — AA–AL | pendente |
+| Lote 5 — C22–C26 (62 eqs) | **feito** — `lotes/lote_05_C22-C26.md` (42 CONFERE, 12 SOB HIPÓTESE, 6 ERRO, 1 ARTEFATO, 1 NÃO-DERIVÁVEL) |
+| Lotes seguintes — Anexos AA–AL (na ordem A→L; AB tem 71 eqs, é o maior arquivo) | pendente |
