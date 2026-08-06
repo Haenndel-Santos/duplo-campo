@@ -418,6 +418,77 @@ massa escalar e massa tensorial. No tensor o fator real é β₁+β₂(ξ+r)
 
 ---
 
+# Parte III-B — Estratificação epistêmica dos achados
+
+Nem todo achado deste parecer tem o mesmo peso probatório. Esta seção
+separa os três níveis, porque a auditoria também precisa ser auditável.
+
+## Nível 1 — Confirmável pelo próprio corpus, sem código
+
+Qualquer leitor com o manuscrito em mãos verifica isto em minutos:
+
+- **Contradição do Cap.4**: §4.4 estabelece as duas identidades que,
+  juntas, dão Q_ν≡0 — contra a narrativa de troca dos §§4.3/4.6.
+- **ṙ≡0 no ramo H_g=ξH_f**: quatro linhas de álgebra a partir das
+  definições. Com N_g=1, ξH_f=ḃ/b e H_g=ȧ/a, logo a igualdade dá
+  d(ln r)/dt=0. O Anexo B §B.9 já continha esta derivação.
+- **Σ com η_slip invertido**: das definições do próprio Cap.18 sai
+  Σ=(μ/2)(1+η_slip). Verificável por substituição.
+- **Sinal da fonte na equação de χ**: por Euler–Lagrange da ação.
+- **α₀∼0.1–1 do Cap.23** viola o |α(a₀)|≲0.1 do Cap.18.
+- **Sobrecargas de símbolo** (r, ξ, η, Φ/Ψ, ζ, U, F, Γ).
+- **Bloco Vainshtein/PPN** (r_S, r_V, margem de Cassini): aritmética
+  conferível com uma calculadora. Não depende de D1–D8.
+- **O ansatz Yukawa é apresentado como derivado**: achado documental —
+  o Cap.18 §18.3 escreve "a correção típica tem forma", ou seja, o
+  próprio texto declara que está postulando.
+
+## Nível 2 — Depende das derivações, com cobertura declarada
+
+Aqui é preciso distinguir dois graus, que este parecer antes tratava
+como um só:
+
+**2a — Derivações simbólicas fechadas** (valem para todos os
+parâmetros, não para uma amostra):
+
+- **D2** (m_T² com ξ; cinético M_f²b³/ξ; c_f²=ξ²/r²) — álgebra
+  simbólica completa.
+- **D3** (cancelamento de ξ e β₄ na regra da cadeia) — verificado em
+  sympy com β_n, ξ, r como símbolos livres.
+- **D5** (ṙ≡0) — coincide com o Nível 1 acima.
+
+**2b — Resultados de benchmark ou grade** (valem onde foram testados):
+
+- **D1** (par fantasma/taquiônico no setor escalar): **3 benchmarks**,
+  fundo congelado (Ḣ=Ḣ_f=ξ̇=0), F1 numérico específico. Os três
+  cercam a estrutura relevante — dois lados da raiz e a raiz exata —
+  mas cercar não é varrer o espaço de parâmetros.
+- **D6** (μ multi-polo, α_∞=0): **2 benchmarks**, fundo congelado,
+  resposta estática (≠ μ dinâmico para k≲H).
+- **D8** (Higuchi falha em 60/60): **uma grade** de 60 combinações,
+  com formas específicas F(χ)=e^{λχ} e U=U₀e^{−λ_Uχ} que o corpus não
+  fixa.
+
+Consequência para o veredito sobre o ramo dinâmico: a afirmação de que
+ele está "duplamente morto" combina um resultado de Nível 1 (ṙ≡0,
+álgebra pura) com um de Nível 2b (par fantasma, 3 benchmarks). A
+primeira metade é definitiva; a segunda é evidência forte, não teorema.
+
+Todas as derivações declaram gauge, método, calibração e caveats nos
+write-ups de `derivations/`, com auto-testes GR embutidos (D1: 1 modo,
+c_s²=+1.000000, por duas rotas independentes; D6: k²Ψ/δρ→−0.499999 e
+Φ/Ψ→1.00005 em k=1000).
+
+## Nível 3 — Juízo interpretativo
+
+Isto é opinião fundamentada, não resultado matemático:
+
+- que o ramo dinâmico deva ser abandonado em favor da raiz móvel;
+- que a teoria "não é beco sem saída";
+- a priorização das ações recomendadas (VALIDAR/REVER/…).
+
+---
+
 # Parte IV — Opinião geral sobre a viabilidade
 
 Vou separar o que a auditoria autoriza dizer do que é juízo meu.
