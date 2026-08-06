@@ -2,7 +2,16 @@
 """
 06_mu_alpha_QS.py — Derivacao 6 (plano P6.1–P6.6), v3.
 
-v3: a calibracao GR da v2 reprovou (Phi != Psi e Poisson errado no
+v4: a truncagem QS por marcacao de simbolos (v3) era inconsistente —
+descartava chidot/H mas mantinha U', U'' e rho_int (que a Friedmann
+amarra a H^2), gerando estrutura espuria em k pequeno ate no limite
+m2->0. Agora a resposta e ESTATICA EXATA (qdot=0, sem hierarquia
+assumida): mu(k) = resposta(m2)/resposta(m2->0), em que as correcoes
+de fundo cancelam na razao e o regime quase-estatico emerge sozinho em
+k >> H. Calibracao GR verificada em k grande (Poisson -> -1/2,
+Phi/Psi -> 1).
+
+v3 (historico): a calibracao GR da v2 reprovou (Phi != Psi e Poisson errado no
 limite m2->0) — mesma causa-raiz do episodio v2 da Derivacao 1: fixar
 o gauge Newtoniano NA ACAO perde as equacoes de vinculo de B_g e E_g,
 e a equacao de E_g (ij sem traco) e exatamente a que impoe Phi=Psi em
@@ -106,13 +115,9 @@ def build_qs_equations():
     eqs_qs = []
     for X, e in zip(fields, eqs):
         e = onshell(e, R)
-        e = e.subs(rho_s, 0)
-        e = sp.expand(e.subs({H_s: small * H_s, Hf_s: small * Hf_s,
-                              chid_s: small * chid_s,
-                              xid_s: small * xid_s}))
-        e = sp.expand(e.coeff(small, 0))
+        e = sp.expand(e.subs(rho_s, 0))
         eqs_qs.append(e)
-        say(f"   eq {X}: {len(e.args) if e != 0 else 0} termos QS")
+        say(f"   eq {X}: {len(e.args) if e != 0 else 0} termos (estatica exata)")
     return eqs_qs, fields
 
 
@@ -197,10 +202,17 @@ def analyze_benchmark(eqs_qs, fields, delta, label, fh_forms):
         sp.nsimplify(sp.cancel(respPsi_GR * k**2), rational=True))
     Mg2n = vb[Mg2]
     a2n = vb[a_s]**2
-    poisson_ok = sp.cancel(respPsi_GR * k**2 + a2n / (2 * Mg2n)) == 0
-    slip_gr_ok = sp.cancel(respPhi_GR - respPsi_GR) == 0
-    say(f"[{label}] Poisson GR (k^2 Psi = -a^2 drho/(2Mg^2))? {poisson_ok}")
-    say(f"[{label}] Phi = Psi no limite GR? {slip_gr_ok}")
+    # em resposta estatica exata, correcoes O(H^2/k^2) sao fisicas:
+    # calibra-se em k grande (regime quase-estatico emergente)
+    kbig = 1000
+    pois_num = float(sp.N(respPsi_GR.subs(k, kbig) * kbig**2))
+    pois_alvo = float(-a2n / (2 * Mg2n))
+    slip_num = float(sp.N((respPhi_GR / respPsi_GR).subs(k, kbig)))
+    poisson_ok = abs(pois_num - pois_alvo) < 1e-3 * abs(pois_alvo)
+    slip_gr_ok = abs(slip_num - 1) < 1e-3
+    say(f"[{label}] Poisson GR em k={kbig}: {pois_num:+.6f} "
+        f"(alvo {pois_alvo:+.6f}) -> {poisson_ok}")
+    say(f"[{label}] Phi/Psi GR em k={kbig}: {slip_num:+.6f} -> {slip_gr_ok}")
 
     mu_m = sp.cancel(sp.together(respPhi / respPhi_GR))
     slip_m = sp.cancel(sp.together(S[PsiG] / S[PhiG]))
@@ -261,7 +273,7 @@ def analyze_benchmark(eqs_qs, fields, delta, label, fh_forms):
 
 def main():
     say("=" * 70)
-    say("DERIVACAO 6 — mu(k,a), eta_slip, Sigma exatos no limite QS (v2)")
+    say("DERIVACAO 6 — mu(k,a), eta_slip, Sigma (v4, resposta estatica exata)")
     say("    modo:", "SEMI-NUMERICO (fundo benchmark; k e m2 simbolicos)"
         if SEMI_NUMERIC else "SIMBOLICO COMPLETO")
     say("=" * 70)
