@@ -1,6 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-06_mu_alpha_QS.py — Derivacao 6 (plano P6.1–P6.6), v2.
+06_mu_alpha_QS.py — Derivacao 6 (plano P6.1–P6.6), v3.
+
+v3: a calibracao GR da v2 reprovou (Phi != Psi e Poisson errado no
+limite m2->0) — mesma causa-raiz do episodio v2 da Derivacao 1: fixar
+o gauge Newtoniano NA ACAO perde as equacoes de vinculo de B_g e E_g,
+e a equacao de E_g (ij sem traco) e exatamente a que impoe Phi=Psi em
+GR. Agora a acao e construida com os 9 campos SEM fixar gauge, as 9
+equacoes QS sao derivadas, e so entao B_g = E_g = 0 e imposto NAS
+EQUACOES; o sistema resolvido usa as equacoes de vinculo
+{Phi_g, B_g, E_g, Phi_f, B_f, E_f, dchi} (00, 0i e ij-sem-traco dos
+dois setores + campo), descartando as duas equacoes dinamicas
+redundantes (Psi_g, Psi_f) como e padrao no regime quase-estatico.
 
 Deriva mu(k,a), eta_slip(k,a) e Sigma(k,a) EXATOS no limite
 quase-estatico (QS), a partir do mesmo setor escalar do script 01,
@@ -57,16 +68,19 @@ def say(*args):
 def build_qs_equations():
     """L2 + fonte de materia -> equacoes QS simbolicas (uma vez)."""
     Phi_g = sp.Function('Phi_g')(t)
+    B_g = sp.Function('B_g')(t)
     Psi_g = sp.Function('Psi_g')(t)
+    E_g = sp.Function('E_g')(t)
     Phi_f = sp.Function('Phi_f')(t)
     Psi_f = sp.Function('Psi_f')(t)
     B_f = sp.Function('B_f')(t)
     E_f = sp.Function('E_f')(t)
     dchi = sp.Function('dchi')(t)
-    funcs = [Phi_g, Psi_g, Phi_f, Psi_f, B_f, E_f, dchi]
+    funcs = [Phi_g, B_g, Psi_g, E_g, Phi_f, Psi_f, B_f, E_f, dchi]
 
     aF, bF, xiF, bg_rules = make_bg_functions()
-    g = substitute_bg_functions(scalar_metric_g(Phi_g, Psi_g), aF, bF, xiF)
+    g = substitute_bg_functions(scalar_metric_g(Phi_g, Psi_g, B_g, E_g),
+                                aF, bF, xiF)
     f = substitute_bg_functions(scalar_metric_f(Phi_f, Psi_f, B_f, E_f),
                                 aF, bF, xiF)
 
@@ -102,37 +116,43 @@ def build_qs_equations():
     return eqs_qs, fields
 
 
-def solve_qs(eqs, unknowns, label):
-    """linear_eq_to_matrix + LUsolve, com deteccao de colunas nulas."""
-    nontrivial = [e for e in eqs if e != 0]
-    say(f"[{label}] equacoes nao triviais: {len(nontrivial)}")
-    A, rhs = sp.linear_eq_to_matrix(nontrivial, unknowns)
-    A = A.applyfunc(lambda e: sp.cancel(sp.together(e)))
-    rhs = rhs.applyfunc(lambda e: sp.cancel(sp.together(e)))
-
-    keep_cols, dropped = [], []
-    for j, X in enumerate(unknowns):
-        if all(sp.cancel(A[i, j]) == 0 for i in range(A.shape[0])):
-            dropped.append(X)
-        else:
-            keep_cols.append(j)
-    if dropped:
-        say(f"[{label}] variaveis que decaem do QS (postas a 0): {dropped}")
-    Ak = A[:, keep_cols]
-    kept = [unknowns[j] for j in keep_cols]
-    keep_rows = [i for i in range(Ak.shape[0])
-                 if any(sp.cancel(Ak[i, j]) != 0 for j in range(Ak.shape[1]))
-                 or sp.cancel(rhs[i]) != 0]
-    Ak = Ak[keep_rows, :]
-    rk = rhs[keep_rows, :]
-    say(f"[{label}] sistema final: {Ak.shape[0]} eqs x {Ak.shape[1]} inc.")
-    assert Ak.shape[0] == Ak.shape[1], "sistema QS nao quadrado"
-    xsol = Ak.LUsolve(rk)
-    xsol = xsol.applyfunc(lambda e: sp.cancel(sp.together(e)))
-    S = dict(zip(kept, xsol))
-    for X in dropped:
-        S[X] = sp.Integer(0)
-    return S
+def solve_qs(eqs, fallback, unknowns, label):
+    """
+    Resolve o sistema QS linear com linsolve (aceita sobredeterminado
+    consistente). Se vier subdeterminado ou inconsistente, adiciona as
+    equacoes dinamicas de reserva uma a uma, reportando.
+    """
+    pool = [e for e in eqs if e != 0]
+    extra = [e for e in fallback if e != 0]
+    say(f"[{label}] equacoes de vinculo nao triviais: {len(pool)}"
+        f" (+{len(extra)} reservas dinamicas)")
+    while True:
+        A, rhs = sp.linear_eq_to_matrix(pool, unknowns)
+        A = A.applyfunc(lambda e: sp.cancel(sp.together(e)))
+        rhs = rhs.applyfunc(lambda e: sp.cancel(sp.together(e)))
+        sol = sp.linsolve((A, rhs), *unknowns)
+        if sol is sp.EmptySet or len(sol) == 0:
+            say(f"[{label}] [!] sistema inconsistente com {len(pool)} eqs")
+            if not extra:
+                raise RuntimeError("sistema QS inconsistente sem reservas")
+            pool.append(extra.pop(0))
+            continue
+        tup = list(list(sol)[0])
+        livres = set()
+        for x in tup:
+            livres |= (x.free_symbols & set(unknowns))
+        if livres and extra:
+            say(f"[{label}] subdeterminado (livres: {livres}); "
+                "adicionando eq. dinamica de reserva")
+            pool.append(extra.pop(0))
+            continue
+        if livres:
+            say(f"[{label}] [!] permanece subdeterminado; zerando {livres}")
+            tup = [x.subs({s: 0 for s in livres}) for x in tup]
+        say(f"[{label}] sistema resolvido ({len(pool)} eqs x "
+            f"{len(unknowns)} inc.)")
+        return dict(zip(unknowns,
+                        [sp.cancel(sp.together(x)) for x in tup]))
 
 
 def analyze_benchmark(eqs_qs, fields, delta, label, fh_forms):
@@ -151,10 +171,20 @@ def analyze_benchmark(eqs_qs, fields, delta, label, fh_forms):
     say(f"===== {label}: r = {rv} = {float(rv):.4f}, "
         f"xi = {float(vb[xi_s]):.4f} =====")
 
-    eqs_n = [sp.expand(e.subs(vnum)) for e in eqs_qs]
-    S = solve_qs(eqs_n, list(fields), label)
+    # gauge Newtoniano imposto NAS EQUACOES (nao na acao): B_g=E_g=0
+    Bg, Eg = fields[1], fields[3]
+    eqs_n = [sp.expand(e.subs(vnum).subs({Bg: 0, Eg: 0})) for e in eqs_qs]
+    # equacoes de vinculo: Phi_g(00-g), B_g(0i-g), E_g(ij-sem-traco-g),
+    # Phi_f(00-f), B_f(0i-f), E_f(ij-sem-traco-f), dchi(campo);
+    # reservas: Psi_g, Psi_f (dinamicas, redundantes no QS exato)
+    prim = [eqs_n[i] for i in (0, 1, 3, 4, 6, 7, 8)]
+    resv = [eqs_n[i] for i in (2, 5)]
+    unknowns = [fields[i] for i in (0, 2, 4, 5, 6, 7, 8)]
+    S = solve_qs(prim, resv, unknowns, label)
+    S[Bg] = sp.Integer(0)
+    S[Eg] = sp.Integer(0)
 
-    PhiG, PsiG = fields[0], fields[1]
+    PhiG, PsiG = fields[0], fields[2]
     respPhi = sp.cancel(sp.together(S[PhiG] / drho))
     respPsi = sp.cancel(sp.together(S[PsiG] / drho))
 
