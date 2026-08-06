@@ -420,7 +420,9 @@ def fast_nullspace(M):
             L = sp.lcm(L, d)
         for j in range(m):
             Mp[i, j] = sp.expand(sp.cancel(row[j] * L))
-    return Mp.nullspace()
+    # iszerofunc estrutural: nunca aciona o motor de suposicoes do
+    # sympy (que pode divagar para fatoracao/raizes e travar)
+    return Mp.nullspace(iszerofunc=lambda e: sp.expand(sp.cancel(e)) == 0)
 
 
 def faddeev_jackiw_reduce(K, C, W, names, kref=1, max_rounds=10,
@@ -913,13 +915,14 @@ def _selftest():
     assert z_average(X * sp.cos(k * z)) == 0
     print("   [ok] z_average")
 
-    # 6) benchmark satisfaz Friedmann f
+    # 6) benchmark satisfaz Friedmann f (a menos do residuo de
+    #    racionalizacao a 30 digitos)
     v = benchmark()
     rv = v[b_s] / v[a_s]
     lhs = 3 * v[Mf2] * v[Hf_s]**2
     rhs = v[m2] * v[Meff2] * v[Fb] * (v[b4] + 3 * v[b2] / rv**2 + v[b1] / rv**3)
-    assert sp.simplify(lhs - rhs) == 0
-    print("   [ok] benchmark consistente com Friedmann f")
+    assert abs(float(sp.N(lhs - rhs, 40))) < 1e-25
+    print("   [ok] benchmark consistente com Friedmann f (residuo < 1e-25)")
 
     print("== todos os auto-testes passaram ==")
 
