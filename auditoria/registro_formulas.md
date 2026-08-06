@@ -123,6 +123,7 @@ entram com flag `sem-delimitador`; equações dentro de citação, com flag
 | Lote | Status |
 |---|---|
 | Registro extraído | feito |
-| Classificação revisada | pendente |
-| Regras de auditoria (regras_de_auditoria.md) | pendente |
-| Passes sequenciais C01–C26, AA–AL | pendente |
+| Regras de auditoria (regras_de_auditoria.md) | **feito** |
+| Lote 1 — C01–C05 (86 eqs) | **feito** — `lotes/lote_01_C01-C05.md` (71 CONFERE, 5 INCOMPLETA, 4 ARTEFATO, 2 POSTULADO-com-conflito, 2 NÃO-DERIVÁVEL, 2 ERRO) |
+| Lote 2 — C06–C10 (+C06E) | pendente |
+| Lotes seguintes — C11–C26, AA–AL | pendente |
