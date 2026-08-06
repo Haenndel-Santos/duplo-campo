@@ -131,4 +131,5 @@ entram com flag `sem-delimitador`; equações dentro de citação, com flag
 | Lote 5 — C22–C26 (62 eqs) | **feito** — `lotes/lote_05_C22-C26.md` (42 CONFERE, 12 SOB HIPÓTESE, 6 ERRO, 1 ARTEFATO, 1 NÃO-DERIVÁVEL) |
 | Lote 6 — Anexo A / AA (30 eqs) | **feito** — `lotes/lote_06_AA.md` (29 CONFERE, 1 SOB HIPÓTESE) |
 | Lote 7 — Anexo B / AB (71 eqs, maior arquivo) | **feito** — `lotes/lote_07_AB.md` (61 CONFERE, 4 SOB HIPÓTESE, 4 ERRO DE CÁLCULO, 1 INCOMPLETA, 1 ARTEFATO) |
-| Lotes seguintes — Anexos AC–AL (na ordem C→L) | pendente |
+| Lote 8 — Anexos C+D / AC+AD (43 eqs) | **feito** — `lotes/lote_08_AC-AD.md` (35 CONFERE, 4 SOB HIPÓTESE, 3 ERRO, 1 NÃO-DERIVÁVEL) |
+| Lotes seguintes — Anexos AE–AL (na ordem E→L) | pendente |
