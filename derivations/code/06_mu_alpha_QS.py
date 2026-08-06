@@ -140,7 +140,12 @@ def analyze_benchmark(eqs_qs, fields, delta, label, fh_forms):
     vb = benchmark(sp.Rational(delta[0], delta[1]))
     vb[Ub] = vb[Ub] + vb[rho_s]
     vb[rho_s] = sp.Integer(0)
-    vnum = {s: val for s, val in vb.items() if s is not m2}
+    # racionais PEQUENOS (denominador 10^12): os racionais exatos de 30
+    # digitos tem numeradores ~2^100 e fazem o LUsolve simbolico em
+    # (k, m2) rastejar; a 1e-12 os residuos ficam abaixo de qualquer
+    # grandeza fisica do problema
+    vnum = {s: sp.Rational(int(round(float(val) * 10**12)), 10**12)
+            for s, val in vb.items() if s is not m2}
     rv = sp.nsimplify(vb[b_s] / vb[a_s])
     say("")
     say(f"===== {label}: r = {rv} = {float(rv):.4f}, "
