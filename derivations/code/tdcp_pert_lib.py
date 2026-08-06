@@ -275,6 +275,37 @@ def _cancelM(M):
     return M.applyfunc(lambda e: sp.cancel(sp.together(e)))
 
 
+def chop_expr(e, tol=1e-18):
+    """
+    Poda coeficientes numericos com |c| < tol no numerador e no
+    denominador (necessario apos racionalizar o benchmark: zeros que
+    eram exatos viram residuos ~1e-30 e confundiriam posto/nucleo).
+    """
+    e = sp.together(sp.cancel(e))
+    num, den = sp.fraction(e)
+
+    def _chop(p):
+        p = sp.expand(p)
+        out = sp.Integer(0)
+        for mono, c in p.as_coefficients_dict().items():
+            try:
+                if abs(float(c)) < tol:
+                    continue
+            except (TypeError, ValueError):
+                pass
+            out += c * mono
+        return out
+
+    n2, d2 = _chop(num), _chop(den)
+    if d2 == 0:
+        return e
+    return sp.cancel(n2 / d2)
+
+
+def chopM(M, tol=1e-18):
+    return M.applyfunc(lambda e: chop_expr(e, tol))
+
+
 def schur_eliminate(K, C, W, idx_aux, verbose=True):
     """
     Elimina variaveis auxiliares por complemento de Schur.
@@ -393,7 +424,7 @@ def fast_nullspace(M):
 
 
 def faddeev_jackiw_reduce(K, C, W, names, kref=1, max_rounds=10,
-                          verbose=True, log=print):
+                          verbose=True, log=print, chop_tol=None):
     """
     Reducao iterativa (estilo Faddeev–Jackiw) de uma Lagrangiana
     quadratica em blocos (K, C, W) ate a matriz cinetica ser
@@ -402,9 +433,15 @@ def faddeev_jackiw_reduce(K, C, W, names, kref=1, max_rounds=10,
       (ii)  linhas com K=0 e C=0  -> auxiliares (Schur);
       (iii) K singular sem linhas nulas -> mudanca de base pelas
             direcoes nulas de K (fast_nullspace) e volta a (i).
+    chop_tol: se dado, poda residuos numericos < tol a cada rodada
+    (necessario com benchmark racionalizado).
     Retorna (K, C, W, names).
     """
     for rnd in range(max_rounds):
+        if chop_tol is not None:
+            K = chopM(K, chop_tol)
+            C = chopM(C, chop_tol)
+            W = chopM(W, chop_tol)
         n = K.shape[0]
         # (i) integracao por partes das linhas sem cinetica
         for i in range(n):
@@ -821,7 +858,10 @@ def benchmark(delta_offroot=sp.Rational(1, 25)):
            + vals[b4] * vals[xi_s] * rv**3)
     vals[chidd_s] = (-3 * vals[H_s] * vals[chid_s] - vals[Up]
                      - vals[m2] * vals[Meff2] * vals[Fp] * Vbg)
-    return {kk: sp.nsimplify(vv, rational=False) for kk, vv in vals.items()}
+    # racionaliza TUDO (30 digitos): radicais exatos como sqrt(H_f^2)
+    # fariam toda a algebra posterior rodar em Q(sqrt(.)), ordens de
+    # magnitude mais lenta; residuos ~1e-30 sao podados via chopM
+    return {kk: sp.Rational(sp.N(vv, 30)) for kk, vv in vals.items()}
 
 
 # ----------------------------------------------------------------------

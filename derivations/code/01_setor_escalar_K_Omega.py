@@ -283,7 +283,8 @@ def main():
             K, C, W = cancelM(K), cancelM(C), cancelM(W)
             names = [str(x) for x in fields]
             say(f"[{label}] reducao Faddeev-Jackiw ...")
-            K, C, W, names = faddeev_jackiw_reduce(K, C, W, names, log=say)
+            K, C, W, names = faddeev_jackiw_reduce(K, C, W, names, log=say,
+                                                   chop_tol=1e-18)
             analyze(K, C, W, names, vb, label)
             with open("out/01_matrices.txt",
                       "w" if primeira else "a", encoding="utf-8") as fh:
