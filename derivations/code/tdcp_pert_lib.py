@@ -284,6 +284,11 @@ def schur_eliminate(K, C, W, idx_aux, verbose=True):
       K_eff = K_QQ + C_QX W_XX^{-1} C_QX^T
       C_eff = C_QQ - C_QX W_XX^{-1} W_XQ
       W_eff = W_QQ - W_QX W_XX^{-1} W_XQ
+    Se W_XX for singular, as combinacoes nulas de W_XX que tambem nao
+    acoplam a Q (colunas de C_QX/W_QX nulas) sao direcoes totalmente
+    decopladas (tipicamente residuos de gauge) e sao descartadas; se
+    uma combinacao nula acoplar a Q, erro (constraint secundaria — nao
+    implementada).
     Retorna (K_eff, C_eff, W_eff, idx_dyn).
     """
     n = K.shape[0]
@@ -299,14 +304,151 @@ def schur_eliminate(K, C, W, idx_aux, verbose=True):
     WQQ = W[idx_dyn, idx_dyn]
     WQX = W[idx_dyn, idx_aux]
     WXQ = W[idx_aux, idx_dyn]
-    WXX = W[idx_aux, idx_aux]
+    WXX = _cancelM(W[idx_aux, idx_aux])
+
+    nullX = fast_nullspace(WXX)
+    if nullX:
+        if verbose:
+            print(f"   [schur] W_XX singular: {len(nullX)} direcao(oes) "
+                  "decoplada(s) — verificando acoplamentos ...")
+        for v in nullX:
+            coupC = _cancelM(CQX * v)
+            coupW = _cancelM(WQX * v)
+            if any(sp.cancel(x) != 0 for x in coupC) or \
+               any(sp.cancel(x) != 0 for x in coupW):
+                raise RuntimeError("W_XX singular com acoplamento a Q — "
+                                   "constraint secundaria nao implementada")
+        # base do bloco X: complemento (colunas unitarias) + nulas
+        m = WXX.shape[0]
+        cols, keep_pos = [], []
+        for i in range(m):
+            e_i = sp.zeros(m, 1)
+            e_i[i] = 1
+            trial = sp.Matrix.hstack(*(cols + [e_i] + nullX))
+            if trial.shape[1] <= m and trial.rank() == trial.shape[1]:
+                cols.append(e_i)
+                keep_pos.append(i)
+            if len(cols) == m - len(nullX):
+                break
+        P = sp.Matrix.hstack(*(cols + nullX))
+        WXXt = _cancelM(P.T * WXX * P)
+        CQXt = _cancelM(CQX * P)
+        WQXt = _cancelM(WQX * P)
+        WXQt = _cancelM(P.T * WXQ)
+        keep = list(range(m - len(nullX)))
+        WXX = WXXt[keep, keep]
+        CQX = CQXt[:, keep]
+        WQX = WQXt[:, keep]
+        WXQ = WXQt[keep, :]
+
     if verbose:
-        print(f"   [schur] invertendo bloco {len(idx_aux)}x{len(idx_aux)} ...")
+        print(f"   [schur] invertendo bloco {WXX.shape[0]}x{WXX.shape[0]} ...")
     WXXi = _cancelM(WXX.inv())
     K_eff = _cancelM(KQQ + CQX * WXXi * CQX.T)
     C_eff = _cancelM(CQQ - CQX * WXXi * WXQ)
     W_eff = _cancelM(WQQ - WQX * WXXi * WXQ)
     return K_eff, C_eff, W_eff, idx_dyn
+
+
+def fast_nullspace(M):
+    """
+    Espaco nulo com limpeza previa de denominadores (escala de linha
+    nao muda o nucleo) — ordens de magnitude mais rapido que nullspace
+    direto em matrizes de funcoes racionais.
+    """
+    n, m = M.shape
+    Mp = sp.zeros(n, m)
+    for i in range(n):
+        row = [sp.together(sp.cancel(M[i, j])) for j in range(m)]
+        dens = [sp.fraction(rj)[1] for rj in row]
+        L = dens[0]
+        for d in dens[1:]:
+            L = sp.lcm(L, d)
+        for j in range(m):
+            Mp[i, j] = sp.expand(sp.cancel(row[j] * L))
+    return Mp.nullspace()
+
+
+def faddeev_jackiw_reduce(K, C, W, names, kref=1, max_rounds=10,
+                          verbose=True, log=print):
+    """
+    Reducao iterativa (estilo Faddeev–Jackiw) de uma Lagrangiana
+    quadratica em blocos (K, C, W) ate a matriz cinetica ser
+    nao-singular:
+      (i)   linhas com K=0 e C!=0 -> integracao por partes;
+      (ii)  linhas com K=0 e C=0  -> auxiliares (Schur);
+      (iii) K singular sem linhas nulas -> mudanca de base pelas
+            direcoes nulas de K (fast_nullspace) e volta a (i).
+    Retorna (K, C, W, names).
+    """
+    for rnd in range(max_rounds):
+        n = K.shape[0]
+        # (i) integracao por partes das linhas sem cinetica
+        for i in range(n):
+            krow0 = all(sp.cancel(K[i, j]) == 0 for j in range(n))
+            crow0 = all(sp.cancel(C[i, j]) == 0 for j in range(n))
+            if krow0 and not crow0:
+                if verbose:
+                    log(f"   [FJ r{rnd+1}] ipp na linha de {names[i]}")
+                K, C, W = matrix_ipp_row(K, C, W, i)
+        # (ii) auxiliares puros
+        aux = [i for i in range(n)
+               if all(sp.cancel(K[i, j]) == 0 for j in range(n))
+               and all(sp.cancel(C[i, j]) == 0 for j in range(n))]
+        # so conta como auxiliar se a variavel ainda aparece em W ou C[:,i]
+        aux = [i for i in aux
+               if any(sp.cancel(W[j, i]) != 0 for j in range(n))
+               or any(sp.cancel(C[j, i]) != 0 for j in range(n))]
+        dead = [i for i in range(n)
+                if all(sp.cancel(K[i, j]) == 0 for j in range(n))
+                and all(sp.cancel(C[i, j]) == 0 for j in range(n))
+                and i not in aux]
+        if dead:
+            keep = [i for i in range(n) if i not in dead]
+            if verbose:
+                log(f"   [FJ r{rnd+1}] descartando direcoes mortas: "
+                    f"{[names[i] for i in dead]}")
+            K, C, W = K[keep, keep], C[keep, keep], W[keep, keep]
+            names = [names[i] for i in keep]
+            continue
+        if aux:
+            if verbose:
+                log(f"   [FJ r{rnd+1}] Schur nos auxiliares: "
+                    f"{[names[i] for i in aux]}")
+            K, C, W, idx_dyn = schur_eliminate(K, C, W, aux, verbose=False)
+            names = [names[i] for i in idx_dyn]
+            continue
+        # (iii) direcoes nulas de K
+        ns = fast_nullspace(K)
+        if not ns:
+            if verbose:
+                log(f"   [FJ r{rnd+1}] K nao-singular: "
+                    f"{K.shape[0]} modo(s) — reducao concluida")
+            return K, C, W, names
+        if verbose:
+            log(f"   [FJ r{rnd+1}] K singular (dim nulo = {len(ns)}) — "
+                "mudanca de base")
+        ns = [v.applyfunc(lambda e: sp.cancel(sp.together(e))) for v in ns]
+        chosen, chosen_idx = [], []
+        for i in range(n):
+            e_i = sp.zeros(n, 1)
+            e_i[i] = 1
+            trial = sp.Matrix.hstack(*(chosen + [e_i] + ns))
+            if trial.shape[1] == n:
+                d = sp.cancel(trial.det().subs(k, kref))
+                if d != 0:
+                    chosen.append(e_i)
+                    chosen_idx.append(i)
+            elif trial.rank() == trial.shape[1]:
+                chosen.append(e_i)
+                chosen_idx.append(i)
+            if len(chosen) == n - len(ns):
+                break
+        S = sp.Matrix.hstack(*(chosen + ns))
+        K, C, W = transform_basis(K, C, W, S)
+        names = ([names[i] for i in chosen_idx]
+                 + [f"nulo_r{rnd+1}_{j+1}" for j in range(len(ns))])
+    raise RuntimeError("reducao FJ nao convergiu em max_rounds")
 
 
 def transform_basis(K, C, W, S, extra_rates=None):
@@ -401,13 +543,21 @@ def iterative_reduction(L2, fields, vels, verbose=True, max_rounds=4):
 # ----------------------------------------------------------------------
 # construtores de metricas perturbadas (setor escalar)
 # ----------------------------------------------------------------------
-def scalar_metric_g(Phi_g, Psi_g):
-    """Setor g, gauge Newtoniano (B_g=E_g=0), N_g=1. Modos cos(kz)."""
-    c = sp.cos(k * z)
+def scalar_metric_g(Phi_g, Psi_g, B_g=None, E_g=None):
+    """
+    Setor g, N_g=1, modos cos(kz). Com B_g=E_g=None: gauge Newtoniano.
+    Com B_g/E_g fornecidos: sem fixacao de gauge (9 campos no total).
+    """
+    c, s = sp.cos(k * z), sp.sin(k * z)
     g = sp.zeros(4, 4)
     g[0, 0] = -(1 + 2 * eps * Phi_g * c)
+    if B_g is not None:
+        # g_0i = a d_i B_g ; d_z(B_g cos(kz)) = -k B_g sin(kz)
+        g[0, 3] = g[3, 0] = -a_s * k * eps * B_g * s
     for i in (1, 2, 3):
         g[i, i] = a_s**2 * (1 - 2 * eps * Psi_g * c)
+    if E_g is not None:
+        g[3, 3] = g[3, 3] - a_s**2 * 2 * k**2 * eps * E_g * c
     return g
 
 
