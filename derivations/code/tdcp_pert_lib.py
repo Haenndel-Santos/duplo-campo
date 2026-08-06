@@ -343,11 +343,34 @@ def schur_eliminate(K, C, W, idx_aux, verbose=True):
 
     if verbose:
         print(f"   [schur] invertendo bloco {WXX.shape[0]}x{WXX.shape[0]} ...")
-    WXXi = _cancelM(WXX.inv())
+    WXXi = rational_matrix_inv(WXX)
     K_eff = _cancelM(KQQ + CQX * WXXi * CQX.T)
     C_eff = _cancelM(CQQ - CQX * WXXi * WXQ)
     W_eff = _cancelM(WQQ - WQX * WXXi * WXQ)
     return K_eff, C_eff, W_eff, idx_dyn
+
+
+def rational_matrix_inv(M):
+    """
+    Inversa de matriz de funcoes racionais: limpa um denominador comum
+    D (M = P/D, P polinomial), e inverte P por adjugata/Berkowitz —
+    ordens de magnitude mais rapido que Matrix.inv() nesse tipo de
+    entrada. M^{-1} = D * adj(P) / det(P).
+    """
+    n = M.shape[0]
+    ent = [[sp.together(sp.cancel(M[i, j])) for j in range(n)]
+           for i in range(n)]
+    D = sp.Integer(1)
+    for i in range(n):
+        for j in range(n):
+            D = sp.lcm(D, sp.fraction(ent[i][j])[1])
+    P = sp.Matrix(n, n, lambda i, j: sp.expand(sp.cancel(ent[i][j] * D)))
+    detP = sp.expand(P.det(method='berkowitz'))
+    if sp.cancel(detP) == 0:
+        raise sp.matrices.exceptions.NonInvertibleMatrixError(
+            "det == 0 em rational_matrix_inv")
+    adjP = P.adjugate()
+    return adjP.applyfunc(lambda e: sp.cancel(sp.together(e * D / detP)))
 
 
 def fast_nullspace(M):

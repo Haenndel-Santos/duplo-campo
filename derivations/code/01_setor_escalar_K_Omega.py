@@ -1,22 +1,29 @@
 # -*- coding: utf-8 -*-
 """
-01_setor_escalar_K_Omega.py — Derivacao 1 (plano P1.1–P1.12), v3.
+01_setor_escalar_K_Omega.py — Derivacao 1 (plano P1.1–P1.12), v4.
 
 Setor escalar completo da TDCP bimetrica em k finito, do zero.
 
-NOVO NA v3 (motivado pela rodada anterior, que achou posto(K4)=3 no
-gauge Newtoniano): fixar gauge NA ACAO descarta as equacoes de vinculo
-de B_g/E_g e pode deixar um modo espurio. O modo padrao agora e SEM
-fixacao de gauge (9 campos: Phi_g, B_g, Psi_g, E_g; Phi_f, B_f, Psi_f,
-E_f; dchi), com reducao iterativa de Faddeev–Jackiw (ipp -> auxiliares
--> direcoes nulas, repetindo ate a cinetica ficar nao-singular). O
-numero de modos que sobrar e a resposta fisica para a contagem
-(Cap.6.2 §6.4 diz 3; Anexo C §C.3 diz 2).
+HISTORICO DE METODO (os becos sem saida fazem parte do resultado):
+  v2 (gauge Newtoniano fixado na acao): posto(K)=3 — mas fixar B_g=E_g=0
+     NA ACAO descarta as constraints desses campos (risco de modo
+     espurio).
+  v3 (sem fixar gauge, 9 campos): o auto-teste GR reprovou (3 modos em
+     vez de 1) — em fundo congelado os modos de gauge nao aparecem como
+     direcoes nulas de K, entao ficam no espectro.
+  v4 (padrao): GAUGE PLANO NO SETOR g (Psi_g = E_g = 0) — fixa o gauge
+     em campos DINAMICOS e mantem TODOS os multiplicadores (Phi_g, B_g,
+     Phi_f, B_f), entao nenhuma constraint se perde. E a pratica segura
+     (gauge plano/unitario) da literatura de acoes quadraticas.
 
-Inclui auto-teste GR: o mesmo pipeline rodado so com EH_g + chi
-(sem setor f, sem interacao) tem que terminar com EXATAMENTE 1 modo
-escalar com c_s^2 = 1 — valida a maquina de reducao antes do caso
-bimetrico.
+Reducao iterativa de Faddeev–Jackiw (ipp -> auxiliares/Schur ->
+direcoes nulas, repetindo ate a cinetica ficar nao-singular). O numero
+de modos que sobrar responde a contagem (Cap.6.2 §6.4 diz 3; Anexo C
+§C.3 diz 2).
+
+Auto-teste GR embutido: o mesmo pipeline so com EH_g + chi em gauge
+plano tem que dar EXATAMENTE 1 modo com c_s^2 = 1 antes do caso
+bimetrico rodar.
 
 Modos: SEMI_NUMERIC=True (padrao) substitui o fundo do benchmark logo
 apos montar L2 (k fica simbolico) e roda em minutos; False = via
@@ -41,7 +48,16 @@ from tdcp_pert_lib import (eps, t, k, a_s, b_s, xi_s, H_s, Hf_s,
                            dt_background, benchmark)
 
 SEMI_NUMERIC = True
-GAUGE_FIX = False        # False (padrao): 9 campos, sem fixar gauge
+# 'flat-g'  (padrao): Psi_g = E_g = 0 — fixa o gauge em campos
+#           DINAMICOS e mantem todos os multiplicadores (Phi_g, B_g,
+#           Phi_f, B_f); nenhuma constraint se perde (pratica segura,
+#           tipo gauge plano/unitario da literatura).
+# 'none'   : 9 campos sem fixar gauge — deixa modos de gauge no
+#           espectro em fundo congelado (o auto-teste GR reprova; util
+#           so como diagnostico).
+# 'newtonian': B_g = E_g = 0 fixado na acao — perde as constraints de
+#           B_g/E_g (modo espurio; tambem so diagnostico).
+GAUGE = 'flat-g'
 RUN_GR_CHECK = True      # auto-teste GR+chi (1 modo, c_s^2=1) antes
 
 OUT = []
@@ -61,19 +77,26 @@ def cancelM(M):
 # ----------------------------------------------------------------------
 # montagem de L2
 # ----------------------------------------------------------------------
-def build_fields(gauge_fix):
+def build_fields(gauge):
     Phi_g = sp.Function('Phi_g')(t)
-    Psi_g = sp.Function('Psi_g')(t)
     Phi_f = sp.Function('Phi_f')(t)
     Psi_f = sp.Function('Psi_f')(t)
     B_f = sp.Function('B_f')(t)
     E_f = sp.Function('E_f')(t)
     dchi = sp.Function('dchi')(t)
-    if gauge_fix:
+    if gauge == 'flat-g':
+        B_g = sp.Function('B_g')(t)
+        return ([Phi_g, B_g, Phi_f, Psi_f, B_f, E_f, dchi],
+                dict(Phi_g=Phi_g, Psi_g=sp.Integer(0), B_g=B_g,
+                     E_g=None, Phi_f=Phi_f, Psi_f=Psi_f, B_f=B_f,
+                     E_f=E_f, dchi=dchi))
+    if gauge == 'newtonian':
+        Psi_g = sp.Function('Psi_g')(t)
         return ([Phi_g, Psi_g, Phi_f, Psi_f, B_f, E_f, dchi],
                 dict(Phi_g=Phi_g, Psi_g=Psi_g, B_g=None, E_g=None,
                      Phi_f=Phi_f, Psi_f=Psi_f, B_f=B_f, E_f=E_f,
                      dchi=dchi))
+    Psi_g = sp.Function('Psi_g')(t)
     B_g = sp.Function('B_g')(t)
     E_g = sp.Function('E_g')(t)
     return ([Phi_g, B_g, Psi_g, E_g, Phi_f, B_f, Psi_f, E_f, dchi],
@@ -82,8 +105,8 @@ def build_fields(gauge_fix):
                  dchi=dchi))
 
 
-def build_L2(gauge_fix):
-    funcs, F = build_fields(gauge_fix)
+def build_L2(gauge):
+    funcs, F = build_fields(gauge)
     aF, bF, xiF, bg_rules = make_bg_functions()
     g = substitute_bg_functions(
         scalar_metric_g(F['Phi_g'], F['Psi_g'], F['B_g'], F['E_g']),
@@ -115,17 +138,15 @@ def build_L2(gauge_fix):
 # ----------------------------------------------------------------------
 def gr_selfcheck():
     say("")
-    say("[GR] auto-teste: GR + chi (sem f, sem interacao) — meta: 1 modo,"
-        " c_s^2 = 1")
+    say("[GR] auto-teste: GR + chi (sem f, sem interacao), gauge plano"
+        " (Psi=E=0) — meta: 1 modo, c_s^2 = 1")
     Phi_g = sp.Function('Phi_g')(t)
     B_g = sp.Function('B_g')(t)
-    Psi_g = sp.Function('Psi_g')(t)
-    E_g = sp.Function('E_g')(t)
     dchi = sp.Function('dchi')(t)
-    funcs = [Phi_g, B_g, Psi_g, E_g, dchi]
+    funcs = [Phi_g, B_g, dchi]
     aF, bF, xiF, bg_rules = make_bg_functions()
-    g = substitute_bg_functions(scalar_metric_g(Phi_g, Psi_g, B_g, E_g),
-                                aF, bF, xiF)
+    g = substitute_bg_functions(
+        scalar_metric_g(Phi_g, sp.Integer(0), B_g, None), aF, bF, xiF)
     Lg = lagrangian_GG(g, Mg2)
     Lchi = chi_lagrangian(g, dchi=dchi)
     L2 = z_average(eps_part(cut(Lg + Lchi), 2))
@@ -220,9 +241,10 @@ def analyze(K, C, W, names, vb, label):
 
 def main():
     say("=" * 70)
-    say("DERIVACAO 1 — setor escalar: K_ij e Omega_ij em k finito (v3)")
-    say("    gauge:", "Newtoniano fixado na acao (7 campos)" if GAUGE_FIX
-        else "SEM fixacao (9 campos, reducao Faddeev-Jackiw)")
+    say("DERIVACAO 1 — setor escalar: K_ij e Omega_ij em k finito (v4)")
+    say(f"    gauge: {GAUGE}"
+        + (" (Psi_g=E_g=0; multiplicadores mantidos)"
+           if GAUGE == 'flat-g' else ""))
     say("    modo:", "SEMI-NUMERICO" if SEMI_NUMERIC else "SIMBOLICO")
     say("=" * 70)
 
@@ -235,7 +257,7 @@ def main():
             say("[!] auto-teste GR falhou — resultados bimetricos abaixo"
                 " devem ser lidos com desconfianca")
 
-    L2s, fields, vels = build_L2(GAUGE_FIX)
+    L2s, fields, vels = build_L2(GAUGE)
 
     if not SEMI_NUMERIC:
         say("[modo simbolico] extraindo blocos e reduzindo (pode levar"
