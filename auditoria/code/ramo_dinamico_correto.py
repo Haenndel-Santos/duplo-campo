@@ -55,34 +55,57 @@ def V_f(r, b0, b4):
     return b4 + 3*B3/r + 3*B2/r**2 + B1/r**3
 
 
-def resolve_r(rho, b0, b4):
-    """Raiz fisica de  m^2 M_eff^2 W(r) = rho.
+def raizes_r(rho, b0, b4):
+    """Todas as raizes reais positivas de  m^2 M_eff^2 W(r) = rho.
 
-    r*W(r) = (b4 - 3B2 + ...) r^3 ... -> cubica; ver derivacao no doc.
-    Multiplicando por r e passando tudo para um lado:
+    Multiplicando W(r)=rho_til por r:
       (Mg2/Mf2)(b4 r^3 + 3B3 r^2 + 3B2 r + B1)
       - (b0 r + 3B1 r^2 + 3B2 r^3 + B3 r^4) = rho_til * r
-    com rho_til = rho/(m^2 M_eff^2).
     Para F1 (B3=0) fica cubica.
     """
     rt = rho / (m2 * Meff2)
     k = Mg2 / Mf2
-    # coeficientes de r^3, r^2, r^1, r^0
     c3 = k*b4 - 3*B2
     c2 = 3*k*B3 - 3*B1
     c1 = 3*k*B2 - b0 - rt
     c0 = k*B1
     raizes = np.roots([c3, c2, c1, c0])
-    reais = [z.real for z in raizes
-             if abs(z.imag) < 1e-9 and z.real > 1e-8]
-    if not reais:
+    return sorted(z.real for z in raizes
+                  if abs(z.imag) < 1e-9 and z.real > 1e-10)
+
+
+def resolve_r(rho, b0, b4, r_ref=None):
+    """Raiz do RAMO FINITO.
+
+    A cubica tem dois balancos dominantes em rho grande:
+        c3 r^3 ~ rho_til r  ->  r ~ sqrt(rho)  -> INFINITO (patologico:
+                                                  da xi < 0)
+        rho_til r ~ B1      ->  r ~ 1/rho      -> FINITO (fisico)
+    Selecao por CONTINUIDADE a partir de r_ref; sem referencia (ponto
+    inicial, tempos tardios) pega a MENOR raiz positiva, que e a que
+    conecta ao ramo finito.
+    """
+    rr = raizes_r(rho, b0, b4)
+    if not rr:
         return np.nan
-    return max(reais)          # ramo continuo: maior raiz positiva
+    if r_ref is None or not np.isfinite(r_ref):
+        return rr[0]
+    return min(rr, key=lambda z: abs(z - r_ref))
 
 
 def fundo(a_grid, rho_m0, b0, b4):
-    """Reconstroi r, H, xi, rdot ao longo da grade em a."""
-    r = np.array([resolve_r(rho_m0*a**-3, b0, b4) for a in a_grid])
+    """Reconstroi r, H, xi, rdot ao longo da grade em a.
+
+    Integra do FUTURO para o PASSADO (rho crescente), seguindo o ramo
+    por continuidade — a forma robusta de nao pular de ramo.
+    """
+    n = len(a_grid)
+    r = np.full(n, np.nan)
+    ref = None
+    for i in range(n-1, -1, -1):                 # de a grande para a pequeno
+        r[i] = resolve_r(rho_m0*a_grid[i]**-3, b0, b4, ref)
+        if np.isfinite(r[i]):
+            ref = r[i]
     ok = np.isfinite(r)
     # H^2 = m^2 M_eff^2 r^2 V_f(r) / (3 M_f^2)      [Friedmann f]
     H2 = m2*Meff2*r**2*V_f(r, b0, b4)/(3*Mf2)
@@ -92,7 +115,9 @@ def fundo(a_grid, rho_m0, b0, b4):
     drdN = np.gradient(r, lnA)
     xi = r + drdN
     rdot = H*(xi - r)
-    return r, H, xi, rdot, ok & (H2 > 0)
+    # FILTRO FISICO: xi = N_f/N_g e razao de lapsos -> tem de ser > 0.
+    # xi < 0 e a assinatura do ramo infinito (patologico).
+    return r, H, xi, rdot, ok & (H2 > 0) & (xi > 0)
 
 
 def m_T2(r, xi, b0, b4):
@@ -117,6 +142,15 @@ def main():
           f"beta_0={b0}, beta_4={b4}")
     print(f"            M_g^2=M_f^2={Mg2}, M_eff^2={Meff2}, m^2={m2}")
     print(f"            rho_m0={rho_m0}\n")
+
+    print("(0) DIAGNOSTICO DE RAMO — a cubica tem duas familias\n")
+    for a_t in [0.02, 1.0]:
+        rr = raizes_r(rho_m0*a_t**-3, b0, b4)
+        print(f"    a={a_t:5.2f}  raizes reais positivas: "
+              f"{[f'{z:.4f}' for z in rr]}")
+    print("\n    r ~ sqrt(rho) -> ramo INFINITO (da xi<0: lapso negativo)")
+    print("    r ~ 1/rho     -> ramo FINITO (fisico)")
+    print("    Selecao: menor raiz no futuro + continuidade para o passado.\n")
 
     print("(1) O FUNDO — amostras em a\n")
     print(f"    {'a':>8} {'z':>7} {'r':>9} {'xi':>9} {'H':>9} "
