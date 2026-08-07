@@ -1,39 +1,37 @@
 # -*- coding: utf-8 -*-
 """
-evolucao_temporal_escalar.py — O TESTE ALEM DO CONGELAMENTO.
+evolucao_temporal_escalar.py (v2) — o congelamento e confiavel?
 
-Integra as perturbacoes escalares NO TEMPO, sobre o fundo do ramo
-finito evoluindo de verdade (r(N), xi(N), H(N) da cubica), e compara o
-crescimento medido com a previsao do QEP congelado.
+HISTORICO (faz parte do resultado). A v1 deste script tentou integrar
+as perturbacoes no tempo eliminando os 4 multiplicadores por linhas
+nulas de K. O auto-teste de particao abortou: "7 dinamicos, 0
+auxiliares". A suposicao era FALSA — na forma Gamma-Gamma, velocidades
+de lapso/shift aparecem em termos cruzados (Phidot*psidot), entao
+nenhuma linha de K e nula; K e singular por COMBINACOES nao alinhadas
+com campos, que giram com o fundo. A eliminacao exigiria
+Faddeev-Jackiw dependente do tempo com base continua — projeto grande
+e fragil. (A guarda funcionou como desenhada: abortou alto.)
 
-Por que isto e necessario. A v3 do d1_ramo_finito tentou testar o
-congelamento alimentando Hdot/Hfdot/xidot verdadeiros — e deu saida
-BIT A BIT identica ao caso congelado. Motivo estrutural: a acao usa a
-forma Gamma-Gamma (so primeiras derivadas do fundo), entao as matrizes
-K, C, W nao contem esses simbolos. O congelamento da D1 nao esta nos
-valores das taxas: esta no ansatz q ~ e^{i w t} com matrizes
-constantes. O teste genuino e resolver
+ESTA VERSAO responde a mesma pergunta por dois criterios padrao,
+usando SO a maquinaria ja validada (QEP 7x7 da D1):
 
-    K(t) qdd + [Kdot + C - C^T](t) qd + [Cdot + W](t) q = 0
+  (1) ADIABATICIDADE: o QEP congelado e confiavel onde
+          eta(N) = |d sigma/dt| / sigma^2  << 1,
+      com sigma(N) = taxa de crescimento do modo mais instavel.
+      Se eta << 1 ao longo da trajetoria, o taquiao congelado e
+      genuino e o crescimento acumulado e integral de sigma dt.
 
-ao longo da trajetoria de fundo, com os vinculos (4 multiplicadores)
-eliminados algebricamente a cada instante, e medir ln|q|(N).
+  (2) PONTO FIXO COMO JUIZ ASSINTOTICO: em a -> infinito o fundo
+      assenta em r_inf (raiz de W(r)=0, aqui ~0.332) com rdot -> 0 —
+      quase-de Sitter EXATO, onde a analise congelada nao tem caveat.
+      sigma(ponto fixo) > 0  =>  taquiao eterno, genuino, veredito
+      fechado. sigma -> 0 antes  =>  instabilidade transiente.
 
-Leitura:
-  - crescimento ~ integral do Im(omega) congelado -> taquiao GENUINO;
-    o ramo finito puro (beta_n constantes) reprova o setor escalar.
-  - crescimento muito menor / oscilacao -> o congelamento era o
-    artefato; o fundo em movimento doma o par.
+Saidas: sigma(N)/H, eta(N), crescimento acumulado, e o veredito do
+ponto fixo, para k = 1, 10, 100.
 
-Auto-testes embutidos:
-  (i)  QEP do sistema REDUZIDO (3x3) em a=1, k=1 deve reproduzir os
-       omega^2 do QEP 7x7 da rodada 2: {+1.3000, +3.8578, -8.4750};
-  (ii) modo espectador delta-chi integrado no tempo deve OSCILAR sem
-       crescimento secular (controle).
-
-Requer sympy, numpy, scipy.  Demora ~2-4 min (montagem simbolica +
-lambdify + integracao).  Uso:
-    python auditoria/code/evolucao_temporal_escalar.py
+Requer sympy, numpy, scipy.  ~1-2 min.
+Uso:  python auditoria/code/evolucao_temporal_escalar.py
 """
 import importlib.util
 import os
@@ -42,7 +40,6 @@ import time
 
 import numpy as np
 import sympy as sp
-from scipy.integrate import solve_ivp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DCODE = os.path.normpath(os.path.join(HERE, '..', '..', 'derivations', 'code'))
@@ -60,41 +57,36 @@ from tdcp_pert_lib import (a_s, b_s, xi_s, H_s, Hf_s, Hd_s, Hfd_s, xid_s,
                            quadratic_matrices)
 
 T0 = time.time()
+OUT = []
 def say(*a):
-    print(f"[{time.time()-T0:7.1f}s]", *a)
+    line = " ".join(str(x) for x in a)
+    print(f"[{time.time()-T0:7.1f}s] {line}")
+    OUT.append(line)
 
 # ------------------------- parametros (identicos ao d1_ramo_finito) --
 PBnum = {b0: 1.0, b1: 1.0, b2: -0.4, b3: 0.0, b4: 0.5,
          Mg2: 1.0, Mf2: 1.0, Meff2: 0.5, m2: 1.0,
          Fb: 1.0, Fp: 0.0, Fpp: 0.0,
          chid_s: 0.0, chidd_s: 0.0, Up: 0.0, Upp: 0.3,
-         rho_s: 0.0,                        # materia -> Ub (mesmo truque)
+         rho_s: 0.0,
          Hd_s: 0.0, Hfd_s: 0.0, xid_s: 0.0}
 RHO_M0 = 0.3
-ESPERADO_A1_K1 = np.array([1.3000, 3.8578, -8.4750])   # rodada 2, 7x7
+ESPERADO_A1_K1 = [1.3000, 3.8578, -8.4750]     # rodada 2 (via sympy-subs)
 
-# ------------------------------ fundo (ramo finito, cubica) ----------
-def W_de_r(r):
-    Vf = 0.5 - 1.2/r**2 + 1.0/r**3
-    Vg = 1.0 + 3.0*r - 1.2*r**2
-    return r*r*Vf - Vg
-
-# W(r) = 0.5 r^2 - 1.2 + 1/r - 1 - 3r + 1.2 r^2 = 1.7 r^2 - 3r + 1/r - 2.2
-#   ->  W'(r) = 3.4 r - 3 - 1/r^2
+# ------------------------------ fundo (ramo finito) ------------------
+# W(r) = 1.7 r^2 - 3r + 1/r - 2.2  ;  W'(r) = 3.4 r - 3 - 1/r^2
 def dW_dr(r):
     return 3.4*r - 3.0 - 1.0/r**2
 
 def raiz_finita(rho_til):
-    # cubica: 1.7 r^3 - 3 r^2 - (2.2+rho_til) r + 1 = 0 ; menor raiz > 0
     rr = np.roots([1.7, -3.0, -(2.2 + rho_til), 1.0])
     reais = sorted(z.real for z in rr if abs(z.imag) < 1e-9 and z.real > 1e-10)
     return reais[0]
 
 def fundo_em(N):
-    """r, xi, H, Hf, Ub, a, b no instante N=ln a."""
     a = np.exp(N)
     rho = RHO_M0 * a**-3
-    rho_til = rho / 0.5                          # m^2 M_eff^2 = 0.5
+    rho_til = rho / 0.5
     r = raiz_finita(rho_til)
     drdN = -3.0*rho_til/dW_dr(r)
     xi = r + drdN
@@ -102,186 +94,123 @@ def fundo_em(N):
     H2 = 0.5*r*r*Vf/3.0
     H = np.sqrt(H2)
     rho_int = 0.5*(1.0 + 3.0*r - 1.2*r**2)
-    Ubv = 3.0*H2 - rho - rho_int + rho           # + rho: truque materia->Ub
+    Ubv = 3.0*H2 - rho_int          # ja com o truque materia->Ub embutido
     return r, xi, H, H/r, Ubv, a, r*a
 
-# ------------------------------ matrizes numericas -------------------
+# ------------------------------ matrizes ----------------------------
 say("montando L2 (mesma acao/gauge da D1) ...")
 L2s, fields, vels = d1.build_L2()
 K7, C7, W7 = quadratic_matrices(L2s, fields, vels)
-say(f"lambdificando 3 matrizes 7x7 em (a,b,xi,H,Hf,Ub,k) ...")
+say("lambdificando (a,b,xi,H,Hf,Ub,k) ...")
 livres = (a_s, b_s, xi_s, H_s, Hf_s, Ub, ksym)
 K7n = sp.lambdify(livres, K7.subs(PBnum), modules='numpy')
 C7n = sp.lambdify(livres, C7.subs(PBnum), modules='numpy')
 W7n = sp.lambdify(livres, W7.subs(PBnum), modules='numpy')
 
-def matrizes7(N, kv):
+def modos_em(N, kv):
     r, xi, H, Hf, Ubv, a, b = fundo_em(N)
     args = (a, b, xi, H, Hf, Ubv, kv)
-    return (np.array(K7n(*args), float),
-            np.array(C7n(*args), float),
-            np.array(W7n(*args), float))
+    Kn = np.array(K7n(*args), float)
+    Cn = np.array(C7n(*args), float)
+    Wn = np.array(W7n(*args), float)
+    return d1.agrupa_pares(d1.qep_modes(Kn, Cn, Wn)), H
 
-# ------------------------------ reducao (elimina multiplicadores) ----
-def particao(K, C, tol=1e-12):
-    """dinamicos = linhas de K ou C nao-nulas em VELOCIDADE."""
-    din, aux = [], []
-    for i in range(K.shape[0]):
-        if np.abs(K[i]).max() > tol or np.abs(K[:, i]).max() > tol \
-                or np.abs(C[i]).max() > tol:
-            din.append(i)
-        else:
-            aux.append(i)
-    return din, aux
+def taxa_sigma(pares):
+    """maior taxa de crescimento entre os modos: sigma = |Im sqrt(w2)|."""
+    sig = 0.0
+    for mm in pares:
+        om = np.sqrt(complex(mm['omega2']))
+        sig = max(sig, abs(om.imag))
+    return sig
 
-def reduz(K, C, W, din, aux):
-    """Elimina os auxiliares (sem velocidade): dL/dy = 0 ->
-       y = Wyy^-1 (C_xy^T xdot - W_yx x); extrai K,C,W reduzidas por
-       polarizacao (exata para formas quadraticas)."""
-    x, y = din, aux
-    Kxx = K[np.ix_(x, x)]
-    Cxx = C[np.ix_(x, x)]
-    Cxy = C[np.ix_(x, y)]
-    Wxx = W[np.ix_(x, x)]
-    Wxy = W[np.ix_(x, y)]
-    Wyy = W[np.ix_(y, y)]
-    Wyx = W[np.ix_(y, x)]
-    Wyy_inv = np.linalg.inv(Wyy)
-    P = Wyy_inv @ Cxy.T          # y = P xdot + Q x
-    Q = -Wyy_inv @ Wyx
-
-    def L(xv, xd):
-        yv = P @ xd + Q @ xv
-        return (0.5*xd @ Kxx @ xd + xd @ (Cxx @ xv + Cxy @ yv)
-                - 0.5*(xv @ Wxx @ xv + 2*xv @ (Wxy @ yv) + yv @ Wyy @ yv))
-
-    n = len(x)
-    e = np.eye(n)
-    z = np.zeros(n)
-    Kr = np.array([[L(z, e[i]+e[j]) - L(z, e[i]) - L(z, e[j])
-                    for j in range(n)] for i in range(n)])
-    Wr = -np.array([[L(e[i]+e[j], z) - L(e[i], z) - L(e[j], z)
-                     for j in range(n)] for i in range(n)])
-    Cr = np.array([[L(e[j], e[i]) - L(e[j], z) - L(z, e[i])
-                    for j in range(n)] for i in range(n)])
-    return Kr, Cr, Wr
-
-def qep_reduzida(Kr, Cr, Wr):
-    """autovalores lam de (lam^2 K + lam Ca + W) v = 0, Ca = C - C^T."""
-    n = Kr.shape[0]
-    Ca = Cr - Cr.T
-    A = np.block([[np.zeros((n, n)), np.eye(n)],
-                  [-np.linalg.solve(Kr, Wr), -np.linalg.solve(Kr, Ca)]])
-    return np.linalg.eigvals(A), A
-
-# ------------------------------ auto-teste (i): QEP reduzida ---------
-say("auto-teste (i): QEP reduzida em a=1, k=1 vs rodada 2 do 7x7 ...")
-K, C, W = matrizes7(0.0, 1.0)
-din, aux = particao(K, C)
-say(f"    particao: {len(din)} dinamicos {din}, {len(aux)} auxiliares {aux}")
-Kr, Cr, Wr = reduz(K, C, W, din, aux)
-lam, _ = qep_reduzida(Kr, Cr, Wr)
-w2 = np.sort_complex(-lam**2)          # lam = i w  ->  w^2 = -lam^2
-w2_reais = sorted(set(np.round(
-    [z.real for z in w2 if abs(z.imag) < 1e-4*max(1, abs(z))], 3)))
-say(f"    omega^2 (reduzida) = {w2_reais}")
-say(f"    esperado (7x7)     = {sorted(ESPERADO_A1_K1)}")
-casa = all(any(abs(e - v) < 2e-2*max(1, abs(e)) for v in w2_reais)
-           for e in ESPERADO_A1_K1)
-say(f"    [{'PASSA' if casa else 'FALHA'}] reducao reproduz o espectro 7x7")
-if not casa:
-    say("    !! abortando: a reducao nao esta validada")
+# ------------------------------ auto-teste ---------------------------
+say("")
+say("auto-teste: rota lambdify em a=1, k=1 deve reproduzir a rodada 2")
+pares, H1 = modos_em(0.0, 1.0)
+w2s = sorted(round(mm['omega2'].real, 3) for mm in pares)
+say(f"    omega^2 = {w2s}   esperado ~ {sorted(ESPERADO_A1_K1)}")
+ok = all(any(abs(e-v) < 2e-2*max(1, abs(e)) for v in w2s)
+         for e in ESPERADO_A1_K1)
+say(f"    [{'PASSA' if ok else 'FALHA'}]")
+if not ok:
+    say("    !! rota lambdify nao validada — abortando")
     sys.exit(1)
 
-# ------------------------------ integracao temporal ------------------
-def integra(kv, N0=np.log(0.25), N1=np.log(2.0), n_grid=241,
-            modo='instavel'):
-    """Integra K x'' + (Kdot + Ca) x' + (Cdot + W) x = 0 em t, com
-    matrizes reduzidas interpoladas na trajetoria de fundo."""
-    Ns = np.linspace(N0, N1, n_grid)
-    Kr_s, Cr_s, Wr_s, Hs, ts = [], [], [], [], [0.0]
-    for i, N in enumerate(Ns):
-        K, C, W = matrizes7(N, kv)
-        d_, a_ = particao(K, C)
-        if (d_, a_) != (din, aux):
-            raise RuntimeError(f"particao mudou em N={N:.3f}")
-        Kr, Cr, Wr = reduz(K, C, W, d_, a_)
-        Kr_s.append(Kr); Cr_s.append(Cr); Wr_s.append(Wr)
-        H = fundo_em(N)[2]
-        Hs.append(H)
-        if i:
-            dN = Ns[i]-Ns[i-1]
-            ts.append(ts[-1] + dN*2.0/(Hs[-1]+Hs[-2]))   # dt = dN/H
-    Kr_s = np.array(Kr_s); Cr_s = np.array(Cr_s); Wr_s = np.array(Wr_s)
-    ts = np.array(ts); Hs = np.array(Hs)
-    Kdot = np.gradient(Kr_s, ts, axis=0)
-    Cdot = np.gradient(Cr_s, ts, axis=0)
-
-    def interp(arr, t):
-        j = np.clip(np.searchsorted(ts, t)-1, 0, len(ts)-2)
-        w = (t-ts[j])/(ts[j+1]-ts[j])
-        return (1-w)*arr[j] + w*arr[j+1]
-
-    n = Kr_s.shape[1]
-
-    def rhs(t, z):
-        x, v = z[:n], z[n:]
-        K = interp(Kr_s, t); Kd = interp(Kdot, t)
-        C = interp(Cr_s, t); Cd = interp(Cdot, t)
-        W = interp(Wr_s, t)
-        G = Kd + C - C.T
-        F = Cd + W
-        return np.concatenate([v, -np.linalg.solve(K, G @ v + F @ x)])
-
-    # condicao inicial: automodo do pencil congelado em N0
-    lam0, A0 = qep_reduzida(Kr_s[0], Cr_s[0] , Wr_s[0])
-    vals, vecs = np.linalg.eig(A0)
-    if modo == 'instavel':
-        i0 = int(np.argmax(vals.real))
-    else:                                   # espectador: w2 ~ k^2+0.31
-        alvo = np.sqrt(kv**2/np.exp(2*N0) + 0.31)
-        i0 = int(np.argmin(np.abs(np.abs(vals.imag) - alvo)
-                           + 1e3*np.abs(vals.real)))
-    z0 = np.real(vecs[:, i0])
-    if np.linalg.norm(z0) < 1e-12:
-        z0 = np.imag(vecs[:, i0])
-    z0 = z0/np.linalg.norm(z0)
-
-    sol = solve_ivp(rhs, (ts[0], ts[-1]), z0, method='RK45',
-                    rtol=1e-8, atol=1e-10, dense_output=True,
-                    max_step=(ts[-1]-ts[0])/2000)
-    # medida: ln|z| no fim vs inicio + previsao WKB congelada
-    lnA = np.log(np.linalg.norm(sol.y[:, -1])/np.linalg.norm(sol.y[:, 0]))
-    wkb = 0.0
-    for i in range(len(Ns)-1):
-        lam_i, _ = qep_reduzida(Kr_s[i], Cr_s[i], Wr_s[i])
-        taxa = max(lam_i.real.max(), 0.0)
-        wkb += taxa*(ts[i+1]-ts[i])
-    return lnA, wkb, sol, ts
-
+# ------------------------------ rastreio sigma(N) --------------------
 say("")
-say("auto-teste (ii): espectador delta-chi deve oscilar sem crescer ...")
-lnA, wkb, sol, ts = integra(1.0, modo='espectador')
-say(f"    ln(amplificacao) do espectador = {lnA:+.3f}  "
-    f"[{'PASSA (limitado)' if abs(lnA) < 1.5 else 'FALHA'}]")
+say("=" * 68)
+say("RASTREIO sigma(N) — taxa de crescimento ao longo da trajetoria")
+say("    a: 0.10 -> 10.0   (o fim aproxima o ponto fixo r_inf~0.332)")
+say("=" * 68)
 
-say("")
-say("=" * 66)
-say("INTEGRACAO TEMPORAL — par relativo, fundo em movimento")
-say("    trajetoria: a = 0.25 -> 2.0  (z = 3 -> -0.5)")
-say("=" * 66)
+Ns = np.linspace(np.log(0.10), np.log(10.0), 47)
+resultado = {}
 for kv in (1.0, 10.0, 100.0):
-    lnA, wkb, sol, ts = integra(kv, modo='instavel')
-    razao = lnA/wkb if wkb > 0 else float('nan')
-    say(f"  k={kv:6.1f}:  ln(ampl.) MEDIDO = {lnA:+8.3f}   "
-        f"previsto (WKB congelado) = {wkb:+8.3f}   razao = {razao:5.2f}")
+    sig, Hs = [], []
+    for N in Ns:
+        pares, H = modos_em(N, kv)
+        sig.append(taxa_sigma(pares))
+        Hs.append(H)
+    sig = np.array(sig); Hs = np.array(Hs)
+    resultado[kv] = (sig, Hs)
+
+    # adiabaticidade: eta = |dsig/dt|/sig^2 = |dsig/dN| * H / sig^2
+    dsig = np.gradient(sig, Ns)
+    with np.errstate(divide='ignore', invalid='ignore'):
+        eta = np.abs(dsig)*Hs/np.maximum(sig, 1e-30)**2
+    mask = sig > 0.1*Hs
+    eta_max = float(np.nanmax(eta[mask])) if mask.any() else float('nan')
+
+    # crescimento acumulado ln A = int sigma dt = int (sigma/H) dN
+    janela = (Ns >= np.log(0.25)) & (Ns <= np.log(2.0))
+    lnA_janela = float(np.trapezoid((sig/Hs)[janela], Ns[janela]))
+    lnA_total = float(np.trapezoid(sig/Hs, Ns))
+
+    say("")
+    say(f"--- k = {kv:.0f} ---")
+    say(f"    {'a':>7} {'r':>7} {'sigma/H':>9}   (amostras)")
+    for N in (np.log(0.1), np.log(0.25), np.log(0.5), 0.0,
+              np.log(2.0), np.log(5.0), np.log(10.0)):
+        i = int(np.argmin(np.abs(Ns - N)))
+        r_i = fundo_em(Ns[i])[0]
+        say(f"    {np.exp(Ns[i]):7.2f} {r_i:7.4f} {sig[i]/Hs[i]:9.3f}")
+    say(f"    adiabaticidade max (onde sigma>0.1H): eta = {eta_max:.3f}"
+        f"   [{'congelado CONFIAVEL' if eta_max < 1 else 'congelado DUVIDOSO'}]")
+    say(f"    crescimento acumulado ln A: janela a=0.25->2: "
+        f"{lnA_janela:6.1f}   total a=0.1->10: {lnA_total:6.1f}")
+
+# ------------------------------ o juiz assintotico -------------------
+say("")
+say("=" * 68)
+say("PONTO FIXO (a=10, r~r_inf, rdot~0): quase-de Sitter EXATO —")
+say("aqui a analise congelada nao tem caveat de congelamento.")
+say("=" * 68)
+veredito_fixo = []
+for kv in (1.0, 10.0, 100.0):
+    sig, Hs = resultado[kv]
+    s_fim = sig[-1]/Hs[-1]
+    veredito_fixo.append(s_fim)
+    say(f"    k={kv:6.0f}:  sigma/H no ponto fixo = {s_fim:6.3f}"
+        f"   [{'TAQUIAO PERSISTE' if s_fim > 0.5 else 'DESLIGA'}]")
 
 say("")
-say("LEITURA:")
-say("  razao ~ 1  -> o taquiao e GENUINO: o fundo em movimento nao doma")
-say("               a instabilidade; o QEP congelado estava certo e o")
-say("               ramo finito puro (beta const) reprova o setor escalar.")
-say("  razao << 1 -> o congelamento ERA o artefato: a evolucao do fundo")
-say("               (constraint dependente do tempo) remove/doma o modo.")
-say("  ln(ampl.) medido ~ poucas unidades -> crescimento total modesto,")
-say("               discutir se e observacionalmente toleravel.")
+say("LEITURA FINAL:")
+if max(veredito_fixo) > 0.5:
+    say("  O taquiao SOBREVIVE no ponto fixo, onde o congelamento e")
+    say("  assintoticamente exato -> instabilidade GENUINA e eterna.")
+    say("  O ramo finito puro (beta_n constantes) REPROVA o setor")
+    say("  escalar. A modulacao beta_n(phi_-) da v2 deixa de ser")
+    say("  opcional: e o mecanismo de estabilizacao necessario.")
+else:
+    say("  O taquiao DESLIGA antes do ponto fixo -> instabilidade")
+    say("  transiente; discutir o crescimento acumulado (ln A) e a")
+    say("  tolerancia observacional.")
+say("  (Complemento: se eta << 1 na historia toda, o congelado e")
+say("   confiavel tambem no transiente, e ln A quantifica o dano.)")
+
+os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
+with open(os.path.join(HERE, "out", "evolucao_temporal_escalar.txt"),
+          "w", encoding="utf-8") as fh:
+    fh.write("\n".join(OUT))
+say("")
+say("concluido. saida em auditoria/code/out/evolucao_temporal_escalar.txt")
