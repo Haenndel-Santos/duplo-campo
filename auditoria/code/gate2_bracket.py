@@ -125,23 +125,14 @@ def main():
 
     # ---------------- a consequencia estrutural ----------------
     print("(5) CONSEQUENCIA: a constraint AINDA FATORA em dois ramos?\n")
-    quociente_full = sp.simplify(sp.cancel(br / Bianchi.subs(
-        {b1c: B[1], b2c: B[2], b3c: B[3]})))
-    fatora = sp.simplify(
-        quociente_full * Bianchi.subs({b1c: B[1], b2c: B[2], b3c: B[3]}) - br
-    ) == 0
-    print(f"  [{'SIM' if fatora else 'NAO'}] {{H_g,H_f}} e divisivel por B(r)")
-    if not fatora:
-        print()
-        print("      *** RESULTADO ESTRUTURAL ***")
-        print("      Com beta_n(phi_-), a constraint NAO fatora mais em")
-        print("      B(r) x (cinematica). A dicotomia 'ramo algebrico vs")
-        print("      ramo dinamico' e um artefato de beta_n CONSTANTES.")
-        print()
-        print("      Implicacao para o Passo 3: a v2 nao esta presa a")
-        print("      nenhum dos dois ramos que morreram na v1. A raiz")
-        print("      movel nao e 'ramo algebrico com coeficientes lentos'")
-        print("      — e uma estrutura de solucao nova.")
+    print("    >>> TESTE REMOVIDO — ERA VACUO. <<<\n")
+    print("    A versao anterior calculava q = br/B(r) e verificava")
+    print("    q*B(r) - br == 0, o que e identidade algebrica e vale")
+    print("    SEMPRE, divida exatamente ou nao. O teste nao podia")
+    print("    falhar, e por isso reportava 'SIM' sem conteudo.")
+    print()
+    print("    Teste correto (fatora <=> anula-se na raiz) foi movido")
+    print("    para gate2_fatoracao.py.  Rode aquele.")
 
     print("\n" + "=" * 70)
     print("VEREDITO DA SONDAGEM (minisuperespaco):")
