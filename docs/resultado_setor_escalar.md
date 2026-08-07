@@ -99,3 +99,78 @@ inconsistente no setor escalar, e a v2 (modulação) deixa de ser
 opcional. Se a v3 desfizer o taquião: o congelamento era o artefato, e
 o ramo finito puro segue vivo — nesse caso, próxima verificação é uma
 análise com evolução temporal genuína (não-QEP).
+
+---
+
+## 7. FECHAMENTO (2026-08-07, `evolucao_temporal_escalar.py`)
+
+Dois episódios de método antes do resultado, registrados porque fazem
+parte dele:
+
+- A v3 do teste de robustez era **vácua**: alimentar Ḣ/Ḣ_f/ξ̇
+  verdadeiros deu saída bit a bit idêntica — a forma Γ–Γ só tem
+  primeiras derivadas do fundo, então as matrizes não contêm esses
+  símbolos. O congelamento está no ansatz, não nos valores.
+- A integração DAE (v1 do script de evolução) morreu no próprio
+  auto-teste: os multiplicadores **não** têm linhas nulas de K
+  (velocidades de lapso/shift aparecem em termos cruzados na Γ–Γ); o
+  espaço nulo é não-alinhado e gira com o fundo. A guarda abortou
+  alto, como desenhada.
+
+O caminho que decidiu: **rastreio σ(N) denso (47 pontos, a=0.1→10)
+com adiabaticidade, e o ponto fixo como juiz assintótico.**
+
+### O veredito
+
+$$\boxed{\ \sigma/H \approx 3.0\text{–}3.7\ \text{no ponto fixo }(a=10,\ r=r_\infty=0.3323,\ \dot r\approx0)\ }$$
+
+nos três k testados (1, 10, 100). No ponto fixo o fundo é
+quase-de Sitter **exato** — o congelamento não é aproximação ali. Logo:
+
+**O taquião é genuíno e eterno. O ramo finito puro (β_n constantes)
+REPROVA o setor escalar. Definitivo — sem caveat de congelamento.**
+
+Dados de suporte:
+
+- adiabaticidade η = 0.31–0.58 para k=10, 100 (congelado confiável em
+  toda a trajetória; o η=7.1 de k=1 vem de um único ponto de grade com
+  provável artefato de agrupamento — ver nota abaixo);
+- crescimento acumulado na janela observacional (a=0.25→2):
+  **ln A ≈ 10** (amplificação ~2×10⁴) — catastrófico para teoria
+  linear se o modo acopla aos observáveis;
+- auto-teste: rota lambdify reproduziu a rodada 2 (rota sympy-subs
+  independente) em a=1, k=1.
+
+**Nota de qualidade de dados:** o ponto (k=1, a≈0.50) mostra
+σ/H=2.06, inconsistente com a rodada 2 no mesmo instante (8.1) e com
+os vizinhos da própria trilha — provável artefato de agrupamento de
+modos em k baixo, onde há cruzamentos violentos. As trilhas k=10 e
+k=100 são lisas e batem com a rodada 2. O veredito do ponto fixo não
+depende desse ponto.
+
+### Placar final do ramo finito puro
+
+| Teste | Resultado |
+|---|---|
+| Evolução estrutural (ṙ≠0) | ✓ |
+| Limite GR primordial | ✓ (exato) |
+| Higuchi / setor tensorial | ✓ (400/400) |
+| **Setor escalar** | **✗ — taquião eterno, σ≈(3–4)H** |
+
+### Consequência para o plano v2
+
+A modulação β_n(φ₋) **deixa de ser opcional**: é o mecanismo de
+estabilização necessário, agora com motivação verificada em três
+níveis (o taquião existe; persiste no ponto fixo; e o canal de
+acoplamento entre o par relativo e φ₋ é exatamente o termo
+p_φ·β₁′ que o Gate 2 encontrou na constraint secundária).
+
+E a convergência registrada na §5(b) ganha força: a teoria com β_n
+constantes tem uma direção taquiônica no modo relativo; o potencial
+V(φ₊,φ₋) da v2 é, por construção, um estabilizador de direção
+taquiônica (quártica + condensação). O reparo e a narrativa da
+bifurcação são a mesma matemática. **Próximo passo computacional:**
+estender a maquinaria de perturbações para modulação por coeficiente
+(β₁(φ₋) individual, não F global) e verificar se existe
+(v_∗, λ₋, λ_c, μ₋) que positiviza o par no fundo com ⟨φ₋⟩=v — o
+Gate 4 do plano renasce como "estabilização verificada".
