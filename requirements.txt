@@ -16,7 +16,7 @@
 
 sympy==1.14.0
 numpy==2.5.1
+scipy==1.16.3        # QEP da D1 (scipy.linalg.eig) — d1_ramo_finito.py
 
-# Não usados hoje; descomentar se algum script passar a precisar.
-# scipy==1.14.1
+# Não usado hoje; descomentar se algum script passar a precisar.
 # matplotlib==3.9.2
