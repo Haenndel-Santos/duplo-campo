@@ -37,7 +37,6 @@ import sys
 import time
 
 import numpy as np
-import scipy.linalg as sla
 import sympy as sp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -69,9 +68,9 @@ PBsub = {b3: 0.0, Mg2: 1.0, m2: 1.0,
 RHO_M0 = 0.3
 INF_CUT = 1e7
 
-# ------------------------------ fundo no ponto fixo ------------------
+# ------------------------------ fundos -------------------------------
 def ponto_fixo(B1, B2, B0, B4, mu):
-    """raiz de W(r)=0 (rho=0) + grandezas derivadas; None se nao ha."""
+    """raiz de W(r)=0 (rho=0 EXATO) — usado so na Etapa B simbolica."""
     kap = 1.0/mu
     Meff2v = mu/(1.0 + mu)
     rr = np.roots([kap*B4 - 3*B2, -3*B1, 3*kap*B2 - B0, kap*B1])
@@ -85,6 +84,35 @@ def ponto_fixo(B1, B2, B0, B4, mu):
         return None
     return r, np.sqrt(H2), Meff2v
 
+
+def fundo_a10(B1, B2, B0, B4, mu):
+    """MESMO fundo dos scripts de escaneio (a=10, rho=3e-4): e nele
+    que as ancoras numericas (3.651, -1.6e-5) foram medidas."""
+    kap = 1.0/mu
+    Meff2v = mu/(1.0 + mu)
+    a = 10.0
+    rho = RHO_M0 * a**-3
+    rho_til = rho / Meff2v
+    rr = np.roots([kap*B4 - 3*B2, -3*B1, 3*kap*B2 - B0 - rho_til, kap*B1])
+    r_esc = max(1e-14, 1e-6*kap*B1/max(rho_til, 1.0))
+    reais = sorted(z.real for z in rr
+                   if abs(z.imag) < 1e-9 and z.real > r_esc)
+    if not reais:
+        return None
+    r = reais[0]
+    dW = kap*(2*B4*r - B1/r**2) - 3*B1 - 6*B2*r
+    drdN = -3.0*rho_til/dW
+    xi = r + drdN
+    if xi <= 0:
+        return None
+    Vf = B4 + 3*B2/r**2 + B1/r**3
+    H2 = Meff2v*r*r*Vf/(3.0*mu)
+    if H2 <= 0:
+        return None
+    H = np.sqrt(H2)
+    rho_int = Meff2v*(B0 + 3*B1*r + 3*B2*r**2)
+    return r, xi, H, H/r, 3.0*H2 - rho_int, a, r*a
+
 # ------------------------------ maquinaria ---------------------------
 say("montando L2 ...")
 L2s, fields, vels = d1.build_L2()
@@ -96,44 +124,25 @@ K7n = sp.lambdify(livres, K7.subs(PBsub), modules='numpy')
 C7n = sp.lambdify(livres, C7.subs(PBsub), modules='numpy')
 W7n = sp.lambdify(livres, W7.subs(PBsub), modules='numpy')
 
-def matrizes_pf(kv, B1, B2, B0, B4, mu):
-    pf = ponto_fixo(B1, B2, B0, B4, mu)
-    if pf is None:
+def modos_a10(kv, B1, B2, B0, B4, mu):
+    """modos da BIBLIOTECA (d1.qep_modes — mesma rota das ancoras),
+    no fundo a=10; devolve (pares, r, H) ou None."""
+    f = fundo_a10(B1, B2, B0, B4, mu)
+    if f is None:
         return None
-    r, H, Meff2v = pf
-    args = (1.0, r, r, H, H/r, 0.0, kv, B1, B2, B0, B4, mu, Meff2v)
-    return (np.array(K7n(*args), float), np.array(C7n(*args), float),
-            np.array(W7n(*args), float), r, H)
-
-def modos_com_vetores(Kn, Cn, Wn):
-    """GEP linearizado (lam=i*omega): (lam B - A) z = 0,
-    B=diag(I,K), A=[[0,I],[-W,-(C-C^T)]]; devolve modos finitos com
-    autovetor de campo v, omega2 = -lam^2, kN = v^H K v."""
-    n = Kn.shape[0]
-    Ca = Cn - Cn.T
-    A = np.block([[np.zeros((n, n)), np.eye(n)], [-Wn, -Ca]])
-    B = np.block([[np.eye(n), np.zeros((n, n))],
-                  [np.zeros((n, n)), Kn]])
-    lam, Z = sla.eig(A, B)
-    modos = []
-    for j in range(len(lam)):
-        l = lam[j]
-        if not np.isfinite(l) or abs(l) > INF_CUT:
-            continue
-        v = Z[:n, j]
-        nv = np.linalg.norm(v)
-        if nv < 1e-12:
-            continue
-        v = v/nv
-        kN = float(np.real(np.conj(v) @ Kn @ v))
-        modos.append({'omega2': complex(-l**2), 'kN': kN, 'v': v})
-    return modos
+    r, xi, H, Hf, Ubv, a, bb = f
+    Meff2v = mu/(1.0 + mu)
+    args = (a, bb, xi, H, Hf, Ubv, kv, B1, B2, B0, B4, mu, Meff2v)
+    Kn = np.array(K7n(*args), float)
+    Cn = np.array(C7n(*args), float)
+    Wn = np.array(W7n(*args), float)
+    return d1.agrupa_pares(d1.qep_modes(Kn, Cn, Wn)), r, H
 
 def pior_modo(modos, H):
-    """o modo patologico: maior sigma; empate -> kN mais negativo."""
+    """o modo patologico: maior sigma; empate -> knorm mais negativo."""
     def chave(mm):
-        om = np.sqrt(mm['omega2'])
-        return (abs(om.imag)/H, -mm['kN'])
+        om = np.sqrt(complex(mm['omega2']))
+        return (abs(om.imag)/H, -mm['knorm'])
     return max(modos, key=chave)
 
 def composicao(v):
@@ -142,24 +151,22 @@ def composicao(v):
     return " ".join(f"{NOMES[i]}:{p[i]:.2f}" for i in np.argsort(-p)[:4])
 
 # ------------------------------ auto-teste ---------------------------
+# rota IDENTICA a das ancoras: d1.qep_modes + fundo a=10
 say("")
-say("auto-teste: rota GEP local vs ancoras conhecidas")
-Mx = matrizes_pf(1.0, 1.0, -0.4, 1.0, 0.5, 1.0)
-Kn, Cn, Wn, r, H = Mx
-mm = pior_modo(modos_com_vetores(Kn, Cn, Wn), H)
-sig = abs(np.sqrt(mm['omega2']).imag)/H
+say("auto-teste: rota da biblioteca vs ancoras conhecidas (fundo a=10)")
+pares, r, H = modos_a10(1.0, 1.0, -0.4, 1.0, 0.5, 1.0)
+mm = pior_modo(pares, H)
+sig = abs(np.sqrt(complex(mm['omega2'])).imag)/H
 say(f"    mu=1  REF k=1: sigma/H = {sig:.4f} (esperado 3.651)")
 ok1 = abs(sig - 3.651) < 0.02*3.651
-Mx = matrizes_pf(1.0, 0.20, -1.00, 1.0, 0.5, 0.1)
-Kn, Cn, Wn, r, H = Mx
-modos = modos_com_vetores(Kn, Cn, Wn)
-kNmin = min(m['kN'] for m in modos)
+pares, r, H = modos_a10(1.0, 0.20, -1.00, 1.0, 0.5, 0.1)
+kNmin = min(m['knorm'] for m in pares)
 say(f"    mu=0.1 (0.20,-1.00) k=1: kN_min = {kNmin:+.3e} "
     f"(esperado ~ -1.6e-05)")
 ok2 = -1e-3 < kNmin < -1e-6
 say(f"    [{'PASSA' if ok1 and ok2 else 'FALHA'}]")
 if not (ok1 and ok2):
-    say("    !! abortando: rota local nao reproduz as ancoras")
+    say("    !! abortando: rota nao reproduz as ancoras")
     sys.exit(1)
 
 # ------------------------------ ETAPA A ------------------------------
@@ -174,35 +181,43 @@ CASOS = [
     ("fantasma mu=0.1 forte",    1.25, -1.00, 1.0, 0.5, 0.1),
 ]
 for nome, B1v, B2v, B0v, B4v, mu in CASOS:
-    Mx = matrizes_pf(1.0, B1v, B2v, B0v, B4v, mu)
+    Mx = modos_a10(1.0, B1v, B2v, B0v, B4v, mu)
     if Mx is None:
-        say(f"  {nome}: ponto fixo inexistente")
+        say(f"  {nome}: fundo inexistente")
         continue
-    Kn, Cn, Wn, r, H = Mx
-    modos = modos_com_vetores(Kn, Cn, Wn)
-    mm = pior_modo(modos, H)
-    om = np.sqrt(mm['omega2'])
+    pares, r, H = Mx
+    mm = pior_modo(pares, H)
+    w2 = complex(mm['omega2'])
+    om = np.sqrt(w2)
     say(f"  {nome}  (r_pf={r:.4f}):")
-    say(f"      w2={mm['omega2'].real:+.4e}{mm['omega2'].imag:+.2e}i  "
-        f"sigma/H={abs(om.imag)/H:.3f}  kN={mm['kN']:+.3e}")
+    say(f"      w2={w2.real:+.4e}{w2.imag:+.2e}i  "
+        f"sigma/H={abs(om.imag)/H:.3f}  kN={mm['knorm']:+.3e}")
     say(f"      composicao: {composicao(mm['v'])}")
+    # e tambem o modo de kN mais negativo (nem sempre e o mesmo)
+    mg = min(pares, key=lambda m: m['knorm'])
+    if mg is not mm and mg['knorm'] < 0:
+        w2g = complex(mg['omega2'])
+        say(f"      modo de kN minimo: w2={w2g.real:+.4e}  "
+            f"kN={mg['knorm']:+.3e}")
+        say(f"      composicao: {composicao(mg['v'])}")
 
 say("")
 say("=" * 70)
 say("ETAPA A2 — leis de escala em mu (celula fixa b1=0.5, b2=-0.84)")
 say("=" * 70)
-say(f"    {'mu':>7} {'r_pf':>9} {'sigma/H':>9} {'kN_pior':>12}")
+say(f"    {'mu':>7} {'r_pf':>9} {'sigma/H':>9} {'kN_min':>12}")
 esc = []
 for mu in (0.02, 0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0):
-    Mx = matrizes_pf(1.0, 0.5, -0.84, 1.0, 0.5, mu)
+    Mx = modos_a10(1.0, 0.5, -0.84, 1.0, 0.5, mu)
     if Mx is None:
-        say(f"    {mu:7.2f}  (pf inexistente)")
+        say(f"    {mu:7.2f}  (fundo inexistente)")
         continue
-    Kn, Cn, Wn, r, H = Mx
-    mm = pior_modo(modos_com_vetores(Kn, Cn, Wn), H)
-    sig = abs(np.sqrt(mm['omega2']).imag)/H
-    say(f"    {mu:7.2f} {r:9.5f} {sig:9.3f} {mm['kN']:+12.3e}")
-    esc.append((mu, sig, mm['kN']))
+    pares, r, H = Mx
+    mm = pior_modo(pares, H)
+    sig = abs(np.sqrt(complex(mm['omega2'])).imag)/H
+    kNmin = min(m['knorm'] for m in pares)
+    say(f"    {mu:7.2f} {r:9.5f} {sig:9.3f} {kNmin:+12.3e}")
+    esc.append((mu, sig, kNmin))
 # expoente empirico do kN na regiao de fantasma (sig~0)
 fant = [(mu, kN) for mu, sig, kN in esc if sig < 0.05 and kN < 0]
 if len(fant) >= 2:
@@ -262,16 +277,24 @@ try:
     say("  tr(bloco de massa) fatorado:")
     say(f"    {trW}")
 
-    # auto-teste da forma fechada contra a rota numerica
+    # auto-teste da forma fechada contra a rota numerica no MESMO
+    # ponto (ponto fixo exato: a=1, b=r, xi=r, Ub=0, k~0)
     say("")
-    say("  auto-teste: forma fechada vs numerica na REF (mu=1) ...")
+    say("  auto-teste: forma fechada vs lambdify na REF (mu=1) ...")
     pf = ponto_fixo(1.0, -0.4, 1.0, 0.5, 1.0)
-    subsN = {rS: pf[0], muS: 1.0, b1: 1.0, b2: -0.4, b4: 0.5}
+    r_n, H_n, Meff2_n = pf
+    subsN = {rS: r_n, muS: 1.0, b1: 1.0, b2: -0.4, b4: 0.5}
     W0num = np.array(W0.subs(subsN).evalf(), float)
-    Mx = matrizes_pf(1e-8, 1.0, -0.4, 1.0, 0.5, 1.0)   # k~0 numerico
-    dif = np.max(np.abs(W0num - Mx[2]))
-    say(f"    max|W_simbolica - W_numerica(k=1e-8)| = {dif:.3e}")
+    argsN = (1.0, r_n, r_n, H_n, H_n/r_n, 0.0, 1e-8,
+             1.0, -0.4, 1.0, 0.5, 1.0, Meff2_n)
+    Wdir = np.array(W7n(*argsN), float)
+    dif = np.max(np.abs(W0num - Wdir))
+    say(f"    max|W_simbolica - W_lambdify(k=1e-8)| = {dif:.3e}")
     say(f"    [{'PASSA' if dif < 1e-6 else 'FALHA'}]")
+    if dif >= 1e-6:
+        say("    !! divergencia: a eliminacao simbolica de beta_0 nao")
+        say("       bate com a avaliacao direta — investigar antes de")
+        say("       usar o det/tr acima")
 except Exception as e:
     say(f"  !! ETAPA B abortou: {type(e).__name__}: {e}")
     say("  (a Etapa A acima permanece valida; a forma fechada fica")
