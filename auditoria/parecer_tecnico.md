@@ -1,5 +1,29 @@
 # Parecer Técnico sobre a TDCP — Síntese por Capítulo e Avaliação de Viabilidade
 
+> ## ⚠ ERRATUM 01 (2026-08-07) — partes deste parecer estão superadas
+>
+> A constraint de Bianchi usada pelo corpus **está errada no segundo
+> fator**, e este parecer a aceitou. Ver `erratum_01_bianchi.md`.
+>
+> Forma correta: $\mathcal B(r)\,(N_f\dot a-N_g\dot b)=0$, e não
+> $\mathcal B(r)(H_g-\xi H_f)=0$. Verificado por duas rotas
+> independentes (bracket canônico e consistência lagrangiana).
+>
+> **O que muda aqui:**
+> - **Problema Transversal 1** ("ramo dinâmico duplamente morto"):
+>   as duas pernas caem. $\dot r\equiv0$ era consequência de premissa
+>   errada — o correto é $\dot r=H_g(\xi-r)\neq0$ genericamente. E o
+>   par fantasma da D1 foi calculado em fundo que não é o ramo
+>   dinâmico. O ramo passa de "morto" a **não avaliado**.
+> - Vereditos de Cap.5, Cap.14, Anexo B, Anexo E e Anexo H que
+>   dependem de $\dot r\equiv0$ — lista no erratum §7.
+> - As legendas "r(t) evolui" (Cap.5 §5.5B, Cap.14 §14.4B), marcadas
+>   ERRO, **estavam certas**.
+>
+> **O que NÃO muda:** todo o resto do parecer. Os achados sobre Cap.16,
+> Cap.18, o Σ invertido, as sobrecargas, o bloco solar, a D3, a D6 e a
+> D7 são independentes deste erro.
+
 Data: 2026-08-06. Base: auditoria sequencial das 856 equações
 (`registro/`, sumários em `lotes/lote_01…lote_11`) + as 8 derivações
 (`derivations/`, âncoras D1–D8) + `integration_assessment.md`.
