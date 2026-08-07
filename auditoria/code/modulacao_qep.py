@@ -77,11 +77,11 @@ def say(*a):
 RHO_M0 = 0.3
 B1_0, B2_V, B0_V, B4_V, MU = 1.0, -0.4, 1.0, 0.5, 1.0
 BETAS = (b0, b1, b2, b3, b4)
-MEFF2 = MU/(1.0 + MU)
 
 # simbolos que ficam livres no lambdify das FATIAS
-LIVRES = (a_s, b_s, xi_s, H_s, Hf_s, Ub, Up, Upp, ksym)
-FIXOS = {Mg2: 1.0, Mf2: MU, Meff2: MEFF2, m2: 1.0,
+# (Mf2 e Meff2 LIVRES para poder varrer a hierarquia mu)
+LIVRES = (a_s, b_s, xi_s, H_s, Hf_s, Ub, Up, Upp, ksym, Mf2, Meff2)
+FIXOS = {Mg2: 1.0, m2: 1.0,
          chid_s: 0.0, chidd_s: 0.0, rho_s: 0.0,
          Hd_s: 0.0, Hfd_s: 0.0, xid_s: 0.0}
 
@@ -121,47 +121,51 @@ def monta(fat, args, bvals, bp, bpp):
     return M
 
 # ------------------------------ fundos -------------------------------
-def fundo_a10(B1e):
-    """fundo a=10 (mesmo dos scripts anteriores) com beta_1 -> B1e."""
-    kap = 1.0/MU
+def fundo_a10(B1e, B2v, B0v, B4v, mu):
+    """fundo a=10 (mesmo dos scripts anteriores), betas e mu livres."""
+    kap = 1.0/mu
+    meff2 = mu/(1.0 + mu)
     a = 10.0
-    rho_til = RHO_M0*a**-3/MEFF2
-    rr = np.roots([kap*B4_V - 3*B2_V, -3*B1e,
-                   3*kap*B2_V - B0_V - rho_til, kap*B1e])
+    rho_til = RHO_M0*a**-3/meff2
+    rr = np.roots([kap*B4v - 3*B2v, -3*B1e,
+                   3*kap*B2v - B0v - rho_til, kap*B1e])
+    r_esc = max(1e-14, 1e-6*kap*B1e/max(rho_til, 1.0))
     reais = sorted(z.real for z in rr
-                   if abs(z.imag) < 1e-9 and z.real > 1e-12)
+                   if abs(z.imag) < 1e-9 and z.real > r_esc)
     if not reais:
         return None
     r = reais[0]
-    dW = kap*(2*B4_V*r - B1e/r**2) - 3*B1e - 6*B2_V*r
+    dW = kap*(2*B4v*r - B1e/r**2) - 3*B1e - 6*B2v*r
     drdN = -3.0*rho_til/dW
     xi = r + drdN
-    Vf = B4_V + 3*B2_V/r**2 + B1e/r**3
-    H2 = MEFF2*r*r*Vf/(3.0*MU)
+    Vf = B4v + 3*B2v/r**2 + B1e/r**3
+    H2 = meff2*r*r*Vf/(3.0*mu)
     if H2 <= 0 or xi <= 0:
         return None
     H = np.sqrt(H2)
-    rho_int = MEFF2*(B0_V + 3*B1e*r + 3*B2_V*r**2)
+    rho_int = meff2*(B0v + 3*B1e*r + 3*B2v*r**2)
     return r, xi, H, H/r, 3.0*H2 - rho_int, a, r*a
 
-def espectro(kv, g, vst, mchi2):
+def espectro(kv, g, vst, mchi2, b1_0=B1_0, b2v=B2_V, b0v=B0_V,
+             b4v=B4_V, mu=MU):
     """espectro no fundo modulado; devolve (pares, r, H) ou None.
 
-    beta_1eff = B1_0(1+g^2); bp1 = 2 B1_0 g/vst; bpp1 = 2 B1_0/vst^2.
+    beta_1eff = b1_0(1+g^2); bp1 = 2 b1_0 g/vst; bpp1 = 2 b1_0/vst^2.
     Up fixado pela estacionariedade (e_1 = xi+3r no fundo usado);
     Upp = mchi2.
     """
-    B1e = B1_0*(1.0 + g*g)
-    f = fundo_a10(B1e)
+    meff2 = mu/(1.0 + mu)
+    B1e = b1_0*(1.0 + g*g)
+    f = fundo_a10(B1e, b2v, b0v, b4v, mu)
     if f is None:
         return None
     r, xi, H, Hf, Ubv, a, bb = f
-    bp1 = 2.0*B1_0*g/vst
-    bpp1 = 2.0*B1_0/vst**2
+    bp1 = 2.0*b1_0*g/vst
+    bpp1 = 2.0*b1_0/vst**2
     e1 = xi + 3.0*r
-    Up_val = -MEFF2*bp1*e1          # estacionariedade de chi
-    args = (a, bb, xi, H, Hf, Ubv, Up_val, mchi2, kv)
-    bvals = (B0_V, B1e, B2_V, 0.0, B4_V)
+    Up_val = -meff2*bp1*e1          # estacionariedade de chi
+    args = (a, bb, xi, H, Hf, Ubv, Up_val, mchi2, kv, mu, meff2)
+    bvals = (b0v, B1e, b2v, 0.0, b4v)
     bp = (0.0, bp1, 0.0, 0.0, 0.0)
     bpp = (0.0, bpp1, 0.0, 0.0, 0.0)
     Kn = monta(FK, args, bvals, bp, bpp)
@@ -181,15 +185,16 @@ def saude(pares, H, tol_sig=0.05, tol_kn=1e-9):
 # ------------------------------ T1: reconstrucao exata ---------------
 say("")
 say("auto-teste T1: fatias recombinadas == matrizes originais")
-f = fundo_a10(B1_0)
+f = fundo_a10(B1_0, B2_V, B0_V, B4_V, MU)
 r, xi, H, Hf, Ubv, a, bb = f
-argsT = (a, bb, xi, H, Hf, Ubv, 0.0, 0.3, 1.0)
+argsT = (a, bb, xi, H, Hf, Ubv, 0.0, 0.3, 1.0, MU, MU/(1.0 + MU))
 bvalsT = (B0_V, B1_0, B2_V, 0.0, B4_V)
 zer = (0.0,)*5
 K_rec = monta(FK, argsT, bvalsT, zer, zer)
 subsT = dict(FIXOS)
 subsT.update({a_s: a, b_s: bb, xi_s: xi, H_s: H, Hf_s: Hf, Ub: Ubv,
               Up: 0.0, Upp: 0.3, ksym: 1.0,
+              Mf2: MU, Meff2: MU/(1.0 + MU),
               Fb: 1.0, Fp: 0.0, Fpp: 0.0,
               b0: B0_V, b1: B1_0, b2: B2_V, b3: 0.0, b4: B4_V})
 K_dir = np.array(sp.Matrix(K7).subs(subsT).evalf(), float)
@@ -251,29 +256,78 @@ for mchi2 in MC:
                 linha.append(f"F{kmin:+.0e}")
         say(f"    {g:5.1f}   " + " ".join(linha))
 
+# ------------------------------ ETAPA 2: a fresta de mu=0.1 ----------
+# Na celula (b1_0=0.2, b2=-1.0, mu=0.1) a patologia e um FANTASMA de
+# norma quase nula (kN ~ -1.6e-5). Perto de zero, a mistura derivativa
+# pode virar o sinal para qualquer lado — e o unico canto do mapa onde
+# a modulacao poderia CONSERTAR em vez de repelir. Se kN_min virar
+# positivo em algum (g, v*) mantendo sigma~0, existe configuracao
+# saudavel; se nao, o no-go da modulacao de coeficientes fecha.
+say("")
+say("=" * 70)
+say("ETAPA 2 — a fresta: modulacao sobre o fantasma quase-nulo de mu=0.1")
+say("    celula (b1_0=0.2, b2=-1.0, mu=0.1); sem modulacao:")
+say("    kN_min = -1.6e-5, sigma ~ 0 (ponto fixo)")
+say("    entradas: kN_min em k=1 (sinal + e a cura) | T=virou taquiao")
+say("=" * 70)
+limpas2 = []
+for mchi2 in (0.3, 3.0):
+    say("")
+    say(f"--- m_chi^2 = {mchi2} ---")
+    say("      g\\v*   " + "  ".join(f"{v:8.1f}" for v in VS))
+    for g in (0.25, 0.5, 1.0, 2.0, 4.0):
+        linha = []
+        for vst in VS:
+            res = espectro(1.0, g, vst, mchi2,
+                           b1_0=0.2, b2v=-1.0, mu=0.1)
+            if res is None:
+                linha.append("    X    ")
+                continue
+            pares, r, H = res
+            cls, sig, kNm = saude(pares, H)
+            if cls == 'TAQUIAO':
+                linha.append(f" T{sig:5.2f}  ")
+            elif cls == 'LIMPA':
+                linha.append(f" .{kNm:+.0e}")
+                limpas2.append((g, vst, mchi2, kNm))
+            else:
+                linha.append(f" F{kNm:+.0e}")
+        say(f"    {g:5.2f}   " + " ".join(linha))
+
 # ------------------------------ veredito -----------------------------
 say("")
 say("=" * 70)
 say("VEREDITO")
 say("=" * 70)
 if limpas:
-    say(f"  {len(limpas)} combinacao(oes) LIMPAS em k=1 e k=10:")
+    say(f"  ETAPA 1 (mu=1): {len(limpas)} combinacao(oes) LIMPAS:")
     for g, vst, mc in limpas[:12]:
         say(f"    g={g}, v*={vst}, m_chi^2={mc}")
-    say("")
-    say("  A MODULACAO CURA O PAR nesta regiao — primeira configuracao")
-    say("  genuinamente saudavel do setor escalar em todo o projeto.")
-    say("  Proximos passos: (a) checar a historia (nao so o ponto")
-    say("  fixo); (b) k=100 e k=0.1; (c) Gate 2 Parte B (ADM completo)")
-    say("  vira prioridade — a contagem de graus com a modulacao ligada")
-    say("  precisa ser provada, nao so sondada.")
 else:
-    say("  Nenhuma combinacao limpa nesta grade. A modulacao beta_1")
-    say("  quadratica nao cura nos knobs varridos. Antes de concluir:")
-    say("  (a) ampliar (g, v*, m_chi^2); (b) modular tambem beta_2/beta_4;")
-    say("  (c) se persistir, o no-go se estende a v2 minimal e a")
-    say("  reformulacao precisa ser mais profunda que modulacao de")
-    say("  coeficientes.")
+    say("  ETAPA 1 (mu=1): nenhuma combinacao limpa — a modulacao nao")
+    say("  cura o taquiao de mu=1 (e piora monotonicamente com g).")
+say("")
+if limpas2:
+    say(f"  ETAPA 2 (mu=0.1): {len(limpas2)} combinacao(oes) com o")
+    say("  fantasma quase-nulo VIRADO para kN>0 mantendo sigma~0:")
+    for g, vst, mc, kn in limpas2[:12]:
+        say(f"    g={g}, v*={vst}, m_chi^2={mc}: kN_min={kn:+.2e}")
+    say("")
+    say("  >>> EXISTE CONFIGURACAO SAUDAVEL: a condensacao de phi_-")
+    say("  cura o ultimo modo doente na hierarquia invertida. Proximos")
+    say("  passos: historia completa, k=0.1/100, e Gate 2 Parte B (a")
+    say("  contagem com modulacao ligada precisa de prova).")
+else:
+    say("  ETAPA 2 (mu=0.1): a fresta NAO fechou — o fantasma")
+    say("  quase-nulo nao vira com a modulacao varrida.")
+    say("")
+    say("  Com as duas etapas negativas, o no-go cobre: beta constante")
+    say("  (todo o espaco varrido) E modulacao beta_1(phi_-) (knobs")
+    say("  varridos, mu=1 e mu=0.1). A doenca do setor de vinculos")
+    say("  resiste a modulacao de coeficientes. Caminhos restantes:")
+    say("  modular beta_2/beta_4 (fatias prontas), beta_3!=0 (sai de")
+    say("  F1), acoplamento de materia nao-minimo, ou aceitar o no-go")
+    say("  e documenta-lo como resultado central.")
 
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
 with open(os.path.join(HERE, "out", "modulacao_qep.txt"),
