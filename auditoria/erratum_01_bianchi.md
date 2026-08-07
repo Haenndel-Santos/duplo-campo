@@ -162,6 +162,27 @@ escrita. Este erro não era de escrita — era de conteúdo, numa fórmula
 plausível e não derivada. **Leitura sequencial não pega esse tipo.** Só
 recalcular pega.
 
+## 8-bis. Confirmação numérica (2026-08-07)
+
+O ramo dinâmico corrigido foi integrado
+(`auditoria/code/ramo_dinamico_correto.py`). Resultados em
+`docs/resultado_ramo_finito.md`. Resumo:
+
+- $\dot r\neq0$ **confirmado** — $r$ cresce de ~0 a ~0.33;
+- $\xi>0$ em toda a história (o ramo correto é o **finito**, com
+  $r\propto a^3$ e $\xi=4r$ no primordial);
+- limite GR primordial **exato**: $H^2/(\rho/3M_g^2)=1.0000$;
+- **Higuchi satisfeito em 400/400 pontos**, com o resultado estrutural
+  $m_T^2/H^2\to12$ no primordial, independente de todos os parâmetros;
+- cosmologia razoável: $\Omega_m\approx0.25$ hoje, universo acelerando.
+
+**A D8 fica invalidada no seu resultado numérico** (0/60 era artefato
+do $\xi$ incorreto). Seu achado documental — a faixa $m_{S0}$ é design
+observacional — permanece.
+
+Continua em aberto: o setor escalar (fantasma/gradiente) neste fundo.
+É a metade restante do antigo "duplamente morto", e o próximo alvo.
+
 ## 9. Efeito sobre o plano v2
 
 O Passo 1 (ação) e o Gate 2 Parte A (linearidade nos lapsos) não são
