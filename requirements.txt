@@ -1,0 +1,22 @@
+# TDCP — dependências dos scripts de auditoria e derivação
+#
+# Versões FIXADAS de propósito. Este projeto trata resultados numéricos
+# e simbólicos como evidência (ver auditoria/parecer_tecnico.md, Parte
+# III-B: estratificação epistêmica). Um resultado só é Nível 2a/2b se
+# for reproduzível — e isso exige ambiente conhecido.
+#
+# Instalação:
+#   python -m venv .venv
+#   .venv\Scripts\Activate.ps1          (PowerShell)
+#   pip install -r requirements.txt
+#
+# Ao atualizar qualquer versão: re-rodar TODOS os scripts de
+# derivations/code/ e conferir contra as saídas oficiais em
+# derivations/code/out/ antes de commitar a mudança.
+
+sympy==1.14.0
+numpy==2.5.1
+
+# Não usados hoje; descomentar se algum script passar a precisar.
+# scipy==1.14.1
+# matplotlib==3.9.2

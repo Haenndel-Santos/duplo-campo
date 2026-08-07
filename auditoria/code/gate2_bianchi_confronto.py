@@ -78,9 +78,23 @@ def main():
     print("    Testando se  fator_canon - lambda*fator_corpus  se anula")
     print("    quando H_g = 0 e H_f = 0, para algum lambda.\n")
 
-    # resolve H_g=0 e H_f=0 para pa, pb (escolhendo um ramo de sinal)
-    sol_pa = sp.solve(sp.Eq(H_g, 0), pa)
-    sol_pb = sp.solve(sp.Eq(H_f, 0), pb)
+    # H_g=0 e H_f=0 sao QUADRATICAS nos momentos -> duas raizes.
+    # Selecao por CRITERIO FISICO, nao por indice: p_a = -6 M_g^2 a adot/N_g,
+    # logo p_a < 0 num universo em expansao (adot > 0). Idem p_b.
+    # (Depender da ordem de sp.solve() e fragil entre versoes de sympy.)
+    def raiz_negativa(eq, var):
+        raizes = sp.solve(sp.Eq(eq, 0), var)
+        for z in raizes:
+            teste = z.subs({a: 1, b: 1, pph: 0, Vv: 0, rho_m: 1,
+                            Mg2: 1, Mf2: 1, Meff2: 1, m2: 1,
+                            b0: 1, b1: 1, b2: sp.Rational(-2, 5),
+                            b4: sp.Rational(1, 2)})
+            if teste.is_real and teste < 0:
+                return [z]
+        return raizes[:1] if raizes else []
+
+    sol_pa = raiz_negativa(H_g, pa)
+    sol_pb = raiz_negativa(H_f, pb)
     print(f"    H_g=0  ->  p_a = {sol_pa[0] if sol_pa else '(sem solucao)'}")
     print(f"    H_f=0  ->  p_b = {sol_pb[0] if sol_pb else '(sem solucao)'}\n")
 
