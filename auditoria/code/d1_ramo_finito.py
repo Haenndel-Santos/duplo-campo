@@ -90,11 +90,16 @@ def benchmark_ramo_finito(a_val):
     rho = RHO_M0 * a_val**-3
     rho_til = rho / (PB[m2]*PB[Meff2])
 
-    rr = sp.Symbol('rr', positive=True)
-    eq = _W(rr) - rho_til
-    chute = min(sp.Rational(1, 3),
-                PB[b1]/rho_til)          # r ~ b1/rho_til quando rho grande
-    r_val = sp.nsolve(eq, rr, chute, prec=30)
+    # raiz do ramo FINITO: forma POLINOMIAL (sem 1/r — o nsolve na
+    # forma com 1/r escapou para a raiz negativa, dando H^2<0) e
+    # selecao pela MENOR raiz real positiva, como no script de fundo.
+    rr = sp.Symbol('rr')
+    poly = sp.Poly(sp.expand((_W(rr) - rho_til) * rr), rr)
+    reais = [z for z in poly.nroots(n=30)
+             if abs(sp.im(z)) < 1e-25 and sp.re(z) > 1e-12]
+    if not reais:
+        raise RuntimeError(f"a={a_val}: cubica sem raiz positiva")
+    r_val = sp.re(min(reais, key=lambda z: sp.re(z)))
 
     dW = sp.diff(_W(rr), rr).subs(rr, r_val)
     drdN = -3*rho_til/dW                  # d/dN de W(r)=rho_til
@@ -103,6 +108,13 @@ def benchmark_ramo_finito(a_val):
     H2 = (PB[m2]*PB[Meff2]*r_val**2 *
           (PB[b4] + 3*PB[b3]/r_val + 3*PB[b2]/r_val**2 + PB[b1]/r_val**3)
           ) / (3*PB[Mf2])
+
+    # FILTROS FISICOS — abortar em vez de propagar raiz errada
+    if not (H2 > 0):
+        raise RuntimeError(f"a={a_val}: H^2={float(H2):.4f}<0 — raiz errada")
+    if not (xi_val > 0):
+        raise RuntimeError(f"a={a_val}: xi={float(xi_val):.4f}<0 — "
+                           f"ramo infinito/patologico")
     H_val = sp.sqrt(H2)
 
     rho_int = (PB[m2]*PB[Meff2] *
@@ -127,11 +139,64 @@ def benchmark_ramo_finito(a_val):
     # mesmo truque do main() da D1: materia -> Ub (sem perturbacao de materia)
     vals[Ub] = vals[Ub] + vals[rho_s]
     vals[rho_s] = sp.Integer(0)
-    # racionaliza (30 digitos), como o benchmark original
+    # racionaliza (30 digitos), como o benchmark original — com guarda:
+    # parte imaginaria residual (< 1e-25) e poda; genuina e erro fatal
     out = {}
     for kk, vv in vals.items():
-        out[kk] = sp.Rational(sp.N(vv, 30)) if vv != 0 else sp.Integer(0)
+        if vv == 0:
+            out[kk] = sp.Integer(0)
+            continue
+        vN = sp.N(vv, 30)
+        im = abs(sp.im(vN))
+        if im > sp.Float('1e-25'):
+            raise RuntimeError(
+                f"a={a_val}: valor complexo em {kk} = {vN} — fundo invalido")
+        out[kk] = sp.Rational(sp.re(vN))
     return out, float(r_val), float(xi_val), float(H_val), float(drdN)
+
+
+KGRID_EXT = [0.1, 1.0, 10.0, 100.0, 1000.0]
+
+
+def espectro_detalhado(K, C, W, vb, H_val, label):
+    """Como d1.espectro_por_k, mas imprime a PARTE IMAGINARIA de w2 e
+    a taxa de crescimento Im(omega)/H — o numero que decide se uma
+    instabilidade e cosmologicamente relevante (>~1) ou inofensiva."""
+    import numpy as np
+    from tdcp_pert_lib import k as ksym
+    d1.say(f"\n--- {label} ---")
+    resultados = {}
+    for kv in KGRID_EXT:
+        subs = dict(vb)
+        subs[ksym] = sp.Rational(kv)
+        Kn = d1.to_numpy(K, subs)
+        Cn = d1.to_numpy(C, subs)
+        Wn = d1.to_numpy(W, subs)
+        pares = d1.agrupa_pares(d1.qep_modes(Kn, Cn, Wn))
+        pares.sort(key=lambda mm: abs(mm['omega2']))
+        resultados[kv] = pares
+        d1.say(f"  k={kv:8.2f}: {len(pares)} modo(s)")
+        for mm in pares:
+            w2 = mm['omega2']
+            om = np.sqrt(complex(w2))
+            gr = abs(om.imag) / H_val
+            flag = f"  Im(w)/H={gr:8.3f} {'<<< INSTAVEL' if gr > 1 else '(inofensivo)' if gr > 1e-6 else ''}" \
+                if abs(w2.imag) > 1e-8*max(1.0, abs(w2.real)) or w2.real < 0 else ""
+            d1.say(f"      w2 = {w2.real:+.6e} {w2.imag:+.3e}i   "
+                   f"kN = {mm['knorm']:+.3e}{flag}")
+    # fit c^2 e m^2 com k=100 e k=1000 (parte real)
+    k1, k2v = KGRID_EXT[-2], KGRID_EXT[-1]
+    p1, p2 = resultados[k1], resultados[k2v]
+    a2 = float(vb[a_s]**2)
+    if len(p1) == len(p2) and p1:
+        for idx in range(len(p1)):
+            w1 = p1[idx]['omega2'].real
+            w2r = p2[idx]['omega2'].real
+            c2 = (w2r - w1) / ((k2v**2 - k1**2) / a2)
+            mm2 = w1 - c2 * k1**2 / a2
+            d1.say(f"    modo {idx+1}: c_s^2 = {c2:+.6f}, m^2 = {mm2:+.5f}, "
+                   f"kinetic-sign = {'+' if p1[idx]['knorm'] > 0 else '-'}")
+    return resultados
 
 
 def main():
@@ -155,12 +220,15 @@ def main():
                        (sp.Integer(2), "futuro (a=2, perto do ponto fixo)")):
         vb, rv, xv, Hv, dr = benchmark_ramo_finito(a_val)
         fac = float(sp.N(PB[b1] + PB[b2]*(sp.Float(xv) + sp.Float(rv))))
+        cf2 = (xv/rv)**2
         d1.say(f"\n    ponto: {tag}  r={rv:.4f}  xi={xv:.4f}  "
                f"H={Hv:.4f}  dr/dN={dr:+.4f}")
         d1.say(f"    fator estrutural beta1+beta2(xi+r) = {fac:+.4f}  "
                f"(era -0.88 no fundo errado da D1)")
-        d1.espectro_por_k(
-            K7, C7, W7, vb,
+        d1.say(f"    previsao estrutural c_f^2 = xi^2/r^2 = {cf2:.4f}  "
+               f"(comparar com o c_s^2 do par relativo)")
+        espectro_detalhado(
+            K7, C7, W7, vb, Hv,
             f"RAMO FINITO {tag}: r={rv:.4f}, xi={xv:.4f}")
 
     d1.say("")
