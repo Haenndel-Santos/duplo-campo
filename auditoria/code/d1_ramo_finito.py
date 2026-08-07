@@ -79,13 +79,16 @@ def _W(r):
     return (PB[Mg2]/PB[Mf2])*r**2*Vf - Vg
 
 
-def benchmark_ramo_finito(a_val):
+def benchmark_ramo_finito(a_val, congelado=True):
     """Fundo consistente com a constraint CORRIGIDA no ramo finito.
 
-    r resolve  m^2 M_eff^2 W(r) = rho  (raiz finita, por nsolve com
-    chute r ~ beta_1/rho_til, o balanco do ramo finito);
+    r resolve  m^2 M_eff^2 W(r) = rho  (raiz finita);
     xi = r + dr/dN via diferenciacao implicita;
     H_f = H/r;  chi congelado (beta_n constantes, sem modulacao).
+
+    congelado=True  : Hdot=Hfdot=xidot=0 (aproximacao da D1)
+    congelado=False : taxas VERDADEIRAS do fundo, por diferenciacao
+                      implicita — teste de robustez do congelamento
     """
     rho = RHO_M0 * a_val**-3
     rho_til = rho / (PB[m2]*PB[Meff2])
@@ -134,8 +137,25 @@ def benchmark_ramo_finito(a_val):
         Up: sp.Integer(0), Upp: sp.Rational(3, 10),
         rho_s: rho,
         Ub: Ub_val,
-        Hd_s: 0, Hfd_s: 0, xid_s: 0,      # fundo congelado (caveat D1)
     })
+    if congelado:
+        vals.update({Hd_s: 0, Hfd_s: 0, xid_s: 0})
+    else:
+        # taxas VERDADEIRAS por diferenciacao implicita de W(r)=rho_til:
+        #   rho_til' = -3 rho_til  (em N=ln a)
+        #   dr/dN    = -3 rho_til / W'
+        #   d2r/dN2  = 9 rho_til/W' + 3 rho_til W'' (dr/dN) / W'^2
+        d2W = sp.diff(_W(rr), rr, 2).subs(rr, r_val)
+        d2rdN2 = 9*rho_til/dW + 3*rho_til*d2W*drdN/dW**2
+        Vf = (PB[b4] + 3*PB[b3]/r_val + 3*PB[b2]/r_val**2
+              + PB[b1]/r_val**3)
+        dVf = sp.diff(PB[b4] + 3*PB[b3]/rr + 3*PB[b2]/rr**2
+                      + PB[b1]/rr**3, rr).subs(rr, r_val)
+        dlnH_dN = sp.Rational(1, 2)*(2/r_val + dVf/Vf)*drdN
+        Hd = H_val**2 * dlnH_dN                       # Hdot = H^2 dlnH/dN
+        xid = H_val*(drdN + d2rdN2)                   # xidot = H dxi/dN
+        Hfd = (Hd - H_val**2*drdN/r_val)/r_val        # d(H/r)/dt
+        vals.update({Hd_s: Hd, Hfd_s: Hfd, xid_s: xid})
     # mesmo truque do main() da D1: materia -> Ub (sem perturbacao de materia)
     vals[Ub] = vals[Ub] + vals[rho_s]
     vals[rho_s] = sp.Integer(0)
@@ -215,10 +235,19 @@ def main():
     d1.say("[2] blocos simbolicos (K, C, W) ...")
     K7, C7, W7 = quadratic_matrices(L2s, fields, vels)
 
-    for a_val, tag in ((sp.Integer(1), "hoje (a=1)"),
-                       (sp.Rational(1, 2), "passado (a=0.5)"),
-                       (sp.Integer(2), "futuro (a=2, perto do ponto fixo)")):
-        vb, rv, xv, Hv, dr = benchmark_ramo_finito(a_val)
+    pontos = (
+        (sp.Integer(1), True,  "hoje (a=1) — CONGELADO [ref. rodada 2]"),
+        (sp.Integer(1), False, "hoje (a=1) — TAXAS VERDADEIRAS"),
+        (sp.Rational(1, 2), False, "passado (a=0.5) — taxas verdadeiras"),
+        (sp.Integer(2), False, "futuro (a=2) — taxas verdadeiras"),
+    )
+    for a_val, cong, tag in pontos:
+        vb, rv, xv, Hv, dr = benchmark_ramo_finito(a_val, congelado=cong)
+        if not cong:
+            d1.say(f"\n    [taxas] Hdot/H^2 = "
+                   f"{float(vb[Hd_s]/vb[H_s]**2):+.4f}   "
+                   f"xidot/H = {float(vb[xid_s]/vb[H_s]):+.4f}   "
+                   f"Hfdot/H^2 = {float(vb[Hfd_s]/vb[H_s]**2):+.4f}")
         fac = float(sp.N(PB[b1] + PB[b2]*(sp.Float(xv) + sp.Float(rv))))
         cf2 = (xv/rv)**2
         d1.say(f"\n    ponto: {tag}  r={rv:.4f}  xi={xv:.4f}  "
