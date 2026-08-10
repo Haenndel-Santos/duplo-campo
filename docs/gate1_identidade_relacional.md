@@ -1,0 +1,112 @@
+# Gate 1 (2ª geração) — A Identidade do Grau Relacional
+
+**Data:** 2026-08-10. Origem: releitura conceitual do manuscrito v1
+pós-veredito (usuário) + confronto com a evidência da v2. Formaliza as
+hipóteses R1/R2 e o protocolo de teste, no método do
+`plano_v2_reconstrucao.md` (níveis epistêmicos; critérios de falha
+pré-declarados).
+
+---
+
+## 1. O problema
+
+O corpus usa "modo relativo" para **quatro objetos distintos**, ligados
+por interpretação, nunca por derivação:
+
+| Objeto | O que é | Onde vive |
+|---|---|---|
+| Φ₋ = (Φ₁−Φ₂)/√2 | modo diferencial primordial (o que bifurca) | Cap.1–2 (ontologia) |
+| φ / χ (modulador) | campo que modula β_n / F·V | Cap.3+ / anexos (v1 nunca fixou a identidade) |
+| r = b/a | separação geométrica de fundo | cosmologia FLRW |
+| σ / S | grau escalar propagante da deformação relativa g–f, pós-vínculos | perturbações F1 |
+
+A cadeia narrativa Φ₋ → bifurcação → (g,f) → σ é **identificação
+interpretativa**, não resultado. A v2 deu um passo além ao **decretar**
+(dicionário de símbolos, decisão normativa) que o modulador é φ₋ — e
+testou esse braço via β₁(φ₋): **não cura o setor escalar** (veredito
+consolidado).
+
+## 2. Hipóteses de trabalho
+
+> **R1 — Desacoplamento entre o modo primordial e sua realização F1.**
+> O no-go do setor escalar é um resultado sobre a REPRESENTAÇÃO
+> (helicity-0/setor de vínculos da realização bimétrica HR-F1), não
+> sobre o grau relacional primordial. Nada demonstrado até aqui exige
+> que δΦ₋ e σ_HR sejam o mesmo grau de liberdade.
+
+> **R2 — Natureza efetiva/coletiva.**
+> O grau relacional primordial pode ser parâmetro de ordem/variável
+> coletiva de um estado conjunto dos dois setores (𝓡); o escalar
+> macroscópico seria variável efetiva (σ_eff), não campo elementar.
+
+**Suporte já existente para R1 (nível 2b, dentro do repo):**
+`estrutura_par_relativo.md` — a composição dos autovetores patológicos
+é dubleto de shifts B_g±B_f (μ~1) e lapso Φ_f (μ→0), com δφ₋
+desacoplado (F′=0) e SEM dominância da direção "diferença de métricas"
+Ψ_f−Ψ_g. O modo que adoece é estrutural-de-vínculo — não é o portador
+óbvio da memória primordial nem o δΦ₋.
+
+## 3. O trilema da seta Φ₋ → (g,f)
+
+Prior estrutural (nível 3 — declarado como prior, não como teorema;
+dois priors de literatura já caíram por cálculo neste projeto): um
+segundo spin-2 não se compõe de escalares (obstruções tipo
+Weinberg–Witten; gráviton exige termo cinético próprio). Se o prior
+segura, as únicas saídas são:
+
+- **(a) f fundamental; Φ₋ = modulador.** É o braço da v2 — já
+  instanciado por decreto e TESTADO: β₁(φ₋) não cura (piora).
+- **(b) g e f efetivas, emergentes de 𝓡** (R2). Programa novo; conecta
+  com a "condensação dinâmica" da fila (p_φ≠0, constraint não fatora).
+- **(c) grau relacional sem segunda métrica** (outra classe de teoria;
+  perde o setor tensorial da v2 — Higuchi automático, m_T²/H²→12).
+
+Nota sobre a analogia de condensados (R2): o modo de fase relativa
+(Josephson) em condensados acoplados pode ser gapeado OU dinamicamente
+instável (contrafluxo) — a analogia organiza, não garante saúde.
+
+## 4. Protocolo do Gate 1
+
+### G1-a (documental; custo ~zero; nível 1)
+Tabela de identidade da cadeia {Φ₋, φ, χ, φ₋-v2, σ, S, r}: cada
+ocorrência no corpus classificada como *identificada-por-decreto /
+distinta / indefinida*, estendendo o `dicionario_simbolos.md` com a
+flag epistêmica explícita ("identificação normativa, não derivada") na
+linha "φ₋ modula β_n".
+**Critério:** zero ocorrências sem classificação.
+
+### G1-b (quantitativo; barato; nível 2b) — o teste central
+Com `modulacao_qep.py` (F′≠0, δφ₋ acoplado), computar a projeção
+|⟨v, δφ₋⟩|² e |⟨v, direções-métricas-relativas⟩|² para TODOS os modos
+(sadios e patológicos), na varredura μ ∈ {0.1, 0.3, 1, 3, 10}, no ponto
+fixo, em k=1 E k=10 (regra: saúde/identidade sempre em σ E kN, dois k).
+- **R1 passa** se |⟨v_patológico, δφ₋⟩|² < 0.05 em toda a varredura
+  (a patologia é espectadora de δφ₋ ⇒ o grau primordial NÃO é o modo
+  doente, mesmo dentro da F1).
+- **R1 falha** se em algum regime o modo patológico for
+  δφ₋-dominado (⇒ a doença alcança o próprio grau primordial nessa
+  realização; o trilema colapsa para (b)/(c) imediatamente).
+
+### G1-c (teórico; curto; nível 3→2a)
+Nota formalizando a obstrução do trilema (§3): ou uma prova adaptada ao
+contexto (sobe a 2a), ou a demolição do prior (também informação). Em
+qualquer caso, o trilema vira decisão documentada, não default tácito.
+
+## 5. Sequenciamento (não muda a fila da v2)
+
+1. **Investigação 1 da fila (ramo algébrico pós-erratum)** continua
+   primeiro — barata, fecha a última porta interna da F1, e o G1-b
+   pega carona nas MESMAS rodadas (os autovetores já saem).
+2. G1-a em paralelo (documental).
+3. G1-c depois do resultado de G1-b.
+4. Se G1-b passar E o ramo algébrico pós-erratum também reprovar:
+   R1 vira o enquadramento oficial do no-go ("a F1 escolheu a
+   representação errada para a relação física correta") e a
+   investigação 2 (condensação dinâmica) é promovida a teste direto
+   de R2.
+
+## 6. O que este gate NÃO é
+
+Não é quantização de σ. A pergunta "σ é quântico?" é prematura
+enquanto não se souber SE σ_HR é a realização correta do grau
+relacional. Este gate decide a pergunta anterior.
