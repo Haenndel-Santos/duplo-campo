@@ -161,13 +161,26 @@ instabilidade real = transiente de transição; direção cinética
 negativa estrutural universal com letalidade aberta — A TDCP-F1 NÃO
 ESTÁ EXCLUÍDA no nível em que o programa pode julgar; o no-go fica
 reclassificado para "sem veredito de exclusão".
-FILA RESTANTE: R-3 = Fase B refeita por evolução real na rolagem
-(σ/H≈13 congelado é suspeito); R-4 = k grandes + mapa lnA vs vínculos
-(fresta μ=0.1: maior lnA, mas é a direção de escape de Akrami et al.
-— tensão); fantasma → fronteira declarada (normalização canônica =
-sessão dedicada, ou aberto no paper). DEPOIS: enunciado final →
-cap. 07 → paper. D3 segue barato. EIXO DO PAPER: aviso metodológico +
-reconciliação + fundo/tensor/não-fatorado + fantasma-em-aberto.
+DECISÃO DE PRIORIDADE DO AUTOR (2026-08-11, noite;
+docs/gate_fantasma_estrutural.md): NÃO partir para TDCP-2 — a F1
+ganhou sobrevida real. FILA REORDENADA: (1) R-3 = Fase B por evolução
+real na rolagem (decide também se o modo de condensação δφ₋ — o
+candidato dinâmico mais próximo da narrativa do Cap.1 — sobrevive à
+dinâmica real); (2) R-4 = mapa lnA(célula,k) do transiente vs
+vínculos (a sobrevida é CONDICIONAL a isto; a literatura morreu nesta
+praia); (3) GATE F = letalidade da direção K<0, três etapas com
+critérios pré-declarados: F-a teste da constraint secundária
+linearizada (H-CONSTRAINT — hipótese MAIS BEM SUPORTADA: contagem
+3-congelado vs 2-esperado + frequência do modo crescendo com a,
+"quer ser vínculo"; barato, fazer primeiro), F-b normalização
+canônica (H-NORM/H-SC), F-c interações (H-GHOST, só se F-b indicar
+fantasma físico). Ramos de saída pré-declarados no doc. (4) enunciado
+final → cap. 07 → paper. Programa de emergência (trilema b1) EM
+ESPERA — reativável só se Gate F der H-GHOST. Gate 1 ganhou §11
+(pós-D2: a motivação "σ emergente porque taquiônico" está anulada; o
+achado documental G1-a permanece). D3 segue barato. EIXO DO PAPER:
+aviso metodológico + reconciliação + fundo/tensor/não-fatorado +
+Gate F como pergunta central.
 
 DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
 2. Formato de publicação do no-go (nota técnica / paper / abertura da

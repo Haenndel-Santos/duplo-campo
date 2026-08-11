@@ -219,3 +219,19 @@ patológicos estruturais mantêm projeção δφ₋ ≈ 0.000; o único modo
 assentar (w²: −13.7 → +25, limpo). A separação entre a instabilidade
 física da bifurcação (transiente, auto-curável) e a doença do setor de
 vínculos (eterna) é a evidência mais limpa de R1 no programa.
+
+## 11. Pós-escrito 2 (2026-08-11, noite) — a conversa muda com o D2
+
+O D2 (`resultado_d2_evolucao.md`) removeu o taquião tardio como
+fenômeno dinâmico — e com ele a motivação *"σ precisa ser emergente
+porque, tratado como campo fundamental, é taquiônico"*. O que este
+gate estabeleceu **permanece** (G1-a: a seta Φ₋→σ nunca foi derivada;
+G1-b/C1: medidas de composição corretas como afirmações sobre o
+espectro congelado), mas o enquadramento R1 perde o objeto original
+("o no-go é sobre a representação" — o no-go tardio agora é vácuo, e
+"eterna" no §10 acima deve ser lido como "do espectro congelado").
+A pergunta estrutural da identidade segue aberta por mérito próprio;
+a prioridade migrou para o **Gate F**
+(`gate_fantasma_estrutural.md`): a letalidade da direção cinética
+negativa. O programa de emergência (trilema b1) fica em espera,
+reativável se o Gate F der H-GHOST.
