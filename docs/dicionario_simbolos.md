@@ -45,16 +45,29 @@ renomeia.
 |---|---|---|---|
 | `φ₁`, `φ₂` | par primordial correlacionado | 1 | Cap.1 usava `Φ₁,Φ₂` |
 | `φ₊` | `(φ₁+φ₂)/√2` — modo comum | 1 | |
-| `φ₋` | `(φ₁−φ₂)/√2` — modo diferencial | 1 | **é ele que modula β_n** |
+| `φ₋` | `(φ₁−φ₂)/√2` — modo diferencial | 1 | **é ele que modula β_n** — identificação normativa, NÃO derivada (G1-a) |
 | `V(φ₊,φ₋)` | potencial dos campos primordiais | 4 | **explícito** — fecha achado A7 |
 | `F(φ₋)` | modulação do potencial HR | 0 | era `F(φ)`/`F(χ)` |
 | `δφ₊`, `δφ₋` | perturbações | 1 | |
 | `χ` | **distância comóvel** | −1 | uso exclusivo na v2 — ver abaixo |
 
 **`χ` é aposentado como campo.** A v1 usava `φ` e `χ` sem nunca dizer
-se eram o mesmo campo. Na v2 o campo que modula o potencial HR **é**
-`φ₋`, o modo diferencial da bifurcação — é essa identificação que
-costura a cadeia bifurcação → β_n → r★ → separação estrutural.
+se eram o mesmo campo (a única equivalência declarada é parentética:
+Cap.14 §14.1, "campo estrutural φ (ou χ)"). Na v2 o campo que modula o
+potencial HR **é** `φ₋`, o modo diferencial da bifurcação — é essa
+identificação que costura a cadeia bifurcação → β_n → r★ → separação
+estrutural.
+
+**Flag epistêmica (G1-a, 2026-08-11):** essa identificação é
+**normativa (decisão de dicionário), não derivada** — nenhum lugar do
+corpus deriva que o modulador dos β_n é o modo diferencial primordial.
+O levantamento completo da cadeia {Φ₋, φ, χ, φ₋-v2, σ, S, r}, com cada
+ocorrência classificada (decreto/indefinida/distinta/derivada), está em
+`gate1a_tabela_identidade.md`. Resultado: **zero elos de identidade
+derivados** na cadeia inteira. O braço "modulador = φ₋" foi instanciado
+por este decreto e testado pela v2: não cura o setor escalar
+(`veredito_setor_escalar_final.md`); o G1-b mostrou que a patologia tem
+projeção zero em δφ₋ (`resultado_investigacao1_ramo_algebrico.md` §3).
 
 ### Colisão nova: χ (campo) × χ (distância comóvel)
 
@@ -76,6 +89,16 @@ comóvel exclusivamente, que é o padrão da literatura.
 O script distingue os dois por contexto — flagra `F(χ)`, `U(χ)`, `χ̇`,
 `δχ`, `ρ_χ`, `S_χ`, `χ̄`, `χ(t)` (campo) e ignora `dχ`, `χ_max`,
 `χ_*`, `W(χ)` (distância).
+
+**Terceira vida de χ (achado do G1-a, 2026-08-11):** no rascunho
+antigo do Cap.6 (§6.4, "Equação Escalar Efetiva"), `χ` nomeia ainda um
+terceiro objeto — o **modo escalar efetivo reduzido** após eliminação
+dos auxiliares (o que o Cap.6.2 chama de `σ`). Colisão histórica
+(o Cap.6.2 revisa o Cap.6), mas catalogada. Relacionado: o rótulo
+"**modo relativo**" também é sobrecarregado na v1 — nomeia `σ`
+(Cap.6.2+), `S` (Cap.10/15+) e o modo **tensorial** h₋ (Anexo D §D.5).
+Um corpus v2 precisa de três nomes distintos. Ver
+`gate1a_tabela_identidade.md` §5.
 
 ## 4. Perturbações métricas
 

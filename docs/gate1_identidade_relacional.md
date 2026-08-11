@@ -145,3 +145,26 @@ testado e reprovado (`docs/veredito_setor_escalar_final.md`).
 **Próximo passo da fila:** G1-a (tabela documental, custo ~zero), depois
 G1-c (nota do trilema), depois a Investigação 2 (condensação dinâmica,
 $p_\phi\neq0$) — agora promovida a teste direto de R2.
+
+## 8. Resultado (2026-08-11) — G1-a CONCLUÍDO
+
+`docs/gate1a_tabela_identidade.md`: 19 clusters de ocorrência
+classificados (Cap.1–19 + Anexos B–L), zero sem classificação
+(critério ✔). **Veredito: a cadeia Φ₋ → φ/χ → r → σ tem ZERO elos de
+identidade derivados** — toda identificação entre dois dos quatro
+objetos é decreto (por vezes auto-declarado: "como glosa narrativa […]
+Nenhuma equação muda", Anexo L §L.2) ou indefinida. As únicas linhas
+derivadas são propriedades internas (EOM de σ; m₋²<0) ou um
+acoplamento (m_S²∝r−r★), nunca "X é Y". A flag epistêmica foi
+adicionada ao `dicionario_simbolos.md` §3 na linha "φ₋ modula β_n".
+
+Subprodutos: terceira colisão de χ (modo reduzido no Cap.6 §6.4 antigo),
+sobrecarga do rótulo "modo relativo" (σ, S, h₋ tensorial), e uma quarta
+fórmula de tempo relacional (η̇=Γχ̇² do Anexo H, além das três já
+listadas no `plano_v2_reconstrucao.md` Passo 10) — registrados no
+dicionário e na tabela §5.
+
+G1-a e G1-b fechados no mesmo dia, convergentes: nem o texto deriva a
+identificação (G1-a, nível 1), nem a dinâmica a sustenta na F1 (G1-b,
+nível 2b — projeção zero). **Falta só o G1-c** (nota do trilema) para
+fechar o Gate 1 por completo.

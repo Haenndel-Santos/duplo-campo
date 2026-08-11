@@ -184,9 +184,11 @@ fila), (c) grau relacional sem segunda métrica.
 
 ## 5. O que ainda falta
 
-- **G1-a** (tabela documental de identidade, custo ~zero) — segue como
-  próximo passo, fora deste script.
-- **G1-c** (nota do trilema, teórico) — depois de G1-a.
+- **G1-a** (tabela documental de identidade, custo ~zero) —
+  **CONCLUÍDO 2026-08-11**: `docs/gate1a_tabela_identidade.md` (zero
+  elos de identidade derivados na cadeia; flag epistêmica adicionada ao
+  dicionário).
+- **G1-c** (nota do trilema, teórico) — próximo passo.
 - **Investigação 2** (condensação dinâmica, $p_\phi\neq0$) — agora
   promovida a teste direto de R2, conforme `gate1_identidade_relacional.md`
   §5 item 4.
