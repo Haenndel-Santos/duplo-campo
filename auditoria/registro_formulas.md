@@ -46,13 +46,17 @@ propostas de correção em `derivations/00_indice.md`):
 | D2 (`02_setor_tensorial_mT2.md`) | Cap.16 §16.2/§16.4/§16.6, Anexo D §D.3/§D.5, Cap.17 (cadeias EFT) | Cap.16 **ERRO** (cinético e massa sem ξ); Anexo D §D.3 **CONFERE** |
 | D3 (`03_dV_dNg_regra_cadeia.md`) | Anexo A §A.8, Anexo B §B.5 | A.8 **CONFERE**; B.5 **ERRO DE CÁLCULO** (regra da cadeia) |
 | D4 (`04_friedmann_eta_acao.md`) | Cap.1 §1.6, Cap.2, Anexo E §E.7, Anexo H §H.6 | **NÃO-DERIVÁVEL** da ação atual (postulado/extensão) |
-| D5 (`05_rdot_ramo_dinamico.md`) | Cap.14 §14.11–14.14, Cap.5, Cap.13 §13.6 | ṙ≡0 **DERIVADO**; §14.12 **ERRO** (condição trocada) |
+| D5 (`05_rdot_ramo_dinamico.md`) | Cap.14 §14.11–14.14, Cap.5, Cap.13 §13.6 | ṙ≡0 **DERIVADO**; §14.12 **ERRO** (condição trocada) — **⚠ SUPERSEDIDO pelo Erratum 01**: a constraint-premissa era errada; no ramo correto ṙ=H_g(ξ−r)≠0 |
 | D6 (`06_mu_alpha_quase_estatico.md`) | Cap.18 §18.3/§18.4/§18.7, Cap.7 §7.6 | ansatz Yukawa/α/η_slip **ERRO** (multi-polo, α_∞=0) |
 | D7 (`07_modo_sigma_bessel.md`) | Cap.10 §10.3 | **CONFERE SOB HIPÓTESE** (\|m²\|≪H²; expoente geral k^(−ν)) |
-| D8 (`08_mS0_dinamica_F.md`) | Cap.19 §19.3, benchmarks B1/B2 | **NÃO-DERIVÁVEL** (design observacional; pressuposto refutado) |
+| D8 (`08_mS0_dinamica_F.md`) | Cap.19 §19.3, benchmarks B1/B2 | **NÃO-DERIVÁVEL** (design observacional; pressuposto refutado) — **⚠ resultado numérico (Higuchi 0/60) INVALIDADO pelo Erratum 01** (fundo com ξ incorreto); o achado documental permanece |
 
 Erratum transversal: sinal da fonte na eq. de χ (Anexo E §E.3(3)) — a
 ação dá −m²M_eff²F′V.
+
+**Erratum 01 (`erratum_01_bianchi.md`, 2026-08-07):** a constraint de
+Bianchi do corpus estava errada; correta: B(r)·(N_f·ȧ−N_g·ḃ)=0. Afeta
+as âncoras D5 e D8 conforme as flags acima.
 
 ## Estatísticas
 
