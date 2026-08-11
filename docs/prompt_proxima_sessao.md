@@ -92,9 +92,31 @@ FILA (duas trilhas paralelas e independentes):
   prior baixo (β₂/β₄; F2 β₃≠0) — opcionais. Pendência menor: abort
   g=1/m30 da Fase A (indeterminado; não bloqueia nada).
 
+POSICIONAMENTO NA LITERATURA FEITO (2026-08-11,
+docs/posicionamento_literatura.md — 4 verificações paralelas com
+disciplina fonte-verificada): a instabilidade conhecida do ramo finito
+é de GRADIENTE (∝k) e transiente — nosso taquião de MASSA persistente
+no dS tardio é novo SE físico (tensão com a literatura ⇒ carga de
+prova alta); Higuchi-automático é conhecido (Könnig 1503.07436 — citar,
+não reivindicar); m_T²/H²→12 é novo mas POR ERA (radiação daria outra
+constante); a classe-irmã é o chameleon bigravity (1702.04490 —
+análise de vínculos é LACUNA explícita deles, nossa oportunidade); o
+fenômeno "fora dos dois ramos com pouso" não tem precedente; a medida
+Stückelberg é nova COMO MEDIDA (citar Aoki-Maeda-Namba 1506.04543 como
+precedente qualitativo); (b1) tem genealogia (ISS 1971 f-dominance;
+FQH chiral graviton Nature 2024) e checklist de obstáculos. ITENS
+PRÉ-PAPER (do §2 do doc): D1 CRÍTICO = redução completa de vínculos no
+ponto fixo p/ provar que o par doente sobrevive (conecta com a extração
+analítica pendente de estrutura_par_relativo.md; se NÃO sobreviver,
+reescreve o no-go tardio); D3 barato = constante da era de radiação;
+D2/D4 = seções do paper (comparação com a instabilidade de gradiente;
+fronteira quadrática vs cura não-linear de Aoki et al.).
+
 DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
 2. Formato de publicação do no-go (nota técnica / paper / abertura da
-   v2 — o cap. 07 da v2 é o vehículo natural se decidir extrair).
+   v2 — o cap. 07 da v2 é o vehículo natural se decidir extrair;
+   estratégia em camadas recomendada em sessão: v2+Zenodo/DOI →
+   paper arXiv/journal → essay opcional).
 3. Atualização do artifact do parecer (🔭) com o arco erratum+no-go.
 
 REGRAS DE MÉTODO (aprendidas a ferro; seguir sempre):
