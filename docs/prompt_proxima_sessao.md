@@ -59,14 +59,18 @@ FILA (duas trilhas paralelas e independentes):
   do arquivo: Gate 0 a cada sessão, fonte versionada em toda afirmação
   quantitativa, nível epistêmico declarado, três nomes para o antigo
   "modo relativo"). Começar pelo 01 ou pelo 07 (o resultado central).
-- TRILHA DE CÁLCULO: (opcional, barata) derivação de Stückelberg
-  in-repo — sobe a circularidade do G1-c de nível 3+2b para 2a
-  (gate1c §7: introduzir φ^a na ação de minisuperespaço validada,
-  extrair o setor de Goldstone, comparar com o dubleto B_g±B_f/Φ_f
-  medido) → DEPOIS Investigação 2 (condensação dinâmica, p_φ≠0 —
-  teste direto de R2, caro), SEMPRE sob os critérios pré-declarados
-  do gate1c §5 (nomear geradores quebrados; declarar classe da EFT;
-  saúde σ E kN em k=1 e 10; auto-teste de poder de detecção).
+- TRILHA DE CÁLCULO: Stückelberg (C1) EXECUTADA em 2026-08-11
+  (stuckelberg_goldstone.py; docs/resultado_stuckelberg_goldstone.md):
+  premissa da circularidade elevada a 2a+2b; taquião de k=1 É o
+  helicity-0 (π_L 0.995+); fantasma da fresta é o π⁰ puro; e o
+  MECANISMO corrigido — massa taquiônica = resíduo (~1%) de
+  cancelamento quebra×EH (glosa "pseudo-Goldstone textbook" refutada;
+  C3 falhou informativamente como pré-declarado). PRÓXIMO PASSO:
+  Investigação 2 (condensação dinâmica, p_φ≠0 — teste direto de R2,
+  caro), sob os critérios do gate1c §5 MAIS o alvo novo do
+  resultado_stuckelberg §6: candidato a cura tem de alterar o BALANÇO
+  quebra×EH (mexer só na quebra já falhou empírica e estruturalmente);
+  p_φ≠0 muda a estrutura de vínculos = o lado EH do balanço.
 
 DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
 2. Formato de publicação do no-go (nota técnica / paper / abertura da

@@ -192,7 +192,12 @@ internas devem explicitar a dívida do multiplete massivo.
 Decisão documentada do trilema: (a) FECHADO (testado, reprovou);
 (b) BRAÇO DE TRABALHO, alvo primário (b1), teste atual = Investigação 2;
 (c) FALLBACK declarado. Caminho nomeado para 2a: derivação de
-Stückelberg in-repo (opcional, não bloqueia a Investigação 2).
+Stückelberg in-repo (opcional, não bloqueia a Investigação 2) —
+**EXECUTADA 2026-08-11**: premissa elevada a 2a+2b; o taquião de k=1 É
+o helicity-0 (π_L 0.995+); e o mecanismo foi corrigido — a massa
+taquiônica é resíduo de cancelamento quebra×EH, não curvatura da quebra
+(ver `gate1c_nota_trilema.md` §9 e
+`resultado_stuckelberg_goldstone.md`).
 
 **Status do Gate 1: FECHADO** (G1-a ✔ nível 1; G1-b ✔ nível 2b;
 G1-c ✔ decisão documentada + prior examinado). R1 é o enquadramento

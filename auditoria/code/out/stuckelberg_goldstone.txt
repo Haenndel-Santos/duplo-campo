@@ -1,0 +1,171 @@
+========================================================================
+STUCKELBERG / GOLDSTONE — C1 da fila (gate1c secao 7)
+========================================================================
+[montagem] K,C,W 7x7 prontos; campos: ['Phi_g', 'B_g', 'Phi_f', 'Psi_f', 'B_f', 'E_f', 'dchi']
+
+------------------------------------------------------------------------
+PARTE A — derivacao simbolica do setor de Goldstone (alvo: 2a)
+------------------------------------------------------------------------
+
+A1. vetores de orbita das difeos relativas (duas rotas + controle)
+    delta Phi_f  = -T*xidot/xi - Tdot   [rotas BATEM]
+    delta Psi_f  = H_f*T*xi   [rotas BATEM]
+    delta B_f    = T*xi/b + Zdot*b/(k*xi)   [rotas BATEM]
+    delta E_f    = Zpar/k   [rotas BATEM]
+    controle negativo (sinal de Psi_f trocado): DETECTADO (diverge, como esperado)
+  [A1 PASSA]
+
+A2. K e C nao contem Fb/Fp/Fpp (quebra = potencial puro)
+    K_int = C_int = 0 simbolico: confirmado
+    (sanidade/poder do assert: W7 depende de Fb? True — esperado True)
+  [A2 PASSA]
+    => consequencia 2a: doenca CINETICA nao pode vir diretamente do
+       termo de quebra; doenca de MASSA pode (e o teste B2 mede se vem).
+
+------------------------------------------------------------------------
+PARTE B — decomposicao de Goldstone + origem da massa (2b)
+------------------------------------------------------------------------
+
+[lambdify] full (Fb=1) e base (Fb=0), fundo fixo — tecnica do T1
+    pronto
+
+  mu=0.3 [REF]  (beta1=1.0, beta2=-0.4, r=0.576908, xi=0.577309, H=0.423596)
+    k=1  (det orbita = -4.236e+00)
+      w2=+3.100e-01  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+1.550e+02  rI=0.000
+      w2=-2.228e+00  kN=+6.05e-01  [TAQUIAO ]
+        blocos: orbita-f=0.531 mult=0.469 dchi=0.000   goldstone: pi0(T,Td)=0.005 piL(Z,Zd)=0.995  (resid 1.1e-16)
+        massa:  v'W_int v=+1.392e+02  v'W_EH v=-1.406e+02  rI=0.498
+      w2=+5.606e+00  kN=-2.94e-01  [FANTASMA]
+        blocos: orbita-f=0.547 mult=0.453 dchi=0.000   goldstone: pi0(T,Td)=0.086 piL(Z,Zd)=0.914  (resid 5.6e-17)
+        massa:  v'W_int v=+1.333e+02  v'W_EH v=-1.322e+02  rI=0.502
+    k=10  (det orbita = -4.236e-02)
+      w2=+3.881e-01  kN=-4.08e+01  [FANTASMA]
+        blocos: orbita-f=0.963 mult=0.037 dchi=0.000   goldstone: pi0(T,Td)=0.963 piL(Z,Zd)=0.037  (resid 0.0e+00)
+        massa:  v'W_int v=+2.139e+01  v'W_EH v=-2.248e+01  rI=0.488
+      w2=+1.300e+00  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+6.500e+02  rI=0.000
+      w2=-2.095e+00  kN=+4.64e+01  [TAQUIAO ]
+        blocos: orbita-f=0.999 mult=0.001 dchi=0.000   goldstone: pi0(T,Td)=1.000 piL(Z,Zd)=0.000  (resid 1.4e-17)
+        massa:  v'W_int v=-7.710e+01  v'W_EH v=-2.022e+01  rI=0.792
+
+  mu=1.0 [REF]  (beta1=1.0, beta2=-0.4, r=0.332259, xi=0.332423, H=0.557509)
+    k=1  (det orbita = -5.575e+00)
+      w2=+3.100e-01  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+1.550e+02  rI=0.000
+      w2=-4.143e+00  kN=+3.33e-01  [TAQUIAO ]
+        blocos: orbita-f=0.518 mult=0.482 dchi=0.000   goldstone: pi0(T,Td)=0.002 piL(Z,Zd)=0.998  (resid 3.5e-18)
+        massa:  v'W_int v=+2.504e+02  v'W_EH v=-2.517e+02  rI=0.499
+      w2=+6.108e+00  kN=-2.40e-01  [FANTASMA]
+        blocos: orbita-f=0.526 mult=0.474 dchi=0.000   goldstone: pi0(T,Td)=0.043 piL(Z,Zd)=0.957  (resid 1.7e-18)
+        massa:  v'W_int v=+2.448e+02  v'W_EH v=-2.439e+02  rI=0.501
+    k=10  (det orbita = -5.575e-02)
+      w2=+6.587e-01  kN=-4.83e+01  [FANTASMA]
+        blocos: orbita-f=0.954 mult=0.046 dchi=0.000   goldstone: pi0(T,Td)=0.966 piL(Z,Zd)=0.034  (resid 1.1e-19)
+        massa:  v'W_int v=+1.279e+02  v'W_EH v=-1.286e+02  rI=0.499
+      w2=+1.300e+00  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+6.500e+02  rI=0.000
+      w2=-4.347e+00  kN=+9.67e+01  [TAQUIAO ]
+        blocos: orbita-f=0.989 mult=0.011 dchi=0.000   goldstone: pi0(T,Td)=0.988 piL(Z,Zd)=0.012  (resid 2.8e-17)
+        massa:  v'W_int v=+5.675e+01  v'W_EH v=-4.771e+02  rI=0.106
+
+  mu=3.0 [REF]  (beta1=1.0, beta2=-0.4, r=0.176595, xi=0.176685, H=0.610893)
+    k=1  (det orbita = -6.109e+00)
+      w2=+3.100e-01  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+1.550e+02  rI=0.000
+      w2=-4.776e+00  kN=+3.28e-01  [TAQUIAO ]
+        blocos: orbita-f=0.519 mult=0.481 dchi=0.000   goldstone: pi0(T,Td)=0.002 piL(Z,Zd)=0.998  (resid 1.1e-16)
+        massa:  v'W_int v=+2.949e+02  v'W_EH v=-2.965e+02  rI=0.499
+      w2=+6.898e+00  kN=-2.75e-01  [FANTASMA]
+        blocos: orbita-f=0.529 mult=0.471 dchi=0.000   goldstone: pi0(T,Td)=0.050 piL(Z,Zd)=0.950  (resid 0.0e+00)
+        massa:  v'W_int v=+2.876e+02  v'W_EH v=-2.863e+02  rI=0.501
+    k=10  (det orbita = -6.109e-02)
+      w2=+2.188e-01  kN=-8.67e+01  [FANTASMA]
+        blocos: orbita-f=0.948 mult=0.052 dchi=0.000   goldstone: pi0(T,Td)=0.951 piL(Z,Zd)=0.049  (resid 7.9e-17)
+        massa:  v'W_int v=+2.395e+02  v'W_EH v=-2.347e+02  rI=0.505
+      w2=+1.300e+00  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+6.500e+02  rI=0.000
+      w2=-4.841e+00  kN=+6.41e+01  [TAQUIAO ]
+        blocos: orbita-f=0.995 mult=0.005 dchi=0.000   goldstone: pi0(T,Td)=0.993 piL(Z,Zd)=0.007  (resid 1.4e-17)
+        massa:  v'W_int v=-4.896e+01  v'W_EH v=-2.614e+02  rI=0.158
+
+  mu=10.0 [REF]  (beta1=1.0, beta2=-0.4, r=0.074760, xi=0.074807, H=0.607504)
+    k=1  (det orbita = -6.075e+00)
+      w2=+3.100e-01  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+1.550e+02  rI=0.000
+      w2=-4.168e+00  kN=+5.12e-01  [TAQUIAO ]
+        blocos: orbita-f=0.539 mult=0.461 dchi=0.000   goldstone: pi0(T,Td)=0.006 piL(Z,Zd)=0.994  (resid 0.0e+00)
+        massa:  v'W_int v=+2.699e+02  v'W_EH v=-2.720e+02  rI=0.498
+      w2=+1.121e+01  kN=-3.40e-01  [FANTASMA]
+        blocos: orbita-f=0.564 mult=0.436 dchi=0.000   goldstone: pi0(T,Td)=0.138 piL(Z,Zd)=0.862  (resid 5.6e-17)
+        massa:  v'W_int v=+2.532e+02  v'W_EH v=-2.499e+02  rI=0.503
+    k=10  (det orbita = -6.075e-02)
+      w2=-3.984e-01  kN=-1.99e+02  [TAQUIAO ]
+        blocos: orbita-f=0.926 mult=0.074 dchi=0.000   goldstone: pi0(T,Td)=0.757 piL(Z,Zd)=0.243  (resid 1.7e-18)
+        massa:  v'W_int v=+4.988e+02  v'W_EH v=-4.196e+02  rI=0.543
+      w2=+1.300e+00  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+6.500e+02  rI=0.000
+      w2=-4.061e+00  kN=+1.95e+01  [TAQUIAO ]
+        blocos: orbita-f=1.000 mult=0.000 dchi=0.000   goldstone: pi0(T,Td)=1.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=-1.122e+02  v'W_EH v=+3.289e+01  rI=0.773
+
+  mu=0.1 [fresta]  (beta1=0.2, beta2=-1.0, r=0.064498, xi=0.064519, H=0.176628)
+    k=1  (det orbita = -1.766e+00)
+      w2=+3.100e-01  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+1.550e+02  rI=0.000
+      w2=+6.329e-01  kN=+1.23e-01  [limpo   ]
+        blocos: orbita-f=1.000 mult=0.000 dchi=0.000   goldstone: pi0(T,Td)=0.121 piL(Z,Zd)=0.879  (resid 4.9e-18)
+        massa:  v'W_int v=+1.067e-01  v'W_EH v=-3.100e-02  rI=0.775
+      w2=+2.380e+03  kN=-1.62e-05  [FANTASMA]
+        blocos: orbita-f=1.000 mult=0.000 dchi=0.000   goldstone: pi0(T,Td)=0.998 piL(Z,Zd)=0.002  (resid 0.0e+00)
+        massa:  v'W_int v=-1.889e-02  v'W_EH v=+5.705e-02  rI=0.249
+    k=10  (det orbita = -1.766e-02)
+      w2=+1.066e+00  kN=+9.62e-01  [limpo   ]
+        blocos: orbita-f=1.000 mult=0.000 dchi=0.000   goldstone: pi0(T,Td)=0.852 piL(Z,Zd)=0.148  (resid 1.4e-17)
+        massa:  v'W_int v=+5.196e-01  v'W_EH v=-7.292e-01  rI=0.416
+      w2=+1.300e+00  kN=+5.00e+02  [limpo   ]
+        blocos: orbita-f=0.000 mult=0.000 dchi=1.000   goldstone: pi0(T,Td)=0.000 piL(Z,Zd)=0.000  (resid 0.0e+00)
+        massa:  v'W_int v=+0.000e+00  v'W_EH v=+6.500e+02  rI=0.000
+      w2=+2.334e+01  kN=+8.38e-04  [limpo   ]
+        blocos: orbita-f=1.000 mult=0.000 dchi=0.000   goldstone: pi0(T,Td)=0.997 piL(Z,Zd)=0.003  (resid 9.8e-18)
+        massa:  v'W_int v=-5.249e-02  v'W_EH v=+7.111e-03  rI=0.881
+
+[continuidade] sigma/H (REF mu=1, k=1) = 3.6510 (esperado 3.651)
+[continuidade] kN fantasma (fresta, k=1) = -1.616e-05 (esperado -1.6e-5)
+  [ANCORAS OK]
+
+========================================================================
+VEREDITO C1 (criterios pre-declarados no cabecalho)
+========================================================================
+  C1 (estrutura, 2a): PASSA — rotas batem, controle negativo detecta, quebra=potencial puro, orbitas geram o bloco-f
+  C2 (composicao, 2b): PASSA — 17 modos patologicos, 0 fora de {orbita+mult}>=0.95
+  C3 (origem da massa, 2b): FALHA — 9 taquioes, 6 com rI<0.5
+      mu=0.3 [REF] k=1.0: rI=0.498 (wI=+1.392e+02, wB=-1.406e+02)
+      mu=1.0 [REF] k=1.0: rI=0.499 (wI=+2.504e+02, wB=-2.517e+02)
+      mu=1.0 [REF] k=10.0: rI=0.106 (wI=+5.675e+01, wB=-4.771e+02)
+      mu=3.0 [REF] k=1.0: rI=0.499 (wI=+2.949e+02, wB=-2.965e+02)
+      mu=3.0 [REF] k=10.0: rI=0.158 (wI=-4.896e+01, wB=-2.614e+02)
+      mu=10.0 [REF] k=1.0: rI=0.498 (wI=+2.699e+02, wB=-2.720e+02)
+
+  >>> RESULTADO MISTO ou ENFRAQUECE (gate1c secao 8(i)) — ver quais
+  criterios falharam acima; reportar os numeros no doc de resultado
+  sem arredondar a leitura.
+
+LEITURA AUXILIAR:
+- pi0 = Goldstone TEMPORAL (T, Tdot: gera Phi_f/Psi_f e parte de B_f);
+  piL = Goldstone LONGITUDINAL (Z, Zdot: gera E_f e parte de B_f) —
+  o helicity-0 'classico' do gravitao massivo e o piL.
+- fantasmas: K_int=0 (A2) => a norma negativa nasce da eliminacao de
+  vinculos do setor EH na presenca do potencial de quebra; o rI deles
+  e diagnostico, nao criterio.
+- fundos e classificacao identicos ao G1-b/investigacao1 (continuidade
+  garantida pelas ancoras).

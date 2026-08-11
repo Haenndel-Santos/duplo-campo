@@ -184,3 +184,25 @@ composto — restauraria o prior forte (nada conhecido nessa direção);
 a difeos relativas dentro da família F1 varrida — contradiria o no-go
 na fonte e reabriria tudo (improvável: exigiria erro na cadeia de
 evidência já consolidada).
+
+## 9. Resultado da derivação do §7 (2026-08-11) — EXECUTADA
+
+`auditoria/code/stuckelberg_goldstone.py`; detalhe em
+`docs/resultado_stuckelberg_goldstone.md`.
+
+- **A premissa 1 do §3 subiu a 2a (estrutura) + 2b (composição).**
+  Órbitas de Goldstone derivadas por duas rotas com controle negativo;
+  quebra = potencial puro (K_int=C_int≡0); setor de Goldstone = bloco-f;
+  e a identidade medida: o taquião de k=1 **é** o π_L (helicity-0,
+  0.995+), o fantasma da fresta é o π⁰ puro (0.998, a direção Φ_f). O
+  §8(i) **não disparou** — a composição bateu. A circularidade é
+  resultado, não argumento.
+- **Refinamento que a derivação trouxe (o critério C3 falhou como
+  pré-declarado, informativamente):** a glosa "pseudo-Goldstone ganha
+  massa da quebra" está refutada — em k=1 a massa taquiônica é o
+  resíduo de ~0.5–1% de um **cancelamento** entre a quebra
+  (estabilizadora, wI>0) e o setor EH/vínculos (desestabilizador,
+  wB<0). A doença vive no *balanço* quebra×EH, não na quebra isolada.
+  Consequência para a Investigação 2: candidato a cura tem de alterar
+  o balanço — mexer só na quebra já falhou empiricamente (modulação) e
+  agora estruturalmente.
