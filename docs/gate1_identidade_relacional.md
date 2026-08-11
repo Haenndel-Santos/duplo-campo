@@ -110,3 +110,38 @@ qualquer caso, o trilema vira decisão documentada, não default tácito.
 Não é quantização de σ. A pergunta "σ é quântico?" é prematura
 enquanto não se souber SE σ_HR é a realização correta do grau
 relacional. Este gate decide a pergunta anterior.
+
+## 7. Resultado (2026-08-11) — G1-b PASSA, R1 é o enquadramento oficial
+
+Script: `auditoria/code/investigacao1_ramo_algebrico.py` (Parte 2).
+Detalhe completo em `docs/resultado_investigacao1_ramo_algebrico.md`.
+
+**G1-b:** projeção de todos os modos em δφ₋ (campo `dchi`), ponto fixo
+do ramo finito, μ∈{0.1,0.3,1,3,10} (μ=0.1 na célula da "fresta", única
+com fundo físico válido ali), k=1 E k=10, β_n constante. **17/17**
+instâncias de modo patológico (taquiônico ou fantasma) na varredura
+têm \|⟨v,δφ₋⟩\|² = 0.0000 — muito abaixo do critério de 0.05, e
+identicamente zero, não apenas pequeno. Cross-validado contra
+`docs/estrutura_par_relativo.md`/`modulacao_qep.py`: a célula da fresta
+reproduziu o kN=−1.6e-5 já documentado (e sua inversão de sinal entre
+k=1 e k=10), confirmando a maquinaria de projeção de autovetores.
+
+**R1 PASSA.**
+
+Na mesma sessão, a Investigação 1 da fila (§5 item 1) também reprovou o
+ramo algébrico (`docs/resultado_investigacao1_ramo_algebrico.md` §2):
+degenerado E taquiônico na raiz exata, sem corredor saudável em
+$\delta\in[-0.30,+0.30]$. Isso satisfaz as duas condições do §5 item 4
+deste documento — G1-b passou E o ramo algébrico também reprovou.
+
+**R1 vira o enquadramento oficial do no-go**: o problema demonstrado
+até aqui é da REPRESENTAÇÃO F1 (setor de vínculos da realização
+bimétrica HR — dubleto de shifts $B_g\pm B_f$ em μ≳1, lapso $\Phi_f$
+quase-nulo em μ→0), não do grau relacional primordial δΦ₋ enquanto
+tal. O trilema do §3 permanece aberto entre (b) g/f efetivas de um
+coletivo 𝓡 (R2) e (c) grau relacional sem segunda métrica — (a) já foi
+testado e reprovado (`docs/veredito_setor_escalar_final.md`).
+
+**Próximo passo da fila:** G1-a (tabela documental, custo ~zero), depois
+G1-c (nota do trilema), depois a Investigação 2 (condensação dinâmica,
+$p_\phi\neq0$) — agora promovida a teste direto de R2.

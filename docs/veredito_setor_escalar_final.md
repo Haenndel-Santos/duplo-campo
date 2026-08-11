@@ -59,6 +59,7 @@ Não coberto (as saídas restantes, por custo crescente):
    pós-erratum (a raiz exata tinha degenerescência cinética na D1;
    com a constraint corrigida e a não-fatoração do Gate 2, o quadro
    pode ser diferente). Genuinamente aberto.
+   **[FECHADO 2026-08-11 — também NO-GO, ver seção 6.]**
 5. **Análise além do quadrático-congelado** — condensação NÃO
    estacionária (p_φ≠0, onde a constraint não fatora e a estrutura é
    genuinamente nova — o único regime que nenhuma sondagem tocou).
@@ -94,7 +95,7 @@ e documentá-lo como tal (o plano v2 previa exatamente isto no seu
 As duas investigações que ainda merecem sessão própria, por ordem:
 
 1. **O ramo algébrico pós-erratum** (item 3.4) — barato, nunca refeito
-   com a constraint correta.
+   com a constraint correta. **[FEITO 2026-08-11, ver seção 6.]**
 2. **A condensação dinâmica** (item 3.5) — caro, mas é o único regime
    genuinamente novo que resta, e é onde a estrutura não-fatorada do
    Gate 2 vive de verdade.
@@ -104,3 +105,23 @@ separação estrutural) permanece o que sempre foi: uma hipótese
 conceitual legítima à espera de uma implementação matemática que
 feche. A implementação F1-ramo-finito não fecha — e agora se sabe
 exatamente onde e por quê.
+
+## 6. Atualização (2026-08-11) — item 3.4 fechado
+
+`docs/resultado_investigacao1_ramo_algebrico.md` fecha o item 3.4 da
+seção 3 ("ramo algébrico com a constraint corrigida — genuinamente
+aberto"): **também NO-GO**. Na raiz exata ($r=r_\star$), o par relativo
+é simultaneamente degenerado (kN~1e-16, confirmando a D1 pré-erratum) E
+taquiônico (taxa 3.0H, independente de k — assinatura de massa). Uma
+varredura de corredor ($\delta=(r-r_\star)/r_\star\in[-0.30,+0.30]$, k=1,
+10, 100) não encontrou nenhum ponto com os três k simultaneamente
+saudáveis: sair da raiz cura a degenerescência numérica, não a doença.
+
+O mesmo script embutiu o teste G1-b (`docs/gate1_identidade_relacional.md`),
+com resultado **R1 PASSA**: em toda a F1 já varrida (ramo finito, β_n
+constante, μ∈{0.1,0.3,1,3,10}), os modos patológicos têm projeção
+\|⟨v,δφ₋⟩\|² = 0.0000 — o grau relacional primordial é espectador da
+doença. Por isso R1 passa a ser o enquadramento oficial do no-go: a
+patologia é da representação F1, não (até aqui) do grau relacional
+δΦ₋ em si. Ver `docs/gate1_identidade_relacional.md` §7 para o
+detalhe do gate.

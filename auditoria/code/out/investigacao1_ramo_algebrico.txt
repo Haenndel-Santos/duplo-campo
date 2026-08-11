@@ -1,0 +1,192 @@
+========================================================================
+INVESTIGACAO 1 — ramo algebrico pos-Erratum 01 (+ G1-b embutido)
+========================================================================
+[montagem] blocos simbolicos K,C,W (7x7) ...
+    campos (ordem): ['Phi_g', 'B_g', 'Phi_f', 'Psi_f', 'B_f', 'E_f', 'dchi']  [dchi = delta-phi_- no indice 6]
+
+------------------------------------------------------------------------
+PARTE 1 — ramo algebrico (B(r_star)=0, r=const) pos-erratum
+------------------------------------------------------------------------
+
+(a) O que muda na definicao do ramo — NADA na algebra do ramo em
+    si. B(r) = beta_1 + 2 beta_2 r (familia F1, beta_3=0) e o
+    PRIMEIRO fator da constraint fatorada; o erratum corrigiu o
+    SEGUNDO fator, de (H_g - xi H_f) para (N_f adot - N_g bdot).
+    No ramo algebrico B(r_star)=0 anula a constraint MULTIPLICANDO
+    o segundo fator, qualquer que seja a forma dele — a definicao
+    do ramo (r=r_star=-beta_1/(2 beta_2)) e a mesma antes e depois
+    do erratum.
+    Com beta_n CONSTANTE (o caso desta investigacao), beta_1'=0,
+    entao o residuo do Gate 2 (-M_eff^2 m^2 p_phi beta_1') se anula
+    IDENTICAMENTE — a constraint continua fatorando de forma limpa
+    neste ramo, sem a complicacao que a modulacao introduziria.
+    Identidade cinematica do ramo (nao mudou com o erratum): r=
+    const => bdot/b=adot/a => xi=N_f/N_g=H_g/H_f. Esta e EXATAMENTE
+    a formula que o corpus v1 usava, de forma errada, como
+    constraint GERAL do 'ramo dinamico' (o que produziu rdot=0
+    'sempre' — Erratum 01). O erratum nao a invalida: ele mostra
+    que ela e a identidade cinematica CORRETA, mas so NESTE ramo
+    (algebrico), nao no ramo geral. tdcp_pert_lib.benchmark() ja
+    monta xi = H/H_f a partir da Friedmann f — e o valor NATURAL
+    aqui, sem overrides arbitrarios (ao contrario do benchmark C
+    original da D1, que fixava xi=1 manualmente 'de controle').
+    r_star = -beta_1/(2 beta_2) = 1.250000  (beta_1=1.0, beta_2=-0.4 — params do benchmark padrao)
+
+(b) degenerescencia cinetica na raiz exata + corredor.
+    CAVEAT declarado: delta != 0 usa o MESMO xi=H/H_f do benchmark,
+    que so e a identidade cinematica CORRETA exatamente em delta=0
+    (r=r_star). Fora da raiz isto e uma sonda MATEMATICA de kN em
+    funcao da distancia (nao uma trajetoria fisica autoconsistente
+    — essa e o ramo finito, ja mapeado em resultado_setor_escalar.md,
+    que para estes betas nunca chega perto de r_star=1.25, pois
+    r_infinito~0.33 la). O que se testa aqui e puramente estrutural:
+    a degenerescencia e um fenomeno localizado em B(r)~0, e quao
+    largo e o corredor onde ela desaparece.
+
+      delta         r       B(r)      kN_min(k=1)      kN_min(k=10)     kN_min(k=100)   classes(k=1,10,100)
+     -0.300    1.6250    -0.3000       -4.751e-04        -3.858e-03        -3.942e-05   FANTASMA/TAQUIAO,TAQUIAO/limpo,TAQUIAO/limpo
+     -0.200    1.5000    -0.2000       -3.957e-02        -2.344e-03        -2.386e-05   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     -0.100    1.3750    -0.1000       -5.474e-02        -1.366e-03        -1.386e-05   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     -0.040    1.3000    -0.0400       -1.524e-03        -9.773e-04        -9.911e-06   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     -0.010    1.2625    -0.0100       -3.652e-02        -8.289e-04        -8.403e-06   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     -0.002    1.2525    -0.0020       -7.041e-05        -1.186e-05        -8.048e-06   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     +0.000    1.2500    +0.0000       -1.772e-18        +7.886e-17        -1.363e-14   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     +0.002    1.2475    +0.0020       +6.954e-05        +1.176e-05        -7.878e-06   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     +0.010    1.2375    +0.0100       +3.385e-04        -7.448e-04        -7.551e-06   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     +0.040    1.2000    +0.0400       -2.831e-02        -6.392e-04        -6.480e-06   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     +0.100    1.1250    +0.1000       -2.131e-02        -4.919e-04        -4.990e-06   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     +0.200    1.0000    +0.2000       -1.488e-02        -3.869e-04        -3.930e-06   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+     +0.300    0.8750    +0.3000       -1.218e-02        -3.802e-04        -3.864e-06   TAQUIAO/limpo,TAQUIAO/limpo,TAQUIAO/limpo
+
+    Detalhe espectral NA RAIZ EXATA (delta=0), k=1,10,100:
+  raiz exata (delta=0), k=1
+    w2=+1.8917e+00  kN=+1.240e-01  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=0.2480  |<v,metrica>|^2=0.7520
+    w2=+3.8943e+00  Im(w2)=+2.15e+01  kN=-1.772e-18  Im(w)/H=  3.0000  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+3.8943e+00  Im(w2)=-2.15e+01  kN=-1.772e-18  Im(w)/H=  3.0000  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+  raiz exata (delta=0), k=10
+    w2=+1.0089e+02  kN=+4.582e-01  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=0.9164  |<v,metrica>|^2=0.0836
+    w2=+7.8291e+02  Im(w2)=+1.69e+02  kN=+7.886e-17  Im(w)/H=  3.0000  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+7.8291e+02  Im(w2)=-1.69e+02  kN=+7.886e-17  Im(w)/H=  3.0000  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+  raiz exata (delta=0), k=100
+    w2=+1.0001e+04  kN=+4.587e-01  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=0.9174  |<v,metrica>|^2=0.0826
+    w2=+7.8685e+04  Im(w2)=+1.68e+03  kN=-1.363e-14  Im(w)/H=  3.0000  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+7.8685e+04  Im(w2)=-1.68e+03  kN=-1.363e-14  Im(w)/H=  3.0000  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+
+    Detalhe espectral NAS BORDAS do corredor (delta=+-0.30), k=1:
+  delta=-0.30, k=1
+    w2=-1.4657e-01  kN=+6.516e-03  Im(w)/H=  0.3828  [TAQUIAO ]  |<v,dchi>|^2=0.0195  |<v,metrica>|^2=0.9805
+    w2=-8.8823e+00  kN=+2.984e-04  Im(w)/H=  2.9803  [TAQUIAO ]  |<v,dchi>|^2=0.0001  |<v,metrica>|^2=0.9999
+    w2=+1.4766e+02  kN=-4.751e-04  Im(w)/H=  0.0000  [FANTASMA]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+  delta=+0.30, k=1
+    w2=+1.6666e+00  kN=+2.105e-01  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=0.4264  |<v,metrica>|^2=0.5736
+    w2=+2.2013e+00  Im(w2)=-1.67e+01  kN=-1.218e-02  Im(w)/H=  2.7048  [TAQUIAO ]  |<v,dchi>|^2=0.0001  |<v,metrica>|^2=0.9999
+    w2=+2.2013e+00  Im(w2)=+1.67e+01  kN=-1.218e-02  Im(w)/H=  2.7048  [TAQUIAO ]  |<v,dchi>|^2=0.0001  |<v,metrica>|^2=0.9999
+
+    LEITURA (b) — MAGNITUDE: |kN|_min na raiz exata ~ 1.772e-18; |kN|_min nas bordas do corredor ~ 3.864e-06.
+    A magnitude por si so NAO decide 'corredor saudavel': kN deixar de
+    ser numericamente degenerado (~0) nao significa o espectro ficar
+    limpo — o mesmo modo pode continuar taquionico ou fantasma com kN
+    finito. O criterio real e a coluna 'classes' da tabela acima:
+    [ACHADO] NENHUM delta testado tem os tres k simultaneamente
+    'limpo' — em toda a faixa escaneada (delta em [-0.30,+0.30]) sobra pelo menos um modo
+    taquionico e/ou fantasma. Sair da raiz exata cura a
+    DEGENERESCENCIA CINETICA (kN deixa de ser ~0) mas NAO cura a
+    PATOLOGIA (taquiao e/ou fantasma persistem) — nao ha corredor
+    saudavel nesta faixa. O ramo algebrico reprova tanto NA raiz
+    (degenerado E taquionico) quanto PERTO dela (nao-degenerado
+    mas ainda doente).
+
+------------------------------------------------------------------------
+PARTE 2 — G1-b: |<v,delta-phi_->|^2 no ponto fixo, beta_n constante
+------------------------------------------------------------------------
+    Protocolo (docs/gate1_identidade_relacional.md secao 4):
+    R1 passa se |<v_patologico,dchi>|^2 < 0.05 em toda a varredura
+    (mu in {0.1,0.3,1,3,10}, ponto fixo, k=1 E k=10); falha se algum
+    modo patologico for dchi-dominado.
+
+  mu=0.1 [REF]: fundo invalido (H^2<=0 ou xi<=0) — pulando
+
+  mu=0.3 [REF]  (beta1=1.0, beta2=-0.4, r=0.576908, xi=0.577309, H=0.423596, Mf2=0.3, Meff2=0.230769)
+      k=1
+    w2=+3.1000e-01  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=-2.2283e+00  kN=+6.046e-01  Im(w)/H=  3.5240  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+5.6057e+00  kN=-2.944e-01  Im(w)/H=  0.0000  [FANTASMA]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+      k=10
+    w2=+3.8806e-01  kN=-4.080e+01  Im(w)/H=  0.0000  [FANTASMA]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+1.3000e+00  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=-2.0954e+00  kN=+4.644e+01  Im(w)/H=  3.4173  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+
+  mu=1.0 [REF]  (beta1=1.0, beta2=-0.4, r=0.332259, xi=0.332423, H=0.557509, Mf2=1.0, Meff2=0.500000)
+      k=1
+    w2=+3.1000e-01  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=-4.1432e+00  kN=+3.330e-01  Im(w)/H=  3.6510  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+6.1082e+00  kN=-2.405e-01  Im(w)/H=  0.0000  [FANTASMA]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+      k=10
+    w2=+6.5874e-01  kN=-4.833e+01  Im(w)/H=  0.0000  [FANTASMA]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+1.3000e+00  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=-4.3467e+00  kN=+9.670e+01  Im(w)/H=  3.7396  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+
+  mu=3.0 [REF]  (beta1=1.0, beta2=-0.4, r=0.176595, xi=0.176685, H=0.610893, Mf2=3.0, Meff2=0.750000)
+      k=1
+    w2=+3.1000e-01  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=-4.7763e+00  kN=+3.282e-01  Im(w)/H=  3.5775  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+6.8979e+00  kN=-2.751e-01  Im(w)/H=  0.0000  [FANTASMA]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+      k=10
+    w2=+2.1882e-01  kN=-8.668e+01  Im(w)/H=  0.0000  [FANTASMA]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+1.3000e+00  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=-4.8406e+00  kN=+6.411e+01  Im(w)/H=  3.6015  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+
+  mu=10.0 [REF]  (beta1=1.0, beta2=-0.4, r=0.074760, xi=0.074807, H=0.607504, Mf2=10.0, Meff2=0.909091)
+      k=1
+    w2=+3.1000e-01  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=-4.1680e+00  kN=+5.125e-01  Im(w)/H=  3.3606  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+1.1211e+01  kN=-3.395e-01  Im(w)/H=  0.0000  [FANTASMA]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+      k=10
+    w2=-3.9836e-01  kN=-1.988e+02  Im(w)/H=  1.0389  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+1.3000e+00  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=-4.0609e+00  kN=+1.952e+01  Im(w)/H=  3.3171  [TAQUIAO ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+
+  mu=0.1 na celula REF (1,-0.4) nao tem fundo valido (acima) — a
+  celula REF simplesmente nao alcanca um ponto fixo fisico ali.
+  Cobertura completa do protocolo (mu=0.1 tem de entrar na varredura):
+  reusando a celula da 'fresta' de docs/no_go_beta_constante.md /
+  modulacao_qep.py ETAPA 2 (beta1=0.2, beta2=-1.0), onde mu=0.1 TEM
+  fundo valido e hospeda o fantasma quase-nulo (kN~-1.6e-5) — a
+  familia de patologia estruturalmente DIFERENTE do dubleto de
+  shifts (mu>=0.3): la e o lapso Phi_f puro (estrutura_par_relativo.md).
+
+  mu=0.1 [fresta mu=0.1 (0.2,-1.0)]  (beta1=0.2, beta2=-1.0, r=0.064498, xi=0.064519, H=0.176628, Mf2=0.1, Meff2=0.090909)
+      k=1
+    w2=+3.1000e-01  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=+6.3291e-01  kN=+1.233e-01  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+2.3796e+03  kN=-1.616e-05  Im(w)/H=  0.0000  [FANTASMA]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+      k=10
+    w2=+1.0655e+00  kN=+9.621e-01  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+    w2=+1.3000e+00  kN=+5.000e+02  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=1.0000  |<v,metrica>|^2=0.0000
+    w2=+2.3339e+01  kN=+8.380e-04  Im(w)/H=  0.0000  [limpo   ]  |<v,dchi>|^2=0.0000  |<v,metrica>|^2=1.0000
+
+========================================================================
+VEREDITO G1-b
+========================================================================
+  modos patologicos encontrados na varredura: 17
+  max |<v_patologico,dchi>|^2 na varredura = 0.0000  (criterio: < 0.05)
+
+  R1 PASSA — todos os 17 modos patologicos tem
+  |<v,dchi>|^2 < 0.05 em toda a varredura (mu, k=1 e k=10).
+  => a patologia e espectadora de delta-phi_-: o no-go e sobre a
+     REPRESENTACAO (setor de vinculos da F1), nao sobre o grau
+     relacional primordial. Consistente com o suporte de nivel 2b
+     ja existente (docs/estrutura_par_relativo.md: dubleto de
+     shifts / lapso Phi_f, delta-phi_- desacoplado com F'=0).
+
+========================================================================
+RESUMO PARA O PROXIMO PASSO
+========================================================================
+  Parte 1(b): ver a razao |kN|_bordas/|kN|_raiz acima — decide se o
+  ramo algebrico tem corredor saudavel ou degenerescencia estrutural.
+  Parte 2 (G1-b): ver veredito acima. Se G1-b PASSAR e o ramo
+  algebrico tambem REPROVAR (sem corredor saudavel a ponto de
+  competir com o ramo finito), R1 vira o enquadramento oficial do
+  no-go (docs/gate1_identidade_relacional.md secao 5, item 4).
+  G1-a (tabela documental) e G1-c (nota do trilema) seguem depois,
+  fora deste script.
