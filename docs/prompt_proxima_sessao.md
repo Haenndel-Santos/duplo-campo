@@ -1,8 +1,8 @@
 # Prompt de continuação — próxima sessão
 
 Copiar o bloco abaixo como primeira mensagem da próxima janela.
-(Atualizado 2026-08-10, pós-sincronização das duas máquinas, Gate 1 da
-2ª geração e resolução da infraestrutura.)
+(Atualizado 2026-08-11, pós-fechamento do Gate 1, Investigação 1 e
+Decisão 1 — v1 congelada, v2 enxuta iniciada.)
 
 ---
 
@@ -17,85 +17,83 @@ sympy 1.14.0, numpy 2.5.1, scipy 1.16.3; na máquina 2, criar o .venv se
 ainda não existir).
 
 ANTES DE QUALQUER COISA, leia nesta ordem:
-1. docs/veredito_setor_escalar_final.md — o fechamento do arco v2:
-   cadeia de evidência, no-go do setor escalar com fronteira, 5 saídas.
-2. auditoria/erratum_01_bianchi.md — a constraint de Bianchi do corpus
-   estava ERRADA; correta: B(r)·(N_f·ȧ − N_g·ḃ)=0 (duas rotas).
-   Supersede D5 (premissa errada) e inverte o Higuchi da D8.
-3. docs/gate1_identidade_relacional.md — NOVO: hipóteses R1/R2 e o
-   Gate 1 da 2ª geração (a cadeia Φ₋ → φ/χ → r → σ tem QUATRO objetos
-   identificados só por decreto; a doença mora nos vínculos, não em
-   δφ₋ — protocolo G1-a/b/c com critérios pré-declarados).
-4. docs/resultado_ramo_finito.md + docs/resultado_setor_escalar.md +
-   docs/no_go_beta_constante.md + docs/estrutura_par_relativo.md — a
-   trilha do arco, em ordem.
-5. docs/plano_v2_reconstrucao.md + auditoria/parecer_tecnico.md
-   (Parte III-B = estratificação epistêmica, REGRA DE MÉTODO) +
-   docs/project-master.md (seção de sincronização).
+1. docs/veredito_setor_escalar_final.md (com o §6 novo) — o arco
+   completo: no-go do setor escalar, fronteiras, e o fechamento do
+   ramo algébrico.
+2. docs/gate1_identidade_relacional.md §§7–9 — GATE 1 FECHADO:
+   G1-b (R1 passa, 17/17 com projeção 0.0000), G1-a (zero elos de
+   identidade derivados na cadeia), G1-c (prior W–W parcialmente
+   demolido; circularidade HR–Goldstone; critério anti-circularidade
+   VINCULANTE para a Investigação 2).
+3. docs/resultado_investigacao1_ramo_algebrico.md — ramo algébrico
+   pós-erratum: degenerado E taquiônico (3.0H, k-independente) na raiz,
+   sem corredor saudável em δ∈[−0.30,+0.30]. NO-GO.
+4. docs/gate1c_nota_trilema.md — a nota do trilema inteira (é curta e
+   é o documento de projeto da Investigação 2).
+5. docs/decisao1_congelamento_v1.md + manuscript-v2/00_estrutura.md —
+   DECISÃO 1 TOMADA: v1 congelada como registro histórico; v2 enxuta
+   em manuscript-v2/ (esqueleto de 10 capítulos pronto).
+6. Se precisar do fundo: auditoria/erratum_01_bianchi.md,
+   docs/resultado_ramo_finito.md, docs/no_go_beta_constante.md,
+   docs/estrutura_par_relativo.md, auditoria/parecer_tecnico.md
+   (Parte III-B), docs/project-master.md (sincronização).
 
-ESTADO ATUAL (2026-08-10, master sincronizado, working tree limpo):
-- Auditoria 856/856 completa (lotes 1–11) + parecer técnico.
-- ERRATUM 01 confirmado. RAMO FINITO: fundo ✓ (ṙ=H_g(ξ−r), limite GR
-  exato, Ω_m~0.25) e tensor ✓ (Higuchi automático; m_T²/H²→12
-  universal no primordial).
-- SETOR ESCALAR: NO-GO CONSOLIDADO (taquião σ≈(3–4)H p/ μ≥0.3 em
-  ~1500 pontos 4D; fantasma |kN|~μ³ em μ=0.1; doença no SETOR DE
-  VÍNCULOS — dubleto de shifts B_g±B_f / lapso Φ_f; modulação β₁(φ₋)
-  não cura e piora nos dois canais).
-- GATE 1 (2ª geração) formalizado: R1 = o no-go é sobre a REPRESENTAÇÃO
-  F1, não sobre o grau relacional primordial (suporte 2b: composição
-  dos autovetores patológicos ≠ δφ₋); R2 = natureza coletiva/parâmetro
-  de ordem. Trilema da seta Φ₋→(g,f) declarado (prior Weinberg-Witten,
-  nível 3).
-- INFRA resolvida: .gitignore versiona derivations/code/out/ e
-  auditoria/code/out/; .venv na máquina 1; repo TDCP vazio ARQUIVADO.
-  PENDÊNCIA MÁQUINA 2: commitar auditoria/code/out/ (git status vai
-  listá-las após o pull) — fazer no início da próxima sessão de lá.
+ESTADO ATUAL (2026-08-11, master sincronizado até 647c42e+, tree limpo):
+- Auditoria 856/856 + parecer. ERRATUM 01 confirmado. RAMO FINITO:
+  fundo ✓, tensor ✓ (m_T²/H²→12). SETOR ESCALAR: NO-GO consolidado
+  (β constante ~1500 pts; modulação β₁(φ₋); ramo finito; ramo
+  algébrico — TODAS as portas internas da F1 fechadas).
+- GATE 1 FECHADO (a+b+c). R1 é o ENQUADRAMENTO OFICIAL do no-go: a
+  patologia é da representação F1 (setor de vínculos: dubleto
+  B_g±B_f / lapso Φ_f), não do grau relacional primordial (projeção
+  zero em δφ₋). Trilema decidido: (a) fechado; (b) braço de trabalho,
+  alvo (b1) = só o multiplete massivo emerge; (c) fallback declarado.
+- DECISÃO 1 TOMADA: congelar v1 + v2 enxuta (manuscript-v2/, Gate 0
+  ativo: verifica_simbolos.py --alvo v2 = zero violações).
+- PENDÊNCIA MÁQUINA 2: commitar auditoria/code/out/ (git status lista
+  após o pull) — início da próxima sessão de lá.
 
-TAREFA IMEDIATA — Investigação 1: RAMO ALGÉBRICO PÓS-ERRATUM (barata;
-nunca refeita com a constraint correta), COM O G1-b EMBUTIDO:
-(a) o que "estar no ramo algébrico" significa agora que a constraint
-    não fatora quando φ₋ evolui (resíduo −M_eff²m²p_φβ₁′ do Gate 2)?
-(b) a degenerescência cinética NA raiz exata (kN~1e-16, benchmark C da
-    D1) persiste no formalismo corrigido? há corredor saudável
-    perto-da-raiz?
-(c) G1-b (carona nas MESMAS rodadas): projetar os autovetores de TODOS
-    os modos em δφ₋ e nas direções métricas-relativas, μ∈{0.1,0.3,1,3,10},
-    ponto fixo, k=1 E k=10. R1 passa se |⟨v_patológico,δφ₋⟩|²<0.05 em
-    toda a varredura; falha se algum modo patológico for δφ₋-dominado.
-Reusar: derivations/code/tdcp_pert_lib.py + fundos generalizados +
-modulacao_qep.py (fatias {Fb,Fp,Fpp}×{β₀..β₄}; qep_modes retorna
-autovetores na chave 'v'). Fluxo: escrever o script → usuário roda no
-.venv → devolve saídas (auditoria/code/out/*.txt, agora versionadas).
+FILA (duas trilhas paralelas e independentes):
+- TRILHA DE ESCRITA: v2 enxuta, capítulo a capítulo, seguindo
+  manuscript-v2/00_estrutura.md (10 caps; regras vinculantes no topo
+  do arquivo: Gate 0 a cada sessão, fonte versionada em toda afirmação
+  quantitativa, nível epistêmico declarado, três nomes para o antigo
+  "modo relativo"). Começar pelo 01 ou pelo 07 (o resultado central).
+- TRILHA DE CÁLCULO: (opcional, barata) derivação de Stückelberg
+  in-repo — sobe a circularidade do G1-c de nível 3+2b para 2a
+  (gate1c §7: introduzir φ^a na ação de minisuperespaço validada,
+  extrair o setor de Goldstone, comparar com o dubleto B_g±B_f/Φ_f
+  medido) → DEPOIS Investigação 2 (condensação dinâmica, p_φ≠0 —
+  teste direto de R2, caro), SEMPRE sob os critérios pré-declarados
+  do gate1c §5 (nomear geradores quebrados; declarar classe da EFT;
+  saúde σ E kN em k=1 e 10; auto-teste de poder de detecção).
 
-DEPOIS, EM ORDEM: G1-a (tabela de identidade no dicionário; documental)
-→ G1-c (nota do trilema) → Investigação 2 (condensação dinâmica,
-p_φ≠0 — teste direto de R2, caro). Se Investigação 1 reprovar E G1-b
-passar: R1 vira o enquadramento oficial do no-go.
-
-DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho; lembrar quando
-os resultados amadurecerem):
-1. Destino do manuscrito v1: corrigir no lugar (115 erros mapeados) vs
-   congelar + escrever v2 enxuta vs híbrido. Aguarda Investigação 1.
-2. Formato de publicação do no-go (nota técnica / paper / abertura da v2).
+DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
+2. Formato de publicação do no-go (nota técnica / paper / abertura da
+   v2 — o cap. 07 da v2 é o vehículo natural se decidir extrair).
 3. Atualização do artifact do parecer (🔭) com o arco erratum+no-go.
 
 REGRAS DE MÉTODO (aprendidas a ferro; seguir sempre):
 - Estratificação epistêmica (Nível 1/2a/2b/3). NUNCA "CONFERE" para o
   declarado-mas-não-derivado; "bate com a literatura" é Nível 3 (dois
-  priors de literatura já caíram por cálculo).
-- Todo teste novo com auto-teste de PODER DE DETECÇÃO, ancorado na
-  MESMA rota e MESMO fundo.
-- Saúde espectral = σ E kN (taquião E fantasma), em k=1 E k=10 no
-  mínimo. k é COMÓVEL (k_phys=k/a; benchmark da D1 rescala a→1).
+  priors de literatura já caíram por cálculo; o W–W foi o terceiro a
+  ser cortado — sobrealcançava).
+- Todo teste novo com auto-teste de PODER DE DETECÇÃO, mesma rota e
+  mesmo fundo.
+- Saúde espectral = σ E kN, em k=1 E k=10 no mínimo. k é COMÓVEL.
 - Seleção de raiz: menor raiz real positiva + filtros físicos que
-  ABORTAM (ξ>0, H²>0); corte de positividade RELATIVO.
+  ABORTAM (ξ>0, H²>0).
 - Ponto fixo = juiz sem caveat de congelamento.
+- CRITÉRIO ANTI-CIRCULARIDADE (novo, gate1c §3): construção R2 que
+  quebra difeos relativas sem demonstrar saída do domínio varrido é
+  F1 renomeada — reprovada por herança.
 
 REGRAS DE EXECUÇÃO:
 - Cálculos pesados: usuário roda no VS Code (.venv) e devolve saídas;
   py_compile e sondagens curtas na sessão são OK.
-- Não editar manuscript/ nesta fase; NUNCA regenerar .docx/PDF.
+- manuscript/ (v1) é REGISTRO HISTÓRICO CONGELADO — não editar. NUNCA
+  regenerar .docx/PDF (a regeneração planejada em 2026-08-05 foi
+  CANCELADA pela Decisão 1). Escrita nova: só manuscript-v2/.
 - Mudou versão de dependência → re-rodar derivations/code/ contra as
   saídas oficiais antes de commitar.
 
@@ -103,7 +101,7 @@ PENDÊNCIAS MENORES (fora da linha principal): flag do Erratum 01 na
 tabela de âncoras do registro_formulas.md (D5/D8 — 1 linha);
 lote05_C22_galileon_stability.py nunca rodado; Gate 2 Parte B (ADM
 completo) só se a modulação voltar; Higuchi generalizado μ≠1
-provisório; passe de correção do manuscrito aguarda decisão 1.
+provisório.
 
-Comece por: git pull → escrever o script da Investigação 1 (com G1-b)
-→ me passar para rodar.
+Comece por: git pull → escolher a trilha da sessão (escrita: próximo
+capítulo da v2 | cálculo: Stückelberg ou Investigação 2) → trabalhar.

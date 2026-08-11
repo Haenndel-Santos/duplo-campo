@@ -31,16 +31,20 @@ Maintain a local Git baseline for the Duplo Campo / TDCP project so chapters, ap
 
 ## Current Editorial Pass (started 2026-08-05)
 
-An explicit, user-requested editing pass is underway: hygiene (removing
+An explicit, user-requested editing pass took place: hygiene (removing
 chat-origin residue), structural reconstruction of incomplete chapters,
 translation of the final English chapters, an integration assessment,
-and renumbering. This is being done in `manuscript/` (Markdown) rather
-than directly on the `.docx` files so the work stays reviewable in git.
-**The `.docx` files in `Duplo Campo/` will be regenerated from the
-finished `manuscript/` content and renamed to match** once editing is
-complete — this is expected, approved, in-scope work for this pass, not
-a violation of the safety rule below. The rule below governs *unrelated*
-future work.
+and renumbering, done in `manuscript/` (Markdown).
+
+**SUPERSEDED (2026-08-11, Decisão 1 — `docs/decisao1_congelamento_v1.md`):**
+the planned regeneration of the `.docx` files from `manuscript/` is
+**cancelled**. The v1 manuscript is **frozen as historical record** —
+`manuscript/` (Markdown, audited) is the reference form of v1; the 115
+mapped errors are documented by the audit (`auditoria/`), not corrected
+in place; the original `.docx` files remain untouched. New writing goes
+to `manuscript-v2/` (the "v2 enxuta" — see
+`manuscript-v2/00_estrutura.md`), with Gate 0
+(`auditoria/code/verifica_simbolos.py --alvo v2`) active.
 
 ## Sincronização entre cópias de trabalho (GitHub)
 
