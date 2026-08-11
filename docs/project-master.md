@@ -42,6 +42,34 @@ complete — this is expected, approved, in-scope work for this pass, not
 a violation of the safety rule below. The rule below governs *unrelated*
 future work.
 
+## Sincronização entre cópias de trabalho (GitHub)
+
+Existem DUAS cópias de trabalho deste repositório, em máquinas
+diferentes, ambas commitando em `master` de
+`https://github.com/Haenndel-Santos/duplo-campo` (público):
+
+- `C:\Haenndel Projects\Duplo Campo` (máquina 1 — tem `.venv` criado)
+- `C:\Haenndel Projects 2\Duplo Campo` (máquina 2 — origem da v2)
+
+**Regra obrigatória de sessão:** `git pull` ao ABRIR qualquer sessão de
+trabalho e `git push` ao FECHAR (ou após cada lote commitado). Nunca
+trabalhar sobre estado desatualizado; em caso de divergência, resolver
+com merge explícito — nunca force-push.
+
+**Saídas oficiais são evidência e são versionadas**: o `.gitignore`
+tem exceções para `derivations/code/out/` e `auditoria/code/out/`.
+Pendência conhecida: as saídas da v2 (scans do no-go etc.) existem só
+na máquina 2 — na próxima sessão lá, `git add auditoria/code/out/` +
+commit + push (após o pull, o git passará a listá-las como untracked).
+
+**Ambiente Python:** `requirements.txt` fixado (sympy 1.14.0,
+numpy 2.5.1, scipy 1.16.3). Rodar scripts oficiais SEMPRE pelo
+`.venv` (`python -m venv .venv` + `pip install -r requirements.txt`).
+
+O repositório GitHub `Haenndel-Santos/TDCP` (privado) está vazio e foi
+arquivado para evitar confusão — o repositório canônico é
+`duplo-campo`.
+
 ## Rules for Future Agents
 
 - Read `Duplo Campo/.agents/skills/README.md` before work involving TDCP theory, chapter continuity, equations, or scientific claims.

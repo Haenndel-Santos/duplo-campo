@@ -22,6 +22,9 @@ venv/
 dist/
 build/
 out/
+# excecoes: saidas OFICIAIS das derivacoes/auditoria sao versionadas
+!derivations/code/out/
+!auditoria/code/out/
 .cache/
 
 # Logs

@@ -90,6 +90,10 @@ REGRAS DE MÉTODO (aprendidas a ferro; seguir sempre):
   retorna autovetores (chave 'v').
 
 REGRAS DE EXECUÇÃO:
+- DUAS cópias de trabalho (máquina 1: 'Haenndel Projects'; máquina 2:
+  'Haenndel Projects 2'), mesmo master no GitHub: git pull ao ABRIR a
+  sessão, git push ao FECHAR. Máquina 2: commitar auditoria/code/out/
+  (o .gitignore já tem a exceção; git status vai listá-las).
 - Cálculos pesados: usuário roda no VS Code (.venv) e devolve saídas;
   scripts salvam em auditoria/code/out/*.txt (a sessão pode ler
   direto). py_compile e sondagens numpy curtas na sessão são OK.
