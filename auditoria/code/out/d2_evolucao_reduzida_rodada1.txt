@@ -1,0 +1,54 @@
+========================================================================
+D2 — EVOLUCAO TEMPORAL DO SISTEMA REDUZIDO (taxas ligadas)
+========================================================================
+
+D2-GR — controle: GR+chi, FRW de materia, mesmo pipeline
+    taxas/H das 2 solucoes: ['-4.177', '-3.177']
+  [D2-GR PASSA (nenhum crescimento espurio)]
+[montagem] K,C,W 7x7 prontos
+[lambdify] taxas vivas (Hd, Hfd, xid) — pronto
+
+========================================================================
+EVOLUCAO — celula REF mu=1, a: 2 -> 50, base completa de ICs
+========================================================================
+
+--- k_c = 10  (k_phys = 1 em a=10) ---
+      IC 1 (q[Psi_f]): taxa/H = +0.445
+      IC 2 (q[E_f]): taxa/H = -0.950
+      IC 3 (q[dchi]): taxa/H = -2.589
+      IC 4 (qd[Psi_f]): taxa/H = +0.329
+      IC 5 (qd[E_f]): taxa/H = +0.548
+      IC 6 (qd[dchi]): taxa/H = -0.568
+    ancora congelada (QEP reduzido, a=30): sigma/H = 3.146
+    desacoplamento do bloco dchi: max acopl. = 0.00e+00
+    bloco METRICO (4 ICs): taxas/H = ['+0.445', '-0.950', '+0.329', '+0.548'] -> 0/4 crescem (>= 0.5*sigma_ref)
+    bloco DCHI (2 ICs, controle): taxas/H = ['-2.589', '-0.568']
+
+--- k_c = 100  (k_phys = 10 em a=10) ---
+      IC 1 (q[Psi_f]): taxa/H = +0.862
+      IC 2 (q[E_f]): taxa/H = +1.348
+      IC 3 (q[dchi]): taxa/H = -2.145
+      IC 4 (qd[Psi_f]): taxa/H = +1.098
+      IC 5 (qd[E_f]): taxa/H = +0.911
+      IC 6 (qd[dchi]): taxa/H = -1.552
+    ancora congelada (QEP reduzido, a=30): sigma/H = 6.224
+    desacoplamento do bloco dchi: max acopl. = 0.00e+00
+    bloco METRICO (4 ICs): taxas/H = ['+0.862', '+1.348', '+1.098', '+0.911'] -> 0/4 crescem (>= 0.5*sigma_ref)
+    bloco DCHI (2 ICs, controle): taxas/H = ['-2.145', '-1.552']
+
+D2-CONV — halving da grade (k_c=10, 6000 pts)
+    max|Delta taxa| = 0.0082  (criterio < 0.02*sigma_ref)
+
+========================================================================
+VEREDITO D2 (criterios pre-declarados)
+========================================================================
+  D2-GR: PASSA (acima)
+  D2-DCHI (controle interno): PASSA — bloco dchi nao cresce
+  D2-TAXA: FALHA — k_c=10: max taxa 0.548 vs congelado 3.146; k_c=100: max taxa 1.348 vs congelado 6.224
+  D2-CONV: PASSA (halving)
+  D2-GENERICIDADE: FALHA — k_c=10: 0/4; k_c=100: 0/4
+
+  >>> resultado NAO-generico ou taxa divergente do congelado —
+  compativel com direcao-removida pela secundaria ou com efeito
+  do tempo real; ENFRAQUECER o enunciado tardio de acordo e
+  reportar exatamente os numeros acima.

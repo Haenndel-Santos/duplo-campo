@@ -112,12 +112,32 @@ fantasma = autovalor negativo de K_red (invariante — supera a ressalva
 de k-dependência); disputa 2-vs-3 do corpus resolvida (3 = congelado,
 dupla rota; 2 = esperado pós-secundária); NOTA DE CONVENÇÃO: k físico
 (a→1) vs k comóvel a=10 da Investigação 1 — valores batem sob
-k_phys=k/10. RESTA: D2 = redução DEPENDENTE DO TEMPO (estilo CCP, com
-a secundária ativa) p/ localizar o taquião (helicity-0 físico vs
-direção removida — decide o enunciado final do no-go tardio; suporte
-C1 π_L=0.995 aponta físico) + confronto com a instabilidade de
-gradiente; D3 barato = constante da era de radiação; D4 = fronteira
-quadrática vs cura não-linear (seção do paper).
+k_phys=k/10. D2 EXECUTADO 2026-08-11 (noite) COM REVERSÃO MAIOR
+(d2_evolucao_reduzida.py, 2 rodadas + sondas;
+docs/resultado_d2_evolucao.md — LER PRIMEIRO NA PRÓXIMA SESSÃO):
+⚠ O TAQUIÃO TARDIO CONGELADO NÃO É DINÂMICO. Evolução real do sistema
+reduzido (redução dependente do tempo com termos Ċ, validada em GR,
+halving ✓): no ponto fixo TODAS as soluções diluem (−3/2·H, oscilador
+saudável) contra σ congelado 3–6.8H persistente; projeção no automodo
+taquiônico drenada; crescimento real só TRANSIENTE e tipo-gradiente
+na transição (a∈[15,45], taxa ∝ k, lnA~4), convergindo com a
+literatura ("saudável tarde"). CAUSA: matrizes comóveis nunca
+assentam (K~a³, |K̇|/|K|~2H no ponto fixo) — o congelado descarta os
+termos dominantes. CONSEQUÊNCIA (veredito §8): TODOS os vereditos de
+saúde escalar por espectro congelado (no-go β-constante, modulação,
+ramo algébrico, Fase B) estão SUSPENSOS como vereditos dinâmicos —
+válidos só como caracterização do espectro congelado. FICA: fundo ✓,
+tensor ✓, Fase A (fundo não-fatorado), limiar de back-reaction, e a
+ASSINATURA CINÉTICA INDEFINIDA (fantasma estrutural, D1 — a evolução
+linear não testa fantasma; letalidade é a pergunta central agora).
+NOVA FILA DE CÁLCULO (resultado_d2_evolucao.md §6): R-1 reavaliar
+células do no-go por evolução real; R-2 fresta/fantasma; R-3 Fase B
+refeita por evolução real na rolagem; R-4 k grandes (gradiente da
+literatura em tempo real). SÓ DEPOIS o enunciado final do setor
+escalar e o cap. 07. D3 (era de radiação) segue barato e válido.
+D4 = seção do paper. O EIXO DO PAPER MUDOU: aviso metodológico
+quantificado + maquinaria + fundo/tensor/não-fatorado + a pergunta do
+fantasma (ver posicionamento_literatura.md D2 atualizado).
 
 DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
 2. Formato de publicação do no-go (nota técnica / paper / abertura da

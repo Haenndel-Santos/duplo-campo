@@ -157,6 +157,20 @@ depende desse ponto.
 | Higuchi / setor tensorial | ✓ (400/400) |
 | **Setor escalar** | **✗ — taquião eterno, σ≈(3–4)H** |
 
+> **⚠ ATUALIZAÇÃO 2026-08-11 (`resultado_d2_evolucao.md`): o "taquião
+> eterno" NÃO sobreviveu à evolução temporal real.** O σ(N) desta
+> seção é uma trilha de autovalores CONGELADOS; a evolução real do
+> sistema reduzido (redução dependente do tempo validada em GR) mostra
+> que no ponto fixo todas as soluções DILUEM como a^(−3/2) e a
+> projeção no automodo taquiônico é drenada — as matrizes comóveis
+> nunca assentam (K~a³) e o congelado descarta exatamente os termos
+> dominantes. O crescimento real é transiente, limitado e
+> tipo-gradiente (época de transição), consistente com a literatura.
+> O que permanece deste documento: a caracterização do espectro
+> congelado e seus autovetores. O veredito de saúde tardio está
+> REVOGADO para a célula/k testados; a assinatura cinética indefinida
+> (fantasma estrutural) permanece pela redução exata do D1.
+
 ### Consequência para o plano v2
 
 A modulação β_n(φ₋) **deixa de ser opcional**: é o mecanismo de

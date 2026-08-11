@@ -52,10 +52,21 @@ resolve a disputa Cap.6.2-vs-Anexo C do corpus); o D2 precisa
 localizar o taquião (helicity-0 físico vs direção removida). O suporte
 da C1 (taquião = π_L 0.995) aponta para físico, mas é inferência.
 
-**D2 — Mesma doença ou doença nova?** Comparação explícita entre nosso
-taquião de massa no setor de vínculos e a instabilidade de gradiente
-de 1403.5679/1407.4331 (mesma época, mesmo ramo, caráter diferente).
-O paper precisa de uma seção que rode a comparação nos mesmos fundos.
+**D2 — Mesma doença ou doença nova?**
+**[RESOLVIDO 2026-08-11 COM REVERSÃO — `resultado_d2_evolucao.md`.]**
+A evolução temporal real (redução dependente do tempo, validada em GR)
+mostrou que **o taquião tardio congelado não é dinâmico**: no ponto
+fixo tudo dilui (−3/2·H) e o crescimento real é transiente, limitado e
+tipo-gradiente na transição — **o quadro real converge com a
+literatura** ("saudável tarde"). A ceticismo antecipado neste item
+estava certo. O paper muda de eixo: a contribuição vira (i) o aviso
+metodológico quantificado (matrizes comóveis não assentam; congelado
+descarta os termos dominantes), (ii) a maquinaria validada, (iii) os
+resultados de fundo/tensor/regime não-fatorado/limiar, (iv) a
+assinatura cinética indefinida pela redução exata (a pergunta do
+fantasma, que conecta com o debate "breakdown of linear PT" de
+2507.11526). Todos os vereditos congelados do programa estão em
+reavaliação (fila R-1..R-4).
 
 **D3 — O "12" é por era.** Verificação barata: refazer a álgebra do
 limite primordial com radiação (ρ∝a⁻⁴ ⇒ dr/dN=4r? ⇒ ξ=5r?) e

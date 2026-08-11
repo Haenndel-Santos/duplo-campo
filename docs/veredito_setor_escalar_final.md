@@ -151,3 +151,24 @@ algébrico e dinâmico não-fatorado. Achado estrutural da Fase A que
 qualquer sucessor herda: a interação HR resiste à condensação de φ₋
 (limiar m_χ² ≳ 2Δ_∞). R2 segue viva apenas FORA da representação F1,
 sob o critério anti-circularidade do `gate1c_nota_trilema.md`.
+
+## 8. ⚠ SUSPENSÃO METODOLÓGICA (2026-08-11, noite — D2)
+
+`docs/resultado_d2_evolucao.md` demonstrou que **autovalores
+congelados não são árbitro de saúde nesta classe**: a evolução
+temporal real do sistema reduzido (validada em GR, halving ✓) mostra
+que o taquião tardio congelado NÃO é dinâmico — no ponto fixo todas
+as soluções diluem (−3/2·H) e o crescimento real é transiente,
+limitado e tipo-gradiente (convergindo com a literatura, "saudável
+tarde"). As matrizes comóveis nunca assentam (K~a³; |K̇|/|K|~2H no
+"ponto fixo"), e o congelado descarta os termos dominantes.
+
+**Consequência: TODOS os vereditos de saúde escalar deste documento
+(itens 3–6 da cadeia da §1, o enunciado da §3 e as extensões §6–7)
+ficam SUSPENSOS como vereditos dinâmicos** — permanecem válidos como
+caracterizações do espectro congelado. A reavaliação por evolução
+real (fila R-1..R-4 do `resultado_d2_evolucao.md` §6) decide o que
+sobrevive. O que este D2 NÃO toca: fundo ✓, tensor ✓, o regime
+não-fatorado da Fase A (fundo), o limiar de back-reaction, e a
+assinatura cinética indefinida (fantasma estrutural, D1) — cuja
+letalidade física é agora a pergunta central do setor escalar.
