@@ -142,17 +142,32 @@ CLASSE, não de um canto; letalidade é A pergunta restante; (ii)
 amplificação transiente lnA_max varia 3.9→14.6 (fresta μ=0.1 é a
 PIOR, e^14.6≈2e6) — a instabilidade real da classe é a transiente de
 transição tipo-gradiente (consistente com a literatura), dano depende
-de célula/k. FILA RESTANTE: R-2 = caracterizar a direção de K
-negativa (composição, acoplamentos, energia; conexão com strong
-coupling/2507.11526 — é o que resta do no-go); R-3 = Fase B refeita
-por evolução real na rolagem (σ/H≈13 congelado é suspeito); R-4 = k
-grandes + comparação quantitativa com o gradiente da literatura +
-mapa lnA vs vínculos (nota: fresta μ=0.1 tem o maior lnA mas é a
-direção da rota de escape de Akrami et al. — tensão a investigar).
-DEPOIS: enunciado final do setor escalar → cap. 07 → paper. D3 (era
-de radiação) segue barato e válido. D4 = seção do paper. EIXO DO
-PAPER: aviso metodológico quantificado + reconciliação com a
-literatura + fundo/tensor/não-fatorado + a pergunta do fantasma.
+de célula/k. R-2 EXECUTADA 2026-08-11 (noite;
+r2_fantasma_estrutural.py; docs/resultado_r2_fantasma.md — o doc
+CORRIGE o veredito impresso pelo script, autocrítica de instrumento):
+SÓLIDO (invariante): a assinatura negativa de K_red é UNIFORME em k
+(1..300 — a velha ambiguidade do kN não existe no reduzido),
+PERSISTENTE em a (30..1900) e universal nas células; em k baixo o
+modo é Ψ_f-puro com E<0; em k alto funde com o taquião em quarteto
+complexo (assinatura congelada de mistura). DESCARTADO (poluição de
+normalização): magnitudes de E entre configurações e a escala-μ
+(expoente 0.19 não significa nada; a lei μ³ antiga também era
+normalização-dependente). CONCLUSÃO: a LETALIDADE do fantasma é
+INDECIDÍVEL na ordem quadrática — exige normalização canônica/strong
+coupling (fronteira do programa; a literatura está no MESMO impasse).
+ENUNCIADO HONESTO DO SETOR ESCALAR (rascunho do veredito p/ cap. 07,
+resultado_r2_fantasma.md §3): dinamicamente estável no tardio;
+instabilidade real = transiente de transição; direção cinética
+negativa estrutural universal com letalidade aberta — A TDCP-F1 NÃO
+ESTÁ EXCLUÍDA no nível em que o programa pode julgar; o no-go fica
+reclassificado para "sem veredito de exclusão".
+FILA RESTANTE: R-3 = Fase B refeita por evolução real na rolagem
+(σ/H≈13 congelado é suspeito); R-4 = k grandes + mapa lnA vs vínculos
+(fresta μ=0.1: maior lnA, mas é a direção de escape de Akrami et al.
+— tensão); fantasma → fronteira declarada (normalização canônica =
+sessão dedicada, ou aberto no paper). DEPOIS: enunciado final →
+cap. 07 → paper. D3 segue barato. EIXO DO PAPER: aviso metodológico +
+reconciliação + fundo/tensor/não-fatorado + fantasma-em-aberto.
 
 DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
 2. Formato de publicação do no-go (nota técnica / paper / abertura da

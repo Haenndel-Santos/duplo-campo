@@ -1,0 +1,53 @@
+========================================================================
+R-2 — O FANTASMA ESTRUTURAL: diagnosticos invariantes
+========================================================================
+[montagem] L2 e lambdify (betas e mu livres) ...
+[montagem] pronto
+
+R2-K / R2-E — REF mu=1, a=400: varredura em k
+      k_c  min eig(K_r)  E_fantasma    w2_fant  composicao do modo E<0
+        1    -2.574e+05  -1.396e+07 +1.093e+02  Psi_f:1.00 E_f:0.00 dchi:0.00
+        3    -2.605e+05  -1.402e+07 +1.092e+02  Psi_f:1.00 E_f:0.00 dchi:0.00
+       10    -2.642e+05  -1.402e+07 +1.077e+02  Psi_f:1.00 E_f:0.00 dchi:0.00
+       30    -2.962e+05  -1.311e+07 +9.421e+01  Psi_f:1.00 E_f:0.00 dchi:0.00
+      100    -6.601e+05  (nenhum modo real com E<0)
+      300    -3.859e+06  (nenhum modo real com E<0)
+
+R2-A — REF mu=1, k_c=10: persistencia em a
+    a=    30: min eig(K_r)=-4.097e+02  E_fant=-6.035e+03
+    a=   100: min eig(K_r)=-5.065e+03  E_fant=-2.195e+05
+    a=   400: min eig(K_r)=-2.642e+05  E_fant=-1.402e+07
+    a=  1900: min eig(K_r)=-2.790e+07  E_fant=-1.413e+09
+
+R2-MU — celula da lei de escala (0.5,-0.84), k_c=10, a=400:
+    escala de E_fantasma com mu (lei antiga: |kN| ~ mu^3)
+        mu  min eig(K_r)   E_fantasma    w2_fant
+      0.10    -4.525e+02   -2.037e+06 +9.009e+03
+      0.20    -1.245e+03   -2.348e+06 +3.774e+03
+      0.30    -2.197e+03   -2.576e+06 +2.349e+03
+      0.50    -4.185e+03   -2.867e+06 +1.373e+03
+      1.00    -8.111e+03   -3.093e+06 +7.645e+02
+    expoente ajustado: E_fantasma ~ mu^0.19
+
+DETALHE — espectro completo na REF mu=1, a=400, k_c=10:
+    w2=+3.006e-01 kN=+3.20e+07 E=+4.810e+06 [Psi_f:0.00 E_f:0.00 dchi:1.00]
+    w2=-2.744e+00 kN=+1.85e+07 E=+nan [Psi_f:1.00 E_f:0.00 dchi:0.00]
+    w2=-2.745e+00 kN=+1.85e+07 E=+nan [Psi_f:1.00 E_f:0.00 dchi:0.00]
+    w2=+1.077e+02 (cplx) kN=-2.60e+05 E=-1.402e+07 [Psi_f:1.00 E_f:0.00 dchi:0.00]
+    w2=+1.077e+02 (cplx) kN=-2.60e+05 E=-1.402e+07 [Psi_f:1.00 E_f:0.00 dchi:0.00]
+    eig(K_r) = ['-2.642e+05', '+3.200e+07', '+2.118e+10']
+
+========================================================================
+VEREDITO R-2 (criterios pre-declarados)
+========================================================================
+  R2-K: assinatura de K_r uniforme em k? SIM
+  R2-E: modo propagante com E<0 em todos os k testados? NAO
+  R2-A: fantasma persistente em a (30..1900)? SIM
+  R2-MU: E_fantasma ~ mu^0.19 (evanescente se expoente >~ 2 e E->0 quando mu->0)
+
+  >>> FANTASMA-MARGINAL/REPRESENTACIONAL: assinatura ou
+  existencia dependente de k/a na amostra — a patologia restante
+  vive na fronteira de confiabilidade da ordem quadratica,
+  convergindo com a leitura moderna da literatura. A F1 NAO fica
+  excluida neste nivel; o setor escalar fica 'sem veredito de
+  exclusao' no quadratico.
