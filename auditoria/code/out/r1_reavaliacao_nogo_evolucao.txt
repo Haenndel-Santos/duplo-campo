@@ -1,0 +1,39 @@
+========================================================================
+R-1 — REAVALIACAO DO NO-GO BETA-CONSTANTE POR EVOLUCAO REAL
+========================================================================
+
+R1-GR — controle GR+chi pelo mesmo pipeline
+    GR transicao: taxas/H = ['-1.15', '-1.51']  [PASSA]
+[montagem+lambdify] prontos (betas e mu livres)
+
+       b1     b2     mu   k_c | sig_cong   prim  trans   tard lnA_max negK  veredito
+      1.0  -0.40    0.3    10 |     2.89  +0.38  +0.59  -1.75    5.55    1  TARDIA-DILUI
+      1.0  -0.40    1.0    10 |     2.97  +0.07  +0.23  -1.37    4.99    1  TARDIA-DILUI
+      1.0  -0.40    3.0    10 |     3.01  -0.03  -0.98  -0.28    4.69    1  TARDIA-DILUI
+      1.0  -0.40   10.0    10 |     3.02  -0.02  +0.78  -0.42    4.62    1  TARDIA-DILUI
+      1.0  -0.40   30.0    10 |     3.01  +0.00  +1.17  -1.43    4.68    1  TARDIA-DILUI
+      1.0  -0.40  100.0    10 |     3.01  +0.02  +1.18  -2.92    4.75    1  TARDIA-DILUI
+      0.5  -0.84    0.3    10 |     1.43  +0.68  -0.97  -0.42    9.13    1  TARDIA-DILUI
+      0.5  -0.84    1.0    10 |     2.63  +0.31  +0.34  -1.08    6.53    1  TARDIA-DILUI
+      0.2  -1.00    0.1    10 |     0.00  +1.42  -0.06  -5.41   14.61    1  TARDIA-DILUI
+      0.2  -1.00    1.0    10 |     2.47  +0.38  +0.30  -2.14    7.06    1  TARDIA-DILUI
+      2.0  -0.05    1.0    10 |     3.14  -0.30  -1.21  -1.59    3.87    1  TARDIA-DILUI
+      2.0  -1.00    1.0    10 |     2.89  -0.01  -0.95  -0.88    5.21    1  TARDIA-DILUI
+      0.2  -0.05    1.0    10 |     3.00  +0.33  +0.65  -0.60    4.90    1  TARDIA-DILUI
+      1.0  -0.40    1.0   100 |     6.83  -0.05  +1.47  -1.15   10.10    1  TARDIA-DILUI
+
+========================================================================
+VEREDITO R-1 (criterios pre-declarados)
+========================================================================
+  celulas avaliadas: 14; TARDIA-DILUI: 14; TARDIA-CRESCE: 0; MISTO: 0
+
+  >>> NENHUMA celula amostrada cresce no tardio: o no-go tardio
+  congelado e VACUO em todo o espaco amostrado. No nivel linear
+  dinamico, o setor escalar tardio da F1 beta-constante e
+  ESTAVEL nas celulas testadas (fronteira declarada: amostra
+  acima, k_c={10,100}, uma trajetoria por celula).
+  O que resta do no-go: (i) a assinatura cinetica indefinida
+  (coluna negK — o fantasma estrutural, presente onde negK>0),
+  cuja letalidade e a pergunta do R-2; (ii) amplificacao
+  transiente lnA_max (celulas com lnA grande tem a instabilidade
+  de transicao relevante — comparar com a literatura no R-4).

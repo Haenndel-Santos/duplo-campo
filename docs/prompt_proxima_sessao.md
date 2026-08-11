@@ -130,14 +130,29 @@ válidos só como caracterização do espectro congelado. FICA: fundo ✓,
 tensor ✓, Fase A (fundo não-fatorado), limiar de back-reaction, e a
 ASSINATURA CINÉTICA INDEFINIDA (fantasma estrutural, D1 — a evolução
 linear não testa fantasma; letalidade é a pergunta central agora).
-NOVA FILA DE CÁLCULO (resultado_d2_evolucao.md §6): R-1 reavaliar
-células do no-go por evolução real; R-2 fresta/fantasma; R-3 Fase B
-refeita por evolução real na rolagem; R-4 k grandes (gradiente da
-literatura em tempo real). SÓ DEPOIS o enunciado final do setor
-escalar e o cap. 07. D3 (era de radiação) segue barato e válido.
-D4 = seção do paper. O EIXO DO PAPER MUDOU: aviso metodológico
-quantificado + maquinaria + fundo/tensor/não-fatorado + a pergunta do
-fantasma (ver posicionamento_literatura.md D2 atualizado).
+R-1 EXECUTADA 2026-08-11 (noite;
+r1_reavaliacao_nogo_evolucao.py; docs/resultado_r1_reavaliacao.md):
+14/14 CÉLULAS TARDIA-DILUI, ZERO CRESCEM — o no-go tardio congelado é
+VÁCUO em todo o espaço amostrado (escada de μ 0.3–100 na REF; lei de
+escala; fresta μ=0.1; cantos; k_c=10 e 100). Setor escalar tardio da
+F1 β-constante é LINEARMENTE ESTÁVEL nas células testadas. DOIS
+ACHADOS ESTRUTURAIS: (i) negK=1 UNIVERSAL — o fantasma estrutural
+(uma direção cinética negativa em K_red a=400) é propriedade da
+CLASSE, não de um canto; letalidade é A pergunta restante; (ii)
+amplificação transiente lnA_max varia 3.9→14.6 (fresta μ=0.1 é a
+PIOR, e^14.6≈2e6) — a instabilidade real da classe é a transiente de
+transição tipo-gradiente (consistente com a literatura), dano depende
+de célula/k. FILA RESTANTE: R-2 = caracterizar a direção de K
+negativa (composição, acoplamentos, energia; conexão com strong
+coupling/2507.11526 — é o que resta do no-go); R-3 = Fase B refeita
+por evolução real na rolagem (σ/H≈13 congelado é suspeito); R-4 = k
+grandes + comparação quantitativa com o gradiente da literatura +
+mapa lnA vs vínculos (nota: fresta μ=0.1 tem o maior lnA mas é a
+direção da rota de escape de Akrami et al. — tensão a investigar).
+DEPOIS: enunciado final do setor escalar → cap. 07 → paper. D3 (era
+de radiação) segue barato e válido. D4 = seção do paper. EIXO DO
+PAPER: aviso metodológico quantificado + reconciliação com a
+literatura + fundo/tensor/não-fatorado + a pergunta do fantasma.
 
 DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
 2. Formato de publicação do no-go (nota técnica / paper / abertura da
