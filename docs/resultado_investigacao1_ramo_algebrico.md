@@ -188,7 +188,10 @@ fila), (c) grau relacional sem segunda métrica.
   **CONCLUÍDO 2026-08-11**: `docs/gate1a_tabela_identidade.md` (zero
   elos de identidade derivados na cadeia; flag epistêmica adicionada ao
   dicionário).
-- **G1-c** (nota do trilema, teórico) — próximo passo.
+- **G1-c** (nota do trilema, teórico) — **CONCLUÍDO 2026-08-11**:
+  `docs/gate1c_nota_trilema.md` (prior parcialmente demolido;
+  circularidade HR–Goldstone como obstrução real; critério
+  anti-circularidade pré-declarado). **Gate 1 FECHADO.**
 - **Investigação 2** (condensação dinâmica, $p_\phi\neq0$) — agora
   promovida a teste direto de R2, conforme `gate1_identidade_relacional.md`
-  §5 item 4.
+  §5 item 4, com os critérios de projeto do `gate1c_nota_trilema.md` §5.

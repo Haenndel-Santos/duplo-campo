@@ -168,3 +168,33 @@ G1-a e G1-b fechados no mesmo dia, convergentes: nem o texto deriva a
 identificação (G1-a, nível 1), nem a dinâmica a sustenta na F1 (G1-b,
 nível 2b — projeção zero). **Falta só o G1-c** (nota do trilema) para
 fechar o Gate 1 por completo.
+
+## 9. Resultado (2026-08-11) — G1-c CONCLUÍDO; GATE 1 FECHADO
+
+`docs/gate1c_nota_trilema.md`. Desfecho: **demolição parcial do prior**
+(o desfecho "também informação" previsto no §4): Weinberg–Witten, com
+as hipóteses enunciadas, só obstrui spin-2 **sem massa** composto —
+spin-2 massivo composto existe na natureza (f₂(1270)). Isso bifurca o
+braço (b) em (b1) só o multiplete massivo emerge (não bloqueado; alvo
+natural, pois o limite GR primordial é exato no setor g) e (b2) ambas
+as métricas emergem (Weinberg–Witten morde; custo alto).
+
+No lugar do prior entra uma obstrução mais precisa: a **circularidade
+HR–Goldstone** — quebra de difeos relativas diff_g×diff_f→diff_diag
+tem como EFT IR a própria classe F1 (helicity-0 = escalar de
+Stückelberg), com suporte 2b in-repo (os autovetores patológicos são
+exatamente o setor de vínculos: dubleto de shifts / lapso). Critério
+anti-circularidade pré-declarado e vinculante para a Investigação 2:
+toda construção R2 deve nomear os geradores quebrados; difeos relativas
+sem demonstração de saída do domínio varrido = F1 renomeada; simetrias
+internas devem explicitar a dívida do multiplete massivo.
+
+Decisão documentada do trilema: (a) FECHADO (testado, reprovou);
+(b) BRAÇO DE TRABALHO, alvo primário (b1), teste atual = Investigação 2;
+(c) FALLBACK declarado. Caminho nomeado para 2a: derivação de
+Stückelberg in-repo (opcional, não bloqueia a Investigação 2).
+
+**Status do Gate 1: FECHADO** (G1-a ✔ nível 1; G1-b ✔ nível 2b;
+G1-c ✔ decisão documentada + prior examinado). R1 é o enquadramento
+oficial do no-go; R2 segue para teste direto na Investigação 2, agora
+com critérios de projeto pré-declarados.
