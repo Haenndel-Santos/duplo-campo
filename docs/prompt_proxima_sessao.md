@@ -105,12 +105,19 @@ fenômeno "fora dos dois ramos com pouso" não tem precedente; a medida
 Stückelberg é nova COMO MEDIDA (citar Aoki-Maeda-Namba 1506.04543 como
 precedente qualitativo); (b1) tem genealogia (ISS 1971 f-dominance;
 FQH chiral graviton Nature 2024) e checklist de obstáculos. ITENS
-PRÉ-PAPER (do §2 do doc): D1 CRÍTICO = redução completa de vínculos no
-ponto fixo p/ provar que o par doente sobrevive (conecta com a extração
-analítica pendente de estrutura_par_relativo.md; se NÃO sobreviver,
-reescreve o no-go tardio); D3 barato = constante da era de radiação;
-D2/D4 = seções do paper (comparação com a instabilidade de gradiente;
-fronteira quadrática vs cura não-linear de Aoki et al.).
+PRÉ-PAPER (do §2 do doc): D1 EXECUTADO E RESOLVIDO A FAVOR
+(d1_reducao_vinculos.py; docs/resultado_d1_reducao.md): redução FJ
+exata = espectro idêntico ao QEP nos 4 pontos; taquião persiste;
+fantasma = autovalor negativo de K_red (invariante — supera a ressalva
+de k-dependência); disputa 2-vs-3 do corpus resolvida (3 = congelado,
+dupla rota; 2 = esperado pós-secundária); NOTA DE CONVENÇÃO: k físico
+(a→1) vs k comóvel a=10 da Investigação 1 — valores batem sob
+k_phys=k/10. RESTA: D2 = redução DEPENDENTE DO TEMPO (estilo CCP, com
+a secundária ativa) p/ localizar o taquião (helicity-0 físico vs
+direção removida — decide o enunciado final do no-go tardio; suporte
+C1 π_L=0.995 aponta físico) + confronto com a instabilidade de
+gradiente; D3 barato = constante da era de radiação; D4 = fronteira
+quadrática vs cura não-linear (seção do paper).
 
 DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
 2. Formato de publicação do no-go (nota técnica / paper / abertura da

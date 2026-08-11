@@ -1,0 +1,97 @@
+========================================================================
+D1 — REDUCAO EXPLICITA DE VINCULOS: o par doente sobrevive?
+========================================================================
+
+V1 — ancora GR (EH_g + chi, gauge plano) pela rota de REDUCAO
+    k=1: 1 modo(s) ['dchi']; K_red eig=[0.5]; w2=[1.7119] (alvo QEP 1.7119)
+    k=10: 1 modo(s) ['dchi']; K_red eig=[0.5]; w2=[100.7119] (alvo QEP 100.7119)
+  [D1-GR PASSA]
+[montagem] K,C,W 7x7 prontos
+
+========================================================================
+CELULA: REF mu=1 (taquiao)  (r=0.332259, xi=0.332423, H=0.557509)
+========================================================================
+
+--- k = 1 ---
+    substituindo fundo exato nas 7x7 ...
+    QEP 7x7 (referencia): 3 pares; w2 = ['-4.3467e+00', '+6.5874e-01', '+1.3000e+00']
+    reducao Faddeev-Jackiw (exata, racionais) ...
+   [FJ r1] ipp na linha de Phi_g
+   [FJ r1] ipp na linha de Phi_f
+   [FJ r1] ipp na linha de B_f
+   [FJ r1] Schur nos auxiliares: ['Phi_g', 'B_g', 'Phi_f', 'B_f']
+   [FJ r2] K nao-singular: 3 modo(s) — reducao concluida
+    REDUZIDO: 3 modo(s) fisicos: ['Psi_f', 'E_f', 'dchi']
+    autovalores de K_red (assinatura): ['-1.045e-01', '+3.399e-02', '+5.000e-01']
+      w2=+6.5874e-01  sigma/H=0.0000  kN_red=-3.475e-02
+      w2=+1.3000e+00  sigma/H=0.0000  kN_red=+5.000e-01
+      w2=-4.3467e+00  sigma/H=3.7396  kN_red=+1.956e-02
+    espectro reduzido == QEP? SIM
+
+--- k = 10 ---
+    substituindo fundo exato nas 7x7 ...
+    QEP 7x7 (referencia): 3 pares; w2 = ['+9.5825e+01', '+9.5825e+01', '+1.0030e+02']
+    reducao Faddeev-Jackiw (exata, racionais) ...
+   [FJ r1] ipp na linha de Phi_g
+   [FJ r1] ipp na linha de Phi_f
+   [FJ r1] ipp na linha de B_f
+   [FJ r1] Schur nos auxiliares: ['Phi_g', 'B_g', 'Phi_f', 'B_f']
+   [FJ r2] K nao-singular: 3 modo(s) — reducao concluida
+    REDUZIDO: 3 modo(s) fisicos: ['Psi_f', 'E_f', 'dchi']
+    autovalores de K_red (assinatura): ['-6.551e+00', '+5.000e-01', '+1.799e+01']
+      w2=+1.0030e+02  sigma/H=0.0000  kN_red=+5.000e-01
+      w2=+9.5825e+01 -3.32e+01i  sigma/H=2.9943  kN_red=-2.358e-01
+      w2=+9.5825e+01 +3.32e+01i  sigma/H=2.9943  kN_red=-2.358e-01
+    espectro reduzido == QEP? SIM
+
+========================================================================
+CELULA: fresta mu=0.1 (fantasma quase-nulo)  (r=0.064498, xi=0.064519, H=0.176628)
+========================================================================
+
+--- k = 1 ---
+    substituindo fundo exato nas 7x7 ...
+    QEP 7x7 (referencia): 3 pares; w2 = ['+1.0655e+00', '+1.3000e+00', '+2.3339e+01']
+    reducao Faddeev-Jackiw (exata, racionais) ...
+   [FJ r1] ipp na linha de Phi_g
+   [FJ r1] ipp na linha de Phi_f
+   [FJ r1] ipp na linha de B_f
+   [FJ r1] Schur nos auxiliares: ['Phi_g', 'B_g', 'Phi_f', 'B_f']
+   [FJ r2] K nao-singular: 3 modo(s) — reducao concluida
+    REDUZIDO: 3 modo(s) fisicos: ['Psi_f', 'E_f', 'dchi']
+    autovalores de K_red (assinatura): ['-3.365e-04', '+1.285e-04', '+5.000e-01']
+      w2=+1.0655e+00  sigma/H=0.0000  kN_red=+4.577e-05
+      w2=+1.3000e+00  sigma/H=0.0000  kN_red=+5.000e-01
+      w2=+2.3339e+01  sigma/H=0.0000  kN_red=-5.703e-05
+    espectro reduzido == QEP? SIM
+
+--- k = 10 ---
+    substituindo fundo exato nas 7x7 ...
+    QEP 7x7 (referencia): 3 pares; w2 = ['+9.8005e+01', '+9.8005e+01', '+1.0030e+02']
+    reducao Faddeev-Jackiw (exata, racionais) ...
+   [FJ r1] ipp na linha de Phi_g
+   [FJ r1] ipp na linha de Phi_f
+   [FJ r1] ipp na linha de B_f
+   [FJ r1] Schur nos auxiliares: ['Phi_g', 'B_g', 'Phi_f', 'B_f']
+   [FJ r2] K nao-singular: 3 modo(s) — reducao concluida
+    REDUZIDO: 3 modo(s) fisicos: ['Psi_f', 'E_f', 'dchi']
+    autovalores de K_red (assinatura): ['-2.582e-02', '+6.502e-02', '+5.000e-01']
+      w2=+9.8005e+01 +9.57e+00i  sigma/H=2.7347  kN_red=+1.882e-03
+      w2=+9.8005e+01 -9.57e+00i  sigma/H=2.7347  kN_red=+1.882e-03
+      w2=+1.0030e+02  sigma/H=0.0000  kN_red=+5.000e-01
+    espectro reduzido == QEP? SIM
+
+========================================================================
+VEREDITO D1 (criterios pre-declarados)
+========================================================================
+  D1-CONTAGEM: PASSA — REF k=1: 3 red vs 3 QEP; REF k=10: 3 red vs 3 QEP; fresta k=1: 3 red vs 3 QEP; fresta k=10: 3 red vs 3 QEP
+  D1-ESPECTRO: PASSA — espectros conferem modo a modo
+  taquiao no sistema REDUZIDO: SIM — sigma/H=3.740 em k=1 (ancora QEP 3.651), sigma/H=2.994 em k=10 (ancora QEP 3.740)
+  fantasma (autovalor NEGATIVO de K_red) na fresta: SIM — k=1: 1 direcao(oes) negativa(s), k=10: 1 direcao(oes) negativa(s)
+
+  >>> O PAR SOBREVIVE A REDUCAO. O espectro do QEP e identico ao
+  do sistema fisico explicitamente reduzido, o taquiao persiste
+  com a mesma taxa, e a assinatura de K_red da o diagnostico de
+  fantasma sem ambiguidade de norma. O no-go tardio fica
+  referee-proof nesta frente (D1 do posicionamento resolvido a
+  favor); a comparacao com a instabilidade de gradiente da
+  literatura (D2) e o proximo item.

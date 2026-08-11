@@ -40,16 +40,17 @@ próprias; posiciona-as.
 ## 2. Os desafios de referee (itens de trabalho PRÉ-paper)
 
 **D1 — Sobrevivência do par doente à redução de vínculos (CRÍTICO).**
-Nosso taquião tardio contradiz o quadro publicado ("dS tardio estável").
-As análises padrão integram lapso/shift para fora antes de diagnosticar;
-nosso par vive exatamente aí, com norma quase nula (kN~10⁻⁴–10⁻⁸) — e a
-leitura moderna (Brizuela et al. 2507.11526: a instabilidade escalar
-"sugere quebra da teoria de perturbação, não instabilidade física")
-será usada contra qualquer modo de norma evanescente. **Item técnico
-nº 1: reduzir explicitamente aos modos propagantes (Schur/FJ completo
-no ponto fixo) e mostrar que o par doente sobrevive — ou descobrir que
-não sobrevive** (o que reescreveria o no-go tardio; conecta com a
-extração analítica pendente de `estrutura_par_relativo.md`).
+**[RESOLVIDO A FAVOR, 2026-08-11 — `resultado_d1_reducao.md`.]** A
+redução Faddeev–Jackiw exata (multiplicadores eliminados; aritmética
+racional a 30 dígitos) dá espectro **idêntico** ao QEP modo a modo nos
+4 pontos; o taquião persiste e o fantasma vira **autovalor negativo da
+matriz cinética reduzida** (enunciado invariante — supera a ressalva
+de k-dependência da norma). Resta a parte que migrou para o D2: a
+contagem congelada é 3, a pós-secundária esperada é 2 (cegueira
+declarada do congelado à secundária, `gate2_ghost.md` §4 — e isto
+resolve a disputa Cap.6.2-vs-Anexo C do corpus); o D2 precisa
+localizar o taquião (helicity-0 físico vs direção removida). O suporte
+da C1 (taquião = π_L 0.995) aponta para físico, mas é inferência.
 
 **D2 — Mesma doença ou doença nova?** Comparação explícita entre nosso
 taquião de massa no setor de vínculos e a instabilidade de gradiente
