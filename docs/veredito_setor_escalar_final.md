@@ -63,6 +63,7 @@ Não coberto (as saídas restantes, por custo crescente):
 5. **Análise além do quadrático-congelado** — condensação NÃO
    estacionária (p_φ≠0, onde a constraint não fatora e a estrutura é
    genuinamente nova — o único regime que nenhuma sondagem tocou).
+   **[FECHADO 2026-08-11 — também NO-GO, ver seção 7.]**
 
 ## 4. O que o programa estabeleceu de positivo
 
@@ -125,3 +126,28 @@ doença. Por isso R1 passa a ser o enquadramento oficial do no-go: a
 patologia é da representação F1, não (até aqui) do grau relacional
 δΦ₋ em si. Ver `docs/gate1_identidade_relacional.md` §7 para o
 detalhe do gate.
+
+## 7. Atualização (2026-08-11, tarde) — item 3.5 fechado; o arco completo
+
+`docs/resultado_investigacao2_faseA.md` + `resultado_investigacao2_faseB.md`
+fecham a saída 5 (condensação dinâmica, p_φ≠0): o fundo de rolagem
+**existe** e realiza a narrativa da bifurcação (a condensação de φ₋
+dirige r de 0.031 a 0.498, deslocando o fundo ordem 1 dos dois ramos e
+pousando de volta no ramo finito) — mas o setor escalar é **pior** lá:
+σ/H sobe monotonicamente com o deslocamento até **13.08** no coração
+da janela não-fatorada, sem nenhum ponto limpo em toda a trajetória, e
+relaxa para σ/H≈4.25 no fundo estacionário pousado (dentro da família
+3.85–4.43 já varrida). Contagem de modos = 3 em toda parte (sem BD na
+rota numérica; não certificador). Os modos patológicos continuam
+δφ₋-espectadores mesmo com F′≠0 e χ̇≠0 — e a instabilidade de
+condensação (essa sim δφ₋-dominada) **sara sozinha** ao assentar.
+
+**Com os itens 3.4 e 3.5 fechados, as duas saídas estruturais do no-go
+estão mortas.** Restam as saídas de prior baixo (β₂/β₄ modulados; F2
+com β₃≠0) e a mudança de classe (matéria não-mínima). O arco
+computacional da TDCP-F1 está completo: fundo ✓, tensor ✓, escalar ✗
+em todos os regimes acessíveis — constante, modulado-estacionário,
+algébrico e dinâmico não-fatorado. Achado estrutural da Fase A que
+qualquer sucessor herda: a interação HR resiste à condensação de φ₋
+(limiar m_χ² ≳ 2Δ_∞). R2 segue viva apenas FORA da representação F1,
+sob o critério anti-circularidade do `gate1c_nota_trilema.md`.

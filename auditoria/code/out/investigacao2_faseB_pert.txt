@@ -1,0 +1,240 @@
+========================================================================
+INVESTIGACAO 2 — FASE B: perturbacoes no fundo de rolagem
+========================================================================
+[montagem] K,C,W 7x7 prontos
+[fatias] {Fb,Fp,Fpp} x {b0..b4}, taxas livres (pode demorar) ...
+[fatias] prontas
+[fundo] reintegrando a trajetoria alvo (g=2, m_chi^2=30, v*=1) ...
+[fundo] ok — r_fim=0.4979 (Fase A: 0.4979), chi/v_fim=0.932 (Fase A: 0.932)
+  [FUNDO CONFERE]
+
+V2 — T1 estendido (ponto rolante, F global, betas constantes)
+    max|K_fatias - K_direta| = 0.00e+00  [PASSA]
+
+V3 — a=100 (pre-rolagem): espectro taxas-ligadas vs congelado
+    k=1: pares 3 vs 3; w2 -5.196e+01/-5.192e+01 | -1.367e+01/-1.357e+01 | +4.983e+02/+5.039e+02
+    k=10: pares 3 vs 3; w2 +3.955e+01/+3.955e+01 | +3.955e+01/+3.955e+01 | +8.532e+01/+8.546e+01
+  [V3 PASSA]
+
+========================================================================
+VARREDURA — QEP ao longo da trajetoria (leitura de tendencia)
+========================================================================
+  janela-alvo da Fase A: a ~ [760, 2050]; extremos como referencia
+
+  a=    100.0  r=0.0313 xi=0.0314 chi/v=0.087 desl=-1.52e-02 |Hd/H^2|=0.009 adiab=0.25
+    k=1: 3 par(es)
+      w2=-1.367e+01 kN=+2.58e-01 [TAQUIAO ] dchi=0.516 pi0=0.59 piL=0.41 rI=0.01
+      w2=-5.196e+01 kN=+2.30e-04 [TAQUIAO ] dchi=0.000 pi0=0.09 piL=0.91 rI=0.21
+      w2=+4.983e+02 kN=-2.60e-05 [FANTASMA] dchi=0.000 pi0=0.91 piL=0.09 rI=0.26
+    k=10: 3 par(es)
+      w2=+8.532e+01 kN=+4.55e-01 [limpo   ] dchi=0.910 pi0=0.96 piL=0.04 rI=0.00
+      w2=+3.955e+01 -1.26e+02i kN=-4.74e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+      w2=+3.955e+01 +1.26e+02i kN=-4.74e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+
+  a=    300.3  r=0.0333 xi=0.0351 chi/v=0.202 desl=-7.46e-02 |Hd/H^2|=0.049 adiab=0.25
+    k=1: 3 par(es)
+      w2=-1.280e+01 kN=+1.08e-01 [TAQUIAO ] dchi=0.219 pi0=0.65 piL=0.35 rI=0.02
+      w2=-5.953e+01 kN=+2.53e-04 [TAQUIAO ] dchi=0.000 pi0=0.09 piL=0.91 rI=0.21
+      w2=+6.149e+02 kN=-2.70e-05 [FANTASMA] dchi=0.000 pi0=0.92 piL=0.08 rI=0.26
+    k=10: 3 par(es)
+      w2=+8.617e+01 kN=+3.40e-01 [limpo   ] dchi=0.680 pi0=0.96 piL=0.04 rI=0.00
+      w2=+4.141e+01 -1.41e+02i kN=-5.41e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+      w2=+4.141e+01 +1.41e+02i kN=-5.41e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+
+  a=    500.1  r=0.0373 xi=0.0438 chi/v=0.302 desl=-1.45e-01 |Hd/H^2|=0.116 adiab=0.25
+    k=1: 3 par(es)
+      w2=-1.153e+01 kN=+7.88e-02 [TAQUIAO ] dchi=0.160 pi0=0.73 piL=0.27 rI=0.03
+      w2=-7.480e+01 kN=+2.93e-04 [TAQUIAO ] dchi=0.000 pi0=0.12 piL=0.88 rI=0.20
+      w2=+8.259e+02 kN=-3.00e-05 [FANTASMA] dchi=0.000 pi0=0.92 piL=0.08 rI=0.26
+    k=10: 3 par(es)
+      w2=+8.739e+01 kN=+2.72e-01 [limpo   ] dchi=0.545 pi0=0.96 piL=0.04 rI=0.00
+      w2=+5.332e+01 +1.75e+02i kN=-6.43e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+      w2=+5.332e+01 -1.75e+02i kN=-6.43e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+
+  a=    699.1  r=0.0438 xi=0.0596 chi/v=0.396 desl=-2.16e-01 |Hd/H^2|=0.211 adiab=0.25
+    k=1: 3 par(es)
+      w2=-9.962e+00 kN=+6.54e-02 [TAQUIAO ] dchi=0.134 pi0=0.78 piL=0.22 rI=0.04
+      w2=-9.693e+01 kN=+3.60e-04 [TAQUIAO ] dchi=0.000 pi0=0.15 piL=0.85 rI=0.18
+      w2=+1.096e+03 kN=-3.70e-05 [FANTASMA] dchi=0.000 pi0=0.93 piL=0.07 rI=0.26
+    k=10: 3 par(es)
+      w2=+8.886e+01 kN=+2.42e-01 [limpo   ] dchi=0.485 pi0=0.95 piL=0.05 rI=0.00
+      w2=+7.921e+01 -2.28e+02i kN=-7.99e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+      w2=+7.921e+01 +2.28e+02i kN=-7.99e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+
+  a=    800.2  r=0.0485 xi=0.0713 chi/v=0.443 desl=-2.52e-01 |Hd/H^2|=0.274 adiab=0.24
+    k=1: 3 par(es)
+      w2=-9.041e+00 kN=+5.97e-02 [TAQUIAO ] dchi=0.123 pi0=0.79 piL=0.21 rI=0.06
+      w2=-1.103e+02 kN=+4.10e-04 [TAQUIAO ] dchi=0.000 pi0=0.17 piL=0.83 rI=0.16
+      w2=+1.234e+03 kN=-4.31e-05 [FANTASMA] dchi=0.000 pi0=0.93 piL=0.07 rI=0.26
+    k=10: 3 par(es)
+      w2=+8.970e+01 kN=+2.33e-01 [limpo   ] dchi=0.467 pi0=0.95 piL=0.05 rI=0.00
+      w2=+9.949e+01 +2.62e+02i kN=-9.09e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+      w2=+9.949e+01 -2.62e+02i kN=-9.09e-05 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+
+  a=    899.9  r=0.0542 xi=0.0864 chi/v=0.489 desl=-2.86e-01 |Hd/H^2|=0.347 adiab=0.23
+    k=1: 3 par(es)
+      w2=-8.029e+00 kN=+5.42e-02 [TAQUIAO ] dchi=0.112 pi0=0.79 piL=0.21 rI=0.09
+      w2=-1.247e+02 kN=+4.75e-04 [TAQUIAO ] dchi=0.000 pi0=0.18 piL=0.82 rI=0.15
+      w2=+1.359e+03 kN=-5.19e-05 [FANTASMA] dchi=0.000 pi0=0.94 piL=0.06 rI=0.26
+    k=10: 3 par(es)
+      w2=+9.060e+01 kN=+2.25e-01 [limpo   ] dchi=0.450 pi0=0.95 piL=0.05 rI=0.00
+      w2=+1.257e+02 +3.00e+02i kN=-1.05e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+      w2=+1.257e+02 -3.00e+02i kN=-1.05e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+
+  a=    999.6  r=0.0612 xi=0.1059 chi/v=0.536 desl=-3.19e-01 |Hd/H^2|=0.433 adiab=0.22
+    k=1: 3 par(es)
+      w2=-6.871e+00 kN=+4.91e-02 [TAQUIAO ] dchi=0.102 pi0=0.79 piL=0.21 rI=0.13
+      w2=-1.401e+02 kN=+5.60e-04 [TAQUIAO ] dchi=0.000 pi0=0.19 piL=0.81 rI=0.13
+      w2=+1.459e+03 kN=-6.47e-05 [FANTASMA] dchi=0.000 pi0=0.93 piL=0.07 rI=0.26
+    k=10: 3 par(es)
+      w2=+9.159e+01 kN=+2.16e-01 [limpo   ] dchi=0.432 pi0=0.94 piL=0.06 rI=0.00
+      w2=+1.594e+02 -3.43e+02i kN=-1.22e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+      w2=+1.594e+02 +3.43e+02i kN=-1.22e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+
+  a=   1199.7  r=0.0811 xi=0.1664 chi/v=0.631 desl=-3.84e-01 |Hd/H^2|=0.645 adiab=0.17
+    k=1: 3 par(es)
+      w2=-3.698e+00 kN=+4.34e-02 [TAQUIAO ] dchi=0.092 pi0=0.82 piL=0.18 rI=0.27
+      w2=-1.730e+02 kN=+8.20e-04 [TAQUIAO ] dchi=0.000 pi0=0.20 piL=0.80 rI=0.07
+      w2=+1.545e+03 kN=-1.12e-04 [FANTASMA] dchi=0.000 pi0=0.93 piL=0.07 rI=0.26
+    k=10: 3 par(es)
+      w2=+9.414e+01 kN=+1.91e-01 [limpo   ] dchi=0.382 pi0=0.93 piL=0.07 rI=0.01
+      w2=+2.582e+02 +4.46e+02i kN=-1.72e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+      w2=+2.582e+02 -4.46e+02i kN=-1.72e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+
+  a=   1498.7  r=0.1362 xi=0.3618 chi/v=0.777 desl=-4.64e-01 |Hd/H^2|=0.993 adiab=0.03
+    k=1: 3 par(es)
+      w2=+7.746e+00 kN=+1.25e-02 [limpo   ] dchi=0.028 pi0=0.59 piL=0.41 rI=0.57
+      w2=-2.198e+02 kN=+1.60e-03 [TAQUIAO ] dchi=0.000 pi0=0.19 piL=0.81 rI=0.08
+      w2=+1.257e+03 kN=-3.42e-04 [FANTASMA] dchi=0.000 pi0=0.90 piL=0.10 rI=0.24
+    k=10: 3 par(es)
+      w2=+1.025e+02 kN=+1.50e-01 [limpo   ] dchi=0.300 pi0=0.90 piL=0.10 rI=0.02
+      w2=+5.197e+02 -6.34e+02i kN=-3.16e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.33
+      w2=+5.197e+02 +6.34e+02i kN=-3.16e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.33
+
+  a=   1798.7  r=0.2503 xi=0.7994 chi/v=0.918 desl=-4.38e-01 |Hd/H^2|=0.674 adiab=0.74
+    k=1: 3 par(es)
+      w2=+4.553e+01 kN=+1.27e-03 [limpo   ] dchi=0.005 pi0=0.40 piL=0.60 rI=0.53
+      w2=-2.246e+02 kN=+2.74e-03 [TAQUIAO ] dchi=0.000 pi0=0.14 piL=0.86 rI=0.29
+      w2=+5.182e+02 kN=-1.14e-03 [FANTASMA] dchi=0.000 pi0=0.77 piL=0.23 rI=0.10
+    k=10: 3 par(es)
+      w2=+1.259e+02 kN=+1.50e-01 [limpo   ] dchi=0.300 pi0=0.86 piL=0.14 rI=0.05
+      w2=+8.493e+02 -7.42e+02i kN=-6.50e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.33
+      w2=+8.493e+02 +7.42e+02i kN=-6.50e-04 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.33
+
+  a=   2048.4  r=0.3858 xi=1.1884 chi/v=0.998 desl=-2.49e-01 |Hd/H^2|=0.362 adiab=2.38
+    k=1: 3 par(es)
+      w2=+8.217e+01 -5.52e+01i kN=-1.53e-03 [TAQUIAO ] dchi=0.001 pi0=0.41 piL=0.59 rI=0.54
+      w2=+8.217e+01 +5.52e+01i kN=-1.53e-03 [TAQUIAO ] dchi=0.001 pi0=0.41 piL=0.59 rI=0.54
+      w2=-1.694e+02 kN=+3.12e-03 [TAQUIAO ] dchi=0.000 pi0=0.07 piL=0.93 rI=0.40
+    k=10: 3 par(es)
+      w2=+1.406e+02 kN=+2.77e-01 [limpo   ] dchi=0.553 pi0=0.83 piL=0.17 rI=0.06
+      w2=+8.260e+02 +5.97e+02i kN=-1.19e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.33
+      w2=+8.260e+02 -5.97e+02i kN=-1.19e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.33
+
+  a=   2502.0  r=0.5637 xi=1.2716 chi/v=1.023 desl=+7.66e-02 |Hd/H^2|=0.490 adiab=4.90
+    k=1: 3 par(es)
+      w2=+1.580e+01 kN=-3.95e-03 [FANTASMA] dchi=0.001 pi0=0.28 piL=0.72 rI=0.51
+      w2=+2.677e+01 kN=-1.10e-03 [FANTASMA] dchi=0.004 pi0=0.28 piL=0.72 rI=0.52
+      w2=-8.073e+01 kN=+4.08e-03 [TAQUIAO ] dchi=0.000 pi0=0.04 piL=0.96 rI=0.46
+    k=10: 3 par(es)
+      w2=+1.330e+02 kN=+4.65e-01 [limpo   ] dchi=0.929 pi0=0.88 piL=0.12 rI=0.01
+      w2=+4.515e+02 -2.87e+02i kN=-2.39e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.33
+      w2=+4.515e+02 +2.87e+02i kN=-2.39e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.33
+
+  a=   3462.8  r=0.5941 xi=0.2411 chi/v=0.934 desl=+1.74e-01 |Hd/H^2|=0.379 adiab=0.93
+    k=1: 3 par(es)
+      w2=+2.742e-01 kN=-1.05e-02 [FANTASMA] dchi=0.000 pi0=0.96 piL=0.04 rI=0.49
+      w2=-6.225e+00 kN=-2.80e-02 [TAQUIAO ] dchi=0.000 pi0=0.99 piL=0.01 rI=0.27
+      w2=+2.792e+01 kN=+3.50e-02 [limpo   ] dchi=0.082 pi0=0.90 piL=0.10 rI=0.45
+    k=10: 3 par(es)
+      w2=+1.241e+01 -1.26e+01i kN=-9.42e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+1.241e+01 +1.26e+01i kN=-9.42e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+1.291e+02 kN=+3.66e-01 [limpo   ] dchi=0.735 pi0=0.99 piL=0.01 rI=0.01
+
+  a=   6784.1  r=0.4665 xi=0.6233 chi/v=0.935 desl=-6.29e-02 |Hd/H^2|=0.107 adiab=1.31
+    k=1: 3 par(es)
+      w2=+1.499e+01 +5.33e+00i kN=-2.63e-03 [TAQUIAO ] dchi=0.002 pi0=0.18 piL=0.82 rI=0.51
+      w2=+1.499e+01 -5.33e+00i kN=-2.63e-03 [TAQUIAO ] dchi=0.002 pi0=0.18 piL=0.82 rI=0.51
+      w2=-3.735e+01 kN=+4.78e-03 [TAQUIAO ] dchi=0.000 pi0=0.02 piL=0.98 rI=0.46
+    k=10: 3 par(es)
+      w2=+1.259e+02 kN=+3.70e-01 [limpo   ] dchi=0.739 pi0=0.97 piL=0.03 rI=0.02
+      w2=+1.504e+02 +1.15e+02i kN=-2.54e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+      w2=+1.504e+02 -1.15e+02i kN=-2.54e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.34
+
+  a=  13290.8  r=0.5057 xi=0.4336 chi/v=0.928 desl=+1.91e-02 |Hd/H^2|=0.056 adiab=1.98
+    k=1: 3 par(es)
+      w2=+2.047e+00 kN=-6.94e-03 [FANTASMA] dchi=0.000 pi0=0.10 piL=0.90 rI=0.50
+      w2=-1.875e+01 kN=-1.45e-02 [TAQUIAO ] dchi=0.001 pi0=0.74 piL=0.26 rI=0.25
+      w2=+2.610e+01 kN=+1.74e-02 [limpo   ] dchi=0.033 pi0=0.07 piL=0.93 rI=0.66
+    k=10: 3 par(es)
+      w2=+5.979e+01 -5.03e+01i kN=-4.01e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+5.979e+01 +5.03e+01i kN=-4.01e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+1.260e+02 kN=+4.46e-01 [limpo   ] dchi=0.891 pi0=0.94 piL=0.06 rI=0.01
+
+  a=  26038.5  r=0.4961 xi=0.5237 chi/v=0.933 desl=-5.12e-03 |Hd/H^2|=0.021 adiab=3.08
+    k=1: 3 par(es)
+      w2=+3.927e+00 kN=-5.97e-03 [FANTASMA] dchi=0.000 pi0=0.12 piL=0.88 rI=0.50
+      w2=+2.487e+01 kN=+9.02e-03 [limpo   ] dchi=0.018 pi0=0.14 piL=0.86 rI=0.58
+      w2=-2.553e+01 kN=+5.27e-03 [TAQUIAO ] dchi=0.000 pi0=0.01 piL=0.99 rI=0.47
+    k=10: 3 par(es)
+      w2=+9.255e+01 -7.36e+01i kN=-3.24e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+9.255e+01 +7.36e+01i kN=-3.24e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+1.260e+02 kN=+3.84e-01 [limpo   ] dchi=0.764 pi0=0.96 piL=0.04 rI=0.02
+
+  a=  51012.7  r=0.4977 xi=0.4875 chi/v=0.930 desl=+1.05e-03 |Hd/H^2|=0.008 adiab=5.74
+    k=1: 3 par(es)
+      w2=+3.149e+00 kN=-6.28e-03 [FANTASMA] dchi=0.000 pi0=0.11 piL=0.89 rI=0.50
+      w2=-2.287e+01 kN=+5.32e-03 [TAQUIAO ] dchi=0.000 pi0=0.01 piL=0.99 rI=0.47
+      w2=+2.528e+01 kN=+1.16e-02 [limpo   ] dchi=0.023 pi0=0.11 piL=0.89 rI=0.60
+    k=10: 3 par(es)
+      w2=+7.906e+01 -6.42e+01i kN=-3.48e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+7.906e+01 +6.42e+01i kN=-3.48e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+1.259e+02 kN=+4.08e-01 [limpo   ] dchi=0.813 pi0=0.96 piL=0.04 rI=0.02
+
+  a=  98946.0  r=0.4978 xi=0.5014 chi/v=0.932 desl=-1.17e-04 |Hd/H^2|=0.003 adiab=18.80
+    k=1: 3 par(es)
+      w2=+3.377e+00 kN=-6.20e-03 [FANTASMA] dchi=0.000 pi0=0.12 piL=0.88 rI=0.50
+      w2=-2.380e+01 kN=+5.31e-03 [TAQUIAO ] dchi=0.000 pi0=0.01 piL=0.99 rI=0.47
+      w2=+2.521e+01 kN=+1.08e-02 [limpo   ] dchi=0.021 pi0=0.12 piL=0.88 rI=0.59
+    k=10: 3 par(es)
+      w2=+8.385e+01 -6.75e+01i kN=-3.39e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+8.385e+01 +6.75e+01i kN=-3.39e-03 [TAQUIAO ] dchi=0.000 pi0=1.00 piL=0.00 rI=0.35
+      w2=+1.260e+02 kN=+3.99e-01 [limpo   ] dchi=0.794 pi0=0.96 piL=0.04 rI=0.02
+
+========================================================================
+SINTESE DE TENDENCIA
+========================================================================
+            a       desl  n(k=1)   sig/H    kN_min n(k=10)   sig/H    kN_min
+        100.0  -1.52e-02       3    3.18  -2.6e-05       3    3.00  -4.7e-05
+        300.3  -7.46e-02       3    3.50  -2.7e-05       3    3.29  -5.4e-05
+        500.1  -1.45e-01       3    4.08  -3.0e-05       3    3.79  -6.4e-05
+        699.1  -2.16e-01       3    4.90  -3.7e-05       3    4.47  -8.0e-05
+        800.2  -2.52e-01       3    5.40  -4.3e-05       3    4.88  -9.1e-05
+        899.9  -2.86e-01       3    5.95  -5.2e-05       3    5.32  -1.0e-04
+        999.6  -3.19e-01       3    6.57  -6.5e-05       3    5.81  -1.2e-04
+       1199.7  -3.84e-01       3    8.04  -1.1e-04       3    6.94  -1.7e-04
+       1498.7  -4.64e-01       3   10.88  -3.4e-04       3    8.99  -3.2e-04
+       1798.7  -4.38e-01       3   13.08  -1.1e-03       3   10.30  -6.5e-04
+       2048.4  -2.49e-01       3   11.60  -1.5e-03       3    8.76  -1.2e-03
+       2502.0  +7.66e-02       3    7.11  -4.0e-03       3    5.11  -2.4e-03
+       3462.8  +1.74e-01       3    1.98  -2.8e-02       3    1.29  -9.4e-03
+       6784.1  -6.29e-02       3    5.44  -2.6e-03       3    3.94  -2.5e-03
+      13290.8  +1.91e-02       3    3.75  -1.4e-02       3    2.62  -4.0e-03
+      26038.5  -5.12e-03       3    4.41  -6.0e-03       3    3.13  -3.2e-03
+      51012.7  +1.05e-03       3    4.17  -6.3e-03       3    2.94  -3.5e-03
+      98946.0  -1.17e-04       3    4.25  -6.2e-03       3    3.01  -3.4e-03
+
+VEREDITO FASE B (criterios pre-declarados)
+------------------------------------------------------------------------
+  G2b-CONTAGEM: 3 pares em todos os pontos/k — COMPATIVEL com
+      remocao do BD; NAO certifica (cegueira declarada do QEP
+      congelado a constraints dependentes do tempo).
+  G2b-SAUDE: janela max sig/H = 13.08, kN_min = -1.5e-03;
+      extremos max sig/H = 4.41
+      nenhum ponto limpo na janela (nos k testados): o no-go se
+      ESTENDE ao regime nao-fatorado NESTA trajetoria/celula
+      (fronteira declarada: uma trajetoria, uma celula, k=1 e 10,
+      leitura congelada ponto a ponto). R2 perde a ultima sonda
+      interna a F1 — o trilema empurra para fora da representacao.
+  G2b-BALANCO: ver colunas rI acima (diagnostico — comparar com o
+      rI~0.5 do cancelamento estacionario da C1).

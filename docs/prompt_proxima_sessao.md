@@ -72,14 +72,25 @@ FILA (duas trilhas paralelas e independentes):
   resiste à condensação (soma Δ=2m²M_eff²b1₀(ξ+3r)/v*² à massa² da
   origem; limiar m_χ²≳2.7 na REF v*=1, confirmado 8/8 na releitura —
   critério codificado era defeituoso, reclassificação declarada no
-  doc). χ* previsto 0.931 vs 0.932 observado. PENDÊNCIAS: abort
-  g=1/m30 ("raiz perdida", indeterminado); adiabaticidade ~2.4 na
-  janela-alvo. PRÓXIMO PASSO — FASE B: perturbações na trajetória
-  g=2/m_χ²=30, janela-alvo a∈[~760,~2050], k=1 e 10, com (i) contagem
-  de modos (3→4 = BD de volta — falsifica; 9 não certifica, caveat
-  gate2_ghost §4), (ii) σ E kN por leitura de TENDÊNCIA (adiab alta —
-  ponto congelado não é juiz aqui), (iii) balanço rI da C1 ponto a
-  ponto. Critérios pré-declarados no script da Fase B.
+  doc). χ* previsto 0.931 vs 0.932 observado. FASE B EXECUTADA
+  (investigacao2_faseB_pert.py; docs/resultado_investigacao2_faseB.md):
+  INVESTIGAÇÃO 2 CONCLUÍDA, NEGATIVA — o no-go se ESTENDE ao regime
+  não-fatorado (σ/H sobe com o deslocamento até 13.08 na janela, sem
+  ponto limpo; pousa em 4.25, dentro da família estacionária
+  3.85–4.43 — continuidade perfeita); contagem 3 em toda parte (sem
+  BD na rota numérica; não certificador); balanço rI varrido
+  0.07–0.66 SEM ilha saudável; R1 REFORÇADO no dinâmico (patologia
+  δφ₋-espectadora mesmo com F′≠0 e χ̇≠0; a instabilidade de
+  condensação é δφ₋-dominada e SARA ao assentar — duas
+  instabilidades, destinos opostos). Fronteira: uma trajetória
+  (g=2, m30), célula REF, k∈{1,10}, leitura congelada (caveats no
+  doc). COM ISSO: itens 3.4 E 3.5 do veredito FECHADOS — O ARCO
+  COMPUTACIONAL DA F1 ESTÁ COMPLETO (fundo ✓, tensor ✓, escalar ✗ em
+  todos os regimes acessíveis: constante, modulado-estacionário,
+  algébrico, dinâmico não-fatorado). R2 só continua FORA da F1
+  (critério anti-circularidade do gate1c). Restam na F1 só saídas de
+  prior baixo (β₂/β₄; F2 β₃≠0) — opcionais. Pendência menor: abort
+  g=1/m30 da Fase A (indeterminado; não bloqueia nada).
 
 DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
 2. Formato de publicação do no-go (nota técnica / paper / abertura da

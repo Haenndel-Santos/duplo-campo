@@ -203,3 +203,19 @@ taquiônica é resíduo de cancelamento quebra×EH, não curvatura da quebra
 G1-c ✔ decisão documentada + prior examinado). R1 é o enquadramento
 oficial do no-go; R2 segue para teste direto na Investigação 2, agora
 com critérios de projeto pré-declarados.
+
+## 10. Pós-escrito (2026-08-11, tarde) — Investigação 2 executada
+
+Fases A e B concluídas (`resultado_investigacao2_faseA.md`/`faseB.md`):
+o fundo de rolagem realiza a bifurcação (r×16, deslocamento ordem 1
+dos ramos), mas o setor escalar é **pior** no regime não-fatorado
+(σ/H até 13.08, sem ponto limpo; balanço rI varrido 0.07–0.66 sem ilha
+saudável). **R2 perde a sonda interna à F1** — o braço (b) do trilema
+só continua fora da representação, sob o critério anti-circularidade.
+
+**R1 reforçado no teste dinâmico:** com F′≠0 E χ̇≠0, os modos
+patológicos estruturais mantêm projeção δφ₋ ≈ 0.000; o único modo
+δφ₋-dominado é a própria instabilidade de condensação, que sara ao
+assentar (w²: −13.7 → +25, limpo). A separação entre a instabilidade
+física da bifurcação (transiente, auto-curável) e a doença do setor de
+vínculos (eterna) é a evidência mais limpa de R1 no programa.
