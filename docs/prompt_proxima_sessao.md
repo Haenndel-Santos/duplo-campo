@@ -59,18 +59,27 @@ FILA (duas trilhas paralelas e independentes):
   do arquivo: Gate 0 a cada sessão, fonte versionada em toda afirmação
   quantitativa, nível epistêmico declarado, três nomes para o antigo
   "modo relativo"). Começar pelo 01 ou pelo 07 (o resultado central).
-- TRILHA DE CÁLCULO: Stückelberg (C1) EXECUTADA em 2026-08-11
-  (stuckelberg_goldstone.py; docs/resultado_stuckelberg_goldstone.md):
-  premissa da circularidade elevada a 2a+2b; taquião de k=1 É o
-  helicity-0 (π_L 0.995+); fantasma da fresta é o π⁰ puro; e o
-  MECANISMO corrigido — massa taquiônica = resíduo (~1%) de
-  cancelamento quebra×EH (glosa "pseudo-Goldstone textbook" refutada;
-  C3 falhou informativamente como pré-declarado). PRÓXIMO PASSO:
-  Investigação 2 (condensação dinâmica, p_φ≠0 — teste direto de R2,
-  caro), sob os critérios do gate1c §5 MAIS o alvo novo do
-  resultado_stuckelberg §6: candidato a cura tem de alterar o BALANÇO
-  quebra×EH (mexer só na quebra já falhou empírica e estruturalmente);
-  p_φ≠0 muda a estrutura de vínculos = o lado EH do balanço.
+- TRILHA DE CÁLCULO: Stückelberg (C1) EXECUTADA 2026-08-11
+  (resultado_stuckelberg_goldstone.md): circularidade elevada a 2a+2b;
+  taquião k=1 É o helicity-0 (π_L 0.995+); mecanismo corrigido —
+  massa taquiônica = resíduo (~1%) de cancelamento quebra×EH.
+  INVESTIGAÇÃO 2 FASE A EXECUTADA 2026-08-11
+  (investigacao2_fundo_rolagem.py; docs/resultado_investigacao2_faseA.md):
+  fundo de rolagem p_φ≠0 EXISTE, desloca ORDEM 1 dos dois ramos
+  (|H−rH_f|/H até 0.48) e pousa de volta no ramo finito (6e-5); a
+  condensação DIRIGE r (0.031→0.498, ×16) — narrativa da bifurcação
+  realizada no fundo (saúde escalar em aberto). ACHADO: a interação HR
+  resiste à condensação (soma Δ=2m²M_eff²b1₀(ξ+3r)/v*² à massa² da
+  origem; limiar m_χ²≳2.7 na REF v*=1, confirmado 8/8 na releitura —
+  critério codificado era defeituoso, reclassificação declarada no
+  doc). χ* previsto 0.931 vs 0.932 observado. PENDÊNCIAS: abort
+  g=1/m30 ("raiz perdida", indeterminado); adiabaticidade ~2.4 na
+  janela-alvo. PRÓXIMO PASSO — FASE B: perturbações na trajetória
+  g=2/m_χ²=30, janela-alvo a∈[~760,~2050], k=1 e 10, com (i) contagem
+  de modos (3→4 = BD de volta — falsifica; 9 não certifica, caveat
+  gate2_ghost §4), (ii) σ E kN por leitura de TENDÊNCIA (adiab alta —
+  ponto congelado não é juiz aqui), (iii) balanço rI da C1 ponto a
+  ponto. Critérios pré-declarados no script da Fase B.
 
 DECISÕES EM ABERTO DO USUÁRIO (não decidir sozinho):
 2. Formato de publicação do no-go (nota técnica / paper / abertura da
