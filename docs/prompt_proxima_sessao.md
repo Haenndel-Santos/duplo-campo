@@ -74,13 +74,24 @@ zero violações). LIÇÃO DE MÉTODO: envelope com ω²(t) variável é
 armadilha de normalização — sempre normalização congelada para
 ganhos; o gate SUSPEITO pré-declarado funcionou.
 
+ADENDO 2 (mesma noite — R-8a EXECUTADO, commit 18c616b,
+docs/resultado_r8a_quase_estatico.md): μ/Σ/η quase-estáticos como
+razões bimétrico/GR. ALVO-SUBPERCENTUAL no sub-horizonte (|μ−1|,
+|Σ−1| ≤ 0.66% em kh≥22, ≤0.06% em kh≥100, duas eras, dois fundos);
+a janela quase-horizonte kh≲22 fica INDECIDIDA pela sonda QS (números
+crus até 17% lá são QS-contaminados — nada se afirma) e é O ALVO do
+R-8 completo. ALAVANCA IDENTIFICADA: desvio ~ (m/aH)²/kh² — se o
+dicionário adotar o postulado do corpus m ~ 30–300 H₀, a escala de
+Compton entra na janela observável e os dados de crescimento viram
+LIMITE DIRETO sobre m/H₀ (confronto com o postulado).
+
 FILA (ordem recomendada):
-1. **R-8 — o gate decisivo** (único item de física restante):
-   decisão do autor sobre docs/r8_dicionario_epocas_opcoes.md
-   (recomendação: C quase-estático μ(a,k)/Σ(a,k) primeiro — ~1
-   sessão — depois A Boltzmann completo). Insumos que só o autor
-   fixa: m/H₀ (postulado 30–300H₀?), massa física de χ hoje, β's,
-   normalização primordial.
+1. **Decisão do autor — dicionário de épocas**
+   (docs/r8_dicionario_epocas_opcoes.md): o item de maior
+   alavancagem é m/H₀ (ver adendo 2). Com a decisão:
+   R-8b = confronto μ(a,k) vs vínculos de crescimento reais +
+   limite sobre m/H₀; R-8 completo (dinâmico) = janela kh≲22 +
+   C_ℓ de baixo-ℓ com o sistema 2-DOF validado (R-7a).
 2. Propagação editorial do erratum-02: banners de supersessão nos
    docs históricos afetados (ou nota única no índice); revisão do
    cap. 07 da v2 (o resultado central mudou: de "fantasma/H-SC" para
