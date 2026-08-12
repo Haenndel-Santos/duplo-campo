@@ -1,0 +1,37 @@
+========================================================================
+R-11 — varredura de FORMA-beta: existe c_s^2 > 0 em r -> 0?
+========================================================================
+[fatias] prontas
+
+    varrendo 108 celulas em a = 0.01 (kh = 30) ...
+
+       b0     b2    b4    mu          r      c_s^2    calib  K2>0
+      1.0   -2.0   0.1   1.0   1.67e-06   -1.01033  1.00000   sim
+      1.0   -2.0   0.5   1.0   1.67e-06   -1.01033  1.00000   sim
+      1.0   -2.0   2.0   1.0   1.67e-06   -1.01033  1.00000   sim
+      1.0   -1.0   0.1   1.0   1.67e-06   -1.01033  1.00000   sim
+      1.0   -1.0   0.5   1.0   1.67e-06   -1.01033  1.00000   sim
+      1.0   -1.0   2.0   1.0   1.67e-06   -1.01033  1.00000   sim
+      1.0   -0.4   0.1   1.0   1.67e-06   -1.01034  1.00000   sim
+      1.0   -0.4   0.5   1.0   1.67e-06   -1.01034  1.00000   sim
+      1.0   -0.4   2.0   1.0   1.67e-06   -1.01034  1.00000   sim
+      1.0   -0.1   0.1   1.0   1.67e-06   -1.01034  1.00000   sim
+      1.0   -0.1   0.5   1.0   1.67e-06   -1.01034  1.00000   sim
+      1.0   -0.1   2.0   1.0   1.67e-06   -1.01034  1.00000   sim
+
+========================================================================
+VEREDITO R-11 (criterios pre-declarados no cabecalho)
+========================================================================
+  celulas: 108 interpretaveis; 0 com fundo invalido; 0 descartadas por calibracao.
+  >>> NENHUMA SAIDA: 108/108 celulas interpretaveis dao
+  c_s^2 < 0 em r -> 0.
+      c_s^2: min = -1.01034, max = -1.01032,
+      mediana = -1.01034, desvio-padrao = 6.27e-06
+      DISPERSAO NULA (< 1e-3) sobre 4 parametros de forma
+      => c_s^2(r->0) e CONSTANTE ESTRUTURAL da classe F1,
+      nao funcao dos beta_n. Isto e um NO-GO DE CLASSE
+      POR GRADIENTE: nenhuma escolha de forma-beta (com
+      beta_3 = 0 e materia so em g) evita a instabilidade
+      no regime r -> 0. Candidato a resultado central
+      (negativo) da implementacao F1 — e enunciavel como
+      teorema a ser provado analiticamente.

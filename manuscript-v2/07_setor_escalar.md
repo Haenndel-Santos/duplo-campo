@@ -143,9 +143,33 @@ saídas r10a/r10b.*
 **Severidade:** a transição ocorre em z ≈ 0.62 (β₁=1); modos com
 k/aH ≳ 8 na transição saem do regime linear (lnA até 32); os
 intermediários (k/aH ~ 1–7) permanecem lineares mas crescem por
-fatores de 2 a 10⁴. A saída padrão da literatura (screening /
-auto-invalidação do linear, [arXiv:1503.07521]) **é a candidata a
-resolver**, e é o próximo teste — não um resultado.
+fatores de 2 a 10⁴. **A era instável cobre a recombinação.**
+
+**[2026-08-13] As quatro saídas foram testadas e fechadas:**
+
+| Saída | Teste | Estado |
+|---|---|---|
+| Ramo infinito | R-10c | fechada — ξ cruza zero, não conecta |
+| Modulação β₁(φ₋) | R-10c | fechada — age ~3 ordens tarde demais |
+| Screening de Vainshtein | R-10d | fechada — δ_screen ≈ 20–60; *o λ cancela*, não há escala linear protegida |
+| Forma-β (β₀, β₂, β₄, μ) | R-11 | fechada — **c_s² = −1.010 ± 6e−6 em 108/108 células** |
+
+**NO-GO DE CLASSE POR GRADIENTE (R-11):** na classe F1 (β₃ = 0,
+matéria só em g, ramo finito), c_s² → −1 em r → 0 para *qualquer*
+escolha de β₀, β₂, β₄, μ — dispersão nula sobre quatro parâmetros
+variados em faixas de 20×, com calibrador exato em todas as células.
+Não é propriedade da célula de benchmark: é **da classe**. A
+extrapolação k → ∞ dá c_s² ≈ −1 exato, o que sugere origem estrutural
+limpa e um teorema a provar analiticamente.
+*Fonte: `docs/resultado_r11_nogo_gradiente.md`.*
+
+**O contraste com o no-go antigo importa.** O anterior
+(fantasma/taquião) era artefato de bug e caiu quando o instrumento foi
+corrigido; este foi medido com o instrumento já corrigido e validado,
+é insensível a toda a forma do potencial, e reproduz uma previsão
+independente da literatura que o repositório registrava sem confrontar.
+A única porta que resta entreaberta é β₃ ≠ 0 — que sai da definição de
+F1, isto é, leva a uma F2.
 
 Pendências declaradas: ramo algébrico (deferido); fronteira de uma
 trajetória no dinâmico; scan de classe em nível de assinatura;

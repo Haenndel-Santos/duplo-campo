@@ -32,11 +32,14 @@ máquina de redução (Erratum-02; cap. 07). O estado atual, com fontes:
   ponto fixo tardio (cap. 05; `docs/resultado_ramo_finito.md`).
 - **Setor tensorial** ✓ — m_T²/H² → 12 universal no primordial,
   Higuchi automático (cap. 06; `derivations/02_setor_tensorial_mT2.md`).
-- **Setor escalar** ✓ — SÃO: dois graus de liberdade (um modo métrico
-  overdamped que decai + o espectador δφ₋), sem fantasma, sem
-  instabilidade crescente, em todos os regimes testados (cap. 07;
+- **Setor escalar** — dois graus de liberdade (um modo métrico + o
+  espectador δφ₋), **sem fantasma** (o do Gate F era artefato
+  numérico) e **são na era tardia**; mas com **instabilidade de
+  gradiente (c_s² → −1) em r → 0**, que a cobertura antiga da cascata
+  (a ≥ 100) não alcançava, e que o R-11 mostrou ser **propriedade da
+  classe F1, não da célula** — nenhuma forma-β a evita (cap. 07;
   `auditoria/erratum_02_reducao_numerica.md`,
-  `docs/resultado_r7e_saude_interna.md`).
+  `docs/resultado_r11_nogo_gradiente.md`).
 - **Observação** — sub-horizonte consistente com GR dentro do piso da
   sonda (~2%); a massa tensorial é *predição* da família do benchmark,
   m_T ≈ 2.3 H₀ hoje; a janela quase-horizonte está em aberto e é o
