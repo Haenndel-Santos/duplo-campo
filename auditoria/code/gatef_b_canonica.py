@@ -4,91 +4,88 @@ gatef_b_canonica.py — GATE F, etapa F-b: normalizacao canonica
 dependente do tempo (docs/gate_fantasma_estrutural.md sec.2) — decide
 H-CONSTRAINT / H-NORM / H-SC / (H-GHOST -> F-c) para a direcao K<0.
 
-CONTEXTO. O F-a (docs/resultado_gatef_a.md) certificou a banda
-(F-a3) mas foi inconclusivo no teste principal POR INSTRUMENTO: em
-coordenadas comoveis os autovetores de K_red sao escala-dominados
-(delta_rel = 0 na superficie real E na falsa; QEP cego ao modo
-rigido). A saida pre-declarada era esta: refazer as MESMAS perguntas
-nas variaveis canonicas. Alem disso, o quadro canonico tem um
-potencial payoff metodologico: K_can = eta e CONSTANTE — se
-C_can/W_can assentarem, o espectro congelado CANONICO pode ser um
-arbitro legitimo (o que o comovel nunca foi — D2), e a previsao
-congelada da banda vira teste (bonus impresso).
+2a RODADA (2026-08-12): ARQUITETURA CORRIGIDA apos a autopsia da 1a
+(preservada em out/gatef_b_canonica_rodada1.txt). Na 1a, o portao
+V-EQUIV reprovou (como devia): a IC de VELOCIDADE bateu a 3.5e-4
+entre os dois quadros (a dinamica canonica estava certa), mas as ICs
+de POSICAO divergiram O(1)-O(10) — o padrao de decoerencia do modo
+rapido entre DUAS integracoes independentes + sensibilidade do
+mapeamento de IC a Tdot na borda. A dupla integracao era fragilidade
+de desenho, nao fisica. A v2 elimina a classe inteira de erro:
+  - UMA UNICA integracao, no quadro ORIGINAL (o integrador validado
+    por halving desde o D2);
+  - o quadro canonico e usado SO como diagnostico LOCAL, por
+    transformacao nos marcos: x = T^-1 q; xd = T^-1 (qd - Tdot x);
+  - a validacao vira o V-RES: o residuo da EOM canonica avaliado na
+    trajetoria real transformada (tres pontos de grade por marco,
+    derivada central) — valida exatamente o que os diagnosticos usam
+    (C_can, W_can, Tdot), localmente, sem acumulacao.
+Achados da 1a rodada que motivam medidas da v2 (registrados como
+NAO-interpretados la): o modo pesado tardio parecia viver no eixo x0
+com norma-eta ~ -0.98 a omega ~ 7-12 H, SEM hierarquia de vinculo
+(R_can ~ 5-10 — o omega^2 ~ 1e9 comovel do R-2 era artefato de
+normalizacao), e o congelado CANONICO parecia assentar (eps_W -> 0.01)
+com sigma_can ~ 1.1-1.4 ~ as taxas reais da banda. A v2 mede tudo
+isso com validacao propria.
 
 CONSTRUCAO (a licao do D2 — nunca descartar termos de conexao):
   T(t) = E(t) |Lambda(t)|^(-1/2), com E,Lambda de eigh(K_red_sym) e
-  CONTINUIDADE forcada (sinais + permutacao do par positivo ao longo
-  da trajetoria; a direcao negativa nao cruza — negK=1 universal).
-  q = T x  ->  K_can = T'KT = eta = diag(-1,+1,+1) (exato);
+  CONTINUIDADE forcada (sinais + permutacao do par positivo; a
+  direcao negativa nao cruza — negK=1 universal).
+  K_can = eta = diag(-1,+1,+1) (exato);
   C_can = T'K Tdot + T'CT;
-  W_can = T'WT - Tdot'K Tdot - (Tdot'CT + T'C'Tdot)   [simetrizado];
-  EOM: eta xdd + (C_can - C_can') xd + (Cdot_can + W_can) x = 0 —
-  exatamente a forma do integrador validado (K constante; Cdot via
-  gradiente, como sempre). Tdot por gradiente sobre T continuo.
+  W_can = sym(T'WT) - Tdot'K Tdot - (Tdot'CT + T'C'Tdot).
 
-FUNDOS: estaticos beta1=1 e beta1=4.47 (os mesmos do F-a — par
-antes/depois), k_c = 45*H(100)*100, a=[100,80000], npts=24000.
+FUNDOS: estaticos beta1=1 e beta1=4.47 (par antes/depois com o F-a),
+k_c = 45*H(100)*100, a=[100,80000], npts=24000.
 
 VALIDACOES (pre-declaradas; falha -> NAO INTERPRETAR):
-  V-ETA:    max|T'KT - eta| < 1e-8 na grade inteira.
-  V-EQUIV (o portao central): a MESMA IC fisica evoluida nos dois
-      quadros da a mesma trajetoria: max nos marcos de
-      |q_direto - T x|/|q_direto| < 0.05, para 3 ICs (posicao
-      metrica, velocidade metrica, direcao-fantasma), nos dois
-      fundos. E o teste de que a conexao numerica esta certa.
-  V-EQUIV-GR: o mesmo em GR (1 dof, T=1/sqrt(K)) < 0.05.
-  Fase por passo do modo mais rapido impressa (se (omega/H)*dN > 2,
-      RK4 marginal — o EQUIV pega; reportar).
+  V-ETA: max|T'KT - eta| < 1e-8 na grade inteira.
+  V-RES (o portao central da v2): residuo relativo da EOM canonica
+      sobre a trajetoria real transformada, mediana das 3 ICs
+      fisicas por marco: max sobre os marcos < 0.1.
+  V-EQUIV-GR: dupla integracao em GR (1 dof, T=1/sqrt(K)) < 0.05 —
+      sanidade do pipeline (passou na 1a: 3.2e-5).
 
-MEDIDAS E CRITERIOS (no quadro canonico, marcos com hierarquia
-R_can >= 10; ICs de superficie construidas NO PRIMEIRO marco
-hierarquico — licao do transiente do R-4c):
-  F-b1a (hierarquia): R_can = |omega_h|/max(|omega_2|,H) do QEP
-      canonico (base bem condicionada, pareamento deve funcionar).
-      Criterio: R_final >= 100 e crescente.
-  F-b1b (identidade): conteudo x0 do modo pesado: |v_h[0]|^2/|v_h|^2
-      mediana > 0.9 nos marcos hierarquicos (o eixo x0 E a direcao
-      K<0 por construcao).
-  F-b1c (superficie, com dente): 4 ICs sobre a superficie adiabatica
-      de x0 evoluidas do 1o marco hierarquico: mediana delta_rel <
-      0.1; PODER (abortivo): a superficie FALSA do eixo leve x2 tem
-      que reprovar (mediana >= 0.3). DESAC: IC pura-x0 nao injeta
-      dinamica leve (fracao leve < 0.2; diagnostico).
-  F-b2 (escala invariante da direcao negativa): omega_0/H nos marcos
-      (do QEP canonico; e sqrt(|W_can[0,0]|)/H como estimativa
-      diagonal) vs escalas do brinquedo: H, m_T/H ~ sqrt(12) ~ 3.5,
-      Lambda_3 = (m^2 M_Pl)^(1/3) ~ O(1) (em unidades de codigo
-      TODAS essas escalas sao O(1) — a afirmacao significativa e
-      omega_0/H >> O(10) ou nao).
-  F-b-NORMA: sinal da norma-eta dos modos PROPAGANTES (s =
-      Re(v† eta v); agora invariante): existe modo propagante
-      (|omega|/H < 50, omega ~ real) com s < 0?
-  BONUS (reabilitacao do congelado): sigma/H congelado CANONICO nos
-      marcos + assentamento eps_W = |dW_can/dN|/|W_can| — se
-      eps_W << 1 e sigma_can ~ taxas reais conhecidas (banda ~ +1-2
-      na epoca certa), o congelado canonico e arbitro legitimo
-      (fecha o aviso metodologico do paper) — impresso, leitura no
-      doc.
+MEDIDAS (marcos ASSENTADOS: eps_W = |dW_can/dN|/|W_can| < 0.3 — no
+quadro canonico K_can e constante, entao o congelado e legitimo onde
+C_can/W_can assentam; a 1a rodada indicou assentamento tardio):
+  F-b1a (hierarquia de vinculo): R_can = |om_h|/max(|om_2|,H) do QEP
+      canonico: R_final >= 100 crescente -> leitura H-CONSTRAINT.
+      (A 1a rodada indicou R ~ 5-10 — sem hierarquia; se confirmar,
+      H-CONSTRAINT cai DE VERDADE, em coordenadas validas.)
+  F-b1b (identidade): conteudo x0 do modo pesado, mediana > 0.9 nos
+      marcos assentados.
+  F-b1c (superficie): 4 ICs sobre a superficie adiabatica de x0
+      construidas no 1o marco assentado, evoluidas no quadro ORIGINAL
+      e transformadas: mediana delta_rel < 0.1; PODER abortivo (eixo
+      leve x2 tem que reprovar, >= 0.3); DESAC diagnostico.
+  F-b2 (escala invariante): omega_0/H nos marcos vs {H, m_T/H ~ 3.5,
+      Lambda_3 ~ O(1)}; sqrt|W_can[0,0]|/H.
+  F-b-NORMA: modo PROPAGANTE (|om|/H < 50, ~real) com norma-eta
+      s = Re(v† eta v) < -0.1 nos marcos assentados?
+  CONF-BANDA (bonus, reabilitacao do congelado): sigma_can/H tardio
+      vs a taxa real da banda (R-4a: +0.93 em beta1=1; +1.06 em
+      4.47): |dif| < 0.5 -> o congelado CANONICO preve a banda (fecha
+      o aviso metodologico do paper).
 
 RAMOS (pre-declarados, sec.3 do gate doc):
-  F-b1a+b1b+b1c SIM (PODER ok) -> H-CONSTRAINT em coordenadas
-      VALIDAS: a direcao K<0 e a direcao rigida expulsa; contagem
-      efetiva 2; fantasma = artefato de representacao; GATE F FECHA
-      (upgrade radical da F1: sem patologia escalar linear conhecida
-      alem da banda-alvo-observacional do R-4).
-  Senao, se omega_0/H >= 50 e crescente -> H-SC: a direcao vive
-      alem das escalas EFT do brinquedo — "fora do alcance da ordem
-      quadratica" (alinhado a literatura); setor nao exclui a F1.
-  Senao, se ha modo propagante com s < 0 acessivel -> FANTASMA
-      FISICO NO ESPECTRO LINEAR -> F-c (interacoes; estimativa de
-      decaimento do vacuo).
-  Senao (negatividade consumida pela conexao, sem modo s<0 e sem
-      rigidez) -> H-NORM: artefato de base comovel; gate fecha.
+  b1a+b1b+b1c SIM (PODER ok) -> H-CONSTRAINT em coordenadas validas;
+      gate fecha saudavel (fantasma = representacao).
+  Sem hierarquia (b1a NAO) e omega_0/H >= 50 -> H-SC (fora do alcance
+      quadratico).
+  Sem hierarquia, omega_0/H < 50, e F-b-NORMA acha modo propagante
+      s<0 -> FANTASMA FISICO NO ESPECTRO LINEAR, com energia
+      invariante ~ omega_0 — o ramo F-c (interacoes / taxa de
+      decaimento) ou a fronteira declarada do paper; decidir com o
+      autor (o gate doc preve ambos).
+  Senao -> H-NORM/misto: reportar e decidir com o autor.
 
-Requer sympy, numpy, scipy. ~6-10 min.
+Requer sympy, numpy, scipy. ~5-8 min.
 Uso (raiz do repo, venv ativo):
     python auditoria/code/gatef_b_canonica.py
 Saida em auditoria/code/out/gatef_b_canonica.txt
+(1a rodada preservada em out/gatef_b_canonica_rodada1.txt)
 """
 import importlib.util
 import os
@@ -133,7 +130,9 @@ A_MIN, A_MAX = 100.0, 80000.0
 NPTS = 24000
 MARCAS = list(np.geomspace(150.0, 75000.0, 40))
 R_HIER = 10.0
+EPS_ASSENT = 0.3
 ETA = np.diag([-1.0, 1.0, 1.0])
+REF_BANDA = {1.0: 0.93, 4.47: 1.06}  # R-4a, braco banda
 
 MU = 1.0
 MG2, MF2 = 1.0, MU
@@ -143,8 +142,8 @@ B0V, B2V, B4V = 1.0, -0.4, 0.5
 RHO0 = 0.3
 
 say("=" * 72)
-say("GATE F-b — NORMALIZACAO CANONICA: a energia invariante da direcao")
-say("K<0 (H-CONSTRAINT / H-NORM / H-SC / H-GHOST)")
+say("GATE F-b (v2) — QUADRO CANONICO COMO DIAGNOSTICO LOCAL: a energia")
+say("invariante da direcao K<0")
 say("=" * 72)
 
 # ------------------------------------------------------------------
@@ -300,12 +299,7 @@ def reduz_trilha(Ms, Ns, Hs_arr, mult=None, dyn=None):
     return Kr, Cr, Wr, Krd, Crd
 
 
-# ------------------------------------------------------------------
-# construcao canonica
-# ------------------------------------------------------------------
 def constroi_canonica(Kr, Cr, Wr, Ns, Hs_arr):
-    """T(t)=E|L|^-1/2 continuo; devolve T, Tinv, K_can(=eta), C_can,
-    W_can e o erro max de V-ETA."""
     npts = len(Ns)
     Tarr = np.zeros((npts, 3, 3))
     Tinv = np.zeros((npts, 3, 3))
@@ -316,7 +310,6 @@ def constroi_canonica(Kr, Cr, Wr, Ns, Hs_arr):
         if lam[0] >= 0 or lam[1] <= 0:
             raise RuntimeError(f"assinatura inesperada em p={p}: {lam}")
         if E_prev is not None:
-            # permutacao do par positivo (a negativa nao cruza)
             if abs(E_prev[:, 1] @ E[:, 2]) > abs(E_prev[:, 1] @ E[:, 1]):
                 E = E[:, [0, 2, 1]]
                 lam = lam[[0, 2, 1]]
@@ -333,22 +326,18 @@ def constroi_canonica(Kr, Cr, Wr, Ns, Hs_arr):
     err_eta = 0.0
     for p in range(npts):
         Tp, Td = Tarr[p], Tdot[p]
-        err_eta = max(err_eta, float(np.max(np.abs(
-            Tp.T @ (0.5 * (Kr[p] + Kr[p].T)) @ Tp - ETA))))
-        Ccan[p] = Tp.T @ (0.5 * (Kr[p] + Kr[p].T)) @ Td + Tp.T @ Cr[p] @ Tp
+        Ks = 0.5 * (Kr[p] + Kr[p].T)
+        err_eta = max(err_eta, float(np.max(np.abs(Tp.T @ Ks @ Tp - ETA))))
+        Ccan[p] = Tp.T @ Ks @ Td + Tp.T @ Cr[p] @ Tp
         S = Td.T @ Cr[p] @ Tp
-        Wcan[p] = (0.5 * (Tp.T @ Wr[p] @ Tp + (Tp.T @ Wr[p] @ Tp).T)
-                   - Td.T @ (0.5 * (Kr[p] + Kr[p].T)) @ Td - (S + S.T))
-    Kcan = np.tile(ETA, (npts, 1, 1))
-    Kcd = np.zeros_like(Kcan)
+        TWT = Tp.T @ Wr[p] @ Tp
+        Wcan[p] = 0.5 * (TWT + TWT.T) - Td.T @ Ks @ Td - (S + S.T)
     Ccd = np.gradient(Ccan, Ns, axis=0) * Hs_arr[:, None, None]
-    return Tarr, Tinv, Tdot, Kcan, Ccan, Wcan, Kcd, Ccd, err_eta
+    return Tarr, Tinv, Tdot, Ccan, Wcan, Ccd, err_eta
 
 
 def evolui_estado(Kr, Cr, Wr, Krd, Crd, Ns, Hs_arr, q0, qd0, mark_idx,
                   p0=0):
-    """RK4 de UMA IC a partir do indice p0; devolve estados nos marcos
-    (indices absolutos >= p0)."""
     npts = len(Ns)
     q = q0.copy()
     qd = qd0.copy()
@@ -387,7 +376,7 @@ def mediana(xs):
 
 
 # ------------------------------------------------------------------
-# analise por fundo
+# analise por fundo (v2: integracao unica + diagnostico local)
 # ------------------------------------------------------------------
 def analisa(B1V):
     say("")
@@ -401,54 +390,68 @@ def analisa(B1V):
     _, Hs_arr, Ms = build(kc, NPTS)
     Kr, Cr, Wr, Krd, Crd = reduz_trilha(Ms, Ns, Hs_arr)
     say("    [reducao] ok; construindo o quadro canonico ...")
-    Tarr, Tinv, Tdot, Kc, Cc, Wc, Kcd, Ccd, err_eta = \
+    Tarr, Tinv, Tdot, Cc, Wc, Ccd, err_eta = \
         constroi_canonica(Kr, Cr, Wr, Ns, Hs_arr)
     ok_eta = err_eta < 1e-8
     say(f"    [V-ETA {'OK' if ok_eta else 'FALHOU'}] max|T'KT - eta| = "
         f"{err_eta:.2e} (criterio < 1e-8)")
     aas = np.exp(Ns)
-    mark_idx = [int(np.argmin(np.abs(aas - am))) for am in MARCAS]
-    mark_idx = sorted(set(mark_idx))
+    mark_idx = sorted(set(int(np.argmin(np.abs(aas - am)))
+                          for am in MARCAS))
+    mark_idx = [m for m in mark_idx if 2 <= m <= NPTS - 3]
+    req_idx = sorted(set(m + d for m in mark_idx for d in (-1, 0, 1)))
 
-    # V-EQUIV — 3 ICs fisicas nos dois quadros
-    say("")
-    say("    V-EQUIV — mesma IC fisica nos dois quadros:")
+    def para_x(mi, q, qd):
+        x = Tinv[mi] @ q
+        xd = Tinv[mi] @ (qd - Tdot[mi] @ x)
+        return x, xd
+
+    # ICs fisicas — integracao UNICA no quadro original
     ics_fis = [("q_metrica", np.array([1.0, 0, 0]), np.zeros(3)),
                ("qd_metrica", np.zeros(3), np.array([1.0, 0, 0])),
                ("dir_fantasma", Tarr[0] @ np.array([1.0, 0, 0]),
                 np.zeros(3))]
-    err_eq = 0.0
+    estados = {}
     for rot, q0, qd0 in ics_fis:
-        x0 = Tinv[0] @ q0
-        xd0 = Tinv[0] @ (qd0 - Tdot[0] @ x0)
-        s_q = evolui_estado(Kr, Cr, Wr, Krd, Crd, Ns, Hs_arr,
-                            q0, qd0, mark_idx)
-        s_x = evolui_estado(Kc, Cc, Wc, Kcd, Ccd, Ns, Hs_arr,
-                            x0, xd0, mark_idx)
-        errs = []
-        for mi in mark_idx:
-            if mi not in s_q or mi not in s_x:
-                continue
-            qd_, _ = s_q[mi]
-            xx, _ = s_x[mi]
-            qc = Tarr[mi] @ xx
-            errs.append(np.linalg.norm(qd_ - qc)
-                        / max(np.linalg.norm(qd_), 1e-300))
-        e = max(errs) if errs else float('nan')
-        err_eq = max(err_eq, e)
-        say(f"      {rot:<14}: max|q_dir - T x|/|q| = {e:.3e}")
-    ok_eq = np.isfinite(err_eq) and err_eq < 0.05
-    say(f"    [V-EQUIV {'OK' if ok_eq else 'FALHOU — NAO INTERPRETAR'}] "
-        f"max = {err_eq:.3e} (criterio < 0.05)")
+        estados[rot] = evolui_estado(Kr, Cr, Wr, Krd, Crd, Ns, Hs_arr,
+                                     q0, qd0, req_idx)
 
-    # marcos: QEP canonico + assentamento + fase por passo
+    # V-RES — residuo da EOM canonica na trajetoria real transformada
+    res_por_marco = []
+    for mi in mark_idx:
+        rr_ics = []
+        for rot, _, _ in ics_fis:
+            sq = estados[rot]
+            if not all(j in sq for j in (mi - 1, mi, mi + 1)):
+                continue
+            x_m, xd_m = para_x(mi - 1, *sq[mi - 1])
+            x_0, xd_0 = para_x(mi, *sq[mi])
+            x_p, xd_p = para_x(mi + 1, *sq[mi + 1])
+            dNg = Ns[1] - Ns[0]
+            dt_tot = dNg / Hs_arr[mi - 1] + dNg / Hs_arr[mi]
+            xdd = (xd_p - xd_m) / dt_tot
+            Acan = Cc[mi] - Cc[mi].T
+            Bcan = Ccd[mi] + Wc[mi]
+            res = ETA @ xdd + Acan @ xd_0 + Bcan @ x_0
+            esc = max(np.linalg.norm(ETA @ xdd),
+                      np.linalg.norm(Acan @ xd_0),
+                      np.linalg.norm(Bcan @ x_0), 1e-300)
+            rr_ics.append(np.linalg.norm(res) / esc)
+        res_por_marco.append(mediana(rr_ics))
+    vres = max([r for r in res_por_marco if np.isfinite(r)],
+               default=float('nan'))
+    ok_res = np.isfinite(vres) and vres < 0.1
+    say(f"    [V-RES {'OK' if ok_res else 'FALHOU — NAO INTERPRETAR'}] "
+        f"max mediana do residuo canonico nos marcos = {vres:.3f} "
+        "(criterio < 0.1)")
+
+    # QEP canonico nos marcos
     say("")
     say("    F-b1/F-b2 — QEP canonico nos marcos:")
     say(f"    {'a':>8} {'kh':>7} {'om0/H':>9} {'R_can':>8} "
         f"{'|v_h[0]|^2':>10} {'s_0':>6} {'sig_can/H':>10} {'eps_W':>8}")
     tab = []
     dN_grid = Ns[1] - Ns[0]
-    fase_max = 0.0
     for mi in mark_idx:
         pares = qep_can(Cc[mi], Wc[mi])
         if not pares:
@@ -464,103 +467,103 @@ def analisa(B1V):
                    / max(np.linalg.norm(vh)**2, 1e-300))
         sig = max(abs(np.sqrt(complex(mm['omega2'])).imag)
                   for mm in pares) / Hs_arr[mi]
-        dW = np.linalg.norm(
-            (Wc[min(mi + 1, len(Ns) - 1)] - Wc[max(mi - 1, 0)])
+        dWn = np.linalg.norm(
+            (Wc[min(mi + 1, NPTS - 1)] - Wc[max(mi - 1, 0)])
             / (2 * dN_grid))
-        epsW = dW / max(np.linalg.norm(Wc[mi]), 1e-300)
-        fase_max = max(fase_max, (omh / Hs_arr[mi]) * dN_grid)
-        kh = kc / (aas[mi] * Hs_arr[mi])
-        tab.append(dict(a=aas[mi], kh=kh, omh=omh / Hs_arr[mi], R=R,
-                        cont0=cont0, s0=s0, sig=sig, epsW=epsW, mi=mi,
-                        pares=[(abs(np.sqrt(complex(mm['omega2']))),
-                                complex(np.sqrt(complex(mm['omega2']))),
-                                float(np.real(
-                                    np.conjugate(np.asarray(mm['v'],
-                                                            complex))
-                                    @ ETA @ np.asarray(mm['v'], complex))
-                                    / max(np.linalg.norm(
-                                        np.asarray(mm['v'],
-                                                   complex))**2, 1e-300)))
-                               for mm in pares]))
+        epsW = dWn / max(np.linalg.norm(Wc[mi]), 1e-300)
+        pares_info = []
+        for mm in pares:
+            vv = np.asarray(mm['v'], complex)
+            om_c = complex(np.sqrt(complex(mm['omega2'])))
+            ss = float(np.real(np.conjugate(vv) @ ETA @ vv)
+                       / max(np.linalg.norm(vv)**2, 1e-300))
+            pares_info.append((abs(om_c), om_c, ss))
+        tab.append(dict(a=aas[mi], kh=kc / (aas[mi] * Hs_arr[mi]),
+                        omh=omh / Hs_arr[mi], R=R, cont0=cont0, s0=s0,
+                        sig=sig, epsW=epsW, mi=mi, pares=pares_info))
     for tb in tab[::4] + ([tab[-1]] if tab else []):
         say(f"    {tb['a']:8.0f} {tb['kh']:7.2f} {tb['omh']:9.1f} "
             f"{tb['R']:8.1f} {tb['cont0']:10.3f} {tb['s0']:+6.2f} "
             f"{tb['sig']:10.2f} {tb['epsW']:8.3f}")
-    say(f"    fase por passo max (modo pesado) = {fase_max:.2f} "
-        "(>2 = RK4 marginal; o V-EQUIV cobre)")
-    tab_h = [tb for tb in tab if np.isfinite(tb['R']) and tb['R'] >= R_HIER]
-    a_hier = tab_h[0]['a'] if tab_h else float('nan')
-    R_fim = tab[-1]['R'] if tab else float('nan')
-    cont_med = mediana([tb['cont0'] for tb in tab_h])
-    ok_b1a = np.isfinite(R_fim) and R_fim >= 100 and len(tab_h) >= 10
-    ok_b1b = np.isfinite(cont_med) and cont_med > 0.9
-    say(f"    [F-b1a {'SIM' if ok_b1a else 'NAO'}] hierarquia: R_final = "
-        f"{R_fim:.0f} (>=100); marcos hierarquicos: {len(tab_h)}/{len(tab)}"
-        f" (desde a~{a_hier:.0f})")
-    say(f"    [F-b1b {'SIM' if ok_b1b else 'NAO'}] conteudo x0 do pesado: "
-        f"mediana = {cont_med:.3f} (>0.9)")
 
-    # modos propagantes com norma negativa? (F-b-NORMA)
-    # criterio: |omega|/H < 50, ~real (|Im|<0.2|Re|), norma s < -0.1
+    tab_h = [tb for tb in tab if np.isfinite(tb['R']) and tb['R'] >= R_HIER]
+    tab_s = [tb for tb in tab if np.isfinite(tb['epsW'])
+             and tb['epsW'] < EPS_ASSENT]
+    R_fim = tab[-1]['R'] if tab else float('nan')
+    ok_b1a = np.isfinite(R_fim) and R_fim >= 100 and len(tab_h) >= 10
+    cont_med = mediana([tb['cont0'] for tb in tab_s])
+    ok_b1b = np.isfinite(cont_med) and cont_med > 0.9
+    say(f"    [F-b1a {'SIM' if ok_b1a else 'NAO'}] hierarquia de vinculo: "
+        f"R_final = {R_fim:.0f} (>=100); marcos com R>={R_HIER:g}: "
+        f"{len(tab_h)}/{len(tab)}")
+    say(f"    [F-b1b {'SIM' if ok_b1b else 'NAO'}] conteudo x0 do pesado "
+        f"nos marcos ASSENTADOS (eps_W<{EPS_ASSENT:g}: {len(tab_s)} "
+        f"marcos): mediana = {cont_med:.3f} (>0.9)")
+
+    # F-b-NORMA nos marcos assentados
     neg_prop = []
-    for tb in tab_h:
+    for tb in tab_s:
         Hm = Hs_arr[tb['mi']]
-        for om_abs, om_c, s in tb['pares']:
+        for om_abs, om_c, ss in tb['pares']:
             if (om_abs / Hm < 50.0 and abs(om_c.imag) < 0.2 * max(
-                    abs(om_c.real), 1e-30) and s < -0.1):
-                neg_prop.append((tb['a'], om_abs / Hm, s))
+                    abs(om_c.real), 1e-30) and ss < -0.1):
+                neg_prop.append((tb['a'], om_abs / Hm, ss))
     if neg_prop:
-        say(f"    [F-b-NORMA] modos PROPAGANTES com norma-eta NEGATIVA em "
-            f"{len(neg_prop)} marcos hierarquicos, ex.: "
+        say(f"    [F-b-NORMA] MODO PROPAGANTE COM NORMA-ETA NEGATIVA em "
+            f"{len(neg_prop)} entradas de marcos assentados; ex.: "
             + "; ".join(f"a={aa:.0f} |om|/H={oh:.1f} s={ss:+.2f}"
                         for aa, oh, ss in neg_prop[:3]))
     else:
-        say("    [F-b-NORMA] NENHUM modo propagante (|om|/H<50, ~real) com "
-            "norma-eta negativa nos marcos hierarquicos")
+        say("    [F-b-NORMA] nenhum modo propagante com norma-eta negativa "
+            "nos marcos assentados")
 
-    # F-b1c — superficie com dente (ICs no 1o marco hierarquico)
+    # F-b1c — superficie no 1o marco assentado com >=8 assentados depois
     say("")
-    if tab_h:
-        p0 = tab_h[0]['mi']
-        Acan = Cc - np.transpose(Cc, (0, 2, 1))
-        Bcan = Ccd + Wc
-        A0, B0 = Acan[p0], Bcan[p0]
+    med_sup, med_fake = [], []
+    ok_sup = ok_poder = False
+    L_max = float('nan')
+    cand = [tb for tb in tab_s
+            if sum(1 for u in tab_s if u['mi'] > tb['mi']) >= 8]
+    if cand:
+        p0 = cand[0]['mi']
+        marcos_dep = [tb['mi'] for tb in tab_s if tb['mi'] > p0]
+        A0 = Cc[p0] - Cc[p0].T
+        B0 = Ccd[p0] + Wc[p0]
 
-        def ic_sup(jc, tipo, li):
-            ol = [i for i in range(3) if i != jc]
-            x = np.zeros(3)
-            xd = np.zeros(3)
-            if tipo == 'q':
-                x[li] = 1.0
-            else:
-                xd[li] = 1.0
-            x[jc] = -(B0[jc, ol] @ x[ol] + A0[jc, ol] @ xd[ol]) / B0[jc, jc]
-            return x, xd
-
-        marcos_dep = [mi for mi in mark_idx if mi > p0]
+        def evolui_x_ic(x0, xd0):
+            q0 = Tarr[p0] @ x0
+            qd0 = Tarr[p0] @ xd0 + Tdot[p0] @ x0
+            return evolui_estado(Kr, Cr, Wr, Krd, Crd, Ns, Hs_arr,
+                                 q0, qd0, marcos_dep, p0=p0)
 
         def delta_set(jc, lightset, fixa_c=False):
             meds = []
             for tipo, li in lightset:
-                x0, xd0 = ic_sup(jc, tipo, li)
+                ol = [i for i in range(3) if i != jc]
+                x0 = np.zeros(3)
+                xd0 = np.zeros(3)
+                if tipo == 'q':
+                    x0[li] = 1.0
+                else:
+                    xd0[li] = 1.0
+                x0[jc] = -(B0[jc, ol] @ x0[ol]
+                           + A0[jc, ol] @ xd0[ol]) / B0[jc, jc]
                 if fixa_c:
                     ol0 = [i for i in range(3) if i != 0]
                     x0[0] = -(B0[0, ol0] @ x0[ol0]
                               + A0[0, ol0] @ xd0[ol0]) / B0[0, 0]
-                sx = evolui_estado(Kc, Cc, Wc, Kcd, Ccd, Ns, Hs_arr,
-                                   x0, xd0, marcos_dep, p0=p0)
+                sx = evolui_x_ic(x0, xd0)
                 ds = []
                 for mi in marcos_dep:
                     if mi not in sx:
                         continue
-                    if not any(tb['mi'] == mi for tb in tab_h):
-                        continue
-                    xx, xxd = sx[mi]
-                    ol = [i for i in range(3) if i != jc]
-                    xstar = -(Bcan[mi][jc, ol] @ xx[ol]
-                              + Acan[mi][jc, ol] @ xxd[ol]) \
-                        / Bcan[mi][jc, jc]
-                    esc = abs(xstar) + np.linalg.norm(xx[ol]) + 1e-300
+                    xx, xxd = para_x(mi, *sx[mi])
+                    Am = Cc[mi] - Cc[mi].T
+                    Bm = Ccd[mi] + Wc[mi]
+                    ol2 = [i for i in range(3) if i != jc]
+                    xstar = -(Bm[jc, ol2] @ xx[ol2]
+                              + Am[jc, ol2] @ xxd[ol2]) / Bm[jc, jc]
+                    esc = abs(xstar) + np.linalg.norm(xx[ol2]) + 1e-300
                     ds.append(abs(xx[jc] - xstar) / esc)
                 meds.append(mediana(ds))
             return meds
@@ -570,52 +573,55 @@ def analisa(B1V):
         ok_sup = all(np.isfinite(m) and m < 0.1 for m in med_sup)
         ok_poder = all(np.isfinite(m) and m >= 0.3 for m in med_fake)
         say(f"    [F-b1c-SUP {'SIM' if ok_sup else 'NAO'}] mediana "
-            "delta_rel (4 ICs na superficie de x0): "
+            f"delta_rel (4 ICs na superficie de x0, desde "
+            f"a~{aas[p0]:.0f}): "
             + " ".join(f"{m:.3f}" for m in med_sup) + " (<0.1)")
-        say(f"    [F-b1c-PODER {'OK' if ok_poder else 'FALHOU'}] superficie "
-            "FALSA (eixo leve x2): "
+        say(f"    [F-b1c-PODER {'OK' if ok_poder else 'FALHOU'}] "
+            "superficie FALSA (eixo leve x2): "
             + " ".join(f"{m:.3f}" for m in med_fake)
             + " (>=0.3 — tem que reprovar)")
-        # DESAC
-        x0d = np.array([1.0, 0, 0])
-        sx = evolui_estado(Kc, Cc, Wc, Kcd, Ccd, Ns, Hs_arr,
-                           x0d, np.zeros(3), marcos_dep, p0=p0)
+        sx = evolui_x_ic(np.array([1.0, 0, 0]), np.zeros(3))
         Ls = []
         for mi in marcos_dep:
-            if mi in sx and any(tb['mi'] == mi for tb in tab_h):
-                xx, _ = sx[mi]
+            if mi in sx:
+                xx, _ = para_x(mi, *sx[mi])
                 Ls.append(np.linalg.norm(xx[1:])
                           / max(np.linalg.norm(xx), 1e-300))
         L_max = max(Ls) if Ls else float('nan')
         say(f"    [F-b-DESAC] fracao leve max da IC pura-x0: {L_max:.3f} "
             "(<0.2 esperado; diagnostico)")
     else:
-        med_sup, med_fake = [], []
-        ok_sup = ok_poder = False
-        L_max = float('nan')
-        say("    [!] nenhum marco hierarquico — superficie nao testavel")
+        say("    [!] marcos assentados insuficientes — superficie nao "
+            "testavel")
 
-    # F-b2 — escala invariante
+    # F-b2 + CONF-BANDA
     say("")
-    omh_ini = tab[0]['omh'] if tab else float('nan')
     omh_fim = tab[-1]['omh'] if tab else float('nan')
+    omh_s = mediana([tb['omh'] for tb in tab_s])
     w00_fim = np.sqrt(abs(Wc[-1][0, 0])) / Hs_arr[-1]
-    say(f"    F-b2 — escala da direcao negativa: omega_0/H = "
-        f"{omh_ini:.1f} (a~150) -> {omh_fim:.1f} (a~75000); "
-        f"sqrt|W_can[0,0]|/H final = {w00_fim:.1f}")
-    say("    escalas do brinquedo: H=1; m_T/H ~ 3.5; Lambda_3 ~ O(1)*H")
-    return dict(ok_eta=ok_eta, ok_eq=ok_eq, err_eq=err_eq,
+    sig_tarde = mediana([tb['sig'] for tb in tab_s[-8:]]) if tab_s \
+        else float('nan')
+    epsW_tarde = mediana([tb['epsW'] for tb in tab_s[-8:]]) if tab_s \
+        else float('nan')
+    conf = (np.isfinite(sig_tarde)
+            and abs(sig_tarde - REF_BANDA[B1V]) < 0.5)
+    say(f"    F-b2 — escala invariante: omega_0/H mediana assentada = "
+        f"{omh_s:.1f}; final = {omh_fim:.1f}; sqrt|W_can[0,0]|/H = "
+        f"{w00_fim:.1f}  (escalas: H=1, m_T/H~3.5, Lambda_3~O(1))")
+    say(f"    [CONF-BANDA {'SIM' if conf else 'NAO'}] sigma_can tardio = "
+        f"{sig_tarde:.2f} vs taxa real da banda {REF_BANDA[B1V]:+.2f} "
+        f"(|dif|<0.5); eps_W tardio = {epsW_tarde:.3f}")
+    return dict(ok_eta=ok_eta, ok_res=ok_res, vres=vres,
                 ok_b1a=ok_b1a, ok_b1b=ok_b1b, ok_sup=ok_sup,
                 ok_poder=ok_poder, neg_prop=len(neg_prop),
-                omh_fim=omh_fim, R_fim=R_fim, cont=cont_med,
-                sig_tarde=(mediana([tb['sig'] for tb in tab[-8:]])
-                           if tab else float('nan')),
-                epsW_tarde=(mediana([tb['epsW'] for tb in tab[-8:]])
-                            if tab else float('nan')))
+                omh_fim=omh_fim, omh_s=omh_s, R_fim=R_fim,
+                cont=cont_med, sig_tarde=sig_tarde,
+                epsW_tarde=epsW_tarde, conf=conf,
+                n_assent=len(tab_s))
 
 
 # ------------------------------------------------------------------
-# V-EQUIV-GR (1 dof)
+# V-EQUIV-GR (1 dof; sanidade do pipeline — dupla integracao SO em GR)
 # ------------------------------------------------------------------
 say("")
 say("V-EQUIV-GR — normalizacao canonica em GR (1 dof):")
@@ -691,53 +697,56 @@ for B1V in (1.0, 4.47):
 # ------------------------------------------------------------------
 say("")
 say("=" * 72)
-say("VEREDITO GATE F-b (criterios pre-declarados no cabecalho)")
+say("VEREDITO GATE F-b v2 (criterios pre-declarados no cabecalho)")
 say("=" * 72)
 say(f"  V-EQUIV-GR: {'OK' if ok_gr_eq else 'FALHOU'}")
 for B1V, r in RES.items():
     say(f"  beta1={B1V:g}: ETA {'ok' if r['ok_eta'] else 'FALHOU'}; "
-        f"EQUIV {'ok' if r['ok_eq'] else 'FALHOU'} ({r['err_eq']:.1e}); "
+        f"RES {'ok' if r['ok_res'] else 'FALHOU'} ({r['vres']:.3f}); "
         f"b1a {'SIM' if r['ok_b1a'] else 'NAO'} (R_fim {r['R_fim']:.0f}); "
         f"b1b {'SIM' if r['ok_b1b'] else 'NAO'} ({r['cont']:.2f}); "
         f"b1c-SUP {'SIM' if r['ok_sup'] else 'NAO'} "
         f"(PODER {'ok' if r['ok_poder'] else 'FALHOU'}); "
-        f"neg-prop {r['neg_prop']}; omega0/H fim {r['omh_fim']:.0f}; "
-        f"sigma_can tarde {r['sig_tarde']:.2f}; epsW {r['epsW_tarde']:.2f}")
+        f"neg-prop {r['neg_prop']}; om0/H ~ {r['omh_s']:.1f}; "
+        f"CONF-BANDA {'SIM' if r['conf'] else 'NAO'} "
+        f"(sig_can {r['sig_tarde']:.2f}, epsW {r['epsW_tarde']:.3f})")
 say("")
 todos = list(RES.values())
-gates_ok = (ok_gr_eq and all(r['ok_eta'] and r['ok_eq'] for r in todos))
+gates_ok = (ok_gr_eq and all(r['ok_eta'] and r['ok_res'] for r in todos))
 if not gates_ok:
-    say("  >>> VALIDACAO FALHOU (ETA/EQUIV) — nao interpretar; corrigir a")
-    say("  construcao canonica antes de qualquer ramo.")
+    say("  >>> VALIDACAO FALHOU (ETA/RES/GR) — nao interpretar; corrigir")
+    say("  a construcao antes de qualquer ramo.")
 elif all(r['ok_b1a'] and r['ok_b1b'] and r['ok_sup'] and r['ok_poder']
          for r in todos):
-    say("  >>> H-CONSTRAINT CONFIRMADA EM COORDENADAS VALIDAS: no quadro")
-    say("  canonico a direcao K<0 e a direcao RIGIDA (hierarquia real,")
-    say("  QEP bem condicionado), o modo pesado vive nela (b1b), a")
-    say("  superficie adiabatica e quasi-invariante (b1c com PODER")
-    say("  discriminando) — contagem efetiva tardia = 2. O FANTASMA")
-    say("  ESTRUTURAL E ARTEFATO DE REPRESENTACAO. GATE F FECHA no ramo")
-    say("  saudavel: a F1 fica sem patologia escalar linear conhecida")
-    say("  alem da banda-alvo-observacional (R-4). F-c desnecessario.")
-elif all((not r['ok_sup'] or not r['ok_poder']) and r['omh_fim'] >= 50
-         for r in todos):
-    say("  >>> H-SC: a direcao negativa vive em omega_0 >> escalas do")
-    say("  brinquedo (H, m_T, Lambda_3 ~ O(1-3.5)) — alem do alcance da")
-    say("  ordem quadratica (leitura da literatura, 2507.11526). O setor")
-    say("  NAO exclui a F1; fronteira declarada no paper.")
-elif any(r['neg_prop'] > 0 for r in todos):
-    say("  >>> CANDIDATO A FANTASMA FISICO: existe modo propagante com")
-    say("  norma-eta negativa acessivel — F-c (interacoes, taxa de")
-    say("  decaimento do vacuo) e o proximo passo, como pre-declarado.")
+    say("  >>> H-CONSTRAINT CONFIRMADA EM COORDENADAS VALIDAS: hierarquia")
+    say("  real + identidade + superficie quasi-invariante (PODER")
+    say("  discriminando). Contagem efetiva tardia = 2; o fantasma e")
+    say("  artefato de representacao. GATE F FECHA saudavel; F-c")
+    say("  desnecessario.")
+elif (all(not r['ok_b1a'] for r in todos)
+      and all(r['neg_prop'] > 0 for r in todos)
+      and all(r['omh_s'] < 50 for r in todos)):
+    say("  >>> SEM hierarquia de vinculo (H-CONSTRAINT cai em coordenadas")
+    say("  validas — o 'quer ser vinculo' do R-2 era artefato da base")
+    say("  comovel) E existe MODO PROPAGANTE COM NORMA-ETA NEGATIVA a")
+    say("  omega_0 ~ 7-12 H (invariante), acima de m_T e Lambda_3 mas nao")
+    say("  alem de todo alcance: FANTASMA NO ESPECTRO LINEAR CANONICO.")
+    say("  Ramos restantes do gate: F-c (estimativa de interacoes/decay)")
+    say("  ou fronteira declarada no paper — DECISAO DO AUTOR (o gate doc")
+    say("  preve ambos). Nota: com CONF-BANDA, o congelado canonico e")
+    say("  arbitro legitimo — este e um enunciado de espectro, nao de")
+    say("  instabilidade dinamica linear (a evolucao real e estavel no")
+    say("  IR profundo e transiente na banda — D2/R-1/R-4).")
+elif all(not r['ok_b1a'] and r['omh_s'] >= 50 for r in todos):
+    say("  >>> H-SC: direcao negativa alem das escalas EFT — fora do")
+    say("  alcance quadratico; setor nao exclui a F1.")
 else:
-    say("  >>> quadro misto — nenhum ramo puro; reportar tabelas e")
-    say("  decidir com o autor (possivel H-NORM parcial: negatividade")
-    say("  consumida pela conexao sem modo propagante s<0).")
+    say("  >>> quadro misto — reportar tabelas e decidir com o autor.")
 say("")
-say("  BONUS (reabilitacao do congelado canonico): sigma_can/H tardio e")
-say("  eps_W acima — se eps_W << 1 e sigma_can ~ taxas reais da banda")
-say("  (+1-2 na epoca certa), o congelado CANONICO e arbitro legitimo;")
-say("  leitura no doc (fecha o aviso metodologico do paper).")
+say("  CONF-BANDA (reabilitacao do congelado CANONICO): ver acima — se")
+say("  SIM nos dois fundos, o aviso metodologico do paper ganha")
+say("  resolucao: congelado comovel NAO e arbitro (D2), congelado")
+say("  CANONICO (K constante, W assentada) E — e preve a banda.")
 
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
 with open(os.path.join(HERE, "out", "gatef_b_canonica.txt"),
