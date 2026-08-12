@@ -1,0 +1,37 @@
+========================================================================
+R-6c — CONFRONTO DAS DUAS L2 (nossa Gamma-Gamma vs ADM externa)
+========================================================================
+[nossa] montando pecas EH_g, EH_f, INT, CHI ...
+    [nossa EH_g] K,C,W prontos
+    [nossa EH_f] K,C,W prontos
+    [nossa INT] K,C,W prontos
+    [nossa CHI] K,C,W prontos
+[externa] montando pecas via engine ADM deles ...
+    [externa EH_g] ok
+    [externa EH_f] ok
+    [externa INT] ok
+    [externa CHI] ok
+    [externa EH_g] K,C,W prontos
+    [externa EH_f] K,C,W prontos
+    [externa INT] K,C,W prontos
+    [externa CHI] K,C,W prontos
+
+T1/T2/T3 — identidade por pecas (3 pontos racionais off-shell):
+  peca    T1 dK=0   T2 S sim   T3 dW+Sdot
+  EH_g      PASSA      PASSA        PASSA
+  EH_f      PASSA      PASSA        PASSA
+   INT      PASSA      PASSA        PASSA
+   CHI      PASSA      PASSA        PASSA
+
+T4 — K_red no ponto fixo beta1=1 (mesma reducao nos dois):
+  [  nossa] bloco (Psi_f,E_f): K2 = [[-1.032514e+9, -6.4970163e+15], [-6.4970163e+15, 2.9122232e+22]]
+            det = -7.2280335e+31; det/esc^2 = -8.52258e-14; autovalores = -2.48196e+9, 2.91222e+22
+  [externa] bloco (Psi_f,E_f): K2 = [[-7.0997481e-30, -1.5302841e-23], [-1.5302841e-23, 4.1538987e+22]]
+            det = 0; det/esc^2 = 0.0; autovalores = -7.09975e-30, 4.1539e+22
+
+========================================================================
+VEREDITO R-6c (criterios pre-declarados no cabecalho)
+========================================================================
+  T1/T2/T3 PASSARAM em todas as pecas: as duas L2 sao a MESMA
+  acao (a menos de derivada total). O erro esta nas reducoes;
+  T4 acima e o objeto a auditar.

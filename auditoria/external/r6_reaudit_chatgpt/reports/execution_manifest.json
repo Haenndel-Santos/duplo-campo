@@ -1,0 +1,19 @@
+{
+  "included_successful_stages": [
+    "R6-B cubic ADM expansion",
+    "R6-C static Gate-F ADM/FJ re-audit",
+    "R6-D static R4b passage re-audit",
+    "R6-E spectator-mode identification and R5-A multiplier reconstruction",
+    "R6-F0 dynamic action, old-background reproduction, null gate",
+    "R6-F2 boundary-safe kinetic map",
+    "R6-G boundary-safe dynamic passages at 7k and 14k",
+    "R6-H arbitrary-precision dynamic null diagnostic",
+    "R6-I GR ADM self-check"
+  ],
+  "discarded_not_used": [
+    "initial dynamic passage stopped at the boundary-negative-kinetic gate",
+    "3-resolution kinetic sweep interrupted by runtime limit",
+    "28k dynamic passage attempts timed out"
+  ],
+  "rule": "Only completed successful runs are used."
+}

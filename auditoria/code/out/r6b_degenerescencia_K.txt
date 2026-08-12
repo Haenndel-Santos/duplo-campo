@@ -1,0 +1,179 @@
+========================================================================
+R-6b — det K_red = 0 OU NAO: teste de precisao estendida
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+
+========================================================================
+FUNDO beta-constante beta1=1
+========================================================================
+    H(100) = 0.557437958978; k_c = 2508.4708154
+    [compilacao mpmath] ok
+
+    --- epoca a = 150 ---
+      dps= 15 h=1e-4: lam = -56465425.0 1687500.0 1.0894994e+16
+                       |lam0|/|lam1| = 33.461   equilibrada: min/max = 7.22193e-5
+      dps= 15 h=1e-5: lam = -56465424.0 1687500.0 1.0894994e+16
+                       |lam0|/|lam1| = 33.461   equilibrada: min/max = 7.22193e-5
+      dps= 15 h=1e-6: lam = -56465424.0 1687500.0 1.0894994e+16
+                       |lam0|/|lam1| = 33.461   equilibrada: min/max = 7.22193e-5
+      dps= 30 h=1e-4: lam = -56465425.0 1687500.0 1.0894994e+16
+                       |lam0|/|lam1| = 33.461   equilibrada: min/max = 7.22193e-5
+      dps= 30 h=1e-5: lam = -56465424.0 1687500.0 1.0894994e+16
+                       |lam0|/|lam1| = 33.461   equilibrada: min/max = 7.22193e-5
+      dps= 30 h=1e-6: lam = -56465424.0 1687500.0 1.0894994e+16
+                       |lam0|/|lam1| = 33.461   equilibrada: min/max = 7.22193e-5
+      dps= 60 h=1e-4: lam = -56465425.0 1687500.0 1.0894994e+16
+                       |lam0|/|lam1| = 33.461   equilibrada: min/max = 7.22193e-5
+      dps= 60 h=1e-5: lam = -56465424.0 1687500.0 1.0894994e+16
+                       |lam0|/|lam1| = 33.461   equilibrada: min/max = 7.22193e-5
+      dps= 60 h=1e-6: lam = -56465424.0 1687500.0 1.0894994e+16
+                       |lam0|/|lam1| = 33.461   equilibrada: min/max = 7.22193e-5
+      K_red (base Psi_f,E_f,dchi; dps=60):
+        -372709.0  -7.8174792e+11  0.0
+        -7.8174792e+11  1.0894994e+16  0.0
+        0.0  0.0  1687500.0
+
+    --- epoca a = 3635 ---
+      dps= 15 h=1e-4: lam = -9.3109068e+9 2.4015036e+10 3.0889526e+22
+                       |lam0|/|lam1| = 0.387712   equilibrada: min/max = 8.36923e-7
+      dps= 15 h=1e-5: lam = -9.3109068e+9 2.4015036e+10 3.0889526e+22
+                       |lam0|/|lam1| = 0.387712   equilibrada: min/max = 8.36923e-7
+      dps= 15 h=1e-6: lam = -9.3109067e+9 2.4015036e+10 3.0889526e+22
+                       |lam0|/|lam1| = 0.387712   equilibrada: min/max = 8.36923e-7
+      dps= 30 h=1e-4: lam = -9.3109068e+9 2.4015036e+10 3.0889526e+22
+                       |lam0|/|lam1| = 0.387712   equilibrada: min/max = 8.36923e-7
+      dps= 30 h=1e-5: lam = -9.3109068e+9 2.4015036e+10 3.0889526e+22
+                       |lam0|/|lam1| = 0.387712   equilibrada: min/max = 8.36923e-7
+      dps= 30 h=1e-6: lam = -9.3109068e+9 2.4015036e+10 3.0889526e+22
+                       |lam0|/|lam1| = 0.387712   equilibrada: min/max = 8.36923e-7
+      dps= 60 h=1e-4: lam = -9.3109068e+9 2.4015036e+10 3.0889526e+22
+                       |lam0|/|lam1| = 0.387712   equilibrada: min/max = 8.36923e-7
+      dps= 60 h=1e-5: lam = -9.3109068e+9 2.4015036e+10 3.0889526e+22
+                       |lam0|/|lam1| = 0.387712   equilibrada: min/max = 8.36923e-7
+      dps= 60 h=1e-6: lam = -9.3109068e+9 2.4015036e+10 3.0889526e+22
+                       |lam0|/|lam1| = 0.387712   equilibrada: min/max = 8.36923e-7
+      K_red (base Psi_f,E_f,dchi; dps=60):
+        -5.3040726e+9  -1.1125161e+16  0.0
+        -1.1125161e+16  3.0889526e+22  0.0
+        0.0  0.0  2.4015036e+10
+
+    --- epoca a = 74992 ---
+      dps= 15 h=1e-4: lam = -6.9888545e+13 2.1087001e+14 4.093019e+26
+                       |lam0|/|lam1| = 0.33143   equilibrada: min/max = 7.15431e-7
+      dps= 15 h=1e-5: lam = -6.9888545e+13 2.1087001e+14 4.093019e+26
+                       |lam0|/|lam1| = 0.33143   equilibrada: min/max = 7.15431e-7
+      dps= 15 h=1e-6: lam = -6.9888545e+13 2.1087001e+14 4.093019e+26
+                       |lam0|/|lam1| = 0.33143   equilibrada: min/max = 7.15431e-7
+      dps= 30 h=1e-4: lam = -6.9888545e+13 2.1087001e+14 4.093019e+26
+                       |lam0|/|lam1| = 0.33143   equilibrada: min/max = 7.15431e-7
+      dps= 30 h=1e-5: lam = -6.9888545e+13 2.1087001e+14 4.093019e+26
+                       |lam0|/|lam1| = 0.33143   equilibrada: min/max = 7.15431e-7
+      dps= 30 h=1e-6: lam = -6.9888545e+13 2.1087001e+14 4.093019e+26
+                       |lam0|/|lam1| = 0.33143   equilibrada: min/max = 7.15431e-7
+      dps= 60 h=1e-4: lam = -6.9888545e+13 2.1087001e+14 4.093019e+26
+                       |lam0|/|lam1| = 0.33143   equilibrada: min/max = 7.15431e-7
+      dps= 60 h=1e-5: lam = -6.9888545e+13 2.1087001e+14 4.093019e+26
+                       |lam0|/|lam1| = 0.33143   equilibrada: min/max = 7.15431e-7
+      dps= 60 h=1e-6: lam = -6.9888545e+13 2.1087001e+14 4.093019e+26
+                       |lam0|/|lam1| = 0.33143   equilibrada: min/max = 7.15431e-7
+      K_red (base Psi_f,E_f,dchi; dps=60):
+        -4.657373e+13  -9.7687247e+19  0.0
+        -9.7687247e+19  4.093019e+26  0.0
+        0.0  0.0  2.1087001e+14
+
+========================================================================
+FUNDO beta-constante beta1=447/100
+========================================================================
+    H(100) = 1.12533583004; k_c = 5064.01123519
+    [compilacao mpmath] ok
+
+    --- epoca a = 150 ---
+      dps= 15 h=1e-4: lam = -1.3606335e+8 1687500.0 4.360418e+17
+                       |lam0|/|lam1| = 80.6301   equilibrada: min/max = 1.77227e-5
+      dps= 15 h=1e-5: lam = -1.3606335e+8 1687500.0 4.360418e+17
+                       |lam0|/|lam1| = 80.6301   equilibrada: min/max = 1.77227e-5
+      dps= 15 h=1e-6: lam = -1.3606335e+8 1687500.0 4.360418e+17
+                       |lam0|/|lam1| = 80.6301   equilibrada: min/max = 1.77227e-5
+      dps= 30 h=1e-4: lam = -1.3606335e+8 1687500.0 4.360418e+17
+                       |lam0|/|lam1| = 80.6301   equilibrada: min/max = 1.77227e-5
+      dps= 30 h=1e-5: lam = -1.3606335e+8 1687500.0 4.360418e+17
+                       |lam0|/|lam1| = 80.6301   equilibrada: min/max = 1.77227e-5
+      dps= 30 h=1e-6: lam = -1.3606335e+8 1687500.0 4.360418e+17
+                       |lam0|/|lam1| = 80.6301   equilibrada: min/max = 1.77227e-5
+      dps= 60 h=1e-4: lam = -1.3606335e+8 1687500.0 4.360418e+17
+                       |lam0|/|lam1| = 80.6301   equilibrada: min/max = 1.77227e-5
+      dps= 60 h=1e-5: lam = -1.3606335e+8 1687500.0 4.360418e+17
+                       |lam0|/|lam1| = 80.6301   equilibrada: min/max = 1.77227e-5
+      dps= 60 h=1e-6: lam = -1.3606335e+8 1687500.0 4.360418e+17
+                       |lam0|/|lam1| = 80.6301   equilibrada: min/max = 1.77227e-5
+      K_red (base Psi_f,E_f,dchi; dps=60):
+        -898107.88  -7.677089e+12  0.0
+        -7.677089e+12  4.360418e+17  0.0
+        0.0  0.0  1687500.0
+
+    --- epoca a = 3635 ---
+      dps= 15 h=1e-4: lam = -2.2436262e+10 2.4015036e+10 1.2362669e+24
+                       |lam0|/|lam1| = 0.934259   equilibrada: min/max = 2.05359e-7
+      dps= 15 h=1e-5: lam = -2.2436262e+10 2.4015036e+10 1.2362669e+24
+                       |lam0|/|lam1| = 0.934259   equilibrada: min/max = 2.05359e-7
+      dps= 15 h=1e-6: lam = -2.2436262e+10 2.4015036e+10 1.2362669e+24
+                       |lam0|/|lam1| = 0.934259   equilibrada: min/max = 2.05359e-7
+      dps= 30 h=1e-4: lam = -2.2436262e+10 2.4015036e+10 1.2362669e+24
+                       |lam0|/|lam1| = 0.934259   equilibrada: min/max = 2.05359e-7
+      dps= 30 h=1e-5: lam = -2.2436262e+10 2.4015036e+10 1.2362669e+24
+                       |lam0|/|lam1| = 0.934259   equilibrada: min/max = 2.05359e-7
+      dps= 30 h=1e-6: lam = -2.2436262e+10 2.4015036e+10 1.2362669e+24
+                       |lam0|/|lam1| = 0.934259   equilibrada: min/max = 2.05359e-7
+      dps= 60 h=1e-4: lam = -2.2436262e+10 2.4015036e+10 1.2362669e+24
+                       |lam0|/|lam1| = 0.934259   equilibrada: min/max = 2.05359e-7
+      dps= 60 h=1e-5: lam = -2.2436262e+10 2.4015036e+10 1.2362669e+24
+                       |lam0|/|lam1| = 0.934259   equilibrada: min/max = 2.05359e-7
+      dps= 60 h=1e-6: lam = -2.2436262e+10 2.4015036e+10 1.2362669e+24
+                       |lam0|/|lam1| = 0.934259   equilibrada: min/max = 2.05359e-7
+      K_red (base Psi_f,E_f,dchi; dps=60):
+        -1.2781093e+10  -1.0925368e+17  0.0
+        -1.0925368e+17  1.2362669e+24  0.0
+        0.0  0.0  2.4015036e+10
+
+    --- epoca a = 74992 ---
+      dps= 15 h=1e-4: lam = -1.6840871e+14 2.1087001e+14 1.6381163e+28
+                       |lam0|/|lam1| = 0.798638   equilibrada: min/max = 1.75548e-7
+      dps= 15 h=1e-5: lam = -1.6840871e+14 2.1087001e+14 1.6381163e+28
+                       |lam0|/|lam1| = 0.798638   equilibrada: min/max = 1.75548e-7
+      dps= 15 h=1e-6: lam = -1.6840871e+14 2.1087001e+14 1.6381163e+28
+                       |lam0|/|lam1| = 0.798638   equilibrada: min/max = 1.75548e-7
+      dps= 30 h=1e-4: lam = -1.6840871e+14 2.1087001e+14 1.6381163e+28
+                       |lam0|/|lam1| = 0.798638   equilibrada: min/max = 1.75548e-7
+      dps= 30 h=1e-5: lam = -1.6840871e+14 2.1087001e+14 1.6381163e+28
+                       |lam0|/|lam1| = 0.798638   equilibrada: min/max = 1.75548e-7
+      dps= 30 h=1e-6: lam = -1.6840871e+14 2.1087001e+14 1.6381163e+28
+                       |lam0|/|lam1| = 0.798638   equilibrada: min/max = 1.75548e-7
+      dps= 60 h=1e-4: lam = -1.6840871e+14 2.1087001e+14 1.6381163e+28
+                       |lam0|/|lam1| = 0.798638   equilibrada: min/max = 1.75548e-7
+      dps= 60 h=1e-5: lam = -1.6840871e+14 2.1087001e+14 1.6381163e+28
+                       |lam0|/|lam1| = 0.798638   equilibrada: min/max = 1.75548e-7
+      dps= 60 h=1e-6: lam = -1.6840871e+14 2.1087001e+14 1.6381163e+28
+                       |lam0|/|lam1| = 0.798638   equilibrada: min/max = 1.75548e-7
+      K_red (base Psi_f,E_f,dchi; dps=60):
+        -1.1222757e+14  -9.5932913e+20  0.0
+        -9.5932913e+20  1.6381163e+28  0.0
+        0.0  0.0  2.1087001e+14
+
+========================================================================
+VEREDITO R-6b (criterios pre-declarados no cabecalho)
+========================================================================
+  beta1=1:
+    a=     150  |lam0|/|lam1|: dps15=33.461  dps30=33.461  dps60=33.461
+                 variacao total (todos dps,h): fator 1.0
+    a=    3635  |lam0|/|lam1|: dps15=0.38771  dps30=0.38771  dps60=0.38771
+                 variacao total (todos dps,h): fator 1.0
+    a=   74992  |lam0|/|lam1|: dps15=0.33143  dps30=0.33143  dps60=0.33143
+                 variacao total (todos dps,h): fator 1.0
+  beta1=447/100:
+    a=     150  |lam0|/|lam1|: dps15=80.63  dps30=80.63  dps60=80.63
+                 variacao total (todos dps,h): fator 1.0
+    a=    3635  |lam0|/|lam1|: dps15=0.93426  dps30=0.93426  dps60=0.93426
+                 variacao total (todos dps,h): fator 1.0
+    a=   74992  |lam0|/|lam1|: dps15=0.79864  dps30=0.79864  dps60=0.79864
+                 variacao total (todos dps,h): fator 1.0
