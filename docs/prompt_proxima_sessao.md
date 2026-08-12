@@ -250,12 +250,23 @@ autovetores escala-dominados, teste sem dente. Saída pré-declarada:
 H-CONSTRAINT NÃO DECIDIDA → **F-b necessário** (normalização canônica
 simplética por ponto com termos ∝Ṫ retidos; o F-a vira o "antes" do
 par antes/depois). Dado descritivo: proj(pesado-sobrevivente, K<0) =
-1.000 tardio, ω/H 5.6→18.5. FILA ATUAL: (1) BLOCO 3 DO R-4 = DECISÃO
-DO AUTOR (dicionário de épocas modelo-brinquedo → história cósmica;
-confronto e^lnA vs vínculos Comelli/Könnig/Akrami; notas de desenho:
-a era Λ real tem ~0.7 e-fold → lnA real é integral PARCIAL p/ modos
-saindo; o cenário modos-ENTRANDO na era de matéria nunca foi sondado
-— braço com ρ₀ grande; opções A/B/C, recomendação B+C); (2) F-b;
+1.000 tardio, ω/H 5.6→18.5. DECISÃO DO AUTOR (2026-08-12): bloco 3 = OPÇÕES B+C; e sobre refazer
+F-a1/F-a2: não há parâmetro que salve — o refazer correto É o F-b
+(mesmas três perguntas nas variáveis canônicas; este F-a é o "antes").
+BLOCO 3 SCRIPT PRONTO E COMMITADO: auditoria/code/r4c_confronto_epocas.py
+(~6–10 min, AGUARDA RODADA): BRAÇO B = era Λ real (janelas de 0.7
+e-fold terminando em kh_hoje ∈ [0.2, 6]; lnA_parcial(kh_hoje); BASE
+reproduz a passagem completa do R-4b ±0.4); BRAÇO C = entrada na era
+de matéria (fundo β₁=1 com ρ₀=3e4, a_eq≈32; k com kh_max ∈
+{0.5,1,2,4,8} na equality; lnA_residencia = Δln na visita à banda
+kh≥0.3; f_bi impresso — testa a previsão da fração bimétrica do R-4b
+§3 no regime decisivo p/ LSS; redução com TRUNCAMENTO BILATERAL para
+a matéria profunda r~1/ρ; C-NULL em GR+poeira+Λ). VEREDITOS:
+C_max≤+0.5 → SUPRESSÃO-MATÉRIA (LSS ileso; dano total = B_max em
+escalas ~horizonte hoje → confronto BRANDO, classe sobrevive à banda);
+C_max≥+2 → ENTRADA-AMPLIFICA (candidato letal p/ LSS; mapear com
+prioridade); intermediário → reportar. DEPOIS: F-b (normalização
+canônica simplética por ponto; crítérios F-b1/F-b2 do gate doc);
 (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
