@@ -1,0 +1,116 @@
+========================================================================
+R-9a — BLOCO 0(c): o omega^2 do R-7e e a primeira leitura de c_s^2
+========================================================================
+[V1] GR selfcheck: PASSA
+[montagem] K,C,W,CdS prontos
+[fatias] prontas
+
+========================================================================
+PARTE A — resolucao do omega^2 (beta1=1)
+========================================================================
+    [G1 OK canal-S] 7.72e-16; k_c = 2508.5
+
+    V-FREQ — frequencia MEDIDA (cruzamentos de zero) vs as duas hipoteses:
+          a  comp  |om_n|/H   om_ef/H  Phi_prev  Phi_med  n_cruz         ok
+        200  Etil     387.6     22.68     20.42    18.85     6.0         OK
+        200  dchi      22.5     22.52     19.59    18.85     6.0         OK
+        452  Etil      78.1     10.34     10.18     6.28     2.0          X
+        452  dchi      10.0     10.01      8.91     7.85     2.5         OK
+       1020  Etil      17.6      5.14      6.00     6.28     2.0   sem res.
+       1020  dchi       4.5      4.52      4.40     3.14     1.0   sem res.
+       2305  Etil       6.0      2.97      4.48     3.14     1.0   sem res.
+       2305  dchi       2.2      2.19      2.68     1.57     0.5   sem res.
+       5207  Etil       3.9      2.19      4.07     3.14     1.0   sem res.
+       5207  dchi       1.3      1.31      2.14     1.57     0.5   sem res.
+      11758  Etil       3.5      2.02      3.83     3.14     1.0   sem res.
+      11758  dchi       1.1      1.05      1.92     1.57     0.5   sem res.
+      26563  Etil       3.5      1.99      2.19     3.14     1.0   sem res.
+      26563  dchi       1.0      1.00      1.09     0.00     0.0   sem res.
+      60013  Etil       3.5      1.99      0.57     3.14     1.0   sem res.
+      60013  dchi       1.0      0.99      0.28     0.00     0.0   sem res.
+
+    [V-FREQ FALHOU] 3/4 = 75% dos marcos COM RESOLUCAO (criterio >= 80%); 12 marcos sem resolucao (Phi_prev < 2pi — modo congelado, limite fisico)
+    (a hipotese W/K prevê |om|/H da 1a coluna e, sendo om2<0,
+     prevê AUSENCIA de oscilacao — refutada por qualquer
+     n_cruz > 0 no Etil)
+    [V-SINAL] entradas com om2_naive < 0 MAS om2_efetivo > 0: 8/16 — a medida direta do erro de leitura do R-7e
+
+========================================================================
+PARTE B — c_s^2 por ajuste om2_ef = c_s^2 (k/a)^2 + m_ef^2 (beta1=1)
+========================================================================
+    razao om2_ef/(k/a)^2 por kh (deve ser ~ c_s^2 no regime de gradiente), e cond(W_XX):
+           a  comp       kh=3      kh=10      kh=30     kh=100     kh=300    kh=1000 c_s^2[30-100]
+         150  Etil    +1.6772    +1.0773    +1.0096    +1.0098    +1.0812    +1.9287       +1.0098
+               k4? excesso da razao entre kh=100 e kh=1000: +0.919 — termo ~k^4 com escala M/H ~ 1043 (cond(W_XX) < 1e2 em toda a faixa => e ESTRUTURA, nao condicionamento)
+         150  dchi    +1.1073    +1.0097    +1.0011    +1.0001    +1.0000    +1.0000       +1.0000
+              cond    1.8e+01    1.2e+01    9.8e+00    9.3e+00    9.1e+00    9.1e+00
+        3635  Etil    +1.6772    +1.0773    +1.0096    +1.0098    +1.0812    +1.9286       +1.0098
+               k4? excesso da razao entre kh=100 e kh=1000: +0.919 — termo ~k^4 com escala M/H ~ 1043 (cond(W_XX) < 1e2 em toda a faixa => e ESTRUTURA, nao condicionamento)
+        3635  dchi    +1.1073    +1.0097    +1.0011    +1.0001    +1.0000    +1.0000       +1.0000
+              cond    1.8e+01    1.2e+01    9.8e+00    9.3e+00    9.1e+00    9.1e+00
+       74992  Etil    +1.6772    +1.0773    +1.0096    +1.0098    +1.0812    +1.9287       +1.0098
+               k4? excesso da razao entre kh=100 e kh=1000: +0.919 — termo ~k^4 com escala M/H ~ 1043 (cond(W_XX) < 1e2 em toda a faixa => e ESTRUTURA, nao condicionamento)
+       74992  dchi    +1.1073    +1.0097    +1.0011    +1.0001    +1.0000    +1.0000       +1.0000
+              cond    1.8e+01    1.2e+01    9.8e+00    9.3e+00    9.1e+00    9.1e+00
+
+========================================================================
+PARTE A — resolucao do omega^2 (beta1=4.47)
+========================================================================
+    [G1 OK canal-S] 1.89e-15; k_c = 5064.0
+
+    V-FREQ — frequencia MEDIDA (cruzamentos de zero) vs as duas hipoteses:
+          a  comp  |om_n|/H   om_ef/H  Phi_prev  Phi_med  n_cruz         ok
+        200  Etil     416.3     22.68     20.41    18.85     6.0         OK
+        200  dchi      22.5     22.51     19.49    18.85     6.0         OK
+        452  Etil      83.8     10.34     10.17     6.28     2.0          X
+        452  dchi      10.0      9.97      8.69     7.85     2.5         OK
+       1020  Etil      18.8      5.13      6.00     6.28     2.0   sem res.
+       1020  dchi       4.4      4.44      3.98     3.14     1.0   sem res.
+       2305  Etil       6.4      2.97      4.47     3.14     1.0   sem res.
+       2305  dchi       2.0      2.01      2.01     0.00     0.0   sem res.
+       5207  Etil       4.1      2.19      4.06     3.14     1.0   sem res.
+       5207  dchi       1.0      0.99      1.27     0.00     0.0   sem res.
+      11758  Etil       3.7      2.02      3.82     3.14     1.0   sem res.
+      11758  dchi       0.6      0.62      1.00     0.00     0.0   sem res.
+      26563  Etil       3.7      1.99      2.19     3.14     1.0   sem res.
+      26563  dchi       0.5      0.52      0.55     0.00     0.0   sem res.
+      60013  Etil       3.7      1.98      0.57     3.14     1.0   sem res.
+      60013  dchi       0.5      0.49      0.14     0.00     0.0   sem res.
+
+    [V-FREQ FALHOU] 3/4 = 75% dos marcos COM RESOLUCAO (criterio >= 80%); 12 marcos sem resolucao (Phi_prev < 2pi — modo congelado, limite fisico)
+    (a hipotese W/K prevê |om|/H da 1a coluna e, sendo om2<0,
+     prevê AUSENCIA de oscilacao — refutada por qualquer
+     n_cruz > 0 no Etil)
+    [V-SINAL] entradas com om2_naive < 0 MAS om2_efetivo > 0: 8/16 — a medida direta do erro de leitura do R-7e
+
+========================================================================
+PARTE B — c_s^2 por ajuste om2_ef = c_s^2 (k/a)^2 + m_ef^2 (beta1=4.47)
+========================================================================
+    razao om2_ef/(k/a)^2 por kh (deve ser ~ c_s^2 no regime de gradiente), e cond(W_XX):
+           a  comp       kh=3      kh=10      kh=30     kh=100     kh=300    kh=1000 c_s^2[30-100]
+         150  Etil    +1.6765    +1.0772    +1.0097    +1.0112    +1.0938    +2.0772       +1.0113
+               k4? excesso da razao entre kh=100 e kh=1000: +1.066 — termo ~k^4 com escala M/H ~ 969 (cond(W_XX) < 1e2 em toda a faixa => e ESTRUTURA, nao condicionamento)
+         150  dchi    +1.0263    +1.0024    +1.0003    +1.0000    +1.0000    +1.0000       +1.0000
+              cond    7.7e+00    4.8e+00    4.1e+00    3.9e+00    3.8e+00    3.8e+00
+        3635  Etil    +1.6765    +1.0772    +1.0097    +1.0112    +1.0938    +2.0772       +1.0113
+               k4? excesso da razao entre kh=100 e kh=1000: +1.066 — termo ~k^4 com escala M/H ~ 969 (cond(W_XX) < 1e2 em toda a faixa => e ESTRUTURA, nao condicionamento)
+        3635  dchi    +1.0263    +1.0024    +1.0003    +1.0000    +1.0000    +1.0000       +1.0000
+              cond    7.7e+00    4.8e+00    4.1e+00    3.9e+00    3.8e+00    3.8e+00
+       74992  Etil    +1.6765    +1.0772    +1.0097    +1.0112    +1.0938    +2.0772       +1.0113
+               k4? excesso da razao entre kh=100 e kh=1000: +1.066 — termo ~k^4 com escala M/H ~ 969 (cond(W_XX) < 1e2 em toda a faixa => e ESTRUTURA, nao condicionamento)
+       74992  dchi    +1.0263    +1.0024    +1.0003    +1.0000    +1.0000    +1.0000       +1.0000
+              cond    7.7e+00    4.8e+00    4.1e+00    3.9e+00    3.8e+00    3.8e+00
+
+========================================================================
+VEREDITO R-9a (criterios pre-declarados no cabecalho)
+========================================================================
+  V-FREQ: FALHOU em algum fundo
+  V-SINAL: 16/32 entradas tinham W/K < 0 com (Cdot+W)/K > 0
+  >>> NAO RESOLVIDO: a dinamica NAO e explicada pelo
+  oscilador local — leitura (ii) ou (iii) da sintese;
+  escalar para o A1 com prioridade maxima.
+
+  [G-CS OK] c_s^2 > 0 em todas as epocas/componentes/fundos
+  testados — sem indicio de instabilidade de gradiente no
+  benchmark beta-constante (nivel 2b; NAO substitui o A1,
+  que exige o fundo dinamico e o confronto com a literatura).

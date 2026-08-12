@@ -1,0 +1,65 @@
+========================================================================
+R-9b — BLOCO 0(a,b): algebra de vinculos no fundo pousado
+========================================================================
+[simbolico] montando Omega = {H_g, H_f} ...
+    Omega: 34 ops
+[simbolico] M-B: {H_diag, H_rel} ...
+    {H_diag, H_rel} + 2*Omega = 0  (residuo bruto antes do chop: -5.55111512312578e-17*a**2*p_b/b)
+    [M-B OK] identidade algebrica verificada — a maquinaria de brackets esta correta.
+    ATENCAO: isto e TAUTOLOGIA ({A+B,A-B} = -2{A,B}), nao
+    resposta ao item (b). Em minisuperespaco a combinacao
+    diagonal e fracamente de 1a classe POR CONSTRUCAO. O item
+    (b) do parecer e sobre o difeomorfismo ESPACIAL (k != 0):
+    FICA EM ABERTO e sai do Bloco 0 para o Bloco 2 (junto com
+    o Gate 2B, que e o mesmo calculo de campo).
+[simbolico] D_g = {Omega, H_g}, D_f = {Omega, H_f} ...
+    D_g: 149 ops; D_f: 79 ops
+[simbolico] lambdify pronto
+
+[fundo] integrando (Heun, celula REF g=2, m_chi^2=30) ...
+    r_fim=0.4979, chi/v=0.9316 [CONFERE]
+
+    M-A1 — pouso identificado em a ~ 1709 (chi/v = 0.880)
+    cruzamentos de zero de p_chi apos o pouso: 6
+    primeiros em a = ['2353', '4538', '8432', '15706', '29168', '54221']
+    |chidot| max apos o pouso = 1.862e+00; min |chidot| nos cruzamentos = 2.025e-05
+
+    M-A2 — degenerescencia (Delta_local, escala em janela movel de +-0.5 e-fold):
+    Delta_local min na trilha = 1.350e-01 (em a = 3484)
+    Delta_local NOS cruzamentos de p_chi: min = 1.947e-01, mediana = 2.241e-01
+    razao de lapsos implicada xi_impl = -D_g/D_f nos cruzamentos: mediana = 1.1581 (r no mesmo ponto: 0.4981) — finita e bem definida = SEM degenerescencia
+
+           a      chidot          D_g          D_f  Delta_loc  xi_impl
+        2353  +5.623e-05   +2.230e+11   -2.034e+11  3.781e-01   1.0965
+        4538  -9.101e-04   +1.211e+12   -1.042e+12  1.947e-01   1.1622
+        8432  +3.082e-05   +8.304e+12   -7.208e+12  2.379e-01   1.1520
+       15706  -1.242e-04   +5.196e+13   -4.479e+13  2.183e-01   1.1602
+       29168  +5.028e-05   +3.367e+14   -2.909e+14  2.256e-01   1.1575
+       54221  -2.025e-05   +2.153e+15   -1.858e+15  2.226e-01   1.1587
+
+    M-A3 — controle: mesma medida com beta_1 ~ constante (v* = 1e6, modulacao desligada)
+    Delta min (controle) = 5.850e-02; mediana = 2.256e-01
+    (o controle NAO tem o termo p_chi beta_1'; se o Delta do
+     caso modulado cair muito abaixo do controle nos
+     cruzamentos, o efeito e da modulacao — que e a previsao)
+
+========================================================================
+VEREDITO R-9b (criterios pre-declarados no cabecalho)
+========================================================================
+  (b) M-B: identidade {H_diag,H_rel} = -2*Omega verificada — maquinaria de brackets
+      correta, mas o teste e TAUTOLOGICO em minisuperespaco.
+      ITEM (b) NAO RESPONDIDO: o difeomorfismo espacial exige
+      k != 0. Movido do Bloco 0 para o Bloco 2, junto ao Gate
+      2B (mesmo calculo de campo).
+
+  (a) PREMISSA CONFIRMADA, CONCLUSAO NAO: p_chi cruza
+      zero 6 vezes apos o pouso (o parecer
+      acertou o fundo), mas Delta_local minimo nos
+      cruzamentos = 1.95e-01 (>= 1e-3) e a razao de
+      lapsos implicada e finita e estavel (xi_impl ~ 1.158).
+      A estrutura de segunda classe SOBREVIVE: o residuo
+      da Bianchi NA RAIZ e proporcional a p_chi*beta_1',
+      mas D_g = {Omega,H_g} e D_f = {Omega,H_f} NAO tem
+      p_chi como fator global — nao se anulam junto.
+      Fronteira: minisuperespaco, uma trajetoria, celula
+      REF.
