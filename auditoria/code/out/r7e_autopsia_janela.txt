@@ -1,0 +1,94 @@
+========================================================================
+R-7e AUTOPSIA — a janela amplifica o CAMPO ou so o envelope?
+========================================================================
+[V1] GR selfcheck: PASSA
+[montagem] K,C,W 7x7 prontos
+[canal-S] pronto
+[fatias] prontas
+
+[fundos] integrando Heun e Euler (A5) ...
+    Heun:  r_fim=0.4979, chi/v=0.9316
+    Euler: r_fim=0.4979, chi/v=0.9316
+    janela: a em [225, 7086]; a_mid=1263
+    A5 — Heun vs Euler na janela: max|dr|=2.17e-03, max|dch|/v=1.48e-03, max|dH|/H=2.02e-03
+    (isto dimensiona o E3 do r7e: lnA de passagem cruza a janela
+     e herda a diferenca de fundo — sensibilidade reportada)
+
+========================================================================
+MODO kh(janela) = 10  (k_c = 19920.0)
+========================================================================
+    A1 — om2 = W2_ii/K2_ii na janela (min, max, cruzamentos de zero):
+         Etil: [-1.434e+07, -1.125e+02]  cruzamentos = 0
+         dchi: [+4.063e+01, +7.816e+03]  cruzamentos = 0
+    A2 — G_win (norm. congelada no centro; pre->pos janela) e
+    A3 — taxa movel max de ln A_c na janela:
+         Etil(pos)/Etil  G_win =  -10.19   taxa_movel =  +10.05
+         Etil(pos)/dchi  G_win =   -0.51   taxa_movel =   +5.51
+         dchi(pos)/Etil  G_win =  -10.20   taxa_movel =  +10.05
+         dchi(pos)/dchi  G_win =   -0.52   taxa_movel =   +5.54
+         Etil(vel)/Etil  G_win =  -10.20   taxa_movel =  +10.05
+         Etil(vel)/dchi  G_win =   -0.52   taxa_movel =   +5.55
+         dchi(vel)/Etil  G_win =  -10.19   taxa_movel =  +10.05
+         dchi(vel)/dchi  G_win =   -0.51   taxa_movel =   +5.51
+    A4 — halving: max |dG_win| = 0.687 (FALHOU < 0.3)
+
+========================================================================
+MODO kh(janela) = 3  (k_c = 5976.0)
+========================================================================
+    A1 — om2 = W2_ii/K2_ii na janela (min, max, cruzamentos de zero):
+         Etil: [-1.192e+05, -5.566e+00]  cruzamentos = 0
+         dchi: [+1.933e+01, +6.904e+02]  cruzamentos = 0
+    A2 — G_win (norm. congelada no centro; pre->pos janela) e
+    A3 — taxa movel max de ln A_c na janela:
+         Etil(pos)/Etil  G_win =  -10.70   taxa_movel =   +1.91
+         Etil(pos)/dchi  G_win =   -2.17   taxa_movel =   +4.11
+         dchi(pos)/Etil  G_win =  -10.73   taxa_movel =   +1.90
+         dchi(pos)/dchi  G_win =   -5.97   taxa_movel =   +3.45
+         Etil(vel)/Etil  G_win =  -10.70   taxa_movel =   +1.91
+         Etil(vel)/dchi  G_win =   -2.17   taxa_movel =   +4.11
+         dchi(vel)/Etil  G_win =  -10.70   taxa_movel =   +1.91
+         dchi(vel)/dchi  G_win =   +0.01   taxa_movel =   +7.26
+
+========================================================================
+MODO kh(janela) = 1  (k_c = 1992.0)
+========================================================================
+    A1 — om2 = W2_ii/K2_ii na janela (min, max, cruzamentos de zero):
+         Etil: [-1.861e+03, -1.828e+00]  cruzamentos = 0
+         dchi: [-4.845e+00, +6.391e+01]  cruzamentos = 2
+    A2 — G_win (norm. congelada no centro; pre->pos janela) e
+    A3 — taxa movel max de ln A_c na janela:
+         Etil(pos)/Etil  G_win =  -10.04   taxa_movel =   +2.02
+         Etil(pos)/dchi  G_win =   -2.77   taxa_movel =   +3.63
+         dchi(pos)/Etil  G_win =   -6.51   taxa_movel =   +1.80
+         dchi(pos)/dchi  G_win =   -2.69   taxa_movel =   +4.31
+         Etil(vel)/Etil  G_win =  -10.05   taxa_movel =   +2.02
+         Etil(vel)/dchi  G_win =   -2.75   taxa_movel =   +3.63
+         dchi(vel)/Etil  G_win =   -6.95   taxa_movel =   +1.53
+         dchi(vel)/dchi  G_win =   -3.62   taxa_movel =   +4.32
+
+========================================================================
+MODO kh(janela) = 0.3  (k_c = 597.6)
+========================================================================
+    A1 — om2 = W2_ii/K2_ii na janela (min, max, cruzamentos de zero):
+         Etil: [-2.407e+02, -1.550e+00]  cruzamentos = 0
+         dchi: [-1.174e+01, +4.934e+01]  cruzamentos = 1
+    A2 — G_win (norm. congelada no centro; pre->pos janela) e
+    A3 — taxa movel max de ln A_c na janela:
+         Etil(pos)/Etil  G_win =   -8.11   taxa_movel =   +1.24
+         Etil(pos)/dchi  G_win =   +0.36   taxa_movel =   +3.31
+         dchi(pos)/Etil  G_win =   -3.58   taxa_movel =   +3.77
+         dchi(pos)/dchi  G_win =   -0.11   taxa_movel =   +3.14
+         Etil(vel)/Etil  G_win =   -7.90   taxa_movel =   +1.20
+         Etil(vel)/dchi  G_win =   +0.35   taxa_movel =   +3.52
+         dchi(vel)/Etil  G_win =   -4.30   taxa_movel =   +3.25
+         dchi(vel)/dchi  G_win =   +0.39   taxa_movel =   +3.14
+    A4 — halving: max |dG_win| = 0.115 (OK < 0.3)
+
+========================================================================
+VEREDITO AUTOPSIA (criterios pre-declarados no cabecalho)
+========================================================================
+  kh=10: G_win max = -0.51; halving dG = 0.687
+  kh=3: G_win max = +0.01
+  kh=1: G_win max = -2.69
+  kh=0.3: G_win max = +0.39; halving dG = 0.115
+  >>> A4 FALHOU — resolucao insuficiente; sem veredito.

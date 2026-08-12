@@ -149,6 +149,14 @@ detector.
    2-DOF (o "R-8"/CLASS-TDCP da fila). Nenhum enunciado de excesso ou
    de supressão é afirmado antes disso.
 
+## 5b. Adendo (mesma data, sessão continuada): R-7e/f
+
+A saúde interna foi FECHADA em `docs/resultado_r7e_saude_interna.md`:
+Fase B sã (janela de deslocamento estruturalmente limpa; σ/H≈13 era
+artefato; transiente δχ ≤ e^{0.4} autocurável), no-go de classe
+retirado (scan μ×β₁ + fresta, zero violações). O no-go escalar da F1
+está revogado em todos os regimes que o sustentavam; resta o R-8.
+
 ## 6. Fila
 
 1. **R-8 (próximo gate legítimo)**: perturbações acopladas
