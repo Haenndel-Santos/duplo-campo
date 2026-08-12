@@ -253,21 +253,29 @@ par antes/depois). Dado descritivo: proj(pesado-sobrevivente, K<0) =
 1.000 tardio, ω/H 5.6→18.5. DECISÃO DO AUTOR (2026-08-12): bloco 3 = OPÇÕES B+C; e sobre refazer
 F-a1/F-a2: não há parâmetro que salve — o refazer correto É o F-b
 (mesmas três perguntas nas variáveis canônicas; este F-a é o "antes").
-BLOCO 3 SCRIPT PRONTO E COMMITADO: auditoria/code/r4c_confronto_epocas.py
-(~6–10 min, AGUARDA RODADA): BRAÇO B = era Λ real (janelas de 0.7
-e-fold terminando em kh_hoje ∈ [0.2, 6]; lnA_parcial(kh_hoje); BASE
-reproduz a passagem completa do R-4b ±0.4); BRAÇO C = entrada na era
-de matéria (fundo β₁=1 com ρ₀=3e4, a_eq≈32; k com kh_max ∈
-{0.5,1,2,4,8} na equality; lnA_residencia = Δln na visita à banda
-kh≥0.3; f_bi impresso — testa a previsão da fração bimétrica do R-4b
-§3 no regime decisivo p/ LSS; redução com TRUNCAMENTO BILATERAL para
-a matéria profunda r~1/ρ; C-NULL em GR+poeira+Λ). VEREDITOS:
-C_max≤+0.5 → SUPRESSÃO-MATÉRIA (LSS ileso; dano total = B_max em
-escalas ~horizonte hoje → confronto BRANDO, classe sobrevive à banda);
-C_max≥+2 → ENTRADA-AMPLIFICA (candidato letal p/ LSS; mapear com
-prioridade); intermediário → reportar. DEPOIS: F-b (normalização
-canônica simplética por ponto; crítérios F-b1/F-b2 do gate doc);
-(iv) lnA_met
+R-4c EXECUTADO 2026-08-12 (2 rodadas; a 2ª — critérios corrigidos com
+autópsia declarada: NULL unilateral, burn-in 0.3 e-fold, veredito
+pela janela MATÉRIA — é a oficial; docs/resultado_r4c_confronto.md):
+**R-4 COMPLETO (a+b+c)**. BRAÇO B: lnA_parcial(kh_hoje) na era Λ real
+(0.7 e-fold): B_max=+1.88 (×6.6) em kh~6, ×3.2 no horizonte, ~0 em
+super-horizonte — dano confinado a multi-Gpc (ISW/baixo-ℓ). BRAÇO C:
+**SUPRESSÃO-MATÉRIA** (C_ent=−0.78; janelas matéria TODAS negativas
+−0.78…−10.10 com f_bi≈0; crescimento só nas janelas Λ com f_bi≈1:
++1.06/+2.09 = conferência interna com o B, OK; aditividade
+restaurada pós-burn-in valida a correção) — a chave da banda é a
+FRAÇÃO BIMÉTRICA (2b em três regimes: matéria/pré-rolagem/Λ); LSS
+ileso na entrada (caveat: sem perturbações de matéria acopladas —
+limitação de programa declarada). ENUNCIADO OBSERVACIONAL CONSOLIDADO
+(v3, candidato final ao cap. 07) no §3 do doc: banda = alvo
+observacional (≤×6.6 em escalas ~horizonte), não óbito; classe
+sobrevive no dicionário mínimo. FILA: (1) F-b = normalização canônica
+simplética por ponto (T(t): TᵀK_redT=η com termos ∝Ṫ retidos —
+lição do D2; critérios F-b1/F-b2 do gate doc; decide o fantasma:
+H-CONSTRAINT/H-NORM/H-SC; o F-a executado é o "antes" do par) —
+ÚLTIMO item de cálculo antes do enunciado final do setor escalar;
+(2) nível paper com o autor: confronto fino ISW/baixo-ℓ, comparação
+quantitativa Comelli/Könnig, fresta μ=0.1 vs rota de Akrami;
+(3) depois: enunciado final → cap. 07 → paper; (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs

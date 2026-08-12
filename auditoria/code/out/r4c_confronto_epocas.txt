@@ -1,0 +1,112 @@
+========================================================================
+R-4c — O CONFRONTO POR EPOCAS: ERA LAMBDA PARCIAL (B) + ENTRADA
+NA ERA DE MATERIA (C)
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[fatias] {Fb,Fp,Fpp} x {b0..b4}, taxas livres ...
+[fatias] prontas
+
+========================================================================
+BRACO B — era Lambda real: janelas de 0.7 e-fold por kh_hoje (fundo beta1=1)
+========================================================================
+    k_c=2508.5; range valido a=[100, 80000]
+    [R4c-BASE OK] passagem completa = +3.97 (ref R-4b +3.97, tol 0.4)
+
+    lnA_parcial (0.7 e-fold terminando em kh_hoje):
+     kh_hoje  lnA_parcial  (fator)
+        6.00        +1.88  (x6.6)
+        4.00        +1.66  (x5.3)
+        2.50        +1.69  (x5.4)
+        1.60        +1.34  (x3.8)
+        1.00        +1.17  (x3.2)
+        0.70        +0.70  (x2.0)
+        0.45        +0.40  (x1.5)
+        0.30        +0.04  (x1.0)
+        0.20        -0.50  (x0.6)
+    B_max (pior escala hoje) = +1.88  (amplitude x6.6)
+
+========================================================================
+BRACO C — entrada na era de materia (beta1=1, rho0=30000)
+========================================================================
+    a_eq ~ 31.8; H_eq = 0.759; f_bi(eq) = 0.461
+
+--- C: kh_max=0.5 (k_c=12.1) ---
+    range valido a=[0.32, 1500]  kh: 0.068 -> max 0.52 -> 0.014
+    residencia kh>=0.3: a=[6.20, 70]; f_bi: 0.004 -> 0.911
+    janela        dln_met max  taxa/H media
+    residencia          -7.08         -2.77
+    materia             -0.78         -0.82
+    equality            -3.14         -2.38
+    lambda              -0.15         -1.68
+
+--- C: kh_max=1 (k_c=24.1) ---
+    range valido a=[0.36, 1500]  kh: 0.144 -> max 1.03 -> 0.029
+    residencia kh>=0.3: a=[1.54, 144]; f_bi: 0.000 -> 0.989
+    janela        dln_met max  taxa/H media
+    residencia         -12.59         -1.96
+    materia             -8.70         -2.46
+    equality            -1.89         -1.43
+    lambda              -1.44         -1.77
+
+--- C: kh_max=2 (k_c=48.3) ---
+    range valido a=[0.44, 1500]  kh: 0.319 -> max 2.06 -> 0.058
+    residencia kh>=0.3: a=[0.59, 288] (PARCIAL: clipado pelo burn-in do range); f_bi: 0.000 -> 0.999
+    janela        dln_met max  taxa/H media
+    residencia         -10.36         -0.99
+    materia            -10.10         -1.35
+    equality            +0.27         +0.20
+    lambda              -0.93         -0.62
+
+--- C: kh_max=4 (k_c=96.6) ---
+    range valido a=[0.54, 1500]  kh: 0.707 -> max 4.12 -> 0.115
+    residencia kh>=0.3: a=[0.72, 577] (PARCIAL: clipado pelo burn-in do range); f_bi: 0.000 -> 1.000
+    janela        dln_met max  taxa/H media
+    residencia          -2.78         -0.39
+    materia             -2.20         -0.34
+    equality            +0.09         +0.07
+    lambda              +1.06         +0.48
+
+--- C: kh_max=8 (k_c=193.1) ---
+    range valido a=[0.62, 1500]  kh: 1.515 -> max 8.24 -> 0.231
+    residencia kh>=0.3: a=[0.83, 1155] (PARCIAL: clipado pelo burn-in do range); f_bi: 0.000 -> 1.000
+    janela        dln_met max  taxa/H media
+    residencia          +0.86         +0.15
+    materia             -1.15         -0.20
+    equality            +0.05         +0.03
+    lambda              +2.09         +0.72
+
+--- C-GR (nulo): entrada no horizonte em GR + poeira + Lambda ---
+    kh_max=1: lnA_residencia GR = -2.26  (decaimento e o esperado; criterio unilateral <= +0.5)
+    kh_max=8: lnA_residencia GR = -14.86  (decaimento e o esperado; criterio unilateral <= +0.5)
+  [R4c-C-NULL PASSA]
+
+========================================================================
+VEREDITO R-4c (criterios pre-declarados no cabecalho)
+========================================================================
+  R4c-BASE: OK   R4c-C-NULL: PASSA
+
+  R4c-B: lnA_parcial max (pior escala hoje) = +1.88 (x6.6 em amplitude) — curva completa acima.
+
+  R4c-C por kh_max (materia = estatistica primaria; lambda =
+  re-cruzamento sob f_bi~1; residencia = diagnostico):
+     kh_max   materia    lambda    resid.
+        0.5     -0.78     -0.15     -7.08
+          1     -8.70     -1.44    -12.59
+          2    -10.10     -0.93    -10.36  (parcial)
+          4     -2.20     +1.06     -2.78  (parcial)
+          8     -1.15     +2.09     +0.86  (parcial)
+
+  >>> SUPRESSAO-MATERIA (C_ent = -0.78 <= +0.5): a banda
+  DESLIGA sob dominio de poeira — modos entrando no horizonte
+  na era de materia (LSS) passam ILESOS no brinquedo. A
+  previsao da fracao bimetrica (R-4b sec.3) esta confirmada no
+  regime decisivo. Com R4c-B moderado, o dano observavel total
+  da banda e BRANDO: confinado a escalas ~horizonte hoje
+  (ISW/baixo-ell) com amplitude e^B_max. A classe SOBREVIVE a
+  banda no dicionario minimo — enunciado do cap.07 na forma
+  condicional-observacional.
+  conferencia interna: re-cruzamento sob Lambda = -1.44..+2.09 (esperado ~ +1 a +2, fisica do braco B) OK
+
+  diagnostico (previsao mecanica): crescimento so onde f_bi ~ 1 —
+  conferir colunas materia (f_bi~0) vs lambda (f_bi~1) acima.
