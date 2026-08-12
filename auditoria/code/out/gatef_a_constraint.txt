@@ -1,0 +1,135 @@
+========================================================================
+GATE F-a — A DIRECAO K<0 E VINCULO DISFARCADO? (+ F-a3: a banda)
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[fatias] {Fb,Fp,Fpp} x {b0..b4}, taxas livres ...
+[fatias] prontas
+
+========================================================================
+FUNDO beta-constante beta1=1
+========================================================================
+    H(100)=0.5574 -> k_c=2508.5 (kh 45 -> 0.056)
+
+    F-a2/ADIA — hierarquia e identidade ao longo do fluxo:
+           a      kh  |om_h|/H         R |<v_h,v_c>|
+         150   30.00      30.0       2.2       0.000
+         284   15.86      15.9       1.6       0.000
+         537    8.39       8.4       1.1       0.000
+        1015    4.43       5.6       1.0       1.000
+        1920    2.34       5.0       1.0       1.000
+        3633    1.24       6.2       1.0       1.000
+        6871    0.65       9.4       1.0       1.000
+       12995    0.35      13.7       1.0       1.000
+       24585    0.18      16.8       1.0       1.000
+       46499    0.10      18.1       1.0       1.000
+       74994    0.06      18.5       1.0       1.000
+    hierarquia R>=10 a partir de a~nan (0/40 marcos); R_final=1
+    [F-a2 NAO] mediana |<v_h,v_c>| = nan (criterio > 0.9, marcos com R>=10)
+    [F-a1-ADIA NAO] R_final = 1 (criterio >= 100)
+
+    evoluindo conjuntos de ICs (6 gen + 4 sup + 2 fake + 1 des)...
+
+    [F-a1-SUP NAO] mediana delta_rel (4 ICs na superficie, marcos R>=10): nan nan nan nan  (criterio < 0.1)
+    [F-a1-PODER FALHOU] mediana delta_rel da superficie FALSA (2 ICs): nan nan  (criterio >= 0.3 — o teste tem que reprovar a direcao leve)
+    diagnostico: delta_rel das ICs GENERICAS (colapso ao longo do fluxo): nan nan nan nan nan nan
+    [F-a-DESAC] fracao leve max da IC pura-c: nan (esperado < 0.2; diagnostico)
+    perfis delta_rel (IC 1 de cada conjunto; ~8 marcos):
+           a   sup(c)     fake   gen(c)
+         150    0.000    0.000    1.776
+         333    0.000    0.000    4.228
+         738    0.000    0.000    0.589
+        1637    0.000    0.000    0.870
+        3633    0.000    0.000    0.244
+        8057    0.000    0.000    1.333
+       17872    0.000    0.000    1.533
+       39651    0.000    0.000    1.225
+
+    [F-a3-BASE OK] lnA_passagem generico = +3.97 (ref R-4b +3.97, tol 0.4)
+    lnA_passagem na SUPERFICIE = +3.98
+    [F-a3 => BANDA-FISICA]
+    forma comparada (taxa met por faixa de kh, max ICs):
+    janela           gen     sup
+    kh40-20        +4.13   +1.47
+    kh20-10        +2.33   +1.66
+    kh10-6         +3.03   +2.82
+    kh6-4          +1.91   +1.51
+    kh4-2.5        +2.62   +0.39
+    kh2.5-1.6      +2.61   +2.61
+    kh1.6-1        +1.49   +0.58
+    kh1-0.7        +2.44   +2.45
+    kh0.7-0.45     +0.78   +0.00
+    kh0.45-0.3     -0.67   +0.00
+    kh0.3-0.2      +1.60   +0.62
+    kh0.2-0.1      +0.98   +0.00
+
+========================================================================
+FUNDO beta-constante beta1=4.47
+========================================================================
+    H(100)=1.1253 -> k_c=5064.0 (kh 45 -> 0.056)
+
+    F-a2/ADIA — hierarquia e identidade ao longo do fluxo:
+           a      kh  |om_h|/H         R |<v_h,v_c>|
+         150   30.00      30.0       2.2       0.000
+         284   15.86      15.9       1.6       0.000
+         537    8.39       8.4       1.1       0.000
+        1015    4.43       5.6       1.0       1.000
+        1920    2.34       4.5       1.0       1.000
+        3633    1.24       5.2       1.4       1.000
+        6871    0.65       7.2       1.0       1.000
+       12995    0.35       9.6       1.0       1.000
+       24585    0.18      10.7       1.0       1.000
+       46499    0.10      11.1       1.0       1.000
+       74994    0.06      11.2       1.0       1.000
+    hierarquia R>=10 a partir de a~nan (0/40 marcos); R_final=1
+    [F-a2 NAO] mediana |<v_h,v_c>| = nan (criterio > 0.9, marcos com R>=10)
+    [F-a1-ADIA NAO] R_final = 1 (criterio >= 100)
+
+    evoluindo conjuntos de ICs (6 gen + 4 sup + 2 fake + 1 des)...
+
+    [F-a1-SUP NAO] mediana delta_rel (4 ICs na superficie, marcos R>=10): nan nan nan nan  (criterio < 0.1)
+    [F-a1-PODER FALHOU] mediana delta_rel da superficie FALSA (2 ICs): nan nan  (criterio >= 0.3 — o teste tem que reprovar a direcao leve)
+    diagnostico: delta_rel das ICs GENERICAS (colapso ao longo do fluxo): nan nan nan nan nan nan
+    [F-a-DESAC] fracao leve max da IC pura-c: nan (esperado < 0.2; diagnostico)
+    perfis delta_rel (IC 1 de cada conjunto; ~8 marcos):
+           a   sup(c)     fake   gen(c)
+         150    0.000    0.000    2.594
+         333    0.000    0.000    1.461
+         738    0.000    0.000    0.821
+        1637    0.000    0.000    0.035
+        3633    0.000    0.000    1.100
+        8057    0.000    0.000    3.504
+       17872    0.000    0.000    1.373
+       39651    0.000    0.000    0.563
+
+    [F-a3-BASE OK] lnA_passagem generico = +3.62 (ref R-4b +3.62, tol 0.4)
+    lnA_passagem na SUPERFICIE = +3.15
+    [F-a3 => BANDA-FISICA]
+    forma comparada (taxa met por faixa de kh, max ICs):
+    janela           gen     sup
+    kh40-20        +3.20   +1.19
+    kh20-10        +2.82   +1.34
+    kh10-6         +3.39   +3.37
+    kh6-4          +2.13   +1.67
+    kh4-2.5        +3.16   +0.16
+    kh2.5-1.6      +2.78   +2.80
+    kh1.6-1        +2.81   +2.08
+    kh1-0.7        +3.45   +0.00
+    kh0.7-0.45     +2.70   +2.67
+    kh0.45-0.3     +0.55   +0.00
+    kh0.3-0.2      -1.02   +0.00
+    kh0.2-0.1      -0.28   +0.00
+
+========================================================================
+VEREDITO GATE F-a (criterios pre-declarados no cabecalho)
+========================================================================
+  beta1=1: F-a2 NAO (proj nan); ADIA NAO; SUP NAO (PODER FALHOU); F-a3 BANDA-FISICA (gen +3.97 / sup +3.98; BASE ok)
+  beta1=4.47: F-a2 NAO (proj nan); ADIA NAO; SUP NAO (PODER FALHOU); F-a3 BANDA-FISICA (gen +3.62 / sup +3.15; BASE ok)
+
+  >>> PODER FALHOU: o teste de superficie nao discrimina a
+  direcao errada — NAO INTERPRETAR SUP; rever a construcao
+  antes de qualquer ramo do gate.
+
+  F-a3 agregado: beta1=1: BANDA-FISICA; beta1=4.47: BANDA-FISICA
+  (BANDA-FISICA nos dois -> bloco 3 em terreno firme;
+  BANDA-OFF-SURFACE em qualquer um -> rever R-4 antes do bloco 3.)

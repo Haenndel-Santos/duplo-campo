@@ -233,35 +233,30 @@ IC); o próprio GR tem positivos de janela até +1.25 no freeze-out.
 POUSADO modula: supressão pré/durante condensação (−0.21 em
 a_cross=500, U₀ domina H²; vale +1.57 em 1600) e realce no anel
 (+4.80 em 4000; bursts época-fixos +8.8/+11.4), convergindo a
-~+4.0–4.5 no pousado profundo. negK=1 em tudo. SEQUÊNCIA DECIDIDA PELO AUTOR (2026-08-12): GATE F-a ANTES do bloco 3
-— porque o F-a pode qualificar a banda (o instrumento evolui 3 dof e
-a expectativa do programa é 2 pós-secundária: se a banda viver na
-componente fora-da-superfície do vínculo, o confronto observacional
-herdaria o erro), e o F-a3 certifica a banda de graça. SCRIPT PRONTO
-E COMMITADO: auditoria/code/gatef_a_constraint.py (~5–9 min, AGUARDA
-RODADA). INTERPRETAÇÃO OPERACIONAL DECLARADA no cabeçalho (autor pode
-vetar): as equações dos multiplicadores são resolvidas EXATAMENTE
-pela redução (consistência temporal automática); o conteúdo testável
-de H-CONSTRAINT no quadrático-dinâmico é a EXPULSÃO DINÂMICA — a
-direção K<0 é rígida (ω→∞, R-2) e o fluxo colapsa na superfície
-adiabática dela (contagem efetiva 3→2). Critérios: F-a2 identidade
-|⟨v_h,v_c⟩|>0.9 (construções independentes: QEP vs assinatura-K);
-F-a1-ADIA hierarquia R≥100 crescente; F-a1-SUP superfície
-quasi-invariante (δ_rel<0.1 nas 4 ICs sobre a superfície); F-a1-PODER
-abortivo (direção leve falsa TEM que reprovar, δ≥0.3); F-a-DESAC
-diagnóstico; F-a3 = lnA_passagem na superfície vs genérico (BASE
-reproduz R-4b ±0.4): |Δ|<0.5 → BANDA FÍSICA (bloco 3 em terreno
-firme) / lnA_sup<0.5·lnA_gen → BANDA OFF-SURFACE (rever R-4 antes de
-qualquer confronto). Ramos: tudo SIM nos dois fundos (β₁=1 e 4.47) →
-H-CONSTRAINT dinâmica confirmada, fantasma = artefato de
-representação, gate fecha (honestidade: versão adiabática-dinâmica,
-não teorema hamiltoniano — F-b vira opcional); qualquer NÃO → F-b.
-DEPOIS DO F-a: BLOCO 3 DO R-4 = DECISÃO DO AUTOR (dicionário de
-épocas modelo-brinquedo → história cósmica; confronto e^lnA vs
-vínculos Comelli/Könnig/Akrami; notas de desenho da sessão: a era Λ
-real tem ~0.7 e-fold → lnA real é integral PARCIAL p/ modos saindo;
-e o cenário modos-ENTRANDO na era de matéria nunca foi sondado —
-braço com ρ₀ grande; opções A/B/C, recomendação B+C); (iv) lnA_met
+~+4.0–4.5 no pousado profundo. negK=1 em tudo. SEQUÊNCIA DECIDIDA PELO AUTOR (2026-08-12): Gate F-a ANTES do bloco 3
+(o F-a3 certifica a banda contra a dúvida do vínculo). GATE F-a
+EXECUTADO 2026-08-12 (docs/resultado_gatef_a.md): (i) F-a3 ENTREGOU —
+**BANDA-FÍSICA nos dois fundos** (lnA na superfície do candidato =
+genérico: 3.98 vs 3.97 em β₁=1; 3.15 vs 3.62 em 4.47, marginal
+Δ=0.47; BASE reproduz R-4b ao centésimo) → a banda NÃO é alimentada
+pela componente fora-da-superfície da direção K<0 → BLOCO 3 LIBERADO;
+(ii) F-a1/F-a2 INCONCLUSIVOS POR INSTRUMENTO — o portão abortivo
+PODER disparou como desenhado (nenhuma conclusão falsa): o QEP
+agrupado NÃO vê o modo rígido verdadeiro (o ω²~10⁹ do R-2 nunca
+aparece; sobrevivente ω/H≤18.5 com R≈1) e a construção de superfície
+na base própria de K_red comóvel herda a POLUIÇÃO DE NORMALIZAÇÃO do
+R-2 §2 (δ_rel≡0.000 na superfície real E na falsa; genéricas O(1)) —
+autovetores escala-dominados, teste sem dente. Saída pré-declarada:
+H-CONSTRAINT NÃO DECIDIDA → **F-b necessário** (normalização canônica
+simplética por ponto com termos ∝Ṫ retidos; o F-a vira o "antes" do
+par antes/depois). Dado descritivo: proj(pesado-sobrevivente, K<0) =
+1.000 tardio, ω/H 5.6→18.5. FILA ATUAL: (1) BLOCO 3 DO R-4 = DECISÃO
+DO AUTOR (dicionário de épocas modelo-brinquedo → história cósmica;
+confronto e^lnA vs vínculos Comelli/Könnig/Akrami; notas de desenho:
+a era Λ real tem ~0.7 e-fold → lnA real é integral PARCIAL p/ modos
+saindo; o cenário modos-ENTRANDO na era de matéria nunca foi sondado
+— braço com ρ₀ grande; opções A/B/C, recomendação B+C); (2) F-b;
+(iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs
