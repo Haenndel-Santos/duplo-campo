@@ -54,24 +54,41 @@ limitacao declarada do programa desde o D2: rho so no fundo):
     horizonte NAO amplifica em GR (esperado |lnA_residencia| <= 0.5).
     FALHA -> nao interpretar C.
 
-CRITERIOS PRE-DECLARADOS:
+2a RODADA (2026-08-12): criterios corrigidos apos a autopsia da 1a —
+(i) o NULL era |lnA|<=0.5, mas o espectador GR DEVE decair numa
+residencia de muitos e-folds (1a rodada: -2.26/-9.36, decaimento
+puro): o criterio fisico e UNILATERAL (ausencia de crescimento);
+(ii) nos bracos PARCIAIS a residencia comecava na borda da grade e
+capturava o transiente de acomodacao das ICs unitarias (prova na 1a
+rodada: residencia +5.49 > soma das janelas +1.12 — impossivel p/
+janelas contiguas do mesmo IC): agora TODAS as janelas do braco C
+respeitam um burn-in de 0.3 e-fold do inicio da grade valida; (iii) a
+estatistica primaria da pergunta ("a entrada na era de materia
+amplifica?") e a janela MATERIA (f_bi~0), nao a residencia inteira
+(que mistura o re-cruzamento sob Lambda — fisica ja medida no B).
+1a rodada preservada em out/r4c_confronto_epocas_rodada1.txt.
+
+CRITERIOS PRE-DECLARADOS (v2):
   R4c-BASE: passagem completa do braco B = +3.97 +- 0.4 (continuidade
       com o R-4b). FALHA -> nao interpretar B.
   R4c-B: curva lnA_parcial(kh_hoje) — MEDIDA (sem passa/falha); o
       numero p/ o enunciado e o maximo da curva (pior escala hoje).
-  R4c-C-NULL: bracos GR: |lnA_residencia| <= 0.5. FALHA -> abortar C.
-  R4c-C (a previsao da fracao bimetrica, decidida):
-      max_k lnA_residencia <= +0.5 -> SUPRESSAO-MATERIA: a banda
-          desliga sob dominio de poeira — LSS passa ILESO pela
-          entrada no brinquedo; o dano observavel total da banda fica
-          confinado a era acelerada (R4c-B, pequeno) -> o confronto
-          observacional e BRANDO e a classe sobrevive a banda;
-      max_k lnA_residencia >= +2 -> ENTRADA-AMPLIFICA: candidato
-          LETAL para LSS — levar aos vinculos com prioridade maxima
-          (mapear em k/celulas antes de qualquer enunciado);
-      intermediario -> reportar curva e decidir mapeamento.
-  Diagnostico: correlacao lnA_residencia vs f_bi na residencia
-      (a previsao mecanica: lnA cresce com f_bi).
+  R4c-C-NULL (unilateral): bracos GR: lnA_residencia <= +0.5 (sem
+      crescimento espurio; decaimento e o esperado). FALHA -> abortar.
+  R4c-C (a previsao da fracao bimetrica, decidida na janela MATERIA):
+      C_ent = max_k dln_met(janela materia, f_bi ~ 0):
+      C_ent <= +0.5 -> SUPRESSAO-MATERIA: a banda desliga sob dominio
+          de poeira — LSS passa ILESO pela entrada no brinquedo; o
+          dano observavel total da banda fica confinado a era
+          acelerada (R4c-B) -> confronto BRANDO, a classe sobrevive;
+      C_ent >= +2 -> ENTRADA-AMPLIFICA: candidato LETAL para LSS —
+          mapear em k/celulas com prioridade maxima;
+      intermediario -> reportar.
+      Secundario: dln(lambda) por braco = re-cruzamento sob f_bi~1
+      (deve ser POSITIVO ~ +1 a +2, consistente com o B — conferencia
+      interna); residencia inteira vira DIAGNOSTICO (nao veredito).
+  Diagnostico: correlacao dos dln com f_bi (a previsao mecanica:
+      cresce so onde f_bi ~ 1).
 
 Requer sympy, numpy, scipy. ~6-10 min.
 Uso (raiz do repo, venv ativo):
@@ -487,16 +504,18 @@ for khm in KH_MAXES:
         continue
     i_up = int(np.argmax(acima))
     i_dn = int(len(khs) - np.argmax(acima[::-1]) - 1)
-    a_up = aas_t[max(i_up, 1)]
+    a_burn = aas_t[0] * np.exp(0.3)
+    a_up = max(aas_t[max(i_up, 1)], a_burn)
     a_dn = aas_t[min(i_dn, len(aas_t) - 2)]
-    parcial = " (PARCIAL: comeca no limite do range)" if i_up == 0 else ""
+    parcial = (" (PARCIAL: clipado pelo burn-in do range)"
+               if aas_t[i_up] < a_burn else "")
     fb_up = fundo_bconst(a_up, 1.0, RHO0_C)['fbi']
     fb_dn = fundo_bconst(a_dn, 1.0, RHO0_C)['fbi']
     say(f"    residencia kh>={KH_RES:g}: a=[{a_up:.2f}, {a_dn:.0f}]"
         f"{parcial}; f_bi: {fb_up:.3f} -> {fb_dn:.3f}")
     jans = [("residencia", a_up, a_dn)]
-    if a_up * 1.05 < 0.5 * a_eq:
-        jans.append(("materia", a_up * 1.05, 0.5 * a_eq))
+    if max(a_up * 1.05, a_burn) < 0.5 * a_eq:
+        jans.append(("materia", max(a_up * 1.05, a_burn), 0.5 * a_eq))
     jans.append(("equality", 0.5 * a_eq, min(2 * a_eq, a_dn)))
     if 2 * a_eq < a_dn:
         jans.append(("lambda", 2 * a_eq, a_dn))
@@ -507,8 +526,10 @@ for khm in KH_MAXES:
         Hj = Hs_t[int(np.argmin(np.abs(aas_t - np.sqrt(lo * hi))))]
         tv = dln_max(tx, nome)
         say(f"    {nome:<12} {v:+12.2f} {tv/Hj if np.isfinite(tv) else float('nan'):+13.2f}")
-    resC[khm] = dict(res=dln_max(dl, "residencia"), fb=(fb_up, fb_dn),
-                     parcial=(i_up == 0))
+    resC[khm] = dict(res=dln_max(dl, "residencia"),
+                     mat=dln_max(dl, "materia"),
+                     lam=dln_max(dl, "lambda"),
+                     fb=(fb_up, fb_dn), parcial=(aas_t[i_up] < a_burn))
 
 # ------------------------------------------------------------------
 # BRACO C-GR — nulo da entrada
@@ -559,13 +580,15 @@ for khm in (1.0, 8.0):
     acima = khs >= KH_RES
     i_up = int(np.argmax(acima))
     i_dn = int(len(khs) - np.argmax(acima[::-1]) - 1)
-    jans = [("residencia", aas_t[max(i_up, 1)],
+    a_burn_g = aas_t[0] * np.exp(0.3)
+    jans = [("residencia", max(aas_t[max(i_up, 1)], a_burn_g),
              aas_t[min(i_dn, len(aas_t) - 2)])]
     dl, _ = evolui(Kr, Cr, Wr, Krd, Crd, Ns_g, Hs_g, jans,
                    met_idx=None, nics=2)
     v = dln_max(dl, "residencia", idx=[0, 1])
-    say(f"    kh_max={khm:g}: lnA_residencia GR = {v:+.2f}")
-    if not (np.isfinite(v) and abs(v) <= 0.5):
+    say(f"    kh_max={khm:g}: lnA_residencia GR = {v:+.2f}  "
+        "(decaimento e o esperado; criterio unilateral <= +0.5)")
+    if not (np.isfinite(v) and v <= 0.5):
         ok_cnull = False
 say(f"  [R4c-C-NULL {'PASSA' if ok_cnull else 'FALHA — nao interpretar C'}]")
 
@@ -582,38 +605,46 @@ say("")
 say(f"  R4c-B: lnA_parcial max (pior escala hoje) = {B_max:+.2f} "
     f"(x{np.exp(B_max):.1f} em amplitude) — curva completa acima.")
 say("")
-say("  R4c-C: lnA_residencia por kh_max:")
+say("  R4c-C por kh_max (materia = estatistica primaria; lambda =")
+say("  re-cruzamento sob f_bi~1; residencia = diagnostico):")
+say(f"    {'kh_max':>7} {'materia':>9} {'lambda':>9} {'resid.':>9}")
 for khm, r in resC.items():
-    say(f"    kh_max={khm:4g}: {r['res']:+.2f}"
-        + ("  (parcial)" if r['parcial'] else "")
-        + f"   f_bi na residencia: {r['fb'][0]:.3f}->{r['fb'][1]:.3f}")
-vsC = [r['res'] for r in resC.values() if np.isfinite(r['res'])]
-C_max = max(vsC) if vsC else float('nan')
+    say(f"    {khm:7.2g} {r['mat']:+9.2f} {r['lam']:+9.2f} "
+        f"{r['res']:+9.2f}"
+        + ("  (parcial)" if r['parcial'] else ""))
+vsE = [r['mat'] for r in resC.values() if np.isfinite(r['mat'])]
+C_ent = max(vsE) if vsE else float('nan')
+vsL = [r['lam'] for r in resC.values() if np.isfinite(r['lam'])]
 say("")
-if not ok_cnull or not resC:
-    say("  >>> braco C sem interpretacao (NULL falhou ou sem bracos")
-    say("  validos) — diagnosticar antes de qualquer enunciado.")
-elif np.isfinite(C_max) and C_max <= 0.5:
-    say(f"  >>> SUPRESSAO-MATERIA (C_max = {C_max:+.2f} <= +0.5): a banda")
+if not ok_cnull or not resC or not np.isfinite(C_ent):
+    say("  >>> braco C sem interpretacao (NULL falhou ou sem janelas")
+    say("  materia validas) — diagnosticar antes de qualquer enunciado.")
+elif C_ent <= 0.5:
+    say(f"  >>> SUPRESSAO-MATERIA (C_ent = {C_ent:+.2f} <= +0.5): a banda")
     say("  DESLIGA sob dominio de poeira — modos entrando no horizonte")
     say("  na era de materia (LSS) passam ILESOS no brinquedo. A")
     say("  previsao da fracao bimetrica (R-4b sec.3) esta confirmada no")
-    say("  regime decisivo. Com R4c-B pequeno, o dano observavel total")
+    say("  regime decisivo. Com R4c-B moderado, o dano observavel total")
     say("  da banda e BRANDO: confinado a escalas ~horizonte hoje")
     say("  (ISW/baixo-ell) com amplitude e^B_max. A classe SOBREVIVE a")
     say("  banda no dicionario minimo — enunciado do cap.07 na forma")
     say("  condicional-observacional.")
-elif np.isfinite(C_max) and C_max >= 2.0:
-    say(f"  >>> ENTRADA-AMPLIFICA (C_max = {C_max:+.2f} >= +2): modos de")
+    if vsL:
+        rotl = ("(esperado ~ +1 a +2, fisica do braco B) OK"
+                if max(vsL) > 0.5 else "— abaixo do esperado; reportar")
+        say(f"  conferencia interna: re-cruzamento sob Lambda = "
+            f"{min(vsL):+.2f}..{max(vsL):+.2f} {rotl}")
+elif C_ent >= 2.0:
+    say(f"  >>> ENTRADA-AMPLIFICA (C_ent = {C_ent:+.2f} >= +2): modos de")
     say("  LSS sao amplificados na entrada — candidato LETAL. Mapear em")
     say("  k/celulas e levar aos vinculos com prioridade maxima antes")
     say("  de qualquer enunciado.")
 else:
-    say(f"  >>> intermediario (C_max = {C_max:+.2f}): reportar curva e")
-    say("  decidir mapeamento fino com o autor.")
+    say(f"  >>> intermediario (C_ent = {C_ent:+.2f}): reportar e decidir")
+    say("  mapeamento fino com o autor.")
 say("")
-say("  diagnostico (previsao mecanica): lnA_residencia deve crescer com")
-say("  f_bi — conferir tabela acima (f_bi minusculo na materia).")
+say("  diagnostico (previsao mecanica): crescimento so onde f_bi ~ 1 —")
+say("  conferir colunas materia (f_bi~0) vs lambda (f_bi~1) acima.")
 
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
 with open(os.path.join(HERE, "out", "r4c_confronto_epocas.txt"),
