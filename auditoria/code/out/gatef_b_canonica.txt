@@ -1,0 +1,97 @@
+========================================================================
+GATE F-b (v2) — QUADRO CANONICO COMO DIAGNOSTICO LOCAL: a energia
+invariante da direcao K<0
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[fatias] {Fb,Fp,Fpp} x {b0..b4}, taxas livres ...
+[fatias] prontas
+
+V-EQUIV-GR — normalizacao canonica em GR (1 dof):
+  [V-EQUIV-GR OK] max err = 3.184e-05 (criterio < 0.05)
+
+========================================================================
+FUNDO beta-constante beta1=1
+========================================================================
+    [reducao] ok; construindo o quadro canonico ...
+    [V-ETA OK] max|T'KT - eta| = 1.11e-15 (criterio < 1e-8)
+    [V-RES OK] max mediana do residuo canonico nos marcos = 0.001 (criterio < 0.1)
+
+    F-b1/F-b2 — QEP canonico nos marcos:
+           a      kh     om0/H    R_can |v_h[0]|^2    s_0  sig_can/H    eps_W
+         150   30.00      30.0      2.9      0.000  +1.00       7.43    2.003
+         284   15.86      15.8      2.1      0.000  +1.00       5.46    2.013
+         537    8.39       8.3      1.5      0.000  +1.00       4.07    2.045
+        1015    4.43       4.4      1.0      0.477  +0.05       3.13    2.172
+        1920    2.34       3.7      1.0      0.451  +0.10       2.43    2.776
+        3633    1.24       3.6      1.0      0.380  +0.24       1.25    2.354
+        6871    0.65       7.3      3.8      0.910  -0.82       0.92    1.314
+       12995    0.35      10.4      7.2      0.978  -0.96       1.08    0.648
+       24585    0.18      11.7      9.2      0.987  -0.97       1.12    0.170
+       46499    0.10      12.1      9.8      0.988  -0.98       1.13    0.032
+       74994    0.06      12.1      9.9      0.989  -0.98       1.13    0.010
+    [F-b1a NAO] hierarquia de vinculo: R_final = 10 (>=100); marcos com R>=10: 0/40
+    [F-b1b SIM] conteudo x0 do pesado nos marcos ASSENTADOS (eps_W<0.3: 9 marcos): mediana = 0.988 (>0.9)
+    [F-b-NORMA] MODO PROPAGANTE COM NORMA-ETA NEGATIVA em 9 entradas de marcos assentados; ex.: a=20964 |om|/H=11.5 s=-0.97; a=24585 |om|/H=11.7 s=-0.97; a=28831 |om|/H=11.9 s=-0.98
+
+    [F-b1c-SUP SIM] mediana delta_rel (4 ICs na superficie de x0, desde a~20964): 0.000 0.004 0.000 0.013 (<0.1)
+    [F-b1c-PODER FALHOU] superficie FALSA (eixo leve x2): 0.000 0.000 (>=0.3 — tem que reprovar)
+    [F-b-DESAC] fracao leve max da IC pura-x0: 0.766 (<0.2 esperado; diagnostico)
+
+    F-b2 — escala invariante: omega_0/H mediana assentada = 12.0; final = 12.1; sqrt|W_can[0,0]|/H = 18.0  (escalas: H=1, m_T/H~3.5, Lambda_3~O(1))
+    [CONF-BANDA SIM] sigma_can tardio = 1.13 vs taxa real da banda +0.93 (|dif|<0.5); eps_W tardio = 0.040
+
+========================================================================
+FUNDO beta-constante beta1=4.47
+========================================================================
+    [reducao] ok; construindo o quadro canonico ...
+    [V-ETA OK] max|T'KT - eta| = 1.11e-15 (criterio < 1e-8)
+    [V-RES OK] max mediana do residuo canonico nos marcos = 0.001 (criterio < 0.1)
+
+    F-b1/F-b2 — QEP canonico nos marcos:
+           a      kh     om0/H    R_can |v_h[0]|^2    s_0  sig_can/H    eps_W
+         150   30.00      30.0      2.9      0.000  +1.00       7.30    2.003
+         284   15.86      15.8      2.1      0.000  +1.00       5.35    2.009
+         537    8.39       8.3      1.5      0.000  +1.00       3.98    2.034
+        1015    4.43       4.2      1.0      0.589  -0.18       3.03    2.123
+        1920    2.34       3.5      1.0      0.732  -0.46       2.34    2.502
+        3633    1.24       3.2      1.0      0.408  +0.18       1.45    3.048
+        6871    0.65       5.2      2.8      0.875  -0.75       1.26    1.071
+       12995    0.35       6.8      4.9      0.964  -0.93       1.38    0.383
+       24585    0.18       7.3      5.2      0.974  -0.95       1.41    0.099
+       46499    0.10       7.4      5.2      0.975  -0.95       1.42    0.025
+       74994    0.06       7.4      5.2      0.975  -0.95       1.42    0.009
+    [F-b1a NAO] hierarquia de vinculo: R_final = 5 (>=100); marcos com R>=10: 0/40
+    [F-b1b SIM] conteudo x0 do pesado nos marcos ASSENTADOS (eps_W<0.3: 11 marcos): mediana = 0.975 (>0.9)
+    [F-b-NORMA] MODO PROPAGANTE COM NORMA-ETA NEGATIVA em 11 entradas de marcos assentados; ex.: a=15240 |om|/H=7.0 s=-0.94; a=17872 |om|/H=7.1 s=-0.94; a=20964 |om|/H=7.2 s=-0.95
+
+    [F-b1c-SUP SIM] mediana delta_rel (4 ICs na superficie de x0, desde a~15240): 0.000 0.008 0.000 0.026 (<0.1)
+    [F-b1c-PODER FALHOU] superficie FALSA (eixo leve x2): 0.000 0.000 (>=0.3 — tem que reprovar)
+    [F-b-DESAC] fracao leve max da IC pura-x0: 0.961 (<0.2 esperado; diagnostico)
+
+    F-b2 — escala invariante: omega_0/H mediana assentada = 7.4; final = 7.4; sqrt|W_can[0,0]|/H = 10.7  (escalas: H=1, m_T/H~3.5, Lambda_3~O(1))
+    [CONF-BANDA SIM] sigma_can tardio = 1.41 vs taxa real da banda +1.06 (|dif|<0.5); eps_W tardio = 0.030
+
+========================================================================
+VEREDITO GATE F-b v2 (criterios pre-declarados no cabecalho)
+========================================================================
+  V-EQUIV-GR: OK
+  beta1=1: ETA ok; RES ok (0.001); b1a NAO (R_fim 10); b1b SIM (0.99); b1c-SUP SIM (PODER FALHOU); neg-prop 9; om0/H ~ 12.0; CONF-BANDA SIM (sig_can 1.13, epsW 0.040)
+  beta1=4.47: ETA ok; RES ok (0.001); b1a NAO (R_fim 5); b1b SIM (0.97); b1c-SUP SIM (PODER FALHOU); neg-prop 11; om0/H ~ 7.4; CONF-BANDA SIM (sig_can 1.41, epsW 0.030)
+
+  >>> SEM hierarquia de vinculo (H-CONSTRAINT cai em coordenadas
+  validas — o 'quer ser vinculo' do R-2 era artefato da base
+  comovel) E existe MODO PROPAGANTE COM NORMA-ETA NEGATIVA a
+  omega_0 ~ 7-12 H (invariante), acima de m_T e Lambda_3 mas nao
+  alem de todo alcance: FANTASMA NO ESPECTRO LINEAR CANONICO.
+  Ramos restantes do gate: F-c (estimativa de interacoes/decay)
+  ou fronteira declarada no paper — DECISAO DO AUTOR (o gate doc
+  preve ambos). Nota: com CONF-BANDA, o congelado canonico e
+  arbitro legitimo — este e um enunciado de espectro, nao de
+  instabilidade dinamica linear (a evolucao real e estavel no
+  IR profundo e transiente na banda — D2/R-1/R-4).
+
+  CONF-BANDA (reabilitacao do congelado CANONICO): ver acima — se
+  SIM nos dois fundos, o aviso metodologico do paper ganha
+  resolucao: congelado comovel NAO e arbitro (D2), congelado
+  CANONICO (K constante, W assentada) E — e preve a banda.

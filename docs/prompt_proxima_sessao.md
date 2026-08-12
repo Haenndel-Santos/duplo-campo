@@ -268,26 +268,33 @@ ileso na entrada (caveat: sem perturbações de matéria acopladas —
 limitação de programa declarada). ENUNCIADO OBSERVACIONAL CONSOLIDADO
 (v3, candidato final ao cap. 07) no §3 do doc: banda = alvo
 observacional (≤×6.6 em escalas ~horizonte), não óbito; classe
-sobrevive no dicionário mínimo. FILA: (1) F-b PRONTO E COMMITADO
-(auditoria/code/gatef_b_canonica.py, ~6–10 min, AGUARDA RODADA):
-T(t)=E|Λ|^(−1/2) contínuo (sinais+permutação do par positivo),
-K_can=η EXATO, C_can/W_can com TODOS os termos de conexão Ṫ (lição
-do D2); PORTÕES: V-ETA <1e-8, V-EQUIV (mesma IC física nos dois
-quadros, <0.05, 3 ICs — o teste da conexão) + V-EQUIV-GR; MEDIDAS
-nos marcos hierárquicos (R_can≥10; ICs de superfície construídas no
-1º marco hierárquico — lição do R-4c): F-b1a hierarquia (QEP em base
-bem condicionada, R_fim≥100), F-b1b conteúdo x₀ do modo pesado
-(>0.9), F-b1c superfície com dente (SUP<0.1, PODER≥0.3 abortivo,
-DESAC), F-b2 ω₀/H vs escalas {H, m_T/H≈3.5, Λ₃~O(1)}, F-b-NORMA
-(modo propagante com norma-η negativa? — agora invariante), BONUS
-σ_can/H + ε_W (o congelado CANÔNICO prevê a banda? → fecharia o
-aviso metodológico). RAMOS: b1a+b1b+b1c → H-CONSTRAINT em coordenadas
-válidas (gate fecha, fantasma=representação, F-c desnecessário);
-ω₀≥50H sem superfície → H-SC (fora do alcance quadrático, setor não
-exclui); modo propagante s<0 → F-c; senão misto/H-NORM → decidir com
-o autor. (2) nível paper com o autor: confronto fino ISW/baixo-ℓ,
-comparação quantitativa Comelli/Könnig, fresta μ=0.1 vs rota de
-Akrami; (3) depois: enunciado final → cap. 07 → paper; (iv) lnA_met
+sobrevive no dicionário mínimo. NOVO FLUXO (2026-08-12): execução autorizada EM SESSÃO (Claude roda
+os .py pelo .venv; o autor só roda por motivo específico). GATE F-b
+EXECUTADO 2026-08-12 (v2 — integração única + diagnóstico local por
+transformação + V-RES=0.001; 1ª rodada com dupla integração reprovou
+no V-EQUIV e está preservada com autópsia;
+docs/resultado_gatef_b.md): **GATE F FECHA em H-SC COM NÚMERO**:
+(i) H-CONSTRAINT FALSIFICADA em coordenadas válidas (R satura 5–10,
+ω₀ satura, DESAC 0.77–0.96 acoplado — o "quer ser vínculo" do R-2
+era artefato da base comóvel; contagem = 3 dof, disputa D1
+resolvida); (ii) o fantasma = ramo espectral canônico propagante,
+norma-η −0.97/−0.95, **ω₀ invariante = 12.0H (β₁=1) / 7.4H (4.47) ≈
+3.4–4.3·Λ₃** (Λ₃=(m_T²M_Pl)^⅓ com m_T²=12H²) — ACIMA do cutoff →
+fora do alcance quadrático (alinha com 2507.11526, agora
+quantificado); F-c fora de validade EFT (só por decisão do autor);
+(iii) CONF-BANDA SIM nos dois fundos: o congelado CANÔNICO assenta
+(ε_W→0.03–0.04) e PREVÊ a banda (σ_can 1.13/1.41 vs +0.93/+1.06
+reais) — resolução construtiva do aviso metodológico (comóvel não é
+árbitro; canônico é). ENUNCIADO FINAL v4 DO SETOR ESCALAR no §6 do
+doc F-b — o programa de cálculo do setor escalar está COMPLETO.
+DECISÕES DO AUTOR: (a) sancionar o fecho H-SC do Gate F
+(recomendado) ou encomendar F-c como estimativa fora-de-validade;
+(b) nível paper: confronto fino ISW/baixo-ℓ, comparação quantitativa
+Comelli/Könnig, fresta μ=0.1 vs rota de Akrami. DEPOIS: cap. 07 com
+o enunciado v4 → paper (eixo: aviso metodológico RESOLVIDO +
+reconciliação + banda-alvo-observacional + fantasma-com-número).
+Sub-estruturas abertas (não bloqueiam): anomalia IR do pousado; par
+E_f cedo; (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs

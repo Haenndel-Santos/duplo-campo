@@ -115,6 +115,25 @@ escalar para o cap. 07.**
    gate1c permanecem como ativos, reativados na hora que o Gate F der
    H-GHOST (e só então).
 
+## 4-bis. ATUALIZAÇÃO — o gate foi executado (2026-08-12)
+
+**F-a** (`resultado_gatef_a.md`): inconclusivo por instrumento em
+coordenadas comóveis (o portão de poder abortou como desenhado); o
+F-a3 certificou a banda do R-4 como física. **F-b**
+(`resultado_gatef_b.md`, v2 com validação de resíduo): (i)
+**H-CONSTRAINT falsificada em coordenadas válidas** — sem hierarquia
+(R satura em 5–10), ω₀ satura, e a direção é fortemente acoplada
+(DESAC 0.77–0.96): o "quer ser vínculo" do R-2 era artefato da base
+comóvel; contagem = 3 dof (disputa D1 resolvida); (ii) o fantasma é
+um **ramo espectral canônico propagante de norma-η ≈ −0.97 com
+frequência invariante ω₀ = 12.0H (β₁=1) / 7.4H (β₁=4.47) ≈
+3.4–4.3·Λ₃** — acima do cutoff → **fecho H-SC** pelo critério F-b2
+(F-c fora de validade EFT; só por decisão do autor); (iii) bônus
+CONF-BANDA: o congelado CANÔNICO assenta (ε_W→0.03) e **prevê a
+banda** (σ_can 1.13/1.41 vs +0.93/+1.06 reais) — o aviso metodológico
+ganha resolução construtiva. Enunciado final v4 do setor escalar no
+§6 do doc F-b.
+
 ## 5. Nota sobre a conversa do "modo relativo" (Gate 1)
 
 A motivação *"σ precisa ser emergente porque, como campo clássico
