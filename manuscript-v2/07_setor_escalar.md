@@ -118,15 +118,39 @@ normalização congelada e halving pleno (kh=10 fino: dG=0.19<0.3).
 
 ## 4. O enunciado, e a tabela de supersessão
 
-> **No setor escalar linear (ação quadrática), nos regimes testados,
-> a F1 não apresenta fantasma, taquião letal, instabilidade métrica
-> crescente nem quebra da estrutura de vínculos. O no-go interno
-> anterior está revogado em todos os regimes que o sustentavam.**
+> **[REVISADO 2026-08-13]** No setor escalar linear, **na era tardia**
+> (r ≳ 0.28, i.e. z ≲ 0.6 no benchmark), a F1 não apresenta fantasma,
+> taquião letal, instabilidade crescente nem quebra da estrutura de
+> vínculos: o no-go *daquela* era está revogado, e o fantasma do Gate
+> F era artefato numérico (§Ato 2 — isso não mudou).
+>
+> **Mas o setor NÃO é são em todas as épocas.** Em r ≲ 0.05 (alto
+> redshift) o escalar métrico tem **instabilidade de gradiente**,
+> c_s² ≈ −1, com cinética positiva — confirmando a previsão de
+> Könnig–Akrami–Amendola–Motta–Solomon ([arXiv:1407.4331]) para o
+> *finite branch*, que este repositório registrava sem confrontar.
 
-Pendências declaradas: ramo algébrico (deferido; exige o porte do
-arranjo modulado da investigação-1; prior de artefato, sem
-afirmação); fronteira de uma trajetória no dinâmico; scan de classe
-em nível de assinatura.
+**Por que a v1 deste capítulo dizia o contrário.** O enunciado
+anterior — "são em todos os regimes testados" — era literalmente
+verdadeiro e materialmente enganoso: toda a cascata R-7 e as sondas
+R-8 rodaram em a ∈ [100, 80000], que no brinquedo é a era tardia.
+**Nunca testamos a < 100.** É a mesma família de ponto cego do
+Erratum-02, agora no eixo do tempo cósmico — e foi exatamente o que o
+parecer de cosmologia previu ("os gates do R-7 são cegos a gradiente
+por construção"). *Fontes: `docs/resultado_r10a_gradiente.md`,
+saídas r10a/r10b.*
+
+**Severidade:** a transição ocorre em z ≈ 0.62 (β₁=1); modos com
+k/aH ≳ 8 na transição saem do regime linear (lnA até 32); os
+intermediários (k/aH ~ 1–7) permanecem lineares mas crescem por
+fatores de 2 a 10⁴. A saída padrão da literatura (screening /
+auto-invalidação do linear, [arXiv:1503.07521]) **é a candidata a
+resolver**, e é o próximo teste — não um resultado.
+
+Pendências declaradas: ramo algébrico (deferido); fronteira de uma
+trajetória no dinâmico; scan de classe em nível de assinatura;
+**Vainshtein/validade linear (agora o item nº 1 da fila)**; A1 no
+fundo dinâmico e com era de radiação.
 
 | Afirmação da era do no-go | Estado |
 |---|---|

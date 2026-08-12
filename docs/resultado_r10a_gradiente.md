@@ -68,6 +68,48 @@ era primordial isso é catastrófico em tempo linear.
 artefato); a contagem 2-DOF continua válida; o espectador continua
 saudável; o fundo e o setor tensorial não são tocados.
 
+## 3b. Severidade (R-10b): a instabilidade NÃO é só de "alto z"
+
+O R-10b (`auditoria/code/r10b_severidade_instabilidade.py`) mediu o
+perfil fino e o crescimento acumulado. Dois resultados que agravam
+o quadro:
+
+**(i) A época crítica é BAIXO redshift.** c_s² muda de sinal em
+**a_cross = 0.574** (β₁=1; r = 0.171) e **0.360** (β₁=4.47). Com o
+"hoje" da família (a₀ = 0.931, âncora Ω_m = 0.3 do R-8b), isso dá
+**z_cross ≈ 0.62**. A instabilidade opera de todo o passado até
+z ≈ 0.6 — não é um fenômeno primordial remoto, e o rótulo "alto z"
+da literatura subestima o alcance nesta implementação.
+
+**(ii) Modos bem dentro do horizonte saem do regime linear.**
+Crescimento acumulado lnA = ∫|c_s|·(k/aH) dN por modo, rotulado pela
+entrada no horizonte (β₁=1):
+
+| entra em a | kh em a_cross | lnA | fator | linear? |
+|---|---|---|---|---|
+| 0.0015 | 16.2 | 32.4 | 1e14 | **NÃO** |
+| 0.0065 | 7.8 | 14.6 | 2e6 | **NÃO** |
+| 0.013 | 5.4 | 9.5 | 1.3e4 | sim (formalmente) |
+| 0.058 | 2.6 | 3.5 | 35 | sim |
+| 0.25 | 1.3 | 0.7 | 2.0 | sim |
+
+Fronteira em **kh(a_cross) ≈ 7–8**: acima disso, |Φ| ~ 1 antes do fim
+da era instável (com δ_i = 1e-5 adotado como referência). β₁=4.47 dá
+o mesmo quadro com fronteira em kh ≈ 6.9.
+
+**Leitura conjunta.** A saída de Akrami et al. **se aplica** — nas
+escalas mais violentas a perturbação linear se auto-invalida, e a
+instabilidade linear não é, por si, uma refutação. Mas o mesmo
+argumento tem preço alto: (a) nada linear pode ser afirmado em
+kh ≳ 8 antes de z ≈ 0.6, o que inclui parte da janela observável;
+(b) as escalas intermediárias (kh ~ 1–7) permanecem *formalmente*
+lineares e ainda assim crescem por fatores de 2 a 10⁴ — uma
+deformação enorme da função de transferência, que precisa ser
+calculada e confrontada, não ignorada; (c) o modo que cresce é o
+escalar métrico do sistema reduzido, e o R-7b mediu |Φ_g|/A_met ≈
+0.04–0.09 constante — ou seja, o potencial observável herda o
+crescimento salvo cancelamento não demonstrado.
+
 ## 4. As saídas — e por que a próxima medida é o Vainshtein
 
 Esta instabilidade é conhecida na literatura bimétrica e tem uma
@@ -108,10 +150,29 @@ o raio de Vainshtein.
    instabilidade está acima ou abaixo da escala de screening? É o que
    decide se este achado mata a implementação ou é inócuo. Conecta
    astrofísica (r_V) + cosmologia (c_s²) num só teste.
-2. Refazer A1 no **fundo dinâmico** (com a condensação de φ₋) e com
-   **era de radiação** (item (f)) — a janela instável pode mudar.
-3. Reexaminar a exclusão do ramo infinito.
-4. O resto do Bloco 1 (A2 w_eff, varredura de μ, paredes de domínio)
+2. **A janela intermediária kh ~ 1–7** (nova, criada pelo R-10b): é o
+   único lugar onde a teoria é simultaneamente *linear* e
+   *drasticamente diferente de GR* (fatores 2–10⁴). Deixa de ser
+   "região indecidida" e passa a ser **a previsão observacional mais
+   forte que a implementação já produziu** — com o sinal errado, mas
+   forte. Calculá-la é agora mais informativo que o C_ℓ completo.
+3. Refazer A1/A2 no **fundo dinâmico** (com a condensação de φ₋) e com
+   **era de radiação** (item (f)) — a janela instável pode mudar; e
+   com radiação a_cross se move.
+4. Reexaminar a exclusão do ramo infinito.
+5. O resto do Bloco 1 (A2 w_eff, varredura de μ, paredes de domínio)
    segue válido mas perde prioridade relativa: **não faz sentido
    ajustar previsões observacionais de um ramo cuja validade linear
-   está em questão em z > 10**.
+   está em questão até z ≈ 0.6**.
+
+## 7. Estatuto e o que este resultado NÃO diz
+
+Nível 2b com fronteiras declaradas (§5). **Não** é uma refutação da
+TDCP: (i) a saída de screening é real e não foi testada; (ii) o
+brinquedo não tem radiação, e a_cross depende da história; (iii) o
+fundo dinâmico com condensação de φ₋ não foi medido aqui; (iv) o modo
+que cresce é métrico-do-sistema-reduzido — o acoplamento à matéria
+perturbada (nunca calculado) é que decide o observável. **É**, sim, a
+demonstração de que a afirmação de saúde do cap. 07 foi feita sobre
+uma janela temporal estreita, e que o programa observacional do
+cap. 09 não pode prosseguir como estava.
