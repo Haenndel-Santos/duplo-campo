@@ -1,0 +1,140 @@
+# 07 — O setor escalar: do falso no-go à saúde derivada
+
+**Resultado central da v2.** Este capítulo conta três atos com
+números e fontes: o no-go aparente, a sua queda, e o setor corrigido.
+A honestidade do capítulo depende de manter os três separados — o
+segundo ato é sobre o *instrumento*, não sobre a teoria.
+
+## Ato 1 — O no-go aparente (2026-08-08 → 08-11)
+
+Sobre o benchmark β-constante e suas vizinhanças, o programa mediu e
+consolidou, em sequência: um taquião persistente σ ≈ (3–4)H no ponto
+fixo tardio para μ ≥ 0.3; um fantasma quase-nulo (lapso do setor f)
+na fresta μ = 0.1; ~1500 pontos de varredura 4D sem corredor
+saudável; a modulação β₁(φ₋) piorando os dois canais; e o ramo
+algébrico degenerado E taquiônico na raiz. Consolidação da época:
+`docs/veredito_setor_escalar_final.md` (hoje superseded — ver §4).
+
+Dois avisos já haviam sido emitidos pelo próprio programa antes da
+queda: (i) o **D-2** mostrou que vereditos de espectro *congelado*
+não valem como vereditos dinâmicos nesta classe (as matrizes
+comóveis nunca assentam; `docs/resultado_d2_evolucao.md`); (ii) o
+**R-2** rebaixou o fantasma a "assinatura robusta com letalidade
+indecidível" e descartou as magnitudes de energia como poluídas por
+normalização (`docs/resultado_r2_fantasma.md`). O que ninguém sabia:
+o objeto que essas análises estudavam não existia.
+
+## Ato 2 — A queda (Erratum-02, 2026-08-12)
+
+**O bug.** A rotina numérica de absorção de multiplicadores
+(`reduz_ponto`, herdada de script em script desde o D-2) somava o
+termo de conexão Ċ **duas vezes** nas entradas fora da diagonal de
+W_XX — consequência de usar o Ċ pré-computado da matriz original
+(stale) sem pular a entrada já antissimetrizada pelo multiplicador
+anterior do par. Tamanho: 1.4–6.1% de W_XX, *suave* ao longo da
+trilha — por isso parecia física e convergia em resolução. A
+biblioteca simbólica (`derivations/code/tdcp_pert_lib.py`:
+`matrix_ipp_row`, `schur_eliminate`) sempre esteve correta; o erro
+era exclusivo da tradução numérica.
+*Fonte: `auditoria/erratum_02_reducao_numerica.md` §1–2.*
+
+**A consequência.** O bug promovia Ψ_f — que é direção de VÍNCULO (o
+vínculo secundário de Hassan–Rosen que remove o modo Boulware–Deser)
+— a terceiro grau de liberdade propagante. Desse único erro
+descendiam: a contagem 3, o fantasma canônico do Gate F
+(ω₀/H ≈ 7–12, lido como ω₀ ~ 3–4Λ₃), a banda de amplificação métrica
+(lnA ≈ +4 por passagem), a previsão de excesso ISW 2–8× em baixo-ℓ
+com sua "tensão", e a maior parte do no-go do Ato 1.
+
+**A queda, em cinco passos verificáveis** (todos com saída
+versionada):
+
+1. Reauditoria externa independente (construção ADM/Faddeev–Jackiw;
+   pacote preservado em `auditoria/external/r6_reaudit_chatgpt/`)
+   obteve det K_métrico = 0 **simbólico**, com dois DOFs.
+2. `r6b`: o autovalor negativo do nosso K_red é estável a 60 dígitos
+   e sob varredura de passo — não era arredondamento. Duas
+   construções exatas discordavam.
+3. `r6c`: as duas ações são **A MESMA** — identidade exata
+   (aritmética racional, off-shell, peça por peça, a menos de
+   derivada total). Logo o erro estava numa das reduções. *Nível 1
+   (duas rotas, prova exata).*
+4. `r6d`: o bug localizado linha a linha; a absorção corrigida
+   (one-shot, S simétrica) colapsa det K₂/esc² de ~1e-8 para
+   1e-33…1e-40 (dps=40), com direção nula = Ψ_f puro. O pipeline
+   corrigido **reproduz independentemente** o resultado externo.
+5. Consistência externa: a contagem 2 é exatamente a do teorema de
+   Hassan–Rosen e do setor escalar FRW de Comelli–Crisostomi–Pilo —
+   que a contagem 3 contradizia. *Nível 3 (literatura), em
+   concordância com níveis 1–2a internos.*
+
+## Ato 3 — O setor corrigido (cascata R-7, 2026-08-12)
+
+No sistema físico de dois DOFs (modo métrico Ẽ = k²E_f + espectador
+δφ₋; token `dchi` nos scripts), com a maquinaria corrigida
+(equilibração de variáveis; gates V-XREP-a/b; critérios
+pré-declarados):
+
+**Estrutura.** Zero autovalores cinéticos negativos em todos os
+regimes testados: benchmarks estáticos (2×24 000 pontos, R-7a),
+classe μ×β₁ ampla incluindo a fresta μ=0.1 (17 células × 9 amostras,
+R-7f), trajetória completa de rolagem/pouso incluindo a janela de
+deslocamento ordem-1 (4×14 000 pontos, R-7e). O coeficiente auxiliar
+W00 de Ψ_f **nunca cruza zero** — a eliminação do vínculo sobrevive
+ao regime não-fatorado; sem quebra de Faddeev–Jackiw. *Nível 2b;
+fronteiras: grades citadas, uma trajetória REF para o dinâmico.*
+*Fontes: `docs/resultado_r7_cascata.md`,
+`docs/resultado_r7e_saude_interna.md`, saídas r7a/r7e/r7f.*
+
+**Dinâmica.** O modo métrico é overdamped e **decai** (−2.5…−2.7/
+e-fold tardio); o espectador δφ₋ tem fricção 3H e dispersão
+ω² = k²/a² + U″ medidas exatas (âncoras analíticas fecham em
+0.01–0.02: taxas físicas tardias −0.381 vs −0.368 e −0.088 vs
+−0.082). O σ_can ≈ 1.13/1.41 que o Gate F-b lia como "assentamento do
+fantasma" era a normalização a^{3/2} do espectador saudável — provado
+dinamicamente. *Nível 2a (âncora analítica + medida).*
+*Fonte: `auditoria/code/out/r7a_dinamica_2dof.txt` M2/M3.*
+
+**A banda está morta.** lnA de passagem (kh 20 → 0.2), componente
+métrica: −8.37/−8.39 nos fundos estáticos (antigo: +3.97/+3.62);
+−11.0…−14.7 nas oito épocas de cruzamento do fundo pousado (antigo:
+−0.2…+4.8); o potencial temporal do setor g decai junto (31/32
+combinações; a única exceção é log de componente com entrada
+próxima de zero, com a norma métrica da mesma IC decaindo — enunciado
+robusto: 32/32). A previsão de excesso ISW está **retirada**; a
+"tensão observacional" dissolvida — a previsão era artefato. *Nível
+2b; nota: os lnA do pousado carregam ±O(1) de sistemática do
+integrador de fundo (V-XREP-a a detectou; margens de 10+ unidades
+log tornam o veredito insensível).*
+*Fontes: `docs/resultado_r7_cascata.md` §2–3, saídas r7b/r7c.*
+
+**O que sobra de dinâmica não-trivial.** Um único transiente: durante
+a rolagem, U″(φ₋) transita de negativo a positivo (condensação — a
+física da Fase A) e o espectador ganha no máximo e^{+0.4} no IR
+profundo, autocurável, sem contaminação métrica. Medido com
+normalização congelada e halving pleno (kh=10 fino: dG=0.19<0.3).
+*Nível 2b.* *Fonte: `docs/resultado_r7e_saude_interna.md` §2–3,
+`auditoria/code/out/r7e_halving_fino.txt`.*
+
+## 4. O enunciado, e a tabela de supersessão
+
+> **No setor escalar linear (ação quadrática), nos regimes testados,
+> a F1 não apresenta fantasma, taquião letal, instabilidade métrica
+> crescente nem quebra da estrutura de vínculos. O no-go interno
+> anterior está revogado em todos os regimes que o sustentavam.**
+
+Pendências declaradas: ramo algébrico (deferido; exige o porte do
+arranjo modulado da investigação-1; prior de artefato, sem
+afirmação); fronteira de uma trajetória no dinâmico; scan de classe
+em nível de assinatura.
+
+| Afirmação da era do no-go | Estado |
+|---|---|
+| 3 DOFs escalares; fantasma; ω₀/Λ₃; H-SC | **caíram** (Erratum-02) |
+| Taquião σ≈(3–4)H persistente; fresta μ=0.1 | **caíram** (R-7a/R-7f) |
+| Banda lnA≈+4; "supressão-matéria" | **caíram** (R-7b/c) |
+| Excesso ISW 2–8×; dispersão p=0.44; canto-Akrami | **retirados** (R-7d) |
+| σ/H≈13 no regime não-fatorado (Fase B) | **caiu** (R-7e + autópsia) |
+| D-2: "congelado não é árbitro dinâmico" | **fica** (reforçado) |
+| R-2: "energias poluídas por normalização" | **fica** (era o aviso certo) |
+| Fundo, tensor, Bianchi/Erratum-01, Gate 1 | **ficam** (não usavam a redução) |
