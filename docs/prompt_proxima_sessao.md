@@ -85,13 +85,40 @@ dicionário adotar o postulado do corpus m ~ 30–300 H₀, a escala de
 Compton entra na janela observável e os dados de crescimento viram
 LIMITE DIRETO sobre m/H₀ (confronto com o postulado).
 
+ADENDO 3 (mesma noite — R-8b + review externo + escrita da v2,
+commits ate 09e04db+):
+- R-8b EXECUTADO (resultado_r8b_limite_mH0.md): a familia beta->s*beta
+  com H tardio fixo DOBRA em s~5.7 (r^2 V_f tem minimo positivo 0.3) —
+  postulado 30-300 H0 INALCANCAVEL por dial continuo (exige outra
+  forma-beta + ajuste fino U0<0); m_T/H0 in [2.26, 2.41] em TODA a
+  familia: a massa do graviton e PREDICAO (~2.3 H0 hoje); crescimento
+  trivialmente satisfeito; o decisivo e o quase-horizonte.
+- REVIEW EXTERNO (5 pontos) TODO CORRIGIDO: v2 skeleton reescrito;
+  Phi_g 31/32 esclarecido; halving fino kh=10 EXECUTADO (dG=0.191<0.3,
+  A4 pleno); V-XREP renomeado a/b; a_eq do R-8a corrigido
+  (0.686/0.429) + fraseado de precisao ("nenhum desvio acima do piso
+  QS ~2%"; 0.66% e valor central).
+- V2: ESPINHA + REFRAMES ESCRITOS, Gate 0 PASSA (6 arquivos):
+  01_tese, 02_metodo (erratum-02 como caso maximo, 4 licoes, placar),
+  07_setor_escalar (3 atos + tabela de supersessao),
+  08_identificacao_normativa (G1 relido: G1-a intocado, G1-b sem
+  objeto, G1-c de pe; problema aberto reformulado),
+  09_programa_observacional (R-8a/b + o que nao ha mais + R-8
+  completo com criterios a pre-declarar).
+
 FILA (ordem recomendada):
-1. **Decisão do autor — dicionário de épocas**
-   (docs/r8_dicionario_epocas_opcoes.md): o item de maior
-   alavancagem é m/H₀ (ver adendo 2). Com a decisão:
-   R-8b = confronto μ(a,k) vs vínculos de crescimento reais +
-   limite sobre m/H₀; R-8 completo (dinâmico) = janela kh≲22 +
-   C_ℓ de baixo-ℓ com o sistema 2-DOF validado (R-7a).
+1. **v2 — capitulos restantes**: 03 (acao+dicionario; fonte
+   docs/acao_v2.md), 04 (Bianchi/erratum-01), 05 (fundo), 06
+   (tensor) — ports de docs estaveis; 10 (interpretacao) POR ULTIMO.
+   Gate 0 a cada sessao. Convencoes vinculantes: phi- modulador
+   (chi so como distancia comovel; token `dchi` apenas em backticks),
+   V_g/V_f caligraficas, Psi TEMPORAL na v2 (lib usa Phi_g temporal —
+   anotar o mapa), Sigma=(mu/2)(1+eta_slip).
+2. **R-8 completo** (o gate de fisica restante): materia/radiacao no
+   2-DOF, C_ell baixo-ell/P(k)/lensing na janela kh<~22; insumos do
+   autor: forma-beta (manter benchmark => m_T~2.3H0 e predicao
+   testavel), massa de phi- hoje, normalizacao primordial; criterios
+   pre-declarados antes da 1a rodada.
 2. Propagação editorial do erratum-02: banners de supersessão nos
    docs históricos afetados (ou nota única no índice); revisão do
    cap. 07 da v2 (o resultado central mudou: de "fantasma/H-SC" para
