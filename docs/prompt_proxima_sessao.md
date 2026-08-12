@@ -106,7 +106,57 @@ commits ate 09e04db+):
   09_programa_observacional (R-8a/b + o que nao ha mais + R-8
   completo com criterios a pre-declarar).
 
-FILA (ordem recomendada):
+
+ADENDO 4 (2026-08-13 — PARECERES + BLOCO 0 + BLOCO 1; commits ate
+1ca171f). ESTADO MUDOU QUALITATIVAMENTE:
+
+1. CINCO PARECERES ESPECIALIZADOS (docs/pareceres_especialistas/,
+   com 00_sintese_cruzada.md): convergencia unanime de que a F1 era
+   "sa, blindada e quase-invisivel"; e o achado metodologico de que
+   os gates do R-7 eram CEGOS A GRADIENTE por construcao.
+
+2. BLOCO 0 (R-9): o "omega^2 < 0" do R-7e era RAZAO ERRADA (falta o
+   Cdot: om2_ef = (Cdot+W)/K). p_phi cruza zero mas a matriz de
+   Dirac NAO degenera. O item (b) era tautologico -> Bloco 2.
+   QUATRO comparadores descartados no caminho — licao: quando um
+   gate reprova, a primeira suspeita e o comparador.
+
+3. BLOCO 1 (R-10/R-11) — NO-GO DE CLASSE POR GRADIENTE:
+   c_s^2 -> -1 em r -> 0 (alto z), com K2 > 0 (gradiente genuino,
+   nao fantasma), calibrador exato. A era instavel COBRE A
+   RECOMBINACAO (z_cross ~ 0.62 no beta-const). As QUATRO saidas
+   foram testadas e FECHADAS: ramo infinito (nao conecta),
+   modulacao (tarde demais), screening (delta_screen ~ 20-60; o
+   lambda cancela), forma-beta (108/108 celulas dao
+   c_s^2 = -1.010 +- 6e-6 — CONSTANTE ESTRUTURAL DA CLASSE).
+
+O QUE ISSO SIGNIFICA: cai a SUFICIENCIA da implementacao F1 como
+cosmologia. NAO cai a TDCP como hipotese, nem os erratums, nem o
+fundo, nem o tensor (m_T^2/H^2 -> 12; m_T ~ 2.3 H0), nem o
+espectador, nem o metodo. A unica porta entreaberta e beta_3 != 0 —
+que sai da definicao de F1 (seria uma F2) e exige refazer a cubica
+do fundo.
+
+FILA (nova):
+1. PROVAR c_s^2 = -1 analiticamente no limite r -> 0. Alvo limpo,
+   resultado de CLASSE, nivel 1, o mais publicavel do programa.
+2. Reescrever cap. 07 (ja atualizado com o arco) e sobretudo o
+   cap. 09: nao ha programa observacional linear enquanto a era
+   instavel cobrir a recombinacao. Enunciado honesto = validade
+   restrita (opcao 3 do resultado_r10_consolidado.md).
+3. Pendencias herdadas: Gate 2B + difeo espacial (Bloco 2, mesmo
+   calculo de campo); Vainshtein/PPN astrofisico; paredes de
+   dominio (mu_-); radiacao; varredura de mu; a 2a solucao tardia
+   do fundo (r ~ 2.23) nunca explorada.
+
+LEITURA OBRIGATORIA ANTES DE QUALQUER COISA (substitui a lista
+anterior como ponto de partida): docs/resultado_r11_nogo_gradiente.md
+e docs/resultado_r10_consolidado.md; depois
+docs/pareceres_especialistas/00_sintese_cruzada.md; so entao o
+historico (erratum_02, resultado_r7_cascata §4 = tabela de
+supersessao).
+
+FILA (ordem recomendada — SUPERSEDED pelo adendo 4):
 1. **v2 — capitulos restantes**: 03 (acao+dicionario; fonte
    docs/acao_v2.md), 04 (Bianchi/erratum-01), 05 (fundo), 06
    (tensor) — ports de docs estaveis; 10 (interpretacao) POR ULTIMO.
