@@ -181,7 +181,12 @@ nomeada: bombeamento paramétrico pelas oscilações residuais de χ
 (ω_χ/H≈4.4; mesmo k_phys na fase rolante DECAI); teste declarado:
 reintegrar com oscilações amortecidas ou janela a>50000; CAVEAT: o
 halving da rodada cobriu só k=1250 — o follow-up ABRE pelo halving em
-k_c=12500 (doc R-3 §3.4) antes de apoiar enunciado no achado; (iv) lnA_met
+k_c=12500 (doc R-3 §3.4) antes de apoiar enunciado no achado — SCRIPT
+R-3b PRONTO E COMMITADO: auditoria/code/r3b_pousada_parametrico.py
+(6 rodadas A–F: reprodução do baseline oficial, halving k=12500, A/B
+com fundo χ-amortecido à mão em 3 k, sonda de banda k_c=25000 com ω_χ
+medido por cruzamentos; critérios R3b-BASE/CONV/CONT/PARAM
+pré-declarados no cabeçalho; ~8–15 min), AGUARDA RODADA; (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs
