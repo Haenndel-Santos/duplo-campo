@@ -220,15 +220,27 @@ MODO com lnA finito (lnA_met 11–18 nos braços; base comóvel). NOVO
 RASCUNHO DO ENUNCIADO no §4 do doc R-4a (substitui o do R-2 §3 como
 candidato p/ cap. 07): a viabilidade é OBSERVACIONAL — e^lnA dos
 modos que cruzam nas épocas relevantes vs vínculos. negK=1 universal
-até a=70000 (Gate F reforçado). R-4B PRONTO E COMMITADO
-(auditoria/code/r4b_forma_da_banda.py, ~10–16 min, AGUARDA RODADA):
-FORMA da banda — taxa(kh) em 12 faixas de kh por componente (Ψ_f vs
-E_f), lnA de PASSAGEM por modo (kh 20→0.2), estáticos β₁={1,4.47} +
-AUTOSIM (k×3) + GR-null de passagem + pousado com 8 k por época de
-cruzamento (a_cross 500→30000 — a rolagem/pouso modula a banda?);
-critérios R4b-NULL/AUTOSIM pré-declarados; o bloco observacional
-(dicionário de épocas + vínculos) fica para decisão do autor com os
-insumos deste script; (iv) lnA_met
+até a=70000 (Gate F reforçado). R-4B EXECUTADA 2026-08-12
+(docs/resultado_r4b_forma.md) — OS NÚMEROS DO CONFRONTO: NULL passa
+(GR passagem = −4.33) e AUTOSIM passa (Δ=0.33 — uma medida por fundo
+vale p/ todo k). lnA_PASSAGEM (kh 20→0.2) UNIVERSAL: +3.97 (β₁=1;
+k×3: +3.64), +3.62 (β₁=4.47) — cada modo métrico ganha e^{3.6–4.0} ≈
+40–55× na amplitude (contraste líquido vs GR: e^~8; LIMITE INFERIOR:
+kh 40–20 já cresce +2.7–4.1, banda completa ≈ e^{6–7}). AVISOS DE
+LEITURA (doc §2): máximos por janela SOBRECONTAM ~2× (rotação de
+componentes E_f↔Ψ_f — a estatística robusta é a passagem líquida por
+IC); o próprio GR tem positivos de janela até +1.25 no freeze-out.
+POUSADO modula: supressão pré/durante condensação (−0.21 em
+a_cross=500, U₀ domina H²; vale +1.57 em 1600) e realce no anel
+(+4.80 em 4000; bursts época-fixos +8.8/+11.4), convergindo a
+~+4.0–4.5 no pousado profundo. negK=1 em tudo. PRÓXIMO: (a) BLOCO 3
+DO R-4 = DECISÃO DO AUTOR (dicionário de épocas modelo-brinquedo →
+história cósmica; confronto e^lnA vs vínculos Comelli/Könnig/Akrami
+— insumos prontos); (b) GATE F-a (não bloqueado): script a desenhar —
+constraint secundária linearizada sobre o reduzido (F-a1: contagem
+3→2? F-a2: direção removida = K<0, projeção>0.9?), evidência
+acumulada: negK=1 universal até a=70000 + "quer ser vínculo" (R-2);
+(iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs
