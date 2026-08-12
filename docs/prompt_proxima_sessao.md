@@ -268,14 +268,26 @@ ileso na entrada (caveat: sem perturbações de matéria acopladas —
 limitação de programa declarada). ENUNCIADO OBSERVACIONAL CONSOLIDADO
 (v3, candidato final ao cap. 07) no §3 do doc: banda = alvo
 observacional (≤×6.6 em escalas ~horizonte), não óbito; classe
-sobrevive no dicionário mínimo. FILA: (1) F-b = normalização canônica
-simplética por ponto (T(t): TᵀK_redT=η com termos ∝Ṫ retidos —
-lição do D2; critérios F-b1/F-b2 do gate doc; decide o fantasma:
-H-CONSTRAINT/H-NORM/H-SC; o F-a executado é o "antes" do par) —
-ÚLTIMO item de cálculo antes do enunciado final do setor escalar;
-(2) nível paper com o autor: confronto fino ISW/baixo-ℓ, comparação
-quantitativa Comelli/Könnig, fresta μ=0.1 vs rota de Akrami;
-(3) depois: enunciado final → cap. 07 → paper; (iv) lnA_met
+sobrevive no dicionário mínimo. FILA: (1) F-b PRONTO E COMMITADO
+(auditoria/code/gatef_b_canonica.py, ~6–10 min, AGUARDA RODADA):
+T(t)=E|Λ|^(−1/2) contínuo (sinais+permutação do par positivo),
+K_can=η EXATO, C_can/W_can com TODOS os termos de conexão Ṫ (lição
+do D2); PORTÕES: V-ETA <1e-8, V-EQUIV (mesma IC física nos dois
+quadros, <0.05, 3 ICs — o teste da conexão) + V-EQUIV-GR; MEDIDAS
+nos marcos hierárquicos (R_can≥10; ICs de superfície construídas no
+1º marco hierárquico — lição do R-4c): F-b1a hierarquia (QEP em base
+bem condicionada, R_fim≥100), F-b1b conteúdo x₀ do modo pesado
+(>0.9), F-b1c superfície com dente (SUP<0.1, PODER≥0.3 abortivo,
+DESAC), F-b2 ω₀/H vs escalas {H, m_T/H≈3.5, Λ₃~O(1)}, F-b-NORMA
+(modo propagante com norma-η negativa? — agora invariante), BONUS
+σ_can/H + ε_W (o congelado CANÔNICO prevê a banda? → fecharia o
+aviso metodológico). RAMOS: b1a+b1b+b1c → H-CONSTRAINT em coordenadas
+válidas (gate fecha, fantasma=representação, F-c desnecessário);
+ω₀≥50H sem superfície → H-SC (fora do alcance quadrático, setor não
+exclui); modo propagante s<0 → F-c; senão misto/H-NORM → decidir com
+o autor. (2) nível paper com o autor: confronto fino ISW/baixo-ℓ,
+comparação quantitativa Comelli/Könnig, fresta μ=0.1 vs rota de
+Akrami; (3) depois: enunciado final → cap. 07 → paper; (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs
