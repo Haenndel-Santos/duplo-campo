@@ -287,14 +287,34 @@ quantificado); F-c fora de validade EFT (só por decisão do autor);
 reais) — resolução construtiva do aviso metodológico (comóvel não é
 árbitro; canônico é). ENUNCIADO FINAL v4 DO SETOR ESCALAR no §6 do
 doc F-b — o programa de cálculo do setor escalar está COMPLETO.
-DECISÕES DO AUTOR: (a) sancionar o fecho H-SC do Gate F
-(recomendado) ou encomendar F-c como estimativa fora-de-validade;
-(b) nível paper: confronto fino ISW/baixo-ℓ, comparação quantitativa
-Comelli/Könnig, fresta μ=0.1 vs rota de Akrami. DEPOIS: cap. 07 com
-o enunciado v4 → paper (eixo: aviso metodológico RESOLVIDO +
-reconciliação + banda-alvo-observacional + fantasma-com-número).
-Sub-estruturas abertas (não bloqueiam): anomalia IR do pousado; par
-E_f cedo; (iv) lnA_met
+R-5 EXECUTADO 2026-08-12 (opção (b) do autor; 2 rodadas, 2ª oficial;
+docs/resultado_r5_confrontos.md): OS TRÊS CONFRONTOS NÍVEL-PAPER:
+(A) transferência f→g SUSTENTADA (mediana |Φ_g|/|q_met| = 0.160
+constante pela banda — o potencial-g CARREGA a amplificação; taxas
+por componente ruidosas, declaradas) → ARITMÉTICA ISW: modos kh 1–6
+↔ ℓ≈3–19; SW intocado (banda off na matéria); ISW tardio ×10–43 em
+potência; com fração ISW 10–25% → realce ~2–8× no TT de baixo-ℓ —
+TENSÃO REAL (o observado é, se algo, BAIXO): a banda vira PREVISÃO
+FALSIFICÁVEL na direção errada; revisa o "brando" do R-4c; o C_ℓ
+completo (fora do brinquedo) é o item decisivo do paper.
+(B) dispersão canônica: fit σ_can = 1.5·kh^0.44 (kh 1.5–30) +
+saturação IR σ→1.13 — p=0.44 vs p=1 do gradiente: DISCRIMINADA de
+Comelli/Könnig (com a releitura de época do R-4a).
+(C) TENSÃO-AKRAMI CONFIRMADA E LOCALIZADA NO CANTO-β: fresta
+(0.2,−1.0) dá lnA_pass=+5.91 (μ=0.1) e +6.21 (μ=1) vs +3.7–5.2 na
+escada REF — é a célula, não o μ; a rota de escape da literatura é
+onde o confronto ISW é mais duro. ω₀/Λ₃ = 4.1–4.9 UNIFORME (H-SC
+uniforme; F-c não revive em célula alguma). Fresta: quadro canônico
+singular-adjacente (fantasma quase-nulo) — fronteira declarada.
+FILA AGORA: (1) TRILHA DE ESCRITA — cap. 07 da v2 com o ENUNCIADO v5
+(§5 do doc R-5: sobrevive a tudo internamente e converge para UMA
+previsão dura — excesso ISW baixo-ℓ ~2–8×, pior no canto-β; eixo do
+paper: aviso metodológico RESOLVIDO + reconciliação + banda +
+fantasma-com-número + previsão/tensão ISW); (2) fronteiras
+declaradas: C_ℓ completo; fresta canônica; anomalia IR do pousado;
+par E_f cedo; matéria perturbada. DECISÃO DO AUTOR pendente:
+sancionar formalmente o fecho H-SC do Gate F (recomendado; R-5
+mostrou uniformidade ω₀>Λ₃ na amostra); (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs
