@@ -96,6 +96,15 @@ k_phys≳2; k_c=25000 dá +0.06 onde o congelado diz 41.7); o braço
 amortecido revelou lacuna de desenho (drift secular > oscilação
 original), então genuína-vs-secular segue em teste → R-3c.
 
+**ATUALIZAÇÃO (R-3c, 2026-08-12 — `resultado_r3c_mecanismo.md`):**
+PONTO-FIXO (taxa plana sob desvio ~1%→7%) **e** presente no
+β-constante ESTÁTICO β₁=4.47 (+1.08 na banda k_phys~H, δχ desacoplado
+exato) — o fenômeno é **da classe β-constante**, não do
+pouso/modulação; o pousado herda do ponto onde senta. A "estrutura IR"
+relê-se como cruzamento de horizonte (k_c=25000 cruza fora da
+janela). Fronteira em β₁, transiente-vs-sustentada e a anomalia IR do
+k=1250 → R-4a.
+
 ## 2. O dano transiente (insumo do R-4)
 
 lnA_met máximo: **14.17** (k_c=1250) / **17.80** (k_c=12500) —

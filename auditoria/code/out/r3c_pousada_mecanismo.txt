@@ -1,0 +1,122 @@
+========================================================================
+R-3c — MECANISMO DO CRESCIMENTO TARDIO DA FAMILIA POUSADA
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[fatias] {Fb,Fp,Fpp} x {b0..b4}, taxas livres ...
+[fatias] prontas
+
+[fundo G] beta-constante beta1=4.47 — validade e escalas:
+    a=12000: r=0.5159  H=1.1253  xi=0.5159  (pousado: r~0.50, H~1.14)
+[fundo H] rolagem com Gamma=10 (aproximacao rapida) ...
+    r_fim=0.4978, chi/v_fim=0.931  (ref ~0.498/0.932-0.939; tolerancia 0.015 — o proprio drift e o objeto)
+[fundo I] rolagem com Gamma=100 (aproximacao lenta) ...
+    r_fim=0.5205, chi/v_fim=0.975
+    Gamma=10: pouso |desl|=2.01e-01 Aosc=1.03e-01;  tardia |desl|=1.22e-02 Aosc=1.07e-02
+    Gamma=100: pouso |desl|=2.01e-01 Aosc=5.36e-02;  tardia |desl|=8.92e-03 Aosc=3.12e-02
+    (hardcodes R-3b: ORG tardia Aosc=1.55e-02 |desl|=3.26e-02; Gamma=30 Aosc=3.74e-02 |desl|=1.72e-02)
+
+========================================================================
+RODADAS
+========================================================================
+
+--- G1 (beta-const 4.47): k_c=12500, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  1.72  negK=1
+    ancora a= 15000: sigma/H cong (red) =  1.66  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -0.76  +1.55  -1.55  -0.34  +0.83  -4.59  |  -0.76  +1.55  +0.00  -0.34  +0.83  +0.00
+    rolagem   +1.06  +0.96  -1.86  +1.46  +0.38  -2.28  |  +1.06  +0.96  +0.00  +1.46  +0.38  +0.00
+    pouso     +1.63  +0.84  -2.36  +1.45  +1.95  -1.48  |  +1.63  +0.84  +0.00  +1.45  +1.95  +0.00
+    tardia    +0.93  +0.06  -0.19  +0.84  +1.08  -1.85  |  +0.93  +0.06  +0.00  +0.84  +1.08  +0.00
+    lnA_met max = 15.50
+    perfil local (IC0, met): a1->a2: taxa_loc/H
+         300->   760:   +1.61
+         760->  1250:   +1.70
+        1250->  2100:   +0.37
+        2100->  3200:   +0.07
+        3200->  5000:   +3.25
+        5000->  6800:   +1.40
+        6800->  8000:   -0.15
+        8000-> 10000:   -2.33
+       10000-> 12000:   +2.36
+       12000-> 15000:   +3.58
+       15000-> 18000:   +0.25
+
+--- G2 (beta-const 4.47): k_c=1250, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  3.15  negK=1
+    ancora a= 15000: sigma/H cong (red) =  3.12  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -0.44  +2.48  -1.77  -0.51  +1.00  -1.92  |  -0.44  +2.48  +0.00  -0.51  +1.00  +0.00
+    rolagem   +0.52  +0.95  -0.50  +0.63  +0.31  -2.15  |  +0.52  +0.95  +0.00  +0.63  +0.31  +0.00
+    pouso     -2.55  -0.71  -0.24  -2.28  -1.31  -0.05  |  -2.55  -0.71  +0.00  -2.28  -1.31  +0.00
+    tardia    -1.85  -1.08  -0.09  -2.03  -1.66  -0.09  |  -1.85  -1.08  +0.00  -2.03  -1.66  +0.00
+    lnA_met max = 12.36
+
+--- H (Gamma=10): k_c=12500, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.49  negK=1
+    ancora a= 15000: sigma/H cong (red) =  2.37  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -1.31  +2.05  -1.66  +0.13  +0.55  -2.10  |  -1.32  +2.05  +0.69  +0.13  +0.55  +0.70
+    rolagem   +1.10  +0.80  -1.70  +1.20  +1.00  -0.38  |  +0.37  +0.04  -1.89  +0.47  +0.26  +0.02
+    pouso     +0.78  +0.84  -1.89  +0.76  +0.80  +0.76  |  +1.44  +1.51  -0.56  +1.43  +1.46  +0.84
+    tardia    +1.15  +1.15  +1.96  +1.14  +1.15  +1.12  |  +1.21  +1.21  +1.97  +1.20  +1.21  +1.20
+    lnA_met max = 17.33
+
+--- I (Gamma=100): k_c=12500, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.82  negK=1
+    ancora a= 15000: sigma/H cong (red) =  2.12  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -1.31  +2.05  -1.66  +0.13  +0.55  -2.10  |  -1.32  +2.05  +0.69  +0.13  +0.55  +0.70
+    rolagem   +1.10  +0.80  -1.70  +1.20  +1.00  -0.38  |  +0.37  +0.04  -1.89  +0.48  +0.26  +0.01
+    pouso     +0.74  +0.80  -1.94  +0.73  +0.76  +0.75  |  +1.41  +1.48  -0.75  +1.39  +1.43  +0.82
+    tardia    +0.97  +0.98  +1.85  +0.97  +0.97  +0.93  |  +1.02  +1.02  +1.88  +1.02  +1.02  +1.00
+    lnA_met max = 16.95
+    perfil local (IC0, met): a1->a2: taxa_loc/H
+         300->   760:   +1.48
+         760->  1250:   +1.81
+        1250->  2100:   -1.09
+        2100->  3200:   +0.86
+        3200->  5000:   +1.82
+        5000->  6800:   +1.60
+        6800->  8000:   +0.26
+        8000-> 10000:   -1.90
+       10000-> 12000:   +0.51
+       12000-> 15000:   +4.41
+       15000-> 18000:   +0.95
+
+--- K (Gamma=100): k_c=1250, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  3.13  negK=1
+    ancora a= 15000: sigma/H cong (red) =  3.11  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -0.13  +2.13  -1.03  -0.29  +1.16  -1.49  |  -0.13  +2.13  +1.22  -0.29  +1.16  -0.75
+    rolagem   -2.70  -2.22  +1.09  -2.46  -1.76  -0.85  |  -2.76  -2.22  +0.94  -2.47  -1.84  -1.17
+    pouso     -1.86  -3.25  -0.97  -1.64  -3.29  -0.88  |  -2.48  -3.74  -0.90  -2.23  -3.90  -0.77
+    tardia    -1.01  -1.62  -0.16  -1.18  -0.25  -0.17  |  -1.02  -1.72  +0.05  -1.21  -0.12  +0.04
+    lnA_met max = 14.17
+
+========================================================================
+VEREDITO R-3c (criterios pre-declarados no cabecalho)
+========================================================================
+  R3c-CONT: max|H - oficial| em pre+rolagem = 0.005 (criterio < 0.1)  [PASSA]
+
+  R3c-BETA: beta-const 4.47 tardia met max: +1.08/H (k=12500), -1.08/H (k=1250)
+      (outras janelas do G1/G2 acima — fundo estatico: crescimento em toda epoca = instabilidade de familia)
+      >>> CRESCE SEM MODULACAO: o fenomeno e da esquina
+      beta1-grande da familia beta-constante (a R-1 so foi
+      ate beta1=2). O 'crescimento da familia pousada' ganha
+      outra genealogia; mapear a fronteira em beta1 no R-4.
+
+  R3c-DRIFT (k_c=12500) — curva taxa(desvio):
+    ORG   (G=0)  : Aosc_tardia=1.55e-02  taxa_met=+0.98/H
+    H     (G=10) : Aosc_tardia=1.07e-02  taxa_met=+1.21/H
+    R3b-C (G=30) : Aosc_tardia=3.74e-02  taxa_met=+1.12/H
+    I     (G=100): Aosc_tardia=3.12e-02  taxa_met=+1.02/H
+    contraste de desvio: 3.5x (exigido >= 3); taxa(desvio min)=+1.21, taxa(desvio max)=+1.12
+      >>> taxa ~ CONSTANTE com desvio variando 3x: INSTABILIDADE DO PONTO FIXO — genuina.
+      Primeiro no-go dinamico real do programa (nivel linear,
+      fronteira declarada); R-4 herda com prioridade maxima.
+
+  secundario (k_c=1250, 3 pontos):
+    ORG (G=0): taxa=+1.05  R3b-F (G=30): +1.87  K (G=100): -0.12
+
+  RESUMO: R3c-BETA = ESQUINA-BETA1; R3c-DRIFT = PONTO-FIXO

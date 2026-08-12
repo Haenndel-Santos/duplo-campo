@@ -192,13 +192,26 @@ negK=1 insensível a oscilações/drift. AUTOCRÍTICA DECLARADA: o fundo
 amortecido (Γ=30) aproxima o ponto fixo MAIS DEVAGAR (0.7/H) que o
 envelope original (3/2 H) — na tardia carrega desvio secular MAIOR
 (3.7e-2 vs 1.6e-2); logo "PERSISTE" estabelece NÃO-PARAMÉTRICA, mas
-genuína-vs-secular fica ABERTO. R-3c PRONTO E COMMITADO
-(auditoria/code/r3c_pousada_mecanismo.py, ~5–10 min, AGUARDA RODADA):
-braço G = β-constante β₁=4.47 (a esquina fora do retângulo da R-1 —
-decide modulação vs β₁-grande) + braços H/I/K = correlação
-taxa-vs-desvio (Γ∈{10,100}: aproximação rápida/lenta; taxa desliga ou
-acompanha o desvio = SECULAR-FED / taxa ~ const = PONTO-FIXO genuíno);
-critérios R3c-CONT/BETA/DRIFT pré-declarados; (iv) lnA_met
+genuína-vs-secular fica ABERTO. R-3c EXECUTADA
+2026-08-12 (docs/resultado_r3c_mecanismo.md): PONTO-FIXO (taxa plana
+0.98–1.21 sob distância real ao ponto fixo ~1%→7% — não é secular) E
+ESQUINA-β₁: o β-constante ESTÁTICO β₁=4.47 cresce igual (+1.08 na
+banda, com δχ desacoplado EXATO — consistência de fiação) — o
+fenômeno é DA CLASSE β-constante na região (β₁?, k_phys~H); o pousado
+herda do ponto onde senta; releitura por cruzamento de horizonte
+(k_c=25000 cruza fora da janela — a "estrutura IR" era isso); duas
+componentes de modo (par E_f cresce cedo em todos os fundos; par Ψ_f
+na banda tardia); anomalia IR do pousado k=1250 (cresce só com
+dinâmica residual; morre no estático e no Γ=100) DECLARADA ABERTA.
+R-4A PRONTO E COMMITADO (auditoria/code/r4a_mapa_tardio.py, ~8–15
+min, AGUARDA RODADA — o mapa que decide o enunciado): (i) R4a-NULL
+controle GR NA BANDA (cruzamento dentro da tardia; abortivo — nenhum
+controle anterior cobriu essa região); (ii) R4a-MAPA β₁∈{1,2,3,4.47}
+× k∈{banda,3×,0.1×} estáticos — se β₁=1 crescer, o "estável tarde" de
+D2/R-1 era artefato de amostragem em k e a CLASSE inteira é instável
+na banda; senão fronteira β₁*; (iii) R4a-EXT a→80000 (β-const 4.47 e
+pousado): TRANSIENTE-DE-CRUZAMENTO (lnA finito, dano mapeável) vs
+SUSTENTADA (no-go dinâmico real da região); (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs

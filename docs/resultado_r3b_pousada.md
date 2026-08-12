@@ -122,6 +122,16 @@ corrige o veredito impresso.
    **instabilidade do ponto fixo** (genuína; R-4 herda com prioridade
    máxima).
 
+**ATUALIZAÇÃO (R-3c, 2026-08-12 — `resultado_r3c_mecanismo.md`):**
+os dois discriminadores rodaram: (i) **PONTO-FIXO** — taxa plana
+(0.98–1.21) com a distância real ao ponto fixo variando ~1%→~7%;
+(ii) **ESQUINA-β₁** — o β-constante ESTÁTICO com β₁=4.47 cresce igual
+(+1.08 na banda k_phys~H): o fenômeno é da classe β-constante, o
+pousado herda do ponto onde senta. "Genuína-ou-secular" fecha em
+genuína — mas o dono mudou: não é "da família pousada", é da região
+(β₁ grande?, k_phys~H) da classe. Controle β₁=1 na banda e
+transiente-vs-sustentada: R-4a.
+
 ## 4. Estratificação epistêmica
 
 | Afirmação | Nível |
