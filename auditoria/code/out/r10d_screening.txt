@@ -1,0 +1,78 @@
+========================================================================
+R-10d — o screening protege a instabilidade de gradiente?
+========================================================================
+
+D1 — contraste minimo para o screening operar
+    delta_screen = (4 pi/3) (m_T/H)^2   [MD; o lambda cancela]
+
+                           era      w  m_T^2/H^2   m_T/H  delta_screen
+     radiacao (3(4+3w), w=1/3)  +0.33       15.0    3.87          62.8
+        materia (3(4+3w), w=0)  +0.00       12.0    3.46          50.3
+    ponto fixo tardio (R-8b, a0)  -1.00        5.4    2.32          22.6
+    Lambda profundo (Gate F/R-7a)  -1.00       12.0    3.46          50.3
+
+    >>> delta_screen ~ 20-60 em TODAS as eras: o screening de
+    Vainshtein so opera onde o contraste ja e >~ 20, isto e,
+    dentro de estruturas nao-lineares (halos). No regime linear
+    cosmologico (delta << 1) ele NAO opera.
+    CONSEQUENCIA: a versao (V1) do argumento — 'a instabilidade
+    esta abaixo da escala de Vainshtein' — NAO se aplica a
+    perturbacoes lineares cosmologicas. O lambda cancela na
+    conta: nao existe escala pequena o bastante que seja
+    'protegida' com delta pequeno.
+
+D2 — auto-invalidacao: quando cada modo atinge delta ~ 1
+    (lnA do R-10b, fundo beta-constante beta1=1, delta_i = 1e-5)
+
+     entra em a  kh(a_cross)      lnA  delta_final  nao-linear?
+         0.0015         16.2    32.44     1.23e+09          SIM
+        0.00311         11.2    21.91     3.28e+04          SIM
+        0.00646          7.8    14.59     2.17e+01          SIM
+         0.0134          5.4     9.51     1.35e-01          nao
+         0.0278          3.8     5.99     3.99e-03          nao
+         0.0578          2.6     3.54     3.45e-04          nao
+           0.12          1.8     1.85     6.36e-05          nao
+          0.249          1.3     0.69     1.99e-05          nao
+
+    fundo DINAMICO (R-10c): lnA = 85.7 para kh=30 => delta
+    final ~ 1e32. Auto-invalidacao total.
+
+D3 — a era instavel em redshift (ancora a0 = 0.931, R-8b)
+
+                     fundo     a_ini     a_fim     z_ini     z_fim
+    beta-constante (R-10a)     0.001    0.5739     930.0      0.62
+      dinamico REF (R-10c)      0.01     0.216      92.1      3.31
+
+    recombinacao (z = 1100) => a = 8.46e-04
+    -> esta DENTRO da era instavel nos dois fundos (a era
+    instavel do beta-constante comeca antes de a = 1e-3 e a do
+    dinamico foi amostrada a partir de a = 0.01, ja instavel).
+    CONSEQUENCIA: o CMB e formado DENTRO da era de instabilidade
+    de gradiente para modos sub-horizonte.
+
+========================================================================
+VEREDITO R-10d
+========================================================================
+  (V1) SCREENING COMO PROTECAO: MORTO. delta_screen ~ 20-60 em
+  todas as eras; o Vainshtein so opera dentro de estruturas
+  nao-lineares. O lambda cancela na conta — nao ha escala
+  linear protegida.
+
+  (V2) AUTO-INVALIDACAO: VIVA, mas nao e protecao. Os modos
+  atingem delta ~ 1 e a analise linear deixa de decidir. Isso
+  impede de REFUTAR a teoria pela instabilidade linear — e
+  impede igualmente de CALCULAR qualquer observavel linear na
+  era instavel, que inclui a recombinacao.
+
+  LEITURA: a saida de Akrami et al. se aplica na versao fraca
+  (nao se pode refutar), nao na forte (nao esta tudo bem). O
+  preco e alto: o programa observacional linear do cap. 09 NAO
+  pode ser executado como planejado enquanto a era instavel
+  cobrir a recombinacao. As opcoes reais que restam sao:
+    (i) achar forma-beta com c_s^2 > 0 em r -> 0 (varredura de
+        FORMA, nao de escala — o R-8b ja mostrou rigidez sob
+        rescala);
+    (ii) tratar a era instavel nao-linearmente (fora do alcance
+        atual do projeto);
+    (iii) declarar a F1 uma implementacao com validade restrita
+        a z <~ 3, sem previsao de CMB.
