@@ -52,14 +52,16 @@ disparou (como devia). A autópsia decidiu:
   O escalar métrico **decai fortemente através da janela** em todos
   os modos. δχ fica entre decaimento e um transiente ≤ e^{+0.4}.
 - **A4 (halving):** kh=0.3 — o único modo com G_win > 0 — passou
-  (0.115 < 0.3). kh=10 falhou (0.687), mas seu G_win é −0.51: mesmo
-  no pior caso o teto é +0.18 < +0.5. O script imprimiu "A4 FALHOU —
-  sem veredito" porque a regra codificada trata qualquer falha de A4
-  como bloqueio global; a leitura correta, número a número: **o
-  critério físico pré-declarado (G_win < +0.5 em todos os modos)
-  fecha dentro das incertezas medidas.**
+  (0.115 < 0.3). kh=10 falhou na resolução 14000/7000 (0.687), e a
+  1ª versão deste doc fechava por argumento de teto (G_win = −0.51
+  com pior caso +0.18 < +0.5). **[ATUALIZADO, mesma data, pós-review]**
+  A rodada fina exigida pelo review foi executada
+  (`r7e_halving_fino.py`, NPTS 28000/14000): **dG = 0.191 < 0.3 OK**,
+  G_win(kh=10) = −0.54 (Ẽ: −10.4). O gate A4 agora passa em todos os
+  modos com critério pleno — o veredito não depende mais do argumento
+  de teto.
 
-**Veredito corrigido: ARTEFATO-DE-ENVELOPE + FASE-B-SÃ.**
+**Veredito: ARTEFATO-DE-ENVELOPE + FASE-B-SÃ (A4 pleno).**
 
 ## 3. O transiente δχ ≤ e^{0.4} é física conhecida — e sã
 

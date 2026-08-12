@@ -22,13 +22,15 @@ reduzida de D-2/R-1 (classe β-constante), R-4a/b/c e R-5.
    tempo): sem ela `W00` nasce de cancelamento de profundidade 1e-14
    da escala ambiente — irresolúvel em float64. Com ela,
    `min|W00|/esc = 0.09–0.15`.
-3. **V-XREP** (gate novo do erratum-02, aqui inaugurado): a redução
-   roda com dois canais independentes de Ċ — gradiente de grade
-   (produção) e `dt_background` simbólico (exato; estendido com as
-   taxas de 2ª ordem do fundo). Concordância no interior da trilha:
-   **5.2e-8** (estático), e primeira validação na trilha dinâmica no
-   R-7c. Bordas do estêncil one-sided isoladas e substituídas
-   (declarado).
+3. **V-XREP-a** (nomenclatura corrigida pós-review; ver nota no
+   erratum-02 §6): a redução roda com dois canais independentes de
+   Ċ — gradiente de grade (produção) e `dt_background` simbólico
+   (exato; estendido com as taxas de 2ª ordem do fundo) — dentro da
+   representação Γ–Γ. Concordância no interior da trilha: **5.2e-8**
+   (estático), e primeira validação na trilha dinâmica no R-7c.
+   Bordas do estêncil one-sided isoladas e substituídas (declarado).
+   O **V-XREP-b** (Γ–Γ vs ADM, a definição original do erratum) foi
+   executado no r6c/r6d e é obrigatório a cada mudança da maquinaria.
 4. **Envelope** para taxas/lnA (robusto a cruzamentos de zero);
    halving com critério de Richardson (RK4: erro ≈ dif/15).
 
@@ -96,9 +98,16 @@ cruzamento; 0 autovalores cinéticos negativos em 8/8 braços
 | 15000 | +4.52 | −12.33 | **−12.70** |
 | 30000 | (incompleto) | (incompleto) | **−10.72** (parcial, até kh=0.38) |
 
-Δln|Φ_g| na passagem: −2.1…−8.8 (decaimento em todas as épocas e
-ICs). Na trilha dinâmica E_f e δχ **acoplam** (F′≠0) — as ICs de δχ
-também carregam conteúdo métrico, tudo decaindo.
+Δln|Φ_g| na passagem: **31/32 combinações IC×época negativas**
+(−0.02…−8.8). A exceção é dchi(vel) em a_cross=500: **+2.695** — um
+log de componente única cujo valor de entrada (em kh=20) está perto
+de um zero (a Φ_g sourced por δχ nasce minúscula ali); a norma
+métrica da MESMA IC decai (lnA_met = −4.59), como em todas as 32.
+É exatamente a sensibilidade a zero-crossings que a reauditoria
+externa já advertira para logs de componente — o enunciado robusto é:
+*a norma métrica decai em 32/32; Φ_g das ICs métricas decai em
+16/16 (−2.1…−8.8)*. Na trilha dinâmica E_f e δχ **acoplam** (F′≠0) —
+as ICs de δχ também carregam conteúdo métrico.
 
 **POUSADO-BANDA-MORTA**: nenhuma época de cruzamento amplifica. O
 R-4 dinâmico (amplificação por época; "supressão-matéria" do R-4c)

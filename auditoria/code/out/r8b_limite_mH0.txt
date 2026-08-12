@@ -1,0 +1,57 @@
+========================================================================
+R-8b — LIMITE SOBRE m_T/H0 DOS VINCULOS DE CRESCIMENTO
+========================================================================
+[V1] GR selfcheck: PASSA
+[montagem] L2 Newtoniana (mu/Sigma) ...
+[montagem] W7N, W3G prontas
+[montagem] L2 flat (saude) ...
+[montagem] K/C/W/CdS flat prontas
+[fatias] prontas
+[alvo] H_tardio do benchmark (s=1, U0=0) = 0.557438, r_inf = 0.3323
+
+scan da familia (s -> m_T/H0):
+        s         U0      a0      H0   r(a0)   mT/H0    saude | max|mu-1|, max|Sig-1| na janela
+     0.25      0.766   0.912  0.6625  0.0852    2.33       ok |  0.00000   0.00000
+     0.50      0.542   0.919  0.6556  0.1576    2.29       ok |  0.00000   0.00000
+     1.00      0.000   0.931  0.6425  0.2748    2.26       ok |  0.00001   0.00001
+     2.00     -1.264   0.948  0.6256  0.4391    2.30       ok |  0.00003   0.00004
+     3.00     -2.647   0.959  0.6152  0.5546    2.37       ok |  0.00004   0.00006
+     4.00     -4.107   0.967  0.6071  0.6482    2.41       ok |  0.00006   0.00008
+     5.00     -5.638   0.976  0.5991  0.7349    2.41       ok |  0.00008   0.00011
+     5.50     -6.440   0.981  0.5942  0.7813    2.36       ok |  0.00009   0.00012
+     6.00          —  (FOLD g_borda=+0.0077)
+     6.20          —  (FOLD g_borda=+0.0170)
+
+  V-CONSIST (s=1, era Lambda, kh=30): mu = 1.000016 (R-8a: 1.0000 na era Lambda, |d| < 2e-3 OK)
+
+========================================================================
+VEREDITO R-8b (criterios pre-declarados no cabecalho)
+========================================================================
+  tabela mu/Sigma por membro (janela z<=1, k=0.05-0.15 h/Mpc): acima
+
+  ALCANCE DA FAMILIA (fold do fundo): m_T/H0 max ~ 2.41
+  s sem solucao (alem do fold): [(6.0, 'FOLD g_borda=+0.0077'), (6.2, 'FOLD g_borda=+0.0170')]
+  LIMITE observacional (|mu-1|<=0.15, |Sigma-1|<=0.1): m_T/H0 <= nao atingido no alcance
+  sensibilidade (limites 0.05/0.05): nao atingido
+  sensibilidade (limites 0.3/0.3): nao atingido
+
+  >>> POSTULADO 30-300 H0 INALCANCAVEL NA FAMILIA (obstrucao
+  ESTRUTURAL, nao observacional): mantendo a historia de
+  expansao, o fundo DOBRA (fold) em m_T/H0 ~ 2.4 —
+  r^2 V_f(r) tem minimo positivo (~0.3 em r=1) na forma-beta
+  do benchmark, o que trava s <= 3 mu H*^2/(0.3 meff^2) ~ 6.
+  Dentro do alcance, o crescimento e trivialmente satisfeito
+  (desvios subpercentuais — tabela). Consequencias:
+  (i) o postulado 30-300 H0 do corpus exige OUTRA forma-beta
+  (V_f com zero em r finito) — nao e um dial continuo do
+  benchmark; e uma ESCOLHA ESTRUTURAL a declarar na v2;
+  (ii) na familia do benchmark, m_T ~ (2-6) H0: a fisica
+  bimetrica vive no quase-horizonte -> R-8 completo e o
+  teste decisivo (como ja apontava o R-8a).
+
+  NOTA ESTRUTURAL: membros com m >> H0 exigem U0 negativo grande
+  (vacuo-chi cancelando a energia da interacao) — o postulado
+  30-300 H0 do corpus IMPLICA esse ajuste fino; registrado como
+  insumo do cap. de fundamentos da v2.
+  LIMITES ADOTADOS sao referencias de ordem de grandeza da
+  literatura MG (declarado); confronto fino = nivel paper.

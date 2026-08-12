@@ -129,6 +129,19 @@ promove isso a resultado do repo.
    (C_X = 0, Schur puro) — exigindo espectros de K_red idênticos. O
    bug era invisível a todos os gates de uma única representação.
 
+   **Nota de nomenclatura (2026-08-12, pós-review):** a cascata R-7
+   implementou sob o nome "V-XREP" um gate DISTINTO do definido
+   acima: a comparação de dois canais independentes de Ċ (gradiente
+   de grade vs `dt_background` simbólico) DENTRO da representação
+   Γ–Γ. Fica renomeado: **V-XREP-a** = dois canais de Ċ (o dos R-7,
+   pega erros de derivada/fundo — pegou a inconsistência Euler do
+   pousado); **V-XREP-b** = Γ–Γ vs ADM como definido acima —
+   executado no r6c/r6d (T1–T4: mesma ação provada exata; mesma
+   redução sobre os dois conjuntos de matrizes) e coberto de forma
+   independente pelo pacote ADM externo. Scripts futuros: V-XREP-a
+   obrigatório por trilha; V-XREP-b obrigatório a cada mudança da
+   maquinaria de redução (referência: r6c).
+
 ## 7. Crédito
 
 A contagem 2-DOF, a L2 ADM de referência e a previsão de que a

@@ -26,14 +26,31 @@ setor massivo desliga em k ≫ m). Expoente de queda: |μ−1| ∝ kh^−1.86
 
 ## 2. Resultado
 
-Na **região QS-confiável (kh ≥ 22)**, nas duas eras (a = 0.1 → 75000,
-a_eq interna ≈ 0.84) e nos dois fundos (β₁ = 1, 4.47):
+**Correção pós-review (2026-08-12):** o "a_eq ≈ 0.84" impresso pelo
+script estava ERRADO (estimativa grosseira hard-coded; o próprio
+output mostra ρ ≠ Λ_eff ali). Valores corretos da igualdade
+ρ_m = ρ_Λ = 3H*²: **a_eq = 0.686** (β₁=1) e **a_eq = 0.429**
+(β₁=4.47) — dependem do fundo. O grid a = 0.1…75000 cobre as duas
+eras nos dois casos; a rotulagem de época nas tabelas deve usar
+esses valores. (A física das tabelas μ/Σ não usa a_eq — era rótulo
+interpretativo; script corrigido para runs futuras.)
+
+Na **região QS-confiável (kh ≥ 22)**, nas duas eras e nos dois
+fundos (β₁ = 1, 4.47):
 
 | | máximo |
 |---|---|
 | \|μ−1\| | 0.66% (a=0.1, kh=30; cai como kh⁻²) |
 | \|Σ−1\| | 0.66% (idem) |
 | em kh ≥ 100 | ≤ 0.06% |
+
+**Precisão (fraseado honesto, pós-review):** o piso de erro da
+própria sonda QS na fronteira da região confiável é ~2% (por
+construção de kh_QS). O enunciado FORTE deste resultado é portanto
+"**nenhum desvio acima do piso QS foi detectado**" — os 0.66% são o
+valor central computado, não uma previsão de precisão; a previsão
+fina do desvio sub-horizonte exige o tratamento dinâmico (ou QS de
+ordem seguinte).
 
 Nenhum ponto singular (sem ressonâncias no grid). Desvios **crescem
 para a era de matéria** (r pequeno → setor-f responde mais) e caem

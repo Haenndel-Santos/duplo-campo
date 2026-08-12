@@ -4,6 +4,18 @@
 (`docs/decisao1_congelamento_v1.md`). Este arquivo é o esqueleto
 comentado; cada capítulo vira um arquivo `NN_titulo.md` nesta pasta.
 
+**REVISÃO 2026-08-12 (pós-Erratum-02):** o esqueleto original tinha o
+no-go escalar como resultado central (cap. 07) e excluía os capítulos
+observacionais por falta de base saudável. O Erratum-02
+(`auditoria/erratum_02_reducao_numerica.md`) mostrou que o 3º DOF
+escalar era artefato de um bug da redução numérica; a cascata R-7
+(`docs/resultado_r7_cascata.md`, `resultado_r7e_saude_interna.md`)
+estabeleceu o sistema físico de 2 DOFs são em todos os regimes
+testados; R-8a/b (`resultado_r8a_quase_estatico.md`,
+`resultado_r8b_limite_mH0.md`) abriram o confronto observacional.
+Caps. 01–02 e 07–10 e a lista de exclusões foram atualizados abaixo;
+caps. 03–06 ficam como estavam (fundo, Bianchi e tensor não mudaram).
+
 **Regras da pasta (vinculantes):**
 
 1. **Ordem do plano:** ação → derivação → resultado → interpretação por
@@ -30,20 +42,31 @@ comentado; cada capítulo vira um arquivo `NN_titulo.md` nesta pasta.
 ### 01 — O que este documento é
 A tese em uma página: uma hipótese conceitual (dois campos primordiais
 correlacionados; separação estrutural), uma implementação matemática
-(TDCP-F1 sobre Hassan–Rosen) levada até o fim, e o resultado honesto:
-fundo e setor tensorial funcionam; o setor escalar tem um no-go
-localizado e quantificado; o enquadramento R1 delimita o que o no-go
-mata e o que deixa vivo. Relação com a v1 (congelada como registro;
-auditoria como ponte). A "afirmação mínima" do plano v2 como enunciado
-de partida.
-*Fontes: decisao1, plano_v2 (afirmação mínima), veredito §4.*
+(TDCP-F1 sobre Hassan–Rosen) levada até o fim — incluindo a queda e a
+revogação do próprio no-go que o programa havia produzido. O
+resultado honesto atual: fundo ✓, setor tensorial ✓, setor escalar
+SÃO (2 DOFs: 1 métrico overdamped + espectador δχ) em todos os
+regimes testados; nenhuma validação observacional ainda (sub-horizonte
+consistente com GR; quase-horizonte em aberto); a identificação
+ontológica (φ₋ como grau primordial) segue normativa, não derivada.
+Relação com a v1 (congelada; auditoria como ponte).
+*Fontes: decisao1, erratum-02, resultado_r7_cascata,
+resultado_r7e_saude_interna, resultado_r8a/b.*
 
-### 02 — Método
-Estratificação epistêmica (1/2a/2b/3) como regra, não ornamento; gates
-com critério de falha pré-declarado; auto-teste de poder de detecção;
-rota dupla. Por que isso está aqui e não num apêndice: o método pegou
-cinco testes vácuos e um erro estrutural do corpus — é resultado.
-*Fontes: parecer Parte III-B, erratum §8, veredito §4.*
+### 02 — Método (agora com o caso máximo)
+Estratificação epistêmica (1/2a/2b/3); gates com critério de falha
+pré-declarado; auto-teste de poder; rota dupla. O capítulo ganha seu
+caso definitivo: o ERRATUM-02 — um bug de 1.4–6% numa rotina de
+redução produziu, por meses, um "3º DOF", um fantasma, uma banda e
+uma previsão observacional, tudo internamente consistente e validado
+pelos gates de representação única; a queda veio de auditoria externa
+independente + prova de equivalência de ações (r6c) + localização
+linha a linha (r6d). Lições codificadas: V-XREP-a/b, equilibração de
+variáveis, normalização congelada para ganhos, gates SUSPEITO. O
+método não é ornamento: derrubou cinco testes vácuos, um erro
+estrutural do corpus (Bianchi) e o próprio resultado central anterior.
+*Fontes: parecer Parte III-B, erratum-01 §8, erratum-02,
+resultado_r7_cascata §0.*
 
 ### 03 — A ação e o dicionário
 A ação completa (F1), simetrias, dimensões; o potencial V(φ₊,φ₋)
@@ -75,56 +98,71 @@ Higuchi automático com margem 6; a razão ≈4 hoje. A invalidação do
 errado por construção).
 *Fontes: resultado_ramo_finito.md §3–4, D2 (forma fechada).*
 
-### 07 — O no-go do setor escalar (resultado central)
-A cadeia completa, com fronteiras: taquião σ≈(3–4)H eterno (ponto fixo
-como juiz) em μ≥0.3; fantasma |kN|~μ³ em μ=0.1; ~1500 pontos 4D; a
-doença mora no setor de vínculos (dubleto B_g±B_f, lapso Φ_f); a
-modulação β₁(φ₋) atua no lugar certo com o sinal errado (dois canais,
-ambos pioram); o ramo algébrico também morre (degenerado E taquiônico
-na raiz, sem corredor). Enunciado do no-go com as saídas não-cobertas.
-*Fontes: resultado_setor_escalar.md, no_go_beta_constante.md,
-estrutura_par_relativo.md, veredito_setor_escalar_final.md (+ §6),
-resultado_investigacao1_ramo_algebrico.md.*
+### 07 — O setor escalar: do falso no-go à saúde derivada (resultado central)
+A história completa em três atos, com números: (i) o no-go aparente
+(taquião/fantasma/1500 pontos) e o que ele realmente media — o
+sistema espúrio de 3 DOFs criado pelo bug da redução (Erratum-02);
+(ii) a queda: auditoria externa (det K=0 simbólico) + prova local de
+mesma-ação (r6c, exato) + o bug linha a linha (r6d) + reprodução
+independente; (iii) o setor corrigido: 2 DOFs (1 métrico overdamped
+decadente + δχ espectador saudável), zero direções cinéticas
+negativas em todos os regimes (benchmarks, classe μ×β₁ incl. fresta,
+trajetória de rolagem/pouso incl. janela de deslocamento — W00 sem
+trocas, sem FJ-quebra), consistente com o teorema HR e
+Comelli–Crisostomi–Pilo. Banda, ISW e "strong coupling" retirados
+como artefatos. Fronteiras e pendências declaradas (ramo algébrico
+deferido; halving fino do kh=10).
+*Fontes: erratum_02_reducao_numerica.md, resultado_r7_cascata.md,
+resultado_r7e_saude_interna.md, saídas r6c/r6d/r7a–f.*
 
-### 08 — O enquadramento R1: o que o no-go mata e o que não mata
-Gate 1 completo: os quatro objetos identificados só por decreto (G1-a,
-zero elos derivados); a projeção zero da patologia em δφ₋ (G1-b,
-17/17); o trilema examinado (G1-c): W–W demolido parcialmente, a
-circularidade HR–Goldstone como obstrução real, critério
-anti-circularidade. Conclusão: o no-go é da representação F1; o grau
-relacional primordial segue sem realização matemática que feche — vivo
-como hipótese, órfão de implementação.
-*Fontes: gate1_identidade_relacional.md (+ §7–9), gate1a, gate1c,
-resultado_investigacao1 §3.*
+### 08 — O enquadramento R1 e a identificação normativa (a fronteira que fica)
+Gate 1 completo, RELIDO pós-erratum: os quatro objetos identificados
+só por decreto (G1-a) continuam por decreto — a saúde da F1 NÃO prova
+a identidade φ₋ ↔ grau primordial; a projeção-δφ₋ (G1-b) e o trilema
+(G1-c) mantêm-se como delimitação do que está derivado vs postulado.
+O que muda: sem no-go, a F1 deixa de ser "órfã de implementação
+saudável" — o problema aberto passa a ser a DERIVAÇÃO do vínculo
+Φ₋/φ₋/χ/r, não a sobrevivência da implementação.
+*Fontes: gate1_identidade_relacional.md, gate1a, gate1c; releitura:
+resultado_r7e_saude_interna §6.*
 
-### 09 — O programa aberto
-R2 e a Investigação 2 (condensação dinâmica, p_φ≠0 — o único regime
-fora da estrutura de vínculos varrida); alvo (b1) do trilema; fallback
-(c) declarado; a derivação de Stückelberg como caminho a 2a. Ativos da
-v1 que atravessam (bloco Vainshtein/PPN aritmético, CLASS/ISW, previsão
-n_σ−1 da D7, formalismo HR limpo do Anexo A). Critérios pré-declarados
-para tudo.
-*Fontes: gate1c §4–5, veredito §3 (saídas), plano_v2 (ativos).*
+### 09 — O programa observacional (o novo centro de gravidade)
+O que já foi medido: sub-horizonte consistente com GR (μ, Σ dentro do
+piso QS ~2%, valores centrais ≤0.66% em kh≥22 — R-8a, com o fraseado
+de precisão honesto); a família do benchmark tem m_T/H₀ ≈ 2.3–2.4
+CRAVADO pelo fundo (fold em s≈5.7): o postulado 30–300 H₀ do corpus é
+INALCANÇÁVEL sem outra forma-β — vira escolha estrutural a declarar,
+com o ajuste fino (U0 negativo) explicitado (R-8b). O que falta e
+decide: a janela quase-horizonte kh ≲ 22 (baixo-ℓ, ISW, Gpc) com o
+sistema dinâmico 2-DOF + matéria/radiação acopladas → C_ℓ, P(k),
+lensing (R-8 completo); dicionário de épocas como decisão declarada.
+Ativos da v1 que atravessam, reavaliados.
+*Fontes: resultado_r8a_quase_estatico.md, resultado_r8b_limite_mH0.md,
+r8_dicionario_epocas_opcoes.md.*
 
 ### 10 — Interpretação (por último, como manda o plano)
-O que a narrativa da TDCP significa À LUZ do que foi derivado: a
-separação estrutural existe e evolui (cap. 05); a "memória da
-bifurcação" NÃO tem portador identificado na F1 (cap. 08); as quatro
-fórmulas de tempo relacional da v1 são metáfora até segunda ordem
-(Passo 10 do plano: ou UM funcional covariante, ou declarar metáfora —
-aqui se declara metáfora, salvo resultado futuro da trilha de cálculo).
-η aposentado do núcleo (Gate 9, caminho B) salvo derivação futura.
-*Fontes: caps. anteriores; plano_v2 Passos 9–10; gate1a §5 (quarta
-fórmula).*
+O que a narrativa significa À LUZ do estado atual: a separação
+estrutural existe e evolui (cap. 05); a implementação F1 é
+internamente sã mas a "memória da bifurcação" segue SEM portador
+derivado (cap. 08 — a fronteira honesta não mudou de natureza, mudou
+de urgência); as fórmulas de tempo relacional da v1 continuam
+metáfora até derivação; η aposentado do núcleo. O que o episódio
+erratum-02 significa para o programa: a teoria sobreviveu ao seu
+próprio processo — o resultado é o par (implementação sã, método que
+se autocorrige), não uma validação.
+*Fontes: caps. anteriores; plano_v2 Passos 9–10.*
 
 ---
 
 ## O que fica de fora (por decisão, não esquecimento)
 
-- Reconstrução dos capítulos observacionais da v1 (Cap.18–25): sem
-  setor escalar saudável, μ/Σ/fσ₈ da F1 não têm base — entram só como
-  ativo metodológico no cap. 09.
-- Anexos I–K (linha exploratória quântica): permanecem na v1 congelada;
-  o próprio corpus os declara sem ponte com a ação (G1-a linha 18).
-- Qualquer conteúdo que dependa da Investigação 2: entra quando ela
-  rodar, no cap. 09.
+- **[REVISADO 2026-08-12]** Reconstrução dos capítulos observacionais
+  da v1 (Cap.18–25): a base saudável para μ/Σ/fσ₈ EXISTE agora
+  (R-8a/b); a reconstrução entra CONDICIONADA ao R-8 completo e ao
+  dicionário de épocas — não antes (números da v1 permanecem
+  inutilizáveis: eram do sistema espúrio).
+- Anexos I–K (linha exploratória quântica): permanecem na v1
+  congelada; sem ponte com a ação (G1-a linha 18).
+- O ramo algébrico e a Investigação 2 original: substituídos pela
+  releitura pós-erratum (R-7e/f); o ramo algébrico segue deferido com
+  prior declarado.

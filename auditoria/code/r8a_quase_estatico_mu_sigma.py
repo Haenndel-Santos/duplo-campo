@@ -301,11 +301,14 @@ for B1V in B1S:
     say("=" * 72)
     say(f"FUNDO beta-constante beta1={B1V:g}")
     say("=" * 72)
-    f_eq = fundo_bconst(0.84, B1V)
-    if f_eq:
-        say(f"    a_eq interna ~ 0.84 (rho={f_eq['rho']:.3f} vs "
-            f"Lambda_eff ~ {3*f_eq['H']**2 - f_eq['rho']:.3f}); "
-            f"m_T/H tardio ~ 3.5")
+    # a_eq: igualdade rho_m = rho_Lambda = 3 H_tardio^2 (corrigido
+    # pos-review: a 1a versao imprimia 0.84 hard-coded, errado)
+    f_late = fundo_bconst(1e6, B1V)
+    rho_L = 3.0 * f_late['H']**2
+    a_eq = (RHO0 / rho_L) ** (1.0 / 3.0)
+    say(f"    a_eq interna = {a_eq:.3f} (rho_m = rho_Lambda = "
+        f"{rho_L:.3f}); m_T/H e funcao da epoca (~3.5 no Lambda "
+        f"profundo)")
     say("")
     say(f"    {'a':>8} | " + " | ".join(f"kh={kh:g}".center(25)
                                         for kh in KH_GRID))
