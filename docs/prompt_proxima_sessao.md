@@ -179,7 +179,9 @@ crescimento tardio REAL ~+1H na família modulada-POUSADA (k_c=12500:
 todas as ICs; ~k-independente; abaixo do limiar CRESCE) — hipótese
 nomeada: bombeamento paramétrico pelas oscilações residuais de χ
 (ω_χ/H≈4.4; mesmo k_phys na fase rolante DECAI); teste declarado:
-reintegrar com oscilações amortecidas ou janela a>50000; (iv) lnA_met
+reintegrar com oscilações amortecidas ou janela a>50000; CAVEAT: o
+halving da rodada cobriu só k=1250 — o follow-up ABRE pelo halving em
+k_c=12500 (doc R-3 §3.4) antes de apoiar enunciado no achado; (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs

@@ -110,6 +110,15 @@ o R-4 deixa de ser opcional.
 3. Três iterações de andaime do controle GR antes do run limpo —
    registradas no script com comentários datados; a física bimétrica
    nunca falhou nas iterações.
+4. **O halving da rodada cobriu só k_c=1250** (Δ=0.009). O crescimento
+   tardio de §1.3 vive em k_c=12500, que ficou **sem controle de
+   convergência dedicado** nesta rodada. A favor da realidade do
+   efeito: taxa moderada e sustentada (+0.98/H — instabilidade de
+   integrador estoura, não cresce a ~1H), coerência entre as 6 ICs, e
+   a dependência de FASE (o mesmo k_phys na fase rolante decai).
+   Ainda assim, o follow-up de §1.3 deve **abrir pelo halving em
+   k_c=12500** (barato: uma rerodada com NPTS dobrado) antes de
+   qualquer enunciado apoiado no achado.
 
 ## 4. Estratificação epistêmica
 
@@ -118,13 +127,14 @@ o R-4 deixa de ser opcional.
 | σ congelado da rolagem não se realiza (dois k; PODER ✓) | 2b (uma trajetória, célula REF, k_c={1250,12500}) |
 | Condensação: tipo-massa, IR, acompanha o fundo, satura | 2b |
 | Transiente métrico: tipo-gradiente | 2b (dois k) |
-| Crescimento tardio real ~1H na família pousada | 2b (observado; mecanismo em aberto) |
+| Crescimento tardio real ~1H na família pousada | 2b provisório (observado; mecanismo em aberto; halving do k alto pendente — §3.4) |
 | Hipótese paramétrica para 1.3 | 3 (nomeada, com teste declarado) |
 | Identificação condensação ↔ narrativa Cap.1 | mecanismo: 2b; identidade: segue interpretativa (G1-a) |
 
 ## 5. Fila
 
 - **R-4** (agora urgente): mapa lnA(célula, k) vs vínculos + o
-  follow-up do crescimento tardio paramétrico (§1.3).
+  follow-up do crescimento tardio paramétrico (§1.3), abrindo pelo
+  halving em k_c=12500 (§3.4).
 - **Gate F** inalterado (F-a primeiro).
 - O enunciado final do setor escalar ganha o §1.3 como item novo.
