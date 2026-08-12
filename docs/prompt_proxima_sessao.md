@@ -61,24 +61,35 @@ ESTADO ATUAL (2026-08-12, fim de sessão):
   (grade vs dt_background simbólico), gates G1/G2/G3 pré-declarados —
   ver r7a_dinamica_2dof.py como referência de implementação.
 
+ADENDO (mesma data, sessão continuada — R-7e/f EXECUTADOS,
+commit 255a327): SAÚDE INTERNA FECHADA
+(docs/resultado_r7e_saude_interna.md): Fase B SÃ (janela de
+deslocamento estruturalmente limpa — W00 sem trocas, sem FJ-quebra,
+negK=0; o σ/H≈13 antigo era artefato triplo: QEP congelado + 3-DOF
+espúrio + normalização variável — a autópsia com normalização
+CONGELADA deu G_win ≤ +0.4, campo métrico DECAINDO −3.6..−10.7 pela
+janela; o transiente δχ ≤ e^{0.4} é a condensação da Fase A,
+autocurável). NO-GO DE CLASSE RETIRADO (R-7f: scan μ×β₁ + fresta,
+zero violações). LIÇÃO DE MÉTODO: envelope com ω²(t) variável é
+armadilha de normalização — sempre normalização congelada para
+ganhos; o gate SUSPEITO pré-declarado funcionou.
+
 FILA (ordem recomendada):
-1. **R-8 — o gate decisivo**: matéria/radiação perturbadas
-   (γ, ν, b, CDM) acopladas ao sistema 2-DOF corrigido; potenciais de
-   Bardeen; C_ℓ^{TT,TE,EE} e P(k). Antes do desenho: decisão com o
-   autor do dicionário de épocas (sair do brinquedo dust+Λ). A
-   reauditoria externa esboçou o pipeline (r6e/r6f nos externos) —
-   usar como referência, não como oráculo.
+1. **R-8 — o gate decisivo** (único item de física restante):
+   decisão do autor sobre docs/r8_dicionario_epocas_opcoes.md
+   (recomendação: C quase-estático μ(a,k)/Σ(a,k) primeiro — ~1
+   sessão — depois A Boltzmann completo). Insumos que só o autor
+   fixa: m/H₀ (postulado 30–300H₀?), massa física de χ hoje, β's,
+   normalização primordial.
 2. Propagação editorial do erratum-02: banners de supersessão nos
    docs históricos afetados (ou nota única no índice); revisão do
    cap. 07 da v2 (o resultado central mudou: de "fantasma/H-SC" para
-   "setor escalar são; questão aberta = C_ℓ").
-3. Reavaliar à luz do erratum: as conclusões de Investigação 2 Fase B
-   (σ/H 13.08 etc.) e do ramo algébrico usavam QEP congelado +
-   contagem 3 — quanto sobrevive no 2-DOF? (Provável: refazer Fase B
-   com a maquinaria R-7; prior: o "taquião persistente" também era do
-   sistema espúrio.)
-4. Housekeeping: fundo pousado com integrador de 2ª ordem (a
-   inconsistência Euler detectada pelo V-XREP merece um fundo RK4).
+   "setor escalar são em todos os regimes; questão aberta = C_ℓ").
+3. Housekeeping (não bloqueia): fundo pousado com integrador 2ª ordem
+   completo (Heun atual tem cadeia rp de 1ª ordem, M0=3e-4; os lnA do
+   pousado carregam ±O(1) de sistemática — BANDA-MORTA intacta);
+   halving fino do modo kh=10 da autópsia; ramo algébrico (deferido,
+   declarado — porte do arranjo da investigacao1).
 
 DISCIPLINA (inalterada): critérios pré-declarados em cabeçalho antes
 de rodar; veredito só pelos critérios; rodadas ruins preservadas nos
