@@ -1,0 +1,149 @@
+========================================================================
+R-3b — FAMILIA POUSADA: CONVERGENCIA + TESTE DO BOMBEAMENTO
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[fatias] {Fb,Fp,Fpp} x {b0..b4}, taxas livres ...
+[fatias] prontas
+
+[fundo ORG] reintegrando a trajetoria original ...
+    r_fim=0.4979 (ref 0.4979), chi/v_fim=0.932 (ref 0.932)
+    [CONFERE]
+[fundo DAM] mesma trajetoria com Gamma=30 ligando em a=2400 (largura 0.03 em ln a) ...
+    r_fim=0.5040 (ref 0.4979), chi/v_fim=0.939 (ref 0.932)
+    [CONFERE]
+
+[fundo] medidas de oscilacao residual:
+    omega_chi (ORG, 5 cruzamentos de chid em a=[2600,90000]) = 5.80  ->  omega_chi/H = 4.99  (doc R-3 estimava ~4.4)
+    a_band = 2 k_c / omega_chi (aprox. sem massa):  k=12500: 4309  k=25000: 8618
+    janela    |desl| ORG  |desl| DAM  Aosc ORG  Aosc DAM
+    pouso       2.01e-01    2.01e-01  1.03e-01  9.40e-02
+    tardia      3.26e-02    1.72e-02  1.55e-02  3.74e-02
+
+========================================================================
+RODADAS A-F
+========================================================================
+
+--- A (baseline oficial): fundo ORG, k_c=12500, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.98  negK=1
+    ancora a= 15000: sigma/H cong (red) =  2.33  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -1.31  +2.05  -1.66  +0.13  +0.55  -2.10  |  -1.32  +2.05  +0.69  +0.13  +0.55  +0.70
+    rolagem   +1.10  +0.80  -1.70  +1.20  +1.00  -0.38  |  +0.37  +0.04  -1.89  +0.47  +0.26  +0.02
+    pouso     +1.63  +1.69  -1.10  +1.62  +1.65  +1.57  |  +2.31  +2.37  +0.80  +2.29  +2.33  +1.69
+    tardia    +0.90  +0.90  +1.25  +0.90  +0.90  +0.88  |  +0.98  +0.98  +1.25  +0.98  +0.98  +0.97
+    lnA_met max = 17.80
+    perfil local (IC0, met): a1->a2: taxa_loc/H   [a_band ~ 4309]
+         300->   760:   +1.48
+         760->  1250:   +1.81
+        1250->  2100:   -1.10
+        2100->  2600:   +0.52
+        2600->  3200:   +1.07
+        3200->  4000:   -3.41
+        4000->  5000:   +6.26 <-- banda
+        5000->  6800:   +5.86
+        6800->  8000:   -1.10
+        8000-> 10000:   -3.90
+       10000-> 12000:   +3.23
+       12000-> 15000:   +3.16
+       15000-> 18000:   +2.04
+
+--- B (halving do achado): fundo ORG, k_c=12500, npts=40000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.98  negK=1
+    ancora a= 15000: sigma/H cong (red) =  2.33  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -1.31  +2.17  -1.65  +0.13  +0.55  -2.10  |  -1.32  +2.17  +0.70  +0.13  +0.55  +0.70
+    rolagem   +1.10  +0.78  -1.70  +1.20  +1.00  -0.36  |  +0.37  +0.03  -1.89  +0.47  +0.26  +0.02
+    pouso     +1.63  +1.69  -1.10  +1.62  +1.65  +1.57  |  +2.31  +2.37  +0.80  +2.29  +2.33  +1.69
+    tardia    +0.90  +0.90  +1.25  +0.90  +0.90  +0.88  |  +0.98  +0.98  +1.25  +0.98  +0.98  +0.97
+    lnA_met max = 17.76
+
+--- C (teste A/B principal): fundo DAM, k_c=12500, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.75  negK=1
+    ancora a= 15000: sigma/H cong (red) =  2.31  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -1.31  +2.05  -1.66  +0.13  +0.55  -2.10  |  -1.32  +2.05  +0.69  +0.13  +0.55  +0.70
+    rolagem   +1.10  +0.80  -1.70  +1.20  +1.00  -0.38  |  +0.37  +0.04  -1.89  +0.47  +0.26  +0.01
+    pouso     +0.73  +0.79  -1.93  +0.71  +0.75  +0.73  |  +1.39  +1.46  -0.76  +1.37  +1.41  +0.80
+    tardia    +1.06  +1.06  +2.08  +1.06  +1.06  +1.02  |  +1.12  +1.12  +2.10  +1.11  +1.12  +1.11
+    lnA_met max = 17.07
+    perfil local (IC0, met): a1->a2: taxa_loc/H   [a_band ~ 4309]
+         300->   760:   +1.48
+         760->  1250:   +1.81
+        1250->  2100:   -1.10
+        2100->  2600:   +2.62
+        2600->  3200:   -1.20
+        3200->  4000:   +1.16
+        4000->  5000:   +2.32 <-- banda
+        5000->  6800:   +1.81
+        6800->  8000:   +0.65
+        8000-> 10000:   -1.15
+       10000-> 12000:   -1.76
+       12000-> 15000:   +5.02
+       15000-> 18000:   +1.98
+
+--- D (sonda de banda): fundo ORG, k_c=25000, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) = 27.31  negK=1
+    ancora a= 15000: sigma/H cong (red) = 41.71  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -1.32  +1.48  -1.80  +0.10  +0.61  -2.36  |  -1.32  +1.48  +0.91  +0.10  +0.61  +0.56
+    rolagem   +1.58  +1.30  -0.98  +1.68  +1.46  -2.00  |  +0.40  +0.09  -0.03  +0.52  +0.28  -1.18
+    pouso     +1.28  +1.31  -2.02  +1.27  +1.29  +0.59  |  +2.34  +2.38  -0.75  +2.32  +2.35  +2.09
+    tardia    -0.10  -0.10  -0.59  -0.11  -0.10  -0.12  |  +0.06  +0.06  +0.09  +0.06  +0.06  +0.07
+    lnA_met max = 17.99
+    perfil local (IC0, met): a1->a2: taxa_loc/H   [a_band ~ 8618]
+         300->   760:   +1.56
+         760->  1250:   +1.88
+        1250->  2100:   -1.09
+        2100->  2600:   +0.46
+        2600->  3200:   +1.61
+        3200->  4000:   -4.00
+        4000->  5000:   +6.34
+        5000->  6800:   +6.01
+        6800->  8000:   +0.20
+        8000-> 10000:   -1.86 <-- banda
+       10000-> 12000:   -1.61
+       12000-> 15000:   +0.23
+       15000-> 18000:   +3.88
+
+--- E (A/B da banda): fundo DAM, k_c=25000, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  6.96  negK=1
+    ancora a= 15000: sigma/H cong (red) = 52.81  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -1.32  +1.48  -1.80  +0.10  +0.61  -2.36  |  -1.32  +1.48  +0.91  +0.10  +0.61  +0.56
+    rolagem   +1.58  +1.30  -0.98  +1.68  +1.46  -2.00  |  +0.40  +0.09  -0.03  +0.52  +0.28  -1.18
+    pouso     +0.43  +0.46  -2.00  +0.42  +0.44  -0.20  |  +1.42  +1.47  -1.36  +1.41  +1.44  +1.20
+    tardia    -0.05  -0.04  -0.97  -0.05  -0.05  -0.05  |  +0.01  +0.02  +0.28  +0.01  +0.01  +0.00
+    lnA_met max = 17.12
+
+--- F (A/B do braco IR): fundo DAM, k_c=1250, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  3.07  negK=1
+    ancora a= 15000: sigma/H cong (red) =  3.06  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs:
+    pre       -0.13  +2.13  -1.03  -0.29  +1.16  -1.49  |  -0.13  +2.13  +1.22  -0.29  +1.16  -0.75
+    rolagem   -2.70  -2.22  +1.09  -2.46  -1.76  -0.85  |  -2.76  -2.22  +0.94  -2.47  -1.84  -1.17
+    pouso     -1.47  -2.74  -0.62  -1.20  -3.07  -0.54  |  -1.51  -2.88  -0.50  -1.24  -3.27  -0.36
+    tardia    +0.52  +0.08  +0.95  +0.40  +1.12  +0.95  |  +0.68  +0.13  +1.85  +0.52  +1.87  +1.84
+    lnA_met max = 14.17
+
+========================================================================
+VEREDITO R-3b (criterios pre-declarados no cabecalho)
+========================================================================
+  R3b-BASE: max|A - oficial| = 0.003 (criterio < 0.05)  [PASSA]
+  R3b-CONV: max|A - B| = 0.0031 (criterio < 0.05)  [PASSA — achado sec.1.3 CONVERGIDO]
+  R3b-CONT: max|A - C| em pre+rolagem = 0.0002 (criterio < 0.1)  [PASSA]
+  R3b-PARAM (taxa metrica max na TARDIA):
+    C vs A  (k=12500): original +0.98/H -> amortecido +1.12/H  => PERSISTE
+    E vs D  (k=25000): original +0.06/H -> amortecido +0.02/H  => N/A (original ja pequeno)
+    F vs oficial (k=1250): original +1.05/H -> amortecido +1.87/H  => PERSISTE
+    (secundario, POUSO) C vs A: +1.46 vs +2.37
+
+  >>> CRESCIMENTO PERSISTE sem oscilacoes no(s) braco(s)
+  marcado(s): INSTABILIDADE TARDIA GENUINA da familia
+  modulada-pousada — primeiro no-go dinamico real do
+  programa (nivel linear, fronteira declarada). R-4 herda
+  com prioridade maxima: mapear em k/celulas/trajetorias.
+
+  R3b-BANDA (diagnostico): a_band(k=12500) ~ 4309 (pouso), a_band(k=25000) ~ 8618 (tardia) — conferir os perfis locais de A e
+  D acima: pico local na faixa [0.7,1.4]*a_band apoia a hipotese;
+  leitura final no doc.

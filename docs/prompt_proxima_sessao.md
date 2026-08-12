@@ -179,14 +179,26 @@ crescimento tardio REAL ~+1H na família modulada-POUSADA (k_c=12500:
 todas as ICs; ~k-independente; abaixo do limiar CRESCE) — hipótese
 nomeada: bombeamento paramétrico pelas oscilações residuais de χ
 (ω_χ/H≈4.4; mesmo k_phys na fase rolante DECAI); teste declarado:
-reintegrar com oscilações amortecidas ou janela a>50000; CAVEAT: o
-halving da rodada cobriu só k=1250 — o follow-up ABRE pelo halving em
-k_c=12500 (doc R-3 §3.4) antes de apoiar enunciado no achado — SCRIPT
-R-3b PRONTO E COMMITADO: auditoria/code/r3b_pousada_parametrico.py
-(6 rodadas A–F: reprodução do baseline oficial, halving k=12500, A/B
-com fundo χ-amortecido à mão em 3 k, sonda de banda k_c=25000 com ω_χ
-medido por cruzamentos; critérios R3b-BASE/CONV/CONT/PARAM
-pré-declarados no cabeçalho; ~8–15 min), AGUARDA RODADA; (iv) lnA_met
+reintegrar com oscilações amortecidas ou janela a>50000. R-3b
+EXECUTADA 2026-08-12 (docs/resultado_r3b_pousada.md): achado
+CONVERGIDO (halving k=12500, Δ=0.0031 — caveat §3.4 resolvido);
+hipótese paramétrica REFUTADA (crescimento persiste e sobe com χ
+amortecido: +0.98→+1.12 em k=12500, +1.05→+1.87 em k=1250; sonda de
+banda negativa — burst do pouso é época-fixo, não k-fixo); ESTRUTURA
+IR: k_c=25000 NÃO cresce na tardia (+0.06 onde o congelado diz 41.7 —
+o dado congelado-vs-real mais dramático da série) — o crescimento
+vive em k_phys≲1.5; pouso tem componente de anel real (~×0.6);
+negK=1 insensível a oscilações/drift. AUTOCRÍTICA DECLARADA: o fundo
+amortecido (Γ=30) aproxima o ponto fixo MAIS DEVAGAR (0.7/H) que o
+envelope original (3/2 H) — na tardia carrega desvio secular MAIOR
+(3.7e-2 vs 1.6e-2); logo "PERSISTE" estabelece NÃO-PARAMÉTRICA, mas
+genuína-vs-secular fica ABERTO. R-3c PRONTO E COMMITADO
+(auditoria/code/r3c_pousada_mecanismo.py, ~5–10 min, AGUARDA RODADA):
+braço G = β-constante β₁=4.47 (a esquina fora do retângulo da R-1 —
+decide modulação vs β₁-grande) + braços H/I/K = correlação
+taxa-vs-desvio (Γ∈{10,100}: aproximação rápida/lenta; taxa desliga ou
+acompanha o desvio = SECULAR-FED / taxa ~ const = PONTO-FIXO genuíno);
+critérios R3c-CONT/BETA/DRIFT pré-declarados; (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs

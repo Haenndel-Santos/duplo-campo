@@ -88,6 +88,14 @@ paramétrico (fenômeno tipo-preheating da família modulada, interessante
 por si); se persistir, a família modulada-pousada tem instabilidade
 tardia genuína ~1H e o R-4 herda a questão.
 
+**ATUALIZAÇÃO (R-3b, 2026-08-12 — `resultado_r3b_pousada.md`):**
+convergido (halving k=12500, Δ=0.0031 ✓); hipótese paramétrica
+**REFUTADA** (o crescimento persiste — e sobe — com as oscilações
+amortecidas; a sonda de banda dá negativo); estrutura **IR** (morre em
+k_phys≳2; k_c=25000 dá +0.06 onde o congelado diz 41.7); o braço
+amortecido revelou lacuna de desenho (drift secular > oscilação
+original), então genuína-vs-secular segue em teste → R-3c.
+
 ## 2. O dano transiente (insumo do R-4)
 
 lnA_met máximo: **14.17** (k_c=1250) / **17.80** (k_c=12500) —
@@ -119,6 +127,9 @@ o R-4 deixa de ser opcional.
    Ainda assim, o follow-up de §1.3 deve **abrir pelo halving em
    k_c=12500** (barato: uma rerodada com NPTS dobrado) antes de
    qualquer enunciado apoiado no achado.
+   **RESOLVIDO (R-3b, 2026-08-12):** Δ(halving k=12500) = 0.0031
+   < 0.05 — o achado é convergido; a linha da estratificação sobe
+   para 2b.
 
 ## 4. Estratificação epistêmica
 
