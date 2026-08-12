@@ -1,0 +1,125 @@
+========================================================================
+R-7c — BANDA NO POUSADO (beta1(phi-)) NO SISTEMA 2-DOF CORRIGIDO
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[canal-S] dt_background(C7) simbolico ...
+[canal-S] pronto
+[fatias] prontas
+
+[fundo POUSADO] reintegrando a trajetoria original ...
+    r_fim=0.4979, chi/v_fim=0.932  [CONFERE]
+
+========================================================================
+POUSADO — cruzamento em a_cross=500 (k_c=1060.2)
+========================================================================
+    [G1 OK canal-S] 3.39e-12 (< 1e-10); canal-G 4.01e-04 (informativo)
+    [G3 OK] V-XREP interior = 3.56e-04 (< 0.001) — trilha DINAMICA
+    mapa cinetico: autovalores K2 negativos = 0/14000
+    lnA_passagem por IC:
+       Etil(pos): lnA_met =  -11.128   Delta ln|Phi_g| =   -5.292
+       dchi(pos): lnA_met =   -7.427   Delta ln|Phi_g| =   -0.628
+       Etil(vel): lnA_met =  -10.959   Delta ln|Phi_g| =   -5.366
+       dchi(vel): lnA_met =   -4.594   Delta ln|Phi_g| =   +2.695
+
+========================================================================
+POUSADO — cruzamento em a_cross=1000 (k_c=1801.9)
+========================================================================
+    [G1 OK canal-S] 3.40e-12 (< 1e-10); canal-G 4.06e-04 (informativo)
+    [G3 OK] V-XREP interior = 3.53e-04 (< 0.001) — trilha DINAMICA
+    mapa cinetico: autovalores K2 negativos = 0/14000
+    lnA_passagem por IC:
+       Etil(pos): lnA_met =  -12.997   Delta ln|Phi_g| =   -5.682
+       dchi(pos): lnA_met =   -8.898   Delta ln|Phi_g| =   -0.535
+       Etil(vel): lnA_met =  -12.996   Delta ln|Phi_g| =   -5.674
+       dchi(vel): lnA_met =   -9.178   Delta ln|Phi_g| =   -0.655
+
+========================================================================
+POUSADO — cruzamento em a_cross=1600 (k_c=2039.8)
+========================================================================
+    [G1 OK canal-S] 3.41e-12 (< 1e-10); canal-G 4.07e-04 (informativo)
+    [G3 OK] V-XREP interior = 3.49e-04 (< 0.001) — trilha DINAMICA
+    mapa cinetico: autovalores K2 negativos = 0/14000
+    lnA_passagem por IC:
+       Etil(pos): lnA_met =  -12.385   Delta ln|Phi_g| =   -5.791
+       dchi(pos): lnA_met =  -11.542   Delta ln|Phi_g| =   -3.144
+       Etil(vel): lnA_met =  -12.385   Delta ln|Phi_g| =   -5.788
+       dchi(vel): lnA_met =   -8.113   Delta ln|Phi_g| =   -0.018
+
+========================================================================
+POUSADO — cruzamento em a_cross=2500 (k_c=3156.5)
+========================================================================
+    [G1 OK canal-S] 3.40e-12 (< 1e-10); canal-G 4.15e-04 (informativo)
+    [G3 OK] V-XREP interior = 3.21e-04 (< 0.001) — trilha DINAMICA
+    mapa cinetico: autovalores K2 negativos = 0/14000
+    lnA_passagem por IC:
+       Etil(pos): lnA_met =  -14.714   Delta ln|Phi_g| =   -6.825
+       dchi(pos): lnA_met =  -10.818   Delta ln|Phi_g| =   -2.491
+       Etil(vel): lnA_met =  -14.714   Delta ln|Phi_g| =   -6.825
+       dchi(vel): lnA_met =   -9.296   Delta ln|Phi_g| =   -2.084
+
+========================================================================
+POUSADO — cruzamento em a_cross=4000 (k_c=4765.3)
+========================================================================
+    [G1 OK canal-S] 3.41e-12 (< 1e-10); canal-G 4.26e-04 (informativo)
+    [G3 OK] V-XREP interior = 2.54e-04 (< 0.001) — trilha DINAMICA
+    mapa cinetico: autovalores K2 negativos = 0/14000
+    lnA_passagem por IC:
+       Etil(pos): lnA_met =  -11.403   Delta ln|Phi_g| =   -8.782
+       dchi(pos): lnA_met =  -10.757   Delta ln|Phi_g| =   -4.696
+       Etil(vel): lnA_met =  -11.419   Delta ln|Phi_g| =   -8.795
+       dchi(vel): lnA_met =  -11.552   Delta ln|Phi_g| =   -5.968
+
+========================================================================
+POUSADO — cruzamento em a_cross=8000 (k_c=9167.7)
+========================================================================
+    [G1 OK canal-S] 3.43e-12 (< 1e-10); canal-G 4.44e-04 (informativo)
+    [G3 OK] V-XREP interior = 8.27e-05 (< 0.001) — trilha DINAMICA
+    mapa cinetico: autovalores K2 negativos = 0/14000
+    lnA_passagem por IC:
+       Etil(pos): lnA_met =  -11.451   Delta ln|Phi_g| =   -5.342
+       dchi(pos): lnA_met =  -11.442   Delta ln|Phi_g| =   -5.342
+       Etil(vel): lnA_met =  -11.424   Delta ln|Phi_g| =   -5.341
+       dchi(vel): lnA_met =  -11.451   Delta ln|Phi_g| =   -5.342
+
+========================================================================
+POUSADO — cruzamento em a_cross=15000 (k_c=17229.6)
+========================================================================
+    [G1 OK canal-S] 3.42e-12 (< 1e-10); canal-G 4.53e-04 (informativo)
+    [G3 OK] V-XREP interior = 4.14e-05 (< 0.001) — trilha DINAMICA
+    mapa cinetico: autovalores K2 negativos = 0/14000
+    lnA_passagem por IC:
+       Etil(pos): lnA_met =  -12.775   Delta ln|Phi_g| =   -4.108
+       dchi(pos): lnA_met =  -12.726   Delta ln|Phi_g| =   -3.830
+       Etil(vel): lnA_met =  -12.701   Delta ln|Phi_g| =   -3.649
+       dchi(vel): lnA_met =  -12.775   Delta ln|Phi_g| =   -4.108
+
+========================================================================
+POUSADO — cruzamento em a_cross=30000 (k_c=34467.6)
+========================================================================
+    [G1 OK canal-S] 3.43e-12 (< 1e-10); canal-G 4.56e-04 (informativo)
+    [G3 OK] V-XREP interior = 3.30e-05 (< 0.001) — trilha DINAMICA
+    mapa cinetico: autovalores K2 negativos = 0/14000
+    lnA_passagem por IC (PARCIAL ate kh=0.38):
+       Etil(pos): lnA_met =  -10.715   Delta ln|Phi_g| =   -2.132
+       dchi(pos): lnA_met =  -10.935   Delta ln|Phi_g| =   -2.576
+       Etil(vel): lnA_met =  -10.969   Delta ln|Phi_g| =   -2.636
+       dchi(vel): lnA_met =  -10.715   Delta ln|Phi_g| =   -2.132
+
+========================================================================
+VEREDITO R-7c (criterios pre-declarados no cabecalho)
+========================================================================
+   a_cross  antigo3DOF   externa  este(2DOF)  negK     nota
+       500       -0.21    -12.94     -10.959     0         
+      1000       +3.26    -14.27     -12.996     0         
+      1600       +1.57    -13.21     -12.385     0         
+      2500       +3.17    -14.01     -14.714     0         
+      4000       +4.80    -14.33     -11.403     0         
+      8000       +4.03    -13.52     -11.424     0         
+     15000       +4.52    -12.33     -12.701     0         
+     30000        +nan      +nan     -10.715     0  PARCIAL
+  >>> POUSADO-BANDA-MORTA (8/8 bracos
+  interpretaveis): nenhuma epoca de cruzamento amplifica; o
+  R-4 dinamico (amplificacao por epoca e a 'supressao-
+  materia' do R-4c) era artefato do 3o DOF espurio. R-4
+  COMPLETO substituido pela reexecucao.
