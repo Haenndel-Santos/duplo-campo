@@ -1,0 +1,97 @@
+========================================================================
+R-7e — FASE B CORRIGIDA: janela de deslocamento no 2-DOF, fundo
+Heun, rastreio de W00
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[canal-S] dt_background(C7) simbolico ...
+[canal-S] pronto
+[fatias] prontas
+
+[fundo HEUN] integrando ...
+    r_fim=0.4979, chi/v_fim=0.932  [CONFERE]
+    M0 (consistencia chidd vs spline) = 3.137e-04
+    referencia Euler (R-7c, mesma metrica): ~1e-3 — exigencia de
+    queda >= 30x => M0 < 3e-5  [FALHOU]
+    janela |desl|>0.05: a em [225, 7086]; max|desl| = 0.476 (Fase A: [760, 2050], 0.48)
+
+========================================================================
+MODO kh(janela) = 10  (k_c = 19920.0)
+========================================================================
+    [G1 OK] 2.82e-12; [G3 OK] V-XREP 3.21e-05
+    E1 — W00: trocas de sinal = 0 (janela: 0); min|W00|/esc na janela = 1.57e-03
+         cond(W_XX) max = 1.05e+03; K2 negativos: 0/14000 (janela: 0)
+    E2 — taxa max de envelope na janela (janelas moveis de 0.25 e-fold) e taxa pos-pouso:
+       Etil(pos)/Etil  taxa_janela =  +11.55  taxa_pos-pouso =   -1.41
+       Etil(pos)/dchi  taxa_janela =   +5.56  taxa_pos-pouso =   -2.04
+       dchi(pos)/Etil  taxa_janela =  +11.41  taxa_pos-pouso =   -1.41
+       dchi(pos)/dchi  taxa_janela =   +5.58  taxa_pos-pouso =   -2.04
+       Etil(vel)/Etil  taxa_janela =  +11.56  taxa_pos-pouso =   -1.41
+       Etil(vel)/dchi  taxa_janela =   +5.59  taxa_pos-pouso =   -2.04
+       dchi(vel)/Etil  taxa_janela =  +11.55  taxa_pos-pouso =   -1.41
+       dchi(vel)/dchi  taxa_janela =   +5.56  taxa_pos-pouso =   -2.04
+
+========================================================================
+MODO kh(janela) = 3  (k_c = 5976.0)
+========================================================================
+    [G1 OK] 2.80e-12; [G3 OK] V-XREP 1.51e-04
+    E1 — W00: trocas de sinal = 0 (janela: 0); min|W00|/esc na janela = 1.61e-03
+         cond(W_XX) max = 3.39e+03; K2 negativos: 0/14000 (janela: 0)
+    E2 — taxa max de envelope na janela (janelas moveis de 0.25 e-fold) e taxa pos-pouso:
+       Etil(pos)/Etil  taxa_janela =   +6.05  taxa_pos-pouso =   -2.27
+       Etil(pos)/dchi  taxa_janela =   +2.10  taxa_pos-pouso =   -0.81
+       dchi(pos)/Etil  taxa_janela =   +6.04  taxa_pos-pouso =   -2.29
+       dchi(pos)/dchi  taxa_janela =   +2.07  taxa_pos-pouso =   -1.09
+       Etil(vel)/Etil  taxa_janela =   +6.05  taxa_pos-pouso =   -2.26
+       Etil(vel)/dchi  taxa_janela =   +2.10  taxa_pos-pouso =   -0.81
+       dchi(vel)/Etil  taxa_janela =   +6.05  taxa_pos-pouso =   -2.27
+       dchi(vel)/dchi  taxa_janela =   +3.36  taxa_pos-pouso =   -0.82
+
+========================================================================
+MODO kh(janela) = 1  (k_c = 1992.0)
+========================================================================
+    [G1 OK] 2.78e-12; [G3 OK] V-XREP 2.66e-04
+    E1 — W00: trocas de sinal = 0 (janela: 0); min|W00|/esc na janela = 2.08e-03
+         cond(W_XX) max = 3.05e+04; K2 negativos: 0/14000 (janela: 0)
+    E2 — taxa max de envelope na janela (janelas moveis de 0.25 e-fold) e taxa pos-pouso:
+       Etil(pos)/Etil  taxa_janela =   +0.91  taxa_pos-pouso =   -0.68
+       Etil(pos)/dchi  taxa_janela =   +0.72  taxa_pos-pouso =   -1.26
+       dchi(pos)/Etil  taxa_janela =   +1.81  taxa_pos-pouso =   -2.29
+       dchi(pos)/dchi  taxa_janela =   +1.53  taxa_pos-pouso =   -1.32
+       Etil(vel)/Etil  taxa_janela =   +0.91  taxa_pos-pouso =   -0.68
+       Etil(vel)/dchi  taxa_janela =   +0.73  taxa_pos-pouso =   -1.26
+       dchi(vel)/Etil  taxa_janela =   +1.24  taxa_pos-pouso =   -2.36
+       dchi(vel)/dchi  taxa_janela =   +1.62  taxa_pos-pouso =   -1.33
+
+========================================================================
+MODO kh(janela) = 0.3  (k_c = 597.6)
+========================================================================
+    [G1 OK] 2.79e-12; [G3 OK] V-XREP 2.75e-04
+    E1 — W00: trocas de sinal = 0 (janela: 0); min|W00|/esc na janela = 2.94e-03
+         cond(W_XX) max = 3.38e+05; K2 negativos: 0/14000 (janela: 0)
+    E2 — taxa max de envelope na janela (janelas moveis de 0.25 e-fold) e taxa pos-pouso:
+       Etil(pos)/Etil  taxa_janela =   +0.64  taxa_pos-pouso =   -2.16
+       Etil(pos)/dchi  taxa_janela =   +2.40  taxa_pos-pouso =   -1.45
+       dchi(pos)/Etil  taxa_janela =   +3.80  taxa_pos-pouso =   -2.49
+       dchi(pos)/dchi  taxa_janela =   +2.17  taxa_pos-pouso =   -1.45
+       Etil(vel)/Etil  taxa_janela =   +0.68  taxa_pos-pouso =   -2.11
+       Etil(vel)/dchi  taxa_janela =   +2.58  taxa_pos-pouso =   -1.45
+       dchi(vel)/Etil  taxa_janela =   +2.94  taxa_pos-pouso =   -2.51
+       dchi(vel)/dchi  taxa_janela =   +2.17  taxa_pos-pouso =   -1.45
+
+========================================================================
+E3 — cross-check R-7c (a_cross=4000) no fundo Heun
+========================================================================
+    lnA_passagem Etil(pos) fundo Heun = -12.789 (R-7c Euler+spline: -11.403; dif 1.386 FALHOU < 0.5)
+
+========================================================================
+VEREDITO R-7e (criterios pre-declarados no cabecalho)
+========================================================================
+  fundo Heun: ancoras CONFEREM; M0 = 3.14e-04
+  kh=10: W00 trocas 0 (janela 0); negK 0 (janela 0); taxa max janela +11.56
+  kh=3: W00 trocas 0 (janela 0); negK 0 (janela 0); taxa max janela +6.05
+  kh=1: W00 trocas 0 (janela 0); negK 0 (janela 0); taxa max janela +1.81
+  kh=0.3: W00 trocas 0 (janela 0); negK 0 (janela 0); taxa max janela +3.80
+  E3 cross-check: dif = 1.386 (FALHOU)
+  >>> SUSPEITO: ha taxa sustentada >= +0.5 ou direcao K2
+  negativa — repetir com halving antes de qualquer leitura.
