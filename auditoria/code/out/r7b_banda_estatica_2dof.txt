@@ -1,0 +1,121 @@
+========================================================================
+R-7b — A BANDA ESTATICA E Phi_g NO SISTEMA 2-DOF CORRIGIDO
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[canal-S] dt_background(C7) simbolico ...
+[canal-S] pronto
+[fatias] prontas
+
+========================================================================
+FUNDO beta-constante beta1=1
+========================================================================
+    H(100)=0.5574; k_c=2508.5
+    [G1 OK canal-S] 7.55e-16
+
+    taxas met por janela de kh (d lnA_met/dt/H_mid; IC Etil(pos) | max sobre 4 ICs):
+          janela  Etil(pos)    max ICs
+         kh40-20      -5.31      -5.22
+         kh20-10      -2.25      -2.25
+          kh10-6      -0.90      -0.84
+           kh6-4      -4.93      -4.85
+         kh4-2.5      -0.39      -0.39
+       kh2.5-1.6      -1.93      -1.90
+         kh1.6-1      -2.98      -2.96
+         kh1-0.7      -3.30      -3.30
+      kh0.7-0.45      +0.09      +0.09
+      kh0.45-0.3      -0.56      -0.54
+       kh0.3-0.2      -1.32      -1.30
+       kh0.2-0.1      -2.26      -2.24
+
+    lnA_PASSAGEM (kh 20 -> 0.2); referencia antiga (3-DOF): +3.97
+       Etil(pos): lnA_met =   -8.370   lnA_dchi =     +nan
+       dchi(pos): lnA_met =     +nan   lnA_dchi =   -3.696
+       Etil(vel): lnA_met =   -8.430   lnA_dchi =     +nan
+       dchi(vel): lnA_met =     +nan   lnA_dchi =   -7.252
+    lnA_met max = -8.370; NULL (dchi) max = -3.696 (OK <= +0.5)
+
+    Phi_g reconstruido (blocos corrigidos), na passagem:
+       Etil(pos): Delta ln|Phi_g| =   -8.303; mediana |Phi_g|/A_met = 0.040
+       dchi(pos): Phi_g ~ 0 (componente nula)
+       Etil(vel): Delta ln|Phi_g| =   -8.308; mediana |Phi_g|/A_met = 0.040
+       dchi(vel): Phi_g ~ 0 (componente nula)
+
+========================================================================
+FUNDO beta-constante beta1=1 (AUTOSIM: 3k)
+========================================================================
+    H(100)=0.5574; k_c=7525.4
+    [G1 OK canal-S] 7.83e-16
+
+    taxas met por janela de kh (d lnA_met/dt/H_mid; IC Etil(pos) | max sobre 4 ICs):
+          janela  Etil(pos)    max ICs
+         kh40-20      -2.31      -2.31
+         kh20-10      -3.27      -3.27
+          kh10-6      -5.08      -5.08
+           kh6-4      +0.67      +0.67
+         kh4-2.5      -4.97      -4.97
+       kh2.5-1.6      -0.18      -0.18
+         kh1.6-1      -1.06      -1.06
+         kh1-0.7      -1.84      -1.84
+      kh0.7-0.45      -2.57      -2.57
+      kh0.45-0.3      -3.19      -3.19
+       kh0.3-0.2      -0.05      -0.05
+       kh0.2-0.1      -0.08      -0.08
+
+    lnA_PASSAGEM (kh 20 -> 0.2); referencia antiga (3-DOF): +3.97
+       Etil(pos): lnA_met =  -10.610   lnA_dchi =     +nan
+       dchi(pos): lnA_met =     +nan   lnA_dchi =   -4.458
+       Etil(vel): lnA_met =  -10.610   lnA_dchi =     +nan
+       dchi(vel): lnA_met =     +nan   lnA_dchi =   -3.842
+    lnA_met max = -10.610; NULL (dchi) max = -3.842 (OK <= +0.5)
+
+    Phi_g reconstruido (blocos corrigidos), na passagem:
+       Etil(pos): Delta ln|Phi_g| =   -9.521; mediana |Phi_g|/A_met = 0.048
+       dchi(pos): Phi_g ~ 0 (componente nula)
+       Etil(vel): Delta ln|Phi_g| =   -9.520; mediana |Phi_g|/A_met = 0.048
+       dchi(vel): Phi_g ~ 0 (componente nula)
+
+========================================================================
+FUNDO beta-constante beta1=4.47
+========================================================================
+    H(100)=1.1253; k_c=5064.0
+    [G1 OK canal-S] 1.98e-15
+
+    taxas met por janela de kh (d lnA_met/dt/H_mid; IC Etil(pos) | max sobre 4 ICs):
+          janela  Etil(pos)    max ICs
+         kh40-20      -5.29      -5.23
+         kh20-10      -2.29      -2.29
+          kh10-6      -0.86      -0.82
+           kh6-4      -5.00      -4.93
+         kh4-2.5      -0.34      -0.34
+       kh2.5-1.6      -1.94      -1.92
+         kh1.6-1      -3.00      -2.98
+         kh1-0.7      -3.39      -3.39
+      kh0.7-0.45      +0.15      +0.15
+      kh0.45-0.3      -0.55      -0.53
+       kh0.3-0.2      -1.30      -1.29
+       kh0.2-0.1      -2.24      -2.23
+
+    lnA_PASSAGEM (kh 20 -> 0.2); referencia antiga (3-DOF): +3.62
+       Etil(pos): lnA_met =   -8.392   lnA_dchi =     +nan
+       dchi(pos): lnA_met =     +nan   lnA_dchi =   -3.242
+       Etil(vel): lnA_met =   -8.439   lnA_dchi =     +nan
+       dchi(vel): lnA_met =     +nan   lnA_dchi =   -4.091
+    lnA_met max = -8.392; NULL (dchi) max = -3.242 (OK <= +0.5)
+
+    Phi_g reconstruido (blocos corrigidos), na passagem:
+       Etil(pos): Delta ln|Phi_g| =   -8.315; mediana |Phi_g|/A_met = 0.085
+       dchi(pos): Phi_g ~ 0 (componente nula)
+       Etil(vel): Delta ln|Phi_g| =   -8.319; mediana |Phi_g|/A_met = 0.085
+       dchi(vel): Phi_g ~ 0 (componente nula)
+
+========================================================================
+VEREDITO R-7b (criterios pre-declarados no cabecalho)
+========================================================================
+  R7b-AUTOSIM v2 (regime decadente): lnA(k) = -8.37, lnA(3k) = -10.61 — ambos < -4: OK (dif numerica 2.24, mix-dependente, reportada)
+  beta1=1: lnA_met max = -8.370 (antigo 3-DOF: +3.97); NULL dchi -3.696 (OK); Delta ln|Phi_g| ICs: -8.30 -8.31
+  beta1=4.47: lnA_met max = -8.392 (antigo 3-DOF: +3.62); NULL dchi -3.242 (OK); Delta ln|Phi_g| ICs: -8.31 -8.32
+  >>> BANDA-MORTA: a amplificacao metrica do R-4 (lnA ~ +4)
+  era artefato do 3o DOF espurio (bug do erratum-02). R-4b
+  substituido. Se Delta ln|Phi_g| < 0, o elo do R-5 cai junto
+  (insumo do R-7d).
