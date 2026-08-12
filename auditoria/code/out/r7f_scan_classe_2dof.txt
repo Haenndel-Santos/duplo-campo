@@ -1,0 +1,38 @@
+========================================================================
+R-7f — SCAN DE CLASSE (mu x beta1 + fresta) NO 2-DOF CORRIGIDO
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[canal-S] pronto
+[fatias] prontas
+
+   mu    b1    b2     tag | por epoca x kh: min lam(K2)/esc, trocas W00
+  0.3  0.60  -0.4     REF | +3e-02 +1e-02 +1e-06 +3e-02 +1e-02 +1e-06 +3e-02 +1e-02 +1e-06
+  0.3  1.00  -0.4     REF | +6e-02 +2e-02 +2e-06 +6e-02 +2e-02 +2e-06 +6e-02 +2e-02 +2e-06
+  0.3  2.20  -0.4     REF | +1e-01 +3e-02 +2e-06 +1e-01 +3e-02 +2e-06 +1e-01 +3e-02 +2e-06
+  0.3  4.47  -0.4     REF | +1e-01 +4e-02 +3e-06 +1e-01 +4e-02 +3e-06 +1e-01 +4e-02 +3e-06
+  1.0  0.60  -0.4     REF | +4e-02 +1e-02 +8e-07 +4e-02 +1e-02 +8e-07 +4e-02 +1e-02 +8e-07
+  1.0  1.00  -0.4     REF | +7e-02 +2e-02 +1e-06 +7e-02 +2e-02 +1e-06 +7e-02 +2e-02 +1e-06
+  1.0  2.20  -0.4     REF | +1e-01 +3e-02 +2e-06 +1e-01 +3e-02 +2e-06 +1e-01 +3e-02 +2e-06
+  1.0  4.47  -0.4     REF | +1e-01 +4e-02 +3e-06 +1e-01 +4e-02 +3e-06 +1e-01 +4e-02 +3e-06
+  3.0  0.60  -0.4     REF | +3e-02 +8e-03 +4e-07 +3e-02 +8e-03 +4e-07 +3e-02 +8e-03 +4e-07
+  3.0  1.00  -0.4     REF | +6e-02 +2e-02 +9e-07 +6e-02 +2e-02 +9e-07 +6e-02 +2e-02 +9e-07
+  3.0  2.20  -0.4     REF | +1e-01 +3e-02 +2e-06 +1e-01 +3e-02 +2e-06 +1e-01 +3e-02 +2e-06
+  3.0  4.47  -0.4     REF | +1e-01 +4e-02 +3e-06 +1e-01 +4e-02 +3e-06 +1e-01 +4e-02 +3e-06
+ 10.0  0.60  -0.4     REF | +2e-02 +4e-03 +2e-07 +2e-02 +4e-03 +2e-07 +2e-02 +4e-03 +2e-07
+ 10.0  1.00  -0.4     REF | +3e-02 +8e-03 +4e-07 +3e-02 +8e-03 +4e-07 +3e-02 +8e-03 +4e-07
+ 10.0  2.20  -0.4     REF | +8e-02 +2e-02 +1e-06 +8e-02 +2e-02 +1e-06 +8e-02 +2e-02 +1e-06
+ 10.0  4.47  -0.4     REF | +1e-01 +3e-02 +2e-06 +1e-01 +3e-02 +2e-06 +1e-01 +3e-02 +2e-06
+  0.1  1.00  -0.4     REF | inv inv inv inv inv inv inv inv inv
+  0.1  0.20  -1.0  fresta | +3e-04 +2e-04 +7e-07 +3e-04 +2e-04 +7e-07 +3e-04 +2e-04 +7e-07
+
+========================================================================
+VEREDITO R-7f (criterios pre-declarados no cabecalho)
+========================================================================
+  celulas sem fundo valido em nenhuma epoca: [(0.1, 1.0, -0.4, 'REF')]
+  >>> NO-GO-DE-CLASSE-RETIRADO: zero violacoes (negK / W00)
+  em todas as celulas validas x epocas x k. A classe beta-
+  constante e sa no sistema fisico de 2 DOFs; o sweep antigo
+  (~1500 pts, QEP congelado, 3-DOF espurio) media artefato.
+  Fronteira: scan de assinatura 3 epocas x 3 k por celula;
+  ramo algebrico DEFERIDO (declarado no cabecalho).
