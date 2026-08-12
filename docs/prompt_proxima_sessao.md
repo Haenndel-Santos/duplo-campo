@@ -166,7 +166,12 @@ docs/gate_fantasma_estrutural.md): NÃO partir para TDCP-2 — a F1
 ganhou sobrevida real. FILA REORDENADA: (1) R-3 = Fase B por evolução
 real na rolagem (decide também se o modo de condensação δφ₋ — o
 candidato dinâmico mais próximo da narrativa do Cap.1 — sobrevive à
-dinâmica real); (2) R-4 = mapa lnA(célula,k) do transiente vs
+dinâmica real) — SCRIPT PRONTO E COMMITADO:
+auditoria/code/r3_faseB_evolucao_rolagem.py (critérios pré-declarados
+no cabeçalho; k_c={1250,12500} comóveis reais; controles GR-rolante
+A/B + poder-congelado; diagnóstico tipo-massa vs tipo-gradiente do
+Gate F §5; fix do fundo GR de 2026-08-12 incorporado; ~15–25 min),
+AGUARDA RODADA OFICIAL no .venv; (2) R-4 = mapa lnA(célula,k) do transiente vs
 vínculos (a sobrevida é CONDICIONAL a isto; a literatura morreu nesta
 praia); (3) GATE F = letalidade da direção K<0, três etapas com
 critérios pré-declarados: F-a teste da constraint secundária

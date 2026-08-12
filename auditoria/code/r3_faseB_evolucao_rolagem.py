@@ -22,6 +22,14 @@ C_dot, RK4, controles) sobre a trajetoria da Fase A/B, agora em
 convencao COMOVEL REAL (a e b=r*a verdadeiros; sem o reescalonamento
 a->1 da leitura congelada).
 
+FILA REORDENADA PELO AUTOR (2026-08-11, noite;
+docs/gate_fantasma_estrutural.md sec.4): R-3 -> R-4 -> Gate F ->
+cap.07. Alem da pergunta principal, o R-3 DECIDE se o modo de
+condensacao delta-phi_- (= delta-chi nesta base; o candidato dinamico
+mais proximo da narrativa do Cap.1) sobrevive a dinamica real — a
+Fase B era congelada; sec.5 do doc do gate: "a identificacao segue
+prematura (aguarda R-3)".
+
 DESENHO:
   - k_c em {1250, 12500}: k_phys ~ {1, 10} no CENTRO da janela-alvo
     (sqrt(760*2050) ~ 1250). Redshift inerente a evolucao real: k_phys
@@ -77,6 +85,14 @@ CRITERIOS PRE-DECLARADOS:
       (d ln chi / dN) — o crescimento delta-chi-dominado deve acompanhar
       o fundo e SARAR no pouso (o "duas instabilidades, destinos
       opostos" da Fase B, agora em dinamica real).
+  R3-MECANISMO (diagnostico, sem criterio; gate_fantasma_estrutural.md
+      sec.5): TIPO do crescimento na rolagem pela comparacao entre os
+      dois k (razao 10): taxa ~ prop. a k -> tipo-gradiente (como a
+      transiente do D2/R-1); ~ k-independente -> tipo-massa (a
+      bifurcacao do Cap.1 e de massa; a identificacao com a narrativa
+      fundacional deixaria de ser prematura). Vale p/ o bloco metrico
+      E p/ o modo de condensacao (espinodal presente so em
+      k_phys^2 < |U''|~15 ja e assinatura tipo-massa).
   Ancoras congeladas (a in {800,1250,1800} janela; {5000,15000} pousado):
       sigma/H e kN_min da REDUZIDA 3x3 (o instrumento cuja previsao a
       evolucao testa) + sigma/H e CONTAGEM do QEP 7x7 nos MESMOS args
@@ -610,13 +626,18 @@ CgF = sp.lambdify(LIV_GR, Cg.subs(FIX_GR), 'numpy')
 WgF = sp.lambdify(LIV_GR, Wg.subs(FIX_GR), 'numpy')
 
 # fundo GR: mesmo potencial duplo-poco + piso Lambda_GR (evita H->0)
-LAM_GR = 0.1
+# [fix 2026-08-12] LAM_GR 0.1 -> 3.0: com piso baixo, H despencava
+# (2.2 -> 0.18) durante a rolagem ingreme (mu2=15) e y=dchi/dN atingia
+# o limite de kination (y^2=6), abortando o integrador semi-explicito.
+# Piso maior mantem 3H > omega_poco (rolagem sobreamortecida, y pequeno);
+# o controle segue valido: criterios sao autocalibrados no fundo medido.
+LAM_GR = 3.0
 MU2_GR, V_GR = BG['mu2'], BG['v']
 LAM4_GR, U0_GR = BG['lam'], BG['U0']
 
 
 def fundo_gr():
-    dN = 2e-4
+    dN = 1e-4
     N0, N1 = np.log(0.01), np.log(50000.0)
     n = int((N1 - N0) / dN) + 1
     ch, y = 1e-3 * V_GR, 0.0
@@ -970,6 +991,28 @@ say("  R3-SPINODAL (diagnostico): sigma espinodal do fundo = "
 say("  (crescimento delta-chi-dominado deve acompanhar o fundo e sarar")
 say("  no pouso — 'duas instabilidades, destinos opostos' em dinamica")
 say("  real).")
+
+
+def _max_fin(vals):
+    fin = [v for v in vals if np.isfinite(v)]
+    return max(fin) if fin else float('nan')
+
+
+say("")
+say("  R3-MECANISMO (diagnostico; gate_fantasma_estrutural.md sec.5 —")
+say("  a bifurcacao do Cap.1 e de massa; a transiente do D2/R-1 e")
+say("  tipo-gradiente):")
+kA, kB = K_CS
+mA = _max_fin([RES[kA]['tm'][i]['rolagem'] for i in IDX_MET_IC])
+mB = _max_fin([RES[kB]['tm'][i]['rolagem'] for i in IDX_MET_IC])
+cA = _max_fin([RES[kA]['tf'][i]['rolagem'] for i in (2, 5)])
+cB = _max_fin([RES[kB]['tf'][i]['rolagem'] for i in (2, 5)])
+say(f"    rolagem, bloco metrico:       {mA:+.2f}/H (k_c={kA:g}) vs "
+    f"{mB:+.2f}/H (k_c={kB:g}; razao k=10)")
+say(f"    rolagem, delta-chi (ICs 2,5): {cA:+.2f}/H vs {cB:+.2f}/H")
+say("    leitura: taxa ~ prop. a k -> tipo-gradiente; ~ k-independente")
+say("    -> tipo-massa; espinodal presente so no k IR ja e assinatura")
+say("    tipo-massa do modo de condensacao.")
 
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
 with open(os.path.join(HERE, "out", "r3_faseB_evolucao_rolagem.txt"),
