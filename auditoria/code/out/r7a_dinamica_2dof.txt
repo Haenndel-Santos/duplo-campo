@@ -1,0 +1,108 @@
+========================================================================
+R-7a — DINAMICA 2-DOF CORRIGIDA (beta-constante) + V-XREP
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[canal-S] dt_background(C7) simbolico ...
+    C7 depende de Upp? False (False => canal-S exato tambem no fundo rolante do R-7c)
+    C7 depende das taxas de 1a ordem [] => canal-S precisa das taxas de 2a ordem do fundo
+[canal-S] pronto
+[fatias] prontas (K, C, W, Cdot-simbolico)
+
+========================================================================
+FUNDO beta-constante beta1=1
+========================================================================
+    H(100)=0.5574; k_c=2508.5
+    [G1 OK] max|K3[Psi_f,:]|/esc: canal-G 3.07e-05 (< 0.0001, O(dN^2) esperado), canal-S 7.55e-16 (< 1e-10, estrutural)
+    [G2 diag] 5 piores pontos (p, a, W00_G, W00_S, dif rel):
+        p=  1164 a=    138.3 -8.563611e+07 -8.563610e+07 1.55e-07
+        p=  2945 a=    227.1 -1.412915e+08 -1.412915e+08 1.55e-07
+        p=   387 a=    111.4 -6.890474e+07 -6.890473e+07 1.55e-07
+        p=  1870 a=    168.3 -1.043834e+08 -1.043834e+08 1.55e-07
+        p=  1156 a=    138.0 -8.544446e+07 -8.544445e+07 1.55e-07
+    [G2 OK] W00 resolvido: max |W00_G - W00_S|/|W00_S| = 1.55e-07 (interior: 1.55e-07 < 1e-5); min|W00|/esc = 8.61e-02 (informativo); min|W00| abs = 6.188e+07
+    [G3 OK] V-XREP max diff rel K2/C2/W2 interior (canal-G vs canal-S) = 5.17e-08 (< 0.0001; bordas excluidas — estencil one-sided do gradiente, mesmo efeito ja isolado no G2)
+    M1 — autovalores K2 negativos: 0/24000 pontos; acoplamento |K2[Ef,dchi]|/sqrt(K00*K11) max = 0.00e+00
+
+    M2 — taxas tardias (ultimo e-fold), d ln|comp|/dN:
+            IC   comp     taxa  ancora
+      E_f(pos)    E_f   -2.510  
+      E_f(pos)   dchi        —  (componente nula — setores desacoplados)
+     dchi(pos)    E_f        —  (componente nula — setores desacoplados)
+     dchi(pos)   dchi   -0.381  -0.368 (dif 0.013 OK)
+      E_f(vel)    E_f   -2.589  
+      E_f(vel)   dchi        —  (componente nula — setores desacoplados)
+     dchi(vel)    E_f        —  (componente nula — setores desacoplados)
+     dchi(vel)   dchi   -0.248  -0.368 (info; transiente do ramo rapido admitido)
+    M4 — halving por IC (lnA_24k, lnA_12k, err_Richardson = dif/15, criterio):
+          E_f(pos):  -11.255  -10.953 err 0.0202 (< 0.225 OK)
+         dchi(pos):   -5.033   -5.034 err 0.0000 (< 0.101 OK)
+          E_f(vel):  -17.768  -17.542 err 0.0151 (< 0.355 OK)
+         dchi(vel):  -11.489  -11.342 err 0.0098 (< 0.230 OK)
+    M4 OK
+
+    M3 — dispersao tardia (a=40000): QEP CONGELADO no 2x2.
+    (convencao da lib: so C antissimetrica entra — a friccao
+    simetrica nao; portanto Re(lam) aqui NAO e amortecimento
+    fisico. Uso legitimo: dispersao omega(k). A estabilidade
+    e julgada pelo M2 — evolucao real. Licao do D2 mantida.)
+    k/aH=  0.1  omega_osc/H =   0.99  (dchi: sqrt(kh^2+0.3/H^2) =   0.99)  W2 autovalores/esc: (-8.13e-01, +1.00e+00)
+    k/aH=  0.3  omega_osc/H =   1.03  (dchi: sqrt(kh^2+0.3/H^2) =   1.03)  W2 autovalores/esc: (-7.52e-01, +1.00e+00)
+    k/aH=  1.0  omega_osc/H =   1.40  (dchi: sqrt(kh^2+0.3/H^2) =   1.40)  W2 autovalores/esc: (-4.01e-01, +1.00e+00)
+    k/aH=  3.0  omega_osc/H =   3.16  (dchi: sqrt(kh^2+0.3/H^2) =   3.16)  W2 autovalores/esc: (-7.25e-02, +1.00e+00)
+    k/aH= 10.0  omega_osc/H =  10.05  (dchi: sqrt(kh^2+0.3/H^2) =  10.05)  W2 autovalores/esc: (-6.63e-03, +1.00e+00)
+
+========================================================================
+FUNDO beta-constante beta1=4.47
+========================================================================
+    H(100)=1.1253; k_c=5064.0
+    [G1 OK] max|K3[Psi_f,:]|/esc: canal-G 7.40e-05 (< 0.0001, O(dN^2) esperado), canal-S 1.98e-15 (< 1e-10, estrutural)
+    [G2 diag] 5 piores pontos (p, a, W00_G, W00_S, dif rel):
+        p=   150 a=    104.3 -5.532363e+08 -5.532362e+08 1.85e-07
+        p=   591 a=    117.9 -6.258098e+08 -6.258097e+08 1.84e-07
+        p=  3552 a=    269.0 -1.439519e+09 -1.439519e+09 1.84e-07
+        p=  1789 a=    164.6 -8.753242e+08 -8.753240e+08 1.84e-07
+        p=   400 a=    111.8 -5.932692e+08 -5.932691e+08 1.84e-07
+    [G2 OK] W00 resolvido: max |W00_G - W00_S|/|W00_S| = 1.85e-07 (interior: 1.85e-07 < 1e-5); min|W00|/esc = 1.48e-01 (informativo); min|W00| abs = 5.308e+08
+    [G3 OK] V-XREP max diff rel K2/C2/W2 interior (canal-G vs canal-S) = 5.17e-08 (< 0.0001; bordas excluidas — estencil one-sided do gradiente, mesmo efeito ja isolado no G2)
+    M1 — autovalores K2 negativos: 0/24000 pontos; acoplamento |K2[Ef,dchi]|/sqrt(K00*K11) max = 0.00e+00
+
+    M2 — taxas tardias (ultimo e-fold), d ln|comp|/dN:
+            IC   comp     taxa  ancora
+      E_f(pos)    E_f   -2.664  
+      E_f(pos)   dchi        —  (componente nula — setores desacoplados)
+     dchi(pos)    E_f        —  (componente nula — setores desacoplados)
+     dchi(pos)   dchi   -0.088  -0.082 (dif 0.006 OK)
+      E_f(vel)    E_f   -2.725  
+      E_f(vel)   dchi        —  (componente nula — setores desacoplados)
+     dchi(vel)    E_f        —  (componente nula — setores desacoplados)
+     dchi(vel)   dchi   -0.090  -0.082 (info; transiente do ramo rapido admitido)
+    M4 — halving por IC (lnA_24k, lnA_12k, err_Richardson = dif/15, criterio):
+          E_f(pos):  -10.501  -10.180 err 0.0214 (< 0.210 OK)
+         dchi(pos):   -4.182   -4.179 err 0.0002 (< 0.100 OK)
+          E_f(vel):  -17.812  -17.564 err 0.0165 (< 0.356 OK)
+         dchi(vel):   -8.956   -8.971 err 0.0010 (< 0.179 OK)
+    M4 OK
+
+    M3 — dispersao tardia (a=40000): QEP CONGELADO no 2x2.
+    (convencao da lib: so C antissimetrica entra — a friccao
+    simetrica nao; portanto Re(lam) aqui NAO e amortecimento
+    fisico. Uso legitimo: dispersao omega(k). A estabilidade
+    e julgada pelo M2 — evolucao real. Licao do D2 mantida.)
+    k/aH=  0.1  omega_osc/H =   0.50  (dchi: sqrt(kh^2+0.3/H^2) =   0.50)  W2 autovalores/esc: (-1.00e+00, +1.32e-01)
+    k/aH=  0.3  omega_osc/H =   0.57  (dchi: sqrt(kh^2+0.3/H^2) =   0.57)  W2 autovalores/esc: (-1.00e+00, +1.75e-01)
+    k/aH=  1.0  omega_osc/H =   1.11  (dchi: sqrt(kh^2+0.3/H^2) =   1.11)  W2 autovalores/esc: (-1.00e+00, +6.65e-01)
+    k/aH=  3.0  omega_osc/H =   3.04  (dchi: sqrt(kh^2+0.3/H^2) =   3.04)  W2 autovalores/esc: (-1.86e-01, +1.00e+00)
+    k/aH= 10.0  omega_osc/H =  10.01  (dchi: sqrt(kh^2+0.3/H^2) =  10.01)  W2 autovalores/esc: (-1.61e-02, +1.00e+00)
+
+========================================================================
+VEREDITO R-7a (criterios pre-declarados no cabecalho)
+========================================================================
+  beta1=1: G1 3.1e-05; V-XREP 5.2e-08; K2 negativos 0; halving max 0.020 (OK); ancora dchi OK; taxa E_f(pos) tardia -2.510
+  beta1=4.47: G1 7.4e-05; V-XREP 5.2e-08; K2 negativos 0; halving max 0.021 (OK); ancora dchi OK; taxa E_f(pos) tardia -2.664
+
+  >>> SISTEMA 2-DOF SAUDAVEL nos dois fundos: zero direcoes
+  cineticas negativas, dilucao tardia com as taxas fisicas
+  previstas (a 'taxa da banda' sigma_can 1.13/1.41 do Gate F-b
+  era a normalizacao a^(3/2) do dchi saudavel — ancora bate).
+  D-2/R-1 SUBSTITUIDOS nesta classe pelo sistema fisico.
