@@ -203,15 +203,32 @@ herda do ponto onde senta; releitura por cruzamento de horizonte
 componentes de modo (par E_f cresce cedo em todos os fundos; par Ψ_f
 na banda tardia); anomalia IR do pousado k=1250 (cresce só com
 dinâmica residual; morre no estático e no Γ=100) DECLARADA ABERTA.
-R-4A PRONTO E COMMITADO (auditoria/code/r4a_mapa_tardio.py, ~8–15
-min, AGUARDA RODADA — o mapa que decide o enunciado): (i) R4a-NULL
-controle GR NA BANDA (cruzamento dentro da tardia; abortivo — nenhum
-controle anterior cobriu essa região); (ii) R4a-MAPA β₁∈{1,2,3,4.47}
-× k∈{banda,3×,0.1×} estáticos — se β₁=1 crescer, o "estável tarde" de
-D2/R-1 era artefato de amostragem em k e a CLASSE inteira é instável
-na banda; senão fronteira β₁*; (iii) R4a-EXT a→80000 (β-const 4.47 e
-pousado): TRANSIENTE-DE-CRUZAMENTO (lnA finito, dano mapeável) vs
-SUSTENTADA (no-go dinâmico real da região); (iv) lnA_met
+R-4A EXECUTADA 2026-08-12 (docs/resultado_r4a_mapa.md) — O RESULTADO
+QUE FIXA O ENUNCIADO: (i) R4a-NULL PASSA (GR com cruzamento DENTRO da
+janela: tudo negativo — a banda não é artefato); (ii) R4a-MAPA:
+β₁=1 CRESCE na banda (+0.93; β₁=2/3/4.47: +0.81/+0.93/+1.06) — a
+AMPLIFICAÇÃO DE BANDA É DA CLASSE INTEIRA β-constante, taxa ~
++0.8–1.1/H quase independente de β₁, ativa em k_phys/H ~ 0.5–30
+(componente E_f em kh alto, par Ψ_f perto do cruzamento), morta no IR
+profundo — SEM contradição com R-1/D2: as janelas antigas tinham
+kh≤0.5 ("estável tarde" = estável no IR amostrado; atualização
+anotada no doc R-1), e o "transiente de transição" do D2 era muito
+provavelmente esta banda cruzada pelos modos daquela época (kh
+1.2→0.4 em [15,45]!); (iii) R4a-EXT: TRANSIENTE-DE-CRUZAMENTO nos
+dois fundos (tardia2 kh 0.37→0.16: −1.06/−0.72) — amplificação POR
+MODO com lnA finito (lnA_met 11–18 nos braços; base comóvel). NOVO
+RASCUNHO DO ENUNCIADO no §4 do doc R-4a (substitui o do R-2 §3 como
+candidato p/ cap. 07): a viabilidade é OBSERVACIONAL — e^lnA dos
+modos que cruzam nas épocas relevantes vs vínculos. negK=1 universal
+até a=70000 (Gate F reforçado). R-4B PRONTO E COMMITADO
+(auditoria/code/r4b_forma_da_banda.py, ~10–16 min, AGUARDA RODADA):
+FORMA da banda — taxa(kh) em 12 faixas de kh por componente (Ψ_f vs
+E_f), lnA de PASSAGEM por modo (kh 20→0.2), estáticos β₁={1,4.47} +
+AUTOSIM (k×3) + GR-null de passagem + pousado com 8 k por época de
+cruzamento (a_cross 500→30000 — a rolagem/pouso modula a banda?);
+critérios R4b-NULL/AUTOSIM pré-declarados; o bloco observacional
+(dicionário de épocas + vínculos) fica para decisão do autor com os
+insumos deste script; (iv) lnA_met
 14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
 âncoras comóveis extremas não são interpretáveis (pareamento instável;
 usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs

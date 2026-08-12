@@ -23,6 +23,17 @@ Amostra (fronteira declarada): escada de μ da célula REF
 fantasma quase-nulo; três cantos do retângulo (β₁,β₂) em μ=1; k_c=10
 em todas + k_c=100 na REF. Uma trajetória por célula, a∈[0.2,2000].
 
+**ATUALIZAÇÃO (R-4a, 2026-08-12 — `resultado_r4a_mapa.md`):** o
+enunciado acima vale APENAS no infravermelho amostrado — as janelas
+tardias desta rodada tinham k_phys/H ≤ ~0.5 (k_c≤100, a≤2000). O R-4a
+mostrou que a classe inteira (β₁=1→4.47) tem **amplificação
+transiente de banda** em k_phys/H ~ 0.5–30 tardio (~+1/H, GR-limpa,
+por modo finita), invisível a esta amostragem. "Estável tarde" fica
+reclassificado para "estável no infravermelho profundo; banda de
+amplificação transiente acima" — e o "transiente de transição" do §2b
+era muito provavelmente a mesma banda, cruzada pelos modos daquela
+época.
+
 ## 2. Os dois achados estruturais da tabela
 
 **(a) negK = 1 UNIVERSAL.** Em todas as 14 células, a matriz cinética

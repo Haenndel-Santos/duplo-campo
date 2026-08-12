@@ -60,6 +60,10 @@ provisório — o controle β₁=1 NA banda k_phys~H tardia não existe
 ainda; pode ser a esquina, pode ser a classe inteira na banda. O R-4a
 decide (varredura β₁ × k, com controle GR na banda como portão).
 
+**RESOLVIDO (R-4a, 2026-08-12):** β₁=1 cresce na banda (+0.93) — é a
+**classe inteira**, não a esquina; GR-NULL passa; transiente de
+cruzamento nos dois fundos. Ver `resultado_r4a_mapa.md`.
+
 ## 2. A síntese em k_phys/H — e a releitura da "estrutura IR"
 
 Juntando R-3/R-3b/R-3c, o padrão por janela (bloco métrico):

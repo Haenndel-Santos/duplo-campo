@@ -1,0 +1,211 @@
+========================================================================
+R-4a — O MAPA DO FENOMENO TARDIO (bloco 1 do R-4)
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[fatias] {Fb,Fp,Fpp} x {b0..b4}, taxas livres ...
+[fatias] prontas
+
+========================================================================
+R4a-NULL — controle GR na banda (portao de credibilidade)
+========================================================================
+
+--- GR-NULL: k_c=12500 (H=1.14; cruzamento em a~10965) ---
+    pre      taxa max = -1.33   [k_phys/H 73.10->24.36]
+    rolagem  taxa max = -1.63   [k_phys/H 14.43-> 5.35]
+    pouso    taxa max = -1.64   [k_phys/H  5.22-> 1.61]
+    tardia   taxa max = -0.21   [k_phys/H  1.37-> 0.61]
+
+--- GR-NULL: k_c=1250 (H=1.14; cruzamento em a~1096) ---
+    pre      taxa max = -1.62   [k_phys/H  7.31-> 2.44]
+    rolagem  taxa max = -0.38   [k_phys/H  1.44-> 0.53]
+    pouso    taxa max = -0.14   [k_phys/H  0.52-> 0.16]
+    tardia   taxa max = -0.08   [k_phys/H  0.14-> 0.06]
+
+  [R4a-NULL PASSA — banda nao e artefato do pipeline em GR]
+
+========================================================================
+R4a-MAPA — beta1 x k (fundos beta-constantes estaticos)
+========================================================================
+  beta1=1: r=0.3323 H=0.5574 xi=0.3323 -> k_banda=6132
+
+--- beta1=1, k=banda: k_c=6131.82, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  4.25  negK=1
+    ancora a= 15000: sigma/H cong (red) =  3.22  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.10  +1.93  -2.18  -0.15  +1.19  -1.73  |  -0.10  +1.93  +0.00  -0.15  +1.19  +0.00   [73.34->24.45]
+    rolagem   +0.91  +1.69  -2.07  +1.24  +0.70  -1.26  |  +0.91  +1.69  +0.00  +1.24  +0.70  +0.00   [14.48-> 5.37]
+    pouso     +1.71  +1.13  -1.88  +1.63  +1.59  -1.20  |  +1.71  +1.13  +0.00  +1.63  +1.59  +0.00   [ 5.24-> 1.62]
+    tardia    +0.37  +0.93  -1.23  +0.22  +0.83  -0.87  |  +0.37  +0.93  +0.00  +0.22  +0.83  +0.00   [ 1.38-> 0.61]
+    lnA_met max = 14.56
+
+--- beta1=1, k=3x: k_c=18395.5, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.06  negK=1
+    ancora a= 15000: sigma/H cong (red) =  1.27  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.10  +0.06  -0.05  -0.14  +1.19  -2.41  |  -0.10  +0.06  +0.00  -0.14  +1.19  +0.00   [220.03->73.34]
+    rolagem   +0.96  +0.78  -3.16  +1.30  +0.68  -1.70  |  +0.96  +0.78  +0.00  +1.30  +0.68  +0.00   [43.43->16.10]
+    pouso     +2.06  +2.14  -0.74  +1.88  +2.08  -2.77  |  +2.06  +2.14  +0.00  +1.88  +2.08  +0.00   [15.71-> 4.85]
+    tardia    +1.13  +1.32  -1.42  +0.87  +1.60  -1.81  |  +1.13  +1.32  +0.00  +0.87  +1.60  +0.00   [ 4.13-> 1.83]
+    lnA_met max = 16.13
+
+--- beta1=1, k=0.1x: k_c=613.182, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  3.00  negK=1
+    ancora a= 15000: sigma/H cong (red) =  2.97  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       +0.10  +3.41  -1.73  -0.06  +1.29  -1.76  |  +0.10  +3.41  +0.00  -0.06  +1.29  +0.00   [ 7.33-> 2.44]
+    rolagem   -0.26  +1.14  -0.76  -0.18  +0.36  -1.17  |  -0.26  +1.14  +0.00  -0.18  +0.36  +0.00   [ 1.45-> 0.54]
+    pouso     -0.23  -2.34  -0.57  -0.21  -0.66  -0.31  |  -0.23  -2.34  +0.00  -0.21  -0.66  +0.00   [ 0.52-> 0.16]
+    tardia    -0.98  -1.29  -0.39  -1.42  -1.15  -0.38  |  -0.98  -1.29  +0.00  -1.42  -1.15  +0.00   [ 0.14-> 0.06]
+    lnA_met max = 11.06
+  beta1=2: r=0.4423 H=0.7549 xi=0.4423 -> k_banda=8304
+
+--- beta1=2, k=banda: k_c=8303.9, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  4.30  negK=1
+    ancora a= 15000: sigma/H cong (red) =  3.54  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.44  +1.69  -2.19  -0.26  +0.97  -1.73  |  -0.44  +1.69  +0.00  -0.26  +0.97  +0.00   [73.34->24.45]
+    rolagem   +1.05  +1.23  -2.10  +1.42  +0.54  -1.26  |  +1.05  +1.23  +0.00  +1.42  +0.54  +0.00   [14.48-> 5.37]
+    pouso     +1.64  +0.91  -1.86  +1.50  +1.79  -1.45  |  +1.64  +0.91  +0.00  +1.50  +1.79  +0.00   [ 5.24-> 1.62]
+    tardia    +0.79  +0.49  -2.15  +0.81  +0.63  -0.63  |  +0.79  +0.49  +0.00  +0.81  +0.63  +0.00   [ 1.38-> 0.61]
+    lnA_met max = 14.60
+
+--- beta1=2, k=3x: k_c=24911.7, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.20  negK=1
+    ancora a= 15000: sigma/H cong (red) =  1.57  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.44  -0.22  -0.04  -0.26  +0.96  -2.42  |  -0.44  -0.22  +0.00  -0.26  +0.96  +0.00   [220.03->73.34]
+    rolagem   +1.12  +0.94  -3.16  +1.49  +0.58  -1.71  |  +1.12  +0.94  +0.00  +1.49  +0.58  +0.00   [43.43->16.10]
+    pouso     +1.82  +1.94  -0.64  +1.59  +2.16  -3.04  |  +1.82  +1.94  +0.00  +1.59  +2.16  +0.00   [15.71-> 4.85]
+    tardia    +0.44  +0.57  -1.46  +0.33  +0.91  -2.12  |  +0.44  +0.57  +0.00  +0.33  +0.91  +0.00   [ 4.13-> 1.83]
+    lnA_met max = 16.24
+
+--- beta1=2, k=0.1x: k_c=830.39, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  3.09  negK=1
+    ancora a= 15000: sigma/H cong (red) =  3.07  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.21  +2.80  -1.69  -0.30  +1.10  -1.88  |  -0.21  +2.80  +0.00  -0.30  +1.10  +0.00   [ 7.33-> 2.44]
+    rolagem   +0.30  +1.12  -0.54  +0.51  -0.09  -1.84  |  +0.30  +1.12  +0.00  +0.51  -0.09  +0.00   [ 1.45-> 0.54]
+    pouso     -0.62  -2.05  -0.34  -0.91  -0.15  -0.11  |  -0.62  -2.05  +0.00  -0.91  -0.15  +0.00   [ 0.52-> 0.16]
+    tardia    -2.04  -1.30  -0.20  -3.19  +0.24  -0.19  |  -2.04  -1.30  +0.00  -3.19  +0.24  +0.00   [ 0.14-> 0.06]
+    lnA_met max = 11.45
+  beta1=3: r=0.4860 H=0.9211 xi=0.4860 -> k_banda=10132
+
+--- beta1=3, k=banda: k_c=10132.3, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  4.59  negK=1
+    ancora a= 15000: sigma/H cong (red) =  1.59  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.61  +1.61  -2.20  -0.30  +0.88  -1.72  |  -0.61  +1.61  +0.00  -0.30  +0.88  +0.00   [73.34->24.45]
+    rolagem   +1.07  +1.07  -2.12  +1.45  +0.47  -1.26  |  +1.07  +1.07  +0.00  +1.45  +0.47  +0.00   [14.48-> 5.37]
+    pouso     +1.62  +0.86  -1.86  +1.47  +1.86  -1.62  |  +1.62  +0.86  +0.00  +1.47  +1.86  +0.00   [ 5.24-> 1.62]
+    tardia    +0.89  +0.12  -2.58  +0.84  +0.93  -0.55  |  +0.89  +0.12  +0.00  +0.84  +0.93  +0.00   [ 1.38-> 0.61]
+    lnA_met max = 14.98
+
+--- beta1=3, k=3x: k_c=30396.8, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.24  negK=1
+    ancora a= 15000: sigma/H cong (red) =  1.67  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.61  -0.33  -0.04  -0.30  +0.88  -2.42  |  -0.61  -0.33  +0.00  -0.30  +0.88  +0.00   [220.03->73.34]
+    rolagem   +1.15  +0.97  -3.16  +1.52  +0.53  -1.71  |  +1.15  +0.97  +0.00  +1.52  +0.53  +0.00   [43.43->16.10]
+    pouso     +1.75  +1.88  -0.59  +1.50  +2.17  -3.21  |  +1.75  +1.88  +0.00  +1.50  +2.17  +0.00   [15.71-> 4.85]
+    tardia    +0.16  +0.26  -1.49  +0.20  +0.64  -2.34  |  +0.16  +0.26  +0.00  +0.20  +0.64  +0.00   [ 4.13-> 1.83]
+    lnA_met max = 16.48
+
+--- beta1=3, k=0.1x: k_c=1013.23, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  3.12  negK=1
+    ancora a= 15000: sigma/H cong (red) =  3.10  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.34  +2.59  -1.67  -0.41  +1.04  -1.94  |  -0.34  +2.59  +0.00  -0.41  +1.04  +0.00   [ 7.33-> 2.44]
+    rolagem   +0.44  +1.02  -0.46  +0.59  +0.15  -2.23  |  +0.44  +1.02  +0.00  +0.59  +0.15  +0.00   [ 1.45-> 0.54]
+    pouso     -1.33  -0.95  -0.27  -1.89  -0.57  -0.06  |  -1.33  -0.95  +0.00  -1.89  -0.57  +0.00   [ 0.52-> 0.16]
+    tardia    -1.53  -1.23  -0.14  -1.51  -1.57  -0.13  |  -1.53  -1.23  +0.00  -1.51  -1.57  +0.00   [ 0.14-> 0.06]
+    lnA_met max = 11.86
+  beta1=4.47: r=0.5159 H=1.1253 xi=0.5159 -> k_banda=12379
+
+--- beta1=4.47, k=banda: k_c=12378.7, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  1.72  negK=1
+    ancora a= 15000: sigma/H cong (red) =  1.66  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.76  +1.57  -2.20  -0.34  +0.83  -1.72  |  -0.76  +1.57  +0.00  -0.34  +0.83  +0.00   [73.34->24.45]
+    rolagem   +1.05  +0.97  -2.13  +1.46  +0.38  -1.26  |  +1.05  +0.97  +0.00  +1.46  +0.38  +0.00   [14.48-> 5.37]
+    pouso     +1.62  +0.82  -1.87  +1.45  +1.94  -1.79  |  +1.62  +0.82  +0.00  +1.45  +1.94  +0.00   [ 5.24-> 1.62]
+    tardia    +0.92  -0.01  -2.79  +0.83  +1.06  -0.50  |  +0.92  -0.01  +0.00  +0.83  +1.06  +0.00   [ 1.38-> 0.61]
+    lnA_met max = 15.48
+
+--- beta1=4.47, k=3x: k_c=37136.1, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.26  negK=1
+    ancora a= 15000: sigma/H cong (red) =  1.72  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.76  -0.41  -0.03  -0.33  +0.83  -2.42  |  -0.76  -0.41  +0.00  -0.33  +0.83  +0.00   [220.03->73.34]
+    rolagem   +1.14  +0.96  -3.16  +1.53  +0.47  -1.71  |  +1.14  +0.96  +0.00  +1.53  +0.47  +0.00   [43.43->16.10]
+    pouso     +1.72  +1.85  -0.56  +1.45  +2.21  -3.38  |  +1.72  +1.85  +0.00  +1.45  +2.21  +0.00   [15.71-> 4.85]
+    tardia    -0.08  +0.00  -1.52  +0.11  +0.44  -2.56  |  -0.08  +0.00  +0.00  +0.11  +0.44  +0.00   [ 4.13-> 1.83]
+    lnA_met max = 16.82
+
+--- beta1=4.47, k=0.1x: k_c=1237.87, npts=20000 ---
+    ancora a=  5000: sigma/H cong (red) =  3.15  negK=1
+    ancora a= 15000: sigma/H cong (red) =  3.12  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.43  +2.48  -1.66  -0.51  +1.00  -1.99  |  -0.43  +2.48  +0.00  -0.51  +1.00  +0.00   [ 7.33-> 2.44]
+    rolagem   +0.49  +0.98  -0.41  +0.61  +0.27  -2.53  |  +0.49  +0.98  +0.00  +0.61  +0.27  +0.00   [ 1.45-> 0.54]
+    pouso     -2.42  -0.75  -0.23  -2.41  -1.20  -0.08  |  -2.42  -0.75  +0.00  -2.41  -1.20  +0.00   [ 0.52-> 0.16]
+    tardia    -1.81  -1.03  -0.09  -1.97  -1.63  -0.08  |  -1.81  -1.03  +0.00  -1.97  -1.63  +0.00   [ 0.14-> 0.06]
+    lnA_met max = 12.34
+
+  SINTESE DO MAPA (taxa met max na tardia | lnA_met | negK@15000):
+     beta1            banda               3x             0.1x
+      1.00   +0.93  14.6 n1   +1.60  16.1 n1   -0.98  11.1 n1
+      2.00   +0.81  14.6 n1   +0.91  16.2 n1   +0.24  11.4 n1
+      3.00   +0.93  15.0 n1   +0.64  16.5 n1   -1.23  11.9 n1
+      4.47   +1.06  15.5 n1   +0.44  16.8 n1   -1.03  12.3 n1
+
+========================================================================
+R4a-EXT — a ate 80000: transiente de cruzamento ou sustentada?
+========================================================================
+[fundo POUSADO] reintegrando a trajetoria original ...
+    r_fim=0.4979, chi/v_fim=0.932  [CONFERE]
+
+--- EXT beta-const 4.47: k_c=12500, npts=24000 ---
+    ancora a=  5000: sigma/H cong (red) =  1.72  negK=1
+    ancora a= 15000: sigma/H cong (red) =  1.66  negK=1
+    ancora a= 40000: sigma/H cong (red) =  1.62  negK=1
+    ancora a= 70000: sigma/H cong (red) =  1.61  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -0.76  +1.52  -1.56  -0.34  +0.83  -4.63  |  -0.76  +1.52  +0.00  -0.34  +0.83  +0.00   [74.05->24.68]
+    rolagem   +1.06  +0.93  -1.86  +1.46  +0.38  -2.28  |  +1.06  +0.93  +0.00  +1.46  +0.38  +0.00   [14.62-> 5.42]
+    pouso     +1.63  +0.87  -2.36  +1.45  +1.95  -1.48  |  +1.63  +0.87  +0.00  +1.45  +1.95  +0.00   [ 5.29-> 1.63]
+    tardia    +0.93  +0.10  -0.19  +0.84  +1.08  -1.85  |  +0.93  +0.10  +0.00  +0.84  +1.08  +0.00   [ 1.39-> 0.62]
+    tardia2   -1.88  -1.06  -0.16  -2.17  -1.57  -0.31  |  -1.88  -1.06  +0.00  -2.17  -1.57  +0.00   [ 0.37-> 0.16]
+    lnA_met max = 15.59
+
+--- EXT pousado (ORG): k_c=12500, npts=24000 ---
+    ancora a=  5000: sigma/H cong (red) =  2.98  negK=1
+    ancora a= 15000: sigma/H cong (red) =  2.33  negK=1
+    ancora a= 40000: sigma/H cong (red) =  2.16  negK=1
+    ancora a= 70000: sigma/H cong (red) =  2.05  negK=1
+    taxas reais/H (norma total | norma METRICA), 6 ICs; k_phys/H nas bordas:
+    pre       -1.31  +2.03  -1.66  +0.13  +0.55  -2.10  |  -1.32  +2.03  +0.69  +0.13  +0.55  +0.70   [37.00->12.95]
+    rolagem   +1.10  +0.80  -1.70  +1.20  +1.00  -0.38  |  +0.37  +0.04  -1.89  +0.47  +0.26  +0.01   [ 8.34-> 5.43]
+    pouso     +1.63  +1.69  -1.10  +1.62  +1.65  +1.57  |  +2.31  +2.37  +0.80  +2.29  +2.33  +1.69   [ 5.25-> 1.64]
+    tardia    +0.90  +0.90  +1.25  +0.90  +0.90  +0.88  |  +0.98  +0.98  +1.25  +0.98  +0.98  +0.97   [ 1.36-> 0.61]
+    tardia2   -0.53  -0.53  -0.30  -0.54  -0.53  -0.49  |  -0.73  -0.72  -0.42  -0.73  -0.73  -0.67   [ 0.36-> 0.16]
+    lnA_met max = 18.25
+
+========================================================================
+VEREDITO R-4a (criterios pre-declarados no cabecalho)
+========================================================================
+  R4a-NULL: PASSA
+
+  R4a-MAPA (banda): beta1=1: +0.93  beta1=2: +0.81  beta1=3: +0.93  beta1=4.47: +1.06
+    >>> beta1=1 CRESCE na banda: o fenomeno e da CLASSE
+    INTEIRA beta-constante em k_phys~H tardio — o 'estavel
+    tarde' de D2/R-1 era artefato de amostragem em k (nunca
+    testaram a banda). Reavaliar enunciados: o setor escalar
+    tardio tem instabilidade dinamica real em toda a classe;
+    a gravidade depende do R4a-EXT abaixo.
+
+  R4a-EXT [bconst]: tardia +1.08 -> tardia2 -1.06 (a_max=80000)  => TRANSIENTE-DE-CRUZAMENTO
+  R4a-EXT [pousado]: tardia +0.98 -> tardia2 -0.72 (a_max=80000)  => TRANSIENTE-DE-CRUZAMENTO
+
+  (lnA_met por braco na sintese do mapa; anomalia IR do pousado
+  segue declarada fora — sub-estrutura aberta.)
