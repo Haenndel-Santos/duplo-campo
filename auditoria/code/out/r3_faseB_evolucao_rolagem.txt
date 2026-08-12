@@ -1,0 +1,183 @@
+========================================================================
+R-3 — FASE B DA INVESTIGACAO 2 POR EVOLUCAO REAL NA ROLAGEM
+========================================================================
+[V1] GR selfcheck da biblioteca: PASSA
+[montagem] K,C,W 7x7 prontos
+[fatias] {Fb,Fp,Fpp} x {b0..b4}, taxas livres (pode demorar) ...
+[fatias] prontas
+[fundo] reintegrando a trajetoria alvo (g=2, m_chi^2=30, v*=1) ...
+[fundo] ok — r_fim=0.4979 (Fase A: 0.4979), chi/v_fim=0.932 (Fase A: 0.932)
+  [FUNDO CONFERE]
+
+[V-FUNDO-TAXAS] spline vs gradiente-de-registro (Fase B):
+    a=    800: |dHd|/Hd=1.26e-07 |dHfd|/Hfd=1.64e-08 |dxid|/xid=4.90e-07  (esperado <5e-2)
+    a=   1500: |dHd|/Hd=6.54e-07 |dHfd|/Hfd=3.73e-07 |dxid|/xid=1.17e-06  (esperado <5e-2)
+    a=   5000: |dHd|/Hd=5.97e-07 |dHfd|/Hfd=8.22e-07 |dxid|/xid=7.96e-07  (esperado <5e-2)
+[fundo] sigma espinodal (max d ln chi/dN em a=[200,2050]) = 0.95 /H
+
+========================================================================
+R3-GR — controle: GR + chi rolante no mesmo pipeline
+========================================================================
+    fundo GR: rolagem chi/v 0.1->0.9 em a=[244.31, 5183.47]; sigma espinodal = 0.81/H
+    GR UV (k_c=42586.5): taxas max/H = pre:-1.35  rolagem:-1.82  tardia:-1.26
+    [R3-GR-A PASSA] (criterio: nenhuma janela > +0.1H)
+    GR IR (k_c=473.1): taxas max/H = pre:-0.77  rolagem:+0.53  tardia:-1.27
+    [R3-GR-B PASSA] (criterio: rolagem >= 0.3*0.81 e tardia <= +0.1H)
+
+========================================================================
+EVOLUCAO REAL — trajetoria de rolagem, convencao comovel real
+========================================================================
+
+--- k_c = 1250  (k_phys = 1 em a=1250, centro da janela) ---
+    [matrizes] 20000 pontos construidos
+    [reducao] valida ate a=20000
+          a  sig/H red  kN_min red  negK  sig/H 7x7  npar  kN_min 7x7  k_phys
+        800       5.61    -8.8e+04     1       5.59     4    -5.6e+04     1.56
+       1250       8.44    -3.4e+05     1       8.47     3    -2.9e+05     1.00
+       1800      12.44    -4.8e+06     1      12.87     5    -1.0e+07     0.69
+       5000       2.30    +1.4e+09     1       3.20     3    -5.6e+09     0.25
+      15000       2.79    -5.7e+10     1       3.85     3    -2.1e+11     0.08
+    sigma* (max congelado reduzido na janela) = 12.44/H; ancora tardia = 2.79/H
+    (ponte Fase B: em a=1250, k_c=1250 <-> k_phys=1; tabela da Fase B ~8-11 ai)
+    [R3-PODER] congelado em a=1800: sigma=12.44/H, taxa realizada=+14.04/H  [PASSA]
+
+    taxas reais/H (norma total | norma METRICA), 6 ICs (0,1,2=q Psi_f,E_f,dchi; 3,4,5=qd):
+    pre       -0.13  +2.13  -1.03  -0.29  +1.16  -1.49  |  -0.13  +2.13  +1.22  -0.29  +1.16  -0.75
+    rolagem   -2.70  -2.22  +1.09  -2.46  -1.76  -0.85  |  -2.76  -2.22  +0.94  -2.47  -1.84  -1.17
+    pouso     -1.33  -1.96  +0.28  -0.95  -2.45  +0.36  |  -1.54  -1.97  +0.46  -0.95  -2.81  +0.59
+    tardia    -0.89  +0.56  -1.14  -0.62  -1.37  -1.15  |  -0.91  +1.05  -1.27  -0.62  -1.46  -1.27
+    lnA_met max (ICs metricas) = 14.17   lnA_total max = 14.17
+    trilha IC0 (q Psi_f): a: ln|y| ln|y_met| frac_met  proj   (frac_met->0 = delta-chi-dominado)
+      a=  150:    +1.37    +1.37  1.000  2.65e+00
+      a=  300:    +0.76    +0.76  1.000  7.24e+00
+      a=  500:    +1.73    +1.73  1.000  1.27e+00
+      a=  760:    +1.65    +1.65  1.000  7.00e-02
+      a= 1000:    +2.72    +2.72  1.000  3.83e-02
+      a= 1250:    +1.71    +1.71  1.000  1.01e-01
+      a= 1500:    +0.51    +0.51  0.999  2.67e-01
+      a= 1800:    +0.54    +0.54  1.000  1.63e-01
+      a= 2050:    -1.21    -1.27  0.884  7.01e-01
+      a= 3000:    -3.04    -3.13  0.840  2.54e+00
+      a= 5000:    -2.51    -2.52  0.975  1.28e+00
+      a= 8000:    -2.26    -2.27  0.982  2.62e-01
+      a=12000:    -3.54    -3.76  0.638  3.02e-01
+      a=18000:    -2.98    -3.01  0.948  5.45e-02
+    trilha IC2 (q dchi): a: ln|y| ln|y_met| frac_met   (frac_met->0 = delta-chi-dominado)
+      a=  150:    +1.62    -0.91  0.006
+      a=  300:    -0.17    -0.32  0.731
+      a=  500:    +0.66    +0.62  0.923
+      a=  760:    +0.79    +0.71  0.845
+      a= 1000:    +0.45    +0.09  0.487
+      a= 1250:    +1.52    +1.49  0.925
+      a= 1500:    +1.35    +1.32  0.933
+      a= 1800:    +1.13    +0.75  0.462
+      a= 2050:    +1.94    +1.69  0.610
+      a= 3000:    +0.97    +0.95  0.966
+      a= 5000:    +1.42    +1.37  0.903
+      a= 8000:    +1.96    +1.92  0.927
+      a=12000:    +1.68    +1.68  0.995
+      a=18000:    +1.03    +0.89  0.755
+
+--- k_c = 12500  (k_phys = 10 em a=1250, centro da janela) ---
+    [matrizes] 20000 pontos construidos
+    [reducao] valida ate a=20000
+          a  sig/H red  kN_min red  negK  sig/H 7x7  npar  kN_min 7x7  k_phys
+        800      11.59    -2.2e+06     1       4.97     3    -2.2e+04    15.62
+       1250      15.67    -1.3e+07     1       7.25     3    -3.7e+05    10.00
+       1800      22.63    -2.0e+08     1      10.01     3    -7.0e+06     6.94
+       5000       2.98    -2.3e+10     1       2.80     6    -2.1e+10     2.50
+      15000       2.33    -1.8e+11     1       3.86     6    -2.0e+11     0.83
+    sigma* (max congelado reduzido na janela) = 22.63/H; ancora tardia = 2.33/H
+    (ponte Fase B: em a=1250, k_c=1250 <-> k_phys=1; tabela da Fase B ~8-11 ai)
+    [R3-PODER] congelado em a=1800: sigma=22.63/H, taxa realizada=+21.27/H  [PASSA]
+
+    taxas reais/H (norma total | norma METRICA), 6 ICs (0,1,2=q Psi_f,E_f,dchi; 3,4,5=qd):
+    pre       -1.31  +2.05  -1.66  +0.13  +0.55  -2.10  |  -1.32  +2.05  +0.69  +0.13  +0.55  +0.70
+    rolagem   +1.10  +0.80  -1.70  +1.20  +1.00  -0.38  |  +0.37  +0.04  -1.89  +0.47  +0.26  +0.02
+    pouso     +1.63  +1.69  -1.10  +1.62  +1.65  +1.57  |  +2.31  +2.37  +0.80  +2.29  +2.33  +1.69
+    tardia    +0.90  +0.90  +1.25  +0.90  +0.90  +0.88  |  +0.98  +0.98  +1.25  +0.98  +0.98  +0.97
+    lnA_met max (ICs metricas) = 17.80   lnA_total max = 17.83
+    trilha IC0 (q Psi_f): a: ln|y| ln|y_met| frac_met  proj   (frac_met->0 = delta-chi-dominado)
+      a=  150:    +1.39    +1.39  1.000  1.24e+02
+      a=  300:    +1.06    +1.06  1.000  2.97e+02
+      a=  500:    +0.46    +0.46  0.996  3.54e+02
+      a=  760:    +2.44    +2.44  1.000  1.47e+01
+      a= 1000:    +3.08    +3.08  1.000  2.48e+00
+      a= 1250:    +3.34    +3.34  0.996  6.49e+00
+      a= 1500:    +3.43    +3.41  0.963  8.62e+00
+      a= 1800:    +3.49    +3.25  0.623  1.14e+01
+      a= 2050:    +3.60    +2.83  0.213  1.30e+01
+      a= 3000:    +3.30    +3.08  0.643  2.22e+01
+      a= 5000:    +3.83    +3.74  0.834  1.13e+01
+      a= 8000:    +5.45    +5.36  0.836  1.25e+00
+      a=12000:    +5.11    +5.08  0.944  9.15e-01
+      a=18000:    +6.19    +6.16  0.945  5.52e-01
+    trilha IC2 (q dchi): a: ln|y| ln|y_met| frac_met   (frac_met->0 = delta-chi-dominado)
+      a=  150:    +3.09    -3.50  0.000
+      a=  300:    +2.14    -2.64  0.000
+      a=  500:    +1.13    -1.60  0.004
+      a=  760:    +0.77    -1.36  0.014
+      a= 1000:    -0.43    -1.19  0.218
+      a= 1250:    -0.28    -2.20  0.021
+      a= 1500:    -1.36    -1.47  0.803
+      a= 1800:    -0.85    -1.64  0.205
+      a= 2050:    -1.03    -3.36  0.009
+      a= 3000:    -1.74    -2.89  0.101
+      a= 5000:    -2.99    -3.34  0.497
+      a= 8000:    -2.86    -2.89  0.955
+      a=12000:    -2.90    -3.01  0.802
+      a=18000:    -1.84    -1.87  0.952
+
+R3-CONV — halving (k_c=1250, 40000 pts), rolagem+tardia
+
+--- k_c = 1250  (k_phys = 1 em a=1250, centro da janela) ---
+    [matrizes] 40000 pontos construidos
+    [reducao] valida ate a=20000
+          a  sig/H red  kN_min red  negK  sig/H 7x7  npar  kN_min 7x7  k_phys
+        800       5.61    -8.8e+04     1       5.59     4    -5.6e+04     1.56
+       1250       8.44    -3.4e+05     1       8.47     3    -2.9e+05     1.00
+       1800      12.44    -4.8e+06     1      12.87     5    -1.0e+07     0.69
+       5000       2.30    +1.4e+09     1       3.20     3    -5.6e+09     0.25
+      15000       2.79    -5.7e+10     1       3.85     3    -2.1e+11     0.08
+    sigma* (max congelado reduzido na janela) = 12.44/H; ancora tardia = 2.79/H
+    (ponte Fase B: em a=1250, k_c=1250 <-> k_phys=1; tabela da Fase B ~8-11 ai)
+    [R3-PODER] congelado em a=1800: sigma=12.44/H, taxa realizada=+14.04/H  [PASSA]
+
+    taxas reais/H (norma total | norma METRICA), 6 ICs (0,1,2=q Psi_f,E_f,dchi; 3,4,5=qd):
+    pre       -0.13  +2.13  -1.03  -0.29  +1.16  -1.49  |  -0.13  +2.14  +1.22  -0.29  +1.15  -0.75
+    rolagem   -2.71  -2.22  +1.09  -2.46  -1.75  -0.85  |  -2.77  -2.22  +0.94  -2.47  -1.83  -1.17
+    pouso     -1.34  -1.96  +0.28  -0.94  -2.45  +0.36  |  -1.55  -1.97  +0.46  -0.94  -2.81  +0.59
+    tardia    -0.89  +0.56  -1.15  -0.62  -1.37  -1.15  |  -0.91  +1.05  -1.27  -0.62  -1.46  -1.27
+    lnA_met max (ICs metricas) = 14.17   lnA_total max = 14.17
+    max|Delta taxa met| = 0.0090 (criterio < 0.05)  [PASSA]
+
+========================================================================
+VEREDITO R-3 (criterios pre-declarados no cabecalho)
+========================================================================
+  R3-GR-A/B: PASSAM   R3-CONV: PASSA
+  k_c=1250: PODER ok; rolagem max met -1.84 vs 0.5*sigma*=6.22 -> NAO-REALIZA; tardia ['-0.91', '+1.05', '-0.62', '-1.46'] -> MISTO; lnA_met=14.17
+  k_c=12500: PODER ok; rolagem max met +0.47 vs 0.5*sigma*=11.31 -> NAO-REALIZA; tardia ['+0.98', '+0.98', '+0.98', '+0.98'] -> MISTO; lnA_met=17.80
+
+  >>> O sigma/H ate ~13 da Fase B NAO se realiza dinamicamente:
+  a extensao do no-go ao regime nao-fatorado e VACUA como
+  veredito dinamico (fica como caracterizacao do espectro
+  congelado). O quadro D2/R-1 se estende a rolagem.
+  O dano real da rolagem e o transiente lnA_met acima (comparar
+  com 3.9-14.6 da R-1 como ordem de grandeza; insumo do R-4).
+  FRONTEIRA declarada: uma trajetoria (g=2, m30), celula REF,
+  k_c={1250,12500} (k_phys~{1,10} no centro da janela; redshift
+  fator ~200 no range), janelas declaradas, nivel linear.
+
+  R3-SPINODAL (diagnostico): sigma espinodal do fundo = 0.95/H; comparar com a trilha IC2 do k_c=1250 acima
+  (crescimento delta-chi-dominado deve acompanhar o fundo e sarar
+  no pouso — 'duas instabilidades, destinos opostos' em dinamica
+  real).
+
+  R3-MECANISMO (diagnostico; gate_fantasma_estrutural.md sec.5 —
+  a bifurcacao do Cap.1 e de massa; a transiente do D2/R-1 e
+  tipo-gradiente):
+    rolagem, bloco metrico:       -1.84/H (k_c=1250) vs +0.47/H (k_c=12500; razao k=10)
+    rolagem, delta-chi (ICs 2,5): +1.09/H vs -0.38/H
+    leitura: taxa ~ prop. a k -> tipo-gradiente; ~ k-independente
+    -> tipo-massa; espinodal presente so no k IR ja e assinatura
+    tipo-massa do modo de condensacao.

@@ -163,17 +163,28 @@ ESTÁ EXCLUÍDA no nível em que o programa pode julgar; o no-go fica
 reclassificado para "sem veredito de exclusão".
 DECISÃO DE PRIORIDADE DO AUTOR (2026-08-11, noite;
 docs/gate_fantasma_estrutural.md): NÃO partir para TDCP-2 — a F1
-ganhou sobrevida real. FILA REORDENADA: (1) R-3 = Fase B por evolução
-real na rolagem (decide também se o modo de condensação δφ₋ — o
-candidato dinâmico mais próximo da narrativa do Cap.1 — sobrevive à
-dinâmica real) — SCRIPT PRONTO E COMMITADO:
-auditoria/code/r3_faseB_evolucao_rolagem.py (critérios pré-declarados
-no cabeçalho; k_c={1250,12500} comóveis reais; controles GR-rolante
-A/B + poder-congelado; diagnóstico tipo-massa vs tipo-gradiente do
-Gate F §5; fix do fundo GR de 2026-08-12 incorporado; ~15–25 min),
-AGUARDA RODADA OFICIAL no .venv; (2) R-4 = mapa lnA(célula,k) do transiente vs
-vínculos (a sobrevida é CONDICIONAL a isto; a literatura morreu nesta
-praia); (3) GATE F = letalidade da direção K<0, três etapas com
+ganhou sobrevida real. FILA REORDENADA: (1) R-3 EXECUTADA 2026-08-12
+(r3_faseB_evolucao_rolagem.py, colaboração das duas sessões — 3
+iterações de andaime documentadas; docs/resultado_r3_rolagem.md;
+controles TODOS passam, incl. o primeiro controle POSITIVO de poder do
+programa): (i) R3-ROLAGEM NÃO-REALIZA nos dois k (bloco métrico DECAI
+−1.84H onde congelado diz +12.4H; PODER prova que congelado-de-verdade
+realiza) — a extensão do no-go ao não-fatorado é VÁCUA como dinâmica,
+3ª confirmação do watershed; (ii) MODO DE CONDENSAÇÃO SOBREVIVE à
+dinâmica real como o candidato do Cap.1: tipo-MASSA, só IR, acompanha
+a espinodal do fundo (+1.09 vs 0.95/H), satura no pouso, decai tarde —
+identificação suportada no nível de MECANISMO (identidade segue
+interpretativa, G1-a); transiente métrico é tipo-GRADIENTE; (iii) NOVO:
+crescimento tardio REAL ~+1H na família modulada-POUSADA (k_c=12500:
+todas as ICs; ~k-independente; abaixo do limiar CRESCE) — hipótese
+nomeada: bombeamento paramétrico pelas oscilações residuais de χ
+(ω_χ/H≈4.4; mesmo k_phys na fase rolante DECAI); teste declarado:
+reintegrar com oscilações amortecidas ou janela a>50000; (iv) lnA_met
+14.2–17.8 — transientes GRANDES; aviso: contagens do QEP 7×7 nas
+âncoras comóveis extremas não são interpretáveis (pareamento instável;
+usar a reduzida 3×3). (2) R-4 = mapa lnA(célula,k) do transiente vs
+vínculos + follow-up do crescimento paramétrico (§1.3 do doc R-3) — a
+sobrevida é CONDICIONAL a isto; AGORA URGENTE; (3) GATE F = letalidade da direção K<0, três etapas com
 critérios pré-declarados: F-a teste da constraint secundária
 linearizada (H-CONSTRAINT — hipótese MAIS BEM SUPORTADA: contagem
 3-congelado vs 2-esperado + frequência do modo crescendo com a,

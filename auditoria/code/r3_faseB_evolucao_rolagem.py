@@ -679,8 +679,16 @@ sig_sp_gr = float(np.max(np.gradient(np.log(BGR['ch']), BGR['N'])[sel_rol]))
 say(f"    fundo GR: rolagem chi/v 0.1->0.9 em a=[{a10:.2f}, {a90:.2f}]; "
     f"sigma espinodal = {sig_sp_gr:.2f}/H")
 gr_hi = min(60 * a90, 45000.0)
+# [fix 2026-08-12] janela tardia adaptativa: com o roll sobreamortecido
+# (LAM_GR=3.0), a90~5200 e a janela fixa [10*a90, 40000] ficava vazia
+# (lo>hi -> NaN -> FALHA espuria). Pos-roll basta [3*a90, 8*a90],
+# clampado ao range integrado.
+tard_lo = 3 * a90
+tard_hi = min(8 * a90, 0.9 * gr_hi)
+if tard_lo >= tard_hi:
+    tard_lo = 0.6 * tard_hi
 JAN_GR = [("pre", a10 / 10, a10 / 2), ("rolagem", a10, a90),
-          ("tardia", 10 * a90, min(50 * a90, 40000.0))]
+          ("tardia", tard_lo, tard_hi)]
 K_UV = 1.5 * np.sqrt(2 * MU2_GR) * a90
 K_IR = 0.5 * np.sqrt(MU2_GR) * a10
 SGR = {kk: CubicSpline(BGR['N'], BGR[kk])
@@ -767,16 +775,28 @@ def qep7_no_ponto(N, kc):
     Kn = monta(FK, args, bvals, bp, bpp)
     Cn = monta(FC, args, bvals, bp, bpp)
     Wn = monta(FW, args, bvals, bp, bpp)
-    pares = d1.agrupa_pares(d1.qep_modes(Kn, Cn, Wn))
+    # [fix 2026-08-12] pre-escala: em comovel real K ~ a^3 (>=1e11 em
+    # a>=5000) e a linearizacao do QEP mistura blocos K com identidade
+    # ~1 — eig degrada e filtra tudo (pares vazio). O QEP e invariante
+    # sob (K,C,W) -> s*(K,C,W); normalizar por max|K| conserta o
+    # condicionamento. kN devolvido na escala ORIGINAL (kN*sK).
+    sK = max(np.max(np.abs(Kn)), 1e-30)
+    pares = d1.agrupa_pares(d1.qep_modes(Kn / sK, Cn / sK, Wn / sK))
+    if not pares:
+        return 0, float('nan'), float('nan')
     sig = max(abs(np.sqrt(complex(mm['omega2'])).imag)
               for mm in pares) / f['H']
-    kNmin = min(mm['knorm'] for mm in pares)
+    kNmin = min(mm['knorm'] for mm in pares) * sK
     return len(pares), sig, kNmin
 
 
 def poder_congelado(Kr0, Cr0, Wr0, H0, seed=42):
-    """R3-PODER: matrizes constantes devem realizar o sigma congelado."""
-    pares = d1.agrupa_pares(d1.qep_modes(Kr0, Cr0, Wr0))
+    """R3-PODER: matrizes constantes devem realizar o sigma congelado.
+    [fix 2026-08-12] QEP com pre-escala (ver qep7_no_ponto)."""
+    sK = max(np.max(np.abs(Kr0)), 1e-30)
+    pares = d1.agrupa_pares(d1.qep_modes(Kr0 / sK, Cr0 / sK, Wr0 / sK))
+    if not pares:
+        return float('nan'), float('nan')
     sig = max(abs(np.sqrt(complex(mm['omega2'])).imag)
               for mm in pares) / H0
     om_max = max(abs(np.sqrt(complex(mm['omega2']))) for mm in pares)
@@ -834,11 +854,18 @@ def roda_k(kc, npts, com_trilhas=True):
         if a_anc > a_max_val:
             continue
         p_anc = int(np.argmin(np.abs(aas_t - a_anc)))
-        pares = d1.agrupa_pares(d1.qep_modes(Kr[p_anc], Cr[p_anc],
-                                             Wr[p_anc]))
+        # [fix 2026-08-12] pre-escala do QEP (ver qep7_no_ponto) + guarda
+        sK = max(np.max(np.abs(Kr[p_anc])), 1e-30)
+        pares = d1.agrupa_pares(d1.qep_modes(Kr[p_anc] / sK,
+                                             Cr[p_anc] / sK,
+                                             Wr[p_anc] / sK))
+        if not pares:
+            say(f"    {a_anc:7.0f}  (QEP reduzido sem modos finitos mesmo "
+                "pre-escalado — ancora pulada; investigar se recorrente)")
+            continue
         sig_r = max(abs(np.sqrt(complex(mm['omega2'])).imag)
                     for mm in pares) / Hs_t[p_anc]
-        kN_r = min(mm['knorm'] for mm in pares)
+        kN_r = min(mm['knorm'] for mm in pares) * sK
         eigK = np.linalg.eigvalsh(0.5 * (Kr[p_anc] + Kr[p_anc].T))
         negK = int(np.sum(eigK < -1e-12))
         np7, sig7, kN7 = qep7_no_ponto(Ns_t[p_anc], kc)
