@@ -185,11 +185,25 @@ cadeia defeituosa. E não há nada do R-7 a refazer.
 
 Nível 2b, mesmas fronteiras do R-10a/R-11 (classe F1 com β₃ = 0, ramo
 finito, matéria só como ρ de fundo, sem radiação, F′ = F″ = 0). O que
-mudou é a qualidade do instrumento, não o domínio. Não verificado
-aqui: se o defeito do Ċ afeta quantitativamente resultados da cascata
-R-7/R-8 (lá cond ≈ 10, e a diferença medida em a = 1000 é ~8e−4 —
-irrelevante para conclusões de ordem de grandeza como a banda morta,
-mas **as tabelas de precisão do R-8a deveriam ser refeitas**).
+mudou é a qualidade do instrumento, não o domínio.
+
+O alcance do defeito **foi** medido (§6): no domínio do R-7/R-8 o
+desvio é ≤ 4e−4 e os sinais de (λK₂¹, λK₂², W00) não mudam; o R-8a
+sequer passa pela cadeia (resolve `−W q + J = 0`, sem Ċ). Nada da
+cascata R-7/R-8 precisa ser refeito.
+
+**Não verificado aqui:**
+
+- o mapa do §6 é uma **amostragem em 16 pontos** (a ∈ {100, 1e3, 1e4,
+  8e4} × kh ∈ {0.2, 1, 5, 20}), mais um corte em kh na era tardia —
+  não é um escaneio contínuo;
+- a **faixa intermediária a ∈ (0.05, 100)** ficou sem sondar: entre a
+  era inicial contaminada (cond ≫ 1) e a região tardia segura não há
+  medida da transição;
+- os docs de R-9a/R-10a/R-10b/R-11 seguem com as **tabelas antigas sob
+  banner de supersessão** — aqueles valores não foram regerados um a
+  um com o instrumento limpo. O que foi refeito com ele é o que está
+  no §3 (perfil em k, as 108 células, a_cross/z_cross).
 
 ## 8. Fila
 

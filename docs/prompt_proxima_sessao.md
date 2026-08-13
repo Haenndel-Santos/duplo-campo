@@ -199,8 +199,10 @@ FILA (pos-R-12):
    fecha na celula minima.
 2. Confrontar a formula fechada com Konnig et al. (arXiv:1407.4331) —
    agora ha formula, nao so numero. [verificar contra a fonte]
-3. REFAZER O R-8a (mu/Sigma quase-estaticos) com o instrumento limpo:
-   os numeros la sao sub-percentuais e o defeito e da mesma ordem.
+3. ~~REFAZER O R-8a (mu/Sigma quase-estaticos) com o instrumento
+   limpo~~ — CAI (adendo 6, R-12h): o R-8a resolve -W q + J = 0 e
+   nunca toca o Cdot, entao nao passa pela cadeia defeituosa. Nada a
+   refazer. NAO reabrir este item.
 4. Cap. 09: o enunciado honesto de validade restrita (opcao 3 do
    R-10 consolidado) continua valendo.
 5. Pendencias herdadas (inalteradas): Gate 2B + difeo espacial,
@@ -214,6 +216,34 @@ docs/resultado_r11_nogo_gradiente.md e resultado_r10_consolidado.md
 (ambos com banner de supersessao de VALOR); depois
 docs/pareceres_especialistas/00_sintese_cruzada.md; so entao o
 historico (erratum_02, resultado_r7_cascata §4).
+
+
+ADENDO 6 (2026-08-13, fim de sessao — R-12h; commit bb5064e, o mais
+recente do repo). RAIO DE ALCANCE DO ERRATUM-03 MEDIDO
+(docs/resultado_r12_instrumento_e_cs2.md §6; script
+auditoria/code/r12h_raio_de_alcance.py).
+
+Tres variantes de Cdot no mesmo ponto: A8 (Cdot7 simbolico + estencil
+de 8a ordem, referencia), A2 (= R-10a..R-12c), N2 (= R-1..R-8b, onde o
+defeito entra duas vezes).
+
+- DOMINIO R-7/R-8 (a in [100, 8e4] x kh in [0.2, 20]): desvio maximo
+  om2 3.6e-4 | autovalores de K2 1.5e-5 | W00 2.0e-6; e os SINAIS de
+  (lamK2_1, lamK2_2, W00) sao identicos nas tres variantes em 16/16
+  pontos (sempre ++-). A cascata R-7/R-8 e SEGURA — estrutural e
+  quantitativamente (as margens la sao de 10+ unidades log).
+  Controle positivo (a = 0.01, kh = 30): desvio 3.9e-2 — o harness
+  reproduz o defeito onde ele existe.
+- A FRONTEIRA NAO E SO EM a, E EM kh: na era tardia o desvio vai de
+  3.6e-4 (kh=20) a 9.3e-1 (kh=1000), ficando abaixo de 1e-2 so ate
+  kh ~ 100. Logo R-9a Parte A (kh <= 45) e segura; Parte B (o
+  "termo k^4", kh ate 1000) e contaminada — como ja se sabia.
+- NAO SONDADO: a faixa intermediaria a in (0.05, 100), entre a era
+  inicial contaminada (cond >> 1) e a regiao tardia segura; e o mapa
+  e amostragem em 16 pontos, nao escaneio continuo.
+
+DOIS ITENS CAEM DA FILA: "refazer o R-8a" (nunca usou a cadeia) e
+"refazer algo do R-7" (nada la depende do defeito).
 
 FILA (adendo 4) — SUPERSEDED pelo adendo 5:
 FILA (nova):
