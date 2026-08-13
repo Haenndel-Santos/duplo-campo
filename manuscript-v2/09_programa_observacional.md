@@ -61,19 +61,40 @@ radiação — o mapa a ↔ z usa a âncora a₀ = 0.931 e muda com radiação.*
 `auditoria/code/out/r10d_screening.txt` (D2, D3),
 `auditoria/code/out/r12f_veredito_instrumento.txt`.*
 
-**As quatro saídas conhecidas foram testadas e estão fechadas** — é
-isso que transforma um achado em enunciado de escopo:
+**As quatro saídas conhecidas foram testadas: três estão fechadas e
+uma foi REABERTA pelo R-12i** — é o teste dessas saídas que transforma
+um achado em enunciado de escopo, e a reabertura restringe o alcance
+desse enunciado:
 
 | Saída | Teste | Estado |
 |---|---|---|
-| Ramo infinito | R-10c | fechada — ξ cruza zero; não conecta a uma história contínua |
+| Ramo infinito | R-10c → **REABERTA** (R-12i) | a exclusão por ξ cruzar zero **não se sustenta**: é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos. Reexame pendente, e o alvo é o ramo infinito **com β₄ ≠ 0** (o IBB viável exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0) |
 | Modulação β₁(φ₋) | R-10c | fechada — age ~3 ordens de grandeza tarde demais (φ₋/v = 0.002 em a = 0.465) |
 | Screening de Vainshtein | R-10d | fechada — δ_screen = (4π/3)(m_T/H)² ≈ 20–60 em todas as eras; *o λ cancela*, não há escala linear protegida |
 | Forma-β (β₀, β₂, β₄, μ) | R-11 + R-12g | fechada — constante estrutural da classe |
 
+*A reabertura, em uma frase (R-12i §1.6 e §R-b).* Como `b = ra`, o
+nosso `ξ = r + dr/dN` é `ξ = X/a` com o `X ≡ ḃ/ℋ` de Könnig et al. —
+**mesmo sinal, mesmo zero** —, de modo que o "ξ cruza zero" do R-10c é
+ponto por ponto o quique de `b` que 1407.4331 §II/§VI trata
+explicitamente e defende como físico: f não acopla à matéria e não tem
+interpretação geométrica; nenhuma variável de fundo ou perturbada
+apresenta singularidade; `√(−det f)·R̄(f)` permanece finita e não-nula,
+logo as equações de movimento existem em todo instante. A
+*infinite-branch bigravity* é o **único** modelo estável em todos os
+tempos daquele paper. O estado não é "viável": é **reaberto e
+exigindo reavaliação**, com o caveat de escopo obrigatório de que o
+alvo é o ramo infinito da F1 **com β₄ ≠ 0**, e não a célula mínima
+(β₄ = 0). **Não há hoje argumento sustentado contra o IBB no corpus** —
+o candidato ("fantasma de Higuchi eterno", 1503.07436) aparece em duas
+linhas contraditórias de `docs/posicionamento_literatura.md`, nenhuma
+verificada na fonte; verificar 1503.07436 é o caminho mais barato para
+decidir.
+
 *Nível 2b, fronteiras nos docs de origem.* *Fontes:
 `docs/resultado_r10c_saidas.md`, `docs/resultado_r10_consolidado.md`
-§2–3, `docs/resultado_r11_nogo_gradiente.md` §3;
+§2–3, `docs/resultado_r11_nogo_gradiente.md` §3,
+`docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b);
 `auditoria/code/out/r10c_saidas_ramo_e_dinamico.txt`,
 `auditoria/code/out/r10d_screening.txt`,
 `auditoria/code/out/r11_varredura_forma_beta.txt`.*
@@ -105,9 +126,10 @@ Nenhuma medida existe com era de radiação, que move a_cross.
 E o que este enunciado **não** é (registrado no próprio R-10
 consolidado §6 e no R-11 §4): não é refutação da TDCP como hipótese
 conceitual. É refutação da *suficiência* da implementação F1, no ramo
-finito, para fins cosmológicos, no estado atual. A única porta que
-fica entreaberta é β₃ ≠ 0 — que sai da definição de F1, isto é, leva a
-uma F2.
+finito, para fins cosmológicos, no estado atual. As portas que ficam
+entreabertas são duas: β₃ ≠ 0 — que sai da definição de F1, isto é,
+leva a uma F2 — e, desde o R-12i, o **reexame do ramo infinito com
+β₄ ≠ 0** (§1).
 
 ## 2. Sonda 1 — sub-horizonte quase-estático (R-8a), com o escopo de época
 
@@ -274,7 +296,9 @@ especialista; contas de ordem do parecer, não do repositório.*
 
 **Está em conflito — a era inicial.** Em r ≲ 0.05 o escalar métrico
 tem instabilidade de gradiente com c_s² = −1, a era instável cobre a
-recombinação, e as quatro saídas conhecidas estão fechadas (§1). O
+recombinação, e das quatro saídas conhecidas três estão fechadas —
+a do **ramo infinito foi reaberta pelo R-12i**, com o alvo em β₄ ≠ 0
+e reexame pendente (§1). O
 conflito não tem, hoje, a forma "a F1 prevê X e o dado mede Y": tem a
 forma mais dura de que **o observável não é computável** no regime em
 que o dado existe. Modos com kh ≳ 7–8 se auto-invalidam; modos com

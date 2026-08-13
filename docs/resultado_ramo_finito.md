@@ -28,6 +28,29 @@ A cúbica $m^2M_{\rm eff}^2\mathcal W(r)=\rho$ tem duas famílias de raiz:
   dá $\xi<0$, isto é, lapso negativo no setor $f$;
 - $r\sim\beta_1/\tilde\rho\to0$ — **ramo finito**, físico.
 
+> **[REABERTURA — 2026-08-13, R-12i]** *Nota acrescentada; o texto
+> acima permanece intacto.* Este é o parágrafo que originou a exclusão
+> do ramo infinito no corpus, e ele está hoje **duplamente
+> qualificado**. (i) *Época* (R-10c Parte A): "dá ξ < 0" só vale no
+> regime **primordial** — a segunda raiz torna-se viável em a ≳ 1
+> (r ≈ 2.23, ξ ≈ 2.23, H² > 0); o que o R-10c usava para excluir era
+> ξ **cruzar zero** no caminho. (ii) *Fonte* (R-12i): esse critério
+> **não se sustenta**. Como `b = ra`, o nosso `ξ = r + dr/dN` é
+> `ξ = X/a` com o `X ≡ ḃ/ℋ` de Könnig et al. — mesmo sinal, mesmo
+> zero —, e 1407.4331 §II/§VI trata esse quique de `b`
+> **explicitamente**, defendendo-o como físico por três razões
+> declaradas (f não acopla à matéria e não tem interpretação
+> geométrica; nenhuma variável de fundo ou perturbada é singular;
+> `√(−det f)·R̄(f)` é finita e não-nula, logo as equações de movimento
+> existem em todo instante). A *infinite-branch bigravity* é o único
+> modelo estável em todos os tempos daquele paper. **Estado: a
+> exclusão está REABERTA e exige reavaliação** — não é "fechada" nem
+> "aberta e viável" —, e o alvo do reexame é o ramo infinito da F1
+> **com β₄ ≠ 0** (o IBB viável exige `0 < β₄ < 2β₁`; a nossa célula
+> mínima tem β₄ = 0). *Fonte:
+> `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b);
+> `docs/resultado_r10c_saidas.md` Parte A.*
+
 No ramo finito, no universo primordial:
 
 $$r\propto a^3 \;\Rightarrow\; \frac{dr}{dN}=3r \;\Rightarrow\; \boxed{\xi = 4r > 0}$$

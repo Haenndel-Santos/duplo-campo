@@ -169,14 +169,42 @@ k/aH ≳ 8 na transição saem do regime linear (lnA até 32); os
 intermediários (k/aH ~ 1–7) permanecem lineares mas crescem por
 fatores de 2 a 10⁴. **A era instável cobre a recombinação.**
 
-**[2026-08-13] As quatro saídas foram testadas e fechadas:**
+**[2026-08-13; revisto pelo R-12i] As quatro saídas foram testadas —
+três fechadas, uma REABERTA:**
 
 | Saída | Teste | Estado |
 |---|---|---|
-| Ramo infinito | R-10c | fechada — ξ cruza zero, não conecta |
+| Ramo infinito | R-10c → **REABERTA** (R-12i) | a exclusão por ξ cruzar zero **não se sustenta**: é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos. Reexame pendente, e o alvo é o ramo infinito **com β₄ ≠ 0** (o IBB viável exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0) |
 | Modulação β₁(φ₋) | R-10c | fechada — age ~3 ordens tarde demais |
 | Screening de Vainshtein | R-10d | fechada — δ_screen ≈ 20–60; *o λ cancela*, não há escala linear protegida |
 | Forma-β (β₀, β₂, β₄, μ) | R-11 + R-12g | fechada — **c_s² = −1 em 108/108 células**, com `\|c_s²+1\| ≤ 1.1e−7` |
+
+*A reabertura, em detalhe (R-12i §1.6 e §R-b).* O critério que fechava
+o ramo infinito era: ξ cruza zero ⟹ o lapso do setor f se anula ⟹
+ponto singular ⟹ história contínua excluída. Como `b = ra`, o nosso
+`ξ = r + dr/dN` satisfaz `ξ = X/a` com o `X ≡ ḃ/ℋ` de Könnig et al. —
+**mesmo sinal, mesmo zero**. Ou seja, o que o R-10c descarta é
+*exatamente* o quique de `b` que a fonte primária trata
+explicitamente (§II e §VI, com nota de rodapé 9) e argumenta **não**
+tornar a solução não-física, por três razões declaradas: (i) f não
+acopla à matéria e não tem interpretação geométrica; (ii) nenhuma
+variável de fundo ou perturbada apresenta singularidade; (iii)
+`√(−det f)·R̄(f)` permanece finita e não-nula, de modo que as equações
+de movimento existem em todo instante — a escolha de sinal da raiz é
+feita justamente para deixar a ação diferenciável na travessia. E a
+*infinite-branch bigravity* (IBB) é o **único** modelo estável em
+todos os tempos daquele paper. **Caveat de escopo, sem o qual a linha
+não pode ser citada:** o IBB viável exige β₄ ≠ 0, especificamente
+`0 < β₄ < 2β₁`, enquanto a nossa célula mínima tem β₄ = 0 — o alvo do
+reexame é o ramo infinito da F1 **com β₄ ligado**, não a célula atual.
+O estado correto não é "fechada" nem "aberta e viável": é **reaberta,
+exigindo reavaliação**. Existe um possível argumento independente
+contra o IBB — o "fantasma de Higuchi eterno" atribuído a 1503.07436 —
+mas ele aparece em `docs/posicionamento_literatura.md` em **duas
+linhas contraditórias**, nenhuma verificada na fonte; **hoje não há
+argumento sustentado contra o IBB no corpus**, e o caminho mais barato
+para decidir é verificar 1503.07436 na fonte. *Fonte:
+`docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b).*
 
 **NO-GO DE CLASSE POR GRADIENTE (R-11, valor fixado no R-12):** na
 classe F1 (β₃ = 0, matéria só em g, ramo finito),
@@ -217,8 +245,10 @@ ao canal Ċ.
 corrigido; este foi medido com o instrumento já corrigido e validado,
 é insensível a toda a forma do potencial, e reproduz uma previsão
 independente da literatura que o repositório registrava sem confrontar.
-A única porta que resta entreaberta é β₃ ≠ 0 — que sai da definição de
-F1, isto é, leva a uma F2.
+A porta que resta entreaberta é β₃ ≠ 0 — que sai da definição de
+F1, isto é, leva a uma F2 — **e, desde o R-12i, também o ramo infinito
+com β₄ ≠ 0**, que voltou à condição de saída sob reexame (tabela
+acima).
 
 Pendências declaradas: ramo algébrico (deferido); fronteira de uma
 trajetória no dinâmico; scan de classe em nível de assinatura; **a

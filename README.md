@@ -25,11 +25,20 @@ carry the value-supersession banner of Erratum-03 (below).
   r → 0, for any (β₀, β₂, β₄, μ) — 108/108 cells, |c_s²+1| ≤ 1.1e−7 —
   with positive kinetic term (gradient, not ghost), and c_s² = +1
   exactly in the late era; closed form proved in the minimal cell
-  (β₂ = β₄ = 0). The four known exits (infinite branch, β₁(φ₋)
-  modulation, Vainshtein screening, β-form) are closed; the only door
-  left ajar is β₃ ≠ 0, which leaves F1. **The unstable era covers
-  recombination**, so the linear CMB of F1 is not calculable while this
-  picture holds.
+  (β₂ = β₄ = 0). Of the four known exits, **three are closed** (β₁(φ₋)
+  modulation, Vainshtein screening, β-form) and the **infinite branch
+  was REOPENED by R-12i**: our exclusion criterion (ξ crosses zero ⟹
+  vanishing lapse in the f sector ⟹ singular point) is, point by
+  point, the bounce of `b` that Könnig et al. (1407.4331) §II/§VI
+  treat explicitly and defend as physical, on three stated grounds —
+  and infinite-branch bigravity (IBB) is the only model stable at all
+  times in that paper. The exit is **reopened pending re-examination**,
+  not viable: the viable IBB requires β₄ ≠ 0 (0 < β₄ < 2β₁), whereas
+  our minimal cell has β₄ = 0, so the target is the infinite branch of
+  F1 **with β₄ switched on**, not the current cell. Two doors are thus
+  left ajar: β₃ ≠ 0, which leaves F1, and that re-examination.
+  **The unstable era covers recombination**, so the linear CMB of F1 is
+  not calculable while this picture holds.
 - `docs/resultado_r12_instrumento_e_cs2.md` — **Erratum-03
   (instrument)**: Ċ was differentiated with 2nd-order `np.gradient`
   from R-7 to R-12c, and the O(h²) error is amplified by the

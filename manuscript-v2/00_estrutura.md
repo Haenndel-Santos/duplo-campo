@@ -29,9 +29,15 @@ finito), o escalar métrico tem **c_s² = −1 exato em r → 0** para
 *qualquer* (β₀, β₂, β₄, μ) — 108/108 células, |c_s²+1| ≤ 1.1e−7 — com
 cinética **positiva** (é gradiente, não fantasma), e **c_s² = +1 exato**
 na era tardia; na célula mínima (β₂ = β₄ = 0) isso é **teorema** em
-forma fechada (R-12b). As quatro saídas (ramo infinito, modulação
-β₁(φ₋), screening de Vainshtein, forma-β) estão **fechadas**; a única
-porta entreaberta é β₃ ≠ 0, que sai da definição de F1. **A era
+forma fechada (R-12b). Das quatro saídas, **três estão fechadas**
+(modulação β₁(φ₋), screening de Vainshtein, forma-β) e a do **ramo
+infinito foi REABERTA pelo R-12i**: a exclusão por ξ cruzar zero é
+ponto por ponto o quique de `b` que 1407.4331 §II/§VI trata e defende
+como físico, com três argumentos, e o reexame está pendente — com o
+alvo no ramo infinito **com β₄ ≠ 0** (o IBB viável exige
+0 < β₄ < 2β₁; a célula mínima tem β₄ = 0). As portas entreabertas são,
+portanto, duas: β₃ ≠ 0, que sai da definição de F1, e essa
+reabertura. **A era
 instável cobre a recombinação** — o CMB linear da F1 não é calculável
 enquanto este quadro valer. No mesmo arco entra o **ERRATUM-03**
 (R-12): o Ċ era derivado por `np.gradient` de 2ª ordem de R-7 a R-12c,
@@ -172,11 +178,13 @@ e "strong coupling" retirados como artefatos; (iv) o no-go real, na era
 inicial: c_s² = −1 exato em r → 0 para qualquer (β₀, β₂, β₄, μ) da
 classe F1 (108/108 células), com cinética positiva — é **gradiente**,
 não fantasma —, c_s² = +1 exato na era tardia, teorema em forma fechada
-na célula mínima; quatro saídas testadas e fechadas; a era instável
+na célula mínima; quatro saídas testadas, **três fechadas e a do ramo
+infinito reaberta pelo R-12i** (alvo: β₄ ≠ 0); a era instável
 cobre a recombinação; e o ERRATUM-03, que corrige *valores* sem tocar
 *enunciados*. Fronteiras e pendências declaradas (ramo algébrico
-deferido; Vainshtein/validade linear no topo da fila; β₃ ≠ 0 como única
-porta entreaberta — e ela leva para fora da F1).
+deferido; Vainshtein/validade linear no topo da fila; duas portas
+entreabertas — β₃ ≠ 0, que leva para fora da F1, e o reexame do ramo
+infinito com β₄ ≠ 0).
 *Fontes: erratum_02_reducao_numerica.md, resultado_r7_cascata.md,
 resultado_r7e_saude_interna.md, resultado_r10_consolidado.md,
 resultado_r11_nogo_gradiente.md, resultado_r12_instrumento_e_cs2.md,

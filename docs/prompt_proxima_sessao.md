@@ -127,17 +127,39 @@ ADENDO 4 (2026-08-13 — PARECERES + BLOCO 0 + BLOCO 1; commits ate
    c_s^2 -> -1 em r -> 0 (alto z), com K2 > 0 (gradiente genuino,
    nao fantasma), calibrador exato. A era instavel COBRE A
    RECOMBINACAO (z_cross ~ 0.62 no beta-const). As QUATRO saidas
-   foram testadas e FECHADAS: ramo infinito (nao conecta),
-   modulacao (tarde demais), screening (delta_screen ~ 20-60; o
-   lambda cancela), forma-beta (108/108 celulas dao
+   foram testadas: TRES FECHADAS e UMA REABERTA.
+   FECHADAS: modulacao (tarde demais), screening (delta_screen ~
+   20-60; o lambda cancela), forma-beta (108/108 celulas dao
    c_s^2 = -1.010 +- 6e-6 — CONSTANTE ESTRUTURAL DA CLASSE).
+   REABERTA (R-12i, 2026-08-13): ramo infinito. A exclusao por
+   "xi cruza zero" NAO SE SUSTENTA: como b = ra, xi = X/a com o
+   X = bdot/H de Konnig et al., mesmo sinal e mesmo zero — e' o
+   quique de b que 1407.4331 §II/§VI trata EXPLICITAMENTE e defende
+   como fisico, por tres razoes declaradas (f nao acopla a materia
+   e nao tem interpretacao geometrica; nenhuma variavel de fundo ou
+   perturbada e' singular; sqrt(-det f)*Rbar(f) e' finita e nao-nula,
+   logo as equacoes de movimento existem em todo instante). A
+   infinite-branch bigravity (IBB) e' o UNICO modelo estavel em
+   todos os tempos daquele paper. ESTADO: nem "fechada" nem "aberta
+   e viavel" — REABERTA, EXIGE REAVALIACAO. CAVEAT DE ESCOPO
+   OBRIGATORIO: o IBB viavel exige beta_4 != 0 (0 < beta_4 < 2
+   beta_1), enquanto a nossa celula minima tem beta_4 = 0 — o alvo
+   do reexame e' o ramo infinito da F1 COM beta_4 LIGADO, nao a
+   celula atual. NAO HA HOJE ARGUMENTO SUSTENTADO CONTRA O IBB NO
+   CORPUS: o candidato ("fantasma de Higuchi eterno", 1503.07436)
+   aparece em duas linhas contraditorias de
+   docs/posicionamento_literatura.md e nenhuma foi verificada na
+   fonte — verificar 1503.07436 e' o caminho mais barato para
+   decidir. NAO MUDA: o no-go de gradiente do ramo finito segue de
+   pe. Fonte: docs/resultado_r12i_confronto_konnig.md §1.6 e §6.
 
 O QUE ISSO SIGNIFICA: cai a SUFICIENCIA da implementacao F1 como
 cosmologia. NAO cai a TDCP como hipotese, nem os erratums, nem o
 fundo, nem o tensor (m_T^2/H^2 -> 12; m_T ~ 2.3 H0), nem o
-espectador, nem o metodo. A unica porta entreaberta e beta_3 != 0 —
-que sai da definicao de F1 (seria uma F2) e exige refazer a cubica
-do fundo.
+espectador, nem o metodo. As portas entreabertas sao DUAS (a segunda
+acrescentada pelo R-12i, 2026-08-13): (a) beta_3 != 0 — que sai da
+definicao de F1 (seria uma F2) e exige refazer a cubica do fundo; e
+(b) o REEXAME DO RAMO INFINITO COM beta_4 != 0 (ver o item 3 acima).
 
 
 ADENDO 5 (2026-08-13, mesma data — R-12 EXECUTADO; commits ate

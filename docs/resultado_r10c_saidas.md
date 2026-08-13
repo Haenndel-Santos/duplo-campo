@@ -8,7 +8,10 @@
 > no valor (enunciados intactos)*
 > (`docs/resultado_r12_instrumento_e_cs2.md` §6).
 >
-> **O que NÃO muda.** As **quatro saídas continuam fechadas** e a
+> **O que NÃO muda.** As **quatro saídas continuam fechadas** *[esta
+> frase caiu em 2026-08-13 pelo R-12i: são **três fechadas e uma
+> reaberta** — a do ramo infinito; ver o banner de REABERTURA da
+> Parte A]* e a
 > **modulação β₁(φ₋) continua chegando tarde demais** — é assim que o
 > R-12 §4 ("as quatro saídas fechadas (R-10c/d, R-11)") e o cap. 07
 > da v2 (Ato 4: "Modulação β₁(φ₋) | R-10c | fechada — age ~3 ordens
@@ -44,6 +47,47 @@ gradiente confirmada). Testa as saídas 2 e 4 listadas em
 
 ## Parte A — A exclusão do ramo infinito: **correta, mas mal
 justificada no corpus**
+
+> **[REABERTURA — 2026-08-13, R-12i]** *Nota acrescentada; o texto
+> original da Parte A permanece intacto abaixo.* **O veredito desta
+> Parte A caiu.** O critério que ela estabelece — ξ cruza zero ⟹ o
+> lapso do setor f se anula ⟹ ponto singular ⟹ história contínua
+> excluída — **não se sustenta**. Como `b = ra`, o nosso
+> `ξ = r + dr/dN` satisfaz `ξ = X/a` com o `X ≡ ḃ/ℋ` de Könnig et al.
+> (1407.4331): **mesmo sinal, mesmo zero**. O que esta Parte A
+> descarta é, ponto por ponto, o **quique de `b`** que aquele paper
+> trata **explicitamente** (§II e §VI, com nota de rodapé 9) e
+> argumenta **não** tornar a solução não-física, por três razões
+> declaradas: (i) f não acopla à matéria e não tem interpretação
+> geométrica; (ii) nenhuma variável de fundo ou perturbada apresenta
+> singularidade; (iii) `√(−det f)·R̄(f)` permanece finita e não-nula,
+> de modo que as equações de movimento existem em todo instante — a
+> escolha de sinal da raiz é feita justamente para deixar a ação
+> diferenciável na travessia. E a *infinite-branch bigravity* (IBB) é
+> o **único** modelo estável em todos os tempos daquele paper: esta é
+> a porta mais cara que o repositório fechou.
+>
+> **Estado correto:** a saída do ramo infinito não é "fechada" nem
+> "aberta e viável" — está **REABERTA e exige reavaliação**. Ou a
+> exclusão ganha um argumento novo que responda aos três deles, ou
+> cai. **Caveat de escopo, obrigatório em toda menção:** o IBB viável
+> exige β₄ ≠ 0, especificamente `0 < β₄ < 2β₁`, enquanto a nossa
+> célula mínima tem β₄ = 0 — o alvo do reexame é o ramo infinito da F1
+> **com β₄ ligado**, e não a célula atual. A "segunda solução tardia
+> inexplorada" que esta Parte A já registrava é justamente o objeto
+> desse reexame.
+>
+> **Não há hoje argumento sustentado contra o IBB no corpus.** O
+> candidato — o "fantasma de Higuchi eterno" atribuído a 1503.07436 —
+> aparece em `docs/posicionamento_literatura.md` em **duas linhas
+> contraditórias**, e **nenhuma** foi verificada na fonte. Verificar
+> 1503.07436 na fonte é o caminho mais barato para decidir.
+>
+> **O que esta nota NÃO move:** o no-go de gradiente do **ramo finito**
+> continua de pé, e as outras três saídas (modulação β₁(φ₋) — Parte B;
+> screening de Vainshtein — R-10d; forma-β — R-11) continuam
+> **fechadas**. *Fonte:
+> `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b).*
 
 `docs/resultado_ramo_finito.md` §2 descartava o ramo infinito porque
 "dá ξ < 0, isto é, lapso negativo no setor f". A varredura de todas as
@@ -134,7 +178,7 @@ sem afetar o veredito — anotado para verificação.
 | Saída | Estado |
 |---|---|
 | 1. Screening / auto-invalidação linear | **Única viva** — não testada; agora é o único caminho conhecido |
-| 2. Ramo infinito | **Fechada** (não conecta continuamente) — mas há segunda solução tardia inexplorada |
+| 2. Ramo infinito | *[texto original:]* **Fechada** (não conecta continuamente) — mas há segunda solução tardia inexplorada. **[2026-08-13, R-12i: REABERTA]** a exclusão por ξ cruzar zero não se sustenta: é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos. Reexame pendente, e o alvo é o ramo infinito **com β₄ ≠ 0** (o IBB viável exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0) — ver o banner da Parte A |
 | 3. Varredura de forma-β | Aberta; o R-8b mostrou rigidez da forma sob rescala, falta varrer forma |
 | 4. Corte de época pela modulação | **Fechada** — a modulação chega ~3 ordens tarde demais |
 

@@ -104,7 +104,14 @@ e `resultado_r11_nogo_gradiente`. O −1.010 ± 6e−6 do R-11 era o valor
   instrumento limpo, e com valor exato em vez de aproximado;
 - a severidade do R-10b (a_cross e z_cross praticamente inalterados;
   a era instável **cobre a recombinação**);
-- as quatro saídas fechadas (R-10c/d, R-11);
+- as quatro saídas fechadas (R-10c/d, R-11) — *[R-12i, 2026-08-13:
+  são **três fechadas e uma reaberta**. A exclusão do ramo infinito
+  por "ξ cruza zero" não se sustenta: `ξ = X/a` com o `X ≡ ḃ/ℋ` de
+  Könnig et al. (mesmo sinal, mesmo zero), e é o quique de `b` que
+  1407.4331 §II/§VI trata e defende como físico, com três argumentos.
+  Reexame pendente, alvo é o ramo infinito **com β₄ ≠ 0** (IBB viável
+  exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0). Ver
+  `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6]*;
 - tudo o que não passa pela redução numérica: Erratum-01, Erratum-02,
   fundo, setor tensorial, espectador, contagem 2-DOF, Gate 1.
 

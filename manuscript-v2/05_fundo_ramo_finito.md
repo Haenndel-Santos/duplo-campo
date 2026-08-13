@@ -11,11 +11,14 @@ densidade: a combinação das duas Friedmann dá uma cúbica
 m²M_eff²𝒲(r) = ρ com duas famílias:
 
 - **ramo infinito**, r ~ √ρ̃ → ∞: produz ξ < 0 (lapso negativo no
-  setor f) **no regime primordial**; descartado — ver a qualificação
-  de época abaixo;
+  setor f) **no regime primordial**; descartado pelo corpus — mas o
+  descarte está **REABERTO** desde o R-12i; ver a qualificação de
+  época *e* a nota de reabertura abaixo;
 - **ramo finito**, r ~ β₁/ρ̃ → 0 no primordial: físico.
 
-*Qualificação de época (R-10c):* a exclusão está **correta**, mas a
+*Qualificação de época (R-10c)* — *mantida como registro; o veredito
+"correta" que ela carrega caiu no R-12i, ver a nota de reabertura logo
+abaixo:* a exclusão está **correta**, mas a
 justificativa herdada do corpus ("dá ξ < 0", sem qualificar época)
 não. A varredura de todas as raízes reais positivas da cúbica mostra
 que essa raiz tem ξ < 0 só no primordial (ξ ≈ −9.4e3 em a = 0.001;
@@ -28,6 +31,36 @@ tardia viável** (r ≈ 2.23, ξ ≈ 2.23, H² > 0), que não se conecta ao
 nosso primordial e que o repositório **nunca explorou** — o espaço de
 soluções do fundo é maior do que a cascata assumiu. *Nível 2b; fonte:
 `docs/resultado_r10c_saidas.md` Parte A.*
+
+> **[REABERTURA — 2026-08-13, R-12i]** O critério que sustenta o
+> parágrafo acima — ξ cruza zero ⟹ o lapso do setor f se anula ⟹ ponto
+> singular ⟹ história contínua excluída — **está em conflito declarado
+> com a fonte primária**. Como `b = ra`, o nosso `ξ = r + dr/dN`
+> satisfaz `ξ = X/a` com o `X ≡ ḃ/ℋ` de Könnig et al. (1407.4331):
+> **mesmo sinal, mesmo zero**. Aquele paper trata esse quique de `b`
+> **explicitamente** (§II e §VI, com nota de rodapé 9) e argumenta que
+> ele **não** torna a solução não-física, por três razões declaradas:
+> (i) f não acopla à matéria e não tem interpretação geométrica; (ii)
+> nenhuma variável de fundo ou perturbada apresenta singularidade;
+> (iii) `√(−det f)·R̄(f)` permanece finita e não-nula, de modo que as
+> equações de movimento existem em todo instante — a escolha de sinal
+> da raiz é feita justamente para deixar a ação diferenciável na
+> travessia. E a *infinite-branch bigravity* (IBB) é o **único**
+> modelo estável em todos os tempos daquele paper.
+>
+> **Estado:** a exclusão do ramo infinito está **REABERTA e exige
+> reavaliação** — não "fechada", e tampouco "aberta e viável". Ou a
+> exclusão ganha um argumento novo que responda aos três deles, ou
+> cai. **Caveat de escopo, obrigatório em toda menção:** o IBB viável
+> exige β₄ ≠ 0, especificamente `0 < β₄ < 2β₁`, enquanto a nossa
+> célula mínima tem β₄ = 0 — o alvo do reexame é o ramo infinito da F1
+> **com β₄ ligado**, e não a célula atual. Registre-se também que
+> **não há hoje argumento sustentado contra o IBB no corpus**: o
+> candidato ("fantasma de Higuchi eterno", atribuído a 1503.07436)
+> aparece em duas linhas contraditórias de
+> `docs/posicionamento_literatura.md`, nenhuma verificada na fonte —
+> verificar 1503.07436 é o caminho mais barato para decidir. *Fonte:
+> `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b).*
 
 *Nota numérica (lição do R-8b):* a seleção de raiz "menor positiva"
 só é segura com ρ̃ > 0; em extensões com vácuo escalar (ρ̃ efetivo

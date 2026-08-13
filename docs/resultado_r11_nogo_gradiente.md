@@ -61,15 +61,33 @@ direta e não por extrapolação.)*
 
 ## 3. O balanço final das saídas
 
+> **[REABERTURA — 2026-08-13, R-12i]** *Nota acrescentada; a tabela
+> abaixo é o texto original, com a linha do ramo infinito anotada.* A
+> exclusão do ramo infinito por "ξ cruza zero" **não se sustenta**:
+> como `b = ra`, `ξ = X/a` com o `X ≡ ḃ/ℋ` de Könnig et al., mesmo
+> sinal e mesmo zero — é o quique de `b` que 1407.4331 §II/§VI trata
+> e defende como físico, com três argumentos (f não acopla à matéria e
+> não tem interpretação geométrica; nenhuma variável de fundo ou
+> perturbada é singular; `√(−det f)·R̄(f)` é finita e não-nula, logo as
+> equações de movimento existem em todo instante). A IBB é o único
+> modelo estável em todos os tempos daquele paper. O balanço correto é
+> **três fechadas e uma reaberta**, não quatro fechadas — e o alvo do
+> reexame é o ramo infinito **com β₄ ≠ 0** (o IBB viável exige
+> 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0). **Nada disso move o no-go
+> de gradiente do ramo finito**, que é o resultado deste documento.
+> *Fonte: `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6.*
+
 | Saída | Estado |
 |---|---|
-| Ramo infinito | **fechada** (ξ cruza zero; não conecta) — R-10c |
+| Ramo infinito | *[original:]* **fechada** (ξ cruza zero; não conecta) — R-10c. **[R-12i, 2026-08-13: REABERTA]** o critério é o quique de `b` defendido como físico em 1407.4331 §II/§VI; reexame pendente, alvo com **β₄ ≠ 0** |
 | Modulação β₁(φ₋) | **fechada** (chega ~3 ordens tarde) — R-10c |
 | Screening de Vainshtein | **fechada** (δ_screen ≈ 20–60; o λ cancela) — R-10d |
 | Forma-β | **fechada** (constante estrutural) — R-11 |
 | Auto-invalidação linear | viva, mas **não é proteção**: impede refutar e impede calcular |
 
 **Nenhuma saída conhecida resta dentro da implementação F1.**
+*[R-12i, 2026-08-13: enunciado superado — a saída do ramo infinito
+voltou a estar em aberto, sob reexame, com o alvo em β₄ ≠ 0.]*
 
 ## 4. O que a TDCP é, hoje
 
@@ -112,7 +130,9 @@ feche, exatamente como o Gate 1 já dizia por outra via.
    manteve β₃ = 0 por fidelidade à ação do cap. 03). Testá-la exige
    refazer o fundo (a cúbica muda). É a única porta que este
    resultado deixa entreaberta — e ela leva para fora da F1, isto é,
-   para uma F2.
+   para uma F2. *[R-12i, 2026-08-13: deixou de ser a única. A saída do
+   **ramo infinito** foi reaberta e está sob reexame, com o alvo em
+   **β₄ ≠ 0** — ver o banner do §3.]*
 
 ## 6. Fronteiras declaradas
 

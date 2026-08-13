@@ -8,6 +8,36 @@
 > instável continua cobrindo a recombinação. Ver
 > `docs/resultado_r12_instrumento_e_cs2.md`.
 
+> **[REABERTURA — 2026-08-13, R-12i]** *Nota acrescentada; o texto
+> original deste documento permanece intacto.* Onde este documento diz
+> "as quatro saídas continuam fechadas", leia-se **três fechadas e uma
+> REABERTA**. A exclusão do ramo infinito (linha do R-10c na tabela
+> do §2) por "ξ cruza zero ⟹ lapso do setor f se anula ⟹ ponto
+> singular" **não se sustenta**: como `b = ra`, o nosso
+> `ξ = r + dr/dN` é `ξ = X/a` com o `X ≡ ḃ/ℋ` de Könnig et al.
+> (1407.4331) — **mesmo sinal, mesmo zero** —, e aquele paper trata
+> esse quique de `b` **explicitamente** (§II e §VI, com nota de rodapé
+> 9), defendendo-o como físico por três razões declaradas: f não
+> acopla à matéria e não tem interpretação geométrica; nenhuma
+> variável de fundo ou perturbada apresenta singularidade;
+> `√(−det f)·R̄(f)` permanece finita e não-nula, de modo que as
+> equações de movimento existem em todo instante. A *infinite-branch
+> bigravity* (IBB) é o **único** modelo estável em todos os tempos
+> daquele paper.
+>
+> **Estado:** nem "fechada" nem "aberta e viável" — **reaberta,
+> exigindo reavaliação**, com o alvo no ramo infinito da F1 **com
+> β₄ ≠ 0** (o IBB viável exige `0 < β₄ < 2β₁`; a nossa célula mínima
+> tem β₄ = 0, logo não é ela o alvo). **Não há hoje argumento
+> sustentado contra o IBB no corpus**: o candidato ("fantasma de
+> Higuchi eterno", 1503.07436) aparece em duas linhas contraditórias
+> de `docs/posicionamento_literatura.md`, nenhuma verificada na fonte —
+> verificá-lo é o caminho mais barato para decidir. **O que não muda:**
+> o no-go de gradiente do ramo finito e as outras três saídas
+> (modulação β₁(φ₋) — R-10c; screening — R-10d; forma-β — R-11)
+> seguem de pé. *Fonte:
+> `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b).*
+
 **Data:** 2026-08-13. Scripts: `r10a_gradiente_alto_z.py`,
 `r10b_severidade_instabilidade.py`, `r10c_saidas_ramo_e_dinamico.py`,
 `r10d_screening.py` (saídas em `auditoria/code/out/`). Este documento
@@ -23,13 +53,18 @@ e `resultado_r10c_saidas.md` (que permanecem como registro).
 z ≈ 0.6–3, incluindo a recombinação — e nenhuma das saídas
 conhecidas a cura.**
 
+*[R-12i, 2026-08-13: a segunda metade da frase perdeu uma das quatro
+saídas. Três seguem fechadas; a do **ramo infinito está reaberta** e
+sob reexame, com o alvo em β₄ ≠ 0 — ver o banner de REABERTURA no topo
+deste documento.]*
+
 ## 2. A cadeia de quatro testes
 
 | Teste | Pergunta | Resultado |
 |---|---|---|
 | **R-10a** | c_s² em toda a história (não só a ≥ 100) | c_s² ≈ −1.0 a −1.26 para r ≲ 0.05; +1.01 tardio. Cinética **positiva** (é gradiente, não fantasma); espectador calibra em 1.00000; independente de condicionamento |
 | **R-10b** | Quão grave? | a_cross = 0.574 (β₁=1) ⟹ **z_cross ≈ 0.62**. Modos com k/aH ≳ 8 saem do linear (lnA até 32); os de k/aH ~ 1–7 ficam lineares e crescem 2–10⁴× |
-| **R-10c** | Ramo infinito? Modulação salva? | Ramo infinito: **não conecta** (ξ cruza zero) — exclusão correta, justificativa do corpus precisa de qualificação de época; existe 2ª solução tardia inexplorada. Modulação β₁(φ₋): **não salva** — 3.07 e-folds instáveis, lnA = 85.7 |
+| **R-10c** | Ramo infinito? Modulação salva? | Ramo infinito: **não conecta** (ξ cruza zero) — exclusão correta, justificativa do corpus precisa de qualificação de época; existe 2ª solução tardia inexplorada. **[R-12i, 2026-08-13: REABERTA]** a exclusão por ξ cruzar zero não se sustenta — é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos; reexame pendente, alvo é o ramo infinito **com β₄ ≠ 0** (IBB viável exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0). Ver o banner acima. Modulação β₁(φ₋): **não salva** — 3.07 e-folds instáveis, lnA = 85.7 |
 | **R-10d** | Screening protege? | **Não.** δ_screen = (4π/3)(m_T/H)² ≈ **20–60** em todas as eras: o Vainshtein só opera dentro de estruturas não-lineares. *O λ cancela na conta* — não existe escala linear protegida |
 
 ## 3. A distinção que decide (R-10d)
