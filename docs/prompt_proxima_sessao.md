@@ -137,6 +137,85 @@ espectador, nem o metodo. A unica porta entreaberta e beta_3 != 0 —
 que sai da definicao de F1 (seria uma F2) e exige refazer a cubica
 do fundo.
 
+
+ADENDO 5 (2026-08-13, mesma data — R-12 EXECUTADO; commits ate
+1698979). DUAS COISAS, e a segunda e um erratum de instrumento:
+
+1. TEOREMA: c_s^2 EM FORMA FECHADA (docs/resultado_r12b_teorema_cs2.md).
+   O item 1 da fila esta FEITO. Na celula minima da classe F1
+   (beta_2 = beta_4 = 0), a reducao 2-DOF fecha simbolicamente:
+
+       c_s^2(r) = -(3r+1)(9r^5 - 6r^3 + 3r^2 - 10r + 2) / (2(3r^2+1)^2)
+
+       r -> 0    : c_s^2 = -1  EXATO   (serie: -1 + 2r + 39r^2/2 + ...)
+       r = r_inf : c_s^2 = +1  EXATO   (r_inf = (sqrt13 - 1)/6)
+       m_ef^2/H^2 -> 5/2 em r -> 0
+
+   O PASSO QUE FAZ FECHAR: eliminar beta_1 pela Friedmann do setor f
+   (beta_1 = 3(1+mu)H^2 r - beta_4 r^3 - 3 beta_2 r), o que torna
+   (a, r, k, H) coordenadas livres e mantem tudo racional. Gate que
+   legitima: dN(beta_1) = 0 identicamente. Tratar H como livre com o
+   vinculo guardado para o fim NAO funciona (K3[0,:] = 0 deixa de valer
+   identicamente) — os dois modos de falha estao no git.
+   ALCANCE: nivel 1 para a celula minima; nivel 2b para a classe
+   (R-12g: 108/108 celulas, |c_s^2+1| <= 1.1e-7).
+
+2. ERRATUM-03 — INSTRUMENTO (docs/resultado_r12_instrumento_e_cs2.md).
+   Cdot3 e Cdot2 eram calculados por np.gradient (2a ORDEM) de R-7 a
+   R-12c. O erro O(h^2) e amplificado pelo condicionamento da reducao
+   (cond ~ 1e11 em a = 0.01). DEMONSTRADO, nao conjecturado: trocando
+   SO a ordem do estencil, a 2a ordem reproduz a tabela do R-10a digito
+   a digito (-1.01033852661 vs -1.010339; -1.2608602308 vs -1.260860;
+   -0.585509139414 vs -0.585509) e MOVE com h; a 8a ordem e estavel em
+   14 digitos.
+   VALORES LIMPOS: c_s^2(kh=30) = -0.99717 em vez de -1.010;
+   om2/H^2 = -kh^2 + 5/2 (nao ha termo k^4 — o "k^4 do R-9a" era o
+   mesmo artefato: 1.9287 em kh=1000 vira 1.0000079); era tardia
+   c_s^2 = +1 exato; a_cross = 0.578 e z_cross = 0.61 (antes 0.574 e
+   0.62 — o R-10b sobrevive praticamente intacto).
+   ENUNCIADOS NAO MUDAM. O no-go de classe por gradiente esta de pe e
+   mais forte. O que muda sao os VALORES nas tabelas de R-9a, R-10a,
+   R-10b e R-11 (banners de supersessao ja postos).
+
+   RETRATACAO INTERNA: o R-12a e o R-12c (desta mesma sessao)
+   concluiram que c_s^2 saturava em -0.687 e que o "-1" era artefato de
+   extrapolacao. ERRADO — herdaram o canal sujo. Ficam no git como
+   registro; nao citar como resultado.
+
+   DUAS REGRAS NOVAS PARA O CAP. 02:
+   (i) derivadas ao longo do fundo em FORMA FECHADA; onde nao der,
+       estencil de ordem >= 8 COM teste de refino obrigatorio.
+       np.gradient proibido em cadeia que passe por reducao mal
+       condicionada.
+   (ii) DECLARACAO DE CEGUEIRA DE GATE (com caso concreto): o
+       calibrador do espectador dchi deu 1.00000 em todos os pontos
+       enquanto o modo metrico errava na primeira casa — porque dchi
+       nao tem termo giroscopico e o calibrador e CEGO ao canal Cdot.
+       Todo gate declara o que nao consegue ver.
+
+FILA (pos-R-12):
+1. Generalizar a formula de c_s^2 em (beta_0, beta_2, beta_4, mu) —
+   provavelmente por Laurent em r, ja que a forma fechada exata so
+   fecha na celula minima.
+2. Confrontar a formula fechada com Konnig et al. (arXiv:1407.4331) —
+   agora ha formula, nao so numero. [verificar contra a fonte]
+3. REFAZER O R-8a (mu/Sigma quase-estaticos) com o instrumento limpo:
+   os numeros la sao sub-percentuais e o defeito e da mesma ordem.
+4. Cap. 09: o enunciado honesto de validade restrita (opcao 3 do
+   R-10 consolidado) continua valendo.
+5. Pendencias herdadas (inalteradas): Gate 2B + difeo espacial,
+   Vainshtein/PPN, paredes de dominio, radiacao, varredura de mu, a 2a
+   solucao tardia do fundo.
+
+LEITURA OBRIGATORIA (substitui a lista do adendo 4):
+docs/resultado_r12b_teorema_cs2.md e
+docs/resultado_r12_instrumento_e_cs2.md; depois
+docs/resultado_r11_nogo_gradiente.md e resultado_r10_consolidado.md
+(ambos com banner de supersessao de VALOR); depois
+docs/pareceres_especialistas/00_sintese_cruzada.md; so entao o
+historico (erratum_02, resultado_r7_cascata §4).
+
+FILA (adendo 4) — SUPERSEDED pelo adendo 5:
 FILA (nova):
 1. PROVAR c_s^2 = -1 analiticamente no limite r -> 0. Alvo limpo,
    resultado de CLASSE, nivel 1, o mais publicavel do programa.
