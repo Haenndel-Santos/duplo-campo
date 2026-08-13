@@ -221,6 +221,8 @@ a que o projeto encontrou na F1 em alto redshift.
 **c_s² (velocidade do som ao quadrado).** O coeficiente do termo k² na
 frequência do modo. c_s² = 1 significa propagação à velocidade da luz;
 c_s² < 0 é instabilidade de gradiente; c_s² > 1 é superluminalidade.
+Na F1, é função do fundo: vale **−1 exato** no universo primordial
+(r → 0) e **+1 exato** no atrator tardio, cruzando zero em z ≈ 0.61.
 
 **Vínculo de Higuchi.** Uma cota inferior sobre a massa do gráviton em
 espaço-tempo curvo (m² ≥ 2H²); abaixo dela, o modo helicidade-0 vira
@@ -466,10 +468,27 @@ parâmetros, quais épocas, quantos pontos) — para impedir que ele seja
 lido como mais geral do que é.
 
 **Erratum.** Documento que registra um erro encontrado no próprio
-trabalho e suas consequências em cascata. O projeto tem dois:
-**Erratum-01** (a constraint de Bianchi estava errada no corpus) e
+trabalho e suas consequências em cascata. O projeto tem três:
+**Erratum-01** (a constraint de Bianchi estava errada no corpus);
 **Erratum-02** (um erro numérico na redução de vínculos criou um grau
-de liberdade inexistente).
+de liberdade inexistente); **Erratum-03** (derivadas de 2ª ordem
+contaminavam os *valores* de c_s² — os enunciados ficaram de pé).
+
+**Supersessão de enunciado × supersessão de valor.** Distinção que o
+projeto usa ao corrigir: um resultado pode ter o **valor** numérico
+superado sem que a **afirmação** caia (Erratum-03), ou pode cair
+inteiro (Erratum-02). Documentos superados levam um banner dizendo
+qual dos dois casos é.
+
+**Estêncil (stencil) e ordem do método.** Fórmula de diferenças
+finitas usada para calcular derivadas numericamente. A "ordem" mede
+quão rápido o erro cai com o passo. Um estêncil de baixa ordem numa
+cadeia mal condicionada pode gerar erro visível no resultado final —
+foi a causa do Erratum-03.
+
+**Forma fechada.** Uma expressão algébrica explícita, em vez de um
+valor numérico obtido por aproximação. Deriva-se uma vez e vale
+exatamente — é o padrão preferido do projeto para derivadas do fundo.
 
 **Tabela de supersessão.** A lista do que cada resultado novo
 substitui — impede citar números de eras anteriores como se fossem
