@@ -1,5 +1,26 @@
 # R-9 (Bloco 0) — Resposta aos Três Testes Baratos dos Pareceres
 
+> **[SUPERSESSÃO DE VALOR — 2026-08-13, R-12]** O **§2 (bônus: c_s²)**
+> está superado, e o "achado lateral" dele está **retratado**. Aquelas
+> razões foram medidas com Ċ₃/Ċ₂ por `np.gradient` (2ª ordem), cujo
+> erro O(h²) é amplificado pelo condicionamento da redução; o
+> Erratum-03 classifica a **"R-9a Parte B (termo k⁴)"** como
+> *contaminada — artefato, já retratado*
+> (`docs/resultado_r12_instrumento_e_cs2.md` §6). Com instrumento limpo
+> (forma fechada no fundo + estêncil de 8ª ordem), na era tardia:
+> c_s² = **1.00880** (kh=30), **1.00079** (kh=100) e **1.0000079**
+> (kh=1000) — **não há termo k⁴ e não há estrutura em kh**
+> (`ω²/H² = −kh² + 5/2 + O(r)`; o resto é **massa**, m_ef² → (5/2)H²).
+> E o prior favorável que o §2 derivava disso **não se sustenta**: o A1
+> rodou (`docs/resultado_r10a_gradiente.md`) e deu **c_s² < 0 em todo o
+> regime r → 0**.
+>
+> **O §1 e os itens (a), (b) e (c) ficam de pé.** O mesmo mapa do
+> Erratum-03 classifica a **Parte A** — a frequência efetiva
+> `ω²_ef = (Ċ+W)/K` do §1, em kh ≤ 45 — como **segura**; e os itens
+> (a) e (b) não passam pela cadeia numérica contaminada. Ver
+> `docs/resultado_r12_instrumento_e_cs2.md`.
+
 **Data:** 2026-08-13. Scripts: `auditoria/code/r9a_omega2_diagnostico.py`,
 `r9b_algebra_vinculos.py` (saídas em `out/`). Contexto:
 `docs/pareceres_especialistas/00_sintese_cruzada.md` §7, Bloco 0 —
@@ -16,7 +37,7 @@ pré-declarados; fronteiras declaradas por item.
 | (c) ω² < 0 do R-7e | cosmologia | **RESOLVIDO** — era razão errada; ω²_efetivo > 0. O arquivamento como artefato de envelope se sustenta, agora com a explicação correta |
 | (a) p_φ cruza zero ⟹ Dirac degenera | física teórica | **Premissa CONFIRMADA, conclusão NÃO** — p_φ cruza zero 6× após o pouso, mas a estrutura de segunda classe sobrevive |
 | (b) 1ª classe do difeomorfismo | física teórica | **NÃO RESPONDIDO** — o teste em minisuperespaço é tautológico; movido para o Bloco 2 |
-| bônus: c_s² | cosmologia (A1) | **c_s² > 0** em tudo que foi testado; ≈ 1.01 (métrico) e = 1.000 (espectador) |
+| bônus: c_s² | cosmologia (A1) | **c_s² > 0** em tudo que foi testado; ≈ 1.01 (métrico) e = 1.000 (espectador) — **[SUPERSESSÃO DE VALOR + prior refutado, R-12; ver banner e §2]** "tudo que foi testado" era só a era tardia; em r → 0 o A1 achou **c_s² = −1** |
 
 ---
 
@@ -76,6 +97,19 @@ A mesma máquina dá a velocidade de gradiente por ajuste de
 | espectador δφ₋ | **1.0000** | exato — âncora do R-7a |
 | métrico (Ẽ) | **≈ 1.010** | — |
 
+> **[SUPERSESSÃO DE VALOR — 2026-08-13, R-12]** O **≈ 1.010** do modo
+> métrico é valor **contaminado** (Ċ₃/Ċ₂ por `np.gradient` de 2ª
+> ordem). Limpo, no mesmo fundo tardio: **1.00880** (kh=30) e
+> **1.00079** (kh=100), com o limite tardio em **+1 exato**. O
+> **sinal** não muda *nesta janela de época* — mas ver o fecho desta
+> seção: ele **não se estende a r → 0**, onde o valor limpo é
+> **−1 exato**. O **1.0000** do espectador se mantém; o Erratum-03 §5
+> acrescenta, porém, a **declaração de cegueira** desse calibrador:
+> δχ **não tem poder de detecção sobre o canal Ċ**, porque não tem
+> termo giroscópico (C₂ e Ċ₂ são nulos nesse canal). Ele deu 1.00000
+> em todos os pontos **enquanto o modo métrico errava na primeira
+> casa**. Ver `docs/resultado_r12_instrumento_e_cs2.md` §3 e §5.
+
 **c_s² > 0 em todos os pontos testados** (G-CS OK). O espectador sai
 exatamente luminal, o que calibra o método.
 
@@ -87,11 +121,49 @@ provável: escala de quebra da truncagem de 2 derivadas do sistema
 reduzido. Fica registrado como observação a explicar (não como
 resultado).
 
+> **[RETRATADO — 2026-08-13, R-12 / Erratum-03]** O parágrafo acima
+> está **errado, e a conclusão está invertida: era artefato, não
+> estrutura.** A subida 1.010 → 1.93 é erro de truncamento O(h²) do
+> `np.gradient` de 2ª ordem em Ċ₃/Ċ₂. Com estêncil de 8ª ordem no
+> mesmo fundo tardio: **1.00880** (kh=30), **1.00079** (kh=100) e
+> **1.0000079** (kh=1000) — o valor **desce** para 1 em vez de subir
+> para 1.93. **Não há termo k⁴ e não há estrutura em kh**:
+> `ω²/H² = −kh² + 5/2 + O(r)`, isto é, o resto é **massa**
+> (m_ef² → (5/2)H²), não gradiente de ordem alta — e a "escala
+> M/H ~ 1.0e3" cai junto.
+>
+> O `cond(W_XX)` entre 3.8 e 18 **não era garantia**: o R-12h mede,
+> neste mesmo ponto (era tardia, kh = 1000), desvio de **9.3e−1**
+> entre o canal defeituoso e o limpo, e mostra que a fronteira do
+> defeito é **em kh também** — fica abaixo de 1e−2 até kh ≈ 100 e
+> acima disso morde. O discriminador é a **ordem do estêncil**, não o
+> condicionamento desta matriz: trocando **só** a ordem de Ċ₃/Ċ₂, o
+> R-12g reproduz a tabela contaminada do R-10a **dígito a dígito**. O
+> Erratum-03 §6 classifica esta subseção — "R-9a Parte B (termo k⁴)" —
+> como **contaminada: artefato, já retratado**. Ver
+> `docs/resultado_r12_instrumento_e_cs2.md` §3 e §6.
+
 **O que isto NÃO é:** não substitui o A1 do Bloco 1. Aqui só foi
 testado o benchmark β-constante, sem o fundo dinâmico e sem o
 confronto com o resultado de instabilidade de gradiente do finite
 branch da literatura ([arXiv:1407.4331]). O A1 continua com
 prioridade máxima — mas parte agora de um prior favorável.
+
+> **[DESFECHO REGISTRADO — 2026-08-13, pós-R-10a/R-11/R-12]** **O
+> prior favorável estava errado.** O A1 rodou no mesmo dia
+> (`docs/resultado_r10a_gradiente.md`) e encontrou **c_s² < 0 em todo
+> o regime r → 0** — a previsão de [arXiv:1407.4331] **se reproduz na
+> nossa implementação**. O §2 acima só havia testado a era tardia
+> (a ∈ [100, 8e4], r = r_∞), onde c_s² é de fato positivo; o regime da
+> alegação da literatura ficou fora **por construção**. O R-11 elevou
+> o achado a **NO-GO DE CLASSE POR GRADIENTE** (108/108 células, zero
+> com sinal positivo) e o R-12 fixou o valor limpo: **c_s² = −1
+> exato** em r → 0, **+1 exato** na era tardia, com troca de sinal em
+> **a_cross = 0.578 ⟹ z_cross = 0.61**. Ver
+> `docs/resultado_r10a_gradiente.md`,
+> `docs/resultado_r11_nogo_gradiente.md`,
+> `docs/resultado_r10_consolidado.md` e
+> `docs/resultado_r12_instrumento_e_cs2.md`.
 
 ## 3. Item (a) — a premissa do parecer está certa; a conclusão, não
 
@@ -146,14 +218,21 @@ feito junto com o Gate 2B.
 
 ## 5. Correções a aplicar no corpus
 
-1. `docs/resultado_r7e_saude_interna.md` §2 e
+1. ~~`docs/resultado_r7e_saude_interna.md` §2 e
    `docs/pareceres_especialistas/00_sintese_cruzada.md` §3: o
    "ω²(Ẽ) < 0 variando 5 ordens" deve ser reescrito como *razão W/K,
    que não é a frequência efetiva do sistema*; a frequência correta é
-   positiva e a leitura de artefato de envelope se mantém.
-2. Registrar em `docs/resultado_r7e_saude_interna.md` que o A1 tem
+   positiva e a leitura de artefato de envelope se mantém.~~ —
+   **FEITO (2026-08-13):** o R-7e §2 (A1) foi reescrito; a síntese
+   cruzada §3, por ser documento de terceiros, recebeu **nota datada
+   sem alteração do texto do parecer**.
+2. ~~Registrar em `docs/resultado_r7e_saude_interna.md` que o A1 tem
    agora um prior favorável (c_s² > 0 no benchmark), sem substituir o
-   teste.
+   teste.~~ — **FEITO (2026-08-13), com o desfecho que este documento
+   ainda não podia saber:** o A1 rodou e **o prior não se confirmou**
+   (`docs/resultado_r10a_gradiente.md`,
+   `docs/resultado_r11_nogo_gradiente.md`). O registro no R-7e traz o
+   prior **e** o desenlace.
 3. Cap. 02 da v2: acrescentar a lição dos três comparadores
    descartados.
 
@@ -164,7 +243,9 @@ removeu dois riscos e reordenou um item:
 
 - **Bloco 1 (prioridade máxima): A1** — teste de gradiente no fundo
   dinâmico + confronto com 1407.4331. Prior favorável, teste
-  mantido.
+  mantido. **[EXECUTADO no mesmo dia — o prior NÃO se confirmou:
+  c_s² < 0 em r → 0, elevado a no-go de classe pelo R-11 e fixado em
+  −1 exato pelo R-12. Ver o desfecho registrado no §2.]**
 - Bloco 1: A2 (w_eff vs DESI), escopo de época com radiação, varredura
   de μ, paredes de domínio.
 - **Bloco 2 (agora com mais um item): Gate 2B + primeira classe do

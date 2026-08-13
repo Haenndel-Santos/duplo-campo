@@ -118,8 +118,10 @@ ADENDO 4 (2026-08-13 — PARECERES + BLOCO 0 + BLOCO 1; commits ate
 2. BLOCO 0 (R-9): o "omega^2 < 0" do R-7e era RAZAO ERRADA (falta o
    Cdot: om2_ef = (Cdot+W)/K). p_phi cruza zero mas a matriz de
    Dirac NAO degenera. O item (b) era tautologico -> Bloco 2.
-   QUATRO comparadores descartados no caminho — licao: quando um
-   gate reprova, a primeira suspeita e o comparador.
+   TRES comparadores descartados no caminho (a 4a versao, fase
+   acumulada, e a reportada; ver resultado_r9_bloco0.md §1) —
+   licao: quando um gate reprova, a primeira suspeita e o
+   comparador.
 
 3. BLOCO 1 (R-10/R-11) — NO-GO DE CLASSE POR GRADIENTE:
    c_s^2 -> -1 em r -> 0 (alto z), com K2 > 0 (gradiente genuino,

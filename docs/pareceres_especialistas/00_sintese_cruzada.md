@@ -86,6 +86,50 @@ resolver, o enunciado "no-go revogado" é forte demais para o setor
 métrico — a saúde do espectador δφ₋ (âncoras analíticas fechadas) não
 está em questão.
 
+> **[NOTA DO REPOSITÓRIO — 2026-08-13, pós-R-9/R-10a/R-11/R-12. O
+> texto do parecer acima fica intacto; esta é anotação, não
+> reescrita.]** O ponto foi resolvido, e o parecer acertou **duas
+> vezes, em objetos diferentes**.
+>
+> **Era a leitura (i).** O R-9 (Bloco 0), item (c), mediu:
+> `W/K` **não é a relação de dispersão na convenção do repositório**.
+> O integrador resolve `K q̈ + (K̇ + C − Cᵀ) q̇ + (Ċ + W) q = 0`, logo
+> a frequência efetiva é `(Ċ + W)/K` — exatamente as "contribuições de
+> C e Ċ que não entram nessa razão" que o parecer apontou.
+> **16/32 entradas têm `W/K < 0` e `(Ċ+W)/K > 0`** — todas as do modo
+> métrico, nos dois fundos, em todas as épocas; em a = 200,
+> −1.5e5 H² contra +514 H². O discriminador de frequência fecha o
+> caso: se `|W/K|` fosse a frequência haveria ~110 cruzamentos de zero
+> na janela, e medem-se **6** (WKB pela frequência correta prevê 6.5).
+> A incompatibilidade interna que a cosmologia detectou — |ω|/H ~ 3×10³
+> com G_win = −10 — era **real, e era o sintoma**: a razão apontada não
+> era a frequência. `docs/resultado_r7e_saude_interna.md` §2 foi
+> corrigido; fonte: `docs/resultado_r9_bloco0.md` §1.
+>
+> **E a preocupação de fundo se confirmou — por outra via.** A frase
+> *"o enunciado 'no-go revogado' é forte demais para o setor métrico"*
+> estava certa, só que o problema não morava naquele sinal. O **A1**,
+> que este mesmo documento pôs como prioridade máxima do Bloco 1 (§7,
+> item d), rodou e encontrou **instabilidade de gradiente real**:
+> `c_s² < 0` em todo o regime r → 0
+> (`docs/resultado_r10a_gradiente.md`), elevada a **no-go de classe
+> por gradiente** em 108/108 células da forma-β
+> (`docs/resultado_r11_nogo_gradiente.md`) e fixada, com instrumento
+> limpo, em **c_s² = −1 exato** em r → 0, **+1 exato** na era tardia,
+> com troca de sinal em **a_cross = 0.578 ⟹ z_cross = 0.61** — a era
+> instável **cobre a recombinação**
+> (`docs/resultado_r12_instrumento_e_cs2.md`,
+> `docs/resultado_r10_consolidado.md`).
+>
+> A **leitura (iii)** deste mesmo §3 **antecipava a possibilidade**.
+> O mascaramento medido, porém, não foi o da direção da passagem em
+> kh: foi o da **época**. Toda a cascata R-7 rodou em a ∈ [100, 8e4],
+> que nesta família é a era tardia (r = r_∞), e seus gates são cegos a
+> instabilidade de gradiente por construção — o §2 deste documento,
+> que a própria cosmologia escreveu. Ou seja: (i) explica o `W/K`
+> negativo do R-7e; (iii) é o fenômeno físico, que estava em outra
+> época.
+
 ## 4. Achados novos, por gravidade
 
 ### 4.1 Bloqueantes (podem matar ou reescrever a teoria)

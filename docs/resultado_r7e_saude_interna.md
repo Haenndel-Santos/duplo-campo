@@ -35,12 +35,28 @@ por medida direta.
 O r7e mediu taxas de envelope grandes na janela e o gate SUSPEITO
 disparou (como devia). A autópsia decidiu:
 
-- **A1 (mecanismo):** ω²(Ẽ) = W/K é **negativo** na janela inteira e
-  varia 5 ordens de magnitude (−1e2 → −1e7 em kh=10). O envelope do
-  r7e usava ω²(t) no denominador — a variação fabricava "crescimento"
-  sem o campo crescer. Mesma classe de artefato de normalização que
+- **A1 (mecanismo):** **[CORRIGIDO — 2026-08-13, R-9 (Bloco 0),
+  item (c)]** a razão medida aqui era **a razão errada**. `W/K`
+  **não é a frequência efetiva do sistema**: o integrador resolve
+  `K q̈ + (K̇ + C − Cᵀ) q̇ + (Ċ + W) q = 0`, logo a frequência efetiva
+  é `(Ċ + W)/K`, e o `W/K` do r7e **omite o Ċ**. Medido diretamente,
+  **16/32 entradas têm `W/K < 0` e `(Ċ+W)/K > 0`** — ou seja **todas
+  as entradas do modo métrico**, nos dois fundos, em todas as épocas;
+  em a = 200, `W/K` = −1.5e5 H² contra `(Ċ+W)/K` = **+514 H²**. **A
+  frequência efetiva é positiva.** O discriminador de frequência
+  concorda: se `|W/K|` fosse a frequência haveria ~110 cruzamentos de
+  zero na janela, e medem-se **6** em a = 200, contra 6.5 previstos
+  por WKB a partir da frequência correta.
+  *O texto original desta linha dizia:* "ω²(Ẽ) = W/K é **negativo** na
+  janela inteira e varia 5 ordens de magnitude (−1e2 → −1e7 em
+  kh=10)" — **a medida está certa; a identificação dela com ω², não.**
+  **A leitura de artefato de envelope se mantém, agora com a
+  explicação correta:** o envelope do r7e usava aquela razão como
+  ω²(t) no denominador, e a variação dela fabricava "crescimento" sem
+  o campo crescer. Mesma classe de artefato de normalização que
   derrubou R-2 e F-b; desta vez o gate pré-declarado segurou a
-  leitura.
+  leitura. Fonte: `docs/resultado_r9_bloco0.md` §1 (V-SINAL e
+  V-FREQ).
 - **A2 (ganho de campo, normalização congelada):** G_win através da
   janela:
   | modo | G_win(Ẽ) | G_win(δχ) |
@@ -124,3 +140,43 @@ No sistema físico de 2 DOFs escalares (redução corrigida, V-XREP):
 TODOS os regimes que o sustentavam. A viabilidade da F1 é, a partir
 daqui, uma pergunta exclusivamente observacional — R-8
 (`docs/r8_dicionario_epocas_opcoes.md`, recomendação C → A).
+
+---
+
+> **[NOTA — 2026-08-13, pós-R-9/R-10a/R-11/R-12: o A1, o prior e o
+> desfecho]** O R-9 (Bloco 0) registrou que o **A1** — o teste de
+> instabilidade de gradiente do Bloco 1 — passava a partir dali de um
+> **prior favorável**: `c_s² > 0` em todos os pontos então testados do
+> benchmark β-constante, com o espectador δφ₋ calibrando em 1.0000
+> (`docs/resultado_r9_bloco0.md` §2). O registro fica, com o
+> desenlace: **o prior não se confirmou.**
+>
+> O A1 rodou no mesmo dia (`docs/resultado_r10a_gradiente.md`) e
+> encontrou **c_s² < 0 em todo o regime r → 0** — a instabilidade de
+> gradiente do ramo finito que Könnig–Akrami–Amendola–Motta–Solomon
+> ([arXiv:1407.4331]) prevêem **se reproduz na nossa implementação**.
+> O R-11 elevou o achado a **NO-GO DE CLASSE POR GRADIENTE** (108/108
+> células da forma-β, zero com sinal positivo) e o R-12, com
+> instrumento limpo, fixou o valor: **c_s² = −1 exato** em r → 0,
+> **+1 exato** na era tardia, com troca de sinal em **a_cross = 0.578
+> ⟹ z_cross = 0.61** — isto é, a era instável **cobre a
+> recombinação**. Ver `docs/resultado_r10_consolidado.md` e
+> `docs/resultado_r12_instrumento_e_cs2.md`.
+>
+> **O que isto faz com este documento.** Os itens 1–4 do §6 —
+> estrutura de vínculos válida, nenhuma direção cinética negativa,
+> decaimento da dinâmica métrica — **continuam de pé nos regimes
+> medidos**, e o Erratum-03 confirma que o domínio do R-7
+> (a ∈ [100, 8e4], kh ≤ 45) é **seguro** quanto ao instrumento:
+> desvio ≤ 4e−4 e os sinais de (λK₂¹, λK₂², W00) inalterados
+> (`docs/resultado_r12_instrumento_e_cs2.md` §6). O que **não** se
+> sustenta como escrita é a **"Consequência"** acima: toda a cascata
+> R-7 rodou em a ∈ [100, 8e4], que nesta família é a **era tardia**
+> (r = r_∞), e os gates aqui usados são **cegos a instabilidade de
+> gradiente por construção**
+> (`docs/pareceres_especialistas/00_sintese_cruzada.md` §2). O
+> "TODOS os regimes que o sustentavam" era literalmente verdadeiro e
+> materialmente enganoso — a < 100 nunca foi testado aqui
+> (`docs/resultado_r10a_gradiente.md` §3). A viabilidade da F1
+> **não** é, portanto, pergunta exclusivamente observacional: o setor
+> métrico tem um problema teórico aberto em alto redshift.

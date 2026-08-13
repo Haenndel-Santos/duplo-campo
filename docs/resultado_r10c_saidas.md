@@ -1,5 +1,40 @@
 # R-10c — As Duas Saídas Baratas: Ramo Infinito e Fundo Dinâmico
 
+> **[SUPERSESSÃO DE VALOR — 2026-08-13, R-12]** Os enunciados deste
+> documento estão **confirmados**; os números de c_s² da **Parte B**
+> estão superados. Eles foram medidos com Ċ₃/Ċ₂ por `np.gradient`
+> (2ª ordem), cujo erro O(h²) é amplificado pelo condicionamento da
+> redução; o Erratum-03 classifica **R-10a/b/c/d** como *contaminado
+> no valor (enunciados intactos)*
+> (`docs/resultado_r12_instrumento_e_cs2.md` §6).
+>
+> **O que NÃO muda.** As **quatro saídas continuam fechadas** e a
+> **modulação β₁(φ₋) continua chegando tarde demais** — é assim que o
+> R-12 §4 ("as quatro saídas fechadas (R-10c/d, R-11)") e o cap. 07
+> da v2 (Ato 4: "Modulação β₁(φ₋) | R-10c | fechada — age ~3 ordens
+> tarde demais") registram o resultado. A **Parte A** (raízes da
+> cúbica, r, ξ, H²) **não é afetada**: é fundo, e o fundo não passa
+> pela cadeia numérica defeituosa (R-12 §4).
+>
+> **O que muda.** São do canal sujo os valores da tabela de c_s²(a)
+> em kh = 30 (−1.010, −0.999, −0.901, −0.287, +0.698, +0.974,
+> +1.01…+2.17), o **lnA = 85.7** derivado deles, as **3.07 e-folds**
+> de era instável e o **"c_s² positivo já em r ≈ 0.026"**.
+>
+> **Valor limpo: não recomputado para este fundo.** A Parte B roda no
+> **fundo dinâmico modulado**, e o R-12 §7 declara que só o que está
+> no seu §3 — perfil em k, as 108 células, a_cross/z_cross — foi
+> refeito com o instrumento limpo, tudo no benchmark **β-constante**.
+> Nenhum ponto da tabela acima, nem o lnA, nem o r ≈ 0.026 tem valor
+> limpo correspondente publicado: quem precisar deles tem de remedir.
+> A única âncora limpa comparável é o mesmo par (a = 0.01, kh = 30)
+> no β-constante, onde o estêncil de 8ª ordem dá **−0.99716** em vez
+> de −1.010 (R-12 §2). O **sinal** negativo em r → 0 e a existência
+> da troca de sinal sobrevivem ao instrumento limpo: **c_s² = −1
+> exato** em r → 0 e **+1 exato** na era tardia, com a_cross = 0.578
+> e z_cross = 0.61 no β-constante (R-12 §3). Ver
+> `docs/resultado_r12_instrumento_e_cs2.md`.
+
 **Data:** 2026-08-13. Script: `auditoria/code/r10c_saidas_ramo_e_dinamico.py`
 (saída em `out/`). Sequência do R-10a/R-10b (instabilidade de
 gradiente confirmada). Testa as saídas 2 e 4 listadas em
