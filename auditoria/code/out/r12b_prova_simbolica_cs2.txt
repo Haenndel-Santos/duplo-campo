@@ -1,0 +1,94 @@
+========================================================================
+R-12b — c_s^2 do escalar metrico EM FORMA FECHADA (reducao 2-DOF)
+========================================================================
+
+[V-BG] rho~'(r) - dW(r) = 0   (esperado 0)
+[V-BG] d2r/dN2 (cadeia) - d2r/dN2 (codigo) = 0   (esperado 0)
+[V-BG] APROVADO — o fundo simbolico e o mesmo do R-10a/R-11.
+
+[elim] beta_1 = 6*H**2*r   (Friedmann do setor f resolvida para beta_1)
+[V-B1] dN(beta_1) = 0   (esperado 0 — legitima as coordenadas (r, H) livres)
+[V-B1] APROVADO.
+       (xi/r -> 4 em r -> 0 e verificado ON-SHELL adiante; em
+       coordenadas (r, H) livres o limite a H fixo nao e o fisico)
+[cache] etapas disponiveis: ['E1', 'E2', 'KCW', 'OM2']
+[1-2] K,C,W carregadas do cache
+    ops: K=76 C=91 W=711
+[3-4] E1 carregada do cache
+
+[V-K3] linha 0 (Psi_f) de K3 nula? [True, True, True]
+[V-K3] APROVADO — o gate G1 do numerico (|.| < 1e-10) e EXATO: Psi_f e algebrico em forma fechada.
+[5-6] E2 carregada do cache
+[7] om2 carregado do cache
+
+[V-EVEN] om2(H) - om2(-H) = [0, 0]   (esperado [0, 0])
+[V-EVEN] APROVADO — om2 e par em H, como exige t -> -t.
+[V-SPEC] om2(dchi) - [(k/a)^2 + U''] = 0   (esperado 0)
+[V-SPEC] APROVADO — o espectador tem, em forma fechada,
+         om2 = (k/a)^2 + U'' : c_s^2 = 1 EXATO e massa = U''.
+         (E o calibrador do R-10a, agora analitico — e o teste e
+         mais forte que o numerico, que so via 1 + U''/(k/a)^2.)
+[V-A] c_s^2(lam*a, lam*k) - c_s^2(a, k) = 0   (esperado 0:
+      a e k so podem aparecer via k/a)
+[V-A] APROVADO — a dependencia e so em k/a, como exige a fisica.
+    (celula da prova: beta_2 = beta_4 = 0, beta_0 = 1, mu = 1)
+
+    on-shell da celula (beta_1 = 1): H^2 = 1/(6*r)
+
+[V-NUM] forma fechada avaliada no regime r -> 0 (o canal limpo do
+        R-12g da -1 com |c_s^2+1| <= 1.1e-7 em 108/108 celulas):
+                   r       kh      c_s^2 (forma fechada)
+             1.0e-06       30    -0.99716567706023378699
+             1.0e-06      100    -0.99974755575709574216
+             1.0e-06     1000    -0.99999549991825008588
+             1.0e-06    10000    -0.99999797498031558731
+             1.0e-09       30    -0.99716769491578269930
+             1.0e-09      100    -0.99974955557363902656
+             1.0e-09     1000    -0.99999749795573205599
+             1.0e-09    10000    -0.99999997299999537550
+
+========================================================================
+O LIMITE SUB-HORIZONTE  k -> oo  (a definicao de c_s^2)
+========================================================================
+
+  c_s^2(r, H) = -(162*H**2*r**6 - 108*H**2*r**4 - 162*H**2*r**2 + 12*H**2 + 9*r**4 + 3*r**2 - 4)/(12*H**2*(3*r**2 + 1)**2)
+
+  ON-SHELL (H^2 = 1/(6r) nesta celula):
+      c_s^2(r) = -(3*r + 1)*(9*r**5 - 6*r**3 + 3*r**2 - 10*r + 2)/(2*(3*r**2 + 1)**2)
+
+               r             c_s^2(r)
+         1.0e-01    -0.62744697898011
+         1.0e-02    -0.97806448374745
+         1.0e-03    -0.99798051359894
+         1.0e-04    -0.99979980501351
+         1.0e-06    -0.99999799998050
+         1.0e-09    -0.99999999800000
+         1.0e-12    -0.99999999999800
+
+  ===> LIMITE r -> 0 :  c_s^2 = -1
+       serie:  c_s^2(r) = 39*r**2/2 + 2*r - 1 + O(r^3)
+
+  ===> ATRATOR TARDIO (rho~ = 0):  r_inf = -1/6 + sqrt(13)/6 = 0.43425855
+       c_s^2(r_inf) = 1 = 1.00000000000000
+
+  RELACAO DE DISPERSAO (on-shell, sub-horizonte):
+      om2 = c_s^2 (k/a)^2 + m_ef^2 + O(1/k^2)
+      m_ef^2 = -(27*r**6 + 27*r**5 + 351*r**4 + 261*r**3 - 270*r**2 - 36*r - 5)/(12*r*(3*r**2 + 1)**2)
+      m_ef^2/H^2 em r -> 0 : 5/2 = 2.5
+
+========================================================================
+TEOREMA (celula minima da classe F1: beta_2 = beta_4 = 0)
+========================================================================
+  No ramo finito da bimetrica de Hassan-Rosen com beta_3 = 0 e
+  materia acoplada so a g, o escalar metrico do sistema 2-DOF tem
+
+      c_s^2(r) = -(3*r + 1)*(9*r**5 - 6*r**3 + 3*r**2 - 10*r + 2)/(2*(3*r**2 + 1)**2)
+
+  logo c_s^2 -> -1 quando r -> 0 (alto redshift) e
+  c_s^2 -> 1 no atrator tardio r_inf.
+  A instabilidade de gradiente NAO e aproximada nem numerica: e
+  exata, e o valor -1 e limite de uma funcao racional do fundo.
+
+  ALCANCE: prova em forma fechada para esta celula; a extensao a
+  (beta_0, beta_2, beta_4, mu) e nivel 2b pelo R-12g (108/108
+  celulas, |c_s^2+1| <= 1.1e-7 com instrumento limpo).
