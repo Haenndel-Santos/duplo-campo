@@ -165,8 +165,17 @@ classe F1 (β₃ = 0, matéria só em g, ramo finito),
 Não é propriedade da célula de benchmark: é **da classe**. O desvio
 residual é **massa** (ω²/H² = −kh² + 5/2 + O(r)) — não há termo k⁴ nem
 estrutura em k. Na era tardia o mesmo modo tem **c_s² = +1 exato**.
+E o valor não é medido: é **teorema**. Na célula mínima da classe
+(β₂ = β₄ = 0) a redução 2-DOF fecha em forma exata e dá
+
+> c_s²(r) = −(3r+1)(9r⁵ − 6r³ + 3r² − 10r + 2) / (2(3r²+1)²),
+
+donde **c_s² → −1 em r → 0** e **c_s² = +1 exato no atrator tardio**
+r_∞ = (√13−1)/6 — os dois limites são exatamente ±1. A massa efetiva
+sai junto: m_ef²/H² → 5/2.
 *Fontes: `docs/resultado_r11_nogo_gradiente.md`,
-`docs/resultado_r12_instrumento_e_cs2.md`.*
+`docs/resultado_r12_instrumento_e_cs2.md`,
+`docs/resultado_r12b_teorema_cs2.md`.*
 
 **[ERRATUM-03, 2026-08-13]** Os valores numéricos originais do R-11
 (−1.010 ± 6e−6 em kh = 30) e as tabelas de c_s² do R-9a/R-10a/R-10b

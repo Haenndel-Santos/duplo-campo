@@ -139,10 +139,11 @@ mas **as tabelas de precisão do R-8a deveriam ser refeitas**).
 
 ## 7. Fila
 
-1. **Prova analítica de c_s² = −1 em r → 0** — agora com alvo **bem
-   posto e confirmado numericamente em 1e−7**. Em curso
-   (`r12b_prova_simbolica_cs2.py`): redução 2-DOF em forma fechada com
-   β₁ eliminado em favor de (r, H).
+1. ~~Prova analítica de c_s² = −1 em r → 0~~ — **FEITA** no mesmo dia:
+   `docs/resultado_r12b_teorema_cs2.md`. Forma fechada
+   `c_s²(r) = −(3r+1)(9r⁵−6r³+3r²−10r+2)/(2(3r²+1)²)`, com −1 exato em
+   r → 0 e **+1 exato** no atrator tardio; m_ef²/H² → 5/2, batendo com
+   a medida desta nota.
 2. Refazer o R-8a (μ/Σ quase-estáticos) com o instrumento limpo — os
    números lá são sub-percentuais e o defeito é da mesma ordem.
 3. Anotar a supersessão nos docs de R-9a/R-10a/R-10b/R-11 e no cap. 07
