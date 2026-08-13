@@ -1,6 +1,7 @@
 # R-12 — ERRATUM-03 (instrumento): o Ċ de 2ª ordem, e a confirmação de c_s² = −1
 
 **Data:** 2026-08-13. Scripts: `auditoria/code/r12a_forma_de_k.py`,
+`r12h_raio_de_alcance.py`,
 `r12c_varredura_plato.py` (**ambos retratados**, preservados no git),
 `r12d_plato_alta_precisao.py`, `r12e_confronto_canais.py`,
 `r12f_veredito_instrumento.py`, `r12g_isola_ruido_e_classe.py`
@@ -127,7 +128,60 @@ Duas regras entram para o cap. 02:
    métrico errava na primeira casa. Todo calibrador deve declarar o
    que **não** consegue ver.
 
-## 6. Estatuto e fronteiras
+## 6. Raio de alcance do defeito (R-12h)
+
+A cadeia defeituosa está em **toda** a cascata R-1…R-12c (`grep
+np.gradient`). Pior: nos scripts de R-1 a R-8b o **próprio Ċ₇** também
+é `np.gradient` de 2ª ordem — o defeito entra duas vezes. A pergunta
+que decide o que precisa ser refeito é se ele **morde** no domínio de
+cada resultado. Medido em `r12h_raio_de_alcance.py`, com três variantes
+no mesmo ponto: **A8** (Ċ₇ simbólico + estêncil 8ª, referência),
+**A2** (= R-10a…R-12c), **N2** (= R-1…R-8b).
+
+**No domínio do R-7/R-8** (a ∈ [100, 8e4] × kh ∈ [0.2, 20]):
+
+| grandeza | desvio máx. A2 | desvio máx. N2 |
+|---|---|---|
+| ω² | 3.6e−4 | 1.9e−4 |
+| autovalores de K₂ | 1.5e−5 | 2.3e−4 |
+| W00 | — | 2.0e−6 |
+
+E os **sinais** de (λK₂¹, λK₂², W00) são idênticos nas três variantes em
+todos os pontos — sempre `++−`. Logo:
+
+> **Os enunciados estruturais do R-7 (no-ghost; W00 nunca cruza zero)
+> não dependem do defeito, e a cascata R-7/R-8 é quantitativamente
+> segura** — as margens lá são de 10+ unidades log e o erro é ≤ 4e−4.
+> Controle positivo em a = 0.01, kh = 30: desvio 3.9e−2 (o harness
+> reproduz o defeito onde ele existe).
+
+**A fronteira não é só em `a` — é em kh também.** Na era tardia
+(a = 1000):
+
+| kh | 20 | 30 | 100 | 300 | 1000 |
+|---|---|---|---|---|---|
+| c_s² (A8) | 1.01972 | 1.00880 | 1.00079 | 1.00009 | 1.00001 |
+| c_s² (A2) | 1.02009 | 1.00962 | 1.00980 | 1.08123 | 1.92869 |
+| desvio | 3.6e−4 | 8.1e−4 | 9.0e−3 | 8.1e−2 | **9.3e−1** |
+
+O defeito fica abaixo de 1e−2 até **kh ≈ 100**; acima disso morde.
+
+**Mapa final por resultado:**
+
+| Resultado | domínio usado | veredito |
+|---|---|---|
+| R-7a/b/c/e/f | a ∈ [100, 8e4], kh ≤ 45 | **seguro** (≤ 4e−4) |
+| R-9a Parte A (ω²_ef = (Ċ+W)/K) | kc = 45·H(100)·100 ⟹ kh ≤ 45 | **seguro** |
+| R-9a Parte B ("termo k⁴") | kh até 1000 | **contaminado** — artefato, já retratado |
+| R-8b (m_T/H₀) | headline vem do tensor + fundo | **não passa pela cadeia** |
+| R-8a (μ/Σ/η) | resolve `−W q + J = 0`, sem Ċ e sem `np.gradient` | **não passa pela cadeia** |
+| R-10a/b/c/d, R-11, R-12a/c | a ≤ 0.05, cond ≫ 1 | **contaminado no valor** (enunciados intactos) |
+| R-1…R-6 | — | já superados pelo Erratum-02; não requerem revisão |
+
+Ou seja: **o item "refazer o R-8a" da fila cai** — ele nunca usou a
+cadeia defeituosa. E não há nada do R-7 a refazer.
+
+## 7. Estatuto e fronteiras
 
 Nível 2b, mesmas fronteiras do R-10a/R-11 (classe F1 com β₃ = 0, ramo
 finito, matéria só como ρ de fundo, sem radiação, F′ = F″ = 0). O que
@@ -137,14 +191,16 @@ R-7/R-8 (lá cond ≈ 10, e a diferença medida em a = 1000 é ~8e−4 —
 irrelevante para conclusões de ordem de grandeza como a banda morta,
 mas **as tabelas de precisão do R-8a deveriam ser refeitas**).
 
-## 7. Fila
+## 8. Fila
 
 1. ~~Prova analítica de c_s² = −1 em r → 0~~ — **FEITA** no mesmo dia:
    `docs/resultado_r12b_teorema_cs2.md`. Forma fechada
    `c_s²(r) = −(3r+1)(9r⁵−6r³+3r²−10r+2)/(2(3r²+1)²)`, com −1 exato em
    r → 0 e **+1 exato** no atrator tardio; m_ef²/H² → 5/2, batendo com
    a medida desta nota.
-2. Refazer o R-8a (μ/Σ quase-estáticos) com o instrumento limpo — os
-   números lá são sub-percentuais e o defeito é da mesma ordem.
+2. ~~Refazer o R-8a com o instrumento limpo~~ — **desnecessário**
+   (§6): o R-8a resolve `−W q + J = 0` e nunca toca o Ċ.
 3. Anotar a supersessão nos docs de R-9a/R-10a/R-10b/R-11 e no cap. 07
-   da v2 (valor, não enunciado).
+   da v2 (valor, não enunciado) — **feito**.
+4. Restante: generalizar a fórmula de c_s² em (β₀, β₂, β₄, μ);
+   confrontar com Könnig et al.; cap. 09 (validade restrita).
