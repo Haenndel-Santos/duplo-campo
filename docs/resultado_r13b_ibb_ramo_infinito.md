@@ -516,25 +516,43 @@ mesmo `1 + 1/(μr_c²) < 2`.
   hipótese 2 avisa que a cadeia (14)→(16)→(18) **não sobrevive
   intacta**. Toda esta seção vale para **β_n constantes**.
 
-**Este documento não conclui que o IBB está excluído nem que está
-aprovado.** O que ele estabelece é: (i) a máquinaria mede o ramo
-infinito de forma auditada (M1–M7, controle positivo incluído);
-(ii) `r′ < 0` é fato de classe nas convenções do projeto;
-(iii) o zero de ξ é um quique único, com locus fechado; (iv) o bloco
-IBB genuíno inteiro fica em `1 < m_T²/H² < 2` contra a inequação que o
-repositório usa hoje; (v) o critério da fonte, na tradução do R-13a, é
-reprovado em todos os pontos, e essa tradução ficou verificada por CAS
-na sua cadeia interna. **O passo que falta para um veredito não é mais
-o critério — é o canal cego (§1).**
+**Este documento mede; o veredito é emitido fora dele.** O que ele
+estabelece é: (i) a maquinaria mede o ramo infinito de forma auditada
+(M1–M7, controle positivo incluído); (ii) `r′ < 0` é fato de classe
+nas convenções do projeto; (iii) o zero de ξ é um quique único, com
+locus fechado; (iv) o bloco IBB genuíno inteiro fica em
+`1 < m_T²/H² < 2` contra a inequação que o repositório usa hoje;
+(v) o critério da fonte, na tradução do R-13a, é reprovado em todos os
+pontos, e essa tradução ficou verificada por CAS na sua cadeia interna.
+
+> **[CORREÇÃO LÓGICA — 2026-08-13, decisão do autor.]** A versão
+> anterior desta seção dizia que *"o passo que falta para um veredito
+> não é mais o critério — é o canal cego"*. **Isso está errado como
+> lógica.** A declaração de cegueira do §1 continua válida e continua
+> sendo boa prática de método (regra 7): este gate **não mede
+> gradiente**. Mas *não medir gradiente* **não implica** *não poder
+> excluir por Higuchi* — **um ghost físico basta para excluir uma
+> solução, independentemente de o gradiente estar saudável**. Medir
+> `c_s²` no ramo infinito passa a ser **validação adicional desejável,
+> não requisito para o veredito**. E a assimetria é a da própria fonte
+> (1503.07436 §VI): fantasma é fatal, gradiente não.
+>
+> É justamente essa a situação interessante — **as patologias são
+> complementares**: o ramo finito tem Higuchi OK e gradiente ruim; o
+> IBB tem gradiente OK (a fonte o mantém estável nesse canal, §IV A,
+> sem retratar 1407.4331) e Higuchi ruim.
 
 **Fila aberta por este documento:**
 
-1. **`c_s²` no ramo infinito.** Este gate é **cego** a ele (§1). O
-   no-go de classe do R-11 (`c_s² = −1`) vale no ramo **finito**; a
-   fonte declara o IBB **estável no gradiente** (R-13a §1.5: 1503.07436
+1. **`c_s²` no ramo infinito — validação adicional, NÃO gate de
+   decisão.** Este gate é cego a ele (§1), e o veredito de exclusão
+   **não depende dele** (ver a correção lógica acima). O no-go de
+   classe do R-11 (`c_s² = −1`) vale no ramo **finito**; a fonte
+   declara o IBB **estável no gradiente** (R-13a §1.5: 1503.07436
    **confirma** o resultado de 1407.4331 e mata o IBB por outro canal).
-   Medir `c_s²` **lá**, com a máquinaria limpa do R-12, é o teste que
-   fecha o arco — e ele não está feito.
+   Medir `c_s²` **lá**, com a maquinaria limpa do R-12, seria
+   reprodução independente de 1407.4331 + 1503.07436 no canal que nos
+   falta — bom de ter, e não bloqueante.
 2. **O mapa de convenções do R-13a §2.1 por CAS** (§8.6).
 3. A cota de Higuchi **em fundo dinâmico bimétrico**, derivada — não
    herdada de de Sitter nem da forma ξ→r.

@@ -25,18 +25,55 @@ carry the value-supersession banner of Erratum-03 (below).
   r → 0, for any (β₀, β₂, β₄, μ) — 108/108 cells, |c_s²+1| ≤ 1.1e−7 —
   with positive kinetic term (gradient, not ghost), and c_s² = +1
   exactly in the late era; closed form proved in the minimal cell
-  (β₂ = β₄ = 0). Of the four known exits, **three are closed** (β₁(φ₋)
-  modulation, Vainshtein screening, β-form) and the **infinite branch
-  was REOPENED by R-12i**: our exclusion criterion (ξ crosses zero ⟹
-  vanishing lapse in the f sector ⟹ singular point) is, point by
-  point, the bounce of `b` that Könnig et al. (1407.4331) §II/§VI
-  treat explicitly and defend as physical, on three stated grounds —
-  and infinite-branch bigravity (IBB) is the only model stable at all
-  times in that paper. The exit is **reopened pending re-examination**,
-  not viable: the viable IBB requires β₄ ≠ 0 (0 < β₄ < 2β₁), whereas
-  our minimal cell has β₄ = 0, so the target is the infinite branch of
-  F1 **with β₄ switched on**, not the current cell. Two doors are thus
-  left ajar: β₃ ≠ 0, which leaves F1, and that re-examination.
+  (β₂ = β₄ = 0). Of the four known exits, **all four are closed** —
+  β₁(φ₋) modulation, Vainshtein screening, β-form, and the infinite
+  branch — but the infinite-branch exclusion was **entirely replaced**,
+  not confirmed, and the replacement must be stated every time the
+  count is quoted.
+- `docs/resultado_r13a_criterio_higuchi_fonte.md` +
+  `docs/resultado_r13b_ibb_ramo_infinito.md` — **the F1 infinite
+  branch (IBB) is EXCLUDED BY THE HIGUCHI GHOST.** Mandatory
+  qualification: the original exclusion via the `ξ = 0` crossing
+  remains **REVOKED** — that criterion (ξ crosses zero ⟹ vanishing
+  lapse in the f sector ⟹ singular point) is, point by point, the
+  bounce of `b` that Könnig et al. (1407.4331) §II/§VI treat
+  explicitly and defend as physical, on three stated grounds, and
+  nothing here revives it. The current exclusion is **independent**:
+  the infinite branch violates the Higuchi condition **throughout its
+  entire history** in the IBB cells tested. The Higuchi functional of
+  Könnig 2015 (1503.07436, eq. 14) was translated at the source and
+  **re-verified by CAS along an independent route** — three symbolic
+  residues **zero**, general β_n and μ, dust — giving
+  **Higuchi ⟺ ξ ≥ r ⟺ r′ ≥ 0**. Measured: r′ < 0 over 100% of the
+  history in **108/108 cells**; Higuchi satisfied at **0 of 64 800
+  points**; agreement Higuchi(source) ⟺ r′ ≥ 0 in **64 800/64 800**;
+  **positive control** on the finite branch **400/400**. In closed
+  form, m_T²/H²|_{r_c} = 1 + 1/(μr_c²) with μr_c² > 1 always, hence
+  **1 < sup(m_T²/H²) < 2 strictly** across the whole window; and μ is
+  **pure rescaling** in the genuine IBB. Note that m_T² > 0 in 108/108:
+  *the IBB branch is not tachyonic in the tensor-mass sense; it is
+  excluded by the Higuchi ghost condition.* The finding is the
+  complementarity: *within the F1 parameterization, the two standard
+  cosmological branches fail for complementary reasons: the finite
+  branch violates scalar-gradient stability in the early universe,
+  while the genuine infinite branch avoids that instability but
+  violates the Higuchi condition throughout its evolution.* The IBB
+  gradient channel is **healthy according to the source** (§IV A of
+  1503.07436, which **confirms** and does **not** retract 1407.4331);
+  it is an independent channel and does not save Higuchi. The R-13b
+  gate does not measure gradient, and that blindness stays declared as
+  good practice — but it does **not** block the verdict: a physical
+  ghost is enough to exclude, regardless of the gradient being healthy.
+  A `c_s²` test in the IBB is **desirable additional validation, not a
+  requirement**.
+
+  | Exit | Current verdict | Reason |
+  |---|---|---|
+  | Infinite branch / IBB | **EXCLUDED** | Higuchi ghost, r′ < 0 throughout the history |
+  | old `ξ = 0` argument | **REVOKED** | a vanishing lapse / bounce is not by itself a singularity |
+  | gradient in the IBB | **HEALTHY** per the source | independent channel; does not save Higuchi |
+
+  Only one door is left ajar: β₃ ≠ 0, which leaves F1.
   **The unstable era covers recombination**, so the linear CMB of F1 is
   not calculable while this picture holds.
 - `docs/resultado_r12_instrumento_e_cs2.md` — **Erratum-03

@@ -9,9 +9,13 @@
 > (`docs/resultado_r12_instrumento_e_cs2.md` §6).
 >
 > **O que NÃO muda.** As **quatro saídas continuam fechadas** *[esta
-> frase caiu em 2026-08-13 pelo R-12i: são **três fechadas e uma
-> reaberta** — a do ramo infinito; ver o banner de REABERTURA da
-> Parte A]* e a
+> frase caiu em 2026-08-13 pelo R-12i: passaram a ser **três fechadas e
+> uma reaberta** — a do ramo infinito; ver o banner de REABERTURA da
+> Parte A. **[2026-08-13, R-13a + R-13b:** voltam a ser **quatro
+> fechadas**, mas com a exclusão do ramo infinito **inteiramente
+> substituída** — o argumento `ξ = 0` permanece REVOGADO e no lugar dele
+> entra o **ghost de Higuchi**; ver o bloco de VEREDITO da Parte A.**]**]*
+> e a
 > **modulação β₁(φ₋) continua chegando tarde demais** — é assim que o
 > R-12 §4 ("as quatro saídas fechadas (R-10c/d, R-11)") e o cap. 07
 > da v2 (Ato 4: "Modulação β₁(φ₋) | R-10c | fechada — age ~3 ordens
@@ -49,7 +53,11 @@ gradiente confirmada). Testa as saídas 2 e 4 listadas em
 justificada no corpus**
 
 > **[REABERTURA — 2026-08-13, R-12i]** *Nota acrescentada; o texto
-> original da Parte A permanece intacto abaixo.* **O veredito desta
+> original da Parte A permanece intacto abaixo.* **Esta nota é registro
+> do caminho: a revogação do `ξ = 0` que ela estabelece permanece de
+> pé, mas o estado "REABERTA" que ela declara está superado pelo bloco
+> de VEREDITO logo abaixo (R-13a + R-13b), que fecha a saída pelo ghost
+> de Higuchi.* **O veredito desta
 > Parte A caiu.** O critério que ela estabelece — ξ cruza zero ⟹ o
 > lapso do setor f se anula ⟹ ponto singular ⟹ história contínua
 > excluída — **não se sustenta**. Como `b = ra`, o nosso
@@ -67,8 +75,10 @@ justificada no corpus**
 > o **único** modelo estável em todos os tempos daquele paper: esta é
 > a porta mais cara que o repositório fechou.
 >
-> **Estado correto:** a saída do ramo infinito não é "fechada" nem
-> "aberta e viável" — está **REABERTA e exige reavaliação**. Ou a
+> **Estado correto** *[à data desta nota; superado pelo bloco de
+> VEREDITO abaixo — a exclusão ganhou, de fato, o argumento novo que
+> este parágrafo exigia]***:** a saída do ramo infinito não é "fechada"
+> nem "aberta e viável" — está **REABERTA e exige reavaliação**. Ou a
 > exclusão ganha um argumento novo que responda aos três deles, ou
 > cai. **Caveat de escopo, obrigatório em toda menção:** o IBB viável
 > exige β₄ ≠ 0, especificamente `0 < β₄ < 2β₁`, enquanto a nossa
@@ -88,7 +98,9 @@ justificada no corpus**
 > estável *no canal de gradiente*; 1503.07436 o ataca *pelo Higuchi*),
 > e dissolve-se pela separação de canais: gradiente,
 > Higuchi/helicidade-0 e setor tensorial são perguntas distintas.
-> **A exclusão continua REABERTA:** o argumento é nível 3 e ainda não
+> **A exclusão ficou REABERTA** *[estado desta nota quando escrita;
+> superado pelo bloco de VEREDITO logo abaixo]***:** o argumento é
+> nível 3 e ainda não
 > foi traduzido para as convenções do projeto — esse teste é o próximo
 > item da fila. Ver `docs/posicionamento_literatura.md` §2b.
 >
@@ -97,6 +109,69 @@ justificada no corpus**
 > screening de Vainshtein — R-10d; forma-β — R-11) continuam
 > **fechadas**. *Fonte:
 > `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b).*
+
+> **[VEREDITO — 2026-08-13, R-13a + R-13b] RAMO INFINITO IBB DA F1:
+> EXCLUÍDO PELO GHOST DE HIGUCHI.** *Bloco acrescentado; o texto
+> original da Parte A e a nota de REABERTURA acima permanecem intactos
+> como registro do caminho.*
+>
+> **Qualificação obrigatória, que precisa aparecer toda vez que o
+> histórico desta saída for contado.** A exclusão original, pelo
+> cruzamento `ξ = 0` — a que esta Parte A estabelecia —, permanece
+> **REVOGADA**: nada aqui a ressuscita, e o quique do lapso continua não
+> sendo, por si só, uma singularidade. A exclusão vigente é
+> **independente**: o ramo infinito **viola a condição de Higuchi
+> durante toda a história** nas células IBB testadas. A contagem passa
+> de "três fechadas + uma reaberta" a **quatro rotas novamente
+> fechadas, com a exclusão do IBB inteiramente substituída** — e a
+> substituição tem de ser visível, nunca a contagem sozinha.
+>
+> **O critério, traduzido e verificado.** O funcional de Higuchi da
+> fonte (Könnig 2015, arXiv:1503.07436, eq. 14) foi extraído **na
+> fonte** e traduzido para as convenções do projeto (R-13a §2), e a
+> tradução foi **re-verificada por CAS em rota independente** — três
+> resíduos simbólicos **zero**, com `β_n` e `μ` gerais e matéria de
+> poeira (R-13b §8.2). A cadeia fecha exata:
+> **Higuchi ⟺ `ξ ≥ r` ⟺ `r′ ≥ 0`**.
+>
+> **A medida** (R-13b §§5–6; células IBB genuínas β₂ = β₃ = 0, β₁ > 0,
+> `0 < β₄/β₁ < 2μ^{3/2}`): `r′ < 0` em **100% da história em 108/108
+> células**; Higuchi satisfeito em **0 de 64 800 pontos**; concordância
+> Higuchi(fonte) ⟺ `r′ ≥ 0` em **64 800/64 800**; **controle positivo**
+> no ramo finito **400/400** — o gate aprova o que deve aprovar. Forma
+> fechada: `m_T²/H²|_{r_c} = 1 + 1/(μr_c²)` com `μr_c² > 1` sempre,
+> logo **1 < sup(m_T²/H²) < 2 estrito** em toda a janela; e **`μ` é
+> pura reescala** no IBB genuíno.
+>
+> **O que o veredito não é.** *"The IBB branch is not tachyonic in the
+> tensor-mass sense; it is excluded by the Higuchi ghost condition."*
+> `m_T² > 0` em **108/108** — e isso **não** o salva.
+>
+> **Complementaridade — é este o achado.** *"Within the F1
+> parameterization, the two standard cosmological branches fail for
+> complementary reasons: the finite branch violates scalar-gradient
+> stability in the early universe, while the genuine infinite branch
+> avoids that instability but violates the Higuchi condition throughout
+> its evolution."* O gradiente do IBB é **saudável segundo a fonte**
+> (§IV A de 1503.07436, que **confirma** e **não** retrata 1407.4331):
+> canal independente, que não salva o Higuchi.
+>
+> **Ponto lógico, declarado.** O gate do R-13b **não mede gradiente**, e
+> essa cegueira continua declarada como boa prática (regra 7). Ela
+> **não bloqueia o veredito**: um ghost físico basta para excluir,
+> independentemente de o gradiente estar saudável. Um teste de `c_s²` no
+> IBB é **validação adicional desejável, não requisito** — o veredito
+> não o aguarda.
+>
+> | Saída | Veredito vigente | Razão |
+> |---|---|---|
+> | Infinite branch / IBB | **EXCLUÍDO** | ghost de Higuchi, `r′ < 0` em toda a história |
+> | argumento antigo `ξ = 0` | **REVOGADO** | zero do lapso / quique não é por si só singularidade |
+> | gradiente no IBB | **SAUDÁVEL** segundo a fonte | canal independente; não salva o Higuchi |
+>
+> *Fontes: `docs/resultado_r13a_criterio_higuchi_fonte.md`;
+> `docs/resultado_r13b_ibb_ramo_infinito.md` §§4–6 e §8;
+> `auditoria/code/out/r13b_ibb_ramo_infinito.txt`.*
 
 `docs/resultado_ramo_finito.md` §2 descartava o ramo infinito porque
 "dá ξ < 0, isto é, lapso negativo no setor f". A varredura de todas as
@@ -187,7 +262,7 @@ sem afetar o veredito — anotado para verificação.
 | Saída | Estado |
 |---|---|
 | 1. Screening / auto-invalidação linear | **Única viva** — não testada; agora é o único caminho conhecido |
-| 2. Ramo infinito | *[texto original:]* **Fechada** (não conecta continuamente) — mas há segunda solução tardia inexplorada. **[2026-08-13, R-12i: REABERTA]** a exclusão por ξ cruzar zero não se sustenta: é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos. Reexame pendente, e o alvo é o ramo infinito **com β₄ ≠ 0** (o IBB viável exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0) — ver o banner da Parte A |
+| 2. Ramo infinito | *[texto original:]* **Fechada** (não conecta continuamente) — mas há segunda solução tardia inexplorada. **[2026-08-13, R-12i: REABERTA]** a exclusão por ξ cruzar zero não se sustenta: é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos. Reexame pendente, e o alvo é o ramo infinito **com β₄ ≠ 0** (o IBB viável exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0) — ver o banner da Parte A. **[2026-08-13, R-13a + R-13b: FECHADA POR OUTRA RAZÃO]** o reexame foi feito: o argumento `ξ = 0` **permanece REVOGADO** e a exclusão vigente é **independente** — **ghost de Higuchi durante toda a história** (`r′ < 0` em 100% da história em 108/108 células; Higuchi em 0/64 800 pontos; controle positivo no ramo finito 400/400). Ver o bloco de VEREDITO da Parte A |
 | 3. Varredura de forma-β | Aberta; o R-8b mostrou rigidez da forma sob rescala, falta varrer forma |
 | 4. Corte de época pela modulação | **Fechada** — a modulação chega ~3 ordens tarde demais |
 

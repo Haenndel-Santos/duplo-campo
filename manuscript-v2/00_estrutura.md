@@ -31,13 +31,20 @@ cinética **positiva** (é gradiente, não fantasma), e **c_s² = +1 exato**
 na era tardia; na célula mínima (β₂ = β₄ = 0) isso é **teorema** em
 forma fechada (R-12b). Das quatro saídas, **três estão fechadas**
 (modulação β₁(φ₋), screening de Vainshtein, forma-β) e a do **ramo
-infinito foi REABERTA pelo R-12i**: a exclusão por ξ cruzar zero é
-ponto por ponto o quique de `b` que 1407.4331 §II/§VI trata e defende
-como físico, com três argumentos, e o reexame está pendente — com o
-alvo no ramo infinito **com β₄ ≠ 0** (o IBB viável exige
-0 < β₄ < 2β₁; a célula mínima tem β₄ = 0). As portas entreabertas são,
-portanto, duas: β₃ ≠ 0, que sai da definição de F1, e essa
-reabertura. **A era
+infinito foi REABERTA pelo R-12i e NOVAMENTE FECHADA pelo
+R-13a/R-13b — por outra razão, e a substituição é parte do enunciado**.
+A exclusão original, por ξ cruzar zero, está **REVOGADA**: é ponto por
+ponto o quique de `b` que 1407.4331 §II/§VI trata e defende como
+físico, com três argumentos, e nada aqui a ressuscita. A exclusão
+vigente é **independente e de outra natureza** — nas células IBB
+genuínas (β₂ = β₃ = 0, β₁ > 0, `0 < β₄/β₁ < 2μ^{3/2}`) o ramo infinito
+**viola a condição de Higuchi durante toda a história**: `r′ < 0` em
+100% da história em **108/108 células**, Higuchi satisfeito em **0 de
+64 800 pontos**, contra **400/400** do controle positivo no ramo
+finito. A contagem volta a **quatro rotas fechadas**, mas com a
+exclusão do IBB **inteiramente substituída**, não confirmada — e a
+porta que resta entreaberta passa a ser **uma**: β₃ ≠ 0, que sai da
+definição de F1. **A era
 instável cobre a recombinação** — o CMB linear da F1 não é calculável
 enquanto este quadro valer. No mesmo arco entra o **ERRATUM-03**
 (R-12): o Ċ era derivado por `np.gradient` de 2ª ordem de R-7 a R-12c,
@@ -156,11 +163,16 @@ procurava — sem campo modulador nenhum.
 *Fontes: resultado_ramo_finito.md, ramo_dinamico_correto.py.*
 
 ### 06 — Setor tensorial
-m_T²/H²→12 universal no primordial (todos os parâmetros cancelam);
-Higuchi automático com margem 6; a razão ≈4 hoje. A invalidação do
-0/60 da D8 como estudo de caso do método (fundo errado ⇒ resultado
-errado por construção).
-*Fontes: resultado_ramo_finito.md §3–4, D2 (forma fechada).*
+m_T²/H²→12 universal no primordial (todos os parâmetros cancelam); a
+razão ≈4 hoje. **Higuchi automático — mas com margem 1.5, não 6**
+(§2.1, `[REVISADO 2026-08-13, R-13a/R-13b]`): o "6" saía de aplicar o
+bound 2 ao nosso m_T² com ξ dinâmico, e o funcional FLRW de Higuchi da
+literatura é a forma em ξ→r, que no primordial dá **3**. O 12 fica; o
+veredito fica (400/400 pelas duas formas); só a margem cai. A
+invalidação do 0/60 da D8 como estudo de caso do método (fundo errado
+⇒ resultado errado por construção).
+*Fontes: resultado_ramo_finito.md §3–4, D2 (forma fechada),
+resultado_r13a_criterio_higuchi_fonte.md, resultado_r13b_ibb_ramo_infinito.md.*
 
 ### 07 — O setor escalar: do falso no-go à saúde tardia, e daí ao no-go de classe por gradiente (resultado central)
 A história completa em quatro atos, com números: (i) o no-go aparente
@@ -178,17 +190,23 @@ e "strong coupling" retirados como artefatos; (iv) o no-go real, na era
 inicial: c_s² = −1 exato em r → 0 para qualquer (β₀, β₂, β₄, μ) da
 classe F1 (108/108 células), com cinética positiva — é **gradiente**,
 não fantasma —, c_s² = +1 exato na era tardia, teorema em forma fechada
-na célula mínima; quatro saídas testadas, **três fechadas e a do ramo
-infinito reaberta pelo R-12i** (alvo: β₄ ≠ 0); a era instável
+na célula mínima; quatro saídas testadas, **quatro novamente fechadas
+— com a exclusão do ramo infinito inteiramente substituída**: o
+argumento `ξ = 0` está REVOGADO (R-12i) e no lugar dele entra o **ghost
+de Higuchi** (R-13a/R-13b), que reprova o IBB em toda a história
+(108/108 células, 0/64 800 pontos); a era instável
 cobre a recombinação; e o ERRATUM-03, que corrige *valores* sem tocar
-*enunciados*. Fronteiras e pendências declaradas (ramo algébrico
-deferido; Vainshtein/validade linear no topo da fila; duas portas
-entreabertas — β₃ ≠ 0, que leva para fora da F1, e o reexame do ramo
-infinito com β₄ ≠ 0).
+*enunciados*. O quarto ato fecha na **complementaridade**: ramo finito
+= Higuchi OK / gradiente ruim; IBB = gradiente saudável segundo a fonte
+/ Higuchi ruim. Fronteiras e pendências declaradas (ramo algébrico
+deferido; Vainshtein/validade linear no topo da fila; **uma** porta
+entreaberta — β₃ ≠ 0, que leva para fora da F1; `c_s²` no IBB como
+validação adicional desejável, não requisito do veredito).
 *Fontes: erratum_02_reducao_numerica.md, resultado_r7_cascata.md,
 resultado_r7e_saude_interna.md, resultado_r10_consolidado.md,
 resultado_r11_nogo_gradiente.md, resultado_r12_instrumento_e_cs2.md,
-resultado_r12b_teorema_cs2.md, saídas r6c/r6d/r7a–f/r10a–r12h.*
+resultado_r12b_teorema_cs2.md, resultado_r13a_criterio_higuchi_fonte.md,
+resultado_r13b_ibb_ramo_infinito.md, saídas r6c/r6d/r7a–f/r10a–r13b.*
 
 ### 08 — O enquadramento R1 e a identificação normativa (a fronteira que fica)
 Gate 1 completo, RELIDO pós-erratum: os quatro objetos identificados

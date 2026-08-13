@@ -169,17 +169,20 @@ k/aH ≳ 8 na transição saem do regime linear (lnA até 32); os
 intermediários (k/aH ~ 1–7) permanecem lineares mas crescem por
 fatores de 2 a 10⁴. **A era instável cobre a recombinação.**
 
-**[2026-08-13; revisto pelo R-12i] As quatro saídas foram testadas —
-três fechadas, uma REABERTA:**
+**[2026-08-13; revisto pelo R-12i, fechado pelo R-13a/R-13b] As quatro
+saídas foram testadas — quatro fechadas, e a do ramo infinito com a
+exclusão INTEIRAMENTE SUBSTITUÍDA:**
 
 | Saída | Teste | Estado |
 |---|---|---|
-| Ramo infinito | R-10c → **REABERTA** (R-12i) | a exclusão por ξ cruzar zero **não se sustenta**: é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos. Reexame pendente, e o alvo é o ramo infinito **com β₄ ≠ 0** (o IBB viável exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0). **[2026-08-13]** Existe um argumento independente **candidato** — Higuchi via `r′ < 0` (1503.07436, verificado na fonte pelo autor) —, **pendente de tradução para as convenções do projeto**; a saída segue REABERTA |
+| Ramo infinito / IBB | R-10c → REVOGADA (R-12i) → **FECHADA POR OUTRA RAZÃO** (R-13a + R-13b) | a exclusão por ξ cruzar zero **não se sustenta e permanece REVOGADA**: é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos. A exclusão vigente é **independente** — **ghost de Higuchi durante toda a história** nas células IBB genuínas (β₂ = β₃ = 0, β₁ > 0, `0 < β₄/β₁ < 2μ^{3/2}`): `r′ < 0` em 100% da história em **108/108 células**, Higuchi em **0 de 64 800 pontos**, contra **400/400** do controle positivo no ramo finito |
 | Modulação β₁(φ₋) | R-10c | fechada — age ~3 ordens tarde demais |
 | Screening de Vainshtein | R-10d | fechada — δ_screen ≈ 20–60; *o λ cancela*, não há escala linear protegida |
 | Forma-β (β₀, β₂, β₄, μ) | R-11 + R-12g | fechada — **c_s² = −1 em 108/108 células**, com `\|c_s²+1\| ≤ 1.1e−7` |
 
-*A reabertura, em detalhe (R-12i §1.6 e §R-b).* O critério que fechava
+*A revogação do critério `ξ = 0`, em detalhe (R-12i §1.6 e §R-b) — ela
+**permanece** válida e não é revertida pelo veredito adiante.* O
+critério que fechava
 o ramo infinito era: ξ cruza zero ⟹ o lapso do setor f se anula ⟹
 ponto singular ⟹ história contínua excluída. Como `b = ra`, o nosso
 `ξ = r + dr/dN` satisfaz `ξ = X/a` com o `X ≡ ḃ/ℋ` de Könnig et al. —
@@ -197,8 +200,9 @@ todos os tempos daquele paper. **Caveat de escopo, sem o qual a linha
 não pode ser citada:** o IBB viável exige β₄ ≠ 0, especificamente
 `0 < β₄ < 2β₁`, enquanto a nossa célula mínima tem β₄ = 0 — o alvo do
 reexame é o ramo infinito da F1 **com β₄ ligado**, não a célula atual.
-O estado correto não é "fechada" nem "aberta e viável": é **reaberta,
-exigindo reavaliação**.
+O estado, *enquanto só existia esta nota*, não era "fechada" nem
+"aberta e viável": era **reaberta, exigindo reavaliação** — e o reexame
+foi executado (R-13a/R-13b, adiante).
 
 **[2026-08-13 — 1503.07436 verificado na fonte pelo autor.]** A
 caracterização anterior desta linha ("duas linhas contraditórias em
@@ -213,15 +217,86 @@ branch* é definido como aquele em que `r` parte de infinito e
 **decresce**. A tensão com o "IBB estável" de 1407.4331 dissolve-se
 pela **separação de canais**: estabilidade de **gradiente** ≠ saúde de
 **Higuchi/helicidade-0** ≠ saúde do **setor tensorial** — o IBB pode
-curar o gradiente e ainda assim falhar por outro canal. **Isto não
-fecha a saída.** É literatura (nível 3, leitura do autor na fonte),
-**não traduzida** para as convenções deste projeto; o argumento
-próprio (`ξ = 0`) continua derrubado, e a saída continua **REABERTA**
-até rodar o teste de tradução (célula IBB genuína `β₂ = β₃ = 0`,
-`β₁ > 0`, `0 < β₄ < 2β₁`; medir `r′(N)`, `m_T²/H²` e o funcional de
-Higuchi na nossa convenção). *Fontes:
+curar o gradiente e ainda assim falhar por outro canal. **Isto, por
+si, não fechava a saída:** era literatura (nível 3, leitura do autor na
+fonte), **não traduzida** para as convenções deste projeto. O teste de
+tradução que faltava — célula IBB genuína `β₂ = β₃ = 0`, `β₁ > 0`,
+`0 < β₄ < 2β₁`; medir `r′(N)`, `m_T²/H²` e o funcional de Higuchi na
+nossa convenção — **foi executado**, e o veredito está no bloco
+seguinte. *Fontes:
 `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b, nota
 datada); `docs/posicionamento_literatura.md` §2b R-b.*
+
+**[VEREDITO — 2026-08-13, R-13a + R-13b] RAMO INFINITO IBB DA F1:
+EXCLUÍDO PELO GHOST DE HIGUCHI.**
+
+**Qualificação obrigatória, que precisa aparecer toda vez que o
+histórico desta saída for contado.** A exclusão original, pelo
+cruzamento `ξ = 0`, permanece **REVOGADA** — os dois parágrafos acima
+não são revertidos por este. A exclusão vigente é **independente**: o
+ramo infinito viola a condição de Higuchi **durante toda a história**
+nas células IBB testadas. A contagem passa de "três fechadas + uma
+reaberta" a **quatro rotas novamente fechadas, com a exclusão do IBB
+inteiramente substituída** — e a substituição é parte do enunciado, não
+uma nota de rodapé da contagem.
+
+*O critério, traduzido e verificado.* A condição de Higuchi da fonte
+(Könnig 2015, arXiv:1503.07436, eq. 14) foi extraída **na fonte** e
+traduzida para as nossas variáveis (R-13a §2), e a tradução foi
+**re-verificada por CAS em rota independente** — três resíduos
+simbólicos **zero**, com `β_n` e `μ` gerais e matéria de poeira
+(R-13b §8.2). A cadeia fecha exata:
+
+> **Higuchi ⟺ `ξ ≥ r` ⟺ `r′ ≥ 0`.**
+
+*A medida* (R-13b §§5–6; células IBB genuínas β₂ = β₃ = 0, β₁ > 0,
+`0 < β₄/β₁ < 2μ^{3/2}`): `r′ < 0` em **100% da história em 108/108
+células**; Higuchi satisfeito em **0 de 64 800 pontos**; concordância
+Higuchi(fonte) ⟺ `r′ ≥ 0` em **64 800/64 800**; **controle positivo**
+no ramo finito **400/400** — o gate aprova o que deve aprovar, logo o
+"zero de 64 800" tem poder. E o enunciado é **fechado**, não amostral:
+`m_T²/H²|_{r_c} = 1 + 1/(μr_c²)` com `μr_c² > 1` em toda a janela de
+existência, donde
+
+> **1 < sup(m_T²/H²) < 2, estrito, em toda a janela.**
+
+Além disso **`μ` é pura reescala** no IBB genuíno (R-13b §4, F-3): o
+eixo `μ`, varrido pela primeira vez no corpus, **fecha** o enunciado em
+vez de abri-lo.
+
+*O que o veredito não é.* **The IBB branch is not tachyonic in the
+tensor-mass sense; it is excluded by the Higuchi ghost condition.**
+`m_T² > 0` em **108/108** células — não há taquiônico tensorial no ramo
+infinito, nem na travessia de `ξ = 0`, e isso **não** o salva.
+
+*A complementaridade — é este o achado.* **Within the F1
+parameterization, the two standard cosmological branches fail for
+complementary reasons: the finite branch violates scalar-gradient
+stability in the early universe, while the genuine infinite branch
+avoids that instability but violates the Higuchi condition throughout
+its evolution.** O gradiente do IBB é **saudável segundo a fonte**
+(§IV A de 1503.07436, que **confirma** o resultado de 1407.4331 e
+**não** o retrata) — canal independente, que não salva o Higuchi.
+
+*Ponto lógico, declarado.* O gate do R-13b **não mede gradiente**, e
+essa cegueira continua declarada como boa prática (regra 7 do cap. 02).
+Ela **não bloqueia o veredito**: um ghost físico basta para excluir,
+independentemente de o gradiente estar saudável. Um teste de `c_s²` no
+IBB é **validação adicional desejável, não requisito** — o veredito não
+o aguarda.
+
+| Saída | Veredito vigente | Razão |
+|---|---|---|
+| Infinite branch / IBB | **EXCLUÍDO** | ghost de Higuchi, `r′ < 0` em toda a história |
+| argumento antigo `ξ = 0` | **REVOGADO** | zero do lapso / quique não é por si só singularidade |
+| gradiente no IBB | **SAUDÁVEL** segundo a fonte | canal independente; não salva o Higuchi |
+
+*Nível: 1 para a cadeia simbólica (duas rotas independentes, resíduo
+zero); 2a para as formas fechadas; 2b para a varredura de 108 células,
+com as fronteiras declaradas em `docs/resultado_r13b_ibb_ramo_infinito.md`
+§0.* *Fontes: `docs/resultado_r13a_criterio_higuchi_fonte.md`;
+`docs/resultado_r13b_ibb_ramo_infinito.md` §§4–6 e §8;
+`auditoria/code/out/r13b_ibb_ramo_infinito.txt`.*
 
 **NO-GO DE CLASSE POR GRADIENTE (R-11, valor fixado no R-12):** na
 classe F1 (β₃ = 0, matéria só em g, ramo finito),
@@ -263,9 +338,10 @@ corrigido; este foi medido com o instrumento já corrigido e validado,
 é insensível a toda a forma do potencial, e reproduz uma previsão
 independente da literatura que o repositório registrava sem confrontar.
 A porta que resta entreaberta é β₃ ≠ 0 — que sai da definição de
-F1, isto é, leva a uma F2 — **e, desde o R-12i, também o ramo infinito
-com β₄ ≠ 0**, que voltou à condição de saída sob reexame (tabela
-acima).
+F1, isto é, leva a uma F2. O ramo infinito com β₄ ≠ 0, que o R-12i
+tinha devolvido à condição de saída sob reexame, **voltou a fechar-se
+no R-13a/R-13b — por outra razão, o ghost de Higuchi** (tabela acima),
+com o argumento `ξ = 0` permanentemente revogado.
 
 Pendências declaradas: ramo algébrico (deferido); fronteira de uma
 trajetória no dinâmico; scan de classe em nível de assinatura; **a

@@ -111,7 +111,15 @@ e `resultado_r11_nogo_gradiente`. O −1.010 ± 6e−6 do R-11 era o valor
   1407.4331 §II/§VI trata e defende como físico, com três argumentos.
   Reexame pendente, alvo é o ramo infinito **com β₄ ≠ 0** (IBB viável
   exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0). Ver
-  `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6]*;
+  `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6]* **[R-13a +
+  R-13b, 2026-08-13: o reexame foi feito e voltam a ser QUATRO
+  FECHADAS — mas com a exclusão do ramo infinito INTEIRAMENTE
+  SUBSTITUÍDA. O argumento `ξ = 0` permanece REVOGADO; o que exclui o
+  ramo é o GHOST DE HIGUCHI (`Higuchi ⟺ ξ ≥ r ⟺ r′ ≥ 0`; `r′ < 0` em
+  108/108 células, Higuchi 0 de 64 800 pontos, controle positivo do
+  ramo finito 400/400). Nunca citar a contagem sem a substituição.
+  Ver `docs/resultado_r13a_criterio_higuchi_fonte.md` e
+  `docs/resultado_r13b_ibb_ramo_infinito.md`.]**;
 - tudo o que não passa pela redução numérica: Erratum-01, Erratum-02,
   fundo, setor tensorial, espectador, contagem 2-DOF, Gate 1.
 

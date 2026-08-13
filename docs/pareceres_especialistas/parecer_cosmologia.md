@@ -71,7 +71,11 @@ Daí sai ṙ = H_g(ξ − r) e o ramo finito com r ∝ a³ primordial. *[opiniã
 **F2. Limite GR primordial exato e Higuchi automático.**
 `docs/resultado_ramo_finito.md` §1,3: H²/(ρ/3M_g²) = 1.0000 e
 m_T²/H² → 12 no primordial, independente de β_n, M_f, M_eff, m — logo Higuchi
-(m_T² ≥ 2H²) satisfeito com fator 6 de folga. Nível 2a com verificação numérica
+(m_T² ≥ 2H²) satisfeito com fator 6 de folga.
+*[Nota do repositório, 2026-08-13, pós-R-13a/R-13b: a folga é de
+**1.5×**, não 6 — o número vinha do cap. 06, que aplicava o bound ao
+nosso `m_T²` com ξ dinâmico; o funcional FLRW da fonte (ξ → r) dá 3.
+O `→ 12` e o veredito de Higuchi satisfeito não mudam.]* Nível 2a com verificação numérica
 (12.002 em a = 0.02). O próprio repo já classifica o corolário qualitativo como
 conhecido (Könnig 1503.07436; De Felice et al. 1404.0008), e a razão numérica
 universal como sharpening novo — classificação correta e honesta

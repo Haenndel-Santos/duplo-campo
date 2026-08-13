@@ -117,6 +117,19 @@ entreaberta continua sendo β₃ ≠ 0 (que leva para fora da F1).
 > β₃ ≠ 0 e esse reexame. **O teorema deste documento não é afetado:**
 > ele é sobre o ramo finito. *Fonte:
 > `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b).*
+>
+> **[VEREDITO — 2026-08-13, R-13a + R-13b: o reexame foi feito.]** A
+> contagem volta a **quatro fechadas**, mas com a exclusão do ramo
+> infinito **inteiramente substituída** — nunca cite a contagem sem a
+> substituição. O argumento `ξ = 0` **permanece REVOGADO**; o que
+> exclui o ramo agora é o **ghost de Higuchi**: `Higuchi ⟺ ξ ≥ r ⟺
+> r′ ≥ 0` (tradução verificada na fonte e re-verificada por CAS em rota
+> independente), e nas células IBB genuínas `r′ < 0` em 100% da
+> história em **108/108**, com Higuchi satisfeito em **0 de 64 800**
+> pontos. Logo **a porta entreaberta volta a ser uma só: β₃ ≠ 0.** O
+> teorema deste documento continua não sendo afetado. *Fontes:
+> `docs/resultado_r13a_criterio_higuchi_fonte.md`,
+> `docs/resultado_r13b_ibb_ramo_infinito.md`.*
 
 **Fila que este resultado abre:**
 

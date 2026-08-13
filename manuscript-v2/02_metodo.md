@@ -64,6 +64,29 @@ Este capítulo o expõe como resultado.
    instabilidade de gradiente por construção** — nenhum deles é
    sign(c_s²) — e foi exatamente por ali que o no-go de classe passou
    despercebido.
+8. **Ansatz temporal declarado antes de comparar sinais.** Antes de
+   comparar sinais de relação de dispersão entre fontes, **declarar o
+   ansatz temporal de cada uma**; `sign(ω²)` não é grandeza comparável
+   entre papers sem essa tradução. O caso que impôs a regra tem as duas
+   fontes do **mesmo autor**, mesmo modelo, anos consecutivos:
+   **Könnig et al. 2014** (arXiv:1407.4331) usa `X ∝ e^{iωN}` — logo
+   `ω² > 0` é **oscilatório** e `ω² < 0` é **exponencial/instável**;
+   **Könnig 2015** (arXiv:1503.07436 §IV) usa `Ξ ∝ e^{ωt}`,
+   exponencial **real** — logo `ω² > 0` é **crescimento/decaimento
+   exponencial** e `ω² < 0` é **oscilação**. O mesmo `ω² < 0` significa
+   coisas opostas nos dois, e quem importar a eq. (24) de 1503.07436
+   sem notar a troca lê estável como instável. Que é a mesma física,
+   verificado: em w = 0 a eq. (40) de 1503.07436 dá
+   `ω² = −c_{s,K}²(k/ℋ)²` com exatamente o `c_s²` que o R-12i extraiu
+   de 1407.4331 — mesmo objeto, sinal trocado **pelo ansatz**, não pela
+   dinâmica. **É a mesma família do erro do "0.28"** (cap. 07, Ato 4,
+   nota sobre o limiar): tomar por comensuráveis objetos de convenções
+   diferentes — lá o limiar de **outro modelo** lido como se fosse o
+   nosso; aqui o sinal sob **outro ansatz**; e no cap. 06 §2.1 a
+   margem de Higuchi, onde o nosso objeto tensorial era dividido por
+   uma cota escrita para o funcional da fonte. Fonte:
+   `docs/resultado_r13a_criterio_higuchi_fonte.md` §1.7 e §4.1;
+   `docs/resultado_r12i_confronto_konnig.md` §1.5.
 
 ## 2. O caso máximo: Erratum-02 em quatro lições
 
@@ -171,9 +194,17 @@ falha: Gate 3.5 (Higuchi), Gate 4(d) (corredor seguro), Gate 6
 (região viável) e Gate 2 (ghost). O que de fato derrubou a
 suficiência da F1 como cosmologia foi o **Gate 4(b) — c_s² > 0**, que
 **não está na lista**; e o Gate 3.5, apontado como o mais provável,
-passou com folga: Higuchi 400/400, m_T²/H² → 12 contra a cota 2H² —
-margem de fator 6 no primordial (`docs/resultado_ramo_finito.md` §1 e
-§3; script `auditoria/code/ramo_dinamico_correto.py`; cap. 06 §2). A
+passou: Higuchi 400/400 no benchmark, pelas duas formas equivalentes
+(R-13b §8.3). *A margem, porém, não é a que este capítulo anunciava:*
+o `m_T²/H² → 12` é o **nosso** objeto tensorial, com ξ dinâmico,
+enquanto o funcional de Higuchi em FLRW é a mesma expressão com ξ → r
+e vale **3** no primordial — passa a cota 2 com margem de **1.5×**,
+não de 6× (cap. 06 §2.1;
+`docs/resultado_r13a_criterio_higuchi_fonte.md` §3.2;
+`docs/resultado_r13b_ibb_ramo_infinito.md` §8.4;
+`docs/resultado_ramo_finito.md` §1 e §3, anotados; script
+`auditoria/code/ramo_dinamico_correto.py`). Que a correção tenha vindo
+de comparar objetos de convenções diferentes é a regra 8 em ação. A
 calibração de expectativa falhou na direção específica em que os
 gates eram cegos: não havia gate de sign(c_s²) na cascata (regra 7,
 caso (b)) e não havia c_s² na lista de riscos. É a mesma família de

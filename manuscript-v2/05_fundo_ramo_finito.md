@@ -11,14 +11,18 @@ densidade: a combinação das duas Friedmann dá uma cúbica
 m²M_eff²𝒲(r) = ρ com duas famílias:
 
 - **ramo infinito**, r ~ √ρ̃ → ∞: produz ξ < 0 (lapso negativo no
-  setor f) **no regime primordial**; descartado pelo corpus — mas o
-  descarte está **REABERTO** desde o R-12i; ver a qualificação de
-  época *e* a nota de reabertura abaixo;
+  setor f) **no regime primordial**; descartado pelo corpus — mas por
+  uma razão que **caiu**. O descarte foi reaberto pelo R-12i e está
+  **de novo fechado desde o R-13a/R-13b, por um argumento
+  inteiramente outro**: o **ghost de Higuchi**, não o zero do lapso.
+  Ver a qualificação de época, a nota de revogação *e* o bloco de
+  veredito abaixo — nesta ordem, que é a do processo;
 - **ramo finito**, r ~ β₁/ρ̃ → 0 no primordial: físico.
 
 *Qualificação de época (R-10c)* — *mantida como registro; o veredito
-"correta" que ela carrega caiu no R-12i, ver a nota de reabertura logo
-abaixo:* a exclusão está **correta**, mas a
+"correta" que ela carrega caiu no R-12i e não foi restaurado — o que
+exclui o ramo hoje é o Higuchi, ver as duas notas abaixo:* a exclusão
+está **correta**, mas a
 justificativa herdada do corpus ("dá ξ < 0", sem qualificar época)
 não. A varredura de todas as raízes reais positivas da cúbica mostra
 que essa raiz tem ξ < 0 só no primordial (ξ ≈ −9.4e3 em a = 0.001;
@@ -32,7 +36,8 @@ nosso primordial e que o repositório **nunca explorou** — o espaço de
 soluções do fundo é maior do que a cascata assumiu. *Nível 2b; fonte:
 `docs/resultado_r10c_saidas.md` Parte A.*
 
-> **[REABERTURA — 2026-08-13, R-12i]** O critério que sustenta o
+> **[REVOGAÇÃO DO CRITÉRIO `ξ = 0` — 2026-08-13, R-12i; permanece
+> revogado]** O critério que sustenta o
 > parágrafo acima — ξ cruza zero ⟹ o lapso do setor f se anula ⟹ ponto
 > singular ⟹ história contínua excluída — **está em conflito declarado
 > com a fonte primária**. Como `b = ra`, o nosso `ξ = r + dr/dN`
@@ -48,8 +53,9 @@ soluções do fundo é maior do que a cascata assumiu. *Nível 2b; fonte:
 > travessia. E a *infinite-branch bigravity* (IBB) é o **único**
 > modelo estável em todos os tempos daquele paper.
 >
-> **Estado:** a exclusão do ramo infinito está **REABERTA e exige
-> reavaliação** — não "fechada", e tampouco "aberta e viável". Ou a
+> **Estado desta nota, quando escrita:** a exclusão do ramo infinito
+> passou a **REABERTA e exigindo reavaliação** — não "fechada", e
+> tampouco "aberta e viável". Ou a
 > exclusão ganha um argumento novo que responda aos três deles, ou
 > cai. **Caveat de escopo, obrigatório em toda menção:** o IBB viável
 > exige β₄ ≠ 0, especificamente `0 < β₄ < 2β₁`, enquanto a nossa
@@ -69,12 +75,70 @@ soluções do fundo é maior do que a cascata assumiu. *Nível 2b; fonte:
 > 1503.07436 o ataca **pelo Higuchi** — e ela se dissolve pela
 > separação de canais: estabilidade de gradiente, saúde de
 > Higuchi/helicidade-0 e saúde do setor tensorial são **três perguntas
-> distintas**, e o IBB pode curar a primeira e falhar nas outras.
-> **A saída continua REABERTA:** o argumento é literatura (nível 3) e
-> **não foi traduzido** para as convenções do projeto. O teste que
-> decide está na fila. *Fontes:
+> distintas**, e o IBB pode curar a primeira e falhar nas outras. O
+> argumento era, então, literatura (nível 3) e **não traduzido** para
+> as convenções do projeto; o teste ficou na fila — **e foi
+> executado**, ver o bloco de veredito logo abaixo. *Fontes:
 > `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b);
 > `docs/posicionamento_literatura.md` §2b.*
+
+> **[VEREDITO — 2026-08-13, R-13a + R-13b] RAMO INFINITO IBB DA F1:
+> EXCLUÍDO PELO GHOST DE HIGUCHI.**
+>
+> **Qualificação obrigatória, que acompanha toda menção a esta saída.**
+> A exclusão original, pelo cruzamento `ξ = 0`, permanece
+> **REVOGADA** — a nota acima não é revertida por esta, e o quique do
+> lapso continua não sendo, por si só, uma singularidade. A exclusão
+> vigente é **independente**: nas células IBB testadas o ramo infinito
+> **viola a condição de Higuchi durante toda a história**.
+>
+> **O critério, traduzido e verificado.** O funcional de Higuchi da
+> fonte (Könnig 2015, arXiv:1503.07436, eq. 14) foi extraído na fonte e
+> traduzido para as convenções do projeto (R-13a §2), e a tradução foi
+> **re-verificada por CAS em rota independente** — três resíduos
+> simbólicos **zero**, com `β_n` e `μ` gerais e matéria de poeira
+> (R-13b §8.2). Nas nossas variáveis a cadeia fecha exata:
+> **Higuchi ⟺ `ξ ≥ r` ⟺ `r′ ≥ 0`**.
+>
+> **A medida** (R-13b §§5–6, células IBB genuínas β₂ = β₃ = 0, β₁ > 0,
+> `0 < β₄/β₁ < 2μ^{3/2}`): `r′ < 0` em **100% da história em 108/108
+> células**; Higuchi satisfeito em **0 de 64 800 pontos**; concordância
+> entre as duas formas equivalentes em **64 800/64 800**; **controle
+> positivo** no ramo finito **400/400** — o gate aprova o que deve
+> aprovar. O enunciado é **fechado**, não amostral:
+> `m_T²/H²|_{r_c} = 1 + 1/(μr_c²)` com `μr_c² > 1` em toda a janela de
+> existência, logo **1 < sup(m_T²/H²) < 2 estrito** em toda ela. E
+> **`μ` é pura reescala** no IBB genuíno: o eixo `μ` não abre exceção.
+>
+> **O que o veredito NÃO é.** *"The IBB branch is not tachyonic in the
+> tensor-mass sense; it is excluded by the Higuchi ghost condition."*
+> `m_T² > 0` em **108/108** — não há taquiônico tensorial, e isso
+> **não** o salva.
+>
+> **Complementaridade — é este o achado.** *"Within the F1
+> parameterization, the two standard cosmological branches fail for
+> complementary reasons: the finite branch violates scalar-gradient
+> stability in the early universe, while the genuine infinite branch
+> avoids that instability but violates the Higuchi condition throughout
+> its evolution."* O gradiente do IBB é **saudável segundo a fonte**
+> (§IV A de 1503.07436, que **confirma** e **não** retrata 1407.4331) —
+> canal independente, que não salva o Higuchi.
+>
+> **Ponto lógico, declarado.** O gate do R-13b **não mede gradiente**, e
+> essa cegueira continua declarada como boa prática (regra 7). Ela
+> **não bloqueia o veredito**: um ghost físico basta para excluir,
+> independentemente de o gradiente estar saudável. Um teste de `c_s²` no
+> IBB é **validação adicional desejável, não requisito** — o veredito
+> não o aguarda.
+>
+> **Proveniência:** *infinite branch / IBB* → **EXCLUÍDO**, pelo ghost
+> de Higuchi (`r′ < 0` em toda a história); *argumento antigo `ξ = 0`* →
+> **REVOGADO**, porque o zero do lapso / quique não é por si só
+> singularidade; *gradiente no IBB* → **SAUDÁVEL segundo a fonte**,
+> canal independente que não salva o Higuchi.
+> *Fontes: `docs/resultado_r13a_criterio_higuchi_fonte.md`;
+> `docs/resultado_r13b_ibb_ramo_infinito.md` §§4–6 e §8;
+> `auditoria/code/out/r13b_ibb_ramo_infinito.txt`.*
 
 *Nota numérica (lição do R-8b):* a seleção de raiz "menor positiva"
 só é segura com ρ̃ > 0; em extensões com vácuo escalar (ρ̃ efetivo
