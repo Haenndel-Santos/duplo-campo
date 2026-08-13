@@ -35,6 +35,18 @@ estrutural da classe**.
 > instabilidade de gradiente em alto redshift não é uma propriedade
 > da célula de benchmark: é uma propriedade da classe.
 
+> **[SUPERSESSÃO DE VALOR — 2026-08-13, R-12]** O **enunciado** acima
+> está **confirmado**; os **números** desta seção estão superados. Os
+> valores −1.010 (kh=30), −1.261 (kh=100) e a dispersão 6.3e−6 foram
+> medidos com Ċ₃/Ċ₂ por `np.gradient` (2ª ordem), cujo erro de
+> truncamento é amplificado pelo condicionamento da redução. Com
+> instrumento limpo (forma fechada no fundo + estêncil de 8ª ordem):
+> c_s²(kh=30) = −0.99717, c_s²(kh=100) = −0.99974, e
+> **c_s² → −1 exato** no limite sub-horizonte, com
+> `|c_s² + 1| ≤ 1.1e−7` em **108/108 células**. O desvio é **massa**
+> (m_ef² → (5/2)H²), não termo k⁴ — o "termo k⁴ do R-9a" era o mesmo
+> artefato. Ver `docs/resultado_r12_instrumento_e_cs2.md`.
+
 Nota fina: o valor medido é −1.010 em kh = 30 e −1.261 em kh = 100. A
 extrapolação para k → ∞ do par (removendo o termo ~k⁴ já identificado
 no R-9a) dá **c_s² ≈ −0.986 ≈ −1**. O valor exato −1 sugere origem
@@ -43,6 +55,9 @@ estrutural limpa — é um **candidato a teorema analítico**, e provar
 publicável, que este programa produziu. *(Se coincidir com a forma
 analítica de Könnig et al. [arXiv:1407.4331], é confirmação
 independente — [verificar] contra a fonte.)*
+*(Leitura pós-R-12: a extrapolação por termo k⁴ era indevida — mas a
+conclusão `c_s² = −1` que ela sugeria está correta, agora por medida
+direta e não por extrapolação.)*
 
 ## 3. O balanço final das saídas
 

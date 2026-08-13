@@ -1,5 +1,16 @@
 # R-10a (A1) — INSTABILIDADE DE GRADIENTE CONFIRMADA EM ALTO REDSHIFT
 
+> **[SUPERSESSÃO DE VALOR — 2026-08-13, R-12]** O enunciado deste
+> documento está **confirmado**; as tabelas de c_s² estão superadas.
+> Elas foram medidas com Ċ₃/Ċ₂ por `np.gradient` (2ª ordem), cujo
+> erro O(h²) é amplificado pelo condicionamento da redução. Valores
+> limpos (forma fechada no fundo + estêncil de 8ª ordem): em r → 0,
+> c_s²(kh=30) = −0.99717, c_s²(kh=100) = −0.99974, e **c_s² = −1
+> exato** no limite sub-horizonte; na era tardia, **+1 exato**.
+> a_cross = 0.578 (era 0.574), z_cross = 0.61 (era 0.62) — a
+> severidade do §3b **não muda**. Ver
+> `docs/resultado_r12_instrumento_e_cs2.md`.
+
 **Data:** 2026-08-13. Script: `auditoria/code/r10a_gradiente_alto_z.py`
 (saída em `out/`). Origem: item A1 do Bloco 1, prioridade máxima da
 síntese dos pareceres (`docs/pareceres_especialistas/00_sintese_cruzada.md`

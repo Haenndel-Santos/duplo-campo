@@ -1,5 +1,13 @@
 # R-10 — Consolidado: a Instabilidade de Gradiente e o Que Sobrou da F1
 
+> **[SUPERSESSÃO DE VALOR — 2026-08-13, R-12]** Enunciado
+> **confirmado**; números de c_s² superados (Ċ por `np.gradient` de
+> 2ª ordem). Limpo: **c_s² = −1 exato** em r → 0 (108/108 células,
+> |c_s²+1| ≤ 1.1e−7), **+1 exato** na era tardia, a_cross = 0.578,
+> z_cross = 0.61. As quatro saídas continuam fechadas e a era
+> instável continua cobrindo a recombinação. Ver
+> `docs/resultado_r12_instrumento_e_cs2.md`.
+
 **Data:** 2026-08-13. Scripts: `r10a_gradiente_alto_z.py`,
 `r10b_severidade_instabilidade.py`, `r10c_saidas_ramo_e_dinamico.py`,
 `r10d_screening.py` (saídas em `auditoria/code/out/`). Este documento

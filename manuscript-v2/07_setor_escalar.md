@@ -126,7 +126,8 @@ normalização congelada e halving pleno (kh=10 fino: dG=0.19<0.3).
 >
 > **Mas o setor NÃO é são em todas as épocas.** Em r ≲ 0.05 (alto
 > redshift) o escalar métrico tem **instabilidade de gradiente**,
-> c_s² ≈ −1, com cinética positiva — confirmando a previsão de
+> **c_s² = −1** (exato no limite r → 0; R-12), com cinética positiva —
+> confirmando a previsão de
 > Könnig–Akrami–Amendola–Motta–Solomon ([arXiv:1407.4331]) para o
 > *finite branch*, que este repositório registrava sem confrontar.
 
@@ -140,7 +141,8 @@ parecer de cosmologia previu ("os gates do R-7 são cegos a gradiente
 por construção"). *Fontes: `docs/resultado_r10a_gradiente.md`,
 saídas r10a/r10b.*
 
-**Severidade:** a transição ocorre em z ≈ 0.62 (β₁=1); modos com
+**Severidade:** a transição ocorre em z ≈ 0.61 (β₁=1; a_cross = 0.578
+com instrumento limpo — R-12f); modos com
 k/aH ≳ 8 na transição saem do regime linear (lnA até 32); os
 intermediários (k/aH ~ 1–7) permanecem lineares mas crescem por
 fatores de 2 a 10⁴. **A era instável cobre a recombinação.**
@@ -152,16 +154,32 @@ fatores de 2 a 10⁴. **A era instável cobre a recombinação.**
 | Ramo infinito | R-10c | fechada — ξ cruza zero, não conecta |
 | Modulação β₁(φ₋) | R-10c | fechada — age ~3 ordens tarde demais |
 | Screening de Vainshtein | R-10d | fechada — δ_screen ≈ 20–60; *o λ cancela*, não há escala linear protegida |
-| Forma-β (β₀, β₂, β₄, μ) | R-11 | fechada — **c_s² = −1.010 ± 6e−6 em 108/108 células** |
+| Forma-β (β₀, β₂, β₄, μ) | R-11 + R-12g | fechada — **c_s² = −1 em 108/108 células**, com `\|c_s²+1\| ≤ 1.1e−7` |
 
-**NO-GO DE CLASSE POR GRADIENTE (R-11):** na classe F1 (β₃ = 0,
-matéria só em g, ramo finito), c_s² → −1 em r → 0 para *qualquer*
-escolha de β₀, β₂, β₄, μ — dispersão nula sobre quatro parâmetros
-variados em faixas de 20×, com calibrador exato em todas as células.
-Não é propriedade da célula de benchmark: é **da classe**. A
-extrapolação k → ∞ dá c_s² ≈ −1 exato, o que sugere origem estrutural
-limpa e um teorema a provar analiticamente.
-*Fonte: `docs/resultado_r11_nogo_gradiente.md`.*
+**NO-GO DE CLASSE POR GRADIENTE (R-11, valor fixado no R-12):** na
+classe F1 (β₃ = 0, matéria só em g, ramo finito),
+
+> **c_s² = −1 exatamente em r → 0**, para *qualquer* escolha de β₀, β₂,
+> β₄, μ — 108/108 células, `|c_s² + 1| ≤ 1.1e−7`.
+
+Não é propriedade da célula de benchmark: é **da classe**. O desvio
+residual é **massa** (ω²/H² = −kh² + 5/2 + O(r)) — não há termo k⁴ nem
+estrutura em k. Na era tardia o mesmo modo tem **c_s² = +1 exato**.
+*Fontes: `docs/resultado_r11_nogo_gradiente.md`,
+`docs/resultado_r12_instrumento_e_cs2.md`.*
+
+**[ERRATUM-03, 2026-08-13]** Os valores numéricos originais do R-11
+(−1.010 ± 6e−6 em kh = 30) e as tabelas de c_s² do R-9a/R-10a/R-10b
+estavam contaminados: Ċ₃/Ċ₂ eram calculados por `np.gradient` (2ª
+ordem), e o erro O(h²) é amplificado pelo condicionamento da redução
+(cond ≈ 1e11 em a = 0.01). A causa foi **demonstrada** — o estêncil de
+2ª ordem reproduz a tabela antiga dígito a dígito e move com h,
+enquanto a 8ª ordem é estável em 14 dígitos. **O enunciado não muda; o
+valor fica mais limpo.** Duas regras novas entram no cap. 02:
+derivadas de fundo em forma fechada (ou ordem ≥ 8 com teste de
+refino), e *declaração de cegueira* de todo gate — o calibrador do
+espectador δχ deu 1.00000 em todos os pontos justamente porque é cego
+ao canal Ċ.
 
 **O contraste com o no-go antigo importa.** O anterior
 (fantasma/taquião) era artefato de bug e caiu quando o instrumento foi
