@@ -424,6 +424,61 @@ absorver antes de ser submetido:**
   então o alvo do reexame é o ramo infinito da F1 **com β₄ ligado**, e
   não a célula atual.
 
+> **[NOTA DATADA — 2026-08-13, desfecho PARCIAL do R-b]**
+> O §1.6 acima **não muda**: continua correto e é o registro do
+> confronto com 1407.4331. Esta nota só acrescenta o que aconteceu
+> *depois* dele.
+>
+> **(1) A verificação foi feita.** O autor abriu **arXiv:1503.07436**
+> na fonte. Atribuição: **VERIFICADO-NA-FONTE — leitura do autor**,
+> literatura = **nível 3**; **não** é derivação nem medida deste
+> repositório, e **não** é nível 1/2a/2b. O registro completo, com os
+> cinco fatos, está em `docs/posicionamento_literatura.md` §2b, R-b,
+> bloco "Desfecho parcial".
+>
+> **(2) Existe um argumento independente contra o IBB.** Em cosmologia
+> **expansiva**, 1503.07436 exige `r` **crescente** para satisfazer a
+> condição associada ao Higuchi e manter sãos helicidade-0 e
+> helicidade-2; e define o *infinite branch* como aquele em que `r`
+> parte de infinito e **decresce**. Colisão direta: `r′ > 0` exigido
+> vs. `r′ < 0` do ramo. O paper registra ainda que o IBB fora
+> identificado antes como livre das instabilidades escalares
+> lineares, mas ressalva **violação do Higuchi no limite inicial** em
+> trabalhos anteriores e um **ghost em helicidade-2 em tempos
+> iniciais**.
+>
+> **(3) A correção que isto obriga.** O item (a) do R-b acima dizia
+> que as duas linhas do `posicionamento_literatura.md` sobre
+> 1503.07436 eram **contraditórias**. **Estava errado.** São o mesmo
+> critério em ramos diferentes (finito: r′ ≥ 0, passa; infinito:
+> r′ < 0, não passa) — **consistentes**. A tensão real é **entre as
+> duas fontes**, e dissolve-se pela **separação de canais**:
+> estabilidade de **gradiente** ≠ saúde de **Higuchi/helicidade-0** ≠
+> saúde do **setor tensorial**. O "IBB estável" de 1407.4331 é o canal
+> de gradiente. O IBB pode curar o gradiente que matou o ramo finito e
+> ainda assim falhar por outro canal.
+>
+> **(4) O que falta — e por isso o desfecho é parcial.** O argumento
+> de 1503.07436 **não foi traduzido para as convenções deste
+> repositório**. O teste que fecharia:
+>
+> > Pegar uma célula IBB genuína — **β₂ = β₃ = 0, β₁ > 0,
+> > 0 < β₄ < 2β₁** —, seguir o ramo infinito e medir, **na convenção
+> > do projeto**: `r′(N)`, `m_T²/H²`, e o funcional/inequação de
+> > Higuchi usado em 1503.07436. Se a tradução fechar e der `r′ < 0`
+> > junto com violação do Higuchi na era inicial, o veredito pode ser
+> > elevado de `IBB REABERTO` para `IBB EXCLUÍDO NA F1 PELO HIGUCHI,
+> > NÃO PELO ZERO DO LAPSO`.
+>
+> **(5) Estado: o ramo infinito CONTINUA REABERTO.** O R-12i derrubou
+> o argumento específico do repositório (`ξ = 0 ⟹ singularidade
+> física`) e ele **continua derrubado** — nada nesta nota o
+> ressuscita. O argumento de 1503.07436 é **outro**, é da literatura,
+> e está pendente de tradução. **Esta ordem é deliberada e preserva o
+> R-12i:** o corpus admitiu que a *primeira* razão para excluir o ramo
+> estava errada, e só *depois* foi verificar se havia uma *segunda*
+> razão válida. Os itens (b) e (c) do R-b seguem abertos.
+
 ---
 
 ## 7. Fronteiras deste documento

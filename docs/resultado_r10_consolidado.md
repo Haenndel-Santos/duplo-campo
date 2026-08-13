@@ -28,11 +28,16 @@
 > **Estado:** nem "fechada" nem "aberta e viável" — **reaberta,
 > exigindo reavaliação**, com o alvo no ramo infinito da F1 **com
 > β₄ ≠ 0** (o IBB viável exige `0 < β₄ < 2β₁`; a nossa célula mínima
-> tem β₄ = 0, logo não é ela o alvo). **Não há hoje argumento
-> sustentado contra o IBB no corpus**: o candidato ("fantasma de
-> Higuchi eterno", 1503.07436) aparece em duas linhas contraditórias
-> de `docs/posicionamento_literatura.md`, nenhuma verificada na fonte —
-> verificá-lo é o caminho mais barato para decidir. **O que não muda:**
+> tem β₄ = 0, logo não é ela o alvo). **[ATUALIZADO 2026-08-13 —
+> 1503.07436 verificado na fonte pelo autor.]** Há um argumento
+> independente candidato, de outra natureza: Higuchi em universo em
+> expansão exige **r′ > 0**, e o ramo infinito tem **r′ < 0**. As duas
+> linhas do `posicionamento_literatura.md` sobre esse paper **não eram
+> contraditórias** — são o mesmo enunciado em ramos diferentes; a
+> tensão é entre as duas fontes e dissolve-se pela separação de canais
+> (gradiente ≠ Higuchi/helicidade-0 ≠ setor tensorial). **Segue
+> REABERTA:** nível 3, sem tradução para as nossas convenções; o teste
+> está na fila. **O que não muda:**
 > o no-go de gradiente do ramo finito e as outras três saídas
 > (modulação β₁(φ₋) — R-10c; screening — R-10d; forma-β — R-11)
 > seguem de pé. *Fonte:

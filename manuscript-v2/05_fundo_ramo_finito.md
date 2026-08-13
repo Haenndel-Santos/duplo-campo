@@ -54,13 +54,27 @@ soluções do fundo é maior do que a cascata assumiu. *Nível 2b; fonte:
 > cai. **Caveat de escopo, obrigatório em toda menção:** o IBB viável
 > exige β₄ ≠ 0, especificamente `0 < β₄ < 2β₁`, enquanto a nossa
 > célula mínima tem β₄ = 0 — o alvo do reexame é o ramo infinito da F1
-> **com β₄ ligado**, e não a célula atual. Registre-se também que
-> **não há hoje argumento sustentado contra o IBB no corpus**: o
-> candidato ("fantasma de Higuchi eterno", atribuído a 1503.07436)
-> aparece em duas linhas contraditórias de
-> `docs/posicionamento_literatura.md`, nenhuma verificada na fonte —
-> verificar 1503.07436 é o caminho mais barato para decidir. *Fonte:
-> `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b).*
+> **com β₄ ligado**, e não a célula atual.
+>
+> **[ATUALIZADO 2026-08-13 — 1503.07436 verificado na fonte pelo
+> autor.]** Existe agora um **argumento independente candidato**, de
+> natureza diferente do nosso: naquele paper, saúde de Higuchi em
+> universo em expansão exige **r′ > 0**, enquanto o ramo infinito é
+> definido por **r′ < 0** — colisão direta, e nada a ver com o zero do
+> lapso. Cai também a caracterização anterior de que as duas linhas do
+> `posicionamento_literatura.md` sobre esse paper eram contraditórias:
+> são o **mesmo enunciado aplicado a ramos diferentes** (finito, r′ ≥ 0,
+> passa; infinito, r′ < 0, não passa). A tensão real é **entre as duas
+> fontes** — 1407.4331 declara o IBB estável **no canal de gradiente**,
+> 1503.07436 o ataca **pelo Higuchi** — e ela se dissolve pela
+> separação de canais: estabilidade de gradiente, saúde de
+> Higuchi/helicidade-0 e saúde do setor tensorial são **três perguntas
+> distintas**, e o IBB pode curar a primeira e falhar nas outras.
+> **A saída continua REABERTA:** o argumento é literatura (nível 3) e
+> **não foi traduzido** para as convenções do projeto. O teste que
+> decide está na fila. *Fontes:
+> `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b);
+> `docs/posicionamento_literatura.md` §2b.*
 
 *Nota numérica (lição do R-8b):* a seleção de raiz "menor positiva"
 só é segura com ρ̃ > 0; em extensões com vácuo escalar (ρ̃ efetivo

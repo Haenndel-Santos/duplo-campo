@@ -77,11 +77,20 @@ justificada no corpus**
 > inexplorada" que esta Parte A já registrava é justamente o objeto
 > desse reexame.
 >
-> **Não há hoje argumento sustentado contra o IBB no corpus.** O
-> candidato — o "fantasma de Higuchi eterno" atribuído a 1503.07436 —
-> aparece em `docs/posicionamento_literatura.md` em **duas linhas
-> contraditórias**, e **nenhuma** foi verificada na fonte. Verificar
-> 1503.07436 na fonte é o caminho mais barato para decidir.
+> **[ATUALIZADO 2026-08-13 — 1503.07436 verificado na fonte pelo
+> autor.]** Existe um **argumento independente candidato**, e ele não
+> é o nosso: saúde de Higuchi em universo em expansão exige **r′ > 0**,
+> enquanto o ramo infinito é definido por **r′ < 0**. Cai a
+> caracterização anterior desta nota, de que as duas linhas do
+> `posicionamento_literatura.md` sobre esse paper eram contraditórias
+> — são o mesmo enunciado em ramos diferentes, e são consistentes. A
+> tensão real é entre as **duas fontes** (1407.4331 declara o IBB
+> estável *no canal de gradiente*; 1503.07436 o ataca *pelo Higuchi*),
+> e dissolve-se pela separação de canais: gradiente,
+> Higuchi/helicidade-0 e setor tensorial são perguntas distintas.
+> **A exclusão continua REABERTA:** o argumento é nível 3 e ainda não
+> foi traduzido para as convenções do projeto — esse teste é o próximo
+> item da fila. Ver `docs/posicionamento_literatura.md` §2b.
 >
 > **O que esta nota NÃO move:** o no-go de gradiente do **ramo finito**
 > continua de pé, e as outras três saídas (modulação β₁(φ₋) — Parte B;

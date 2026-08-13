@@ -145,13 +145,29 @@ ADENDO 4 (2026-08-13 — PARECERES + BLOCO 0 + BLOCO 1; commits ate
    OBRIGATORIO: o IBB viavel exige beta_4 != 0 (0 < beta_4 < 2
    beta_1), enquanto a nossa celula minima tem beta_4 = 0 — o alvo
    do reexame e' o ramo infinito da F1 COM beta_4 LIGADO, nao a
-   celula atual. NAO HA HOJE ARGUMENTO SUSTENTADO CONTRA O IBB NO
-   CORPUS: o candidato ("fantasma de Higuchi eterno", 1503.07436)
-   aparece em duas linhas contraditorias de
-   docs/posicionamento_literatura.md e nenhuma foi verificada na
-   fonte — verificar 1503.07436 e' o caminho mais barato para
-   decidir. NAO MUDA: o no-go de gradiente do ramo finito segue de
-   pe. Fonte: docs/resultado_r12i_confronto_konnig.md §1.6 e §6.
+   celula atual.
+   [ATUALIZADO 2026-08-13 — 1503.07436 VERIFICADO NA FONTE pelo
+   autor.] Ha um ARGUMENTO INDEPENDENTE CANDIDATO, e nao e o nosso:
+   saude de Higuchi em universo em expansao exige r' > 0, enquanto o
+   ramo infinito e definido por r' < 0. Cai a frase anterior sobre
+   "duas linhas contraditorias" no posicionamento_literatura: elas sao
+   o MESMO enunciado em ramos diferentes (finito r' >= 0 passa;
+   infinito r' < 0 nao passa) e sao consistentes. A tensao real e
+   ENTRE AS DUAS FONTES — 1407.4331 declara o IBB estavel no canal de
+   GRADIENTE; 1503.07436 o ataca pelo HIGUCHI — e dissolve-se pela
+   separacao de canais: gradiente, Higuchi/helicidade-0 e setor
+   tensorial sao TRES perguntas distintas. SEGUE REABERTA: e nivel 3 e
+   NAO foi traduzido para as convencoes do projeto.
+   PROXIMO TESTE (o de maior retorno por custo): celula IBB genuina
+   (beta_2 = beta_3 = 0, beta_1 > 0, 0 < beta_4 < 2 beta_1), seguir o
+   ramo infinito e medir na nossa convencao r'(N), m_T^2/H^2 e o
+   funcional de Higuchi de 1503.07436. ARMADILHA: ramo_dinamico_
+   correto.py seleciona a raiz MENOR POSITIVA — selecao errada para o
+   ramo infinito; usar continuacao (licao do R-8b). Vale a regra 6:
+   r' em forma fechada ou estencil >= 8, nunca np.gradient.
+   NAO MUDA: o no-go de gradiente do ramo finito segue de pe.
+   Fonte: docs/resultado_r12i_confronto_konnig.md §1.6 e §6;
+   docs/posicionamento_literatura.md §2b.
 
 O QUE ISSO SIGNIFICA: cai a SUFICIENCIA da implementacao F1 como
 cosmologia. NAO cai a TDCP como hipotese, nem os erratums, nem o

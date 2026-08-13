@@ -174,7 +174,7 @@ três fechadas, uma REABERTA:**
 
 | Saída | Teste | Estado |
 |---|---|---|
-| Ramo infinito | R-10c → **REABERTA** (R-12i) | a exclusão por ξ cruzar zero **não se sustenta**: é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos. Reexame pendente, e o alvo é o ramo infinito **com β₄ ≠ 0** (o IBB viável exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0) |
+| Ramo infinito | R-10c → **REABERTA** (R-12i) | a exclusão por ξ cruzar zero **não se sustenta**: é o quique de `b` que 1407.4331 §II/§VI trata e defende como físico, com três argumentos. Reexame pendente, e o alvo é o ramo infinito **com β₄ ≠ 0** (o IBB viável exige 0 < β₄ < 2β₁; a célula mínima tem β₄ = 0). **[2026-08-13]** Existe um argumento independente **candidato** — Higuchi via `r′ < 0` (1503.07436, verificado na fonte pelo autor) —, **pendente de tradução para as convenções do projeto**; a saída segue REABERTA |
 | Modulação β₁(φ₋) | R-10c | fechada — age ~3 ordens tarde demais |
 | Screening de Vainshtein | R-10d | fechada — δ_screen ≈ 20–60; *o λ cancela*, não há escala linear protegida |
 | Forma-β (β₀, β₂, β₄, μ) | R-11 + R-12g | fechada — **c_s² = −1 em 108/108 células**, com `\|c_s²+1\| ≤ 1.1e−7` |
@@ -198,13 +198,30 @@ não pode ser citada:** o IBB viável exige β₄ ≠ 0, especificamente
 `0 < β₄ < 2β₁`, enquanto a nossa célula mínima tem β₄ = 0 — o alvo do
 reexame é o ramo infinito da F1 **com β₄ ligado**, não a célula atual.
 O estado correto não é "fechada" nem "aberta e viável": é **reaberta,
-exigindo reavaliação**. Existe um possível argumento independente
-contra o IBB — o "fantasma de Higuchi eterno" atribuído a 1503.07436 —
-mas ele aparece em `docs/posicionamento_literatura.md` em **duas
-linhas contraditórias**, nenhuma verificada na fonte; **hoje não há
-argumento sustentado contra o IBB no corpus**, e o caminho mais barato
-para decidir é verificar 1503.07436 na fonte. *Fonte:
-`docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b).*
+exigindo reavaliação**.
+
+**[2026-08-13 — 1503.07436 verificado na fonte pelo autor.]** A
+caracterização anterior desta linha ("duas linhas contraditórias em
+`docs/posicionamento_literatura.md`, nenhuma verificada na fonte")
+**estava errada e fica retratada**: as duas linhas são o mesmo
+critério em ramos diferentes (finito, `r′ ≥ 0`, passa; infinito,
+`r′ < 0`, não passa) — consistentes entre si. O que a fonte dá é um
+argumento **independente** contra o IBB: em cosmologia expansiva `r`
+tem de **crescer** para satisfazer a condição associada ao Higuchi e
+manter sãos helicidade-0 e helicidade-2, ao passo que o *infinite
+branch* é definido como aquele em que `r` parte de infinito e
+**decresce**. A tensão com o "IBB estável" de 1407.4331 dissolve-se
+pela **separação de canais**: estabilidade de **gradiente** ≠ saúde de
+**Higuchi/helicidade-0** ≠ saúde do **setor tensorial** — o IBB pode
+curar o gradiente e ainda assim falhar por outro canal. **Isto não
+fecha a saída.** É literatura (nível 3, leitura do autor na fonte),
+**não traduzida** para as convenções deste projeto; o argumento
+próprio (`ξ = 0`) continua derrubado, e a saída continua **REABERTA**
+até rodar o teste de tradução (célula IBB genuína `β₂ = β₃ = 0`,
+`β₁ > 0`, `0 < β₄ < 2β₁`; medir `r′(N)`, `m_T²/H²` e o funcional de
+Higuchi na nossa convenção). *Fontes:
+`docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b, nota
+datada); `docs/posicionamento_literatura.md` §2b R-b.*
 
 **NO-GO DE CLASSE POR GRADIENTE (R-11, valor fixado no R-12):** na
 classe F1 (β₃ = 0, matéria só em g, ramo finito),

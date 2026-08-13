@@ -85,7 +85,13 @@ integral da versão publicada, conferido por duas rotas independentes".
 Coluna **Nível**: `V-12i` = verificado no texto integral da fonte
 (R-12i); `V` = verificado na fonte pela v1, com marca registrada lá;
 `B` = nível-de-busca declarado na v1; `n/r` = não registrado na v1,
-**tratar como B**.
+**tratar como B**; **`V-1503`** = **VERIFICADO-NA-FONTE pelo autor**
+(leitura direta de arXiv:1503.07436, 2026-08-13) — ver R-b. Este último
+é o nível mais forte de *literatura* que este arquivo carrega, e
+continua sendo **nível 3 do projeto**: o que foi verificado é o que a
+fonte diz, **não** que o enunciado dela valha nas convenções deste
+repositório. A tradução para as nossas convenções **não foi feita** e
+está registrada como item de fila (§5, item 2).
 
 ### 1.1 Bloco A — o setor escalar depois do confronto (R-12i)
 
@@ -103,14 +109,14 @@ arquivo.
 | **108/108 células** — insensibilidade de `c_s²(r→0)` a (β₀, β₂, β₄, μ) | **Regra publicada:** no passado, todo modelo multiparamétrico viável de ramo finito **reduz ao modelo de interação de ordem mais baixa** (β₁β₂, β₁β₃, β₁β₂β₃ → β₁). Como o R-12b elimina β₁ pela Friedmann (logo β₁ ≠ 0 sempre), as 108 células estão **dentro do escopo da regra** | **Confirmação numérica de uma regra publicada** — mesma função que o ramo algébrico já cumpre nesta tabela: **âncora de validação do método**, não resultado novo | **V-12i** |
 | **Reprodução independente dos dois extremos exatos** por maquinaria distinta (Schur/Faddeev–Jackiw ⟶ 2 DOF vs. a redução 10→2 deles) | Não é afirmação sobre a literatura: é a concordância **exata** de duas rotas independentes em `−1`, no coeficiente linear e em `+1` | **Sólida — como validação de MÉTODO, não como física.** Vale um parágrafo do paper; não vale uma reivindicação de novidade | **V-12i** |
 | A patologia primordial da F1 é de **gradiente** (∝ k²), com cinética positiva | Mesma doença, mesmo modo, mesmo observável: 1403.5679 (λ₁ = −k²(2w₁+1)); 1407.4331 §V (o sistema 2-DOF reduzido, com ω imaginário = "velocidade do som imaginária"). **O limiar de r exige qualificação de modelo:** a raiz exata √((√5−2)/3) = **0.28052** é do modelo **β₁-puro (β₀ = 0)**, eq. (69); no **nosso** modelo (β₀β₁, λ = 1) a eq. (73) dá **0.21448**, contra o nosso **0.20793** — **3.1%**, não os 34.9% da comparação errada | **Já conhecido.** A v1 dizia "patologia de natureza distinta" — isso valia para o *taquião de massa*, que caiu com o Erratum-02 (ver §1.3). Hoje a nossa doença **é** a doença deles. A comparação explícita continua obrigatória no paper, mas com o sinal invertido: não "a nossa é diferente", e sim "a nossa é a mesma, e reproduz o número" | **V-12i** |
-| **Exclusão do ramo infinito** (nosso critério: ξ cruza zero ⟹ lapso do setor f se anula ⟹ ponto singular) | **EM CONFLITO DECLARADO COM A FONTE.** `ξ = r + dr/dN` e `ξ = X/a` com `X ≡ ḃ/ℋ`: **mesmo sinal, mesmo zero**. O §II/§VI trata esse quique de `b` **explicitamente** e o defende como físico, com três argumentos declarados. E o *infinite-branch bigravity* (IBB) é o **único** modelo estável em todos os tempos do paper. A v1 registrava outra rota (`r′<0 ⇒ fantasma de Higuchi eterno`, Könnig 1503.07436) que **aponta no sentido oposto ao §VI** e nunca foi verificada na fonte | **Não é "consistente, forma diferente" (v1). É conflito.** É a porta mais cara que o repositório fechou. Ver §2b, risco **R-b** | **V-12i** para 1407.4331; **não verificado** para 1503.07436 |
+| **Exclusão do ramo infinito** (nosso critério: ξ cruza zero ⟹ lapso do setor f se anula ⟹ ponto singular) | **EM CONFLITO DECLARADO COM A FONTE.** `ξ = r + dr/dN` e `ξ = X/a` com `X ≡ ḃ/ℋ`: **mesmo sinal, mesmo zero**. O §II/§VI trata esse quique de `b` **explicitamente** e o defende como físico, com três argumentos declarados. E o *infinite-branch bigravity* (IBB) é o **único** modelo estável em todos os tempos do paper — no **canal de gradiente/escalar linear**. **Verificação na fonte, 2026-08-13 (autor, arXiv:1503.07436):** para cosmologias **em expansão**, `r` deve **crescer** ao longo da evolução para satisfazer a condição associada ao **Higuchi** e manter sãos os setores **helicidade-0 e helicidade-2**; e o *infinite branch* é definido ali precisamente como aquele em que `r` parte de valores infinitamente grandes no passado e **decresce** com o tempo. Logo `r′ < 0` no ramo infinito colide diretamente com a exigência `r′ > 0`. O mesmo paper registra que o IBB fora identificado antes como **livre das instabilidades escalares lineares**, mas ressalva que trabalhos anteriores encontraram **violação do Higuchi no limite inicial** e que foi reportado um **ghost no setor helicidade-2 em tempos iniciais** | **Não é "consistente, forma diferente" (v1). É conflito** — mas o conflito é **entre as duas fontes**, não dentro deste documento (ver R-b: a correção de 2026-08-13). O nosso argumento específico (`ξ = 0 ⟹ singularidade física`) **continua derrubado** pelo R-12i. Existe agora um argumento **independente e diferente** (`r′ < 0 ⟹ problema de Higuchi/ghost`), **ainda não traduzido para as convenções do repositório**. Estado: **ramo infinito REABERTO**. Ver §2b, risco **R-b** | **V-12i** para 1407.4331; **V-1503** para 1503.07436 (leitura do autor na fonte; **tradução para as convenções do projeto NÃO feita**) |
 
 ### 1.2 Bloco B — o restante da tabela-mestra (herdado da v1)
 
 | Nosso resultado | Estado na literatura | Veredito de novidade | Nível |
 |---|---|---|---|
 | Fundo do ramo finito (limite GR primordial exato, r: 0 → r_∞) | Ramo finito padrão (Könnig et al. 1407.4331 — mesma convenção; Akrami et al. 1503.07521). **Confirmado ao nível de identidade pelo R-12i**: `r ≡ b/a` (eq. 17), normalização β letra por letra (eq. 16), `M_f = 1` ⟺ `μ = 1, M_ef² = 1/2`, e o nosso `dr/dN = −3ρ̃/ρ̃′` **é** a eq. (21)+(22) deles — *os fundos são o mesmo fundo* | **Já conhecido** — e agora sabemos *exatamente* o quanto | **V-12i** |
-| Higuchi automático no ramo finito | **Provado em geral**: viabilidade ⇒ r′ ≥ 0 ⇒ sem fantasma de Higuchi (Könnig 1503.07436); tb. De Felice et al. 1404.0008 | **Já conhecido** — citar, não reivindicar. *Atenção:* 1503.07436 aparece em duas linhas deste documento com leituras que precisam ser conferidas **juntas** (esta e a do ramo infinito) — ver R-b | `n/r` |
+| Higuchi automático no ramo finito | **Provado em geral**: viabilidade ⇒ r′ ≥ 0 ⇒ sem fantasma de Higuchi (Könnig 1503.07436); tb. De Felice et al. 1404.0008. **Verificado na fonte pelo autor (2026-08-13):** em cosmologia **expansiva**, `r` tem de **crescer** para satisfazer a condição associada ao Higuchi e manter sãos helicidade-0 e helicidade-2 | **Já conhecido** — citar, não reivindicar. **Correção de 2026-08-13:** o corpus registrava que 1503.07436 aparece em "duas linhas contraditórias" deste documento. **Isso estava errado.** As duas linhas (esta e a do ramo infinito) são o **mesmo enunciado aplicado a ramos diferentes**: o ramo finito tem r′ ≥ 0 e passa; o ramo infinito tem r′ < 0 e não passa. São **consistentes entre si** — ver R-b | **V-1503** (o enunciado da fonte; a tradução para as nossas convenções **não** foi feita) |
 | **m_T²/H² → 12** universal no primordial (setor tensorial) | Nenhuma razão universal publicada (Fasiello–Tolley 1206.3852/1308.1647, Könnig, Cusin et al., Akrami et al. verificados — nada encontrado). **1407.4331 é setor escalar: não toca esta linha** | **Novo** (sharpening quantitativo) — **e é o único item do arquivo que o arco R-10→R-12i não moveu.** Mas a qualificação por época deixou de ser opcional: a fórmula geral é `m_T²/H² → 3(4+3w)`, **12 em matéria e 15 em radiação** — e a era genuinamente primordial é de **radiação**, de modo que os rótulos "primordial" do corpus significam, de fato, "era de matéria". Ver D3 (§2) | `V` para a busca nas 4 fontes; **`B`** para a conclusão de ausência |
 | Degenerescência cinética no ramo algébrico | É a fenomenologia publicada do "branch 1": cinética evanescente, strong coupling, sem grau extra no linear (1111.1983, 1202.1986, 1403.5679); primos em massive gravity: fantasma não-linear escondido (1111.4107, 1206.2080) | **Já conhecido — usar como âncora de validação do método.** *Estado interno:* o ramo algébrico está **deferido** (cap. 07 Ato 4, "pendências declaradas") e não foi reexaminado com o instrumento limpo; o veredito de literatura não depende do nosso número | `n/r` |
 | Classe β_n(φ) em bigravity | Existe como classe: chameleon bigravity = TODOS os β com fator global f(φ) (De Felice–Mukohyama–Uzan 1702.04490; +Oliosi 1711.04655); MVMG = V(ψ)·potencial, métrica fixa (Huang–Piao–Zhou 1206.5678); possibilidade de coeficientes individuais declarada desde 2012, nunca estudada | **Subclasse mínima (β₁ único) é primeiro estudo dedicado.** Caveat da síntese dos pareceres (§4.2, item 6): a escolha "β₁ único" **não é radiativamente estável** — os e_n se misturam sob renormalização — e ela sustenta *simultaneamente* o fator atenuante do Gate 2A e a novidade reivindicada | `n/r` (a existência da classe); `B` (o "nunca estudada") |
@@ -288,41 +294,139 @@ rodapé) e defende como **físico**, por três razões declaradas:
    feita para deixar a ação diferenciável na travessia).
 
 **Por que é o risco mais caro.** O IBB é o **único modelo estável em
-todos os tempos** daquele paper — fundo viável, sem constante
+todos os tempos** daquele paper — e, desde 2026-08-13, esta frase só
+pode ser escrita **com o canal declarado**: 1407.4331 é **setor
+escalar** (ver §1.2, linha do `m_T²/H²`), logo "estável" ali significa
+**estável no canal de gradiente**. Ver o "Desfecho parcial" abaixo,
+fato 5. Com essa qualificação: fundo viável, sem constante
 cosmológica explícita para g, com r decrescendo de ∞ a um valor
 finito, e estabilidade garantida por `r_c > 1` em toda a faixa
 `0 < β₄ < 2β₁`. Ou seja: o repositório fechou, com um argumento que a
 fonte primária rejeita nominalmente, exatamente a porta que a fonte
 primária declara ser a saída.
 
-**Não resolvido aqui — não há elementos.** O que fica registrado é o
-que decidiria:
+**Não resolvido aqui.** O item (a) abaixo **foi executado em
+2026-08-13** e está registrado logo em seguida; (b) e (c) continuam
+abertos.
 
-- **(a) A tensão interna do próprio corpus.** Este documento tem
-  **duas** linhas sobre 1503.07436: uma diz "viabilidade ⇒ r′ ≥ 0 ⇒
-  sem fantasma de Higuchi", a outra diz "r′ < 0 ⇒ fantasma de Higuchi
-  eterno" **no ramo infinito**. Mas o IBB do §VI tem `r` **decrescendo**
-  (r′ < 0) e é declarado estável em todos os tempos. **As duas
-  leituras não podem estar ambas certas como escritas.** Nenhuma das
-  duas foi verificada na fonte. *Este é o teste mais barato do
-  repositório inteiro: abrir 1503.07436 e ler o que ele diz sobre o
-  ramo infinito.* Se ele sustentar o fantasma de Higuchi eterno, o
-  repositório tem um argumento — publicado, e **não** o nosso ξ — para
-  excluir o IBB; se não sustentar, a exclusão fica sem apoio algum.
+- **(a) — EXECUTADO em 2026-08-13.** *Abrir 1503.07436 na fonte.* Ver
+  o bloco "**Desfecho parcial**" abaixo. Ele resolve a pendência, mas
+  **não** do modo como ela estava escrita — e a caracterização antiga
+  ("duas linhas contraditórias") era **errada** e está corrigida ali.
 - **(b) O reexame do fundo, com o escopo certo.** O IBB viável exige
   **β₄ ≠ 0** (`0 < β₄ < 2β₁`), enquanto a nossa célula mínima tem
   β₄ = 0. O alvo do reexame é, portanto, o **ramo infinito da F1 com
   β₄ ligado** — não a célula atual. O R-10c Parte A já registrava "uma
   **segunda solução tardia viável** (r ≈ 2.23, ξ ≈ 2.23, H² > 0),
   completamente inexplorada pelo repositório": é essa.
-- **(c) O ônus argumentativo.** Se a exclusão for mantida, ela precisa
-  de um argumento **novo** que responda aos três deles, um a um.
-  Repetir "ξ < 0" não responde a nenhum.
+- **(c) O ônus argumentativo.** Se a exclusão for mantida **pelo nosso
+  critério ξ**, ela precisa de um argumento **novo** que responda aos
+  três deles, um a um. Repetir "ξ < 0" não responde a nenhum. *Isto
+  não muda com (a):* o argumento de 1503.07436 é de **outra** natureza
+  e não é o nosso ξ ressuscitado.
 
-**Enquanto (a), (b) e (c) não forem feitos, o enunciado honesto é:**
-*"o repositório excluiu o ramo infinito por um critério que a fonte
-primária examina e rejeita; a exclusão está, hoje, sem apoio na
-literatura."*
+#### Desfecho parcial — 2026-08-13: 1503.07436 aberto na fonte
+
+**Disciplina de atribuição, antes de tudo.** O que segue é
+**VERIFICADO-NA-FONTE — leitura do autor** de arXiv:1503.07436
+(nível `V-1503` do §1). **Não** é derivação deste repositório, **não**
+é medida interna, e **não** é nível 1, 2a nem 2b do projeto: continua
+sendo **literatura = nível 3**, agora com acesso direto ao texto. E há
+uma segunda fronteira, tão importante quanto: **a tradução dos
+enunciados da fonte para as convenções deste repositório NÃO foi
+feita.** Enquanto ela não for, nada abaixo pode ser usado como
+resultado do projeto.
+
+**O que a fonte diz (cinco fatos, e só estes cinco):**
+
+1. Para cosmologias **em expansão**, a razão `r = b/a` deve
+   **crescer** ao longo da evolução para satisfazer a condição
+   associada ao **Higuchi** e manter sãos os setores **helicidade-0** e
+   **helicidade-2**.
+2. O **infinite branch** é definido ali precisamente como aquele em
+   que `r` parte de valores infinitamente grandes no passado e
+   **decresce** com o tempo.
+3. Logo há **colisão direta**: saúde/Higuchi em universo expansivo
+   ⟹ **r′ > 0**; infinite branch ⟹ **r′ < 0**.
+4. O mesmo paper registra que o IBB havia sido identificado antes como
+   **livre das instabilidades escalares lineares**, mas ressalva que
+   trabalhos anteriores encontraram **violação do Higuchi no limite
+   inicial** e que foi reportado um **ghost no setor helicidade-2 em
+   tempos iniciais**.
+5. **Consequência conceitual — três perguntas distintas e não
+   intercambiáveis:** estabilidade de **gradiente** ≠ saúde de
+   **Higuchi/helicidade-0** ≠ saúde do **setor tensorial**. É
+   perfeitamente possível o IBB curar o gradiente que matou o ramo
+   finito e **ainda assim** falhar por outro canal.
+
+**A CORREÇÃO — o corpus registrava isto errado.** Até hoje este
+documento (e o cap. 07, o cap. 09, o R-10c e o R-10 consolidado)
+afirmava que as **duas linhas sobre 1503.07436 são contraditórias
+entre si**. **Não são.** Elas são o **mesmo enunciado aplicado a ramos
+diferentes**:
+
+| Ramo | Sinal de `r′` | Higuchi |
+|---|---|---|
+| finito | r′ ≥ 0 | passa |
+| infinito | r′ < 0 | não passa |
+
+Um único critério, dois ramos, dois desfechos. **São consistentes.**
+
+**Onde está a tensão de verdade: entre as duas fontes.** 1407.4331
+declara o IBB **estável** — mas isso é o **canal de gradiente**
+(escalar linear). 1503.07436 diz que `r′ < 0` colide com a condição de
+Higuchi. As duas coisas podem valer ao mesmo tempo, e a dissolução é
+exatamente a **separação de canais** do fato 5: *"estável" sem
+qualificação de canal não é um dado — é a mesma armadilha do "0.28"
+(§6), agora no eixo do canal em vez do eixo do modelo.*
+
+**O estado do ramo infinito: CONTINUA REABERTO.** Isto não é cautela
+retórica, é o registro exato:
+
+- O R-12i **derrubou o argumento específico do repositório**
+  (`ξ = 0 ⟹ singularidade física`), e ele **continua derrubado**. Nada
+  aqui o ressuscita.
+- 1503.07436 oferece um argumento **independente e diferente**
+  (`r′ < 0 ⟹ problema de Higuchi/ghost`) — um **candidato**, não uma
+  exclusão do corpus, porque **ainda não foi traduzido para as
+  convenções do repositório**.
+- O veredito só pode ser elevado de **`IBB REABERTO`** para algo como
+  **`IBB EXCLUÍDO NA F1 PELO HIGUCHI, NÃO PELO ZERO DO LAPSO`**
+  **depois** do teste de tradução abaixo. Até lá, escrever "o IBB está
+  excluído" é importar um resultado de outro sistema de convenções —
+  precisamente o erro que este arquivo existe para impedir.
+
+**O teste de tradução (próximo item da fila — especificação exata):**
+
+> Pegar uma célula IBB genuína — **β₂ = β₃ = 0, β₁ > 0,
+> 0 < β₄ < 2β₁** —, seguir o ramo infinito e medir, **na convenção do
+> projeto**: `r′(N)`, `m_T²/H²`, e o funcional/inequação de Higuchi
+> usado em 1503.07436. Se a tradução fechar e der `r′ < 0` junto com
+> violação do Higuchi na era inicial, o veredito pode ser elevado.
+
+**Por que esta ordem importa — e não é burocracia.** Ela **preserva o
+R-12i**. O corpus admitiu que a **primeira** razão para excluir o ramo
+infinito estava errada, e **só depois** foi verificar se existia uma
+**segunda** razão válida. Inverter a ordem — deixar o argumento novo
+apagar a retratação — seria transformar uma correção em conveniência:
+a exclusão sobreviveria por ter encontrado uma justificativa nova,
+não por a antiga ter resistido. O erro fica no registro; o argumento
+novo entra por mérito próprio, e só depois de traduzido.
+
+**Lacunas declaradas (o que NÃO se sabe da fonte).** A leitura cobre
+os cinco fatos acima e nada além deles. Em particular, **não** estão
+registrados aqui: a forma explícita do funcional/inequação de Higuchi
+usada em 1503.07436 nas variáveis dela; se o paper emite veredito
+final próprio sobre o IBB; e como os enunciados dele se mapeiam nas
+nossas variáveis (`ξ`, `r`, `N`, normalização β, `μ`, `M_ef²`). Esta
+terceira lacuna **é** o teste de tradução.
+
+**O enunciado honesto de hoje:** *"o repositório excluiu o ramo
+infinito por um critério (`ξ → 0`) que a fonte primária examina e
+rejeita — e isso continua valendo. Existe um argumento independente na
+literatura (`r′ < 0` vs. Higuchi, 1503.07436, verificado na fonte pelo
+autor) que pode vir a excluí-lo por outro canal, mas ele ainda não foi
+traduzido para as nossas convenções. O ramo infinito está REABERTO."*
 
 ---
 
@@ -477,10 +581,21 @@ comparação a células com β₂ ≠ 0 não pode usar essa rota.
    parâmetro: `rho_s` na `tdcp_pert_lib.py` é densidade de **fundo** e
    não há campo δρ_m em `NOMES`; exige acrescentar o grau de liberdade
    à maquinaria.
-2. **Abrir 1503.07436 na fonte** (R-b, item (a)). **É o item mais
-   barato do arquivo e o de maior alavanca**: decide se o repositório
-   tem ou não um argumento publicado contra o IBB, e resolve de
-   passagem uma contradição interna entre duas linhas deste documento.
+2. ~~**Abrir 1503.07436 na fonte**~~ — **FEITO em 2026-08-13**
+   (leitura do autor; R-b, "Desfecho parcial"). Não havia contradição
+   interna: as duas linhas eram o mesmo critério em ramos diferentes.
+   **O que entra no lugar dele na fila é o TESTE DE TRADUÇÃO**, e ele
+   é agora o item de maior alavanca sobre o ramo infinito:
+   > Pegar uma célula IBB genuína — **β₂ = β₃ = 0, β₁ > 0,
+   > 0 < β₄ < 2β₁** —, seguir o ramo infinito e medir, **na convenção
+   > do projeto**: `r′(N)`, `m_T²/H²`, e o funcional/inequação de
+   > Higuchi usado em 1503.07436. Se a tradução fechar e der `r′ < 0`
+   > junto com violação do Higuchi na era inicial, o veredito pode ser
+   > elevado de `IBB REABERTO` para `IBB EXCLUÍDO NA F1 PELO HIGUCHI,
+   > NÃO PELO ZERO DO LAPSO`.
+
+   **Enquanto isso não rodar, o ramo infinito permanece REABERTO** — o
+   argumento da fonte é literatura (nível 3), não medida do projeto.
 3. **Reabrir o ramo infinito com β₄ ≠ 0** (R-b, itens (b) e (c)),
    contra os três argumentos de §II/§VI de 1407.4331. Alvo: o ramo
    infinito da F1 com β₄ ligado — não a célula atual.
