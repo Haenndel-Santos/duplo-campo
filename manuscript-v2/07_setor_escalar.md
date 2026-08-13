@@ -1,9 +1,16 @@
-# 07 — O setor escalar: do falso no-go à saúde derivada
+# 07 — O setor escalar: do falso no-go à saúde tardia, e daí ao no-go de classe por gradiente
 
-**Resultado central da v2.** Este capítulo conta três atos com
-números e fontes: o no-go aparente, a sua queda, e o setor corrigido.
-A honestidade do capítulo depende de manter os três separados — o
-segundo ato é sobre o *instrumento*, não sobre a teoria.
+**Resultado central da v2.** Este capítulo conta quatro atos com
+números e fontes: o no-go aparente, a sua queda, o setor corrigido —
+são **na era tardia** — e o no-go real, de classe, por gradiente, na
+era inicial. A honestidade do capítulo depende de manter os quatro
+separados, e de não confundir os dois eixos que atravessam a
+história. **Instrumento:** o segundo ato é inteiro sobre ele
+(Erratum-02, que derrubou o primeiro no-go), e dentro do quarto está
+o Erratum-03, que corrige *valores* sem tocar *enunciados*.
+**Teoria:** é do quarto ato que se trata — o no-go de classe foi
+medido com o instrumento já corrigido e validado, e por isso não cai
+com ele, como caiu o primeiro.
 
 ## Ato 1 — O no-go aparente (2026-08-08 → 08-11)
 
@@ -13,7 +20,9 @@ fixo tardio para μ ≥ 0.3; um fantasma quase-nulo (lapso do setor f)
 na fresta μ = 0.1; ~1500 pontos de varredura 4D sem corredor
 saudável; a modulação β₁(φ₋) piorando os dois canais; e o ramo
 algébrico degenerado E taquiônico na raiz. Consolidação da época:
-`docs/veredito_setor_escalar_final.md` (hoje superseded — ver §4).
+`docs/veredito_setor_escalar_final.md` (hoje superseded — ver o Ato 4,
+que é a quarta seção deste capítulo, citada como "cap. 07 §4" nos
+demais capítulos).
 
 Dois avisos já haviam sido emitidos pelo próprio programa antes da
 queda: (i) o **D-2** mostrou que vereditos de espectro *congelado*
@@ -116,13 +125,14 @@ normalização congelada e halving pleno (kh=10 fino: dG=0.19<0.3).
 *Nível 2b.* *Fonte: `docs/resultado_r7e_saude_interna.md` §2–3,
 `auditoria/code/out/r7e_halving_fino.txt`.*
 
-## 4. O enunciado, e a tabela de supersessão
+## Ato 4 — O enunciado, e a tabela de supersessão (R-10 → R-12, 2026-08-13)
 
-> **[REVISADO 2026-08-13]** No setor escalar linear, **na era tardia**
-> (r ≳ 0.28, i.e. z ≲ 0.6 no benchmark), a F1 não apresenta fantasma,
-> taquião letal, instabilidade crescente nem quebra da estrutura de
-> vínculos: o no-go *daquela* era está revogado, e o fantasma do Gate
-> F era artefato numérico (§Ato 2 — isso não mudou).
+> **[REVISADO 2026-08-13; limiar corrigido pelo R-12i]** No setor
+> escalar linear, **na era tardia** (r ≳ 0.21, i.e. z ≲ 0.6 no
+> benchmark), a F1 não apresenta fantasma, taquião letal,
+> instabilidade crescente nem quebra da estrutura de vínculos: o no-go
+> *daquela* era está revogado, e o fantasma do Gate F era artefato
+> numérico (§Ato 2 — isso não mudou).
 >
 > **Mas o setor NÃO é são em todas as épocas.** Em r ≲ 0.05 (alto
 > redshift) o escalar métrico tem **instabilidade de gradiente**,
@@ -130,6 +140,18 @@ normalização congelada e halving pleno (kh=10 fino: dG=0.19<0.3).
 > confirmando a previsão de
 > Könnig–Akrami–Amendola–Motta–Solomon ([arXiv:1407.4331]) para o
 > *finite branch*, que este repositório registrava sem confrontar.
+
+*Nota sobre o limiar (R-12i, 2026-08-13).* A versão anterior deste
+enunciado usava **r ≳ 0.28**, sem fonte. O número não é nosso: é o
+limiar do modelo **β₁-puro** (β₀ = 0) de 1407.4331 — raiz exata
+√((√5−2)/3) = 0.28052 —, enquanto a nossa célula mínima é o modelo
+**β₀β₁ com β₀/β₁ = 1**. No nosso fundo, r = 0.28 fica ΔN = +0.205
+*adiante* do cruzamento e lá c_s² já vale +0.41, o que contradizia o
+a_cross = 0.578 citado poucas linhas abaixo. O valor correto é a raiz
+da nossa forma fechada, **r = 0.20793**; a eq. (73) de 1407.4331
+avaliada no *nosso* modelo (λ = 1) dá **0.21448** — concordância de
+3.1%, contra os 34.9% da comparação errada. *Fonte:
+`docs/resultado_r12i_confronto_konnig.md`.*
 
 **Por que a v1 deste capítulo dizia o contrário.** O enunciado
 anterior — "são em todos os regimes testados" — era literalmente
@@ -199,9 +221,12 @@ A única porta que resta entreaberta é β₃ ≠ 0 — que sai da definição d
 F1, isto é, leva a uma F2.
 
 Pendências declaradas: ramo algébrico (deferido); fronteira de uma
-trajetória no dinâmico; scan de classe em nível de assinatura;
-**Vainshtein/validade linear (agora o item nº 1 da fila)**; A1 no
-fundo dinâmico e com era de radiação.
+trajetória no dinâmico; scan de classe em nível de assinatura; **a
+validade do tratamento linear na era instável** — que não é saída (o
+R-10d fechou o screening de Vainshtein como escape: δ_screen ≈ 20–60 e
+o λ cancela), mas fronteira: onde os modos saem do regime linear, a
+teoria deixa de ser refutável *e* de ser calculável pelo mesmo motivo;
+A1 no fundo dinâmico e com era de radiação.
 
 | Afirmação da era do no-go | Estado |
 |---|---|

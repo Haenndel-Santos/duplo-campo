@@ -10,9 +10,24 @@ No ramo cinemático (cap. 04), r é fixado instante a instante pela
 densidade: a combinação das duas Friedmann dá uma cúbica
 m²M_eff²𝒲(r) = ρ com duas famílias:
 
-- **ramo infinito**, r ~ √ρ̃ → ∞: patológico — produz ξ < 0 (lapso
-  negativo no setor f); descartado;
+- **ramo infinito**, r ~ √ρ̃ → ∞: produz ξ < 0 (lapso negativo no
+  setor f) **no regime primordial**; descartado — ver a qualificação
+  de época abaixo;
 - **ramo finito**, r ~ β₁/ρ̃ → 0 no primordial: físico.
+
+*Qualificação de época (R-10c):* a exclusão está **correta**, mas a
+justificativa herdada do corpus ("dá ξ < 0", sem qualificar época)
+não. A varredura de todas as raízes reais positivas da cúbica mostra
+que essa raiz tem ξ < 0 só no primordial (ξ ≈ −9.4e3 em a = 0.001;
+−8.38 em a = 0.1) e ξ > 0 a partir de a ≈ 1 (r = 2.358, ξ = +1.985),
+logo **ξ cruza zero** em algum a ∈ (0.1, 1): uma história cosmológica
+contínua nesse ramo teria de atravessar lapso nulo no setor f — ponto
+singular. É *isso* que exclui o ramo, e não a patologia em toda época.
+Fica registrado o achado colateral: existe uma **segunda solução
+tardia viável** (r ≈ 2.23, ξ ≈ 2.23, H² > 0), que não se conecta ao
+nosso primordial e que o repositório **nunca explorou** — o espaço de
+soluções do fundo é maior do que a cascata assumiu. *Nível 2b; fonte:
+`docs/resultado_r10c_saidas.md` Parte A.*
 
 *Nota numérica (lição do R-8b):* a seleção de raiz "menor positiva"
 só é segura com ρ̃ > 0; em extensões com vácuo escalar (ρ̃ efetivo
@@ -47,11 +62,17 @@ constraint correta + Friedmann.
 Isso reordenou a arquitetura (resultado_ramo_finito §6): a modulação
 β₁(φ₋) deixou de ser necessidade e virou **extensão** — e a ordem de
 teste passou a ser "primeiro β constantes, depois modulação". A
-cascata pós-Erratum-02 executou exatamente essa ordem e fechou as
-duas etapas: com β constantes o setor escalar é são (cap. 07;
-benchmark = HR + espectadores), e com a modulação ligada a trajetória
-de rolagem/condensação existe, desloca ordem-1, pousa de volta no
-ramo finito e mantém a saúde perturbativa na janela (Fase A + R-7c/e).
+cascata pós-Erratum-02 executou exatamente essa ordem e fechou as duas
+etapas, **com o alcance que o cap. 07 §4 declara e não mais que ele**:
+com β constantes o setor escalar é são **na era tardia** (benchmark =
+HR + espectadores) e tem **instabilidade de gradiente de classe em
+r → 0** (c_s² = −1 exato, para qualquer forma-β;
+`docs/resultado_r11_nogo_gradiente.md`). Com a modulação ligada, a
+trajetória de rolagem/condensação existe, desloca ordem-1, pousa de
+volta no ramo finito e mantém a saúde perturbativa na janela (Fase A +
+R-7c/e) — janela que está inteira dentro da cobertura tardia da cascata
+(a ≥ 100) e portanto não enuncia nada sobre r → 0; testada depois
+*como saída* para a instabilidade, a modulação reprovou (R-10c).
 
 ## 4. O fundo dinâmico completo (rolagem e pouso)
 

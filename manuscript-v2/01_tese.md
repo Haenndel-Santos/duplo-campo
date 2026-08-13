@@ -42,8 +42,15 @@ máquina de redução (Erratum-02; cap. 07). O estado atual, com fontes:
   `docs/resultado_r11_nogo_gradiente.md`).
 - **Observação** — sub-horizonte consistente com GR dentro do piso da
   sonda (~2%); a massa tensorial é *predição* da família do benchmark,
-  m_T ≈ 2.3 H₀ hoje; a janela quase-horizonte está em aberto e é o
-  teste decisivo (cap. 09; `docs/resultado_r8a_quase_estatico.md`,
+  m_T ≈ 2.3 H₀ hoje. A janela quase-horizonte segue não medida, mas
+  **deixou de ser o teste decisivo**: o teste que o programa desenhava
+  (C_ℓ de baixo-ℓ, P(k) nas maiores escalas, lensing sobre o sistema
+  2-DOF) **não é executável como planejado**, porque o objeto que ele
+  calcularia é linearmente indefinido na época em que o CMB se forma —
+  a era instável cobre a recombinação. O enunciado honesto é o de
+  **validade restrita**: implementação de domínio tardio, sem previsão
+  de CMB (cap. 09; `docs/resultado_r10_consolidado.md` §4;
+  `docs/resultado_r8a_quase_estatico.md`,
   `docs/resultado_r8b_limite_mH0.md`).
 
 **Terceiro, uma fronteira honesta.** A saúde da implementação **não
@@ -56,10 +63,24 @@ aberto era se a F1 sobrevivia; agora, é derivar o vínculo entre
 Φ₋ primordial, φ₋ modulador e a separação estrutural r = b/a
 (cap. 08).
 
+O arco R-10/R-11/R-12 mudou o **contexto** dessa fronteira, e de novo
+não a sua natureza. O problema aberto continua sendo essa derivação —
+mas não mais porque a implementação esteja sã e sobrando: ela é sã só
+na era tardia e deixou de bastar como cosmologia. Duas consequências,
+ambas de enquadramento e nenhuma de conteúdo derivado: o G1-b ficou
+**sem objeto** (media modos do sistema espúrio, que não existem),
+enquanto o enquadramento R1 **volta a ter objeto** — há patologia real
+a enquadrar, a instabilidade de gradiente de classe. Se o novo modo
+patológico projeta sobre δφ₋ **não foi medido**: pergunta aberta
+declarada, não conclusão (cap. 08;
+`docs/resultado_r11_nogo_gradiente.md`).
+
 ## O que este documento NÃO afirma
 
 1. Não afirma validação observacional — nenhum C_ℓ foi calculado
-   sobre o sistema corrigido (cap. 09, fila).
+   sobre o sistema corrigido, e **não está na fila**: enquanto a era
+   instável cobrir a recombinação, o objeto é linearmente indefinido
+   justamente onde o CMB se forma (cap. 09 §1 e §6).
 2. Não afirma a derivação da dupla geometria a partir do par
    primordial — a costura é normativa (cap. 08).
 3. Não reutiliza nenhum número da v1 ou dos documentos anteriores a

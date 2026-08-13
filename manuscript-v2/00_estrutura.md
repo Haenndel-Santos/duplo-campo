@@ -15,6 +15,51 @@ testados; R-8a/b (`resultado_r8a_quase_estatico.md`,
 `resultado_r8b_limite_mH0.md`) abriram o confronto observacional.
 Caps. 01–02 e 07–10 e a lista de exclusões foram atualizados abaixo;
 caps. 03–06 ficam como estavam (fundo, Bianchi e tensor não mudaram).
+*(Bloco preservado como registro. **Parcialmente superado** pela
+revisão de 2026-08-13 abaixo: "são em todos os regimes testados" vale
+só para a era tardia — a cobertura da cascata era a ≥ 100 — e a base
+observacional que este bloco declarava aberta ficou de validade
+restrita.)*
+
+**REVISÃO 2026-08-13 (pós-R-10/R-11/R-12; supersede em parte a de
+08-12):** o arco R-10a → R-11 → R-12 mediu o que a cascata R-7 nunca
+tinha testado — a era inicial, a < 100 — e estabeleceu um **NO-GO DE
+CLASSE POR GRADIENTE**: na classe F1 (β₃ = 0, matéria só em g, ramo
+finito), o escalar métrico tem **c_s² = −1 exato em r → 0** para
+*qualquer* (β₀, β₂, β₄, μ) — 108/108 células, |c_s²+1| ≤ 1.1e−7 — com
+cinética **positiva** (é gradiente, não fantasma), e **c_s² = +1 exato**
+na era tardia; na célula mínima (β₂ = β₄ = 0) isso é **teorema** em
+forma fechada (R-12b). As quatro saídas (ramo infinito, modulação
+β₁(φ₋), screening de Vainshtein, forma-β) estão **fechadas**; a única
+porta entreaberta é β₃ ≠ 0, que sai da definição de F1. **A era
+instável cobre a recombinação** — o CMB linear da F1 não é calculável
+enquanto este quadro valer. No mesmo arco entra o **ERRATUM-03**
+(R-12): o Ċ era derivado por `np.gradient` de 2ª ordem de R-7 a R-12c,
+e o defeito contaminou **valores**, não **enunciados** (o domínio
+R-7/R-8 é quantitativamente seguro; o R-8a sequer passa pela cadeia).
+
+O que isso muda **neste esqueleto**: (i) caps. 01 e 07 reescritos — o
+07 ganha um **quarto ato** e deixa de terminar na revogação de um no-go
+para terminar no estabelecimento de outro; (ii) o cap. 09 **deixa de
+ser o centro de gravidade**: o teste decisivo que ele desenhava não é
+executável, e o enunciado honesto é o de **validade restrita** (opção 3
+de `docs/resultado_r10_consolidado.md` §4); (iii) o cap. 02 recebe as
+duas regras novas do Erratum-03 (derivadas ao longo do fundo em forma
+fechada, ou estêncil de ordem ≥ 8 com teste de refino obrigatório; e
+declaração de cegueira de todo gate); (iv) a lista de exclusões volta a
+excluir a reconstrução observacional — agora por falta de era
+calculável, não por falta de implementação sã; (v) caps. 03–06 não são
+tocados pelo arco, com uma única correção de escopo no cap. 05 §3 ("com
+β constantes o setor escalar é são" → "são na era tardia"); e o cap. 08
+§2–3 corrigido (o enquadramento R1 volta a ter objeto).
+*Fontes: `docs/resultado_r10_consolidado.md`,
+`resultado_r11_nogo_gradiente.md`,
+`resultado_r12_instrumento_e_cs2.md`, `resultado_r12b_teorema_cs2.md`.*
+
+**Estado da pasta (2026-08-13):** existem os arquivos `00`–`09`. O
+**cap. 10 (Interpretação) ainda NÃO foi escrito** — não há
+`10_interpretacao.md`. O esqueleto abaixo o descreve como plano, não
+como texto existente.
 
 **Regras da pasta (vinculantes):**
 
@@ -42,16 +87,24 @@ caps. 03–06 ficam como estavam (fundo, Bianchi e tensor não mudaram).
 ### 01 — O que este documento é
 A tese em uma página: uma hipótese conceitual (dois campos primordiais
 correlacionados; separação estrutural), uma implementação matemática
-(TDCP-F1 sobre Hassan–Rosen) levada até o fim — incluindo a queda e a
-revogação do próprio no-go que o programa havia produzido. O
-resultado honesto atual: fundo ✓, setor tensorial ✓, setor escalar
-SÃO (2 DOFs: 1 métrico overdamped + espectador δχ) em todos os
-regimes testados; nenhuma validação observacional ainda (sub-horizonte
-consistente com GR; quase-horizonte em aberto); a identificação
-ontológica (φ₋ como grau primordial) segue normativa, não derivada.
-Relação com a v1 (congelada; auditoria como ponte).
+(TDCP-F1 sobre Hassan–Rosen) levada até o fim — incluindo a queda do
+no-go que o próprio programa havia produzido (Erratum-02) e, depois, o
+no-go de classe que ele encontrou com o instrumento já corrigido. O
+resultado honesto atual: fundo ✓, setor tensorial ✓, setor escalar com
+2 DOFs (1 métrico overdamped + espectador δφ₋), **sem fantasma** e
+**são na era tardia**, mas com **instabilidade de gradiente
+(c_s² → −1) em r → 0** — que a cobertura antiga da cascata (a ≥ 100)
+não alcançava e que o R-11 mostrou ser propriedade da CLASSE F1, não da
+célula; nenhuma validação observacional (sub-horizonte consistente com
+GR na era tardia; o quase-horizonte deixou de ser "em aberto" e passou
+a **não executável** — validade restrita, cap. 09); a identificação
+ontológica (φ₋ como
+grau primordial) segue normativa, não derivada — o que mudou nela foi a
+urgência, não a natureza. Relação com a v1 (congelada; auditoria como
+ponte).
 *Fontes: decisao1, erratum-02, resultado_r7_cascata,
-resultado_r7e_saude_interna, resultado_r8a/b.*
+resultado_r7e_saude_interna, resultado_r8a/b,
+resultado_r11_nogo_gradiente, resultado_r12b_teorema_cs2.*
 
 ### 02 — Método (agora com o caso máximo)
 Estratificação epistêmica (1/2a/2b/3); gates com critério de falha
@@ -72,7 +125,12 @@ resultado_r7_cascata §0.*
 A ação completa (F1), simetrias, dimensões; o potencial V(φ₊,φ₋)
 explícito; o dicionário como contrato de notação. A escolha
 arquitetural "modulador = φ₋" apresentada COM a flag: decisão
-normativa, testada e reprovada adiante (cap. 07).
+normativa (G1-a), não derivada — e testada adiante em duas etapas com
+resultados distintos (cap. 07): pós-Erratum-02 a modulação é **sã** na
+janela em que foi testada (era tardia, rolagem/condensação/pouso
+inclusos — Ato 3); e **reprovou depois**, já como *saída* para a
+instabilidade de gradiente, porque age ~3 ordens de grandeza tarde
+demais (R-10c; Ato 4).
 *Fontes: docs/acao_v2.md, dicionario_simbolos.md, gate1a (flag).*
 
 ### 04 — Vínculos e a constraint de Bianchi correta
@@ -98,69 +156,107 @@ Higuchi automático com margem 6; a razão ≈4 hoje. A invalidação do
 errado por construção).
 *Fontes: resultado_ramo_finito.md §3–4, D2 (forma fechada).*
 
-### 07 — O setor escalar: do falso no-go à saúde derivada (resultado central)
-A história completa em três atos, com números: (i) o no-go aparente
+### 07 — O setor escalar: do falso no-go à saúde tardia, e daí ao no-go de classe por gradiente (resultado central)
+A história completa em quatro atos, com números: (i) o no-go aparente
 (taquião/fantasma/1500 pontos) e o que ele realmente media — o
 sistema espúrio de 3 DOFs criado pelo bug da redução (Erratum-02);
 (ii) a queda: auditoria externa (det K=0 simbólico) + prova local de
 mesma-ação (r6c, exato) + o bug linha a linha (r6d) + reprodução
 independente; (iii) o setor corrigido: 2 DOFs (1 métrico overdamped
-decadente + δχ espectador saudável), zero direções cinéticas
-negativas em todos os regimes (benchmarks, classe μ×β₁ incl. fresta,
-trajetória de rolagem/pouso incl. janela de deslocamento — W00 sem
-trocas, sem FJ-quebra), consistente com o teorema HR e
-Comelli–Crisostomi–Pilo. Banda, ISW e "strong coupling" retirados
-como artefatos. Fronteiras e pendências declaradas (ramo algébrico
-deferido; halving fino do kh=10).
+decadente + espectador δφ₋ saudável), zero direções cinéticas
+negativas em toda a cobertura testada — que era a era tardia, a ≥ 100
+(benchmarks, classe μ×β₁ incl. fresta, trajetória de rolagem/pouso
+incl. janela de deslocamento — W00 sem trocas, sem FJ-quebra),
+consistente com o teorema HR e Comelli–Crisostomi–Pilo, com banda, ISW
+e "strong coupling" retirados como artefatos; (iv) o no-go real, na era
+inicial: c_s² = −1 exato em r → 0 para qualquer (β₀, β₂, β₄, μ) da
+classe F1 (108/108 células), com cinética positiva — é **gradiente**,
+não fantasma —, c_s² = +1 exato na era tardia, teorema em forma fechada
+na célula mínima; quatro saídas testadas e fechadas; a era instável
+cobre a recombinação; e o ERRATUM-03, que corrige *valores* sem tocar
+*enunciados*. Fronteiras e pendências declaradas (ramo algébrico
+deferido; Vainshtein/validade linear no topo da fila; β₃ ≠ 0 como única
+porta entreaberta — e ela leva para fora da F1).
 *Fontes: erratum_02_reducao_numerica.md, resultado_r7_cascata.md,
-resultado_r7e_saude_interna.md, saídas r6c/r6d/r7a–f.*
+resultado_r7e_saude_interna.md, resultado_r10_consolidado.md,
+resultado_r11_nogo_gradiente.md, resultado_r12_instrumento_e_cs2.md,
+resultado_r12b_teorema_cs2.md, saídas r6c/r6d/r7a–f/r10a–r12h.*
 
 ### 08 — O enquadramento R1 e a identificação normativa (a fronteira que fica)
 Gate 1 completo, RELIDO pós-erratum: os quatro objetos identificados
 só por decreto (G1-a) continuam por decreto — a saúde da F1 NÃO prova
 a identidade φ₋ ↔ grau primordial; a projeção-δφ₋ (G1-b) e o trilema
 (G1-c) mantêm-se como delimitação do que está derivado vs postulado.
-O que muda: sem no-go, a F1 deixa de ser "órfã de implementação
-saudável" — o problema aberto passa a ser a DERIVAÇÃO do vínculo
-Φ₋/φ₋/χ/r, não a sobrevivência da implementação.
+O que muda **[REVISADO 2026-08-13]**: o problema aberto continua sendo
+a DERIVAÇÃO do vínculo Φ₋/φ₋/r, e não a sobrevivência da implementação
+— mas não porque a implementação esteja sã (ela é sã só na era tardia).
+O G1-b ficou **sem objeto** (media modos do sistema espúrio, que não
+existem), enquanto o enquadramento R1 **volta a ter objeto**: há
+patologia real a enquadrar (a instabilidade de gradiente de classe). A
+projeção do novo modo patológico sobre δφ₋ **não foi medida** —
+pergunta aberta declarada, não conclusão.
 *Fontes: gate1_identidade_relacional.md, gate1a, gate1c; releitura:
-resultado_r7e_saude_interna §6.*
+resultado_r7e_saude_interna §6, resultado_r11_nogo_gradiente.md.*
 
-### 09 — O programa observacional (o novo centro de gravidade)
-O que já foi medido: sub-horizonte consistente com GR (μ, Σ dentro do
-piso QS ~2%, valores centrais ≤0.66% em kh≥22 — R-8a, com o fraseado
-de precisão honesto); a família do benchmark tem m_T/H₀ ≈ 2.3–2.4
-CRAVADO pelo fundo (fold em s≈5.7): o postulado 30–300 H₀ do corpus é
-INALCANÇÁVEL sem outra forma-β — vira escolha estrutural a declarar,
-com o ajuste fino (U0 negativo) explicitado (R-8b). O que falta e
-decide: a janela quase-horizonte kh ≲ 22 (baixo-ℓ, ISW, Gpc) com o
-sistema dinâmico 2-DOF + matéria/radiação acopladas → C_ℓ, P(k),
-lensing (R-8 completo); dicionário de épocas como decisão declarada.
-Ativos da v1 que atravessam, reavaliados.
+### 09 — O programa observacional: o que foi medido, e por que o teste decisivo não é executável
+**[REVISADO 2026-08-13] Deixou de ser o centro de gravidade.** O que as
+duas sondas do R-8 mediram fica de pé — o sub-horizonte quase-estático
+e a massa tensorial como predição da família do benchmark (com o
+postulado do corpus registrado como *não incorporado*) —, e nenhuma das
+duas passa pela cadeia defeituosa do Erratum-03. O que muda é o
+estatuto do resto: o teste decisivo que este capítulo desenhava — C_ℓ
+de baixo-ℓ, P(k) nas maiores escalas, lensing sobre o sistema 2-DOF —
+**não pode ser executado como planejado**, porque o objeto que ele
+calcularia é linearmente indefinido na época em que o CMB se forma
+(cap. 07 §4). O enunciado honesto do capítulo passa a ser o de
+**validade restrita** (opção 3 de `docs/resultado_r10_consolidado.md`
+§4): implementação de domínio tardio, sem previsão de CMB, com os
+critérios de falseamento pré-declarados aplicáveis só dentro desse
+domínio; o dicionário de épocas segue como decisão declarada. Ativos da
+v1 que atravessam, reavaliados.
 *Fontes: resultado_r8a_quase_estatico.md, resultado_r8b_limite_mH0.md,
+resultado_r10_consolidado.md, resultado_r12_instrumento_e_cs2.md §6,
 r8_dicionario_epocas_opcoes.md.*
 
-### 10 — Interpretação (por último, como manda o plano)
+### 10 — Interpretação (por último, como manda o plano) — **NÃO ESCRITO**
+**Estado (2026-08-13): este capítulo não existe como arquivo.** A pasta
+tem `00`–`09`; não há `10_interpretacao.md`. O que segue é plano, não
+texto — e vale como plano *revisado*, porque o arco R-10/R-11/R-12 mexe
+no que ele teria de dizer.
+
 O que a narrativa significa À LUZ do estado atual: a separação
-estrutural existe e evolui (cap. 05); a implementação F1 é
-internamente sã mas a "memória da bifurcação" segue SEM portador
-derivado (cap. 08 — a fronteira honesta não mudou de natureza, mudou
-de urgência); as fórmulas de tempo relacional da v1 continuam
-metáfora até derivação; η aposentado do núcleo. O que o episódio
-erratum-02 significa para o programa: a teoria sobreviveu ao seu
-próprio processo — o resultado é o par (implementação sã, método que
-se autocorrige), não uma validação.
-*Fontes: caps. anteriores; plano_v2 Passos 9–10.*
+estrutural existe e evolui (cap. 05); a implementação F1 é sã na era
+tardia mas não basta como cosmologia (cap. 07 §4), e a "memória da
+bifurcação" segue SEM portador derivado (cap. 08 — a fronteira honesta
+não mudou de natureza; mudou de urgência primeiro, e depois de
+contexto); as fórmulas de tempo relacional da v1 continuam metáfora até
+derivação; η aposentado do núcleo. O que os dois episódios significam
+para o programa: a teoria sobreviveu ao seu próprio processo duas vezes
+— derrubando um no-go que era artefato do seu instrumento e depois
+encontrando, com o instrumento corrigido, o no-go verdadeiro. O
+resultado é o par (método que se autocorrige, implementação cuja
+suficiência cosmológica caiu), não uma validação.
+*Fontes: caps. anteriores; plano_v2 Passos 9–10;
+resultado_r10_consolidado.md §4, resultado_r11_nogo_gradiente.md §4.*
 
 ---
 
 ## O que fica de fora (por decisão, não esquecimento)
 
-- **[REVISADO 2026-08-12]** Reconstrução dos capítulos observacionais
-  da v1 (Cap.18–25): a base saudável para μ/Σ/fσ₈ EXISTE agora
-  (R-8a/b); a reconstrução entra CONDICIONADA ao R-8 completo e ao
-  dicionário de épocas — não antes (números da v1 permanecem
-  inutilizáveis: eram do sistema espúrio).
+- **[REVISADO 2026-08-13 — supersede a revisão de 08-12]** Reconstrução
+  dos capítulos observacionais da v1 (Cap.18–25): **continua fora**. A
+  revisão de 08-12 dizia que "a base saudável para μ/Σ/fσ₈ EXISTE agora
+  (R-8a/b)" e condicionava a reconstrução ao R-8 completo; isso não se
+  sustenta com validade restrita — a base é sã apenas na era tardia, e
+  a era instável cobre a recombinação, de modo que não há observável
+  linear calculável na época em que o CMB se forma. A condição real
+  passa a ser: **ou** uma saída que devolva c_s² > 0 em r → 0 (hoje só
+  β₃ ≠ 0, que sai da F1 e obriga a refazer o fundo), **ou** um
+  tratamento não-linear da era instável (fora do alcance do projeto
+  hoje) — e, enquanto nenhuma das duas existir, o que cabe é o
+  enunciado de validade restrita do cap. 09. Os números da v1 seguem
+  inutilizáveis pelo motivo antigo, inalterado: eram do sistema
+  espúrio.
 - Anexos I–K (linha exploratória quântica): permanecem na v1
   congelada; sem ponte com a ação (G1-a linha 18).
 - O ramo algébrico e a Investigação 2 original: substituídos pela
