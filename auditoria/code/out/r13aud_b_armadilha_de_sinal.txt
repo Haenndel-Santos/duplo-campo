@@ -1,0 +1,158 @@
+==========================================================================
+R-13aud/B -- A ARMADILHA DE SINAL ENTRE 1407.4331 E 1503.07436
+==========================================================================
+
+--------------------------------------------------------------------------
+[B0] VERIFICACAO NA FONTE (extracao propria do HTML do ar5iv)
+--------------------------------------------------------------------------
+
+  1503.07436, sec. IV, logo apos a eq. (31), VERBATIM:
+     "in order to get stable scalar perturbations, i.e.
+      $\omega^{2}<0$."
+  1503.07436, sec. IV, apos a eq. (23), VERBATIM:
+     "A negative value would imply oscillating and, therefore,
+      stable potentials"
+  1503.07436, sec. IV, ansatz, VERBATIM:
+     "analyze them by using the ansatz $\Xi_i \propto e^{\omega t}$"
+  1503.07436, sec. II, VERBATIM:
+     "$t$ represents the $e$-folding time and a prime denotes the
+      derivative to it"
+
+  1407.4331, sec. V, VERBATIM:
+     "substituting $X=X_0 e^{i\omega N}$"
+     "real solutions (needed to obtain oscillating, rather than
+      growing and decaying, solutions for $X$)"
+
+  >>> AS DUAS LEITURAS ESTAO NA FONTE, LITERALMENTE, E SAO
+      OPOSTAS. A alegacao do R-13a sec.1.7 esta' CORRETA.
+      Nivel: VERIFICADO-NA-FONTE (uma rota: ar5iv; o R-13a usou
+      duas -- ar5iv + PDF. Este script nao adiciona a segunda.)
+
+--------------------------------------------------------------------------
+[B1] a aritmetica das duas convencoes, explicitada
+--------------------------------------------------------------------------
+
+  Seja omega^2 = -s com s > 0 (isto e', omega^2 < 0).
+    e^{omega t}   (1503.07436): omega = i sqrt(s)  =>  exp(I*sqrt(s)*t)
+    e^{i omega N} (1407.4331) : omega = i sqrt(s)  =>  exp(-sqrt(s)*t)
+
+    e^{omega t}   com omega = i sqrt(s)  ->  e^{i sqrt(s) t}
+                  MODULO CONSTANTE -> oscila -> ESTAVEL
+    e^{i omega N} com omega = i sqrt(s)  ->  e^{-sqrt(s) N}
+                  e o par conjugado e^{+sqrt(s) N} -> CRESCE
+                  -> INSTAVEL
+  [      B1] OK  |e^(i sqrt(s) t)| = 1 ; |e^(i omega N)| = exp(sqrt(s)*t)
+
+--------------------------------------------------------------------------
+[B2/B3] a ponte: omega_K^2 == -omega_{1407}^2, e o MESMO criterio
+--------------------------------------------------------------------------
+
+  Konnig (24):     omega_K^2      = k**2*rpp/(3*calH**2*rp)
+  1407 (69)/(71):  omega_1407^2   = -k**2*rpp/(3*calH**2*rp)
+  [      B2] OK  omega_K^2 + omega_1407^2 = 0
+
+  1407.4331 (76), extraida pelo R-12i:  c_s^2 = -r''/(3r')
+  e omega_1407^2 = c_s^2 (k/calH)^2 ?  True
+  [     B2b] OK  
+
+  CRITERIO DE ESTABILIDADE nas duas convencoes:
+    1407:   estavel <=> omega_1407^2 > 0 <=> r''/(3r') < 0
+    Konnig: estavel <=> omega_K^2    < 0 <=> r''/(3r') < 0
+  Os dois conjuntos {estavel} sao o MESMO conjunto.
+  [      B3] OK  identidade: as duas fontes NAO se contradizem; o que
+            difere e' so' o rotulo de sign(omega^2).
+
+--------------------------------------------------------------------------
+[B5] r'' em FORMA FECHADA, e o teste de refino de 8a ordem
+--------------------------------------------------------------------------
+
+  r'' = (dr'/dr) r' + (dr'/drho_til)(-3 rho_til)
+  == -3 r' - r'^2 W''/W' ?  residuo = 0
+  [  B5-sym] OK  
+
+              celula       a    r-2linhas fechada         d8(h=1e-3)         d8(h=3e-4)     refino     canais
+            y=1 mu=1    0.01     5.2470579618e+03   5.2470579618e+03   5.2470579618e+03   4.96e-13   9.03e-14
+            y=1 mu=1       1     5.6392283723e+00   5.6392283723e+00   5.6392283723e+00   4.84e-13   3.54e-13
+          y=1.9 mu=1    0.01     2.7081078764e+03   2.7081078764e+03   2.7081078764e+03   9.66e-14   4.52e-13
+          y=1.9 mu=1       1     2.7415253786e+00   2.7415253786e+00   2.7415253786e+00   2.58e-13   1.63e-13
+       y=0.2 mu=0.25    0.01     6.4857278084e+03   6.4857278084e+03   6.4857278084e+03   7.02e-13   2.57e-14
+       y=0.2 mu=0.25       1     6.7739449219e+00   6.7739449219e+00   6.7739449219e+00   2.46e-13   1.98e-13
+          y=30 mu=10    0.01     1.7502025926e+03   1.7502025926e+03   1.7502025926e+03   4.82e-13   1.06e-12
+          y=30 mu=10       1     1.8835192135e+00   1.8835192135e+00   1.8835192135e+00   2.98e-13   1.77e-13
+  [  B5-num] OK  refino <= 1e-8 E canais <= 1e-8
+
+--------------------------------------------------------------------------
+[B4] O CONTRAFACTUAL, MEDIDO nas celulas IBB genuinas
+--------------------------------------------------------------------------
+
+  omega_K^2/(k/calH)^2 = r''/(3r')   [Konnig (24), modelo b0 b1 b4,
+                                      materia escura so' -- e' a
+                                      nossa celula IBB genuina]
+  Sinal negativo = ESTAVEL na convencao de Konnig.
+  Quem importar esse mesmo numero para a convencao de 1407.4331
+  le' INSTAVEL. E' a inversao, e ela e' total.
+
+       mu     b4/b1      f        a            r    omega_K^2/(k/H)^2   Konnig le   1407 leria
+      0.1  0.003162   0.05   0.0101        73639    -5.0000020773e-01     ESTAVEL     instavel
+      0.1  0.003162   0.05     0.99       136.42    -6.4181821687e-01     ESTAVEL     instavel
+      0.1  0.003162   0.05       30       94.835    -9.9995454056e-01     ESTAVEL     instavel
+      0.1   0.03162   0.50   0.0101       7316.2    -5.0000021033e-01     ESTAVEL     instavel
+      0.1   0.03162   0.50     0.99       13.468    -6.2004963232e-01     ESTAVEL     instavel
+      0.1   0.03162   0.50       30       9.1057    -9.9993970246e-01     ESTAVEL     instavel
+      0.1   0.06198   0.98   0.0101       3653.4    -5.0000021920e-01     ESTAVEL     instavel
+      0.1   0.06198   0.98     0.99       6.5872    -5.3485636214e-01     ESTAVEL     instavel
+      0.1   0.06198   0.98       30        3.585    -9.9882536253e-01     ESTAVEL     instavel
+        1       0.1   0.05   0.0101        23287    -5.0000020773e-01     ESTAVEL     instavel
+        1       0.1   0.05     0.99       43.139    -6.4181821687e-01     ESTAVEL     instavel
+        1       0.1   0.05       30        29.99    -9.9995454056e-01     ESTAVEL     instavel
+        1         1   0.50   0.0101       2313.6    -5.0000021033e-01     ESTAVEL     instavel
+        1         1   0.50     0.99       4.2591    -6.2004963232e-01     ESTAVEL     instavel
+        1         1   0.50       30       2.8795    -9.9993970246e-01     ESTAVEL     instavel
+        1      1.96   0.98   0.0101       1155.3    -5.0000021920e-01     ESTAVEL     instavel
+        1      1.96   0.98     0.99        2.083    -5.3485636214e-01     ESTAVEL     instavel
+        1      1.96   0.98       30       1.1337    -9.9882536253e-01     ESTAVEL     instavel
+       10     3.162   0.05   0.0101       7363.9    -5.0000020773e-01     ESTAVEL     instavel
+       10     3.162   0.05     0.99       13.642    -6.4181821687e-01     ESTAVEL     instavel
+       10     3.162   0.05       30       9.4835    -9.9995454056e-01     ESTAVEL     instavel
+       10     31.62   0.50   0.0101       731.62    -5.0000021033e-01     ESTAVEL     instavel
+       10     31.62   0.50     0.99       1.3468    -6.2004963232e-01     ESTAVEL     instavel
+       10     31.62   0.50       30      0.91057    -9.9993970246e-01     ESTAVEL     instavel
+       10     61.98   0.98   0.0101       365.34    -5.0000021920e-01     ESTAVEL     instavel
+       10     61.98   0.98     0.99      0.65872    -5.3485636214e-01     ESTAVEL     instavel
+       10     61.98   0.98       30       0.3585    -9.9882536253e-01     ESTAVEL     instavel
+
+  pontos com omega_K^2 < 0 (= estavel em Konnig): 5400/5400
+  maximo de omega_K^2/(k/calH)^2 sobre as celulas: -5.000000e-01
+  [      B4] OK  o IBB e' ESTAVEL no canal de gradiente pela formula DA FONTE,
+            em 100% dos pontos -- e um importador desatento leria
+            INSTAVEL em 100% dos pontos. A inversao e' total.
+
+--------------------------------------------------------------------------
+[B6] a condicao (36) de Konnig e' a nossa rho_til > 0
+--------------------------------------------------------------------------
+
+  mu r W(r)|_{b0=b2=b3=0} = -3*beta_1*mu*r**2 + beta_1 + beta_4*r**3
+  Konnig (36): 3 b1 r^2 < b1 + b4 r^3   (mu = 1)
+  [      B6] OK  residuo em mu=1 = 0
+
+  Generalizacao em mu (nossa):  b4 r^3 + b1 - 3 mu b1 r^2 > 0.
+  => (36) e' rho_til > 0, letra por letra, e a leitura da fonte
+     ('equivalent to the condition rho>0 on that branch, and
+      therefore trivially satisfied at all times') esta' VERIFICADA
+     nas nossas variaveis.
+
+  >>> ISTO E' DECISIVO PARA O ALVO F: o 'gradiente saudavel do IBB'
+      da fonte NAO e' uma afirmacao vaga -- e' a condicao rho > 0,
+      que o nosso proprio fundo satisfaz por construcao em toda a
+      historia. O elo de literatura e' forte.
+
+==========================================================================
+VEREDITO DOS GATES DESTE SCRIPT
+==========================================================================
+
+  FALHAS: nenhuma
+
+  CEGUEIRA (regra 7): este script NAO verifica a derivacao das
+  eqs. (24)/(29)/(37) de Konnig nem da (69)/(76) de 1407.4331; NAO
+  mede c_s^2 com maquinaria propria (alvo C); e a extracao da fonte
+  aqui e' UMA rota (ar5iv), nao duas.
