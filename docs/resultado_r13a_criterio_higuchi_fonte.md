@@ -1,5 +1,53 @@
 # R-13a — O CRITÉRIO DE HIGUCHI NA FONTE: Könnig 2015 (arXiv:1503.07436), extraído e traduzido
 
+> ## ✔ BANNER DE CONFIRMAÇÃO — 2026-08-17 (`docs/auditoria_r13.md`)
+>
+> **Nada deste documento cai. O que era sua única fronteira epistêmica
+> real fecha, e duas alegações ganham confirmação independente.**
+>
+> - **O item 1 da fila (§6) — "verificação simbólica do §2" — está
+>   FEITO, e por rota independente da que ele pedia.** O mapa
+>   `r_K = √μ r`, `β_n^K = A μ^{−n/2} β_n` foi re-derivado da
+>   **redundância da ação** sob `f → λ²f`, com os `e_n` calculados pela
+>   raiz matricial de Sylvester de `tdcp_pert_lib.py` — **sem tocar nas
+>   Friedmann**. Resíduos simbólicos zero em todos os cinco `β_n`, e
+>   solução única. Mapas errados (`c = μ`; `β_n ~ μ^{−n}`) reprovam.
+> - **A alegação de sobredeterminação do §2.1 está EXIBIDA, não só
+>   afirmada.** Com `r_K = c·r` e `β_n^K = A_n β_n` incógnitos: a
+>   Friedmann-g fixa `A_0..A_3 = A c^{−n}` e deixa `c` **livre**; a
+>   Friedmann-f impõe **duas** condições independentes (o bloco
+>   `β₁/β₂/β₃` e o termo `β₄`) que dão o **mesmo** `c = √μ` e
+>   `A_4 = Aμ^{−2}`. O padrão `μ^{−n/2}` no `n = 4` **saiu, não foi
+>   imposto**. E as eqs. **(12)** e **(13)** — que não entraram na
+>   construção — batem com a nossa `𝒲(r)` e com `√μ·dr/dN` (resíduos 0),
+>   esta última com **`w` geral**.
+> - **A cadeia vale para todo `w > −1`, não só poeira.** O fator
+>   `(1+w)` é positivo e comum. Extensão além do que o R-13b verificou.
+> - **A armadilha de sinal do §1.7 está VERIFICADA NA FONTE,
+>   verbatim**, nos dois papers, por extração própria do ar5iv. E a
+>   leitura do §1.5 — de que 1503.07436 §IV A **mantém** o resultado de
+>   gradiente do IBB — também: *"stable modes are guaranteed if
+>   `3β₁r² < β₁+β₄r³`"*, condição que a fonte diz ser *"equivalent to
+>   the condition ρ>0 on that branch"*. Nas nossas variáveis essa
+>   condição **é** `ρ̃ > 0` (resíduo 0), com generalização em `μ`.
+> - **`w_mg ≤ −1` (§4.3) confirmado por rota própria**: derivando da
+>   conservação de `ρ_mg = m²M_ef²V_g(r)` sai `w_mg = −1 − ℬ(r)r′/V_g`,
+>   idêntico à tradução da eq. (20) deles. Resíduo 0.
+> - **Uma ressalva NOVA sobre a hipótese 2 do §2.2** (modulação): o que
+>   ela quebra é a **equivalência com o sinal de `r′`**, não a
+>   inequação (15). Sob `β_n(φ₋)` o diagnóstico correto é `𝒲′(r) > 0`.
+>   Ver `auditoria_r13.md` §6.2. **E o que continua não sabido por
+>   ninguém — inclusive pela auditoria — é se a própria eq. (14)
+>   sobrevive intacta sob modulação.** Isso substitui o item 1 desta
+>   fila como o item mais caro.
+> - **Não fechado:** o §5 registra que **1308.1647 não foi aberto**. A
+>   auditoria também não o abriu. O caveat do fator `1/2` no potencial
+>   permanece declarado e não verificado.
+>
+> *Fonte: `docs/auditoria_r13.md` §§1–3 e §6;
+> `auditoria/code/r13aud_a_mapa_e_traducao.py`,
+> `auditoria/code/r13aud_b_armadilha_de_sinal.py`.*
+
 **Data:** 2026-08-13. Fonte primária: Frank Könnig, *Higuchi ghosts and
 gradient instabilities in bimetric gravity*, **PRD 91, 104019 (2015)** =
 [arXiv:1503.07436] (Preprint NORDITA-2015-44; 13 pp., 2 figuras; a

@@ -4,6 +4,61 @@
 (saída versionada: `auditoria/code/out/r13b_ibb_ramo_infinito.txt`, 501
 linhas). Executado por `.venv\Scripts\python.exe`.
 
+> ## ⚠ BANNER DE SUPERSESSÃO PARCIAL — 2026-08-17 (`docs/auditoria_r13.md`)
+>
+> **Nenhum enunciado deste documento cai. Quatro mudam de estatuto, três
+> para melhor.** Nada abaixo foi reescrito; isto é anotação.
+>
+> **(1) O `max r′ = −6.05e−5` do §5.1/§6 (E1) é NÚMERO DE GRADE, não
+> margem.** O supremo de `r′` sobre a história **é zero**, atingido só
+> assintoticamente (`ρ̃ → 0`, `𝒲′(r_c) > 0` finito). O valor reportado é
+> `r′(a_max = 30)` e escala como `a_max^{−3}` — medido: fator 1e−3 por
+> década de `a_max`. **O enunciado correto não tem margem, é um
+> teorema** (`auditoria_r13.md` §5.1): com `Q ≡ μr𝒲` e `P ≡ μr²𝒲′`,
+> vale identicamente `P = 2Q + 3(μr² − 1)`; no ramo infinito `Q > 0` e
+> `μr² > μr_c² > 1`, logo `𝒲′ > 0` e `r′ < 0` **estritamente**, em toda
+> célula da janela, em todo `μ`, para todo `w > −1`. Varredura de borda
+> independente: **14 400 pontos**, `f` de 1e−9 a 1−1e−12, `a` de 1e−6 a
+> 1e6 — **zero pontos com `r′ ≥ 0`**.
+>
+> **(2) O mapa do R-13a §2.1 deixa de ser "entrada não reverificada"
+> (§8.6, 1º item).** Ele foi re-derivado por **rota independente** — a
+> redundância da ação sob `f → λ²f`, com os `e_n` calculados por
+> Sylvester —, e a sobredeterminação pelas duas Friedmann foi exibida
+> explicitamente (resíduos 0; mapas errados reprovam). A pendência P-6
+> do `posicionamento_literatura.md` **fecha**.
+>
+> **(3) A cadeia vale para todo `w > −1`, não só poeira** (§8.2). O
+> fator `(1+w)` é positivo e comum e não toca a equivalência. E o
+> **sinal de `r′` sobrevive à radiação**: o teorema (1) não usa a forma
+> de `ρ̃(N)`. A fronteira "sem radiação" do §0 era desnecessária para o
+> **sinal** (continua necessária para os **valores**).
+>
+> **(4) O elo do gradiente (§1, §8.6, item 1 da fila) FOI FECHADO.**
+> `c_s²` do sistema 2-DOF no ramo infinito, medido com a maquinaria do
+> R-12f/g: **positivo em 50/50 pontos** (5 valores de `f` × 10 épocas),
+> de **+1/2** no passado profundo a **+1** no atrator, mínimo 0.4428,
+> acompanhando o canal fechado da literatura `−r″/(3r′)` com desvio
+> ≤ 0.093 que zera nos dois extremos. **A frase de complementaridade
+> deixa de ser metade literatura: os dois lados são medidos por nós.**
+>
+> **(5) UMA RESSALVA NOVA, e ela é normativa.** Sob modulação
+> `β_n(φ₋)`, `r′ < 0` **deixa de ser** o diagnóstico de Higuchi: o
+> limiar de `dβ₁/dN` que inverte o sinal de `r′` tende a **zero** perto
+> do atrator tardio. Mas `LHS(15)` **não depende de `β̇_n`** e não se
+> move (medido: −21.8751 em cinco valores de `dβ₁/dN`), e o teorema (1)
+> mantém `𝒲′ > 0`. **O veredito sobrevive; o argumento não.** Onde este
+> documento diz "excluído porque `r′ < 0`", a formulação robusta é
+> "excluído porque `𝒲′(r) > 0`, isto é `ρ̃ > 0` e `μr² > 1`".
+>
+> **(6) O que NÃO atinge este documento.** A auditoria encontrou um
+> defeito de instrumento (estêncil de 8ª ordem com `h = 1e−3` fixo
+> falha quando `r` é grande). **Nenhum número decisivo deste documento
+> passa por estêncil** — `dr/dN`, `ξ`, `m_T²`, `H²` são forma fechada; o
+> estêncil do gate M4 é só cross-check. **Este documento está imune.**
+>
+> *Fonte: `docs/auditoria_r13.md`; scripts `auditoria/code/r13aud_*.py`.*
+
 **Contexto.** O corpus excluía o ramo infinito porque ξ cruza zero. O
 R-12i (`docs/resultado_r12i_confronto_konnig.md` §1.6) derrubou esse
 argumento: o quique de `b` é tratado e **defendido como físico** pela

@@ -134,6 +134,35 @@ Duas regras entram para o cap. 02:
    possível, estêncil de ordem ≥ 8 **com teste de refino obrigatório**
    (dois h, exigir estabilidade). `np.gradient` é proibido em qualquer
    cadeia que passe por uma redução mal condicionada.
+
+   > **[REGRA 6b — 2026-08-17, `docs/auditoria_r13.md` §4.2.]** *A
+   > regra 6 acima permanece; ela é necessária e não suficiente.* **O
+   > `h` não pode ser pré-escolhido: ele tem de ser refinado até
+   > convergir, e o `h` necessário depende do FUNDO.** O caso que impôs
+   > a emenda: no ramo infinito (`r ~ 10⁸` no passado profundo), o
+   > `h = 1e−3` que este arquivo e o R-12g usam dá, com estêncil de **8ª
+   > ordem**, `c_s² = −18760.836`; refinando o mesmo ponto, `h = 3e−4`
+   > dá `−25.400`, `h = 1e−4` dá `+0.4960`, `h = 1e−5` dá `+0.4999999`.
+   > **Cinco ordens de grandeza, com o estêncil "certo".**
+   >
+   > **E o teste que separa truncamento de arredondamento:** subir
+   > `dps` de 60 para **250 não move o número** (13 dígitos idênticos);
+   > baixar `h` move-o. **Precisão não é o eixo; `h` é.** Todo refino
+   > deve reportar os dois.
+   >
+   > **Raio de alcance, medido.** *Não atinge o R-13b* — nenhum número
+   > decisivo dele passa por estêncil (`dr/dN`, `ξ`, `m_T²`, `H²` são
+   > forma fechada). *Não atinge o R-12g no domínio dele* — com `r → 0`,
+   > `h = 1e−3` está convergido (reproduzido: `c_s² = −0.99999975` em
+   > `a = 1e−4`). *Atinge com força qualquer reuso da maquinaria de
+   > perturbação em fundo com `r` grande.*
+   >
+   > **E há um segundo eixo de refino que a regra 6 não menciona: `kh`.**
+   > O resíduo em `kh` é **massa** (§3 deste documento), logo cai como
+   > `1/kh²` e **não deve ser exigido zero** — o gate correto é
+   > extrapolação de Richardson em `1/kh²` com as duas extrapolações
+   > concordando. Exigir que três `kh` coincidam rejeita física como se
+   > fosse erro (aconteceu, e a rodada está preservada no git).
 2. **Declaração de cegueira do gate** (regra já proposta pelos
    pareceres, §2 da síntese cruzada, agora com caso concreto): o
    calibrador do espectador δχ — usado como prova de calibração de

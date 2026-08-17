@@ -46,6 +46,19 @@ Este capítulo o expõe como resultado.
    −1.00117 para h = 1e−3, 3e−4, 1e−4), enquanto a 8ª ordem é estável
    em 14 dígitos. Fonte: `docs/resultado_r12_instrumento_e_cs2.md`
    §2; saída `auditoria/code/out/r12g_isola_ruido_e_classe.txt`.
+6b. **O passo `h` não pode ser pré-escolhido — ele é refinado até
+   convergir, e o `h` necessário depende do FUNDO.** *(Emenda de
+   2026-08-17; a regra 6 permanece, é necessária e não suficiente.)* O
+   caso que a impôs: no ramo infinito, com `r ~ 10⁸`, o mesmo `h = 1e−3`
+   e o mesmo estêncil de **8ª ordem** dão `c_s² = −18760.8`; refinando,
+   `3e−4 → −25.4`, `1e−4 → +0.496`, `1e−5 → +0.4999999`. **O teste que
+   distingue truncamento de arredondamento:** subir `dps` de 60 para 250
+   **não move** o número; baixar `h` move em cinco ordens de grandeza —
+   logo **reportar os dois eixos**. E há um terceiro: o resíduo em `kh`
+   é **massa**, cai como `1/kh²` e **não deve ser exigido zero**; o gate
+   correto é extrapolação de Richardson em `1/kh²`. Fonte:
+   `docs/auditoria_r13.md` §4.2; saída
+   `auditoria/code/out/r13aud_c_cs2_ibb.txt`.
 7. **Declaração de cegueira do gate.** Todo gate declara
    explicitamente **qual patologia ele seria incapaz de ver**, e essa
    declaração entra no cabeçalho junto com os critérios de falha.

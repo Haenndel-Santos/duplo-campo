@@ -205,6 +205,29 @@ assimetria de peso — fantasma é **fatal**, gradiente **não** (R-13a
 decaimento do vácuo). Medir `c_s²` no IBB seria **validação adicional,
 não requisito** — e continua na fila (§5) por esse estatuto.
 
+> **[O ELO FECHOU — 2026-08-17, `docs/auditoria_r13.md` §4.]** A
+> validação adicional **foi feita**. `c_s²` do modo métrico do sistema
+> 2-DOF, medido no ramo infinito de células IBB genuínas com a
+> maquinaria limpa do R-12f/g: **positivo em 50/50 pontos** (5 valores
+> de `f = y/2μ^{3/2}` × 10 épocas de `a = 3e−5` a `a = 30`), indo de
+> **+1/2** no passado profundo a **+1** no atrator tardio, com mínimo
+> **0.4428**. Acompanha o canal fechado da literatura `−r″/(3r′)` com
+> desvio `|Δ| ≤ 0.093` que **zera nos dois extremos**. Controle
+> positivo na mesma rodada: ramo finito dá **−0.99999750**.
+> Degenerescência em `μ` (gate novo, do corolário F-3): **1.7e−16**.
+>
+> **Consequência para a linha da complementaridade na tabela acima:** o
+> nível dela deixa de ser *"`V-13a` (o gradiente do IBB é da fonte,
+> **não** medido por nós); `M-13b` (o lado Higuchi)"* e passa a ser
+> **`M-13b` + `M-13aud` nos DOIS lados**, com `V-13a` como
+> concordância independente. A frase de nível-paper pode agora ser
+> escrita como medida própria em vez de importação — mantendo, claro, o
+> crédito de que o padrão está publicado.
+>
+> **Fronteira herdada, que NÃO muda:** a `L2` deste projeto não tem
+> `δρ_m`. Toda medida de `c_s²` aqui herda a mesma limitação do
+> R-11/R-12g, e ela continua declarada.
+
 ### 1.2 Bloco B — o restante da tabela-mestra (herdado da v1)
 
 | Nosso resultado | Estado na literatura | Veredito de novidade | Nível |
@@ -1148,6 +1171,23 @@ relação nenhuma** com o `3` do funcional de Higuchi do §1.1b
 (`m_T²|_{ξ→r}/H² → 3` no ramo finito primordial, era de **matéria**).
 São dois objetos diferentes que coincidem num número.
 
+> **[RESOLVIDA — 2026-08-17, `docs/auditoria_r13.md` §3.3.]** *A nota de
+> higiene acima está CORRETA e fica.* O que se resolve é a discrepância
+> em si, e ela não era numérica: **`3(4+3w)` não é avaliável em
+> `w = −1`**. A derivação usa `r ≈ β₁/(μρ̃)` com `ρ̃ → ∞`, o que exige
+> que `ρ` **dilua**, isto é `w > −1`. Em `w = −1` a densidade é
+> constante, `r` não vai a zero, e o regime `r → 0` **não existe** —
+> logo `3(4+3w)|_{w=−1} = 3` é **extrapolação fora do domínio**, não
+> predição da fórmula. O que existe em `w = −1` é o ponto fixo de de
+> Sitter (`ρ̃ = 0`), onde `r³V_f = μ r V_g` e
+> `m_T²/H²|_dS = 3ℬ(r_∞)(1+μr_∞²)/(μ r_∞ V_g(r_∞))` — **verificado por
+> CAS (resíduo 0), e em `β₀=β₂=β₃=0` colapsa em `1+1/(μr_c²)`,
+> reencontrando o corolário F-1 do R-13b por outra via**. Essa
+> expressão **não é um número universal**: depende de `r_∞` e dos `β_n`.
+> Portanto **nem `6` nem `3` podem ser "o valor de de Sitter"**, e não
+> há discrepância a arbitrar. A instrução de não usar nenhum dos dois
+> números **fica** — agora com a razão.
+
 **P-6 — O mapa de convenções do R-13a §2.1 não passou por CAS.**
 `r_K = √μ r`, `β_n^K = A μ^{−n/2}β_n`, `ρ_K = ρ/M_g²`: derivado à mão,
 sobredeterminado pelas duas Friedmann (e a sobredeterminação **fecha**,
@@ -1159,6 +1199,25 @@ infinito, e é barata de fechar (§5, item 6). Enquanto não fechar, o
 veredito do §2b permanece — ele não depende deste item para o **sinal**
 de `r′`, que é invariante sob a tradução (`μ > 0` constante ⟹
 `r_K′ = √μ r′`), mas depende dele para a **forma "massa"**.
+
+> **[FECHADA — 2026-08-17, `docs/auditoria_r13.md` §1.]** O mapa foi
+> re-derivado por **rota independente** — a redundância da ação sob
+> `f_{μν} → λ² f_{μν}`, com os `e_n(√(g⁻¹f))` calculados pela raiz
+> matricial de Sylvester de `tdcp_pert_lib.py`, **sem tocar nas
+> Friedmann**. Resíduos simbólicos **zero** nos cinco `β_n`, com
+> solução **única**; e mapas errados (`c = μ`; `β_n ~ μ^{−n}`)
+> **reprovam** (teste de poder). A sobredeterminação foi **exibida**:
+> a Friedmann-g deixa `c` livre, a Friedmann-f o fixa por **duas** vias
+> independentes que dão o mesmo `c = √μ`, e o padrão `μ^{−n/2}` no
+> `n = 4` **saiu** em vez de ser imposto. As eqs. **(12)** e **(13)** de
+> Könnig — que não entraram na construção — batem com a nossa `𝒲(r)` e
+> com `√μ·dr/dN` (resíduos 0), esta última com **`w` geral**.
+>
+> **O item mais caro da fila passa a ser outro:** se a **própria
+> eq. (14)** continua sendo a condição de Higuchi ponto a ponto sob
+> modulação `β_n(φ₋)`. Isso é declarado pelo R-13a (§2.2, hipótese 2) e
+> **não foi verificado por ninguém — nem pela auditoria**. Ver
+> `auditoria_r13.md` §6.3.
 
 **P-7 — Fasiello–Tolley 1308.1647 continua não aberta.** É a fonte
 primária *real* do bound de Higuchi em FLRW; este arquivo a cita desde
