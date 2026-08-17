@@ -136,9 +136,22 @@ entreaberta continua sendo β₃ ≠ 0 (que leva para fora da F1).
 1. **Generalizar a fórmula** em (β₀, β₂, β₄, μ) — provavelmente
    factível com expansão de Laurent em r em vez de forma fechada
    exata.
-2. **Confrontar com Könnig et al. ([arXiv:1407.4331])**: agora há uma
-   fórmula fechada para comparar, não só um número. *[verificar contra
-   a fonte]*
+   > **[ATACADO, PARCIAL — 2026-08-17, R-12j/R-12k]** *(a) A forma
+   > fechada foi obtida numa **segunda** célula independente (β₀ = 2,
+   > μ = 3): fórmula **diferente**, série `−1 + 12r` em vez de
+   > `−1 + 2r`, e os **mesmos três limites** (−1, +1, m_ef²/H² = 5/2).
+   > Isso eleva o eixo **(β₀, μ) a nível 1**. (b) Em (β₂, β₄) a rota
+   > da forma fechada **não escala**: entrada 2× maior e custo
+   > pós-inversão >600× (medido; dois processos encerrados após ~2h50
+   > de CPU cada, sem terminar). (c) A expansão de Laurent sugerida
+   > por este item **foi implementada e também não fecha** — e, no
+   > caminho, mostrou que **os dois limites não comutam**: expandir em
+   > ρ a k fixo é o regime super-horizonte e dá **−2**, estável sob
+   > refino de ordem. A ordem dos limites faz parte da definição de
+   > c_s². (β₂, β₄) seguem em nível 2b pelo R-12g.
+   > *Fonte: `docs/resultado_r12j_generaliza_teorema.md`.**
+2. ~~**Confrontar com Könnig et al. ([arXiv:1407.4331])**~~ —
+   **FEITO** (R-12i): `docs/resultado_r12i_confronto_konnig.md`.
 3. A interpretação de `c_s² = ±1` nos dois extremos — o valor `+1` no
    atrator sugere que o modo métrico se torna um escalar de gradiente
    canônico lá, e `−1` sugere assinatura invertida no passado; vale
