@@ -121,7 +121,12 @@ com a exclusão do IBB inteiramente substituída**.
 O funcional de Higuchi da fonte (1503.07436 eq. 14) foi traduzido na
 fonte e **re-verificado por CAS em rota independente** — três resíduos
 simbólicos **zero**, `β_n` e `μ` gerais, poeira —, dando
-**Higuchi ⟺ `ξ ≥ r` ⟺ `r′ ≥ 0`**. Medido: `r′ < 0` em 100% da história
+**Higuchi ⟺ `ξ ≥ r` ⟺ `𝒲′(r) ≤ 0` ⟺ `r′ ≥ 0`**, válido para todo
+`w > −1`. **O último elo, e só ele, exige `β̇_n = 0`** — sob a
+modulação da v2 ele quebra (`r′` inverte o sinal e o LHS(15) não se
+move), de modo que o diagnóstico físico deste capítulo é **`𝒲′(r) > 0`**,
+que é teorema; `r′ < 0` é sintoma. Ver cap. 05 e
+`docs/auditoria_r13.md` §6.2. Medido: `r′ < 0` em 100% da história
 em **108/108 células**; Higuchi em **0 de 64 800 pontos**; concordância
 Higuchi(fonte) ⟺ `r′ ≥ 0` em **64 800/64 800**; **controle positivo**
 no ramo finito **400/400**. Em forma fechada,
@@ -136,19 +141,27 @@ ghost condition"* — e isso não o salva.
 branches fail for complementary reasons: the finite branch violates
 scalar-gradient stability in the early universe, while the genuine
 infinite branch avoids that instability but violates the Higuchi
-condition throughout its evolution."* O gradiente do IBB é **saudável
-segundo a fonte** (§IV A de 1503.07436, que **confirma** e **não**
-retrata 1407.4331): canal independente, que não salva o Higuchi.
+condition throughout its evolution."*
+
+**E os dois lados são medidos por nós** *(2026-08-17,
+`docs/auditoria_r13.md` §4)*. A perna do gradiente **deixou de ser
+emprestada**: `c_s² > 0` em **50/50 pontos** do ramo infinito (mínimo
+0.4428; **+1/2** no passado profundo, **+1** no atrator), medido com a
+maquinaria 2-DOF da casa, com controle positivo devolvendo **−1** no
+ramo finito. O §IV A de 1503.07436 — que **confirma** e **não** retrata
+1407.4331 — passa de fonte do enunciado a **validação cruzada**; o
+canal segue independente e segue não salvando o Higuchi.
 **Ponto lógico declarado:** o gate do R-13b não mede gradiente, e essa
-cegueira segue declarada como boa prática — mas **não bloqueia o
-veredito**, porque um ghost físico basta para excluir. Um teste de
-`c_s²` no IBB é **validação adicional desejável, não requisito**.
+cegueira segue declarada como boa prática — mas nunca bloqueou o
+veredito, porque um ghost físico basta para excluir. O teste de `c_s²`
+no IBB era **validação adicional desejável, não requisito** — e está
+feito.
 
 | Saída | Veredito vigente | Razão |
 |---|---|---|
-| Infinite branch / IBB | **EXCLUÍDO** | ghost de Higuchi, `r′ < 0` em toda a história |
+| Infinite branch / IBB | **EXCLUÍDO** | ghost de Higuchi: **`𝒲′(r) > 0`** (teorema); `r′ < 0` é sintoma equivalente em `β̇_n = 0` |
 | argumento antigo `ξ = 0` | **REVOGADO** | zero do lapso / quique não é por si só singularidade |
-| gradiente no IBB | **SAUDÁVEL** segundo a fonte | canal independente; não salva o Higuchi |
+| gradiente no IBB | **SAUDÁVEL — medido por nós** (50/50) | confirmado pela fonte; canal independente, não salva o Higuchi |
 
 *Nível 2b para as varreduras, com fronteiras nos docs de origem; nível
 1 para a cadeia simbólica (duas rotas independentes, resíduo zero) e 2a

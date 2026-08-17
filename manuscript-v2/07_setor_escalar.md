@@ -247,7 +247,18 @@ traduzida para as nossas variáveis (R-13a §2), e a tradução foi
 simbólicos **zero**, com `β_n` e `μ` gerais e matéria de poeira
 (R-13b §8.2). A cadeia fecha exata:
 
-> **Higuchi ⟺ `ξ ≥ r` ⟺ `r′ ≥ 0`.**
+> **Higuchi ⟺ `ξ ≥ r` ⟺ `𝒲′(r) ≤ 0` ⟺ `r′ ≥ 0`**, para todo `w > −1`.
+
+> **⚠ DOMÍNIO DO ÚLTIMO ELO — vinculante (`docs/auditoria_r13.md` §6.2).**
+> Os três primeiros elos são **algébricos** em `(r, β_n, μ)`. O quarto
+> usa `dr/dN` e **só vale com `β̇_n = 0`**. Sob `β_n(φ₋)` — a
+> arquitetura desta v2 — ele quebra: medido, `dβ₁/dN` acima do limiar
+> inverte o sinal de `r′` enquanto o **LHS(15) não se move**
+> (`−21.8751` em 0, 1×, 2× e 10× o limiar), e perto do atrator o limiar
+> tende a zero. **O diagnóstico físico deste manuscrito é `𝒲′(r) > 0`**
+> — isto é `ρ̃ > 0` e `μr² > 1`, que é **teorema** (identidade
+> `P = 2Q + 3(μr² − 1)`, resíduo simbólico zero), **não margem
+> numérica**. `r′ < 0` é sintoma, equivalente só no caso não-modulado.
 
 *A medida* (R-13b §§5–6; células IBB genuínas β₂ = β₃ = 0, β₁ > 0,
 `0 < β₄/β₁ < 2μ^{3/2}`): `r′ < 0` em **100% da história em 108/108
@@ -274,22 +285,44 @@ parameterization, the two standard cosmological branches fail for
 complementary reasons: the finite branch violates scalar-gradient
 stability in the early universe, while the genuine infinite branch
 avoids that instability but violates the Higuchi condition throughout
-its evolution.** O gradiente do IBB é **saudável segundo a fonte**
-(§IV A de 1503.07436, que **confirma** o resultado de 1407.4331 e
-**não** o retrata) — canal independente, que não salva o Higuchi.
+its evolution.**
+
+*E os dois lados são medidos por nós* **(2026-08-17,
+`docs/auditoria_r13.md` §4).** Esta frase teve, por quatro dias, uma
+perna medida (Higuchi) e outra emprestada (gradiente). **Não tem
+mais.** Com a mesma maquinaria 2-DOF do ramo finito, no ramo infinito
+de células IBB genuínas (`f = y/2μ^{3/2}` ∈ {0.05, 0.20, 0.50, 0.80,
+0.98} × 10 épocas de `a = 3×10⁻⁵` a `30`):
+
+> **`c_s² > 0` em 50/50 pontos** — mínimo **0.442806**, **+0.49999995**
+> no passado profundo, **+1** no atrator —, com desvio `|Δ| ≤ 0.093`
+> contra o canal fechado da literatura `−r″/(3r′)`, **zerando nos dois
+> extremos**; **controle positivo** no ramo finito devolvendo
+> **−0.9999975**; e degenerescência em `μ` a **1.7e−16**, como o
+> corolário F-3 exige.
+
+O §IV A de 1503.07436 — que **confirma** o resultado de 1407.4331 e
+**não** o retrata — passa de *fonte do enunciado* a **validação
+cruzada**. O canal continua independente, e continua não salvando o
+Higuchi.
 
 *Ponto lógico, declarado.* O gate do R-13b **não mede gradiente**, e
-essa cegueira continua declarada como boa prática (regra 7 do cap. 02).
-Ela **não bloqueia o veredito**: um ghost físico basta para excluir,
-independentemente de o gradiente estar saudável. Um teste de `c_s²` no
-IBB é **validação adicional desejável, não requisito** — o veredito não
-o aguarda.
+essa cegueira segue declarada (regra 7 do cap. 02) — ela descreve
+*aquele gate*, não o corpus. Ela nunca bloqueou o veredito: um ghost
+físico basta para excluir. O teste de `c_s²` no IBB era **validação
+adicional desejável, não requisito** — e **está feito**.
+
+*Achado lateral, de instrumento.* Foi essa medida que revelou o defeito
+que gerou a **regra 6b**: com `r ~ 10⁸`, um `h` fixo de 1e−3 dá
+`c_s² = −18760.8`, e o refino até 1e−5 dá **+0.4999999** — cinco ordens
+de grandeza, com `dps` de 60 a 250 sem mover um dígito. **Truncamento
+de estêncil, não precisão de máquina.** Ver cap. 02, regra 6b.
 
 | Saída | Veredito vigente | Razão |
 |---|---|---|
-| Infinite branch / IBB | **EXCLUÍDO** | ghost de Higuchi, `r′ < 0` em toda a história |
+| Infinite branch / IBB | **EXCLUÍDO** | ghost de Higuchi: **`𝒲′(r) > 0`** (teorema); `r′ < 0` é o sintoma equivalente em `β̇_n = 0` |
 | argumento antigo `ξ = 0` | **REVOGADO** | zero do lapso / quique não é por si só singularidade |
-| gradiente no IBB | **SAUDÁVEL** segundo a fonte | canal independente; não salva o Higuchi |
+| gradiente no IBB | **SAUDÁVEL — medido por nós** (50/50) | confirmado pela fonte; canal independente, não salva o Higuchi |
 
 *Nível: 1 para a cadeia simbólica (duas rotas independentes, resíduo
 zero); 2a para as formas fechadas; 2b para a varredura de 108 células,

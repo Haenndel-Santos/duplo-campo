@@ -98,7 +98,23 @@ soluções do fundo é maior do que a cascata assumiu. *Nível 2b; fonte:
 > **re-verificada por CAS em rota independente** — três resíduos
 > simbólicos **zero**, com `β_n` e `μ` gerais e matéria de poeira
 > (R-13b §8.2). Nas nossas variáveis a cadeia fecha exata:
-> **Higuchi ⟺ `ξ ≥ r` ⟺ `r′ ≥ 0`**.
+> **Higuchi ⟺ `ξ ≥ r` ⟺ `𝒲′(r) ≤ 0` ⟺ `r′ ≥ 0`** — e a auditoria de
+> 2026-08-17 estendeu-a a **todo `w > −1`**, não só poeira.
+>
+> > **⚠ DOMÍNIO DO ÚLTIMO ELO (`docs/auditoria_r13.md` §6.2).** Só os
+> > **três primeiros** elos são algébricos em `(r, β_n, μ)`. O elo
+> > `𝒲′(r) ≤ 0 ⟺ r′ ≥ 0` usa `dr/dN` e **vale apenas com `β̇_n = 0`**.
+> > Sob modulação — isto é, **sob a arquitetura da própria v2** — ele
+> > quebra: medido, uma `dβ₁/dN` acima do limiar inverte o sinal de `r′`
+> > e o **LHS(15) não se move** (`−21.8751` em `dβ₁/dN` = 0, 1×, 2× e
+> > 10× o limiar). Perto do atrator tardio o limiar tende a zero, logo
+> > qualquer modulação positiva basta.
+> >
+> > **Consequência normativa, vinculante neste manuscrito:** o
+> > diagnóstico físico é **`𝒲′(r) > 0`** — equivalentemente `ρ̃ > 0` e
+> > `μr² > 1`, que é **teorema** (§E1 abaixo), não medida. **`r′ < 0` é
+> > sintoma, e só é equivalente no domínio `β̇_n = 0`.** Onde este
+> > capítulo escrever `r′`, leia-o como o caso não-modulado.
 >
 > **A medida** (R-13b §§5–6, células IBB genuínas β₂ = β₃ = 0, β₁ > 0,
 > `0 < β₄/β₁ < 2μ^{3/2}`): `r′ < 0` em **100% da história em 108/108
@@ -120,22 +136,33 @@ soluções do fundo é maior do que a cascata assumiu. *Nível 2b; fonte:
 > complementary reasons: the finite branch violates scalar-gradient
 > stability in the early universe, while the genuine infinite branch
 > avoids that instability but violates the Higuchi condition throughout
-> its evolution."* O gradiente do IBB é **saudável segundo a fonte**
-> (§IV A de 1503.07436, que **confirma** e **não** retrata 1407.4331) —
-> canal independente, que não salva o Higuchi.
+> its evolution."*
+>
+> **Os dois lados são medidos por nós** *(atualizado 2026-08-17,
+> `docs/auditoria_r13.md` §4)*. A perna do gradiente **deixou de ser
+> emprestada**: `c_s²` do modo métrico do sistema 2-DOF, medido no ramo
+> infinito de células IBB genuínas com a maquinaria do R-12f/g, é
+> **positivo em 50/50 pontos** — mínimo **0.4428**, de **+1/2** no
+> passado profundo a **+1** no atrator —, acompanhando o canal fechado
+> da literatura `−r″/(3r′)` com desvio `|Δ| ≤ 0.093` que **zera nos dois
+> extremos**, e com **controle positivo** que devolve `−1` no ramo
+> finito. A literatura (§IV A de 1503.07436, que **confirma** e **não**
+> retrata 1407.4331) passa de fonte do enunciado a **validação
+> cruzada**.
 >
 > **Ponto lógico, declarado.** O gate do R-13b **não mede gradiente**, e
-> essa cegueira continua declarada como boa prática (regra 7). Ela
-> **não bloqueia o veredito**: um ghost físico basta para excluir,
-> independentemente de o gradiente estar saudável. Um teste de `c_s²` no
-> IBB é **validação adicional desejável, não requisito** — o veredito
-> não o aguarda.
+> essa cegueira continua declarada como boa prática (regra 7) — ela
+> descreve *aquele* gate, não o corpus. Ela nunca bloqueou o veredito:
+> um ghost físico basta para excluir. O teste de `c_s²` no IBB era
+> **validação adicional desejável, não requisito** — e **foi feito**.
 >
 > **Proveniência:** *infinite branch / IBB* → **EXCLUÍDO**, pelo ghost
-> de Higuchi (`r′ < 0` em toda a história); *argumento antigo `ξ = 0`* →
-> **REVOGADO**, porque o zero do lapso / quique não é por si só
-> singularidade; *gradiente no IBB* → **SAUDÁVEL segundo a fonte**,
-> canal independente que não salva o Higuchi.
+> de Higuchi — enunciado robusto: **`𝒲′(r) > 0`**, teorema, com
+> `r′ < 0` como sintoma equivalente apenas em `β̇_n = 0`; *argumento
+> antigo `ξ = 0`* → **REVOGADO**, porque o zero do lapso / quique não é
+> por si só singularidade; *gradiente no IBB* → **SAUDÁVEL, medido por
+> nós** (50/50) e confirmado pela fonte — canal independente que não
+> salva o Higuchi.
 > *Fontes: `docs/resultado_r13a_criterio_higuchi_fonte.md`;
 > `docs/resultado_r13b_ibb_ramo_infinito.md` §§4–6 e §8;
 > `auditoria/code/out/r13b_ibb_ramo_infinito.txt`.*

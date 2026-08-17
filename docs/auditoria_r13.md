@@ -500,6 +500,36 @@ arco cobre o caso.
 > v2.** Ela substitui a P-6 (que fecha, §1.1) como o item mais caro da
 > fila.
 
+> ## ⚠ QUALIFICAÇÃO — 2026-08-17 (leitura externa + verificação na fonte)
+>
+> **O "não foi verificada por ninguém" acima é correto, mas é estreito
+> demais como está escrito, e convida a uma leitura ampla que é falsa.**
+> A distinção, que passa a ser obrigatória em toda citação deste §6.3:
+>
+> | Objeto | Estado real |
+> |---|---|
+> | **A eq. (14) — a condição de Higuchi — sob `β_n(N)`** | **NÃO derivada por ninguém**, aqui nem na literatura. É esta, e só esta, a fronteira que este parágrafo nomeia. Continua sendo o item mais caro da fila |
+> | **A constraint de Bianchi com termos `β̇_n`** | **JÁ EXISTE em classe-irmã publicada.** Chameleon bigravity (De Felice–Mukohyama–Uzan **1702.04490**, +Oliosi **1711.04655**) promove `β_i → β_i(φ)` e deriva a constraint cosmológica com `β̇_{i+1}` explícito no lado direito |
+>
+> **São equações diferentes**, e a segunda não fecha a primeira: uma é o
+> vínculo de fundo, a outra é o bound de helicidade-0. Mas escrever
+> "ninguém verificou `β_n(N)`" sem qualificar sugere que o terreno é
+> virgem, e ele não é.
+>
+> **Isto não é novidade para o corpus** — `docs/posicionamento_literatura.md`
+> §1.2 já registra a classe-irmã, o fator global × a modulação
+> diferencial como a nossa reivindicação, e — mais fino — que *"em
+> chameleon bigravity o termo `φ̇U_,ξφ` está implícito nas eqs. de fundo
+> **mas a análise de vínculos NUNCA foi feita — lacuna explícita**"*,
+> tratada lá como **a oportunidade**. O que muda aqui é só o fraseado
+> deste parágrafo, que estava mais forte do que o corpus autoriza.
+>
+> **Consequência de fila:** derivar a condição de Higuchi para
+> `β_n(φ₋)` **a partir da ação**, usando 1702.04490 §II como referência
+> de comparação e **não** como fonte de equações — o acoplamento de
+> matéria é diferente (lá `A²(φ)g_{μν}`; aqui matéria só em `g`,
+> minimamente).
+
 ### 6.4 A que não morde, e o R-13b a listava como fronteira (#F2)
 
 **Radiação.** O teorema E1 usa apenas `ρ̃ > 0`, `μr² > 1` e `1+w_tot > 0`
