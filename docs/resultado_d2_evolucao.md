@@ -1,5 +1,30 @@
 # D2 — Evolução Temporal Real vs Espectro Congelado: Resultado
 
+> ## ⚠ SUPERSESSÃO PARCIAL — ERRATUM-02 (2026-08-12). O WATERSHED DE MÉTODO FICA; OS NÚMEROS CAEM.
+>
+> **Documento preservado como registro histórico — e este é o doc onde
+> a distinção mais importa, porque a lição central dele é das poucas
+> que atravessaram intactas.** Nada abaixo foi reescrito; isto é
+> anotação.
+>
+> | Parte deste doc | Estado |
+> |---|---|
+> | **O watershed metodológico: "autovalores congelados não são árbitro dinâmico"** | **FICA DE PÉ, e reforçado.** `manuscript-v2/02_metodo.md` §4 o lista como lição que sobreviveu |
+> | **A diluição tardia** | **CONFIRMADA** no sistema físico corrigido (R-7a) |
+> | **O "transiente lnA ~ 4"** | **ERA O ARTEFATO** — não existe no sistema 2-DOF (R-7b/c) |
+> | **Todas as taxas reais, a projeção no automodo, os números do §2** | **SUBSTITUÍDOS** — este é o **primeiro** documento da cadeia contaminada: `reduz_ponto` nasce em `d2_evolucao_reduzida.py` e é replicado dali em diante |
+>
+> **Causa:** a rotina de absorção de multiplicadores somava `Ċ` duas
+> vezes nas entradas off-diagonais de `W_XX` (1.4–6.1%), promovendo a
+> direção de vínculo `Ψ_f` a 3º DOF escalar propagante. Os controles
+> GR/δχ/halving passavam: o erro precisa de ≥ 2 multiplicadores com
+> `C_XX ≠ 0` para existir, e o sistema errado era internamente
+> consistente.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §1 e §4 (linha "D-2").
+> Fonte do erro: `auditoria/erratum_02_reducao_numerica.md` §1 (a
+> origem em `d2`), §2 e §5.
+
 **Data:** 2026-08-11. Script: `auditoria/code/d2_evolucao_reduzida.py`
 (2 rodadas; 1ª preservada em `out/d2_evolucao_reduzida_rodada1.txt`,
 2ª — oficial — em `out/d2_evolucao_reduzida.txt`; sondas de diagnóstico

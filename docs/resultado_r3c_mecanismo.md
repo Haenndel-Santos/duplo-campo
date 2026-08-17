@@ -1,5 +1,30 @@
 # R-3c — O Mecanismo do Crescimento Tardio: Ponto Fixo, e a Esquina β₁-Grande — Resultado
 
+> ## ⛔ SUPERSEDED — ERRATUM-02 (2026-08-12). O CRESCIMENTO CUJO MECANISMO ESTE DOC EXPLICA NÃO EXISTE.
+>
+> **Documento preservado como registro histórico. Não citar o
+> mecanismo, a esquina β₁-grande, nem a síntese em `k_phys/H`.** Nada
+> abaixo foi reescrito; isto é anotação.
+>
+> **O que morreu:** este documento é inteiro sobre **o mecanismo do
+> crescimento tardio** — e o crescimento tardio era o 3º DOF espúrio.
+> Caem junto os dois vereditos (R3c-DRIFT = PONTO-FIXO; R3c-BETA =
+> ESQUINA-β₁), a releitura da "estrutura IR" e o §3 ("o instrumento
+> congelado agora erra nos dois sentidos"), cujo lado "real" vinha do
+> sistema errado. O controle R3c-CONT passava porque reproduzia os
+> braços oficiais **do mesmo sistema espúrio**.
+>
+> **Causa:** `reduz_ponto` em `r3c_pousada_mecanismo.py` somava `Ċ`
+> duas vezes nas entradas off-diagonais de `W_XX`, promovendo a direção
+> de vínculo `Ψ_f` a 3º DOF escalar propagante.
+>
+> **O que fica:** o *fundo* dos braços (rolagem, pouso, Γ) é intocado.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §2–§4 (banda morta em
+> todos os regimes, logo não há crescimento a explicar);
+> `docs/resultado_r7e_saude_interna.md`. Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §1 e §5.
+
 **Data:** 2026-08-12. Script: `auditoria/code/r3c_pousada_mecanismo.py`
 (saída em `auditoria/code/out/r3c_pousada_mecanismo.txt`). Execução:
 autor (.venv). Fecha a forquilha declarada em

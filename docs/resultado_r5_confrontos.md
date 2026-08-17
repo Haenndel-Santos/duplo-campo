@@ -1,5 +1,35 @@
 # R-5 — Os Três Confrontos Nível-Paper: ISW Aponta Tensão; Dispersão √k Discrimina da Literatura; Tensão-Akrami Localizada no Canto-β
 
+> ## ⛔ SUPERSEDED — ERRATUM-02 (2026-08-12). NENHUM DOS TRÊS CONFRONTOS É VIGENTE.
+>
+> **Documento preservado como registro histórico. Não citar nenhum
+> número nem nenhuma previsão daqui.** Nada abaixo foi reescrito; isto é
+> anotação.
+>
+> **O que morreu, item por item:**
+>
+> | Resultado deste doc | Estado |
+> |---|---|
+> | **Excesso ISW de 2–8× em baixo-ℓ (R5-A) — "tensão real na direção errada"** | **RETIRADO.** A cadeia banda → Φ_g → ISW perdeu os **dois primeiros elos**: não há banda, e Φ_g **decai** (~e⁻⁸ na passagem, 32/32 em norma métrica). A previsão era artefato — não é que a observação mudou |
+> | **Dispersão p = 0.44 (√k, não gradiente) (R5-B)** | **RETIRADA** — medida sobre o ramo congelado-canônico do sistema espúrio |
+> | **Tensão-Akrami localizada no canto-β (R5-C)** | **RETIRADA** — mesma origem |
+>
+> **Causa:** a rotina numérica de absorção de multiplicadores
+> (`reduz_ponto`, presente em `r5_confrontos_paper.py`) somava `Ċ`
+> **duas vezes** em cada entrada off-diagonal de `W_XX`, promovendo a
+> direção de vínculo `Ψ_f` a grau de liberdade propagante. Todo este
+> documento foi medido sobre um sistema de **3 DOFs escalares que não
+> existe**. A biblioteca simbólica (`tdcp_pert_lib.py`) nunca teve o
+> bug. Tamanho do erro: 1.4–6.1% de `W_XX` — pequeno, suave e por isso
+> com todos os sintomas de física.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §5 — o **enunciado
+> observacional v4**, que substitui explicitamente o v3 do R-4c e este
+> R-5. Fonte do erro: `auditoria/erratum_02_reducao_numerica.md`
+> (§1 o bug, §5 a cascata de consequências).
+>
+> **Leitura de uma linha:** *não há previsão de excesso de ISW na F1.*
+
 **Data:** 2026-08-12. Script: `auditoria/code/r5_confrontos_paper.py`
 (2ª rodada — oficial — em `out/r5_confrontos_paper.txt`; 1ª preservada
 em `out/r5_confrontos_paper_rodada1.txt`; diferenças da v2: fit do

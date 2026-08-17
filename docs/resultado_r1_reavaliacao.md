@@ -1,5 +1,29 @@
 # R-1 — Reavaliação do No-Go β-Constante por Evolução Real — Resultado
 
+> ## ⚠ SUPERSESSÃO PARCIAL — ERRATUM-02 (2026-08-12). A CONCLUSÃO QUALITATIVA SOBREVIVE; OS NÚMEROS, NÃO.
+>
+> **Documento preservado como registro histórico.** Nada abaixo foi
+> reescrito; isto é anotação.
+>
+> | Parte deste doc | Estado |
+> |---|---|
+> | **"O no-go congelado é vácuo; tudo dilui"** — a conclusão qualitativa | **SOBREVIVE**, e foi confirmada no sistema físico corrigido (R-7a: o modo métrico é *overdamped* e decai) |
+> | **Todos os números** — taxas reais, tabela de comparação congelado-vs-real, os dois achados estruturais do §2 | **DESCARTADOS** — medidos sobre o sistema espúrio de 3 DOFs |
+>
+> **Por que a conclusão sobrevive ao erro:** o R-1 concluía que as taxas
+> *reais* não realizam o que o espectro *congelado* prevê. Essa
+> assimetria continua valendo no sistema de 2 DOFs — por outra razão e
+> com outros números. **Não é confirmação do R-1: é coincidência de
+> direção.** Não usar os números daqui como evidência.
+>
+> **Causa:** `reduz_ponto` em `r1_reavaliacao_nogo_evolucao.py` somava
+> `Ċ` duas vezes nas entradas off-diagonais de `W_XX`. O controle GR
+> passava porque o sistema GR tem 1 dof e o bug exige ≥ 2
+> multiplicadores com `C_XX ≠ 0`.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §1 e §4. Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §1 e §5.
+
 **Data:** 2026-08-11 (noite). Script:
 `auditoria/code/r1_reavaliacao_nogo_evolucao.py` (saída em
 `auditoria/code/out/r1_reavaliacao_nogo_evolucao.txt`). Primeiro item

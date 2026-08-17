@@ -1,5 +1,34 @@
 # Gate F — A Letalidade da Direção Cinética Negativa
 
+> ## ⛔ SUPERSEDED — ERRATUM-02 (2026-08-12). O GATE PERDEU O OBJETO.
+>
+> **Documento preservado como registro histórico — e ele vale a
+> leitura, porque o protocolo é bom; o que caiu foi o alvo.** Nada
+> abaixo foi reescrito; isto é anotação.
+>
+> **O que morreu:** **a direção cinética negativa não existe.** Este
+> gate foi desenhado para decidir se ela era letal (F-a constraint,
+> F-b normalização canônica, F-c interações). A pergunta ficou **sem
+> objeto**: com a redução corrigida, o setor escalar tem 2 DOFs com
+> **cinética positiva nos dois fundos**, e a direção `K < 0` era a
+> direção de vínculo `Ψ_f` promovida a modo propagante por um erro
+> numérico. As duas etapas executadas (`§4-bis`) caíram junto —
+> `docs/resultado_gatef_a.md` e `docs/resultado_gatef_b.md`, ambas com
+> banner próprio.
+>
+> **Causa:** `reduz_ponto` em `gatef_a_constraint.py` e
+> `gatef_b_canonica.py` somava `Ċ` duas vezes nas entradas
+> off-diagonais de `W_XX`.
+>
+> **O que fica de pé neste documento:** o **método** — critérios
+> pré-declarados, ramos de saída nomeados antes de rodar, estratificação
+> epistêmica. `manuscript-v2/02_metodo.md` §2 usa este arco como caso
+> máximo justamente por isso.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §1 e §4;
+> `docs/resultado_r7e_saude_interna.md`. Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §4 e §5.
+
 **Data:** 2026-08-11 (noite). **Decisão de prioridade do autor**,
 tomada após leitura crítica de D2/R-1/R-2: *"Não partiria agora para
 'TDCP-2'. A F1 ganhou uma sobrevida real. Eu terminaria R-3/R-4 e,

@@ -1,5 +1,29 @@
 # Gate F-a — Resultado: a Banda é Física (F-a3); H-CONSTRAINT Escala para o F-b
 
+> ## ⛔ SUPERSEDED — ERRATUM-02 (2026-08-12). "A BANDA É FÍSICA" CAIU.
+>
+> **Documento preservado como registro histórico. Não citar a
+> certificação da banda nem a expulsão dinâmica.** Nada abaixo foi
+> reescrito; isto é anotação.
+>
+> **O que morreu:** a **BANDA-FÍSICA** — a certificação F-a3 de que a
+> banda do R-4 sobrevive na superfície do candidato a vínculo — e a
+> **expulsão dinâmica**. A banda certificada aqui **não existe**
+> (`docs/resultado_r7_cascata.md` §2–§3: `lnA` de `+4` para `−8.4`, e
+> 8/8 épocas negativas no pousado). Certificar a realidade física de um
+> objeto espúrio foi possível porque o teste rodava **dentro da mesma
+> redução defeituosa** que o criou.
+>
+> **Causa:** `reduz_ponto` em `gatef_a_constraint.py` somava `Ċ` duas
+> vezes nas entradas off-diagonais de `W_XX`, promovendo a direção de
+> vínculo `Ψ_f` a 3º DOF escalar propagante. O H-CONSTRAINT que este
+> gate "escalou para o F-b" perseguia um modo inexistente.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §2–§4 e
+> `docs/resultado_r7e_saude_interna.md`. Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §5 (*"Gate F-a:
+> BANDA-FISICA, expulsão dinâmica — **CAI** (mesma redução)"*).
+
 **Data:** 2026-08-12. Script: `auditoria/code/gatef_a_constraint.py`
 (saída em `auditoria/code/out/gatef_a_constraint.txt`). Execução:
 autor (.venv). Primeira etapa do Gate F

@@ -1,5 +1,26 @@
 # R-4b — A Forma da Banda e o lnA de Passagem por Modo — Resultado
 
+> ## ⛔ SUPERSEDED — ERRATUM-02 (2026-08-12). A BANDA NÃO EXISTE.
+>
+> **Documento preservado como registro histórico. Não citar o `lnA` de
+> passagem nem a forma da banda.** Nada abaixo foi reescrito; isto é
+> anotação.
+>
+> **O que morreu:** a **amplificação de passagem universal
+> (`lnA = +3.97`)** — o número central deste documento, e a âncora que
+> R-4c e R-5 depois reutilizaram —, a "forma em rajadas com rotação de
+> componentes" e a modulação da banda pela época de cruzamento. No
+> sistema corrigido a passagem **dilui**: `lnA = −8.4` no estático.
+> Os portões R4b-NULL e R4b-AUTOSIM passavam sobre o mesmo sistema
+> espúrio e não protegiam contra este erro.
+>
+> **Causa:** `reduz_ponto` em `r4b_forma_da_banda.py` somava `Ċ` duas
+> vezes nas entradas off-diagonais de `W_XX`, criando um **3º DOF
+> escalar inexistente** a partir da direção de vínculo `Ψ_f`.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §2. Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §1 e §5.
+
 **Data:** 2026-08-12. Script: `auditoria/code/r4b_forma_da_banda.py`
 (saída em `auditoria/code/out/r4b_forma_da_banda.txt`). Execução:
 autor (.venv). Bloco 2 do R-4 — entrega os insumos quantitativos do

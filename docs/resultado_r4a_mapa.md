@@ -1,5 +1,28 @@
 # R-4a — O Mapa do Fenômeno Tardio: a Banda é da Classe Inteira, e é Transiente de Cruzamento — Resultado
 
+> ## ⛔ SUPERSEDED — ERRATUM-02 (2026-08-12). A BANDA NÃO EXISTE.
+>
+> **Documento preservado como registro histórico. Não citar os `lnA`
+> nem o enunciado de classe.** Nada abaixo foi reescrito; isto é
+> anotação.
+>
+> **O que morreu:** a **banda de amplificação métrica** que este
+> documento mapeia como propriedade da classe inteira — e com ela o
+> "transiente de cruzamento" e todo o enunciado de §4. Reexecutada no
+> sistema corrigido, a banda é **MORTA**: estática `lnA = −8.4` (era
+> `+4`), pousada `−11.0…−14.7` em **8/8** épocas de cruzamento (eram
+> `−0.2…+4.8`). Nenhuma época amplifica.
+>
+> **Causa:** `reduz_ponto` em `r4a_mapa_tardio.py` somava `Ċ` duas
+> vezes nas entradas off-diagonais de `W_XX`, promovendo a direção de
+> vínculo `Ψ_f` a **3º DOF escalar propagante que não existe**. A banda
+> era o modo espúrio. O portão R4a-NULL (GR) passava porque o controle
+> GR tem 1 dof e o bug precisa de ≥ 2 multiplicadores com `C_XX ≠ 0`.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §2 (banda estática) e §3
+> (banda no pousado) — **R-4 COMPLETO substituído**. Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §1 e §5.
+
 **Data:** 2026-08-12. Script: `auditoria/code/r4a_mapa_tardio.py`
 (saída em `auditoria/code/out/r4a_mapa_tardio.txt`). Execução: autor
 (.venv). Bloco 1 do R-4; fecha as três perguntas declaradas em

@@ -1,5 +1,41 @@
 # Gate F-b — Resultado: Sem Vínculo Escondido; o Fantasma é um Ramo Espectral Canônico a ω₀ ≈ 3–4·Λ₃ (H-SC, com número)
 
+> ## ⛔ SUPERSEDED — ERRATUM-02 (2026-08-12). **NÃO EXISTE FANTASMA.** ESTE É O CASO MÁXIMO DO ERRATUM.
+>
+> **Documento preservado como registro histórico. Não citar `ω₀`, a
+> aritmética do cutoff, o H-SC, nem a CONF-BANDA.** Nada abaixo foi
+> reescrito; isto é anotação.
+>
+> **O que morreu:** **o fantasma inteiro.** Não há ramo propagante de
+> norma negativa no espectro linear escalar da F1. Com a redução
+> corrigida o setor tem **2 DOFs escalares** (1 métrico tipo `E_f` +
+> espectador `δχ`), ambos com **cinética positiva**, e `Ψ_f` é
+> **direção de vínculo** — exatamente o vínculo secundário que remove o
+> modo Boulware–Deser, como manda o teorema Hassan–Rosen e o setor
+> escalar FRW de Comelli–Crisostomi–Pilo. A cadeia
+> `ω₀/H ≈ 7–12 → ω₀/Λ₃ ≈ 3–4 → H-SC` **perde o objeto**: o `σ_can` era
+> o **espectador re-escalado** (`docs/resultado_r7_cascata.md` §1
+> fecha a conta). A **CONF-BANDA** do §4 — a "reabilitação do
+> instrumento congelado" — certificava a banda espúria.
+>
+> **Causa, e por que os gates internos não pegaram** (o ponto de
+> método): `reduz_ponto` em `gatef_b_canonica.py` somava `Ċ` duas vezes
+> nas entradas off-diagonais de `W_XX` (1.4–6.1% de erro, **suave**).
+> `V-ETA = 1.1e−15` e `V-RES = 0.001` validam a consistência interna do
+> sistema **já reduzido** — o bug está a montante deles, e o sistema
+> errado era internamente consistente. `V-EQUIV-GR` usa um sistema GR de
+> **1 dof**, e o bug exige ≥ 2 multiplicadores com `C_XX ≠ 0`. A
+> normalização canônica divide por `√|λ₀|`: com `λ₀` espúrio mas suave,
+> devolve `ω₀/H ~ 7–12` estável. **O "assentamento" era o artefato
+> assentando.**
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §1 e
+> `docs/resultado_r7e_saude_interna.md` (saúde interna fechada). Fonte
+> do erro: `auditoria/erratum_02_reducao_numerica.md` §2 (por que
+> nenhum gate pegou), §4 (a física correta) e §5.
+>
+> **Leitura de uma linha:** *o fantasma canônico da F1 nunca existiu.*
+
 **Data:** 2026-08-12. Script: `auditoria/code/gatef_b_canonica.py`
 (v2 — arquitetura de integração única + diagnóstico local; oficial em
 `out/gatef_b_canonica.txt`; 1ª rodada preservada em

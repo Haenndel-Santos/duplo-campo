@@ -1,5 +1,34 @@
 # R-2 — O Fantasma Estrutural: Caracterização e Limites — Resultado
 
+> ## ⛔ SUPERSEDED — ERRATUM-02 (2026-08-12). NÃO HÁ FANTASMA ESTRUTURAL.
+>
+> **Documento preservado como registro histórico. Não citar a
+> caracterização do modo, a composição `Ψ_f`-pura, a fusão
+> fantasma-taquião nem a frequência crescente.** Nada abaixo foi
+> reescrito; isto é anotação.
+>
+> **O que morreu:** o **invariante 2b do §1** — a direção cinética
+> negativa "estrutural" — **cai**. A `K_red` estava errada. E há uma
+> ironia que vale registrar como método: este documento **mediu
+> corretamente** que o modo era `Ψ_f`-puro em k baixo. Isso não era a
+> assinatura de um fantasma estrutural — era a assinatura de que
+> **`Ψ_f` é direção de vínculo**, exatamente o vínculo secundário que
+> remove o modo Boulware–Deser. *O dado estava certo; a leitura,
+> invertida.* O r6 confirmaria depois `|v₀·Ψ_f|² = 1.0000` em 40/40
+> marcos — e o r6d mostraria que, com a absorção corrigida, aquele
+> autovalor despenca ~11 ordens e vira zero numérico.
+>
+> **Causa:** `reduz_ponto` em `r2_fantasma_estrutural.py` somava `Ċ`
+> duas vezes nas entradas off-diagonais de `W_XX`.
+>
+> **O que fica de pé:** a **autocrítica do §2** — o documento já
+> corrigia a leitura do veredito impresso pelo próprio script. Esse
+> hábito é o que acabou produzindo o erratum.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §1 e §4. Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §3 (etapas r6→r6d), §4 e
+> §5 (*"R-2: direção K<0 estrutural — **CAI** (K_red errada)"*).
+
 **Data:** 2026-08-11 (noite). Script:
 `auditoria/code/r2_fantasma_estrutural.py` (saída em
 `auditoria/code/out/r2_fantasma_estrutural.txt`). Execução em sessão

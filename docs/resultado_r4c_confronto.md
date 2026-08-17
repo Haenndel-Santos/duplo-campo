@@ -1,5 +1,28 @@
 # R-4c — O Confronto por Épocas: Supressão na Matéria, Dano Confinado ao Horizonte — Resultado
 
+> ## ⛔ SUPERSEDED — ERRATUM-02 (2026-08-12). O ENUNCIADO v3 CAIU INTEIRO.
+>
+> **Documento preservado como registro histórico. Não citar a
+> supressão-matéria, o dano confinado ao horizonte, nem o enunciado
+> observacional v3.** Nada abaixo foi reescrito; isto é anotação.
+>
+> **O que morreu:** a **"banda desliga na era de matéria"** (Braço C) e
+> o **enunciado observacional v3** do §3 — que era o produto deste
+> documento e a base do R-5. Ambos descreviam o comportamento por época
+> de uma banda que **não existe**: no sistema corrigido nenhuma época
+> de cruzamento amplifica (8/8 negativas, `−11.0…−14.7`), logo não há o
+> que "desligar" na matéria. A âncora `R4c-BASE = +3.97` herdada do
+> R-4b é do mesmo sistema espúrio.
+>
+> **Causa:** `reduz_ponto` em `r4c_confronto_epocas.py` somava `Ċ` duas
+> vezes nas entradas off-diagonais de `W_XX`, promovendo a direção de
+> vínculo `Ψ_f` a **3º DOF escalar propagante inexistente**.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §3 (pousado, 8/8 épocas)
+> e **§5 — enunciado observacional v4, que substitui explicitamente o
+> v3 deste documento**. Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §1 e §5.
+
 **Data:** 2026-08-12. Script: `auditoria/code/r4c_confronto_epocas.py`
 (2ª rodada — oficial — em `out/r4c_confronto_epocas.txt`; 1ª
 preservada em `out/r4c_confronto_epocas_rodada1.txt`). Execução:

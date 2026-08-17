@@ -1,5 +1,32 @@
 # R-3 — Fase B por Evolução Real na Rolagem — Resultado
 
+> ## ⚠ SUPERSESSÃO PARCIAL — ERRATUM-02 (2026-08-12). O FUNDO FICA; A DINÂMICA PERTURBATIVA CAI.
+>
+> **Documento preservado como registro histórico. A distinção abaixo é
+> obrigatória — este banner não anula o documento inteiro.** Nada
+> abaixo foi reescrito; isto é anotação.
+>
+> | Parte deste doc | Estado |
+> |---|---|
+> | **O fundo de rolagem/pouso** (a trajetória de `φ₋`, a condensação, o mecanismo) | **FICA DE PÉ** — não passa pela redução escalar; reintegrado e conferido no R-7c |
+> | **Toda a dinâmica perturbativa reduzida** — taxas reais, R3-ROLAGEM/NÃO-REALIZA, R3-PODER, o "crescimento tardio real ~+1H", o dano transiente | **DESCARTADA** — medida sobre o sistema espúrio de 3 DOFs |
+>
+> **Causa:** `reduz_ponto` em `r3_faseB_evolucao_rolagem.py` somava `Ċ`
+> duas vezes nas entradas off-diagonais de `W_XX`, promovendo a direção
+> de vínculo `Ψ_f` a 3º DOF escalar propagante.
+>
+> **Ressalva adicional, independente do Erratum-02:** as taxas do fundo
+> integrado por Euler explícito eram **internamente inconsistentes em
+> ~1e−3** (a identidade `ḃ = bξH_f` não fechava). O defeito existia
+> desde o R-3, **sem detector**, e só foi pego pelo V-XREP na 1ª rodada
+> do R-7c, que o tratou passando todas as taxas a derivadas-de-spline.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §3 e §4;
+> `docs/resultado_r7e_saude_interna.md` §1–§3 (a Fase B é **sã**; o
+> `σ/H ≈ 13` era artefato triplo — QEP congelado + 3-DOF espúrio +
+> normalização variável). Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §1 e §5.
+
 **Data:** 2026-08-12. Script: `auditoria/code/r3_faseB_evolucao_rolagem.py`
 (saída em `auditoria/code/out/r3_faseB_evolucao_rolagem.txt`).
 **Autoria colaborativa registrada:** script escrito pela sessão paralela

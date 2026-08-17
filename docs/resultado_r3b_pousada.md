@@ -1,5 +1,30 @@
 # R-3b — Família Pousada: Convergência e o Teste do Bombeamento — Resultado
 
+> ## ⚠ SUPERSESSÃO PARCIAL — ERRATUM-02 (2026-08-12). O FUNDO FICA; A DINÂMICA PERTURBATIVA CAI.
+>
+> **Documento preservado como registro histórico.** Nada abaixo foi
+> reescrito; isto é anotação.
+>
+> | Parte deste doc | Estado |
+> |---|---|
+> | **A família pousada como fundo** (construção, convergência do pouso) | **FICA DE PÉ** — não passa pela redução escalar |
+> | **O crescimento tardio convergido (§1.1), a refutação da hipótese paramétrica (§1.2), o corte em `k_phys ≳ 2` (§1.3) e o "dado congelado-vs-real mais dramático da série" (§1.4)** | **DESCARTADOS** — o crescimento medido era o 3º DOF espúrio |
+>
+> **Cuidado com o §1.4 em particular:** o contraste "congelado 41.7 vs
+> real 0.06" continua sendo um dado sobre o *instrumento congelado*,
+> mas o "real 0.06" saiu do sistema errado. Não use o par como
+> evidência quantitativa.
+>
+> **Causa:** `reduz_ponto` em `r3b_pousada_parametrico.py` somava `Ċ`
+> duas vezes nas entradas off-diagonais de `W_XX`. As pré-condições
+> R3b-BASE e R3b-CONV passavam porque reproduziam fielmente as taxas
+> **do mesmo sistema espúrio** — são gates de estabilidade de ambiente,
+> não de correção da redução.
+>
+> **Sucessor:** `docs/resultado_r7_cascata.md` §3 e §4;
+> `docs/resultado_r7e_saude_interna.md`. Fonte do erro:
+> `auditoria/erratum_02_reducao_numerica.md` §1 e §5.
+
 **Data:** 2026-08-12. Script: `auditoria/code/r3b_pousada_parametrico.py`
 (saída em `auditoria/code/out/r3b_pousada_parametrico.txt`). Follow-up
 pré-declarado do achado §1.3 + caveat §3.4 de
