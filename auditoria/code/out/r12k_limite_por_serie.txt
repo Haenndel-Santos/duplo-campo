@@ -1,0 +1,23 @@
+========================================================================
+R-12k — c_s^2(r -> 0) por serie truncada
+========================================================================
+[1] montando L2 simbolica (uma vez) ...
+    pronta
+
+========================================================================
+CELULA C1  b2=0     b4=0    b0=1 mu=1
+========================================================================
+    -- NORD = 10
+      fundo substituido e truncado (3s)
+      sistema 4x4 resolvido por Gauss truncado (12s)
+      [V-K3] ordem em rho da linha 0 de K3: [oo, oo, oo]  (nula em forma fechada; na serie truncada aparece so o residuo do corte)
+       c_s^2(r -> 0) = -2   [confiavel ate rho^1; 24s]
+    -- NORD = 12
+      fundo substituido e truncado (3s)
+      sistema 4x4 resolvido por Gauss truncado (21s)
+      [V-K3] ordem em rho da linha 0 de K3: [oo, oo, oo]  (nula em forma fechada; na serie truncada aparece so o residuo do corte)
+       c_s^2(r -> 0) = -2   [confiavel ate rho^1; 38s]
+    [V-ORDEM] limite e coef. de r estaveis entre NORD 10 e 12: SIM
+    [V-C1] reproduz 1 coeficiente(s) de -1 + 2r + (39/2) r^2 do R-12b: NAO
+    [V-C1] REPROVADO — o truncamento corrompe o
+           resultado; nada abaixo vale. Abortando.
