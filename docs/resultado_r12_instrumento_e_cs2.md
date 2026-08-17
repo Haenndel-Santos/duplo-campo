@@ -150,6 +150,19 @@ Duas regras entram para o cap. 02:
    > baixar `h` move-o. **Precisão não é o eixo; `h` é.** Todo refino
    > deve reportar os dois.
    >
+   >
+   > **[VERIFICADO nos números deste arquivo — 2026-08-17.]** A emenda
+   > deixava sob suspeita o `h = 1e−3` usado aqui e no R-12g. Testado
+   > no extremo de `r` grande **deste** domínio (ramo finito,
+   > `r ≤ 0.33`), com `h` = 1e−3, 1e−4 e 1e−5: **nada move**. Em
+   > `a = 1000` (`r = 0.332`), `c_s² = 1.008801628115753` (kh = 30) e
+   > `1.000007947005268` (kh = 1000), **idênticos nos três `h`**; em
+   > `a = 0.316`, `−0.7909078658975` a 13 dígitos; e
+   > `a_cross = 0.5780849683` idêntico nos três. O caso que impôs a 6b
+   > está em `r ~ 10⁸` — **oito ordens de grandeza** acima do maior `r`
+   > que este arquivo toca. Logo os números de R-12f/R-12g/R-12h ficam
+   > de pé, agora por medida e não por suposição. *(Saída:
+   > `auditoria/code/out/r12l_regra6b_no_ramo_finito.txt`.)*
    > **Raio de alcance, medido.** *Não atinge o R-13b* — nenhum número
    > decisivo dele passa por estêncil (`dr/dN`, `ξ`, `m_T²`, `H²` são
    > forma fechada). *Não atinge o R-12g no domínio dele* — com `r → 0`,
