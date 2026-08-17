@@ -1,0 +1,267 @@
+==========================================================================
+R-13aud/A+D -- AUDITORIA DO MAPA DE CONVENCOES E DA TRADUCAO
+==========================================================================
+
+Rota deste script: a REDUNDANCIA DA ACAO (f -> lambda^2 f).
+Rota do R-13a: casamento das duas Friedmann.
+Sao rotas independentes: uma parte da acao, a outra das eqs. de
+fundo ja' derivadas.
+
+--------------------------------------------------------------------------
+[A1] e_n(sqrt(g^{-1} f)) do fundo, e a reescala f -> lambda^2 f
+--------------------------------------------------------------------------
+
+  Os e_n sao calculados pela raiz matricial em serie (Sylvester) +
+  tracos de derivations/code/tdcp_pert_lib.py -- NAO por formula
+  decorada. Depois se aplica b -> lambda b, N_f -> lambda N_f.
+
+  e_n obtidos (com r = b/a, xi = N_f/N_g):
+     e_0 = 1
+     e_1 = xi + 3*b/a
+     e_2 = 3*b*(a*xi + b)/a**2
+     e_3 = b**2*(3*a*xi + b)/a**3
+     e_4 = b**3*xi/a**3
+
+  [        A1] residuo = 0, 0, 0, 0, 0                                                          OK
+
+--------------------------------------------------------------------------
+[A2] o cinetico de f sob a mesma reescala
+--------------------------------------------------------------------------
+
+  L_f            = -3*M_f^2*bF(t)*Derivative(bF(t), t)**2/NfF(t)
+  L_f (reescala) = -3*M_f^2*lambda**2*bF(t)*Derivative(bF(t), t)**2/NfF(t)
+  => M_f^2 efetivo multiplica por lambda^2; para levar M_f^2 -> M_g^2
+     e' preciso lambda^2 = M_f^2/M_g^2 = mu, isto e' lambda = sqrt(mu).
+  [        A2] residuo = 0                                                                      OK
+
+--------------------------------------------------------------------------
+[A3] o mapa dos beta sai SO' de A1+A2 (sem tocar as Friedmann)
+--------------------------------------------------------------------------
+
+  Invariancia de V = sum_n beta_n e_n sob a reescala exige
+  beta_n^K e_n(reescalado) = beta_n e_n, coeficiente a coeficiente.
+
+  solucao unica? True
+     beta_0^K = beta_0    (esperado: lambda^-0 beta_0)
+     beta_1^K = beta_1/lambda    (esperado: lambda^-1 beta_1)
+     beta_2^K = beta_2/lambda**2    (esperado: lambda^-2 beta_2)
+     beta_3^K = beta_3/lambda**3    (esperado: lambda^-3 beta_3)
+     beta_4^K = beta_4/lambda**4    (esperado: lambda^-4 beta_4)
+  [        A3] residuo = 0, 0, 0, 0, 0                                                          OK
+
+  Com lambda = sqrt(mu) e a normalizacao global A = m^2 M_ef^2/M_g^2
+  (que traz o potencial para as unidades de Konnig, onde M_g^2 = 1 e
+  m^2 esta' absorvido nos beta):
+
+      r_K = sqrt(mu) r,   beta_n^K = A mu^{-n/2} beta_n
+
+  IDENTICO ao mapa do R-13a sec.2.1, obtido aqui SEM usar as
+  Friedmann. Rota independente: FECHA.
+
+--------------------------------------------------------------------------
+[A4/A5] sobredeterminacao pelas DUAS Friedmann (incognitas livres)
+--------------------------------------------------------------------------
+
+  Friedmann-g fixa A_0..A_3 (c fica LIVRE): True
+     A_0 = A
+     A_1 = A/c
+     A_2 = A/c**2
+     A_3 = A/c**3
+  [        A4] residuo = 0, 0, 0, 0                                                             OK
+
+  Friedmann-f, DEPOIS de substituir A_0..A_3 de A4. Coeficientes:
+     beta_4*(-A + A4*c**2*mu)/mu = 0
+     3*A*beta_3*(-c**2 + mu)/(c**2*mu) = 0
+     3*A*beta_2*(-c**2 + mu)/(c**2*mu) = 0
+     -A*beta_1/mu + A*beta_1/c**2 = 0
+  solucoes: [{A4: A/mu**2, c: sqrt(mu)}]
+  [       A5] c = sqrt(mu) E A_4 = A mu^-2 aparecem juntos? OK
+
+  SOBREDETERMINACAO: a Friedmann-f impoe DUAS condicoes
+  independentes (o bloco beta_1/beta_2/beta_3 e o termo beta_4) e as
+  duas dao o MESMO c. O padrao mu^{-n/2} nao foi imposto no n=4:
+  ele SAIU. O mapa e' unico e fecha.
+
+--------------------------------------------------------------------------
+[A6] consequencias NAO usadas na construcao: eqs. (12) e (13)
+--------------------------------------------------------------------------
+
+  (12) de Konnig, sob o mapa, contra a NOSSA W(r):
+  [       A6a] residuo = 0                                                                      OK
+  (13) de Konnig (w GERAL) contra sqrt(mu) * (nosso dr/dN):
+  [       A6b] residuo = 0                                                                      OK
+
+--------------------------------------------------------------------------
+[A7] xi = N_f/N_g: a identificacao, e xi_K = sqrt(mu) xi
+--------------------------------------------------------------------------
+
+  Nossa convencao (tdcp_pert_lib.py, scalar_metric_f / _selftest):
+     g = diag(-1, a^2, a^2, a^2),  f = diag(-xi^2, b^2, b^2, b^2)
+     => N_g = 1, N_f = xi. Logo xi = N_f/N_g LITERALMENTE.
+
+  Konnig (4)/(5): g = a^2(-H^{-2}dt^2 + dx^2),
+                  f = b^2(-X^2 H^{-2}dt^2 + dx^2)
+     => N_g = a/H, N_f = b X/H, N_f/N_g = r X.
+  E a eq. (9) da' X = 1 + r'/r, logo r X = r + r'.
+
+  [       A7a] residuo = 0                                                                      OK
+  [       A7b] residuo = 0                                                                      OK
+  => xi_K = r_K + r_K' = sqrt(mu)(r + r') = sqrt(mu) xi:
+     fator POSITIVO, logo MESMO SINAL e MESMO ZERO. A traducao de
+     xi e' invariante de sinal, como o R-13a afirma.
+
+--------------------------------------------------------------------------
+[A8] a cadeia (14)<=>(15)<=>W'<=0<=>r'>=0<=>xi>=r, com w GERAL
+--------------------------------------------------------------------------
+
+  LHS(15) traduzida (R-13a sec.2.2):
+     beta_1 + 3*beta_3*mu*r**4 + 2*r**3*(3*beta_2*mu - beta_4) + 3*r**2*(beta_1*mu - beta_3)
+
+  [       A8a] residuo = 0                                                                      OK
+  (caixa do cap.06 com xi->r) == (caixa do R-13a sec.2.2)?
+  [      A8b0] residuo = 0                                                                      OK
+  (m_T^2|_{xi->r} - 2H^2)*3 M_f^2 r/(m^2 M_ef^2) == LHS(15)?
+  [       A8b] residuo = 0                                                                      OK
+  B_2 de Konnig sob o mapa == A mu^{-1/2} calB(r)?
+  [       A8c] residuo = 0                                                                      OK
+
+  (d) SINAL, com w geral. Derivando W(r(N)) = rho_til(N) e usando
+      drho_til/dN = -3(1+w) rho_til:
+         dr/dN = -3(1+w) rho_til / W'(r)
+      Com rho_til > 0 e 1+w > 0:  sign(r') = -sign(W').
+      Com A8a:  W' <= 0  <=>  LHS(15) >= 0  <=>  (14).
+      Logo:  (14) <=> r' >= 0 <=> xi >= r,  para TODO w > -1.
+
+  >>> EXTENSAO ALEM DO R-13b: o R-13b verificou a cadeia SO' para
+      poeira (drho/dN = -3 rho). Aqui o fator (1+w) sai como fator
+      POSITIVO comum e nao toca a equivalencia. A cadeia vale para
+      qualquer w > -1 constante ou nao -- inclusive radiacao.
+
+--------------------------------------------------------------------------
+[A8-MOD] o que a modulacao beta_n(phi_-) quebra -- MEDIDO, nao so' declarado
+--------------------------------------------------------------------------
+
+  Com beta_n = beta_n(N), a derivada total de W(r(N), N) ganha um
+  termo novo:  W' dr/dN + dW/dN|_r = -3(1+w) rho_til, logo
+
+      dr/dN = -[3(1+w) rho_til + (dW/dN)|_r] / W'(r)
+
+  (dW/dN)|_r = -bd0 - 3*bd1*r + bd1/(mu*r) - 3*bd2*r**2 + 3*bd2/mu - bd3*r**3 + 3*bd3*r/mu + bd4*r**2/mu
+
+  => sign(r') deixa de ser -sign(W'). A equivalencia
+     `r' >= 0 <=> W' <= 0 <=> Higuchi` QUEBRA sempre que
+     |(dW/dN)|_r| > 3(1+w) rho_til  com sinal oposto.
+
+  A INEQUACAO (14)/(15) em si NAO usa r' e continua valendo ponto a
+  ponto (ela e' algebrica em (r, beta_n)); o que cai e' a
+  EQUIVALENCIA com o sinal de r'. Consequencia operacional: sob
+  modulacao, medir r' NAO e' medir Higuchi. Tem de medir (15).
+  [Confirmando a hipotese 2 do R-13a sec.2.2 -- e localizando-a.]
+
+--------------------------------------------------------------------------
+[A9] w_mg <= -1 por rota propria (conservacao), sem usar a eq. (20)
+--------------------------------------------------------------------------
+
+  rho_mg = m^2 M_ef^2 V_g(r);  rho_mg' = -3(1+w_mg) rho_mg
+  => w_mg = -1 - V_g'(r) r' / (3 V_g(r)),  e V_g' = 3 calB(r).
+  [        A9] residuo = 0                                                                      OK
+  => identico a' traducao do R-13a sec.4.3, obtida la' da eq. (20)
+     de Konnig. Rota independente (conservacao) confirma.
+
+--------------------------------------------------------------------------
+[A-PODER] um mapa ERRADO tem de REPROVAR (regra 3)
+--------------------------------------------------------------------------
+
+  [PODER c=mu] residuo = A*(-beta_1*mu + beta_1 - mu*r*(3*beta_2 + 3*beta_3*r + beta_4*r**2) +  OK (residuo NAO nulo, como exigido)
+  [PODER beta~mu^-n] residuo = A*(-3*beta_1*mu**(25/2)*r**2 + beta_1*mu**(23/2) - beta_1*mu**12 + 3*b OK (residuo NAO nulo, como exigido)
+  [ PODER L15] residuo = 3*mu*r**2*(beta_1*mu - beta_1 + 2*beta_2*mu*r - 2*beta_2*r + beta_3*mu OK (residuo NAO nulo, como exigido)
+
+==========================================================================
+ALVO D -- O 12 E O 3, EM FORMA FECHADA
+==========================================================================
+
+  Razao geral (algebra deste script, a partir da caixa do cap.06 e
+  da Friedmann-f):
+     m_T^2/H^2 = 3*(mu*r**3 + xi)*(beta_1 + beta_2*r + beta_2*xi + beta_3*r*xi)/(r*(beta_1 + 3*beta_2*r + 3*beta_3*r**2 + beta_4*r**3))
+  [        D0] residuo = 0                                                                      OK
+
+  RAMO FINITO PRIMORDIAL. Com r -> 0 e fluido de eq. de estado w:
+     W(r) -> beta_1/(mu r)  =>  r ~ beta_1/(mu rho_til)
+     => r' = -r rho_til'/rho_til = 3(1+w) r,  xi = (4+3w) r
+
+  [D1] lim_{r->0} m_T^2/H^2  (xi dinamico)   = 9*w + 12
+  [        D1] residuo = 0                                                                      OK
+  [D2] lim_{r->0} m_T^2|_{xi->r}/H^2         = 3
+  [        D2] residuo = 0                                                                      OK
+
+  Verificacao de que o 3 NAO depende de w (o funcional da fonte nao
+  ve' o fluido: ele e' algebrico em (r, beta_n)):
+     d/dw de D2 = 0
+
+  [D-CONS] os dois objetos so' coincidem em xi = r:
+     m_T^2/H^2 - m_T^2|_{xi->r}/H^2 = -3*(r - xi)*(beta_1 + beta_2*mu*r**3 + 2*beta_2*r + beta_2*xi + beta_3*mu*r**4 + beta_3*r**2 + beta_3*r*xi)/(r*(beta_1 + 3*beta_2*r + 3*beta_3*r**2 + beta_4*r**3))
+     (zera identicamente sse xi = r, i.e. r' = 0)
+
+  Em w = 0: 3(4+3w) = 12 e o funcional da' 3.
+  Em w = 1/3 (radiacao): 15 e o funcional continua dando 3.
+
+--------------------------------------------------------------------------
+[D5] a pendencia P-5 do posicionamento (6 vs 3 em w = -1)
+--------------------------------------------------------------------------
+
+  A formula 3(4+3w) NAO e' avaliavel em w = -1, e a razao e'
+  estrutural, nao de gosto. A derivacao de D1 usa:
+      r ~ beta_1/(mu rho_til)  com rho_til -> infinito
+  Isso exige que rho DILUA, isto e' w > -1. Em w = -1 a densidade e'
+  CONSTANTE, r nao vai a zero, e o regime r -> 0 simplesmente NAO
+  EXISTE. Logo `3(4+3w)|_{w=-1} = 3` e' EXTRAPOLACAO FORA DO
+  DOMINIO da formula, nao uma predicao dela.
+
+  O que existe em w = -1 e' o PONTO FIXO de de Sitter (rho_til = 0,
+  r = r_inf com W(r_inf) = 0). La', W = 0 da' r^3 V_f = mu r V_g, e
+  a razao vira:
+      m_T^2/H^2|_{dS} = 3 calB(r)(1+mu r^2)/(mu r V_g(r))
+  [       D5a] residuo = 0                                                                      OK
+
+  Essa expressao NAO e' um numero universal: depende de r_inf e dos
+  beta_n. No bloco beta_0=beta_2=beta_3=0 ela colapsa em
+  1 + 1/(mu r_c^2) (o corolario F-1 do R-13b):
+      = 1 + 1/(mu*r**2)
+  [       D5b] residuo = 0                                                                      OK
+
+  >>> ACHADO DO ALVO D (P-5): nem 6 nem 3 sao o valor de de Sitter.
+      A razao no ponto fixo e' MODELO-DEPENDENTE. A pendencia P-5
+      nao e' uma discrepancia numerica a arbitrar: o `3` vem de
+      avaliar uma formula fora do seu dominio, e o `6` (importado,
+      nao verificado) nao pode ser universal porque a quantidade
+      nao e' universal. Nota de higiene do posicionamento sobre a
+      homonimia com o `3` de Higuchi: CORRETA e mantida.
+
+--------------------------------------------------------------------------
+[D3] o `3` e' o MINIMO da margem no ramo finito? (numerico)
+--------------------------------------------------------------------------
+
+  'Margem 1.5x' so' e' a margem se 3 for o MINIMO do funcional de
+  Higuchi sobre a historia INTEIRA. Medido no benchmark do corpus
+  (beta = (1,1,-0.4,0,0.5), mu = 1, Omega_m(a=1) = 0.3, poeira):
+
+  [gate] max residuo |W(r)-rho_til|/max(1,rho_til) = 8.306e-16   (exigido <= 1e-12)
+  [gate] r monotonicamente crescente (ramo finito)? True
+  min de m_T^2|_(xi->r)/H^2 sobre a = 1e-6 .. 1e3 : 3.000000  em a = 5.011e-06 (r = 2.097e-16)
+  valor em a -> 0 (r -> 0)                        : 3.000000
+  valor no ponto fixo tardio (a = 1e3)            : 3.947347
+  pontos com o funcional >= 2                     : 4000/4000
+
+  >>> o minimo E' o valor primordial: a margem 1.5x esta' correta
+      como MARGEM MINIMA no ramo finito do benchmark.
+
+==========================================================================
+VEREDITO DOS GATES DESTE SCRIPT
+==========================================================================
+
+  TODOS OS GATES PASSARAM (residuos exigidos zero == 0; residuos
+  exigidos nao-nulos != 0).
+
+  CEGUEIRA (repetida no fim, regra 7): este script NAO deriva o
+  bound de Higuchi, NAO abre 1308.1647, NAO valida a caixa de
+  m_T^2 da derivations/02, e NAO mede nada dinamicamente.
