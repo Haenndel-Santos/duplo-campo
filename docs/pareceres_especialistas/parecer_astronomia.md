@@ -114,7 +114,12 @@ fundo é primordialmente GR-exato.**
 m_T²/H² → 12 no primordial, independente dos parâmetros
 (`docs/resultado_ramo_finito.md` §3), ~5.1–5.8 hoje (m_T/H₀ ∈
 [2.26, 2.41], R-8b §2), ~12 no Λ profundo [repo]. Higuchi (m_T² ≥ 2H²)
-folgado por fator 2.5–6 sempre. Como corolário observacional que o repo
+folgado por fator 2.5–6 sempre.
+*[Nota do repositório, 2026-08-13, pós-R-13a/R-13b: a faixa de folga
+foi calculada sobre o nosso `m_T²` com ξ dinâmico; pelo funcional FLRW
+de Higuchi da fonte (ξ → r) a folga no primordial é **1.5×**, não 6. O
+veredito — Higuchi satisfeito em toda a história do ramo finito — não
+muda.]* Como corolário observacional que o repo
 não explicita: **m_T/H ∈ [~2.3, ~3.5] em TODA a história cósmica**
 [opinião]. E o limite GR primordial exato
 (H²/(ρ/3M_g²) = 1.0000, `docs/resultado_ramo_finito.md` §1) protege

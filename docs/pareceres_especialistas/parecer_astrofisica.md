@@ -118,6 +118,17 @@ novo).
 
 **PF-4. Higuchi automático com margem de fator 6, e a razão universal
 m_T²/H² → 12.**
+
+> **[NOTA DO REPOSITÓRIO — 2026-08-13, pós-R-13a/R-13b. Texto do
+> parecer intacto; isto é anotação.]** A **margem de fator 6** caiu — e
+> o erro era **nosso**, não do parecerista: o número saía do cap. 06,
+> que aplicava o bound 2 ao nosso `m_T²` com **ξ dinâmico**. O
+> funcional de Higuchi da literatura (Könnig 2015, eq. 14) é a forma
+> em **ξ → r**, e no primordial do ramo finito dá **3.000002**, não 12
+> — margem de **1.5×**. O **`m_T²/H² → 12` continua correto** como
+> objeto tensorial do projeto, e o **veredito não muda** (Higuchi
+> satisfeito, 400/400 pelas duas formas). Só a margem cai. Ver
+> `manuscript-v2/06_setor_tensorial.md` §2.1.
 [REPO 2a estrutural + 2b (12.002 em a = 0.02) —
 `docs/resultado_ramo_finito.md` §3; `manuscript-v2/06...` §2]
 Externo, corretamente já mapeado pelo próprio repositório: o corolário
@@ -261,6 +272,9 @@ Este único número organiza **tudo** o que este parecer encontrou:
    cinético se anula como r² no primordial. A massa efetiva sentida pelo
    próprio h vale ~3 μ r² H² → 0. **Higuchi com margem 6 é verdade sobre
    um modo que quase não nos toca.**
+   *[Nota do repositório, 2026-08-13: a margem correta é **1.5×**, não 6
+   — ver a anotação no PF-4. O argumento deste item não depende do
+   valor da margem.]*
 2. Explica por que o sub-horizonte dá 10⁻⁴ (R-8a/R-8b) e por que a única
    janela sobrevivente é tardia e de escala Gpc: ε só sobe quando r sobe.
 3. **É o parâmetro que decide se a teoria é falseável.** O R-8a rodou dois

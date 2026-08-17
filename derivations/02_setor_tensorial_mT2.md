@@ -3,6 +3,41 @@
 **Skill invocado:** `bimetric-hr-formalism-guardian`.
 **Script:** `code/02_setor_tensorial_mT2.py` (saída: `code/out/02_output.txt`).
 
+> ## ⚠ BANNER DE NORMALIZAÇÃO — 2026-08-13 (R-13b §3.5)
+>
+> **CONVENÇÃO NORMATIVA ÚNICA, daqui para frente, no corpus inteiro:**
+>
+> $$\boxed{\;M_{eff}^2\;\equiv\;\left(\frac{1}{M_g^2}+\frac{1}{M_f^2}\right)^{-1}\;}
+> \qquad\Longrightarrow\qquad M_{eff}^2=\tfrac12\ \text{ para } M_g=M_f=1$$
+>
+> É a convenção operacional que `auditoria/code/ramo_dinamico_correto.py`
+> — e todo script de fundo que dele descende — já usa.
+>
+> **O fator 2, registrado.** O **§3.4 abaixo avaliou o seu número com
+> `M_eff² = 1`**. O R-13b, medindo o mesmo fundo com a convenção acima,
+> obteve `m_T² = −1.5944` contra os `−3.19` impressos no §3.4: **razão
+> medida 2.000000**, exatamente o quociente das duas convenções. O
+> sinal e o fator estrutural batem (`β₁+β₂(ξ+r) = −0.8788` medido,
+> contra o −0.88 declarado).
+>
+> **Classificação: INCONSISTÊNCIA DOCUMENTAL DE NORMALIZAÇÃO, não
+> erratum físico.**
+>
+> **Nada publicado cai, porque `m_T²/H²` é invariante** a esta
+> normalização (e a `m²`): reescalando `m²` por 7 e `M_g²`, `M_f²` por
+> 3 com `μ = M_f²/M_g²` fixo, a razão muda em **0.000e+00** (R-13b
+> §3.5). Todos os enunciados do corpus sobre o setor tensorial são
+> sobre a **razão** — `m_T²/H² → 12` (cap. 06 §2), o `1 < m_T²/H² < 2`
+> do ramo infinito, os vereditos de Higuchi —, logo permanecem de pé
+> sem alteração.
+>
+> **Nenhum resultado histórico deste documento foi reescrito.** Esta é
+> anotação, não correção silenciosa: o §3.4 permanece como estava, e
+> quem o citar deve declarar a normalização junto com o número.
+>
+> *Fonte: `docs/resultado_r13b_ibb_ramo_infinito.md` §3.5 — emenda
+> declarada do gate M6, com a 1ª rodada reprovada preservada.*
+
 ## 1. O que está sendo derivado e por que é necessário
 
 O corpus declara **três formas mutuamente incompatíveis** da mesma ação
@@ -72,6 +107,18 @@ Com $r=1.2$, $\xi=3.497$: $\beta_1+\beta_2(\xi+r)=1-0.4(4.7)=-0.88<0$
 enquanto a fórmula sem ξ do Cap.16 daria $m_T^2\propto+0.04>0$. A
 dependência em ξ **inverte o sinal** da massa tensorial no ramo que o
 Anexo E §E.3(6) declara como escolha principal da TDCP.
+
+> **[ANOTAÇÃO — 2026-08-13, R-13b §3.5]** *O número acima permanece
+> como foi publicado.* O `−3.19` foi avaliado com **`M_eff² = 1`**, que
+> **não** é a convenção normativa (ver o banner no topo deste
+> documento). Na convenção `M_eff² = (1/M_g² + 1/M_f²)⁻¹ = 1/2` para
+> `M_g = M_f = 1`, o mesmo fundo dá **`m_T² = −1.5944`** — razão medida
+> **2.000000**. O que este §3.4 estabelece — `m_T² < 0`, taquiônico,
+> Higuchi violado, e o fator estrutural `−0.88` (medido: `−0.8788`) —
+> **não depende da normalização** e fica de pé; só o **valor absoluto**
+> depende. Quem citar o número deve declarar a convenção junto.
+
+
 
 ## 4. Classificação final
 

@@ -118,24 +118,76 @@ ADENDO 4 (2026-08-13 — PARECERES + BLOCO 0 + BLOCO 1; commits ate
 2. BLOCO 0 (R-9): o "omega^2 < 0" do R-7e era RAZAO ERRADA (falta o
    Cdot: om2_ef = (Cdot+W)/K). p_phi cruza zero mas a matriz de
    Dirac NAO degenera. O item (b) era tautologico -> Bloco 2.
-   QUATRO comparadores descartados no caminho — licao: quando um
-   gate reprova, a primeira suspeita e o comparador.
+   TRES comparadores descartados no caminho (a 4a versao, fase
+   acumulada, e a reportada; ver resultado_r9_bloco0.md §1) —
+   licao: quando um gate reprova, a primeira suspeita e o
+   comparador.
 
 3. BLOCO 1 (R-10/R-11) — NO-GO DE CLASSE POR GRADIENTE:
    c_s^2 -> -1 em r -> 0 (alto z), com K2 > 0 (gradiente genuino,
    nao fantasma), calibrador exato. A era instavel COBRE A
    RECOMBINACAO (z_cross ~ 0.62 no beta-const). As QUATRO saidas
-   foram testadas e FECHADAS: ramo infinito (nao conecta),
-   modulacao (tarde demais), screening (delta_screen ~ 20-60; o
-   lambda cancela), forma-beta (108/108 celulas dao
+   foram testadas: TRES FECHADAS e UMA REABERTA.
+   [SUPERADO — ver ADENDO 7 (R-13a + R-13b): sao de novo QUATRO
+   FECHADAS, mas com a exclusao do ramo infinito INTEIRAMENTE
+   SUBSTITUIDA. O argumento xi = 0 segue REVOGADO; o que exclui o
+   ramo agora e o GHOST DE HIGUCHI. Nunca citar a contagem sem a
+   substituicao.]
+   FECHADAS: modulacao (tarde demais), screening (delta_screen ~
+   20-60; o lambda cancela), forma-beta (108/108 celulas dao
    c_s^2 = -1.010 +- 6e-6 — CONSTANTE ESTRUTURAL DA CLASSE).
+   REABERTA (R-12i, 2026-08-13) [estado a esta data; ver ADENDO 7]:
+   ramo infinito. A exclusao por
+   "xi cruza zero" NAO SE SUSTENTA: como b = ra, xi = X/a com o
+   X = bdot/H de Konnig et al., mesmo sinal e mesmo zero — e' o
+   quique de b que 1407.4331 §II/§VI trata EXPLICITAMENTE e defende
+   como fisico, por tres razoes declaradas (f nao acopla a materia
+   e nao tem interpretacao geometrica; nenhuma variavel de fundo ou
+   perturbada e' singular; sqrt(-det f)*Rbar(f) e' finita e nao-nula,
+   logo as equacoes de movimento existem em todo instante). A
+   infinite-branch bigravity (IBB) e' o UNICO modelo estavel em
+   todos os tempos daquele paper. ESTADO: nem "fechada" nem "aberta
+   e viavel" — REABERTA, EXIGE REAVALIACAO [a reavaliacao foi feita:
+   ADENDO 7]. CAVEAT DE ESCOPO
+   OBRIGATORIO: o IBB viavel exige beta_4 != 0 (0 < beta_4 < 2
+   beta_1), enquanto a nossa celula minima tem beta_4 = 0 — o alvo
+   do reexame e' o ramo infinito da F1 COM beta_4 LIGADO, nao a
+   celula atual.
+   [ATUALIZADO 2026-08-13 — 1503.07436 VERIFICADO NA FONTE pelo
+   autor.] Ha um ARGUMENTO INDEPENDENTE CANDIDATO, e nao e o nosso:
+   saude de Higuchi em universo em expansao exige r' > 0, enquanto o
+   ramo infinito e definido por r' < 0. Cai a frase anterior sobre
+   "duas linhas contraditorias" no posicionamento_literatura: elas sao
+   o MESMO enunciado em ramos diferentes (finito r' >= 0 passa;
+   infinito r' < 0 nao passa) e sao consistentes. A tensao real e
+   ENTRE AS DUAS FONTES — 1407.4331 declara o IBB estavel no canal de
+   GRADIENTE; 1503.07436 o ataca pelo HIGUCHI — e dissolve-se pela
+   separacao de canais: gradiente, Higuchi/helicidade-0 e setor
+   tensorial sao TRES perguntas distintas. SEGUIA REABERTA a esta
+   data: era nivel 3 e NAO estava traduzido para as convencoes do
+   projeto. [SUPERADO pelo ADENDO 7 — o teste foi executado.]
+   PROXIMO TESTE (o de maior retorno por custo): celula IBB genuina
+   (beta_2 = beta_3 = 0, beta_1 > 0, 0 < beta_4 < 2 beta_1), seguir o
+   ramo infinito e medir na nossa convencao r'(N), m_T^2/H^2 e o
+   funcional de Higuchi de 1503.07436. ARMADILHA: ramo_dinamico_
+   correto.py seleciona a raiz MENOR POSITIVA — selecao errada para o
+   ramo infinito; usar continuacao (licao do R-8b). Vale a regra 6:
+   r' em forma fechada ou estencil >= 8, nunca np.gradient.
+   [FEITO no R-13b; a armadilha era real e esta demonstrada la.]
+   NAO MUDA: o no-go de gradiente do ramo finito segue de pe.
+   Fonte: docs/resultado_r12i_confronto_konnig.md §1.6 e §6;
+   docs/posicionamento_literatura.md §2b.
 
 O QUE ISSO SIGNIFICA: cai a SUFICIENCIA da implementacao F1 como
 cosmologia. NAO cai a TDCP como hipotese, nem os erratums, nem o
 fundo, nem o tensor (m_T^2/H^2 -> 12; m_T ~ 2.3 H0), nem o
-espectador, nem o metodo. A unica porta entreaberta e beta_3 != 0 —
-que sai da definicao de F1 (seria uma F2) e exige refazer a cubica
-do fundo.
+espectador, nem o metodo. As portas entreabertas sao DUAS (a segunda
+acrescentada pelo R-12i, 2026-08-13): (a) beta_3 != 0 — que sai da
+definicao de F1 (seria uma F2) e exige refazer a cubica do fundo; e
+(b) o REEXAME DO RAMO INFINITO COM beta_4 != 0 (ver o item 3 acima).
+[SUPERADO — ADENDO 7: a porta (b) FECHOU. O reexame foi feito e o
+ramo infinito esta excluido pelo GHOST DE HIGUCHI. Sobra UMA porta
+entreaberta: beta_3 != 0.]
 
 
 ADENDO 5 (2026-08-13, mesma data — R-12 EXECUTADO; commits ate
@@ -209,11 +261,13 @@ FILA (pos-R-12):
    Vainshtein/PPN, paredes de dominio, radiacao, varredura de mu, a 2a
    solucao tardia do fundo.
 
-LEITURA OBRIGATORIA (substitui a lista do adendo 4):
-docs/resultado_r12b_teorema_cs2.md e
+LEITURA OBRIGATORIA (substitui a lista do adendo 4; ATUALIZADA pelo
+adendo 7): docs/resultado_r13a_criterio_higuchi_fonte.md e
+docs/resultado_r13b_ibb_ramo_infinito.md (o veredito do ramo infinito);
+depois docs/resultado_r12b_teorema_cs2.md e
 docs/resultado_r12_instrumento_e_cs2.md; depois
 docs/resultado_r11_nogo_gradiente.md e resultado_r10_consolidado.md
-(ambos com banner de supersessao de VALOR); depois
+(ambos com banner de supersessao de VALOR e bloco de VEREDITO); depois
 docs/pareceres_especialistas/00_sintese_cruzada.md; so entao o
 historico (erratum_02, resultado_r7_cascata §4).
 
@@ -244,6 +298,94 @@ defeito entra duas vezes).
 
 DOIS ITENS CAEM DA FILA: "refazer o R-8a" (nunca usou a cadeia) e
 "refazer algo do R-7" (nada la depende do defeito).
+
+
+ADENDO 7 (2026-08-13 — R-13a + R-13b; VEREDITO DO RAMO INFINITO).
+Docs: docs/resultado_r13a_criterio_higuchi_fonte.md (criterio extraido
+e traduzido na fonte) e docs/resultado_r13b_ibb_ramo_infinito.md
+(medida; script auditoria/code/r13b_ibb_ramo_infinito.py, saida
+auditoria/code/out/r13b_ibb_ramo_infinito.txt).
+
+RAMO INFINITO IBB DA F1: EXCLUIDO PELO GHOST DE HIGUCHI.
+
+QUALIFICACAO OBRIGATORIA — precisa aparecer TODA vez que o historico
+da saida for contado, e nunca a contagem sozinha: a exclusao original
+pelo cruzamento xi = 0 permanece REVOGADA (o quique do lapso e
+defendido como fisico por 1407.4331, e nada aqui o ressuscita). A
+exclusao vigente e INDEPENDENTE: o ramo infinito viola a condicao de
+Higuchi DURANTE TODA A HISTORIA nas celulas IBB testadas. A contagem
+passa de "tres fechadas + uma reaberta" para QUATRO ROTAS NOVAMENTE
+FECHADAS, COM A EXCLUSAO DO IBB INTEIRAMENTE SUBSTITUIDA.
+
+EVIDENCIA (todos os numeros saem do R-13a/R-13b):
+- traducao do funcional de Higuchi de Konnig 2015 (arXiv:1503.07436,
+  eq. 14) verificada NA FONTE e RE-VERIFICADA POR CAS em rota
+  independente: tres residuos simbolicos ZERO, com beta_n e mu gerais
+  e materia de poeira;
+- nas nossas variaveis a cadeia fecha exata: Higuchi <=> xi >= r <=>
+  r' >= 0;
+- r' < 0 em 100% da historia em 108/108 celulas IBB genuinas
+  (beta_2 = beta_3 = 0, beta_1 > 0, 0 < beta_4/beta_1 < 2 mu^(3/2));
+- Higuchi satisfeito em 0 de 64 800 pontos;
+- concordancia Higuchi(fonte) <=> r' >= 0 em 64 800/64 800;
+- CONTROLE POSITIVO no ramo finito: 400/400 (o gate aprova o que deve
+  aprovar — o "zero de 64 800" tem poder);
+- forma fechada m_T^2/H^2 |_{r_c} = 1 + 1/(mu r_c^2) com mu r_c^2 > 1
+  sempre ==> 1 < sup(m_T^2/H^2) < 2 ESTRITO em toda a janela;
+- mu e PURA REESCALA no IBB genuino (o eixo mu, varrido pela primeira
+  vez no corpus, FECHA o enunciado em vez de abri-lo).
+
+O QUE O VEREDITO NAO E: "The IBB branch is not tachyonic in the tensor-
+mass sense; it is excluded by the Higuchi ghost condition." m_T^2 > 0
+em 108/108 — nao ha taquionico tensorial, e isso NAO o salva.
+
+COMPLEMENTARIDADE (e o achado): "Within the F1 parameterization, the
+two standard cosmological branches fail for complementary reasons: the
+finite branch violates scalar-gradient stability in the early universe,
+while the genuine infinite branch avoids that instability but violates
+the Higuchi condition throughout its evolution." O gradiente no IBB e
+SAUDAVEL SEGUNDO A FONTE (§IV A de 1503.07436, que CONFIRMA e NAO
+retrata 1407.4331) — canal independente, que nao salva o Higuchi.
+
+PONTO LOGICO CRITICO: o gate do R-13b NAO MEDE GRADIENTE, e essa
+cegueira continua declarada como boa pratica (regra 7). Ela NAO
+BLOQUEIA o veredito: um ghost fisico basta para excluir,
+independentemente de o gradiente estar saudavel. Um teste de c_s^2 no
+IBB e VALIDACAO ADICIONAL DESEJAVEL, NAO REQUISITO. NUNCA escrever que
+o veredito aguarda o canal cego.
+
+TABELA DE PROVENIENCIA (usar onde couber):
+  Infinite branch / IBB  -> EXCLUIDO  : ghost de Higuchi, r' < 0 em
+                                        toda a historia
+  argumento antigo xi=0  -> REVOGADO  : zero do lapso / quique nao e
+                                        por si so singularidade
+  gradiente no IBB       -> SAUDAVEL  : segundo a fonte; canal
+                                        independente, nao salva o
+                                        Higuchi
+
+NAO MUDA: o no-go de gradiente do ramo finito segue de pe; os dois
+erratums, o fundo, o tensor, o espectador, a contagem 2-DOF e o metodo
+seguem de pe. PORTA ENTREABERTA: agora so UMA, beta_3 != 0 (sai da F1).
+
+FILA QUE O R-13a/R-13b DEIXA (nenhum item bloqueia o veredito):
+1. c_s^2 no ramo infinito — validacao adicional desejavel, cobre a
+   cegueira declarada do gate. NAO e requisito.
+2. Verificar por CAS o mapa de convencoes do R-13a §2.1
+   (r_K = sqrt(mu) r, beta_n^K = A mu^(-n/2) beta_n) — ele e ENTRADA
+   do R-13b, nao saida.
+3. Cota de Higuchi em fundo dinamico bimetrico, derivada — nao
+   herdada de de Sitter nem da forma xi -> r.
+4. Housekeeping: normalizacao de M_eff^2 em derivations/02 §3.4 e
+   manuscript-v2/06 §4 (fator 2 contra ramo_dinamico_correto.py).
+5. beta_2 != 0 / beta_3 != 0 sobre o ramo infinito; radiacao.
+6. Observavel w_mg <= -1 (R-13a §4.3), ausente do cap. 09.
+7. Abrir Fasiello-Tolley 1308.1647, fonte primaria real do bound
+   (atencao ao fator 1/2 no potencial, declarado na nota 3 de
+   1503.07436).
+
+ARMADILHA DE SINAL, para nao repetir o erro do "0.28": 1407.4331 usa
+o ansatz e^{i omega N} e 1503.07436 usa e^{omega t} (exponencial real).
+omega^2 < 0 significa coisas OPOSTAS nos dois. Ver R-13a §1.7.
 
 FILA (adendo 4) — SUPERSEDED pelo adendo 5:
 FILA (nova):

@@ -70,10 +70,21 @@ por construção — a mesma família de ponto cego do Erratum-02, agora no
 eixo do tempo cósmico.
 
 **Enunciado corrigido:** o setor escalar é são **na era tardia**
-(r ≳ 0.28); em alto redshift (r ≲ 0.05) o escalar métrico tem
+(r ≳ 0.21 — *ver a nota de limiar abaixo*); em alto redshift
+(r ≲ 0.05) o escalar métrico tem
 **instabilidade de gradiente com c_s² ≈ −1**, e a taxa é |c_s|k/a —
 ou seja, ~30H para um modo com k/aH = 30. Para modos sub-horizonte na
 era primordial isso é catastrófico em tempo linear.
+
+> **[NOTA DE LIMIAR — 2026-08-13, R-12i]** A versão original desta
+> linha dizia **r ≳ 0.28**. O número não é nosso: é o limiar do modelo
+> **β₁-puro (β₀ = 0)** de 1407.4331 (eq. 69), raiz exata
+> √((√5−2)/3) = 0.28052. A nossa célula é o modelo **β₀β₁ com
+> β₀/β₁ = 1**, cujo limiar publicado (eq. 73) é **0.21448**; a nossa
+> forma fechada dá **0.20793** — acordo de 3.1%. Em r = 0.28 o nosso
+> c_s² já vale +0.41, e o valor antigo era inconsistente com o
+> a_cross = 0.578 do §3b logo abaixo. Ver
+> `docs/resultado_r12i_confronto_konnig.md`.
 
 **O que NÃO muda:** o Erratum-02 continua válido (o fantasma era
 artefato); a contagem 2-DOF continua válida; o espectador continua

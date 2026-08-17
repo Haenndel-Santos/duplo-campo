@@ -105,6 +105,32 @@ ajuste. Nada mais muda — a era instável continua cobrindo a
 recombinação, as quatro saídas continuam fechadas, e a única porta
 entreaberta continua sendo β₃ ≠ 0 (que leva para fora da F1).
 
+> **[REABERTURA — 2026-08-13, R-12i]** *Nota acrescentada; o parágrafo
+> acima permanece intacto.* A contagem caiu: são **três saídas
+> fechadas e uma reaberta**. A exclusão do ramo infinito por "ξ cruza
+> zero" não se sustenta — como `b = ra`, `ξ = X/a` com o `X ≡ ḃ/ℋ` de
+> Könnig et al., **mesmo sinal e mesmo zero**, e é o quique de `b` que
+> 1407.4331 §II/§VI trata e defende como físico, com três argumentos.
+> Reexame pendente, e o alvo é o ramo infinito **com β₄ ≠ 0** (o IBB
+> viável exige `0 < β₄ < 2β₁`; a célula mínima — justamente a deste
+> teorema — tem β₄ = 0). Logo as portas entreabertas são duas:
+> β₃ ≠ 0 e esse reexame. **O teorema deste documento não é afetado:**
+> ele é sobre o ramo finito. *Fonte:
+> `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b).*
+>
+> **[VEREDITO — 2026-08-13, R-13a + R-13b: o reexame foi feito.]** A
+> contagem volta a **quatro fechadas**, mas com a exclusão do ramo
+> infinito **inteiramente substituída** — nunca cite a contagem sem a
+> substituição. O argumento `ξ = 0` **permanece REVOGADO**; o que
+> exclui o ramo agora é o **ghost de Higuchi**: `Higuchi ⟺ ξ ≥ r ⟺
+> r′ ≥ 0` (tradução verificada na fonte e re-verificada por CAS em rota
+> independente), e nas células IBB genuínas `r′ < 0` em 100% da
+> história em **108/108**, com Higuchi satisfeito em **0 de 64 800**
+> pontos. Logo **a porta entreaberta volta a ser uma só: β₃ ≠ 0.** O
+> teorema deste documento continua não sendo afetado. *Fontes:
+> `docs/resultado_r13a_criterio_higuchi_fonte.md`,
+> `docs/resultado_r13b_ibb_ramo_infinito.md`.*
+
 **Fila que este resultado abre:**
 
 1. **Generalizar a fórmula** em (β₀, β₂, β₄, μ) — provavelmente

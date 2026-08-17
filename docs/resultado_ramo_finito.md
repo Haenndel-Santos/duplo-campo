@@ -18,6 +18,16 @@ identificado como o **ramo finito** da cosmologia bimétrica) entrega:
 | Higuchi | 400/400 pontos, $m_T^2>0$ em todos | **satisfeito** |
 | Cosmologia | $\Omega_m\approx0.25$ hoje, universo acelerando | **razoável** |
 
+> **[ANOTAÇÃO — 2026-08-13, R-13a/R-13b]** *Nota acrescentada; a tabela
+> acima permanece intacta.* A linha **"Higuchi | 400/400"** continua
+> **verdadeira**, e agora por duas rotas. Os 400/400 registrados aqui
+> são contra a cota `m_T² ≥ 2H²` com ξ **dinâmico**. O R-13b §8.3
+> remediu o mesmo benchmark contra o **funcional de Higuchi FLRW da
+> fonte** (Könnig 2015, arXiv:1503.07436 eq. 14 — a mesma expressão
+> com **ξ → r**) e contra o critério equivalente **`r′ ≥ 0`**, obtendo
+> **400/400 nas duas formas**, que concordam ponto a ponto. O que muda
+> é a **margem**, não o veredito: ver a anotação do §3.
+
 **O ramo dinâmico não está morto.** Ele estava mal identificado.
 
 ## 2. A estrutura do ramo finito
@@ -27,6 +37,39 @@ A cúbica $m^2M_{\rm eff}^2\mathcal W(r)=\rho$ tem duas famílias de raiz:
 - $r\sim\sqrt{\tilde\rho}\to\infty$ — **ramo infinito**, patológico:
   dá $\xi<0$, isto é, lapso negativo no setor $f$;
 - $r\sim\beta_1/\tilde\rho\to0$ — **ramo finito**, físico.
+
+> **[REABERTURA — 2026-08-13, R-12i]** *Nota acrescentada; o texto
+> acima permanece intacto.* Este é o parágrafo que originou a exclusão
+> do ramo infinito no corpus, e ele está hoje **duplamente
+> qualificado**. (i) *Época* (R-10c Parte A): "dá ξ < 0" só vale no
+> regime **primordial** — a segunda raiz torna-se viável em a ≳ 1
+> (r ≈ 2.23, ξ ≈ 2.23, H² > 0); o que o R-10c usava para excluir era
+> ξ **cruzar zero** no caminho. (ii) *Fonte* (R-12i): esse critério
+> **não se sustenta**. Como `b = ra`, o nosso `ξ = r + dr/dN` é
+> `ξ = X/a` com o `X ≡ ḃ/ℋ` de Könnig et al. — mesmo sinal, mesmo
+> zero —, e 1407.4331 §II/§VI trata esse quique de `b`
+> **explicitamente**, defendendo-o como físico por três razões
+> declaradas (f não acopla à matéria e não tem interpretação
+> geométrica; nenhuma variável de fundo ou perturbada é singular;
+> `√(−det f)·R̄(f)` é finita e não-nula, logo as equações de movimento
+> existem em todo instante). A *infinite-branch bigravity* é o único
+> modelo estável em todos os tempos daquele paper. **Estado: a
+> exclusão está REABERTA e exige reavaliação** — não é "fechada" nem
+> "aberta e viável" —, e o alvo do reexame é o ramo infinito da F1
+> **com β₄ ≠ 0** (o IBB viável exige `0 < β₄ < 2β₁`; a nossa célula
+> mínima tem β₄ = 0). *Fonte:
+> `docs/resultado_r12i_confronto_konnig.md` §1.6 e §6 (risco R-b);
+> `docs/resultado_r10c_saidas.md` Parte A.*
+
+> **[ATUALIZAÇÃO — 2026-08-13, R-13b] O veredito do ramo infinito.**
+> *Nota acrescentada; o texto e o bloco acima permanecem intactos.* A
+> exclusão antiga — por `ξ = 0`, o "dá ξ < 0" do parágrafo original —
+> permanece **REVOGADA** (R-12i, bloco acima). Mas o ramo infinito está
+> **EXCLUÍDO pelo ghost de Higuchi**: `r′ < 0` em **toda** a história,
+> em **108/108 células** IBB genuínas, e a cota reprovada em
+> **0 de 64 800 pontos** (R-13b). *O registro completo do veredito é de
+> `docs/resultado_r13b_ibb_ramo_infinito.md`; esta nota apenas o
+> repercute no parágrafo que originou a exclusão.*
 
 No ramo finito, no universo primordial:
 
@@ -64,6 +107,47 @@ script dá $m_T^2/H^2 = 12.002$.
 Consequência: **Higuchi ($m_T^2\ge2H^2$) é automaticamente satisfeito
 no universo primordial neste ramo**, com margem de fator 6. A razão cai
 para $\approx4$ hoje — ainda o dobro do limite.
+
+> **[ANOTAÇÃO — 2026-08-13, R-13a/R-13b] A "margem de fator 6" cai; o
+> 12 fica.** *Nota acrescentada; o texto acima permanece intacto.*
+>
+> O `m_T²/H² → 12` está **correto** e foi reproduzido por máquinaria
+> independente: **11.9996** no controle positivo do R-13b §3.4. **Não é
+> ele que cai.** O que cai é a *interpretação* de `12/2 = 6` como
+> margem de Higuchi — porque o bound de Higuchi em FLRW **não é** a
+> caixa `m_T² ≥ 2H²` com ξ dinâmico.
+>
+> A tradução do critério da fonte (Könnig 2015, arXiv:1503.07436
+> eq. 14; fonte primária Fasiello–Tolley 1308.1647) para as nossas
+> variáveis — R-13a §2.2, verificada **por CAS em duas rotas
+> independentes** no R-13b §8.2, resíduo zero para β_n e μ gerais —
+> substitui **ξ → r**:
+>
+> `m_T²|_{ξ→r} = (m²M_eff²/M_f²)·ℬ(r)·(1+μr²)/r ≥ 2H²`,
+> com `ℬ(r) = β₁+2β₂r+β₃r²` e `μ = M_f²/M_g²`,
+>
+> e é **equivalente a `r′ ≥ 0`**, isto é, a `ξ ≥ r`. No primordial
+> deste ramo esse funcional vale **3.000002** — medido, R-13b §8.4 —,
+> não 12. Logo **3 > 2, com margem de 1.5×, não de 6×**.
+>
+> **Por que os dois números diferem.** São **objetos distintos**
+> avaliados no mesmo fundo: o nosso carrega **ξ dinâmico**; o da fonte
+> é avaliado em **ξ → r**. A razão entre eles é o fator cinético
+> `(μr³+ξ)/(μr³+r)` vezes o fator de massa
+> `[β₁+β₂(ξ+r)+β₃ξr]/[β₁+2β₂r+β₃r²]`; no primordial (r → 0, ξ = 4r) o
+> segundo tende a 1 e o primeiro a `ξ/r = 4` — daí **12 = 4 × 3**,
+> exatamente. **Os dois coincidem quando ξ = r** (⟺ `r′ = 0` ⟺ fundo
+> proporcional, ponto fixo): ali a caixa deste documento e o bound da
+> fonte são a **mesma** inequação, termo a termo, para μ arbitrário e
+> todos os β_n.
+>
+> **O veredito não muda.** O ramo finito tem `r′ = 3r > 0` no
+> primordial e passa **400/400** pelas duas formas equivalentes
+> (R-13b §8.3). O `≈4 hoje` da última linha é, como o 12, o **nosso**
+> objeto; o número que responde ao bound é o da forma ξ → r.
+> *Fonte: `docs/resultado_r13a_criterio_higuchi_fonte.md` §§2.2,
+> 3.1–3.2; `docs/resultado_r13b_ibb_ramo_infinito.md` §§8.2–8.4. Texto
+> do capítulo reescrito em `manuscript-v2/06_setor_tensorial.md` §2.1.*
 
 ## 4. O que isto faz com a âncora D8
 

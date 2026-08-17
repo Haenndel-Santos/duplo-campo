@@ -29,6 +29,12 @@ Não modifiquei nada fora deste arquivo.
 4. O sinal está no próprio repo: R-7e reporta ω²(Ẽ) < 0 na janela inteira,
    variando de −10² a −10⁷ — lido como "artefato de envelope". Isso pode ser
    artefato **ou** ser exatamente λ₁ = −k²(2w₁+1) de Comelli–Crisostomi–Pilo.
+   > **[NOTA DO REPOSITÓRIO — 2026-08-13]** Resolvido, e a alternativa era
+   > falsa: aquele sinal específico não era nem artefato de envelope nem
+   > c_s² < 0 — `W/K` simplesmente não é a frequência efetiva do sistema
+   > (R-9, Bloco 0). Mas a instabilidade de gradiente que este parecer temia
+   > **existe**, em outra época (r → 0), e é a de 1407.4331. Nota completa
+   > no P3.
 5. m_T ≈ 2.3 H₀ é resultado sólido e **não é surpresa**: é a assinatura
    genérica de auto-aceleração bimétrica. Cai confortavelmente acima do
    limite inferior publicado m_FP ≳ 1.2 H₀ (Högås–Mörtsell 2101.08795).
@@ -65,7 +71,11 @@ Daí sai ṙ = H_g(ξ − r) e o ramo finito com r ∝ a³ primordial. *[opiniã
 **F2. Limite GR primordial exato e Higuchi automático.**
 `docs/resultado_ramo_finito.md` §1,3: H²/(ρ/3M_g²) = 1.0000 e
 m_T²/H² → 12 no primordial, independente de β_n, M_f, M_eff, m — logo Higuchi
-(m_T² ≥ 2H²) satisfeito com fator 6 de folga. Nível 2a com verificação numérica
+(m_T² ≥ 2H²) satisfeito com fator 6 de folga.
+*[Nota do repositório, 2026-08-13, pós-R-13a/R-13b: a folga é de
+**1.5×**, não 6 — o número vinha do cap. 06, que aplicava o bound ao
+nosso `m_T²` com ξ dinâmico; o funcional FLRW da fonte (ξ → r) dá 3.
+O `→ 12` e o veredito de Higuchi satisfeito não mudam.]* Nível 2a com verificação numérica
 (12.002 em a = 0.02). O próprio repo já classifica o corolário qualitativo como
 conhecido (Könnig 1503.07436; De Felice et al. 1404.0008), e a razão numérica
 universal como sharpening novo — classificação correta e honesta
@@ -187,6 +197,50 @@ leituras possíveis, e o repo não decidiu entre elas:
   doc são mutuamente incompatíveis sob a leitura ingênua**, o que significa que
   a quantidade "ω² = W/K" não está sendo interpretada corretamente em algum
   lugar. Isso precisa ser resolvido antes de qualquer enunciado de saúde. *[opinião]*
+
+> **[NOTA DO REPOSITÓRIO — 2026-08-13, pós-R-9/R-10a/R-11/R-12. O texto do
+> parecer acima fica intacto; esta é anotação, não reescrita.]** O P3 foi
+> resolvido, e o parecer acertou **duas vezes, em objetos diferentes**.
+>
+> **Era a leitura (a).** O R-9 (Bloco 0), item (c), mediu: `ω² = W/K` **não é
+> a relação de dispersão na convenção do repositório**. O integrador resolve
+> `K q̈ + (K̇ + C − Cᵀ) q̇ + (Ċ + W) q = 0`, logo a frequência efetiva é
+> `(Ċ + W)/K` — exatamente a "mistura com C" que o parecer apontou — e essa
+> razão é **positiva**. **16/32 entradas têm `W/K < 0` e `(Ċ+W)/K > 0`**:
+> todas as do modo métrico, nos dois fundos, em todas as épocas. Em a = 200,
+> `W/K = −1.5e5 H²` contra `(Ċ+W)/K = +514 H²`. O discriminador de frequência
+> fecha o caso: se `|W/K|` fosse a frequência haveria ~110 cruzamentos de zero
+> na janela, e medem-se **6** (a WKB pela frequência correta prevê 6.5). E a
+> "nota quantitativa que agrava (b)" — |ω|/H ~ 3×10³ inconciliável com
+> G_win = −10 — estava **certa, e era o sintoma**: os dois números do doc eram
+> mesmo mutuamente incompatíveis, precisamente porque a quantidade medida não
+> era a frequência. Fonte: `docs/resultado_r9_bloco0.md` §1;
+> `docs/resultado_r7e_saude_interna.md` §2 foi corrigido.
+>
+> **E o P1/P2 se confirmou — por outra via.** A leitura (b) deste P3 errou o
+> *lugar* do fenômeno, mas a preocupação central do parecer estava certa
+> quanto ao *fenômeno*: os gates do R-7 são **cegos a gradiente por
+> construção** (P2), e o "no-go revogado" era **forte demais** (veredito,
+> item 2). O **A1**, que este parecer pôs como recomendação nº 1, rodou e
+> encontrou **instabilidade de gradiente real**: `c_s² < 0` em todo o regime
+> r → 0 (`docs/resultado_r10a_gradiente.md`), elevada a **no-go de classe por
+> gradiente** em 108/108 células da forma-β
+> (`docs/resultado_r11_nogo_gradiente.md`) e fixada, com instrumento limpo, em
+> **c_s² = −1 exato** em r → 0 e **+1 exato** na era tardia, com troca de sinal
+> em **a_cross = 0.578 ⟹ z_cross = 0.61** — a era instável **cobre a
+> recombinação** (`docs/resultado_r12_instrumento_e_cs2.md`,
+> `docs/resultado_r10_consolidado.md`). O P1 acertou também a fonte: a previsão
+> de Könnig–Akrami–Amendola–Motta–Solomon ([arXiv:1407.4331]) para o *finite
+> branch* **se reproduz na nossa implementação**. **O parecerista previu o
+> desfecho, e o repositório o registra como tal.**
+>
+> Uma precisão sobre o mascaramento: ele não foi o da *direção da passagem em
+> kh* que a leitura (b) conjecturou — foi o da **época**. Toda a cascata R-7
+> rodou em a ∈ [100, 8e4], que nesta família é a era tardia (r = r_∞), onde
+> c_s² é de fato positivo; o regime da alegação da literatura ficou fora **por
+> construção**. O próprio P2 já havia nomeado esse regime: *"o regime perigoso
+> (kh ≫ 1, alto z, até o corte de EFT) é exatamente o que não foi amostrado"*.
+> Era.
 
 **P4 [GRAVE]. O fundo é dust+Λ. Sem radiação, o cap. 09 é indefinível.**
 `r8_dicionario_epocas_opcoes.md` já lista o problema, mas o custo está
@@ -450,6 +504,14 @@ Critérios de falseamento escritos e commitados **antes** da primeira rodada
    considera decisivo para este ramo**: instabilidade de gradiente. Os gates do
    R-7 são cegos a ela, e há um sinal ambíguo (ω² < 0 em 5 ordens de magnitude)
    arquivado como artefato. Enquanto A1 não rodar, "no-go revogado" é forte demais.
+   > **[NOTA DO REPOSITÓRIO — 2026-08-13]** O A1 rodou: **c_s² = −1 exato** em
+   > r → 0, elevado a no-go de classe por gradiente em 108/108 células
+   > (`docs/resultado_r10a_gradiente.md`,
+   > `docs/resultado_r11_nogo_gradiente.md`,
+   > `docs/resultado_r12_instrumento_e_cs2.md`). O "no-go revogado" **era**
+   > forte demais: este item do veredito estava certo. O sinal ambíguo do
+   > R-7e, porém, era questão separada — `W/K` não é a frequência efetiva
+   > (R-9, Bloco 0). Nota completa no P3.
 3. A escolha de janela do cap. 09 está, na minha opinião, invertida: o teste
    decisivo proposto (baixo-ℓ/ISW) é o mais caro **e** o mais limitado por
    variância cósmica; o teste barato e discriminante (w_eff(z) do fundo vs DESI
