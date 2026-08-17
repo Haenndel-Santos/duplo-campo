@@ -1,0 +1,222 @@
+==========================================================================
+R-13aud/F -- O QUE OS GATES DO ARCO R-13 NAO CONSEGUEM VER
+==========================================================================
+
+--------------------------------------------------------------------------
+[F1] MODULACAO beta_n(phi_-): o limiar, em forma fechada e medido
+--------------------------------------------------------------------------
+
+  W(r)      = -3*beta_1*r + beta_1/(mu*r) + beta_4*r**2/mu
+  W'(r)     = -3*beta_1 - beta_1/(mu*r**2) + 2*beta_4*r/mu
+  (dW/dN)|_r = dbeta_1 * -3*r + 1/(mu*r)
+
+  dr/dN = -[3(1+w) rho_til + (dW/dN)|_r] / W'(r),  W' > 0 (teorema E1)
+  => r' >= 0  <=>  3(1+w) rho_til + dbeta_1 (1/(mu r) - 3 r) <= 0
+  => (como mu r^2 > 1 no ramo infinito, 3r - 1/(mu r) > 0)
+
+      dbeta_1/dN  >=  3*mu*r*rho_til*(w + 1)/(3*mu*r**2 - 1)      [LIMIAR]
+
+  [    F1a] OK  consistencia do limiar: residuo = 0
+
+  MEDIDA do limiar em celulas IBB genuinas (beta_1 = 1, poeira,
+  Omega_m(a=1) = 0.3). Reportado como dln(beta_1)/dN, que e' a
+  quantidade adimensional que a v2 tem de produzir:
+
+      mu     b4/b1      f        a            r      rho_til   limiar dbeta_1/dN   = dln b1/dN
+       1       0.1   0.05    0.001   7.4228e+05   5.5095e+10             74224.5       74224.5
+       1       0.1   0.05     0.01        23487   5.5095e+07             2345.73       2345.73
+       1       0.1   0.05        1       42.852       55.095             1.28595       1.28595
+       1       0.1   0.05       30        29.99    0.0020406         6.80675e-05   6.80675e-05
+       1         1   0.50    0.001        73747   5.4383e+09             73743.6       73743.6
+       1         1   0.50     0.01       2333.5   5.4383e+06             2330.53       2330.53
+       1         1   0.50        1       4.2298       5.4383             1.31012       1.31012
+       1         1   0.50       30       2.8795   0.00020142         7.28806e-05   7.28806e-05
+       1      1.96   0.98    0.001        36825   2.6578e+09             72174.2       72174.2
+       1      1.96   0.98     0.01       1165.3   2.6578e+06              2280.9        2280.9
+       1      1.96   0.98        1       2.0672       2.6578             1.39449       1.39449
+       1      1.96   0.98       30       1.1337   9.8438e-05         0.000117235   0.000117235
+
+  limiar MINIMO sobre todas as celulas e epocas: 6.80675e-05
+  limiar MAXIMO                                : 74224.5
+
+  LEITURA. Com beta_1 = 1, dln(beta_1)/dN = dbeta_1/dN. O limiar e'
+  ENORME no passado profundo (acompanha rho_til ~ a^-3) e vai a ZERO
+  no futuro (rho_til -> 0). Logo, perto do atrator tardio, QUALQUER
+  modulacao com dbeta_1/dN positivo acima de um limiar que tende a
+  zero INVERTE o sinal de r'.
+
+  MAS -- e este e' o ponto que decide a mordida -- INVERTER O SINAL
+  DE r' NAO RESTAURA HIGUCHI. A cadeia do R-13a e':
+
+      Higuchi (14) <=> (15) >= 0 <=> -mu r^2 W'(r) >= 0 <=> W' <= 0
+
+  e SO' O ULTIMO ELO (W' <= 0 <=> r' >= 0) usa dr/dN. O elo
+  `(15) <=> W' <= 0` e' algebrico em (r, beta_n, mu) e NAO ve' a
+  modulacao. E o teorema E1 da' W'(r) > 0 sempre que
+      rho_til > 0   E   mu r^2 > 1
+  -- duas condicoes que NAO envolvem dbeta_n/dN.
+
+  Verificacao: sob modulacao, medir r' e' medir a coisa ERRADA.
+  Exemplo numerico (mu=1, y=1, a=30) com dbeta_1/dN acima do limiar:
+    dbeta_1/dN =           0 ( 0.0x limiar) -> r' =  -0.00022903  |  LHS(15) =     -21.8751  -> Higuchi VIOLADO
+    dbeta_1/dN = 3.64403e-05 ( 0.5x limiar) -> r' =  -0.00011452  |  LHS(15) =     -21.8751  -> Higuchi VIOLADO
+    dbeta_1/dN = 7.28806e-05 ( 1.0x limiar) -> r' =           -0  |  LHS(15) =     -21.8751  -> Higuchi VIOLADO
+    dbeta_1/dN = 0.000145761 ( 2.0x limiar) -> r' =   0.00022903  |  LHS(15) =     -21.8751  -> Higuchi VIOLADO
+    dbeta_1/dN = 0.000728806 (10.0x limiar) -> r' =    0.0020613  |  LHS(15) =     -21.8751  -> Higuchi VIOLADO
+
+  r' troca de sinal; LHS(15) NAO se move (ela nem depende de
+  dbeta_1/dN). Higuchi continua VIOLADO.
+
+  >>> VEREDITO F1: a cegueira da modulacao NAO morde o veredito de
+      exclusao -- MAS morde o ARGUMENTO com que o corpus o defende.
+      Sob beta_n(phi_-):
+        - `r' < 0` DEIXA DE SER equivalente a violar Higuchi, e
+        - o diagnostico correto passa a ser `W'(r) > 0`, isto e'
+          `mu r^2 > 1 e rho_til > 0` -- que e' o teorema E1 e vale
+          sem tocar em derivada temporal nenhuma.
+      O corpus tem de trocar o enunciado operacional. O R-13b diz
+      'a cadeia (14)->(16)->(18) nao sobrevive intacta' e para ai;
+      o que sobrevive, e e' suficiente, e' o elo (14) <=> (15).
+
+      RESSALVA HONESTA, e ela e' a fronteira real: tudo isso supoe
+      que a PROPRIA eq. (14) continue sendo a condicao de Higuchi
+      ponto a ponto sob modulacao. Essa hipotese e' declarada pelo
+      R-13a (sec.2.2, hipotese 2) e NAO foi verificada por ninguem
+      -- nem aqui. Se (14) ganhar termos em dbeta_n/dN na derivacao
+      hamiltoniana, nada deste bloco cobre o caso.
+
+
+--------------------------------------------------------------------------
+[F2] CONTEUDO DE MATERIA: radiacao NAO morde
+--------------------------------------------------------------------------
+
+  O teorema E1 usa apenas: (i) o ponto esta' no ramo infinito
+  (r > r_c), logo Q(r) = mu r rho_til > 0 e mu r^2 > 1; (ii)
+  rho_til > 0; (iii) 1 + w_tot > 0. NENHUM desses usa a FORMA de
+  rho_til(N). Logo r' < 0 vale para qualquer conteudo com rho > 0
+  e w_tot > -1 -- inclusive materia + radiacao.
+
+  Verificacao numerica com rho = rho_m a^-3 + rho_r a^-4 e
+  a_eq = 1/3400 (equipartição padrao):
+
+           a     w_tot             r       rho_til       W-linha        r-linha    sinal
+       1e-06   0.33220   4.00618e+10   1.60495e+21   8.01237e+10   -8.00558e+10  r-lin<0
+       1e-05   0.32237   4.06681e+08    1.6539e+17   8.13362e+08   -8.06676e+08  r-lin<0
+      0.0001   0.24876   4.62963e+06   2.14335e+13   9.25926e+06   -8.67192e+06  r-lin<0
+   0.0002941   0.16667        653834   4.27497e+11   1.30767e+06   -1.14421e+06  r-lin<0
+        0.01   0.00952       2367.57   5.59829e+06       4732.14       -3582.91  r-lin<0
+         0.1   0.00098       75.3686       5454.34       147.737       -110.866  r-lin<0
+           1   0.00010       4.23012       5.43994       5.40435       -3.02005  r-lin<0
+          30   0.00000       2.87946   0.000201422       2.63831   -0.000229036  r-lin<0
+  [     F2] OK  r' < 0 em 8/8 com radiacao ligada
+
+  >>> VEREDITO F2: a cegueira 'sem radiacao' NAO morde. O R-13b a
+      declara como fronteira; o teorema E1 mostra que ela era
+      desnecessaria para o SINAL de r'. (Ela continua necessaria
+      para os VALORES: a historia r(a) muda.)
+
+--------------------------------------------------------------------------
+[F3] A CAIXA DE m_T^2 e' ENTRADA -- o que cai com ela e o que nao
+--------------------------------------------------------------------------
+
+  Rastreamento de dependencia, enunciado por enunciado do R-13b:
+
+                                     enunciado    usa a caixa de m_T^2?   sobrevive?
+                        (E1) r' < 0 em 108/108       NAO -- so' o fundo          SIM
+          (E2) xi cruza zero 1x, locus fechado       NAO -- so' o fundo          SIM
+                        (E3) m_T^2 > 0 em 100%                      SIM  cai com ela
+                    (E4) 1 < sup m_T^2/H^2 < 2                      SIM  cai com ela
+               (E5) Higuchi da fonte reprovado        NAO -- e' r' >= 0          SIM
+                 janela 0 < b4/b1 < 2 mu^{3/2}       NAO -- so' o fundo          SIM
+                           mu e' pura reescala       NAO -- so' o fundo          SIM
+                               o '3' vs o '12'                      SIM  cai com ela
+
+  >>> VEREDITO F3: a cegueira 'a caixa de m_T^2 nao foi
+      revalidada' NAO morde o VEREDITO DE EXCLUSAO, porque a
+      exclusao passa por `Higuchi <=> r' >= 0`, que e' enunciado
+      de FUNDO puro. Ela morde os numeros TENSORIAIS (E3, E4, o
+      3 e o 12). Essa separacao nao esta' feita no R-13b.
+
+--------------------------------------------------------------------------
+[F4] REGRA 6 DENTRO DO R-13b: algum numero decisivo passa por estencil?
+--------------------------------------------------------------------------
+
+  Inventario do r13b_ibb_ramo_infinito.py:
+    dr/dN      : FORMA FECHADA  (-3 rho_til / W'(r))
+    xi         : FORMA FECHADA  (r + dr/dN)
+    m_T^2      : FORMA FECHADA  (caixa do cap.06 avaliada)
+    H^2        : FORMA FECHADA  (Friedmann-f)
+    r(a)       : raiz de polinomio + Newton (nao e' derivada)
+    a(xi = 0)  : bisseccao sobre a forma fechada
+    estencil 8a: SO' como CROSS-CHECK do gate M4, nao como fonte
+                 de nenhum numero reportado
+
+  >>> VEREDITO F4: NENHUM numero decisivo do R-13b passa por
+      estencil. O modo de falha que o alvo C encontrou (h = 1e-3
+      insuficiente quando r ~ 1e8) NAO atinge o R-13b. Atinge o
+      R-12g e qualquer reuso futuro da maquinaria de perturbacao
+      em fundo com r grande -- e la' ele atinge com forca.
+
+--------------------------------------------------------------------------
+[F5] SELECAO DE RAIZ PERTO DO PONTO FIXO -- armadilha viva
+--------------------------------------------------------------------------
+
+  A semente analitica do ramo infinito, r ~ sqrt(mu rho_til/b4), e'
+  valida SO' no passado profundo. Perto do ponto fixo ela converge
+  para a raiz do ramo FINITO. Demonstracao:
+
+          a        semente   Newton converge para          r_c       ramo
+     0.0001    2.33203e+06              2332026.8      2.87939   INFINITO
+       0.01        2332.03              2333.5258      2.87939   INFINITO
+          1        2.33203              4.2298215      2.87939   INFINITO
+         10      0.0737451             0.65136021      2.87939 **FINITO**
+
+  >>> VEREDITO F5: o R-13b esta' PROTEGIDO -- ele semeia no passado
+      profundo e caminha por CONTINUACAO para o futuro, e o gate
+      M1(d) exige r(a_max) ~ r_c. Mas a armadilha e' viva para
+      quem reusar `raiz_por_continuacao` sem a semeadura correta,
+      e ela derrubou a 1a versao do script do alvo C desta
+      auditoria (rodada preservada no git).
+
+--------------------------------------------------------------------------
+[F6] O QUE NENHUM GATE DESTE ARCO VE -- lista fechada
+--------------------------------------------------------------------------
+
+  1. beta_2 != 0 ou beta_3 != 0 no ramo infinito (a cubica vira quartica)
+     -> LIMITA O ALCANCE, nao morde o enunciado (que e' de classe IBB genuina)
+
+  2. acoplamento duplo da materia (materia so' em g nos dois lados)
+     -> nao morde: e' hipotese DECLARADA tambem pela fonte
+
+  3. fundo nao-FLRW (anisotropia, inomogeneidade, Vainshtein)
+     -> nao morde o linear; a propria fonte (Woodard 2007) avisa que o ghost pode so' aparecer em ordem superior -- o que REFORCA a exclusao, nao a enfraquece
+
+  4. a DERIVACAO do bound de Higuchi (Fasiello-Tolley 1308.1647 nao aberto)
+     -> morde o ROTULO, nao a medida: `r' < 0` e' fato de fundo nas nossas convencoes, independente de como o bound foi derivado
+
+  5. fantasma escalar (autovalores de K_2) no ramo infinito
+     -> NAO MEDIDO por ninguem neste arco -- fica em aberto; nao muda o veredito (um ghost ja' basta), mas e' um canal a mais
+
+  6. delta rho_m (perturbacao de materia ausente da L2)
+     -> morde o c_s^2 do alvo C, nao o Higuchi. Mesma fronteira do R-11/R-12g
+
+  7. validade EFT, screening, f*sigma_8
+     -> fora de escopo declarado; nao morde
+
+  8. beta_n(phi_-) (modulacao da v2)
+     -> MORDE O ARGUMENTO, NAO O VEREDITO -- ver F1. Sob modulacao `r' < 0` deixa de ser equivalente a violar Higuchi (o limiar de dbeta_1/dN que inverte r' tende a ZERO no atrator tardio), mas LHS(15) nao depende de dbeta_n/dN e o teorema E1 mantem W' > 0. O corpus tem de trocar o diagnostico operacional de `r' < 0` para `W'(r) > 0`
+
+  9. a propria eq. (14) sob modulacao (ela ganha termos em dbeta_n/dN na derivacao hamiltoniana?)
+     -> NAO SABIDO POR NINGUEM. E' a fronteira epistemica real que o arco R-13 deixa aberta sobre a v2. O R-13a a declara (sec.2.2, hipotese 2) e nenhum gate deste arco -- nem desta auditoria -- a testa
+
+==========================================================================
+VEREDITO DOS GATES DESTE SCRIPT
+==========================================================================
+
+  FALHAS: nenhuma
+
+  CEGUEIRA RECURSIVA (regra 7 aplicada a este script): ele mede o
+  LIMIAR de modulacao, nao a dinamica de phi_- da v2 -- se a v2
+  nunca produzir dbeta_1/dN acima do limiar, a cegueira F1 e'
+  inofensiva na pratica, e isso este script NAO decide. Ele tambem
+  nao valida a caixa de m_T^2 nem a L2: so' rastreia dependencias.
