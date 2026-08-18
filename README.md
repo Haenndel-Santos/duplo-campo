@@ -2,7 +2,7 @@
 
 This repository organizes and versions the working files for the Teoria do Duplo Campo Primordial (TDCP), including chapters, appendices, technical variants, project-local agent skills, and operational documentation.
 
-## Scientific State (2026-08-13)
+## Scientific State (2026-08-17)
 
 The current verdict chain lives in `docs/` and `auditoria/` — **do not
 cite v1 manuscript numbers or pre-2026-08-12 result docs without the
@@ -58,24 +58,46 @@ carry the value-supersession banner of Erratum-03 (below).
   branch violates scalar-gradient stability in the early universe,
   while the genuine infinite branch avoids that instability but
   violates the Higuchi condition throughout its evolution.* The IBB
-  gradient channel is **healthy according to the source** (§IV A of
-  1503.07436, which **confirms** and does **not** retract 1407.4331);
-  it is an independent channel and does not save Higuchi. The R-13b
-  gate does not measure gradient, and that blindness stays declared as
-  good practice — but it does **not** block the verdict: a physical
-  ghost is enough to exclude, regardless of the gradient being healthy.
-  A `c_s²` test in the IBB is **desirable additional validation, not a
-  requirement**.
+  gradient channel is **healthy — and we measured it ourselves**: the
+  `c_s²` test that this section previously listed as *desirable
+  additional validation, not a requirement* **has been done**
+  (`docs/auditoria_r13.md` §4): `c_s² > 0` at **50/50** points of the
+  infinite branch, minimum **0.4428**, running from **+1/2** in the deep
+  past to **+1** at the attractor, deviating by `|Δ| ≤ 0.093` from the
+  literature's closed channel and with a **positive control** returning
+  `−1` on the finite branch. The source (§IV A of 1503.07436, which
+  **confirms** and does **not** retract 1407.4331) is now
+  **cross-validation**, not the origin of the claim. Both legs of the
+  complementarity statement are therefore measured in-house. The R-13b
+  gate itself does not measure gradient, and that blindness stays
+  declared as good practice — it describes *that gate*, not the corpus,
+  and it never blocked the verdict: a physical ghost is enough.
 
   | Exit | Current verdict | Reason |
   |---|---|---|
-  | Infinite branch / IBB | **EXCLUDED** | Higuchi ghost, r′ < 0 throughout the history |
+  | Infinite branch / IBB | **EXCLUDED** | Higuchi ghost. Robust diagnostic: **`𝒲′(r) > 0`**, a theorem (`P = 2Q + 3(μr² − 1)`, zero symbolic residue). `r′ < 0` is the equivalent symptom **only when `β̇_n = 0`** |
   | old `ξ = 0` argument | **REVOKED** | a vanishing lapse / bounce is not by itself a singularity |
-  | gradient in the IBB | **HEALTHY** per the source | independent channel; does not save Higuchi |
+  | gradient in the IBB | **HEALTHY — measured in-house** (50/50) | confirmed by the source; independent channel, does not save Higuchi |
 
   Only one door is left ajar: β₃ ≠ 0, which leaves F1.
   **The unstable era covers recombination**, so the linear CMB of F1 is
   not calculable while this picture holds.
+- `docs/auditoria_r13.md` — **adversarial audit of the R-13 arc
+  (2026-08-17)**. Nothing in the central verdict fell; three things
+  changed status, two for the better. The exclusion no longer rests on
+  a measurement (`r′ < 0`) but on a **closed-form theorem**
+  (`𝒲′(r) > 0`); the `−6.05e−5` once quoted as a narrow margin is a
+  **grid number** scaling as `a⁻³` (extended sweep: 14 400 points,
+  `max r′ = −1.67e−18`, zero violations); and the gradient leg became
+  our own measurement. It also opened the corpus's **current epistemic
+  frontier**: whether Könnig's eq. (14) is still the pointwise Higuchi
+  condition under `β_n(N)` is **not derived by anyone**. That is
+  narrower than it sounds — the *Bianchi constraint* with `β̇_n` terms
+  does exist in a published sibling class (chameleon bigravity,
+  1702.04490 + 1711.04655) — but they are different equations, and the
+  Higuchi bound under modulation is the open one. Since `β_n(φ₋)` is
+  the architecture of v2, this is now the most expensive item in the
+  queue.
 - `docs/resultado_r12_instrumento_e_cs2.md` — **Erratum-03
   (instrument)**: Ċ was differentiated with 2nd-order `np.gradient`
   from R-7 to R-12c, and the O(h²) error is amplified by the

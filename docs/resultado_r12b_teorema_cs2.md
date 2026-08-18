@@ -130,6 +130,16 @@ entreaberta continua sendo β₃ ≠ 0 (que leva para fora da F1).
 > teorema deste documento continua não sendo afetado. *Fontes:
 > `docs/resultado_r13a_criterio_higuchi_fonte.md`,
 > `docs/resultado_r13b_ibb_ramo_infinito.md`.*
+>
+> > **[ATUALIZADO 2026-08-17 — `docs/auditoria_r13.md`.]** A cadeia
+> > acima ganha um elo e um domínio: **`Higuchi ⟺ ξ ≥ r ⟺ 𝒲′(r) ≤ 0
+> > ⟺ r′ ≥ 0`**, para todo `w > −1` — e **só o último elo usa
+> > `dr/dN`**, valendo apenas com `β̇_n = 0`. O diagnóstico robusto é
+> > `𝒲′(r) > 0`, que é teorema. O elo do gradiente no IBB também
+> > fechou (`c_s² > 0` em 50/50) — e o **controle positivo daquela
+> > medida reproduz o `−1` deste documento** no ramo finito
+> > (`−0.9999975` em `a = 1e−4`), o que é confirmação independente do
+> > teorema aqui provado, por maquinaria e ramo diferentes.
 
 **Fila que este resultado abre:**
 

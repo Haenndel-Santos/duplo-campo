@@ -543,9 +543,28 @@ absorver antes de ser submetido:**
 >
 > | Saída | Veredito vigente | Razão |
 > |---|---|---|
-> | Infinite branch / IBB | **EXCLUÍDO** | ghost de Higuchi, `r′ < 0` em toda a história |
+> | Infinite branch / IBB | **EXCLUÍDO** | ghost de Higuchi: **`𝒲′(r) > 0`** (teorema); `r′ < 0` é sintoma equivalente só em `β̇_n = 0` |
 > | argumento antigo `ξ = 0` | **REVOGADO** | zero do lapso / quique não é por si só singularidade |
-> | gradiente no IBB | **SAUDÁVEL** segundo a fonte | canal independente; não salva o Higuchi |
+> | gradiente no IBB | **SAUDÁVEL — medido por nós** (50/50) | confirmado pela fonte; canal independente, não salva o Higuchi |
+>
+> > **[ATUALIZADO 2026-08-17 — `docs/auditoria_r13.md`.]** Duas mudanças
+> > de **estatuto**; nenhuma de veredito.
+> >
+> > **(i) O elo do gradiente FECHOU.** `c_s² > 0` em **50/50** pontos do
+> > ramo infinito (mín. **0.4428**; `+1/2` no passado profundo, `+1` no
+> > atrator), medido com a maquinaria 2-DOF da casa, desvio
+> > `|Δ| ≤ 0.093` contra o canal fechado da literatura e **controle
+> > positivo** devolvendo `−1` no ramo finito. A linha *"segundo a
+> > fonte"* da tabela está **substituída por medida própria**; a fonte
+> > passa a ser validação cruzada. O teste que o bloco acima chamava de
+> > *"desejável, não requisito"* **está feito**.
+> >
+> > **(ii) O diagnóstico robusto é `𝒲′(r) > 0`, não `r′ < 0`.** Só o
+> > último elo da cadeia usa `dr/dN`, e ele vale apenas com
+> > `β̇_n = 0`. Sob `β_n(φ₋)` — a arquitetura da v2 — ele quebra:
+> > `r′` inverte de sinal e o **LHS(15) não se move**. `𝒲′(r) > 0`
+> > — isto é `ρ̃ > 0` e `μr² > 1` — é **teorema**
+> > (`P = 2Q + 3(μr² − 1)`), não margem numérica.
 >
 > *Fontes: `docs/resultado_r13a_criterio_higuchi_fonte.md`;
 > `docs/resultado_r13b_ibb_ramo_infinito.md` §§4–6 e §8;
